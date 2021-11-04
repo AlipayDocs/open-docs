@@ -8,7 +8,7 @@
 
 开发者需要避免使用 JavaScript 引擎不支持的内置对象。 如果必须使用，可自己提供内置对象的 polyfill（Polyfill ：用于实现浏览器或其他 JavaScript 引擎不支持的原生 API 的代码 ）。
 
-**注意：**小程序引擎中禁止访问 globalThis、global ，因此无法直接使用 [babel-polyfill](https://babeljs.io/docs/en/babel-polyfill)。
+**注意：** 小程序引擎中禁止访问 globalThis、global ，因此无法直接使用 [babel-polyfill](https://babeljs.io/docs/en/babel-polyfill)。
 
 ## 客户端操作系统对 ES6 扩展内置对象支持情况
 下表是各个操作系统对 ES6 扩展的内置对象的支持情况：
