@@ -4,7 +4,8 @@
 
 ## 使用场景
 目前该能力适用在 [小程序服务同步](https://opendocs.alipay.com/mini/operation/service-synchronization)。当开启后算法识别到小程序服务时，会在 **服务管理** > **服务同步** 中展示服务信息，商户可在列表页补齐信息提交审核，审核通过的小程序服务可在搜索侧展示。 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/10334/1603681765167-162909ae-3f22-4bb9-8af9-b569c879f894.png#align=left&display=inline&height=478&margin=%5Bobject%20Object%5D&originHeight=954&originWidth=445&status=done&style=none&width=223)    
+
+![|223x478](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/10334/1603681765167-162909ae-3f22-4bb9-8af9-b569c879f894.png#align=left&display=inline&height=478&margin=%5Bobject%20Object%5D&originHeight=954&originWidth=445&status=done&style=none&width=223)    
 
 # sitemap 配置
 小程序根目录下的 `sitemap.json` 文件用于配置小程序及其页面是否允许被支付宝索引，文件内容为一个 JSON 对象，小程序服务收录开关打开时，如果没有 `sitemap.json` 则默认为所有页面都允许被索引。 
@@ -13,7 +14,7 @@
 
 - 配置之间如有冲突，视作不被索引。冲突示例见下文 **配置示例**。
 - 匹配页面后面的参数不影响索引结果，示例： `path/to/page?a =1`  等于 `path/to/page`。
-- * 代表所有页面。
+- `*` 代表所有页面。
 
 
 ## 配置示例
@@ -21,12 +22,12 @@
 
 | **索引** | **配置示例** |
 | --- | --- |
-| action 不配置默认允许被索引 <br /> path/to/page：被索引 <br />path/to/page?a=1 ：被索引<br />其他页面都不会被索引 |``` {"rules":[{  "page": "path/to/page" }] }``` |
-| path/to/page ：不被索引 <br />其他页面被索引 | ```{ "rules":[{ "action": "disallow", "page": "path/to/page" }] }``` |
+| 1.action 不配置默认允许被索引 <br /> 2.path/to/page：被索引 <br /> 3.path/to/page?a=1 ：被索引<br /> 4.其他页面都不会被索引 |``` {"rules":[{  "page": "path/to/page" }] }``` |
+| 1.path/to/page ：不被索引 <br /> 2.其他页面被索引 | ```{ "rules":[{ "action": "disallow", "page": "path/to/page" }] }``` |
 | 所有页面都被索引 | ``` { "rules":[{ "page": "*" }] }``` |
 | 所有页面都不被索引 | ``` { "rules":[{ "action": "disallow", "page": "*" }] }``` |
-| path/to/page：因为冲突不被索引 <br />其他页面因为冲突也不会被索引 | ``` { "rules":[{ "action": "allow", "page": "path/to/page" }, { "action": "disallow", "page": "path/to/page" }] }``` |
-| path/to/page：被索引 <br />path/to/page2：不被索引 <br />其他页面因为冲突不会被索引 | ``` { "rules":[{ "action": "allow", "page": "path/to/page" }, { "action": "disallow", "page": "path/to/page2" }] }``` |
+| 1.path/to/page：因为冲突不被索引 <br /> 2.其他页面因为冲突也不会被索引 | ``` { "rules":[{ "action": "allow", "page": "path/to/page" }, { "action": "disallow", "page": "path/to/page" }] }``` |
+| 1.path/to/page：被索引 <br /> 2.path/to/page2：不被索引 <br /> 3.其他页面因为冲突不会被索引 | ``` { "rules":[{ "action": "allow", "page": "path/to/page" }, { "action": "disallow", "page": "path/to/page2" }] }``` |
 
 
 # IDE 调试
