@@ -1,5 +1,6 @@
 
 ## App(object: Object)
+
 `App()` 用于注册小程序，接受一个 `Object` 作为属性，用来配置小程序的生命周期等。`App()` 必须在 `app.js` 中调用，必须调用且只能调用一次。
 
 ## object 属性说明
@@ -87,8 +88,7 @@ App({
 | **属性** | **类型** | **说明** |
 | --- | --- | --- |
 | error | String | 异常描述，一般为 `Error` 对象的 `message` 字段。 |
-| stack | String | 异常堆栈，一般为 `Error` 对象的 `stack` 字段。
-基础库 [2.6.6](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上支持。 |
+| stack | String | 异常堆栈，一般为 `Error` 对象的 `stack` 字段。<br /> 基础库 [2.6.6](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上支持。 |
 
 示例代码：
 ```javascript
