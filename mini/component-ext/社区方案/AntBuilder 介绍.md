@@ -10,13 +10,21 @@ AntBuilder 简称 ab，是一款小程序快速搭建的脚手架，包含小程
 小程序应用，如果没有大量定制外观或交互，与 AB 官方提供的模板和功能有一定的重合度，均适合使用 AntBuilder 完成小程序的组装。
 
 以下是一些场景举例：
+
 ✅ 生活号或H5转小程序
+
 ✅ 基于业务组件库或模板库创建小程序
+
 ✅ ISV统一管理多家小程序的管理平台(内含小程序发布中台)
+
 ✅ 简单的会员SCRM小程序(内含简单CRM)
+
 ✅ 简单表单小程序(内含简单表单)
+
 ❌ 交互复杂的小程序应用
+
 ❌ 从微信小程序转换成支付宝小程序
+
 移动端站点，欢迎关注支付宝小程序(合作伙伴能力库)和生活号(合作伙伴能力库)。
 ![|205x213](https://cdn.nlark.com/yuque/0/2021/png/245098/1614579738821-92946442-9611-4009-9aac-a37fbc37c78a.png#align=left&display=inline&height=213&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1224&originWidth=1176&size=433888&status=done&style=none&width=205)![|130x208](https://cdn.nlark.com/yuque/0/2021/png/245098/1614579801129-4699aef6-6825-49a2-8c8d-bc9f0b1118fe.png#align=left&display=inline&height=208&margin=%5Bobject%20Object%5D&name=image.png&originHeight=726&originWidth=454&size=266102&status=done&style=none&width=130)
 
