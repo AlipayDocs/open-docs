@@ -1,6 +1,8 @@
 
 # 简介
-本文归纳了支付宝小程序前端 API 及其作用。<br />**说明：**
+本文归纳了支付宝小程序前端 API 及其作用。<br />
+
+**说明：**
 
 - 前端接口使用说明参见 [小程序 API 使用说明](https://opendocs.alipay.com/mini/api/overview)。
 - 错误码信息请参见 [小程序 API 错误码对照表](https://opendocs.alipay.com/mini/00nmrr)。<br />
