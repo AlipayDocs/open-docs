@@ -8,7 +8,7 @@
 | --- | --- | --- | --- | --- |
 | onLaunch | Function | 生命周期回调：监听小程序初始化 | 当小程序初始化完成时触发，全局只触发一次。<br /> 参数也可以使用 [my.getLaunchOptionsSync](https://opendocs.alipay.com/mini/013t19) 获取。 | - |
 | onShow | Function | 生命周期回调：监听小程序显示 | 当小程序启动，或从后台进入前台显示时触发。<br /> 也可以使用[ my.onAppShow ](https://opendocs.alipay.com/mini/api/nn7do1)绑定监听。 | - |
-| onHide | Function | 生命周期回调：监听小程序隐藏 | 当当前页面被隐藏时触发，例如跳转、按下设备 Home 键离开。</br />也可以使用 [my.onAppHide](https://opendocs.alipay.com/mini/api/tv6qvi) 绑定监听。 | - |
+| onHide | Function | 生命周期回调：监听小程序隐藏 | 当当前页面被隐藏时触发，例如跳转、按下设备 Home 键离开。<br />也可以使用 [my.onAppHide](https://opendocs.alipay.com/mini/api/tv6qvi) 绑定监听。 | - |
 | onError | Function | 监听小程序错误 | 当小程序发生 js 错误时触发。<br /> 也可以使用 [my.onError](https://opendocs.alipay.com/mini/00nnsx) 绑定监听。 | - |
 | onShareAppMessage | Function | 全局分享配置 | 调用分享时触发，如：点击页面菜单右上角的 **分享** 按钮时。 | - |
 | onUnhandledRejection | Function | 监听 unhandledrejection 事件 | 当 Promise 被 reject 且没有 reject 处理器时，会触发 onUnhandledRejection 事件。<br />也可以使用 [my.onUnhandledRejection](https://opendocs.alipay.com/mini/00nd0f) 绑定监听。 | [1.24.1](https://opendocs.alipay.com/mini/framework/lib) |
