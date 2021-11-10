@@ -1,6 +1,8 @@
 
 # 简介
-**my.env** 是小程序环境变量对象 API。对比 [my.getSystemInfo](https://opendocs.alipay.com/mini/api/system-info) / [my.getSystemInfoSync](https://opendocs.alipay.com/mini/api/gawhvz)，my.env 在使用上更加轻量化。
+**my.env** 是小程序环境变量对象 API。
+
+对比 [my.getSystemInfo](https://opendocs.alipay.com/mini/api/system-info) / [my.getSystemInfoSync](https://opendocs.alipay.com/mini/api/gawhvz)，my.env 在使用上更加轻量化。
 
 ## 使用限制
 
