@@ -25,6 +25,7 @@
 | plugins | Object | 否 | 静态插件配置规则 |
 | useDynamicPlugins | Boolean | 否 | 动态插件配置规则 |
 | lazyCodeLoading |  | 否 | 是否开启代码按需执行 |
+| permission | Object | 否 | 小程序接口权限相关配置 |
 
 
 ## pages
@@ -172,4 +173,45 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
 ]
 ```
 
+## permission
+
+小程序接口权限相关设置。字段类型为 Object，结构为：
+
+| **属性** | **类型** | **必填** | **描述** |
+| scope.album | PermissionObject | 否 | 相册（访问）相关权限声明，相关 API：[my.chooseImage](https://opendocs.alipay.com/mini/api/media/image/my.chooseimage)、[my.chooseVideo](https://opendocs.alipay.com/mini/api/media/video/my.choosevideo)（sourceType 包含 album）。 |
+| scope.writePhotosAlbum | PermissionObject | 否 | 相册（保存）相关权限声明，相关 API：[my.saveImage](https://opendocs.alipay.com/mini/api/media/image/my.saveimage)、[my.saveImageToPhotosAlbum](https://opendocs.alipay.com/mini/api/media/image/my.saveImagetophotosalbum)、[my.saveVideoToPhotosAlbum](https://opendocs.alipay.com/mini/api/media/video/my.savevideotophotosalbum)。 |
+| scope.camera | PermissionObject | 否 | 相机相关权限声明，相关 API：[my.chooseImage](https://opendocs.alipay.com/mini/api/media/image/my.chooseimage)、[my.chooseVideo](https://opendocs.alipay.com/mini/api/media/video/my.choosevideo)（sourceType 包含 camera）。 |
+| scope.record | PermissionObject | 否 | 麦克风相关权限声明，相关 API：[my.getRecorderManager](https://opendocs.alipay.com/mini/01a8yl)。 |
+| scope.userLocation | PermissionObject | 否 | 位置相关权限声明，相关 API：[my.getLocation](https://opendocs.alipay.com/mini/api/mkxuqd)。 |
+
+### PermissionObject 结构
+
+| **属性** | **类型** | **必填** | **描述** |
+| desc | String | 是 | 小程序获取权限时展示的接口用途说明。 |
+
+#### 使用示例
+
+```JSON
+{
+  "permission": {
+    "scope.album": {
+      "desc": "读取照片用于提供美颜服务"
+    },
+    "scope.camera" : {
+      "desc" : "访问你的摄像头，用于扫描二维码"
+    },
+    "scope.record" : {
+      "desc" : "访问你的麦克风，用于识别歌曲"
+    },
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于匹配您的服务城市"
+    },
+    "scope.writePhotosAlbum" : {
+      "desc" : "用于保存美颜后的照片"
+    }
+  }
+}
+```
+
+![](https://gw.alipayobjects.com/mdn/rms_282813/afts/img/A*ObLfTZbExrIAAAAAAAAAAAAAARQnAQ)
 
