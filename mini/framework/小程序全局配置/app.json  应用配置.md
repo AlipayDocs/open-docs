@@ -178,6 +178,7 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
 小程序接口权限相关设置。字段类型为 Object，结构为：
 
 | **属性** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
 | scope.album | PermissionObject | 否 | 相册（访问）相关权限声明，相关 API：[my.chooseImage](https://opendocs.alipay.com/mini/api/media/image/my.chooseimage)、[my.chooseVideo](https://opendocs.alipay.com/mini/api/media/video/my.choosevideo)（sourceType 包含 album）。 |
 | scope.writePhotosAlbum | PermissionObject | 否 | 相册（保存）相关权限声明，相关 API：[my.saveImage](https://opendocs.alipay.com/mini/api/media/image/my.saveimage)、[my.saveImageToPhotosAlbum](https://opendocs.alipay.com/mini/api/media/image/my.saveImagetophotosalbum)、[my.saveVideoToPhotosAlbum](https://opendocs.alipay.com/mini/api/media/video/my.savevideotophotosalbum)。 |
 | scope.camera | PermissionObject | 否 | 相机相关权限声明，相关 API：[my.chooseImage](https://opendocs.alipay.com/mini/api/media/image/my.chooseimage)、[my.chooseVideo](https://opendocs.alipay.com/mini/api/media/video/my.choosevideo)（sourceType 包含 camera）。 |
@@ -187,6 +188,7 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
 ### PermissionObject 结构
 
 | **属性** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
 | desc | String | 是 | 小程序获取权限时展示的接口用途说明。 |
 
 #### 使用示例
@@ -213,5 +215,5 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
 }
 ```
 
-![](https://gw.alipayobjects.com/mdn/rms_282813/afts/img/A*ObLfTZbExrIAAAAAAAAAAAAAARQnAQ)
+![](https://gw.alipayobjects.com/mdn/rms_282813/afts/img/A*HTBCQrdaRvkAAAAAAAAAAAAAARQnAQ)
 
