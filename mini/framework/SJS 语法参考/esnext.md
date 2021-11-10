@@ -1,7 +1,7 @@
 SJS 支持部分 ES6 语法。
 
 ## let & const
-```
+```javascript
 function test(){
   let a = 5;
   if (true) {
