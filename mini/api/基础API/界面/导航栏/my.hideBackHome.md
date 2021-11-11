@@ -10,7 +10,7 @@
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 效果示例
-![|660x338](https://cdn.nlark.com/yuque/0/2021/png/179989/1624617388445-56a25e52-e70c-4899-bd62-dea1a8cc24fe.png#align=left&display=inline&height=338&margin=%5Bobject%20Object%5D&name=f663e0473f32d0a8514999ced6d8e65d.png&originHeight=720&originWidth=1280&size=52052&status=done&style=none&width=600)
+![|600x338](https://cdn.nlark.com/yuque/0/2021/png/179989/1624617388445-56a25e52-e70c-4899-bd62-dea1a8cc24fe.png#align=left&display=inline&height=338&margin=%5Bobject%20Object%5D&name=f663e0473f32d0a8514999ced6d8e65d.png&originHeight=720&originWidth=1280&size=52052&status=done&style=none&width=600)
 
 # 接口调用
 
