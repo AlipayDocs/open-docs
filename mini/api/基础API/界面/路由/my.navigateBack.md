@@ -10,7 +10,7 @@
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/179989/1637056770503-813c17f4-e76c-4870-a0c7-5aae8768a06c.png#align=left&display=inline&height=127&margin=%5Bobject%20Object%5D&name=image.png&originHeight=157&originWidth=127&size=16714&status=done&style=none&width=103)
+![|128x158](https://cdn.nlark.com/yuque/0/2021/png/179989/1637056770503-813c17f4-e76c-4870-a0c7-5aae8768a06c.png#align=left&display=inline&height=127&margin=%5Bobject%20Object%5D&name=image.png&originHeight=157&originWidth=127&size=16714&status=done&style=none&width=103)
 
 ## 示例代码
 
@@ -73,6 +73,7 @@ Page({
 <view class="page">
   <view class="page-section">
     <button type="primary" onTap="navigateBack">返回上一页</button>
+    <button type="primary" onTap="navigateBackDelta">返回上一页的上一页</button>
   </view>
 </view>
 ```
@@ -84,6 +85,9 @@ Page({
   navigateBack() {
     my.navigateBack()
   },
+  navigateBackDelta() {
+    my.navigateBack({ delata: 2 })
+  }
 })
 ```
 
