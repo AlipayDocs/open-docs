@@ -83,10 +83,10 @@ Page({
 // navigateBack.js
 Page({
   navigateBack() {
-    my.navigateBack()
+    my.navigateBack() // 返回上一页
   },
   navigateBackDelta() {
-    my.navigateBack({ delata: 2 })
+    my.navigateBack({ delata: 2 }) // 返回上一页的上一页
   }
 })
 ```
