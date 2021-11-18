@@ -38,4 +38,4 @@ my.canIUse('button.open-type.share')
 - option 表示组件属性值。
 
 ## 返回值
-为 Boolean 类型，表示是否支持。
+为 `Boolean` 类型，表示是否支持。
