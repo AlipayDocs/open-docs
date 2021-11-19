@@ -18,7 +18,7 @@ const arrayBuffer = my.base64ToArrayBuffer(base64);
 ```
 
 ## 入参
-类型为 String，代表要转换成 ArrayBuffer 对象的 Base64 字符串。
+类型为 `String`，代表要转换成 ArrayBuffer 对象的 Base64 字符串。
 
 ## 返回值
-类型为 ArrayBuffer 对象。
+类型为 `ArrayBuffer` 对象。
