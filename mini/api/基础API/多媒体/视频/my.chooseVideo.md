@@ -28,7 +28,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| sourceType | Array<String> | 否 | 视频选择的来源。<br />默认为 `['album','camera']`。 |
+| sourceType | `Array<String>` | 否 | 视频选择的来源。<br />默认为 `['album','camera']`。 |
 | compressed | Boolean | 否 | 是否压缩所选择的视频文件。<br />对 iOS 总是有压缩的，只是压缩级别不同。<br />默认为true。<br /> |
 | maxDuration | Number | 否 | 拍摄视频最长拍摄时间，单位秒。<br />默认为 60。 |
 | camera | String | 否 | 默认拉起的是前置或者后置摄像头。部分  Android 手机下由于系统 ROM 不支持无法生效。<br />默认为 'back'。 |
