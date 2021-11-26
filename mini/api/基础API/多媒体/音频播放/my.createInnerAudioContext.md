@@ -127,7 +127,7 @@ offAudioInterruptionEnd(){
 
 
 ### innerAudioContext 方法列表
-| **方法 ** | **参数** | **说明** |
+| **方法** | **参数** | **说明** |
 | --- | --- | --- |
 | play | 无 | 播放。 |
 | pause | 无 | 暂停。 |
