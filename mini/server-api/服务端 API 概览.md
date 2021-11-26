@@ -73,11 +73,11 @@
 ### 签约接口
 | 接口英文名 | 接口中文名 | 接口描述 |
 | --- | --- | --- |
-| [alipay.user.agreement.page.sign](https://docs.open.alipay.com/api_2/alipay.user.agreement.page.sign) | 支付宝个人协议页面签约接口 | 开发者可通过该接口传入周期扣款协议相关限制内容，生成签约参数用于小程序唤起签约页面。<br />目前支持支付宝钱包 H5 页面签约、扫码签约等方式。 |
-| [alipay.user.agreement.query](https://docs.open.alipay.com/api_2/alipay.user.agreement.query) | 支付宝个人代扣协议查询接口 | 支付宝个人代扣协议查询接口，通过该接口可查询用户协议信息。  |
-| [alipay.user.agreement.unsign](https://docs.open.alipay.com/api_2/alipay.user.agreement.unsign) | 支付宝个人代扣协议解约接口 | 支付宝个人代扣协议解约接口，通过该接口可解除用户在约协议。 |
-| [alipay.user.agreement.executionplan.modify](https://docs.open.alipay.com/api_2/alipay.user.agreement.executionplan.modify) | 周期性扣款协议执行计划修改接口 | 通过该接口，商户可以实现延期扣款。 |
-| [alipay.user.agreement.transfer](https://docs.open.alipay.com/api_2/alipay.user.agreement.transfer) | 协议由普通通用代扣协议产品转移到周期扣协议产品 | 商户通过接口将普通通用的代扣协议转移成周期扣款协议。 |
+| [alipay.user.agreement.page.sign](https://opendocs.alipay.com/open/02fkan?scene=35) | 支付宝个人协议页面签约接口 | 开发者可通过该接口传入周期扣款协议相关限制内容，生成签约参数用于小程序唤起签约页面。<br />目前支持支付宝钱包 H5 页面签约、扫码签约等方式。 |
+| [alipay.user.agreement.query](https://opendocs.alipay.com/open/02fkao?scene=8837b4183390497f84bb53783b488ecc) | 支付宝个人代扣协议查询接口 | 支付宝个人代扣协议查询接口，通过该接口可查询用户协议信息。  |
+| [alipay.user.agreement.unsign](https://opendocs.alipay.com/open/02fkap?scene=90766afb41f74df6ae1676e89625ebac) | 支付宝个人代扣协议解约接口 | 支付宝个人代扣协议解约接口，通过该接口可解除用户在约协议。 |
+| [alipay.user.agreement.executionplan.modify](https://opendocs.alipay.com/open/02fkaq) | 周期性扣款协议执行计划修改接口 | 通过该接口，商户可以实现延期扣款。 |
+| [alipay.user.agreement.transfer](https://opendocs.alipay.com/open/02fkar) | 协议由普通通用代扣协议产品转移到周期扣协议产品 | 商户通过接口将普通通用的代扣协议转移成周期扣款协议。 |
 
 
 ### 支付接口
