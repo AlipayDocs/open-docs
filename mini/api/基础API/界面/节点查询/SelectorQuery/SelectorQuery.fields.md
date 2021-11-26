@@ -74,7 +74,7 @@ Page({
 | rect | Boolean | false | 否 | 是否返回节点布局位置（`left` `right` `top` `bottom`）。 |
 | size | Boolean | false | 否 | 是否返回节点尺寸（`width` `height`）。 |
 | scrollOffset | Boolean | false | 否 | 否是否返回节点的 `scrollLeft` `scrollTop`，节点必须是 `scroll-view` 或者 `viewport`。 |
-| computedStyle | Array<String> | [] | 否 | 指定样式名列表，返回节点对应样式名的当前值。 |
+| computedStyle | `Array<String>` | [] | 否 | 指定样式名列表，返回节点对应样式名的当前值。 |
 | context | Boolean | false | 否 | 是否返回节点对应的 Context 对象。 |
 | node | Boolean | false | 否 | 是否返回节点对应的 Node 实例。 |
 
