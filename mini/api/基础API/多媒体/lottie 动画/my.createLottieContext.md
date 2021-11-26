@@ -44,5 +44,5 @@ lottieContext.play();
 | goToAndPlay({value:$value}) | $value:数值<br />范围为 [0.0~1.0]。 | Float | 跳转至 value 并从该进度开始播放。<br />**示例**：goToAndPlay({value: 对应的值]}) |
 | playFromMinToMaxProgress({min:$min,max:$max}) | $min:最小进度<br />$max:最大进度<br />范围为 [0.0~1.0]。 | Float | 从最小到最大的进度区间进行播放。<br />**示例**：playFromMinToMaxProgress({min:对应的值,max:对应的值}) |
 | playFromMinToMaxFrame({min:$min,max:$max}) | $min:最小帧<br />$max:最大帧 | Integer | 从最小到最大的 Frame 区间进行播放。<br />**示例**：<br />playFromMinToMaxFrame({min:对应的值,max:对应的值}) |
-| downgradeToPlaceholder | 无 | - | 当前 Lottie 视图指定降级为展示 placeholder。<br />**版本要求：**支付宝客户端 10.1.52 或更高版本。 |
+| downgradeToPlaceholder | 无 | - | 当前 Lottie 视图指定降级为展示 placeholder。<br />**版本要求：** 支付宝客户端 10.1.52 或更高版本。 |
 
