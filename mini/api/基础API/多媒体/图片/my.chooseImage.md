@@ -1,0 +1,121 @@
+
+# 简介
+**my.chooseImage** 是拍照或从本地相册中选择图片的 API。
+
+## 使用限制
+
+- 图片的路径数组在 IDE 上以 .png 为后缀，在真机预览上以 .image 为后缀。请以真机效果为准。
+- 出于数据安全考虑，IoT 小程序禁止调用摄像头；请勿在 IoT 小程序上调用此 API，否则会造成小程序异常。
+- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+
+## 扫码体验
+![|127x157](https://cdn.nlark.com/yuque/0/2021/jpeg/179989/1625190721184-d4b7110c-a448-4bf8-a664-7713db4e4812.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&name=1.jpeg&originHeight=157&originWidth=127&size=19820&status=done&style=stroke&width=127)
+
+## 效果示例 
+![|300X540](https://cdn.nlark.com/yuque/0/2021/gif/179989/1625190728382-c926911d-9f2f-4386-812a-a48fc655f673.gif#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&name=2.gif&originHeight=540&originWidth=300&size=113733&status=done&style=stroke&width=300)
+
+# 接口调用
+
+## 示例代码
+
+### .json 示例代码
+```json
+// API-DEMO page/API/image/image.json
+{
+    "defaultTitle": "图片"
+}
+```
+
+### .axml 示例代码
+```html
+<!-- API-DEMO page/API/image/image.axml -->
+<view class="page">
+  <view class="page-section">
+    <view class="page-section-btns">
+      <view onTap="chooseImage">选择照片</view>
+      <view onTap="previewImage">预览照片</view>
+      <view onTap="saveImage">保存照片</view>
+    </view>
+  </view>
+</view>
+```
+
+### .js 示例代码
+```javascript
+// API-DEMO page/API/image/image.js
+Page({
+  chooseImage() {
+    my.chooseImage({
+      sourceType: ['camera','album'],
+      count: 2,
+      success: (res) => {
+        my.alert({
+          content: JSON.stringify(res),
+        });
+      },
+      fail:()=>{
+        my.showToast({
+          content: 'fail', // 文字内容
+        });
+      }
+    })
+  },
+  previewImage() {
+    my.previewImage({
+      current: 2,
+      urls: [
+        'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
+        'https://img.alicdn.com/tps/TB1pfG4IFXXXXc6XXXXXXXXXXXX.jpg',
+        'https://img.alicdn.com/tps/TB1h9xxIFXXXXbKXXXXXXXXXXXX.jpg'
+      ],
+    });
+  },
+  saveImage() {
+    my.saveImage({
+      url: 'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
+      showActionSheet: true,
+      success: () => {
+        my.alert({
+          title: '保存成功',
+        });
+      },
+    });
+  }
+});
+```
+
+
+## 入参
+Object 类型，属性如下：
+
+| **属性** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| count | Number | 否 | 最大可选照片数，默认为 1 张。 |
+| sizeType	 | StringArray | 否 | 图片类型。<li>original 原图</li><li>compressed 压缩图</li>默认二者都有。 |
+| sourceType | String Array | 否 | 相册选取或者拍照，默认 ['camera','album']。 |
+| success | Function | 否 | 调用成功的回调函数。 |
+| fail | Function | 否 | 调用失败的回调函数。 |
+| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+
+
+### success 回调函数
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| apFilePaths | String Array | 图片的路径数组。 |
+| tempFiles | Array.<Object> | 图片的本地临时文件列表。 |
+
+
+#### res.tempFiles 结构
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| path | String | 本地临时文件路径（本地路径）。 |
+| size | Number | 本地临时文件大小，单位为 B。 |
+
+
+## 错误码
+| **错误码** | **描述** | **解决方案** |
+| --- | --- | --- |
+| 11 | 用户取消操作。 | 这是用户正常交互流程分支，不需要特殊处理。 |
+
+
+
