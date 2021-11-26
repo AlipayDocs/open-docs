@@ -34,7 +34,7 @@ fs.readdir({
 ### success 返回值
 | **属性** | **类型** | **说明** |
 | --- | --- | --- |
-| files | Array<String> | 指定目录下的文件名数组。 |
+| files | `Array<String>` | 指定目录下的文件名数组。 |
 
 
 ## 错误码
