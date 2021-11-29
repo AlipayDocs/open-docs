@@ -12,7 +12,7 @@ console.log(app.globalData); // 获取 globalData
 ```
 **注意：**
 
-- `App()` 函数中不可以调用 `getApp()`，可使用 `this` 可以获取当前小程序实例。
+- `App()` 函数中不可以调用 `getApp()`，可使用 `this` 获取当前小程序实例。
 - 通过 `getApp()` 获取实例后，请勿调用生命周期回调函数。
 - 请区分全局变量及页面局部变量，比如：
 
