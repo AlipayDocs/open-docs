@@ -33,7 +33,7 @@ object 属性说明：
 
 比如，启动小程序的 scheme 如下:
 ```javascript
-alipays://platformapi/startapp?appId=2018082861168647&page=pages/partdetails/partdetails&query=partJobId%3D123456
+alipays://platformapi/startapp?appId=123456&page=pages/partdetails/partdetails&query=partJobId%3D123456
 ```
 
 - 小程序首次启动时，`onLaunch` 方法可获取 `query`、`path` 属性值。
