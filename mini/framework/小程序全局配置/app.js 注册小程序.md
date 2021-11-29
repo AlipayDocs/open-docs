@@ -33,29 +33,41 @@ object 属性说明：
 
 比如，启动小程序的 scheme 如下:
 ```javascript
-alipays://platformapi/startapp?appId=1999&query=number%3D1&page=x%2Fy%2Fz
+alipays://platformapi/startapp?appId=2018082861168647&page=pages/partdetails/partdetails&query=partJobId%3D123456
 ```
 
 - 小程序首次启动时，`onLaunch` 方法可获取 `query`、`path` 属性值。
 
 - 小程序在后台被用 scheme 打开，也可从 `onShow` 方法中获取 `query`、`path` 属性值。
 ```javascript
+ // app.js处理。
 App({
   onLaunch(options) {
-    // 第一次打开
-    console.log(options.query);
-    // {number:1}
-    console.log(options.path);
-    // x/y/z
+    // 冷启动时在该处获取参数，将参数传递到globalData全局对象下。
+    this.globalData.query = options.query || {}
+    if (options.referrerInfo) { // 小程序跳小程序有的同学会使用extraData，有的同学会直接拼接在path上
+      this.globalData.query = Object.assign(this.globalData.query, options.referrerInfo.extraData)
+    }
   },
   onShow(options) {
-    // 从后台被 scheme 重新打开
-    console.log(options.query);
-    // {number:1}
-    console.log(options.path);
-    // x/y/z
+    // 热启动时在该处获取参数，将参数传递到globalData全局对象下。
+    this.globalData.query = options.query || {}
+    if (options.referrerInfo) { // 小程序跳小程序有的同学会使用extraData，有的同学会直接拼接在path上
+      this.globalData.query = Object.assign(this.globalData.query, options.referrerInfo.extraData)
+    }
   },
+  globalData: {
+    query: {}
+  }
 });
+
+// 页面js处理：
+const app = getApp()
+onLoad(options) {
+  this.setData({
+    partJobId: options.partJobId || app.globalData.query.partJobId || '' // 先从上个页面获取，再从app.js获取，如果都无给个默认值
+  })
+}
 ```
 `referrerInfo` 子属性说明：
 
