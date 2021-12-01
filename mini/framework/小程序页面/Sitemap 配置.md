@@ -16,7 +16,6 @@
 - 匹配页面后面的参数不影响索引结果，示例： `path/to/page?a =1`  等于 `path/to/page`。
 - `*` 代表所有页面。
 
-
 ## 配置示例
 以下分别为不同情况下 `sitemap.json` 的配置，请根据需要进行配置。
 
@@ -29,15 +28,20 @@
 | 1.path/to/page：因为冲突不被索引 <br /> 2.其他页面因为冲突也不会被索引 | ``` { "rules":[{ "action": "allow", "page": "path/to/page" }, { "action": "disallow", "page": "path/to/page" }] }``` |
 | 1.path/to/page：被索引 <br /> 2.path/to/page2：不被索引 <br /> 3.其他页面因为冲突不会被索引 | ``` { "rules":[{ "action": "allow", "page": "path/to/page" }, { "action": "disallow", "page": "path/to/page2" }] }``` |
 
+## 属性
+
+| **属性** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| rules | Object[] | 是 | 索引规则列表 |
+| action | String | 否 | 命中该规则的页面是否能被索引。<br /> **默认值**：disallow <br /> **可选值**：disallow、allow |
+| page | String | 是 | 页面路径。<br /> **说明**：``` * ``` 表示所有页面，不能作为通配符使用。 |
 
 # IDE 调试
-
 ## 使用限制
 
 - IDE 版本 1.16 及以上。
-- sitemap 的索引提示是默认开启的，如需要关闭 sitemap 的索引提示，可在小程序项目配置文件 project.config.json 的 setting 中配置字段 checkSiteMap 为 false。
+- sitemap 的索引提示是默认开启的，如需要关闭 sitemap 的索引提示，可在小程序项目配置文件 mini.project.json 的 setting 中配置字段 checkSiteMap 为 false。
 - sitemap 文件内容最大为 5120 个 UTF8 字符。
-
 
 ## 使用步骤
 当在小程序项目中设置了 sitemap 的配置文件（默认为 sitemap.json）时，点击索引页面时便可在 IDE 控制台上显示当前页面是否被索引的调试信息。
