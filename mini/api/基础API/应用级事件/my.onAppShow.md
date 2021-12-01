@@ -1,6 +1,6 @@
 
 # 简介
-**my.onAppShow** 是监听小程序切前台事件的 API。该事件与框架 [app.js 注册小程序](https://opendocs.alipay.com/mini/framework/app-detail) 时 onShow 参数的回调时机一致。对应的取消监听 API 请参见 [my.offAppShow](api/tkohmw)。
+**my.onAppShow** 是监听小程序切前台事件的 API。该事件与框架 [app.js 注册小程序](https://opendocs.alipay.com/mini/framework/app-detail) 时 `onShow` 参数的回调时机一致。对应的取消监听 API 请参见 [my.offAppShow](api/tkohmw)。
 
 ## 使用限制
 
