@@ -16,16 +16,16 @@
 | [FileSystemManager.copyFileSync](https://opendocs.alipay.com/mini/api/024ytt) | [FileSystemManager.copyFile](https://opendocs.alipay.com/mini/api/0226of) 的同步版本。 |
 | [FileSystemManager.getFileInfo](https://opendocs.alipay.com/mini/api/0226og) | 获取该小程序下的本地临时文件或本地缓存文件信息。 |
 | [FileSystemManager.getSavedFileList](https://opendocs.alipay.com/mini/api/0228qj) | 获取该小程序下已保存的本地缓存文件列表。 |
-| [FileSystemManager.mkdir](https://opendocs.alipay.com/mini/api/0226oh) | 创建目录。 |
+| [FileSystemManager.mkdir](https://opendocs.alipay.com/mini/0226oh) | 创建目录。 |
 | [FileSystemManager.mkdirSync](https://opendocs.alipay.com/mini/api/024ytu) | [FileSystemManager.mkdir](https://opendocs.alipay.com/mini/api/0226oh) 的同步版本。 |
 | [FileSystemManager.readdir](https://opendocs.alipay.com/mini/api/0226oi) | 读取目录内文件列表。 |
 | [FileSystemManager.readdirSync](https://opendocs.alipay.com/mini/api/024ytv) | [FileSystemManager.readdir](https://opendocs.alipay.com/mini/api/0226oi) 的同步版本。 |
 | [FileSystemManager.readFile](https://opendocs.alipay.com/mini/api/0226oj) | 用于读取本地文件内容。 |
 | [FileSystemManager.readFileSync](https://opendocs.alipay.com/mini/api/025029) | [FileSystemManager.readFile](https://opendocs.alipay.com/mini/api/0226oj) 的同步版本。 |
-| [FileSystemManager.removeSavedFile](https://opendocs.alipay.com/mini/api/0229pv) | 删除该小程序下已保存的本地缓存文件。 |
+| [FileSystemManager.removeSavedFile](https://opendocs.alipay.com/mini/0229pv) | 删除该小程序下已保存的本地缓存文件。 |
 | [FileSystemManager.rename](https://opendocs.alipay.com/mini/api/0229pw) | 用于重命名文件，可以把文件从 oldPath 移动到 newPath。 |
 | [FileSystemManager.renameSync](https://opendocs.alipay.com/mini/api/024ytw) | [FileSystemManager.rename](https://opendocs.alipay.com/mini/api/0229pw) 的同步版本。 |
-| [FileSystemManager.rmdir](https://opendocs.alipay.com/mini/api/0229px) | 用于删除目录。 |
+| [FileSystemManager.rmdir](https://opendocs.alipay.com/mini/0229px) | 用于删除目录。 |
 | [FileSystemManager.rmdirSync](https://opendocs.alipay.com/mini/api/024ytx) | [FileSystemManager.rmdir](https://opendocs.alipay.com/mini/api/0229px) 的同步版本。 |
 | [FileSystemManager.saveFile](https://opendocs.alipay.com/mini/api/022b6n) | 用于保存临时文件到本地。此接口会移动临时文件，因此调用成功后，tempFilePath 将不可用。 |
 | [FileSystemManager.saveFileSync](https://opendocs.alipay.com/mini/api/02502a) | [FileSystemManager.saveFile](https://opendocs.alipay.com/mini/api/022b6n) 的同步版本。 |
