@@ -28,13 +28,13 @@
 
 ##  调试面板
 
-1. 真机预览小程序时，可以通过右上角按钮打开 **调试面板**。
+1. 真机预览小程序时，可以通过右上角按钮打开 **调试面板**。<br />
 ![|324x652](http://mdn.alipayobjects.com/afts/img/A*9BCuTK-xHh4AAAAAAAAAAAAAAa8wAA/original?bz=openpt_doc&t=UmBrXgUtgR7syYpFKqyR0gAAAABkMK8AAAAA#align=left&display=inline&height=652&margin=%5Bobject%20Object%5D&originHeight=652&originWidth=324&status=done&style=none&width=324)
 
-1. 点击 **打开调试** 后，在页面上会出现悬浮蓝色按钮 **调试面板**。
+1. 点击 **打开调试** 后，在页面上会出现悬浮蓝色按钮 **调试面板**。<br />
 ![|270x543](http://mdn.alipayobjects.com/afts/img/A*azZLTauec8wAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=VTp7XohW1kIgnrxhXDcmBwAAAABkMK8AAAAA#align=left&display=inline&height=543&margin=%5Bobject%20Object%5D&originHeight=543&originWidth=270&status=done&style=none&width=270)
 
-1. 点击 **调试面板** 按钮，就可以看到调试面板了。
+1. 点击 **调试面板** 按钮，就可以看到调试面板了。<br />
 ![|324x652](http://mdn.alipayobjects.com/afts/img/A*1bPmSbqlEIkAAAAAAAAAAAAAAa8wAA/original?bz=openpt_doc&t=IB-6ztJx-yMcvlioC95wVgAAAABkMK8AAAAA#align=left&display=inline&height=652&margin=%5Bobject%20Object%5D&originHeight=652&originWidth=324&status=done&style=none&width=324)<br/>
 目前 **调试面板** 主要提供以下功能：
    - Log 页签：显示打印日志（可按日志级别查看）。
