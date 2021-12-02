@@ -5,8 +5,8 @@
 ## 使用限制
 
 - 基础库 [1.24.1](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.75 或更高版本，若版本较低，建议采取 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
-- 目前暂仅 Android 系统支持该事件。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- - 如果 [app.onUnhandledRejection](https://opendocs.alipay.com/mini/framework/app-detail#onUnhandledRejection(object%3A%20Object)) 方法 或 my.onUnhandledRejection(callback) 的回调函数内继续触发 `Promise` 的 `unhandledrejection` 事件，则可能会导致循环触发 `unhandledrejection` 事件，请注意规避。
 
 # 接口调用
 
