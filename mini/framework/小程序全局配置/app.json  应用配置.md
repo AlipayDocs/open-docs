@@ -28,7 +28,6 @@
 | permission | Object | 否 | 小程序接口权限相关配置 |
 | behavior | Object | 否 | 修改小程序运行行为的相关设置 |
 
-
 ## pages
 `app.json` 中的 `pages` 为数组属性，数组中每一项都是字符串，用于指定小程序的页面。在小程序中新增或删除页面，都需要对 `pages` 数组进行修改。
 `pages` 数组的每一项代表对应页面的路径信息，其中，第一项代表小程序的首页。
@@ -69,7 +68,7 @@
   }
 }
 ```
-| **属性** | **类型** | **是否必填** | **描述** | **最低版本** |
+| **属性** | **类型** | **必填** | **描述** | **最低版本** |
 | --- | --- | --- | --- | --- |
 | defaultTitle | String | 否 | 页面默认标题。 | - |
 | pullRefresh | Boolean | 否 | 是否允许下拉刷新，默认 `true`。<br /> **说明：** <br /> 1.下拉刷新生效的前提是 allowsBounceVertical 值为 YES。<br /> 2.window 全局配置后全局生效，但是如果单个页面配置了该参数，以页面的配置为准。| - |
@@ -87,12 +86,11 @@
 | onReachBottomDistance | Number | 否 | 页面上拉触底时触发时距离页面底部的距离，单位为 `px`，详情请参见 [页面事件处理函数](/mini/framework/page-detail#%E9%A1%B5%E9%9D%A2%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0)。 | [1.19.0](https://opendocs.alipay.com/mini/framework/compatibility) ，目前`iOS`在`page.json`下设置无效，只能全局设置。 |
 | responsive | Boolean | 否 | `rpx` 单位是否宽度自适应 ，默认true，当设置为 `false` 时，2 rpx 将恒等于 1 px，不再根据屏幕宽度进行自适应，注意，此时 750 rpx 将不再等于100% 宽度。 | [1.23.0](https://opendocs.alipay.com/mini/framework/compatibility) |
 
-
 ## tabBar
 如果开发的小程序是一个多 tab 应用（客户端窗口的底部栏可以切换页面），那么可以通过 `tabBar` 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面。
 `tabBar` 与 `pages`、 `window` 配置同级，配置项如下：
 
-| **属性** | **类型** | **是否必填** | **描述** |
+| **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | textColor | HexColor | 否 | 文字颜色 |
 | selectedColor | HexColor | 否 | 选中文字颜色 |
@@ -101,7 +99,7 @@
 
 每个 item 配置：
 
-| **属性** | **类型** | **是否必填** | **描述** |
+| **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | pagePath | String | 是 | 设置页面路径 |
 | name | String | 是 | 名称 |
@@ -218,13 +216,13 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
 
 ![](https://gw.alipayobjects.com/mdn/rms_282813/afts/img/A*HTBCQrdaRvkAAAAAAAAAAAAAARQnAQ)
 
-### behavior
+## behavior
 用于改变小程序若干运行行为。字段类型为 Object，结构请见下方说明。
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | shareAppMessage | String | 否 | **可选值**：appendQuery。使用小程序默认分享功能时（即不显式设置 [Page.onShareAppMessage](https://opendocs.alipay.com/mini/framework/page-detail#onShareAppMessage(options%3A%20Object))），当设置此字段后，会使客户端生成的用于分享的 `scheme` 带上当前用户打开的页面所携带的 query 参数。<br /> 基础库 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上开始支持，同时需使用 IDE [2.7.0](https://opendocs.alipay.com/mini/ide/download) 及以上版本进行构建。<br />  |
 
-#### 使用示例
+### 使用示例
 ```JSON
 {
   "behavior": {
