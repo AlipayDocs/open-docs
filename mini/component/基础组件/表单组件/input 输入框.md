@@ -220,7 +220,7 @@ Page({
 | disabled | Boolean | 是否禁用。<br />**默认值：** false |
 | maxlength | Number | 最大长度。<br />**默认值：** 140 |
 | focus | Boolean | 获取焦点。<br />**默认值：** false |
-| confirm-type | String | 设置键盘右下角按钮的文字，有效值：done（显示“完成”）、go（显示“前往”）、next（显示“下一个”）、search（显示“搜索”）、send（显示“发送”），平台不同显示的文字略有差异。<br />**注意：**只有在 type=text 时有效。<br />**默认值：** done<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
+| confirm-type | String | 设置键盘右下角按钮的文字，有效值：done（显示“完成”）、go（显示“前往”）、next（显示“下一个”）、search（显示“搜索”）、send（显示“发送”），平台不同显示的文字略有差异。<br />**注意：** 只有在 type=text 时有效。<br />**默认值：** done<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
 | confirm-hold | Boolean | 点击键盘右下角按钮时是否保持键盘不收起状态。<br />**默认值：** false<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
 | cursor | Number | 指定 focus 时的光标位置。 |
 | selection-start | Number | 获取光标时，选中文本对应的焦点光标起始位置，需要和 selection-end 配合使用。<br />**默认值：** -1<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
