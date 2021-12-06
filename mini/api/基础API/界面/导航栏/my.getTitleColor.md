@@ -1,0 +1,81 @@
+
+# 简介
+**my.getTitleColor** 是获取导航栏背景色的 API。
+
+## 使用限制
+
+- 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib)  或更高版本；支付宝客户端 10.1.50 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+
+# 接口调用
+
+## Herbox
+[小程序在线](https://herbox-embed.alipay.com/s/doc-get-title-color?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+## 示例代码
+
+### .json 示例代码
+```json
+{
+    "defaultTitle": "获取导航栏背景颜色"
+}
+```
+
+### .axml 示例代码
+```html
+<!-- API-DEMO page/API/get-title-color/get-title-color.axml-->
+<view>
+  <view class="page-section-demo">
+    <text>目前导航栏的背景色:
+    </text>
+    <input type="text" disabled="{{true}}" value="{{titleColor.color}}">
+    </input>
+  </view>
+  <view class="page-section-btns">
+    <view onTap="getTitleColor">获取导航栏背景颜色
+    </view>
+  </view>
+</view>
+```
+
+### .js 示例代码
+```javascript
+// API-DEMO page/API/get-title-color/get-title-color.js
+Page({
+  data: {
+    titleColor: {},
+  },
+  getTitleColor() {
+    my.getTitleColor({
+      success: (res) => {
+        this.setData({
+          titleColor: res
+        })
+      }
+    })
+  }
+});
+```
+
+## 入参
+Object 类型，属性如下：
+
+| **属性** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| success | Function | 否 | 调用成功的回调函数。 |
+| fail | Function | 否 | 调用失败的回调函数。 |
+| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+
+
+### success 回调函数
+Object 类型，属性如下：
+
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| color | HexColor | 返回当前导航栏背景色。<br />ARGB 格式的十六进制颜色值，如 #323239FF。 |
+
+
+## 常见问题 FAQ
+
+### Q：小程序右上角的 分享与收藏 可以设置颜色吗？
+A：这是默认的，无法设置颜色。
