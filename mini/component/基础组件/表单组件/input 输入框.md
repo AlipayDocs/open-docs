@@ -1,0 +1,295 @@
+
+# 简介
+输入框，可设置输入内容的类型、长度、显示形式等。当用户需要输入文字内容时点击文本框，它将自动打开键盘。使用文本字段来请求少量信息。
+
+## 使用限制
+
+- iOS 系统支付宝客户端版本 10.1.80 及以上不支持 `focus="{{true}}"` 自动唤起。
+- 小程序中 input 如果父类是 `position: fixed`，可以加上 `enableNative="{{false}}"`，解决输入框错位/光标上移问题。个别情况下定位问题会导致光标错位，所以需要把 false 改为 true，代码块为 `enableNative="{{true}}"`。
+
+## 扫码体验
+![](https://gw.alipayobjects.com/zos/skylark/16663486-d067-4b4c-9aed-d746fa3fde46/2018/jpeg/a1d198e6-12e1-43e5-a8a1-cead5a15107a.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=1906&originWidth=1540&status=done&style=none&width=127)
+
+# 使用
+
+## Herbox
+[小程序在线](https://herbox-embed.alipay.com/s/doc-input?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+## 示例代码
+
+### .axml 示例代码
+```html
+<!-- API-DEMO page/component/input/input.axml -->
+<view class="page">
+  <view class="page-description">输入框</view>
+  <view class="page-section">
+    <view class="form-row">
+      <view class="form-row-label">受控聚焦</view>
+      <view class="form-row-content">
+        <input class="input" focus="{{focus}}" onFocus="onFocus" onBlur="onBlur" placeholder="input something" />
+      </view>
+    </view>
+    <view class="page-section-btns">
+      <button size="mini" onTap="bindButtonTap">聚焦</button>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="form-row">
+      <view class="form-row-label"><label for="controlled">显示输入</label></view>
+      <view class="form-row-content">
+        <input class="input" id="controlled" onInput="bindKeyInput" placeholder="show input content" />
+      </view>
+    </view>
+    <view class="extra-info">你输入的是：{{inputValue}}</view>
+  </view>
+  <view class="page-section">
+    <view class="form-row">
+      <view class="form-row-label">最大长度</view>
+      <view class="form-row-content">
+        <input class="input" maxlength="10" placeholder="maxlength 10" />
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">收起键盘</view>
+      <view class="form-row-content">
+        <input class="input" onInput="bindHideKeyboard" placeholder="输入 123 自动收起键盘" />
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">输入密码</view>
+      <view class="form-row-content">
+        <input class="input" password type="text" placeholder="密码输入框" />
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">输入数字</view>
+      <view class="form-row-content">
+        <input class="input" type="number" placeholder="数字输入框" />
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">小数点键盘</view>
+      <view class="form-row-content">
+        <input class="input" type="digit" placeholder="带小数点的数字键盘" />
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="form-row">
+      <view class="form-row-label">身份证键盘</view>
+      <view class="form-row-content">
+        <input class="input" type="idcard" placeholder="身份证输入键盘" />
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="page-section-title">搜索框</view>
+    <view class="page-section-demo">
+      <view class="search-outer">
+        <input
+          class="search-input"
+          placeholder="搜索"
+          value="{{search}}"
+          onConfirm="doneSearch"
+          onInput="handleSearch"
+        />
+        <text class="search-cancel" onTap="clearSearch">取消</text>
+      </view>
+    </view>
+  </view>
+</view>
+```
+
+### .js 示例代码
+```javascript
+// API-DEMO page/component/input/input.js
+Page({
+  data: {
+    focus: false,
+    inputValue: '',
+  },
+  bindButtonTap() {
+    // blur 事件和这个冲突
+    setTimeout(() => {
+      this.onFocus();
+    }, 100);
+  },
+  onFocus() {
+    this.setData({
+      focus: true,
+    });
+  },
+  onBlur() {
+    this.setData({
+      focus: false,
+    });
+  },
+  bindKeyInput(e) {
+    this.setData({
+      inputValue: e.detail.value,
+    });
+  },
+  bindHideKeyboard(e) {
+    if (e.detail.value === '123') {
+      // 收起键盘
+      my.hideKeyboard();
+    }
+  },
+  handleSearch(e) {
+    console.log('search', e.detail.value);
+    this.setData({
+      search: e.detail.value,
+    });
+  },
+  doneSearch() {
+    console.log('doneSearch', this.data.search);
+    my.hideKeyboard();
+  },
+  clearSearch() {
+    console.log('clear search', this.data.search);
+    this.setData({
+      search: '',
+    });
+  },
+});
+```
+
+### .acss 示例代码
+```css
+/* API-DEMO page/component/input/input.acss */
+.extra-info {
+  border-top: 1px solid #ddd;
+  margin-left: 30rpx;
+  padding: 20rpx 0;
+  overflow: auto;
+}
+.search-outer {
+  box-sizing: border-box;
+  display:flex;
+  height:40px;
+  overflow:hidden;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  background-color: #efeff4;
+}
+.search-outer * {
+  box-sizing: border-box;
+}
+.search-input {
+  flex:1;
+  text-align: left;
+  display: block;
+  color: #000;
+  height: 24px;
+  font-size: 15px;
+  background-color: #fff;
+  border-color: transparent;
+}
+.search-input:focus + .search-cancel {
+  margin-right:0;
+  opacity: 1;
+}
+.search-cancel {
+  margin-right:-40px;
+  display: inline-block;
+  opacity: 0;
+  padding-left: 8px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 16px;
+  color: #108ee9;
+  text-align: right;
+  transition: margin-right .3s,opacity .3s;
+  transition-delay: .1s;
+}
+```
+
+## 属性
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| value | String | 初始内容。 |
+| name | String | 组件名字，用于表单提交获取数据。 |
+| type | String | input 的类型，有效值：`text`、 `number`、 `idcard`、 `digit`(可以唤起带有小数点的数字键盘)、`numberpad`、`digitpad`、 `idcardpad`。<br />**默认值：** text<br />**版本要求：**`numberpad`、`digitpad`、 `idcardpad` 支持基础库 [1.13.0](/mini/framework/compatibility) 客户端 10.1.50 及以上，可通过 <br />[my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)("input.type.numberpad") 来检测。<br />**注意：** 当启用数字键盘时，Android 客户端会影响 `position:fixed` 并指定 `bottom` 属性的元素。 |
+| password | Boolean | 是否是密码类型。<br />**默认值：** false |
+| placeholder | String | 占位符。 |
+| placeholder-style | String | 指定 placeholder 的样式，可设置间距。<br />**版本要求：** 基础库 [1.6.0](/mini/framework/compatibility) 及以上 |
+| placeholder-class | String | 指定 placeholder 的样式类。<br />**版本要求：** 基础库 [1.6.0](/mini/framework/compatibility) 及以上 |
+| disabled | Boolean | 是否禁用。<br />**默认值：** false |
+| maxlength | Number | 最大长度。<br />**默认值：** 140 |
+| focus | Boolean | 获取焦点。<br />**默认值：** false |
+| confirm-type | String | 设置键盘右下角按钮的文字，有效值：done（显示“完成”）、go（显示“前往”）、next（显示“下一个”）、search（显示“搜索”）、send（显示“发送”），平台不同显示的文字略有差异。<br />**注意：**只有在 type=text 时有效。<br />**默认值：** done<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
+| confirm-hold | Boolean | 点击键盘右下角按钮时是否保持键盘不收起状态。<br />**默认值：** false<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
+| cursor | Number | 指定 focus 时的光标位置。 |
+| selection-start | Number | 获取光标时，选中文本对应的焦点光标起始位置，需要和 selection-end 配合使用。<br />**默认值：** -1<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
+| selection-end | Number | 获取光标时，选中文本对应的焦点光标结束位置，需要和 selection-start 配合使用。<br />**默认值：** -1<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
+| random-number | Boolean | 当 type 为 number, digit, idcard 数字键盘是否随机排列。<br />**默认值：** false<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
+| controlled | Boolean | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。<br />**默认值：** false<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
+| always-system | Boolean | 是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效。<br />**默认值**：false<br />**版本要求**：基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
+| onInput | EventHandle | 键盘输入时触发 input 事件，`event.detail = {value: value,cursor: cursor}`。<br />**版本要求**：`cursor` 字段基础库 [1.14.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上开始支持。 |
+| onConfirm | EventHandle | 点击键盘完成时触发，`event.detail = {value: value}` |
+| onFocus | EventHandle | 聚焦时触发，`event.detail = {value: value}`。 |
+| onBlur | EventHandle | 失去焦点时触发（仅支持真机），`event.detail = {value: value}`。 |
+
+
+# FAQ
+
+## 如何解决 input 输入框在 iOS 客户端的光标漂移问题？
+步骤一：若已在 input 中设置了 `enableNative` 属性，删除 `enableNative` 属性的全部设置。<br />步骤二：在 app.json 文件 window 对象内，设置 `"enableInPageRenderInput":"YES"`。
+
+## 为何 input 输入框聚焦的时候出现白屏，只有键盘弹出来？
+因为使用定位导致键盘把页面 input 内容顶上去了，建议使用 [SearchBar](https://opendocs.alipay.com/mini/component-ext/search-bar) 搜索框。<br />需要判断客户端机型为 安卓还是 ios，从而设置 `enableNative`属性，然后在 app.json 文件 window 对象内，设置 `"enableInPageRenderInput":"YES"`。
+
+## 为何 input 输入的内容没有在输入框显示？
+如果是因为使用 fixed 定位导致， 建议通过设置 `enableNative` 属性解决。
+
+## 小程序 input 输入框获取焦点时会向上推输入框，能否固定？
+暂不支持。
+
+## input 输入框弹起键盘有遮挡，影响其他标签控件触发点击事件？
+建议修改自定义 [view](/mini/component/view) 样式。
+
+## input 输入框是否支持点击事件，比如 click、tap、touchstart？
+暂时不支持，可以考虑外嵌一层 [view](/mini/component/view)，利用 view 的 `onTap` 事件实现。
+
+## input 如何用 js 代码清空数据？
+需要添加属性 `controlled="{{true}}"` ，也可以在 `onInput` 事件里把输入的值通过 setData 再赋值给 value，再去 setData 设置 value。
+```javascript
+//axml
+<input class="internet_input" value="{{textValue}}" onInput="keyNum" controlled={{true}} type="text"  />
+//input如何用js清空
+keyNum() {
+      this.setData({
+        textValue:''
+    })
+ }
+```
+
+## input 如何进行监听，如果出现不能监听问题如何解决？
+可以使用 input 的 `onInput` 事件监听输入值，通过 `e.detail.value` 打印出输入值进行正则表达式匹配校验。详情请见示例代码。
+
+## 如何判断 input 的 value 值是不是符合正则表示式？
+使用 `var reg = new RegExp("\w+\s", "g")`； getRegExp() 需要在 sjs 中使用。 sjs 脚本不能直接在 js 中引入调用
+
+## 父组件如何调用子组件的 input 事件?
+请参见 [组件对象](/mini/framework/component_object)。
+
+## input 内容跳动、延迟如何处理？
+可以使用防抖动，示例代码如下：
+```javascript
+var timer = null
+element.input = function () {
+    clearTimeout(timer) // 每次进来的时候都将之前的清除掉，如果还没到一秒的时候就将之前的清除掉，这样就不会触发之前setTimeout绑定的事件， 如果超过一秒，之前的事件就会被触发下次进来的时候同样清除之前的timer
+    timer = setTimeout(function () {
+        // 在这里进行我们的操作  这样就不会频繁的进行我们这里面的操作了
+    }, 1000)
+}
+```
+
+## 如何在 input 设置了 disabled=true 时，修改 input 的样式 ？
+修改字体颜色，会有灰蒙颜色的效果，可进行以下设置进行修改：
+
+- placeholder-class 属性可以通过 acss 设置默认 placeholder 字体颜色。<br />
+- class 类选择器在 acss 中可以设置 input 框的颜色，类选择器可以设置输入的字体颜色。<br />
