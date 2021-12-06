@@ -1,0 +1,57 @@
+
+# 简介
+**my.prompt** 是弹出一个对话框，让用户在对话框内输入文本的 API。
+
+## 使用限制
+
+- 基础库 [1.7.2](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.10 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+
+# 接口调用
+
+## Herbox
+[小程序在线](https://herbox-embed.alipay.com/s/doc-prompt?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+## 示例代码
+
+### .js 示例代码
+```javascript
+// .js
+my.prompt({
+  title: '标题单行',
+  message: '说明当前状态、提示用户解决方案，最好不要超过两行。',
+  placeholder: '给朋友留言',
+  okButtonText: '确定',
+  cancelButtonText: '取消',
+  success: (result) => {
+    my.alert({
+      title: JSON.stringify(result),
+    });
+  },
+});
+```
+
+## 入参
+Object 类型，属性如下：
+
+| **属性** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| title | String | 否 | prompt 框标题。 |
+| message | String | 否 | prompt 框文本，默认为 “请输入内容”。 |
+| placeholder | String | 否 | 输入框内的提示文案。 |
+| align | String | 否 | message 对齐方式。<br />可用值为： left 、center 、right。 |
+| okButtonText | String | 否 | 确认按钮文字，默认值为 “确定”。 |
+| cancelButtonText | String | 否 | 确认按钮文字，默认值为 “取消”。 |
+| success | Function | 否 | 调用成功的回调函数。 |
+| fail | Function | 否 | 调用失败的回调函数。 |
+| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+
+
+### success 回调函数
+入参为 Object 类型，属性如下：
+
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| ok | Boolean | 点击 ok 返回 true，点击 cancel 返回 false。 |
+| inputValue | String | 当 ok 返回 true 时，返回用户输入的内容。 |
+
