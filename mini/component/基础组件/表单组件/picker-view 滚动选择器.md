@@ -79,7 +79,7 @@ Page({
 <view hidden><picker-view/></view>
 ```
 
-##  属性
+##  picker-view属性
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | value | Number Array | 数组中的数字表示 picker-view-column 中对应的 index （从 0 开始）。<br />示例：`value=“{{[2]}}”` |
