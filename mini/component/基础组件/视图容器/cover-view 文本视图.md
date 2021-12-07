@@ -18,7 +18,7 @@
 ## 示例代码
 
 ### .axml 示例代码
-```
+```html
 <!-- API-DEMO page/component/cover-view.axml -->
 <view class="page">
   <view class="page-description">cover-view</view>
@@ -43,7 +43,7 @@
 ```
 
 ### .js 示例代码
-```
+```javascript
 // API-DEMO page/component/cover-view.js
 Page({
   data: {
@@ -59,7 +59,7 @@ Page({
 ```
 
 ### .acss 示例代码
-```
+```css
 /* API-DEMO page/component/cover-view.acss */
 cover-image {
   position: absolute;
