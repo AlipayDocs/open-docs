@@ -68,6 +68,8 @@ navigator {
 | switchTab | 对应 [my.switchTab](/mini/api/ui-tabbar) 的功能。 |
 | navigateBack | 对应 [my.navigateBack](/mini/api/kc5zbx) 的功能。 |
 | reLaunch | 对应 [my.reLaunch](/mini/api/hmn54z) 的功能。 |
+| exit | 退出小程序 |
+
 
 
 # 相关文档
