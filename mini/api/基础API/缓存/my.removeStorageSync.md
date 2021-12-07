@@ -1,6 +1,6 @@
 
 # 简介
-**my.removeStorageSync **是删除缓存数据的同步接口。
+**my.removeStorageSync** 是删除缓存数据的同步接口。
 
 ## 使用限制
 
