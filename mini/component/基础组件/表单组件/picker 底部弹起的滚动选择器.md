@@ -123,11 +123,36 @@ Page({
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | title | String | 标题。 |
+| mode | String | 选择器类型。默认值date，详见下方 |
 | range | String[] / Object[] | String[] 时表示可选择的字符串列表；Object[] 时需指定 range-key 表示可选择的字段。<br />**默认值：** [] |
 | range-key | String | 当 `range` 是一个 Object[] 时，通过 range-key 来指定 Object 中 key 的值作为选择器显示内容。 |
 | value | Number | 表示选择了 `range` 中的第几个（下标从 0 开始）。 |
 | onChange | EventHandle | value 改变时触发，`event.detail = {value: value}`。 |
 | disabled | Boolean | 是否禁用。<br />**默认值：** false |
+
+## mode属性参数
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| date | String | 日期选择器,格式 `yy-mm-dd` |
+| time | String | 时间选择器,格式 `mm:ss` |
+
+## mode = date时属性参数，支持通过fields属性控制选择器粒度：
+| **值** | **类型** | **描述** |
+| --- | --- | --- |
+| year | String | 选择器粒度为年,格式 `yy` |
+| month | String | 选择器粒度为月份,格式 `mm` |
+| day | String | 选择器粒度为天,格式 `dd` |	
+	
+```axml
+// 日期年份选择
+<picker mode="date" fields="year" />
+// 日期月份选择
+<picker mode="date" fields="month" />
+// 日期天数选择
+<picker mode="date" fields="day" />
+// 时间选择（时分）
+<picker mode="time" />
+```
 
 
 # 相关文档
