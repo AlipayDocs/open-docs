@@ -19,7 +19,7 @@
 ## 示例代码
 
 ### .axml 示例代码
-```
+```html
 <!-- API-DEMO page/API/create-selector-query/create-selector-query.axml-->
 <view class="page">
   <view class="page-description">节点查询 API</view>
@@ -36,7 +36,7 @@
 ```
 
 ### .js 示例代码
-```
+```javascript
 // API-DEMO page/API/create-selector-query/create-selector-query.js
 Page({
   createSelectorQuery() {
