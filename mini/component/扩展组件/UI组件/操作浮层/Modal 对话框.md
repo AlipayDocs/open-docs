@@ -70,7 +70,7 @@ Page({
 | show | Boolean | 是否展示 modal。<br />**可选值：** true、false。<br />**默认值：** false |
 | showClose | Boolean | 是否渲染 关闭。<br />**可选值：** true、false。<br />**默认值：** false |
 | mask | Boolean | 是否展示蒙层。<br />**可选值：** true、false。<br />**默认值：** true |
-| closeType | String | 关闭图表类型。<br />**可选值：** 0-灰色图标；1-白色图标。<br />**默认值：** 0 |
+| closeType | String | 关闭图标类型。<br />**可选值：** 0-灰色图标；1-白色图标。<br />**默认值：** 0 |
 | onModalClick | EventHandle | 选择区间时的回调。<br />**默认值：** () => void |
 | onModalClose | EventHandle | 点击 关闭 的回调, showClose 为 false 时无需设置。<br />**默认值：** () => void |
 | topImage | String | 顶部图片。 |
