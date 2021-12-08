@@ -63,6 +63,8 @@ Object 类型，属性如下：
 | --- | --- | --- | --- |
 | title | String | 否 | confirm 框的标题。 |
 | content | String | 否 | confirm 框的内容。 |
+| cancelColor | HexColor | 否 | 取消按钮的文字颜色，必须是 16 进制格式的颜色字符串 |
+| confirmColor | HexColor | 否 | 确认按钮的文字颜色，必须是 16 进制格式的颜色字符串。 |
 | confirmButtonText | String | 否 | 确认按钮文字，默认为“确定”。 |
 | cancelButtonText | String | 否 | 取消按钮文字，默认为“取消”。 |
 | success | Function | 否 | 调用成功的回调函数。 |
