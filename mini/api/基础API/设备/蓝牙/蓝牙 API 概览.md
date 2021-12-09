@@ -34,6 +34,8 @@
 |  | [my.onBLEConnectionStateChanged](https://opendocs.alipay.com/mini/api/utgyiu) | 监听低功耗蓝牙连接的错误事件，包括设备丢失，连接异常断开等。 |
 |  | [my.readBLECharacteristicValue](https://opendocs.alipay.com/mini/api/zro0ka) | 读取低功耗蓝牙设备特征值中的数据。 |
 |  | [my.writeBLECharacteristicValue](https://opendocs.alipay.com/mini/api/vmp2r4) | 向低功耗蓝牙设备特征值中写入数据。 |
+|  | [my.showBLEPermissionGuide](https://opendocs.alipay.com/mini/02pexh) | 蓝牙统一授权/开关引导流程。 |
+|  | [my.getBLEDeviceStatus](https://opendocs.alipay.com/mini/02pdp9) | 获取设备蓝牙授权和开关状态。 |
 | 传统蓝牙 | [my.closeBluetoothAdapter](https://opendocs.alipay.com/mini/api/wvko0w) | 关闭本机蓝牙模块。 |
 |  | [my.getBluetoothAdapterState](https://opendocs.alipay.com/mini/api/eid4o6) | 获取本机蓝牙模块状态。 |
 |  | [my.getBluetoothDevices](https://opendocs.alipay.com/mini/api/pelizr) | 获取所有已发现的蓝牙设备，包括已经和本机处于连接状态的设备。 |
