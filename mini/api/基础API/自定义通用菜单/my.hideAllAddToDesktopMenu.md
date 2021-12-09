@@ -8,9 +8,8 @@
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
-
 ## .js 示例代码
-```
+```JavaScript
 // .js
 my.hideAllAddToDesktopMenu();
 ```
