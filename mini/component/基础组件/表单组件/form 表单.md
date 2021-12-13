@@ -15,7 +15,7 @@
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-form?theme=light&previewZoom=75&chInfo=openhome-doc)<br />固定比例展示 确定 
+[小程序在线]( https://herbox-embed.alipay.com/s/doc-form?theme=light&previewZoom=75&chInfo=openhome-doc )
 
 ## 示例代码
 
