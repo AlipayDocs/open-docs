@@ -11,7 +11,7 @@
 - 布局的 XML 文件默认会被 IDE 打包工具忽略，需要在根目录 mini.project.json 配置规则里将 xml 打到小程序中。
 ```javascript
 {
-   "include":["*/*.xml"] // 配置包含 xml
+   "include":["**/*.xml"] // 配置包含 xml
 }
 ```
 
