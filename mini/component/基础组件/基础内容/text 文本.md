@@ -13,7 +13,7 @@
 ## 示例代码
 
 ### .axml 示例代码
-```
+```html
 <!-- API-DEMO page/component/text.axml -->
 <view class="page">
   <view class="page-description">
@@ -30,7 +30,7 @@
 ```
 
 ### .js 示例代码
-```
+```js
 // API-DEMO page/component/text.js
 Page({
   data: {
@@ -43,7 +43,7 @@ Page({
 ```
 
 ### .acss 示例代码
-```
+```css
 /* API-DEMO page/component/text.acss */
 .page {
   padding: 0;
