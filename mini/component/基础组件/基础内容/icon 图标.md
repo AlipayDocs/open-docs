@@ -57,7 +57,7 @@
 ```
 
 ### .js 示例代码
-```html
+```js
 // API-DEMO page/component/icon.js
 Page({
   data: {
