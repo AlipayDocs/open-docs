@@ -9,7 +9,8 @@
 - scroll-view 不支持 `scroll-x=true` 和 `scroll-y=true` 同时生效，只能用一个。可以使用 [view](/mini/component/view) 设置 `disable-scroll` 为 true 禁止滑动。
 - scroll-view 满屏时，无法滑动页面，会导致导航栏滑动透明失效。可通过 [my.setNavigationBar](https://opendocs.alipay.com/mini/api/xwq8e6) 设置导航栏样式：导航栏标题、导航栏背景色、导航栏底部边框颜色、导航栏左上角 logo 图片。
 - 可以监听 scroll-view 父 view 的触摸事件控制 scroll-view 的滑动来达到取消惯性的效果。
-- scroll-view 组件不支持自定义下拉刷新以及滚动条。
+- scroll-view 组件不支持自定义下拉刷新。
+- scroll-view 组件的滚动条默认隐藏，仅在滑动时展示。在 iOS 下不支持自定义修改，在 Android 下允许通过 `::-webkit-scrollbar` 自定义滚动条样式。
 
 ## 扫码体验
 ![|127x157](https://gw.alipayobjects.com/zos/skylark/63eda77f-c032-4ede-937a-5f644305b10e/2018/jpeg/53e0ded7-1d92-45c7-8b5e-f0197c949767.jpeg#align=left&display=inline&height=1906&margin=%5Bobject%20Object%5D&originHeight=1906&originWidth=1540&status=done&style=none&width=127)
@@ -57,6 +58,17 @@
         <view id="red2"  class="scroll-view-item_H bc_red"></view>
         <view id="yellow2" class="scroll-view-item_H bc_yellow"></view>
         <view id="green2" class="scroll-view-item_H bc_green"></view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="page-section-title">custom scrollbar (Andriod only)</view>
+    <view class="page-section-demo">
+      <scroll-view class="scroll-view-custom-scrollbar" scroll-y="{{true}}" style="height: 200px;">
+        <view id="blue" class="scroll-view-item bc_blue"></view>
+        <view id="red"  class="scroll-view-item bc_red"></view>
+        <view id="yellow" class="scroll-view-item bc_yellow"></view>
+        <view id="green" class="scroll-view-item bc_green"></view>
       </scroll-view>
     </view>
   </view>
@@ -126,6 +138,15 @@ Page({
   flex-grow:0;
   width: 300px;
   height: 200px;
+}
+/* 以下代码仅在安卓下有效 */
+.scroll-view-custom-scrollbar::-webkit-scrollbar {
+  display: block;
+  background-color: black;
+  width: 10px;
+}
+.scroll-view-custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: white;
 }
 ```
 
