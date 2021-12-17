@@ -178,3 +178,60 @@ Page({
 
 ### 如何处理 HTML String中存在多个 img 标签且不闭合时，mini-html-parser 会转换错误？
 [mini-html-parser](https://github.com/ant-mini-program/mini-html-parser) 0.3.0 已解决此问题，若当前使用老版本，请升级到最新的 0.3.0 版本即可。
+
+### 如何为 rich-text 富文本 添加链接跳转功能？
+受小程序管控原因，rich-text 中的a标签，无法像前端页面中，配置 `<a href="https://www.alipay.com">alipay</a>` 即可实现跳转；小程序中需要使用对应的 [JSAPI](https://opendocs.alipay.com/mini/introduce/open-miniprogram) 或者 [路由JSAPI](https://opendocs.alipay.com/mini/006l0z) 实现跳转路由
+具体实现方式：伪代码
+
+js
+```
+// 使用上述 [mini-html-parser] 处理 html 字符串
+import parse from 'mini-html-parser2';
+
+const HTML_A_TAG = 'a';
+
+const testHtmlString = ''; // ....
+
+Page({
+  data: {nodes: []},
+  parse(htmlstring, (err, nodes) => {
+    if(!err) {
+      const transferNodes = nodes.map(i => {
+        const { children, name, attrs } = i;
+        const obj = i;
+        // 这里没有处理 children
+        if (name === HTML_A_TAG) { // 这里假定 原本的htmlstring中 a标签为原本跳转的元素
+          obj.marks = {...attrs, name: HTML_A_TAG}; // 小程序中不支持 a标签的href属性，先把对应的href 属性放在marks中
+        }
+        return obj;
+      });
+      this.setData({nodes: transferNodes}); // 更新到 rich-text 组件上
+    }
+  }),
+  onLoad() {
+    this.parse(testHtmlString);
+  },
+  handleOnTap(e) {
+   const {
+      detail: { marks }, // 获取自定义的marks
+    } = e;
+    console.log(e);
+    const { name, href } = marks || {}; // 
+    if (name === HTML_A_TAG && href) { // 判断是否是 a 标签，同时有 href 链接
+      jumpUrl(href); // 使用 my.navigateToMiniProgram 、my.navigateTo ... 实际跳转
+    }
+  }
+})
+
+```
+
+axml
+```
+<rich-text nodes={{nodes}} onTap={{handleOnTap}}></rich-text>
+```
+
+总结下来：把跳转链接放到 node marks属性中，通过rich-text onTap 事件跳转
+
+
+
+
