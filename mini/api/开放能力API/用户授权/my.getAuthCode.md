@@ -64,6 +64,8 @@ Object 类型，属性如下：
 | --- | --- | --- |
 | auth_base | 静默授权，不会发起授权浮窗。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4)（换取授权访问令牌接口）获取支付宝会员标识（user_id）。 | 无 |
 | auth_user | 主动授权，需要用户手动点击同意，用户同意后，用于 **网站支付宝登录** 和 **获取用户信息**（现已升级为 [获取会员基础信息](https://opendocs.alipay.com/mini/introduce/twn8vq)，且新功能包不再使用 alipay.user.info.share 接口）功能。 | [alipay.user.info.share](https://opendocs.alipay.com/open/02dvf6) |
+| order_service | 订单服务授权，需要用户手动点击同意，表示用户同意《订单服务信息授权》 | 无 |
+
 
 
 ### success 回调函数
