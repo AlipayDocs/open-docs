@@ -75,7 +75,6 @@
 | backgroundImageColor | HexColor | 否 | 下拉露出显示背景图的底色。例：白色 "#FFFFFF"。 | - |
 | backgroundImageUrl | String | 否 | 下拉露出显示背景图的链接。 | - |
 | defaultTitle | String | 否 | 页面默认标题。 | - |
-| disableScroll | Boolean | 否 | 是否允许页面滚动，以真机测试为准 | - |
 | enableScrollBar | String | 否 | 仅支持 Android，是否显示 `WebView` 滚动条。默认 `YES`，支持 `YES` / `NO`。 | - |
 | gestureBack | String | 否 | 仅支持 iOS，是否支持手势返回。默认 `YES`，支持 `YES` / `NO`。 | - |
 | onReachBottomDistance | Number | 否 | 页面上拉触底时触发时距离页面底部的距离，单位为 `px`，详情请参见 [页面事件处理函数](/mini/framework/page-detail#%E9%A1%B5%E9%9D%A2%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0)。 | [1.19.0](https://opendocs.alipay.com/mini/framework/compatibility) ，目前`iOS`在`page.json`下设置无效，只能全局设置。 |
