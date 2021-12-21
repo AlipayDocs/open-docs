@@ -70,21 +70,21 @@
 ```
 | **属性** | **类型** | **必填** | **描述** | **最低版本** |
 | --- | --- | --- | --- | --- |
-| defaultTitle | String | 否 | 页面默认标题。 | - |
-| pullRefresh | Boolean | 否 | 是否允许下拉刷新，默认 `true`。<br /> **说明：** <br /> 1.下拉刷新生效的前提是 allowsBounceVertical 值为 YES。<br /> 2.window 全局配置后全局生效，但是如果单个页面配置了该参数，以页面的配置为准。| - |
 | allowsBounceVertical | String | 否 | 是否允许向下拉拽。默认 `YES`, 支持 `YES` / `NO` | - |
-| transparentTitle | String | 否 | 导航栏透明设置。默认 `none`，支持 `always` 一直透明 / `auto` 滑动自适应 / `none` 不透明。 | - |
-| titlePenetrate | String | 否 | 是否允许导航栏点击穿透。默认 `NO`，支持 `YES` / `NO`。 | - |
-| showTitleLoading | String | 否 | 是否进入时显示导航栏的 loading。默认 `NO`，支持 `YES` / `NO`。 | - |
-| titleImage | String | 否 | 导航栏图片地址。 | - |
-| titleBarColor | HexColor | 否 | 导航栏背景色。例：白色 "#FFFFFF"。 | - |
 | backgroundColor | HexColor | 否 | 页面的背景色。例：白色 "#FFFFFF"。 | - |
 | backgroundImageColor | HexColor | 否 | 下拉露出显示背景图的底色。例：白色 "#FFFFFF"。 | - |
 | backgroundImageUrl | String | 否 | 下拉露出显示背景图的链接。 | - |
-| gestureBack | String | 否 | 仅支持 iOS，是否支持手势返回。默认 `YES`，支持 `YES` / `NO`。 | - |
+| defaultTitle | String | 否 | 页面默认标题。 | - |
 | enableScrollBar | String | 否 | 仅支持 Android，是否显示 `WebView` 滚动条。默认 `YES`，支持 `YES` / `NO`。 | - |
+| gestureBack | String | 否 | 仅支持 iOS，是否支持手势返回。默认 `YES`，支持 `YES` / `NO`。 | - |
 | onReachBottomDistance | Number | 否 | 页面上拉触底时触发时距离页面底部的距离，单位为 `px`，详情请参见 [页面事件处理函数](/mini/framework/page-detail#%E9%A1%B5%E9%9D%A2%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0)。 | [1.19.0](https://opendocs.alipay.com/mini/framework/compatibility) ，目前`iOS`在`page.json`下设置无效，只能全局设置。 |
+| pullRefresh | Boolean | 否 | 是否允许下拉刷新，默认 `true`。<br /> **说明：** <br /> 1.下拉刷新生效的前提是 allowsBounceVertical 值为 YES。<br /> 2.window 全局配置后全局生效，但是如果单个页面配置了该参数，以页面的配置为准。| - |
 | responsive | Boolean | 否 | `rpx` 单位是否宽度自适应 ，默认true，当设置为 `false` 时，2 rpx 将恒等于 1 px，不再根据屏幕宽度进行自适应，注意，此时 750 rpx 将不再等于100% 宽度。 | [1.23.0](https://opendocs.alipay.com/mini/framework/compatibility) |
+| showTitleLoading | String | 否 | 是否进入时显示导航栏的 loading。默认 `NO`，支持 `YES` / `NO`。 | - |
+| transparentTitle | String | 否 | 导航栏透明设置。默认 `none`，支持 `always` 一直透明 / `auto` 滑动自适应 / `none` 不透明。 | - |
+| titlePenetrate | String | 否 | 是否允许导航栏点击穿透。默认 `NO`，支持 `YES` / `NO`。 | - |
+| titleImage | String | 否 | 导航栏图片地址。 | - |
+| titleBarColor | HexColor | 否 | 导航栏背景色。例：白色 "#FFFFFF"。 | - |
 
 ## tabBar
 如果开发的小程序是一个多 tab 应用（客户端窗口的底部栏可以切换页面），那么可以通过 `tabBar` 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面。
