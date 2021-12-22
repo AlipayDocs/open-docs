@@ -13,7 +13,7 @@
 | onShareAppMessage | Function | 全局分享配置 | 调用分享时触发，如：点击页面菜单右上角的 **分享** 按钮时。 | - |
 | onUnhandledRejection | Function | 监听 unhandledrejection 事件 | 当 Promise 被 reject 且没有 reject 处理器时，会触发 onUnhandledRejection 事件。<br />也可以使用 [my.onUnhandledRejection](https://opendocs.alipay.com/mini/00nd0f) 绑定监听。 | [1.24.1](https://opendocs.alipay.com/mini/framework/lib) |
 | onPageNotFound | Function | 监听页面不存在 | 小程序要打开的页面不存在时触发。也可以使用 [my.onPageNotFound](https://opendocs.alipay.com/mini/01zdng) 绑定监听。<br /> 不支持处理 [路由 API](https://opendocs.alipay.com/mini/api/fu8l65) 失败场景。 | [2.7.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) |
-| other | any | 开发者可以添加任意的函数或数据变量到 Object 参数中，用 this 可以访问 | - |
+
 
 **前台/后台定义：**
 
@@ -143,7 +143,35 @@ App({
   globalData: 1
 });
 ```
-
+## 其他内容
+开发者可以添加任意的函数或数据变量到 Object 参数中，用 this 可以访问。
+也可在app.js引入其他的公共方法，将方法挂载到app.js下。
+示例代码：
+```javascript
+// app.js
+import { getUserInfo } from '/utils/getOpenUserInfo'
+App({
+  onLaunch() {},
+  onShow() {
+    this.login() // 通过this访问
+  },
+  // 自定义函数
+ login() {
+  console.log('自定义函数')
+ },
+ getUserInfo
+})
+```
+其他页面调用：
+```javascript
+const app = getApp()
+Page({
+ onLoad() {
+   app.getUserInfo()
+   app.login()
+ }
+})
+```
 ## 常见问题
 
 ### Q：可以在 app.js 中关闭小程序吗？
