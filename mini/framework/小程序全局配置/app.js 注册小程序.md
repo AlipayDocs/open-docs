@@ -162,13 +162,13 @@ App({
  getUserInfo
 })
 ```
-其他页面调用：
+小程序页面调用：
 ```javascript
 const app = getApp()
 Page({
  onLoad() {
    app.getUserInfo()
-   app.login()
+   app.login() // log输出 '自定义函数'
  }
 })
 ```
