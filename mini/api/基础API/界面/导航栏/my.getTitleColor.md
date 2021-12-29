@@ -49,7 +49,7 @@ Page({
     my.getTitleColor({
       success: (res) => {
         this.setData({
-          titleColor: res
+          titleColor: res.color
         })
       }
     })
@@ -79,3 +79,7 @@ Object 类型，属性如下：
 
 ### Q：小程序右上角的 分享与收藏 可以设置颜色吗？
 A：这是默认的，无法设置颜色。
+### Q: 小程序标题栏文字颜色支持自定义吗？
+A: 不支持用户手动设置文字颜色，只能根据标题栏背景颜色做动态显示，例如：设置黑色背景则显示白色文字，设置白色背景则显示黑色文字
+
+
