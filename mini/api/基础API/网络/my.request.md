@@ -165,7 +165,7 @@ Object 类型，属性如下：
 ### referer 说明
 网络请求的 `referer` Header 不可设置。
 
-其格式固定为 `https://urlhost/{appid}/{version}/page-frame.html`，其中 `{appid}` 为小程序的 APPID，`{version}` 为小程序的版本号。 
+其格式固定为 `https://{appid}.hybrid.alipay-eco.com/{appid}/{version}/index.html#pages/index`，其中 `{appid}` 为小程序的 APPID，`{version}` 为小程序发布标识。 
 
 ### success 回调函数
 入参为 Object 类型，属性如下：
