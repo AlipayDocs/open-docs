@@ -54,6 +54,7 @@
     <view class="page-section-title">open</view>
     <view class="page-section-demo">
       <button open-type="share">share</button>
+      <button open-type="lifestyle" public-id='{{your_lifestyle_id}}' onFollowLifestyle="onFollowLifestyle">lifestyle</button>
     </view>
   </view>
   <view class="page-section">
@@ -78,6 +79,12 @@ Page({
   },
   onReset() {
     my.alert({ title: 'You click reset' });
+  },
+	onFollowLifestyle(e) {
+    my.alert({ 
+      title: e.detail.followStatus === 1 ? '关注成功' : '关注失败',
+      content: JSON.stringify(e.detail)
+    });
   },
 });
 ```
