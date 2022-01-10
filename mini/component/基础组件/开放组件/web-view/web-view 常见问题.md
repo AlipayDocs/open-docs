@@ -76,7 +76,7 @@ console.log(res.miniprogram); //true
 ```
 
 ### 通过 web-view 插入一个 H5 页面，为何使用 hidden 来实现显示/隐藏这个包裹 web-view 的元素不生效？
-使用 a:if 可以实现显示/隐藏。a:if 与 hidden 对比区别请参见 [条件渲染](https://opensupport.alipay.com/support/knowledge/31867/201602420887?ant_source=zsearch)。
+使用 a:if 可以实现显示/隐藏。a:if 与 hidden 对比区别请参见 [条件渲染](https://opendocs.alipay.com/support/01rb8w#%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93%EF%BC%8C%E5%AF%B9%E6%AF%94%20a%3Aif%20%E4%B8%8E%20hidden)。
 
 ## web-view 页面设计相关
 
