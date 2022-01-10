@@ -1,4 +1,3 @@
-
 # 简介
 **my.request** 是用于发起网络请求的 API。
 
@@ -18,8 +17,7 @@
 >
 > 在 IDE 上进行调试时，请使用真机预览调试。
 >
-> 支付宝客户端已不再维护 [my.httpRequest](https://opensupport.alipay.com/support/knowledge/31868/201602452549?ant_source=zsearch)，建议使用 my.request。另外，钉钉客户端尚不支持 my.request。若在钉钉客户端开发小程序，则需要使用 my.httpRequest。
-
+> 支付宝客户端已不再维护 [my.httpRequest](https://opendocs.alipay.com/support/01rb31#my.request%20%E4%B8%8E%20my.httpRequest%20%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F)，建议使用 my.request。另外，钉钉客户端尚不支持 my.request。若在钉钉客户端开发小程序，则需要使用 my.httpRequest。
 
 ## 扫码体验
 ![|175x216](https://gw.alipayobjects.com/zos/skylark-tools/public/files/cedb01a73389c4346ed7c8c72de928a0.jpeg#align=left&display=inline&height=216&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=175)
@@ -154,7 +152,6 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ### data 参数说明
 传给服务器的数据最终会是 String 类型，如果 data 不是 String 类型，会被转换成 String 。转换规则如下：
 
@@ -175,7 +172,6 @@ Object 类型，属性如下：
 | data | String | 响应数据，格式取决于请求时的 dataType 参数，如果 dataType 值为 base64 时，返回的是符合 [data URI scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)  规范的内容字符串。 |
 | status | Number | 响应码。 |
 | headers | Object | 响应头。 |
-
 
 ## 错误码
 | **错误码** | **说明** | **解决方案** |
@@ -199,7 +195,6 @@ Object 类型，属性如下：
 | JSON | 小程序框架对返回结果做 JSON.prase 操作时解析失败。 |
 | text | 返回的内容格式不符。 |
 | base64 | 转换失败。 |
-
 
 ![|723x75](https://mdn.alipayobjects.com/afts/img/A*vtR5Q7ttYyiX9VBLv1JmVQBkAa8wAA/original?bz=openpt_doc&t=fATCX_-7I4pcMKAl6pUhJAAAAABkMK8AAAAA#align=left&display=inline&height=83&margin=%5Bobject%20Object%5D&originHeight=83&originWidth=800&status=done&style=stroke&width=800)
 
