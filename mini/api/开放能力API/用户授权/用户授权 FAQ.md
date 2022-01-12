@@ -1,4 +1,3 @@
-
 ### Q1：小程序如何实现用户授权？
 A：小程序 不支持 使用拼接授权链接进行授权，建议使用 [my.getAuthCode](/mini/api/openapi-authorize) 实现用户授权、用户登录等。
 
@@ -55,7 +54,7 @@ A：
 - 报错描述：ISV 权限不足，建议在控制台检查对应功能是否已经添加。
 - 报错原因：此报错的含义就是没有对应接口权限。
 - 解决方案：
-   - 配置的账户是否有当前接口权限或代理的商户是否有当前接口权限<br />详见 [如何查看签约是否存在产品权限](https://opensupport.alipay.com/support/knowledge/20066/201602439428?ant_source=zsearch)。若没有请先完成签约，签约相关问题可咨询商服服务热线：95188-1 咨询！
+   - 配置的账户是否有当前接口权限或代理的商户是否有当前接口权限<br />详见 [如何查看签约是否存在产品权限](https://opendocs.alipay.com/support/01raue)。若没有请先完成签约，签约相关问题可咨询商服服务热线：95188-1 咨询！
    - 是否在对应 APPID 下面添加应用功能，详见如何 [添加应用功能](https://docs.open.alipay.com/200/105310#s1)。
    - 若是 ISV，检查授权令牌（app_auth_token）是否有对应的接口权限。
    - 如在沙箱调试出现，请确认请求网关为沙箱 openapi 网关：[https://openapi.alipaydev.com/gateway.do](https://openapi.alipaydev.com/gateway.do)，并且请求的 app_id 为沙箱的 app_id。
