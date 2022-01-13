@@ -7,7 +7,7 @@
 
 - my.request 目前支持 GET/POST/PUT/DELETE（其中 PUT 和 DELETE 请求在支付宝客户端 10.1.95 或更高版本支持）。
 - my.request 目前只支持 HTTPS 协议的请求。
-- **基础库** [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；**支付宝客户端** 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- **基础库** [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；**支付宝客户端** 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 > 请预先在 [**支付宝小程序管理中心**](https://open.alipay.com/mini/dev/list) **> 小程序详情 > 设置 > 开发设置 > 服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTP 请求（my.request）、上传文件（my.uploadFile）。
 >
@@ -161,6 +161,8 @@ Object 类型，属性如下：
 
 ### referer 说明
 网络请求的 `referer` Header 不可设置。
+
+`referer` 默认传当前页面的 URL，不支持自定义设置。
 
 其格式固定为 `https://{appid}.hybrid.alipay-eco.com/{appid}/{version}/index.html#pages/index`，其中 `{appid}` 为小程序的 APPID，`{version}` 为小程序发布标识。 
 
