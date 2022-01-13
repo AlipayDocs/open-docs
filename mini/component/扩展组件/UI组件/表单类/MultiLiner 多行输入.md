@@ -77,4 +77,4 @@ Page({
 
 
 ### Bug & tips
-multi-liner 组件的特性主要来源于 [textarea](https://opendocs.alipay.com/mini/component/textarea)，当有光标或者文字输入相关疑惑，详情请参见 [textarea](https://opensupport.alipay.com/support/helpcenter/144/201602630402#anchor__3) [常见问题](https://opensupport.alipay.com/support/helpcenter/144/201602630402)。
+multi-liner 组件的特性主要来源于 [textarea](https://opendocs.alipay.com/mini/component/textarea)，当有光标或者文字输入相关疑惑，详情请参见 [textarea 常见问题](https://opendocs.alipay.com/support/01rb8r#textarea%E7%BB%84%E4%BB%B6%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)。
