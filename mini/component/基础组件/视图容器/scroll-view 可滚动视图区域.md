@@ -8,7 +8,6 @@
 - 在滚动 scroll-view 时会阻止页面回弹，所以在 scroll-view 中滚动，无法触发 `onPullDownRefresh` 下拉刷新功能。
 - scroll-view 不支持 `scroll-x=true` 和 `scroll-y=true` 同时生效，只能用一个。可以使用 [view](/mini/component/view) 设置 `disable-scroll` 为 true 禁止滑动。
 - scroll-view 满屏时，无法滑动页面，会导致导航栏滑动透明失效。可通过 [my.setNavigationBar](https://opendocs.alipay.com/mini/api/xwq8e6) 设置导航栏样式：导航栏标题、导航栏背景色、导航栏底部边框颜色、导航栏左上角 logo 图片。
-- 可以监听 scroll-view 父 view 的触摸事件控制 scroll-view 的滑动来达到取消惯性的效果。
 - scroll-view 组件不支持自定义下拉刷新。
 - scroll-view 组件的滚动条默认隐藏，仅在滑动时展示。在 iOS 下不支持自定义修改，在 Android 下允许通过 `::-webkit-scrollbar` 自定义滚动条样式。
 
