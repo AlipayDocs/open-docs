@@ -1,4 +1,3 @@
-
 # 简介
 文本输入。
 
@@ -174,20 +173,16 @@ Page({
 | layer | String | 文本输入框是否为垂直排列，vertical 时为垂直排列，空值为横向排列。<br />**可选值：** vertical<br />**版本要求：** mini-ali-ui [1.0.4](https://opendocs.alipay.com/mini/component-ext/ui-overview) 及以上 |
 | controlled | Boolean | 是否为受控组件。详情请参见 [input 组件](https://opendocs.alipay.com/mini/component/input)。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.0.9](https://opendocs.alipay.com/mini/component-ext/ui-overview) 及以上 |
 
-
 ### Bug & tips
-input-item 组件的特性主要来源于 [input](https://opendocs.alipay.com/mini/component/input)，当有光标或者文字输入相关疑惑，详情请参见 [input 常见问题](https://opensupport.alipay.com/support/helpcenter/144/201602630402#anchor__2)。
+input-item 组件的特性主要来源于 [input](https://opendocs.alipay.com/mini/component/input)，当有光标或者文字输入相关疑惑，详情请参见 [input 常见问题](https://opendocs.alipay.com/support/01rb8r)。
 
 ## slots
 | slotname | 必填 | **描述** |
 | --- | --- | --- |
 | extra | false | 用于渲染 input-item 项右边说明。 |
 
-
 # FAQ
 
 ### 为何 setData 数据为空时，断点 money 值已经置空，但是在输入框还是显示 0？
 this.setData 设置 data 为空时，不会渲染页面，建议使用组件的 clear。
 
-# 相关文档
-[input 输入框](https://opendocs.alipay.com/mini/component/input)
