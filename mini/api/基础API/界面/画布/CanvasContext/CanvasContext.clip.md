@@ -23,12 +23,12 @@
 const ctx = my.createCanvasContext('canvas')
 my.downloadFile({
   url: 'https://gw.alipayobjects.com/zos/skylark-tools/public/files/dda114e320567e1d304790287d75a029.png',
-  success: function(res) {
+  success({ apFilePath }) {
     ctx.save()
     ctx.beginPath()
-    ctx.arc(50, 50, 25, 0, 2*Math.PI)
+    ctx.arc(50, 50, 25, 0, 2 * Math.PI)
     ctx.clip()
-    ctx.drawImage(res.tempFilePath, 25, 25)
+    ctx.drawImage(apFilePath, 25, 25)
     ctx.restore()
     ctx.draw()
   }
