@@ -1,6 +1,5 @@
 > 从基础库 [2.7.9](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始，CanvasContext 相关接口已停止维护，请使用 [Canvas](https://opendocs.alipay.com/mini/01vzqv) 代替。
 
-
 # 简介
 **CanvasContext.clip** 用于将当前创建的路径设置为当前剪切路径。
 
