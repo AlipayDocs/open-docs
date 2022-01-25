@@ -25,7 +25,7 @@ lifestyle 组件，实现了在小程序里关注生活号的能力。
 ### .axml 示例代码
 ```
 <!-- API-DEMO page/component/lifestyle/lifestyle.axml -->
-<lifestyle publicId="your_lifestyle_id" />
+<lifestyle public-id="your_lifestyle_id" />
 ```
 
 ##  属性说明
