@@ -94,7 +94,7 @@ Object 类型，属性如下：
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | appCode | String | 是（和 path 二选一） | 要跳转的支付宝官方业务，例如付款码，appCode: 'payCode'，详见下方 **appCode 参数说明**。<ul><li>跳转支付宝扫一扫、收到的红包页面、爱攒油页面、小程序快报生活号、蚂蚁森林、蚂蚁庄园、某只股票的详情页，请使用 appCode 属性。</li><li>支付宝客户端 10.1.62 版本开始支持。</li><li>个人小程序暂不支持跳转付款码页面。</li></ul> |
-| path | String | 是（和 appCode 二选一） | 跳转 appCode 涵盖范围之外的支付宝业务、运营活动页面，请使用 path 属性。可传入 scheme 或 URL：<ul><li>scheme 以 alipays://platformapi/startapp? 开头。受内部白名单以及当前小程序权限控制，只有部分 scheme 是可跳转的。暂不公开提供可跳转的 scheme 列表和权限申请界面，具体可用的取值请参考相关业务文档或咨询技术支持。</li><li>URL 仅支持以 https://render.alipay.com/p/c/ 开头。如果 URL 中带有参数，请先将整个 URL 做 encode 处理。</li></ul> |
+| path | String | 是（和 appCode 二选一） | 跳转 appCode 涵盖范围之外的支付宝业务、运营活动页面，请使用 path 属性。可传入 scheme 或 URL：<ul><li>scheme 以 alipays://platformapi/startapp? 开头。受内部白名单以及当前小程序权限控制，只有部分 scheme 是可跳转的。完整跳转 scheme 需要根据自身业务，自行向相关运营或者产品索取。</li><li>URL 仅支持以 https://render.alipay.com/p/c/ 开头。如果 URL 中带有参数，请先将整个 URL 做 encode 处理。</li></ul> |
 | appParams | Object | 否 | appCode 配套参数，需要和 appCode 搭配使用。目前已开放的跳转页面，均无需配置 appParams 参数，appParams 为 {} 即可。（见示例代码 2）<br/>支付宝客户端 10.1.62 版本开始支持。 |
 
 
