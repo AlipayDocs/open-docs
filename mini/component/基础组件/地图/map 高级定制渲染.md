@@ -175,7 +175,6 @@ const markers=[{
 | border-radius | Number | 元素的圆角边框圆角半径。<br />**默认值：** 0 |
 | border-width | Number | 元素的边框宽度。<br />**默认值：** 0 |
 
-
 ## 组件
 地图高级定制渲染组件包含 box（区域）、text（文本）、image（图片）、lottie（动画）。
 
@@ -200,13 +199,17 @@ const markers=[{
 | text-align | String | 文本对齐方式。有效值：left，center，right。<br />**默认值：** left |
 | font-weight | String | 文本字体粗细程度。有效值：normal，bold。<br />**默认值：** nomal |
 
-
 ## image
+支持 ：
+* 绝对路径：如 https://gw.alipayobjects.com/XXX
+* 相对路径（基准为根目录）：如 /marker/xiang.xml
+
+**注意：** 相对路径不支持 ./marker/xiang.xml 方式。
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | src | String | 图片路径。 |
 | placeholder | String | 占位图路径。 |
-
 
 ## lottie
 | **属性** | **类型** | **描述** |
