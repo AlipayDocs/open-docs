@@ -67,7 +67,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| src | String | 否 | 图片路径，目前支持：网络图片路径、apFilePath 路径、相对路径。 |
+| src | String | 是 | 图片路径，目前支持：网络图片路径、apFilePath 路径、相对路径。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
