@@ -108,3 +108,6 @@ res.response 为完整的报文数据，前端需要将该报文发送到开发�
 > 应用网关用于接收支付宝异步通知，例如口碑开店中，需要配置此网关来接收 [开发者门店被动通知](https://opendocs.alipay.com/open/205/105251/#%E5%BC%80%E5%8F%91%E8%80%85%E9%97%A8%E5%BA%97%E8%A2%AB%E5%8A%A8%E9%80%9A%E7%9F%A5) 。且一个 APPID 只能配置一个对应的应用网关,应用网关以 https:// 或 http://开头。
 > 详见 [应用环境配置说明](https://docs.open.alipay.com/200/105310/#s2)。
 
+调用 my.getPhoneNumber 没有获取到手机号时，请检查以下配置内容：
+
+一般情况下都是当前用户的支付宝账号没有绑定手机号所致，需要当前用户登录 [账号管理](https://custweb.alipay.com/account/index.htm)，绑定手机号。
