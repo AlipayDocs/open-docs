@@ -49,7 +49,7 @@ function handleEvent(event, ownerComponent) {
   event.instance.setStyle({
     'font-size': '28rpx'
   });
-  // 不往上冒泡，相当于调用了同时调用了
+  // 不往上冒泡，相当于同时调用了
   // event.stopPropagation() 和
   // event.preventDefault()
   return false;
