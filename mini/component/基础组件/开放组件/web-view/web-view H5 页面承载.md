@@ -66,7 +66,7 @@ Page({
 | onLoad | EventHandle | 网页加载成功时触发此事件。`e.detail = { src }`<br />**版本要求**：基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
 | onError | EventHandle | 网页加载失败时触发此事件。`e.detail = { src }`<br />**版本要求**：基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
 
-可以通过判断 `userAgent` 中包含 `miniProgram` 字样来判断小程序 web-view 环境。
+可以通过检测 `userAgent` 中包含 `MiniProgram` 字样来判断小程序 web-view 环境。
 
 ### 可用 API
 web-view 载入的 H5 页面可以使用手动引入 https://appx/web-view.min.js（此链接仅支持在支付宝客户端内访问），提供了相关的 API 供您使用（**调试请以真机效果为准**）。
