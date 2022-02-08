@@ -1,6 +1,6 @@
 
 # 简介
-**my.getPhoneNumber** 是获取支付宝用户绑定的手机号的 API。因为需要用户主动触发才能发起获取手机号，所以该功能不由 API 直接调用，需用 [button 组件](/mini/component/button) 的点击来触发。
+**my.getPhoneNumber** 是获取支付宝用户绑定的手机号的 API。因为需要用户主动触发才能发起获取手机号，所以该功能不由 API 直接调用，必须点击 [button 组件](https://opendocs.alipay.com/mini/component/button) 来触发。
 
 相关问题请参见 [获取会员手机号 FAQ](https://opendocs.alipay.com/mini/006lmr)。
 
