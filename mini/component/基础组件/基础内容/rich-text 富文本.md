@@ -59,15 +59,16 @@ Page({
 }
 ```
 
-
-
 ## 属性说明
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| nodes | Array | 节点列表。目前仅支持使用 Array 类型，如果需要支持 HTML String，则需要自己将 HTML String 转化为 nodes 数组，可使用 [mini-html-parser](https://github.com/ant-mini-program/mini-html-parser) 转换。<br />支持如下默认 [事件](https://opendocs.alipay.com/mini/framework/events)：<ul><li>tap</li><li>touchStart</li><li>touchMove</li><li>touchCancel</li><li>touchEnd</li><li>longTap</li></ul> **说明**：自基础库 [2.7.1](https://opendocs.alipay.com/mini/01iq3i) 起，在 tap 和 longTap 事件中，可以通过 event.detail.marks 获得从触发事件的节点到根节点上所有的 marks 合并结果。如果存在同名数据，子节点将覆盖父节点。<br />**默认值**：[] |
-
-
-
+| nodes | Array | 节点列表。目前仅支持使用 Array 类型，如果需要支持 HTML String，则需要自己将 HTML String 转化为 nodes 数组，可使用 [mini-html-parser](https://github.com/ant-mini-program/mini-html-parser) 转换。|
+| onTap | EventHandle | 触摸。 | 
+| onTouchstart | EventHandle | 触摸动作开始。 | 
+| onTouchmove | EventHandle | 触摸移动事件。| 
+| onTouchcancel | EventHandle | 触摸动作被打断。 | 
+| onTouchend | EventHandle | 触摸动作结束。 | 
+| onLongtap | EventHandle | 触摸后，超过 500ms 再离开。 | 
 
 ### nodes 属性
 现支持两种节点：元素节点和文本节点，通过 type 来区分。默认是元素节点，在富文本区域里显示的 HTML 节点。<br />
@@ -80,7 +81,7 @@ Page({
 | name | String | 是 | 标签名。支持部分受信任的 HTML 节点。 |
 | attrs | Object | 否 | 属性。支持部分受信任的属性，遵循 Pascal 命名法。 |
 | children | Array | 否 | 子节点列表。结构和 nodes 相同。 |
-| marks | Object | 否 | 可在 tap 和 longTap 事件中接收。 **版本要求**：基础库 [2.7.1](https://opendocs.alipay.com/mini/01iq3i) 及以上 |
+| marks | Object | 否 | 可在 tap 和 longTap 事件中接收。<br /> **说明**：自基础库 [2.7.1](https://opendocs.alipay.com/mini/01iq3i) 起，在 tap 和 longTap 事件中，可以通过 event.detail.marks 获得从触发事件的节点到根节点上所有的 marks 合并结果。如果存在同名数据，子节点将覆盖父节点。<br /> |
 
 受信任的 HTML 节点及属性。支持 class 和 style 属性，不支持 id 属性。
 
@@ -230,7 +231,7 @@ axml
 <rich-text nodes={{nodes}} onTap={{handleOnTap}}></rich-text>
 ```
 
-总结下来：把跳转链接放到 node marks属性中，通过rich-text onTap 事件跳转
+总结下来：把跳转链接放到 node marks 属性中，通过 rich-text onTap 事件跳转。
 
 
 
