@@ -276,7 +276,7 @@ Page({
 | longitude | Float | 是 | 经度，范围 -180 ~ 180。 |
 | title | String | 否 | 标注点名。 |
 | iconPath | String | 是 | 项目目录下的图片路径，不能用相对路径只能用 / 开头的绝对路径。<br />示例：/pages/image/test.jpg |
-| iconLayout | Object | 否 | map 高级定制渲染绘制 marker 样式，优先级高于 iconPath, 对象参照 layout。<br />**版本要求：** 基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/lib) 及以上 |
+| iconLayout | Object | 否 | map 高级定制渲染绘制 marker 样式，优先级高于 iconPath, 对象参照 layout。<br /> 支持：<ul><li>绝对路径：如 [https://gw.alipayobjects.com/XXX](https://gw.alipayobjects.com/XXX)。</li><li>相对路径（基准为根目录）：如 /marker/xiang.xml。</li></ul>**注意**： 相对路径不支持 ./marker/xiang.xml 方式。<br/> **版本要求：** 基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/lib) 及以上 |
 | rotate | Number | 否 | 顺时针旋转的角度，范围 0 ~ 360，默认为 0。 |
 | alpha | Number | 否 | 是否透明，默认为 1。 |
 | width | Number | 否 | 默认为图片的实际宽度。 |
