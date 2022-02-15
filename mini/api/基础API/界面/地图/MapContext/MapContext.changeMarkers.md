@@ -10,6 +10,7 @@
 # 接口调用
 
 ## 示例代码
+### .js 示例代码
 ```javascript
 // .js
 this.mapCtx = my.createMapContext('map');
@@ -45,6 +46,7 @@ this.mapCtx.changeMarkers({
 });
 ```
 
+
 ## 入参
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
@@ -52,6 +54,7 @@ this.mapCtx.changeMarkers({
 | remove | Array | 需要删除的 marker 数组。 |
 | update | Array | 需要更新的 marker 数组。 |
 
+remove、update 的调用方式与 add 一致，请参见 [示例代码](https://opendocs.alipay.com/mini/00k9uj#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)。
 
 ### Array 数组对象
 请参考 Marker 对象: [markers](https://opendocs.alipay.com/mini/component/map#markers)。
