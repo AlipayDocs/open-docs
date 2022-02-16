@@ -90,7 +90,7 @@
 
 ### 调用示例
 
-#### .axml 示例代码
+#### .xml 示例代码
 ```html
 <!-- layout/marker_icon.xml-->
 <box>
@@ -100,7 +100,7 @@
 </box>
 ```
 
-#### .axml 示例代码
+#### .xml 示例代码
 ```html
 <!-- layout/marker_customcallout.xml-->
 <box layout='vertical' background-color='${bgColor}'>
