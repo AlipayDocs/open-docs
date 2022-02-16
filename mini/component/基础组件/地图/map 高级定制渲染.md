@@ -202,9 +202,9 @@ const markers=[{
 ## image
 支持 ：
 * 绝对路径：如 https://gw.alipayobjects.com/XXX
-* 相对路径（基准为根目录）：如 /marker/xiang.xml
+* 相对路径（基准为根目录）：如 /marker/hhhh.png
 
-**注意：** 相对路径不支持 ./marker/xiang.xml 方式。
+**注意：** 相对路径不支持 ./marker/hhhh.png 方式。
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
