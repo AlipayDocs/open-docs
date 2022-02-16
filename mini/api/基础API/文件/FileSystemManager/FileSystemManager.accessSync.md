@@ -6,7 +6,7 @@
 
 - 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 此 API 暂不支持在 IDE 模拟器上调用，开发中请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 进行测试。
+- 此 API 暂不支持在 IDE 模拟器上测试，开发中请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 进行测试。
 
 # 接口调用
 
