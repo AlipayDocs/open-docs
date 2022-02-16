@@ -91,7 +91,7 @@
 ### 调用示例
 
 #### .xml 示例代码
-```html
+```xml
 <!-- layout/marker_icon.xml-->
 <box>
 	<image width='60' height='60' src='https://gw.alipayobjects.com/mdn/rms_a8e3ca/afts/img/A*1NvpQqfbis8AAAAAAAAAAABkARQnAQ'/>
@@ -101,7 +101,7 @@
 ```
 
 #### .xml 示例代码
-```html
+```xml
 <!-- layout/marker_customcallout.xml-->
 <box layout='vertical' background-color='${bgColor}'>
   <text text='${title}' font-size='16' color='#FFFFFF'/>
