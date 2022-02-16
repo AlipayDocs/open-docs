@@ -8,6 +8,7 @@
 - 读取小程序包内容前需在 mini.project.json 中配置可读取的小程序文件内容。
 - 填写地址为文件的绝对路径，* 代表任意的名称，需要开发者自行填写。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 此 API 暂不支持在 IDE 模拟器上测试，开发中请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 进行测试。
 
 # 接口调用
 
