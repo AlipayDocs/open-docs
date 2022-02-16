@@ -1,11 +1,12 @@
 
 # 简介
-当应用有重要公告或者由于用户的刷新操作产生提示反馈时可以使用通告栏系统。通告栏不会对用户浏览当前页面内容产生影响，但又能明显的引起用户的注意。公告内容不超过一行。
+当应用有重要公告或者由于用户的刷新操作产生提示反馈时可以使用通告栏系统。通告栏不会对用户浏览当前页面内容产生影响，但又能明显的引起用户的注意。
 
 ## 使用限制
 
 - 仅用于 UI 展示没有对应的业务逻辑功能。
 - notice 为瀑布流布局不会定位到页面头部，用户可以根据需求将它放在相应位置。
+- 当使用循环滚动功能时，公告字数不满一行无法滚动，只有内容超过一行后才可滚动。
 
 ## 扫码体验
 ![|154x191](https://mdn.alipayobjects.com/afts/img/A*06nrQ59oMj4AAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=Xqkh2vEWDnjXvk-6JX_3GwAAAABkMK8AAAAA#align=left&display=inline&height=191&margin=%5Bobject%20Object%5D&originHeight=191&originWidth=154&status=done&style=none&width=154)
