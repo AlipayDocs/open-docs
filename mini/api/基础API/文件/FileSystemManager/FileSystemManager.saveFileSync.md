@@ -26,10 +26,10 @@ my.downloadFile({
 
 ## 入参
 
-#### string tempFilePath
+#### String tempFilePath
 临时存储文件路径。
 
-#### string filePath
+#### String filePath
 要存储的文件路径。
 
 **说明：** 如果不传，默认存储在小程序缓存目录
