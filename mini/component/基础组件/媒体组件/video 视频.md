@@ -89,11 +89,11 @@ Page({
 | style | String | 内联样式。 |
 | class | String | 外部样式名。 |
 | src | String | 要播放视频的资源地址，支持优酷视频编码（支付宝客户端 10.1.75）。<br />src 支持的协议如下：<br />vid/showId: XMzg2Mzc5MzMwMA==<br />apFilePath: https://resource/xxx.video |
-| poster | String | 视频封面图的 url，支持 jpg、png 等图片，如[https://***.jpg](https://***.jpg)。如果不传的话，默认取视频的首帧图作为封面图。 |
+| poster | String | 视频封面图的 url，支持 jpg、png 等图片，如 [https://***.jpg](https://***.jpg)。如果不传的话，默认取视频的首帧图作为封面图。 
 | poster-size | String | 当 poster 高宽比跟视频高宽不匹配时，如何显示 poster，设置规则同 background-size 一致。<br />**默认值：** contain |
 | object-fit | String | 当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充。<br />**默认值：** contain |
-| initial-time | Number | 指定视频初始播放位置，单位 s。<br />版本要求：基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| duration | Number | 指定视频时长，单位s，默认读取视频本身时长信息 |
+| initial-time | Number | 指定视频初始播放位置，单位 s。<br /> **版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| duration | Number | 指定视频时长，单位 s，默认读取视频本身时长信息。仅在无法读取所制作视频的时长时使用。 |
 | controls | Boolean | 是否显示默认播放控件（底部工具条，包括播放/暂停按钮、播放进度、时间）。<br />**默认值：** true |
 | autoplay | Boolean | 是否自动播放。<br />**默认值：** false |
 | direction | Number | 设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针90度）, -90（屏幕顺时针90度）<br />**版本要求：** 基础库 [1.12.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
@@ -159,8 +159,3 @@ iOS、Android 支持以下编码格式： H.264、H.265、AAC。
 
 ### video 组件，把 loop 字段设置为循环播放，在播放第二次的时候，把视频资源删除，发现无法播放 ？
 虽然再次播放拉取的是缓存中的视频，但是还是会校验视频资源的。
-
-# 相关文档
-
-- [my.createVideoContext](https://opendocs.alipay.com/mini/api/media/video/my.createvideocontext)<br />
-- [小程序视频播放](https://opendocs.alipay.com/mini/introduce/video)<br />
