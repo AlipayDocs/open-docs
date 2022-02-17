@@ -25,13 +25,13 @@ console.log(result);
 
 ## 入参
 
-#### string filePath
+#### String filePath
 要写入的文件路径 (本地路径)。
 
-#### string|ArrayBuffer data
+#### String|ArrayBuffer data
 要写入的文本或二进制数据。
 
-#### string encoding
+#### String encoding
 指定写入文件的字符编码。
 
 ### encoding 合法值
