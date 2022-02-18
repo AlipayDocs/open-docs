@@ -3,7 +3,8 @@
 **FileSystemManager** 文件管理器，可通过 [my.getFileSystemManager](https://opendocs.alipay.com/mini/0226oc) 获取。如何接入以及更多介绍信息，请参见 [文件管理器](https://opendocs.alipay.com/mini/introduce/022rw2)。
 
 ## 使用限制
-基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 使用 **FileSystemManager** 前，请先在开放平台控制台 **创建小程序**、**添加能力**，参见 [接入准备](https://opendocs.alipay.com/mini/02pk4y) 。
 
 # 概览
 | **名称** | **功能说明** |
