@@ -18,7 +18,7 @@ let fs = my.getFileSystemManager();
 fs.readdir({
   dirPath: `${my.env.USER_DATA_PATH}/newDir`,
   success: (res) => {
-		console.log(res);
+    console.log(res);
   }
 })
 ```
