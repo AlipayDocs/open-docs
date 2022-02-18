@@ -22,7 +22,7 @@ console.log(result);
 
 ## 入参
 
-#### string path
+#### String path
 要判断是否存在的文件/目录路径。
 
 ## 错误码
