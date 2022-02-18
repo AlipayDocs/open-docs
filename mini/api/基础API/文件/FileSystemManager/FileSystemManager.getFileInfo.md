@@ -18,7 +18,7 @@ let fs = my.getFileSystemManager();
 fs.getFileInfo({
   filePath: `${my.env.USER_DATA_PATH}/test.txt`,
   success: (res) => {
-	  console.log(res);
+    console.log(res);
   }
 })
 ```
