@@ -62,7 +62,7 @@ Page({
 ## 属性说明
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| nodes | Array | 节点列表。目前仅支持使用 Array 类型，如果需要支持 HTML String，则需要自己将 HTML String 转化为 nodes 数组，可使用 [mini-html-parser](https://github.com/ant-mini-program/mini-html-parser) 转换。|
+| nodes | Array | 节点列表。目前仅支持使用 Array 类型，如果需要支持 HTML String，则需要自己将 HTML String 转化为 nodes 数组，可使用 [mini-html-parser2](https://github.com/ant-mini-program/mini-html-parser) 转换。|
 | onTap | EventHandle | 触摸。 | 
 | onTouchstart | EventHandle | 触摸动作开始。 | 
 | onTouchmove | EventHandle | 触摸移动事件。| 
@@ -178,7 +178,7 @@ Page({
 需要自己将 HTML String 转化为 nodes 数组。
 
 ### 如何处理 HTML String中存在多个 img 标签且不闭合时，mini-html-parser 会转换错误？
-[mini-html-parser](https://github.com/ant-mini-program/mini-html-parser) 0.3.0 已解决此问题，若当前使用老版本，请升级到最新的 0.3.0 版本即可。
+[mini-html-parser2](https://github.com/ant-mini-program/mini-html-parser) 0.3.0 已解决此问题，若当前使用老版本，请升级到最新的 0.3.0 版本即可。
 
 ### 如何为 rich-text 富文本 添加链接跳转功能？
 受小程序管控原因，rich-text 中的a标签，无法像前端页面中，配置 `<a href="https://www.alipay.com">alipay</a>` 即可实现跳转；小程序中需要使用对应的 [JSAPI](https://opendocs.alipay.com/mini/introduce/open-miniprogram) 或者 [路由JSAPI](https://opendocs.alipay.com/mini/006l0z) 实现跳转路由
