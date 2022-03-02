@@ -35,27 +35,26 @@ Page({
       mergeOptions: {
         // 新增
         add: [{
-          "pid": "1",
+          "id": "x100",
           "name": "新省",
-          "nextId": "1111",
-          "id": "110000",
+          "nextId": "340000",
           "subList": [{
-            "name": "北京市",
-            "id": "110100",
+            "name": "新市",
+            "id": "x110",
             "subList": [{
-              "name": "东城区",
-              "id": "110101"
+              "name": "新区",
+              "id": "x111"
             }]
           }]
         }],
         // 删除
         remove: [{
-          "id": "110000"
+          "id": "330000"
         }],
         // 更新
         update: [{
-          "name": "北京",
           "id": "110000",
+          "name": "北京",
           "subList": [{
             "name": "北京市",
             "id": "110100",
@@ -64,7 +63,8 @@ Page({
               "id": "110101"
             }]
           }]
-        }]
+        }],
+        selectedItem: ["广东", "深圳", "福田区"],
       },
       success: (res) => {
         my.alert({
@@ -81,7 +81,7 @@ Page({
 | --- | --- | --- | --- |
 | title | String | 否 | 标题。 |
 | mergeOptions | Object | 否 | 自定义修改城市数据，支持删除、添加和更新城市信息。 |
-| selectedItem | Array | 否 | 表示选中的省市区，默认选中每一列的第一个值。 |
+| selectedItem | Array | 否 | 初始选中的省市区名称。不传则默认选中第一个 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 
@@ -99,31 +99,31 @@ Page({
 #### remove 对象
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| id | String | 需要移除的省份 ID。 |
+| id | String | 需要移除的对象 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
 
 
 #### ﻿add 对象
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| pid | String | 插入点之上的省份 ID。 |
-| nextId | String | 插入点之下的省份 ID。 |
 | id | String | 增加对象的 ID。 |
 | name | String | 增加对象的名称。 |
-| subList | Array | 省内完整的市和区信息。<br />示例：<br />"subList": [{<br />                "name": "北京市",<br />                "id": "110100",<br />                "subList": [{<br />                    "name": "东城区",<br />                    "id": "110101"<br />                }] |
+| nextId | String | 插入点之后的对象 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
+| subList | Array | 对象下辖的完整的市和区信息。<br />示例：<br />"subList": [{<br />                "name": "北京市",<br />                "id": "110100",<br />                "subList": [{<br />                    "name": "东城区",<br />                    "id": "110101"<br />                }] ```|
 
 
 #### ﻿update 对象
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| id | String | 更新对象的 ID。 |
-| name | String | 增加对象的名称。 |
-| subList | Array | 省内完整的市和区信息。<br />示例：<br />"subList": [{<br />                "name": "北京市",<br />                "id": "110100",<br />                "subList": [{<br />                    "name": "东城区",<br />                    "id": "110101"<br />                }]<br />﻿ |
+| id | String | 更新对象的 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
+| name | String | 更新对象的名称。 |
+| subList | Array | 对象下辖的完整的市和区信息。<br />示例：<br />"subList": [{<br />                "name": "北京市",<br />                "id": "110100",<br />                "subList": [{<br />                    "name": "东城区",<br />                    "id": "110101"<br />                }]<br />﻿ |
 
 
 ### ﻿success 返回值
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | data | Array | 选择的省市区名称数组。 |
+| code | Array | 选择的省市区ID数组。 |
 
 
 ### success 返回值示例
@@ -131,9 +131,14 @@ Page({
 ```json
 {
   "data": [
-    "福建",
-    "莆田",
-    "城厢区"
+    "重庆",
+    "重庆",
+    "璧山区"
+  ],
+  "code": [
+    "500000",
+    "500100",
+    "500120"
   ]
 }
 ```
@@ -150,6 +155,3 @@ Page({
 | --- | --- | --- |
 | 11 | 用户取消选择 | 重新选择即可。 |
 | 10001 | 用户没有选择数据 | 重新选中数据即可。 |
-
-
-
