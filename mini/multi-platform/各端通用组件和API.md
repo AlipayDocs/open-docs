@@ -477,3 +477,4 @@
     <td><a href="https://opendocs.alipay.com/mini/api/scan">my.scan</a></td>
   </tr>
 </table>
+
