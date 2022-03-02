@@ -4,8 +4,8 @@
 
 <table>
   <tr>
-    <th>分类</th>
-    <th>组件名称</th>
+    <th><b>分类</b></th>
+    <th><b>组件名称</b></th>
   </tr>
   <tr>
     <td rowspan="3">视图容器</td>
@@ -87,8 +87,8 @@
 
 <table>
   <tr>
-    <th>分类</th>
-    <th>API 名称</th>
+    <th><b>分类</b></th>
+    <th><b>API 名称</b></th>
   </tr>
   <tr>
     <td rowspan="3">网络</td>
