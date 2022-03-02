@@ -172,7 +172,7 @@ Object 类型，属性如下：
     <tr>
         <td rowspan="2">12</td>
         <td>java.io.FileNotFoundException:File is not a normal file.</td>
-    <td>文件未找到 / 文件不是一个正常的文件，确认 filePath 入参的正确性，必须是本地定位符，可使用 <a href="https://opendocs.alipay.com/mini/api/media/image/my.chooseimage">my.chooseImage</a> 在相册选择图片后返回的地址。</td>
+        <td>文件未找到 / 文件不是一个正常的文件，确认 filePath 入参的正确性，必须是本地定位符，可使用 <a href="https://opendocs.alipay.com/mini/api/media/image/my.chooseimage">my.chooseImage</a> 在相册选择图片后返回的地址。</td>
     </tr>
     <tr>
         <td>上传文件失败</td>
