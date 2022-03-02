@@ -114,19 +114,75 @@ Object 类型，属性如下：
 
 
 ## 错误码
-| **错误码** | **说明** | **解决方案** |
-| --- | --- | --- |
-| 4 | 无权限调用（N22104）。 | 1. 确认小程序应用是否授权给了三方应用，三方应用是否添加了 **JSAPI 基础包** 功能包。可尝试添加 **JSAPI 基础包** 功能包后，重新授权、重新推送预览调试或者直接解除三方应用授权，重新推送预览调试。<br/> <li> **说明**：小程序应用授权给三方应用后，小程序在真机上的运行使用的是三方应用的功能包，不再是使用小程序自身的功能包。</li> 2. 若是小程序应用 **JSAPI 基础包** 功能包没有或者不全，建议删除小程序应用，重新创建一个新小程序应用来调试。|
-|  | 无权限调用（N22106）。 | <li> 配置请求白名单，请预先在 [支付宝小程序管理中心](https://open.alipay.com/mini/dev/list) > 小程序详情 **>设置 > 开发设置 > 服务器域名白名单** 中配置域名白名单。域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。</li><li>若是账号问题，不能登录管理后台配置，开发版测试可以先在 IDE 右上角点击 **详情 > 域名信息** 下勾选 “**忽略 request 域名合法性检查（仅在本地模拟、预览和远程调试时生效）**” 或 “ **忽略 Webview 域名合法性检查（仅在本地模拟、预览和远程调试时生效）**”，再预览调试请求。</li><li>建议做下兼容，不要使用 my.saveFile 保存文件后返回的 apFilePath 作为上传 filePath 的入参。</li>|
-|  | 无权限调用此接口 |  |
-| 9 | uploadFile:fail abort | 上传文件中止文件，在上传文件未完成时调用了 UploadTask.abort() |
-| 11 | not have permission to upload | 出于安全策略，不能使用 my.saveFile 保存文件后返回的 apFilePath 作为上传 filePath 的入参。 |
-|  | 文件不存在。 | 检查本地文件是否存在。 |
-| 12 | java.io.FileNotFoundException:File is not a normal file. | 文件未找到 / 文件不是一个正常的文件，确认 filePath 入参的正确性，必须是本地定位符，可使用 [my.chooseImage](https://opendocs.alipay.com/mini/api/media/image/my.chooseimage) 在相册选择图片后返回的地址。 |
-|  | 上传文件失败。 |<li>文件过大</li><li>上传时间超过 30s</li>|
-| 13 | 没有权限 | 检查权限设置。 |
-| 20 | 请求 URL 不支持 HTTP，请使用 HTTPS | 小程序已经不支持 HTTP 请求，请使用 HTTPS。 |
 
+<table>
+    <tr>
+        <th><b>错误码</b></th>
+        <th><b>说明</b></th>
+        <th><b>解决方案</b></th>
+    </tr>
+    <tr>
+        <td rowspan="3">4</td>
+        <td>无权限调用（N22104）</td>
+        <td>
+            <ol>
+                <li>确认小程序应用是否授权给了三方应用，三方应用是否添加了 <b>JSAPI 基础包</b> 功能包。可尝试添加 <b>JSAPI 基础包</b> 功能包后，重新授权、重新推送预览调试或者直接解除三方应用授权，重新推送预览调试。</br><b>说明</b>：小程序应用授权给三方应用后，小程序在真机上的运行使用的是三方应用的功能包，不再是使用小程序自身的功能包。</li>
+                <li>若是小程序应用 <b>JSAPI 基础包</b> 功能包没有或者不全，建议删除小程序应用，重新创建一个新小程序应用来调试。</li>
+            </ol>
+        </td>
+    </tr>
+    <tr>
+        <td>无权限调用（N22106）</td>
+        <td rowspan="2">
+            <ul>
+                <li>配置请求白名单，请预先在 <a href="https://open.alipay.com/dev/workspace">开放平台控制台</a> > 小程序详情 > <b>设置</b> > <b>开发设置</b> > <b>服务器域名白名单</b> 中配置域名白名单。域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。</li>
+                <li>若是账号问题，不能登录管理后台配置，开发版测试可以先在 IDE 右上角点击 <b>详情</b> > <b>域名信息</b> 下勾选 “<b>忽略 request 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>” 或 “<b>忽略 Webview 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>”，再预览调试请求。</li>
+                <li>建议做下兼容，不要使用 my.saveFile 保存文件后返回的 apFilePath 作为上传 filePath 的入参。</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>无权限调用此接口</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>uploadFile:fail abort</td>
+        <td>上传文件中止文件，在上传文件未完成时调用了 UploadTask.abort()。</td>
+    </tr>
+    <tr>
+        <td rowspan="2">11</td>
+        <td>not have permission to upload</td>
+        <td>出于安全策略，不能使用 my.saveFile 保存文件后返回的 apFilePath 作为上传 filePath 的入参。</td>
+    </tr>
+    <tr>
+        <td>文件不存在</td>
+        <td>检查本地文件是否存在。</td>
+    </tr>
+    <tr>
+        <td rowspan="2">12</td>
+        <td>java.io.FileNotFoundException:File is not a normal file.</td>
+        <td>文件未找到 / 文件不是一个正常的文件，确认 filePath 入参的正确性，必须是本地定位符，可使用 <a href="https://opendocs.alipay.com/mini/api/media/image/my.chooseimage">my.chooseImage</a> 在相册选择图片后返回的地址。</td>
+    </tr>
+    <tr>
+        <td>上传文件失败</td>
+        <td>
+            <ul>
+                <li>文件过大。</li>
+                <li>上传时间超过 30s。</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>没有权限</td>
+        <td>检查权限设置。</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>请求 URL 不支持 HTTP，请使用 HTTPS</td>
+        <td>小程序已经不支持 HTTP 请求，请使用 HTTPS。</td>
+    </tr>
+</table>
 
 ## UploadTask
 **版本要求：** 支付宝客户端 10.1.35 及以上版本，低版本需做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
