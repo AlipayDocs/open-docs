@@ -13,7 +13,7 @@
 
 ### .js 示例代码
 
-**发起** `my.navigateTo` **调用的页面**：
+**发起** [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx) **调用的页面**：
 
 在 `my.navigateTo` 调用中的 `events` 参数挂载需要持续监听的事件：
 
@@ -34,7 +34,7 @@ my.navigateTo({
 });
 ```
 
-**通过** `my.navigateTo` **打开的页面**：
+**通过** [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx) **打开的页面**：
 
 使用 `EventChannel` 的 `on` 方法挂载需要持续监听的事件：
 
