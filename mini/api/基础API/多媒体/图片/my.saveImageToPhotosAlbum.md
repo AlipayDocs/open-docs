@@ -1,6 +1,6 @@
 
 # 简介
-保存图片到系统相册。
+保存图片到本地相册。
 
 ## 使用限制
 
@@ -14,17 +14,6 @@
 
 ### .js 示例代码
 ```javascript
-// 本地路径图片
-my.chooseImage({
-  success: (result) => {
-    my.saveImageToPhotosAlbum({
-      filePath:result.apFilePaths[0],
-      complete(res) {
-        console.log(res);
-      }
-    });
-  }
-});
 // 网络地址图片
 my.saveImageToPhotosAlbum({
   filePath:'https://gw.alipayobjects.com/zos/skylark-tools/public/files/66539db61b570eb2b7cf2df4241ea56c.png',
