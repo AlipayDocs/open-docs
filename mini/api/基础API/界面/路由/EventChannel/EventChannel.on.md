@@ -9,6 +9,51 @@
 
 # 接口调用
 
+## 示例代码
+
+### .js 示例代码
+
+**发起** `my.navigateTo` **调用的页面**：
+
+在 `my.navigateTo` 调用中的 `events` 参数挂载需要持续监听的事件：
+
+```JavaScript
+my.navigateTo({ 
+  url: './opened-page',
+  // 挂载监听事件
+  events: {
+    openedToOpener(data) {
+      console.log(data); // { "message": "Hello Opener Page!" }
+    }
+  },
+  success(res) {
+    res.eventChannel.emit('openerToOpened', {
+      message: 'Hi Opened Page!'
+    });
+  }
+});
+```
+
+**通过** `my.navigateTo` **打开的页面**：
+
+使用 `EventChannel` 的 `on` 方法挂载需要持续监听的事件：
+
+```JavaScript
+// 通过 my.navigateTo 打开的页面
+Page({
+  onLoad() {
+    const eventChannel = this.getOpenerEventChannel();
+    eventChannel.emit('openedToOpener', {
+      message: 'Hello Opener Page!'
+    });
+    // 挂载监听事件
+    eventChannel.on('openerToOpened', data => {
+      console.log(data); // { "message": "Hi Opened Page!" }
+    });
+  }
+});
+```
+
 ## 入参
 入参结构为：(String eventName, Function callback)。
 
