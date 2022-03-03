@@ -11,7 +11,7 @@
 ## 示例代码
 ### .js 示例代码
 
-发起 `my.navigateTo` 调用的页面：
+**发起** [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx) **调用的页面**：
 
 在 `success` 回调函数中可以使用 EventChannel `emit` 方法向在页面 `./opened-page` 中监听的事件传输数据。
 
@@ -31,7 +31,7 @@ my.navigateTo({
 });
 ```
 
-通过 my.navigateTo 打开的页面：
+**通过** [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx) **打开的页面**：
 
 可以使用 EventChannel `emit` 方法向发起 `my.navigateTo` 调用的页面中监听的事件传输数据。
 
