@@ -9,6 +9,26 @@
 
 # 接口调用
 
+## 示例代码
+
+### .js 示例代码
+
+在 [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx) 调用中的 `events` 参数挂载监听事件，该事件触发一次后将会解除监听。
+
+```JavaScript
+// 通过 my.navigateTo 打开的页面
+Page({
+  onLoad() {
+    const eventChannel = this.getOpenerEventChannel();
+    
+    // 挂载监听事件，该事件触发一次后将会解除监听。
+    eventChannel.once('openerToOpened', data => {
+      console.log(data); // { "message": "Hi Opened Page!" }
+    });
+  }
+});
+```
+
 ## 入参
 入参结构为：(String eventName, Function callback)。
 
