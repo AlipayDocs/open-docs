@@ -9,6 +9,28 @@
 
 # 接口调用
 
+## 示例代码
+
+### .js 示例代码
+
+```JavaScript
+// 通过 my.navigateTo 打开的页面
+Page({
+  onLoad() {
+    const eventChannel = this.getOpenerEventChannel();
+    
+    // 挂载监听事件
+    eventChannel.on('openerToOpened', data => {
+      console.log(data); // { "message": "Hi Opened Page!" }
+    });
+    // 解除监听事件
+    eventChannel.on('openerToOpened', data => {
+      console.log(data); // { "message": "Hi Opened Page!" }
+    });
+  }
+});
+```
+
 ## 入参
 入参结构为：(String eventName, Function callback)。
 
