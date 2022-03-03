@@ -61,4 +61,3 @@ Page({
 | --- | --- | --- | --- |
 | eventName | String | 是 | 需要监听的事件的名称。 |
 | callback | Function | 是 | 事件监听函数。 |
-
