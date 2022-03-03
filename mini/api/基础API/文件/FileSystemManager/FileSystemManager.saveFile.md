@@ -13,6 +13,9 @@
 ## 示例代码
 
 ### .js 示例代码
+
+保存本地用户文件：
+
 ```javascript
 let fs = my.getFileSystemManager();
 my.chooseImage({
@@ -26,6 +29,30 @@ my.chooseImage({
       }
     })
   }
+});
+```
+
+保存本地缓存文件：
+
+```JavaScript
+let fs = my.getFileSystemManager();
+my.downloadFile({
+  url: 'https://img.alicdn.com/tfs/TB1x669SXXXXXbdaFXXXXXXXXXX-520-280.jpg',
+  success({ apFilePath }) {
+    console.log(JSON.stringify(apFilePath))
+    fs.saveFile({
+      tempFilePath: apFilePath,
+      filePath: `${my.env.USER_DATA_PATH}/img.jpg`,
+      success: (res1) => {
+        console.log(res1.savedFilePath)
+      }
+    })
+  },
+  fail(res) {
+    my.alert({
+      content: res.errorMessage || res.error,
+    });
+  },
 });
 ```
 
