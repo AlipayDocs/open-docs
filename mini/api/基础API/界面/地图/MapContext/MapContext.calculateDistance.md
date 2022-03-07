@@ -1,10 +1,8 @@
 
 # 简介
-**MapContext.calculateDistance** 是地图路径的计算能力，用于计算途径地图上多个点的总路线距离。也可根据该路线截取部分子路线，加上其他目标点的路径规划后，组合成新的路径。
+**MapContext.calculateDistance** 计算途经地图上多个点的路径长度，并可按指定距离截取该路径。
 
-传入一组点（例如 points 数组 [A,B,C]），计算经过这些点的总路径长度。也可传入目标距离，返回目标坐标点 B'，目标坐标点 B'与 points 数组中第一个点 A 的直线距离，等于目标距离。假设 B'- A 直线距离在 B-A 直线距离、C-A 直线距离之间，则返回 points 数组中的点 B 的索引数值。
-
-例如传入的 points 数组为本市所有川菜外卖店，传入目标距离为 3 km，则可返回距离当前地点 3 km 内、离我最远的川菜外卖店的索引值。
+例如：入参 { points: [A, B, C]，targetDistances: [d1, d2] }，success 回调的参数 { distance, targetPoints: [X, Y] } <br>用 dist(M, N) 代表坐标 M 到 N 的直线距离，则有 distance == dist(A, B) + dist(B, C)<br>若 0 <= d1 < dist(A, B)，则 X 在线段 AB 上（X.targetLineIndex == 0），且 dist(A, X) == d1<br>若 0 <= d2 - dist(A, B) < dist(B, C)，则 Y 在线段 BC 上（Y.targetLineIndex == 1），且 dist(A, B) + dist(B, Y) == d2
 
 ## 使用限制
 
@@ -55,26 +53,26 @@ this.mapCtx.calculateDistance({
 ## 入参
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| points | Array | 是 | 路线中点的经纬度数组。 |
-| exportTotalDistance | Boolean | 否 | 是否需要计算总距离，默认为 true。 |
-| targetDistances | Array | 否 | 目标距离（直线距离）数组。 |
+| points | Array | 是 | 顺序排列的路径节点数组。每个节点形如 { latitude, longitude } |
+| exportTotalDistance | Boolean | 否 | 是否需要计算路径总长度，默认为 true。 |
+| targetDistances | Array | 否 | 目标路径长度数组。<br>如有提供，接口将按这些长度截取子路径（以 points[0] 为起点），终点作为出参 targetPoints 的元素 |
 
 
 ### success 返回值
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| distance | Number | 总路径长度。（如果传入的 exportTotalDistance 为 false,则不返回 distance。） |
-| targetPoints | Array | 符合目标距离的点，对应的经纬度。<br />具体属性值参见下方 **targetPoints 对象表**。 |
+| distance | Number | 路径总长度。如果传入的 exportTotalDistance 为 false，则不返回 distance。
+| targetPoints | Array | 按 targetDistances 截取的子路径的终点。<br />每个点的属性参见下方 **targetPoint 对象**。 |
 
 
-### targetPoints 对象
+### targetPoint 对象
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| index | Number | 与 points 数组中首个点的直线距离符合目标距离的点，在 targetDistances 中的索引。 |
-| targetDistance | Array | 目标距离的数值。（如果不传 targetPoints 或 targetPoints 参数为空，则返回的 targetDistances字段也为空。） |
 | latitude | Number | 纬度。 |
 | longitude | Number | 经度。 |
-| targetLineIndex | Number | 假设 points 数组为 [A,B,C]，符合目标距离的点为 B'， 且 B'- A 直线距离在 B-A 直线距离、C-A 直线距离之间，则 targetLineIndex 为 points 数组中的点 B 的索引数值。 |
+| index | Number | 此 targetPoint 对应的 targetDistances 索引。<br>targetPoints 会按所截子路径长度升序排列，与 targetDistances 顺序可能不同 |
+| targetDistance | Number | 此 targetPoint 截取的子路径的长度。值为 targetDistances[index]。 |
+| targetLineIndex | Number | 此 targetPoint 所在线段的索引。<br>入参 points 中每一对相邻元素构成一条线端，每 i 条线段的端点为 points[i] 和 points[i + 1] |
 
 
 ## 返回值示例代码
