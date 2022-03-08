@@ -1,22 +1,27 @@
 
-
 # 简介
-针对小程序不能外跳 H5 页面，提供 web-view 页面承载组件将 H5 嵌套进小程序，实现在小程序内打开 H5 页面。小程序跳转相关内容请参见 [小程序跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)，调试页面访问受限解决方法请参见 [web-view 调试报错页面访问受限处理方法](https://opendocs.alipay.com/mini/component/access)，开发过程中遇到的问题可参考 [web-view 常见问题](/mini/component/mg7rvg)，涵盖了web-view 与 H5 、web-view 页面设计相关、开放能力等方面。
+
+可通过 web-view 组件在小程序中嵌入 H5 页面。小程序不直接支持外跳 H5，web-view 部分地满足跳转 H5 的需求。关于小程序跳转，更完整内容可参考 [小程序跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
+
+web-view 可以打开的 H5 页面的域名限于开发者维护的 H5 域名白名单（支付宝小程序管理中心 > 设置 > 开发设置 > H5域名配置），仅支持添加开发者可控制的域名。若 web-view 提示访问受限，可参考 [web-view 页面访问受限解决方案](https://opendocs.alipay.com/mini/component/access)。
+
+开发过程中遇到问题可参考 [web-view 常见问题](/mini/component/mg7rvg)。
 
 ## 使用限制
 
-- 版本要求支付宝客户端 10.1.35 或更高版本。
-- 每个页面只能有一个 web-view ，请不要渲染多个 web-view ，会自动铺满整个页面，并覆盖其它组件。
+- 支付宝客户端 10.1.35 或更高版本可用。
 - 不支持个人小程序使用，仅支持企业小程序。
-- 不支持添加阿里域名（天猫、淘宝等）到白名单且域名添加数量不超过 20 个。
+- 每个页面只能有一个 web-view，会自动铺满整个页面并覆盖其它组件。
 - 不支持多个页面 web-view 间通讯。不支持横屏以及全屏展示。
-- 不支持 pushWindow。
-- 不支持嵌套授权逻辑。web-view 跳到 H5 的白名单链接如需嵌套第三方的 iframe，可以把嵌入的三方 url 也添加进h5域名白名单。
-- 支持 web-view 的 postMessage 传递多个参数。
-- URL 传参中除 ASCLL 字母、数字、~!* ()'以外的字符（如中文字符），请使用 encodeURIComponent() 函数进行编码，及使用 decodeURIComponent() 函数进行解码。
 - 调试请以真机效果为准。
-- 使用该组件之前，请确保 H5 页面中所有的域名地址（含静态资源地址，例如图片、.js 文件地址等）已经加入到 web-view 的 H5 域名白名单内。如未添加，参见 [**配置 H5 域名**](https://opendocs.alipay.com/mini/component/idfvg6) 进行添加。
-- 域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。
+
+## 注意事项
+
+- 包含中文等特殊字符的 URL，请先使用 encodeURL() 编码。
+- 主文档 URL、iframe 里的主文档 URL，以及后续跳转的主文档 URL，其域名均需要加入 H5 域名白名单，否则无法访问。<br>
+- H5 域名白名单维护方法请参见 [**配置 H5 域名**](https://opendocs.alipay.com/mini/component/idfvg6) 。不支持添加阿里（天猫、淘宝等）域名，且域名总数量不超过 20 个。<br>
+- **H5 域名白名单变更后需要小程序发版，新的白名单仅对新版小程序生效。**
+
 
 ## 扫码体验
 ![](https://gw.alipayobjects.com/mdn/miniapp_de/afts/img/A*iCMFTpfHrxoAAAAAAAAAAABjARQnAQ#align=left&display=inline&height=1906&margin=%5Bobject%20Object%5D&originHeight=1906&originWidth=1540&status=done&style=none&width=128)
