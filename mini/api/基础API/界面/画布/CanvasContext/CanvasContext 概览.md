@@ -58,7 +58,7 @@
 ### 方法
 | **名称** | **描述** |
 | --- | --- |
-| [CanvasContext.arc](https://opendocs.alipay.com/mini/api/lut4uo) | 画一条弧线。 |
+| [CanvasContext.arc](https://opendocs.alipay.com/mini/006l51) | 画一条弧线。 |
 | [CanvasContext.arcTo](https://opendocs.alipay.com/mini/api/arcto) | 根据控制点和半径绘制圆弧路径。 |
 | [CanvasContext.beginPath](https://opendocs.alipay.com/mini/api/vk0ohr) | 开始创建一个路径，需要调用 `fill` 或者 `stroke` 才会使用路径进行填充或描边。 |
 | [CanvasContext.bezierCurveTo](https://opendocs.alipay.com/mini/api/dzf516) | 创建三次方贝塞尔曲线路径。 |
