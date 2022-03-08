@@ -18,15 +18,15 @@
 Page({
   onLoad() {
     const eventChannel = this.getOpenerEventChannel();
+    const openerToOpened = (data) => {
+      console.log(data);
+    }
     
     // 挂载监听事件
-    eventChannel.on('openerToOpened', data => {
-      console.log(data); // { "message": "Hi Opened Page!" }
-    });
+    eventChannel.on('openerToOpened', openerToOpened);
+    
     // 解除监听事件
-    eventChannel.on('openerToOpened', data => {
-      console.log(data); // { "message": "Hi Opened Page!" }
-    });
+    eventChannel.off('openerToOpened', openerToOpened);
   }
 });
 ```
