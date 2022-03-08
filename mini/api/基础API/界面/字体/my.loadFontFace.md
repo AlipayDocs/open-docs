@@ -63,6 +63,7 @@ Page({
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
+| global | Boolean | 否 | 是否全局生效。<br/>默认值 `false`。</br>[2.7.15](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)开始支持。 |
 | family | String | 是 | 字体名称。 |
 | source | String | 是 | 字体资源地址。 |
 | desc | Object | 否 | 字体描述符。 |
