@@ -52,12 +52,30 @@ Object 类型，属性如下：
 
 ## 常见问题 FAQ
 
-### Q：my.navigateToMiniProgram 的 extraData 的参数在哪里获取？ extraData 是否可以添加多个参数？自定义参数中间使用的什么符号进行拼接？
-A：目标小程序可在 App.onLaunch( )、App.onShow( ) 中获取到这份数据。
+### Q：my.navigateToMiniProgram 的 extraData 的参数在哪里获取？ extraData 是否可以添加多个参数？自定义参数中间使用的什么符号进行拼接？如何获取自定义的参数
+A：目标小程序可在 App.onLaunch( )、App.onShow( ) 中获取到这份数据。extraData可以是一个包含多个参数的对象。
 
-extraData 可以添加多个参数，自定义参数都是从这里传入的。
+```js
+// 跳转小程序示例代码
+my.navigateToMiniProgram({
+  appId: 'targetAppId',
+  extraData: {
+    key1: 'some data',
+    key2: {
+      foo: 'bar'
+    }
+  }
+})
 
-自定义参数中间使用 & 符号进行拼接。
+// 获取extraData示例代码
+App({
+  onLaunch(options) {
+    const { referrerInfo = {}, appId } = options
+    const { key1, key2 } = referrerInfo.extraData || {}
+  }
+});
+
+```
 
 ### Q：小程序如何跳转收藏有礼页面？
 A：可参考如下代码。更多详情请参见 [小程序有礼](https://opendocs.alipay.com/mini/operation/app-with-benefit)。
