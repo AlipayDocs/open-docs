@@ -8,7 +8,7 @@
 >
 > ![|706x73](http://mdn.alipayobjects.com/afts/img/A*xM4NR6VRbfy_8SFDkgXUhQBkAa8wAA/original?bz=openpt_doc&t=JgMQtxsM9S7uH5pPEDbN9wAAAABkMK8AAAAA#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&originHeight=168&originWidth=1624&status=done&style=stroke&width=1624)
 >
-> **注意**：域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。
+> **注意**：域名添加或删除后仅对新版本小程序生效，老版本仍使用修改前的域名配置。
 
 
 ## 扫码体验
@@ -48,11 +48,12 @@ Page({
           fileType: 'image',
           fileName: 'file',
           filePath: path,
+          formData: { extra: '其他信息' },
           success: res => {
             my.alert({ title: '上传成功' });
           },
-          fail: function(res) {
-            my.alert({ title: '上传失败' });
+          fail: err => {
+            my.alert({ title: '上传失败', content: JSON.stringify(err) });
           },
         });
       },
@@ -62,27 +63,45 @@ Page({
 ```
 上传文件的后端代码：
 ```java
-@Override
-protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    String path =  req.getParameter("filePath");
-    //得到要下载的文件名
-    String fileName = URLEncoder.encode(req.getParameter("fileName"),"utf-8");
-    String fileType = path.substring(path.lastIndexOf('.')+1,path.length());
-    FileInputStream fis = new FileInputStream(path); 
-    System.out.println("debugFileName: "+ fileName);
-    //下载文件存放路径
-    String localPath = "";
-    FileOutputStream fs = new FileOutputStream(localPath + fileName +"."+fileType);
-    resp.setHeader("content-disposition", "attachment;filename="+fileName);
-    resp.setHeader("content-type", fileType );
-    //执行fileOutputStream的输出操作
-    int len = 1;
-    byte[] b = new byte[1024];
-    while((len=fis.read(b))!=-1){
-        fs.write(b, 0, len);
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+import javax.servlet.annotation.MultipartConfig;
+
+@MultipartConfig(
+  fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
+  maxFileSize = 1024 * 1024 * 10,      // 10 MB
+  maxRequestSize = 1024 * 1024 * 100   // 100 MB
+)
+public class UploadServlet extends HttpServlet {
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws IOException, ServletException
+    {
+        Part filePart = request.getPart("file");
+        String fileSize = filePart == null ? "0" : filePart.getSize() + " bytes";
+        
+        if (filePart != null) {
+            String fileName = filePart.getSubmittedFileName();
+            String filePath = "/tmp/upload" + fileName.substring(fileName.lastIndexOf("."));
+            filePart.write(filePath);
+        }
+        
+        Part extraPart = request.getPart("extra");
+        String extraValue = extraPart == null ? "" : new Scanner(extraPart.getInputStream(), "UTF-8").useDelimiter("\\A").next();
+        
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().print("file: " + fileSize + "; extra: " + extraValue);
     }
-    fs.close();
-    fis.close();
+    
 }
 ```
 
@@ -230,7 +249,6 @@ A：上传失败导致报错 error:12 ，造成上传失败的可能原因有：
 2. 上传时间超过 30s
 3. 没有权限
 4. 文件未找到 / 文件不是一个正常的文件
-
 
 ### Q5：使用 my.uploadFile 上传图片至后台，接收的是二进制图片，再从后台发送小程序前台对应的二进制图片，小程序前台是如何解析呢？
 A：上传图片是后端通过二进制流接受图片，之后后端只需提供对应的图片在服务器上的位置地址就可以。
