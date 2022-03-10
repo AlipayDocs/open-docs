@@ -12,7 +12,7 @@
 ![|127x157](https://cdn.nlark.com/yuque/0/2021/jpeg/179989/1625191726620-5e45ee53-b35c-4a2f-9088-24c5dce03300.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&name=1.jpeg&originHeight=157&originWidth=127&size=19820&status=done&style=stroke&width=127)
 
 ## 效果示例
-![|300x540](https://cdn.nlark.com/yuque/0/2021/gif/179989/1625191739247-40979909-a04d-4601-bf9d-1a4903bf80f8.gif#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&name=2.gif&originHeight=540&originWidth=300&size=558650&status=done&style=stroke&width=300)
+![|300x650](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*QtdsQIBkcP8AAAAAAAAAAAAAARQnAQ)
 
 # 接口调用
 
