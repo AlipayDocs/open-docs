@@ -93,7 +93,7 @@ Page({
 | poster-size | String | 当 poster 高宽比跟视频高宽不匹配时，如何显示 poster，设置规则同 background-size 一致。<br />**默认值：** contain |
 | object-fit | String | 当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充。<br />**默认值：** contain |
 | initial-time | Number | 指定视频初始播放位置，单位 s。<br /> **版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| duration | Number | 指定视频时长，单位 s，默认读取视频本身时长信息。仅在无法读取所制作视频的时长时使用。 |
+| duration | Number | 为无法读取时长的视频设置时长，单位 s。 |
 | controls | Boolean | 是否显示默认播放控件（底部工具条，包括播放/暂停按钮、播放进度、时间）。<br />**默认值：** true |
 | autoplay | Boolean | 是否自动播放。<br />**默认值：** false |
 | direction | Number | 设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针90度）, -90（屏幕顺时针90度）<br />**版本要求：** 基础库 [1.12.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
