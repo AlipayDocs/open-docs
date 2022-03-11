@@ -24,7 +24,7 @@ web-view 可以打开的 H5 页面的域名限于开发者维护的 H5 域名白
 
 
 ## 扫码体验
-![](https://gw.alipayobjects.com/mdn/miniapp_de/afts/img/A*iCMFTpfHrxoAAAAAAAAAAABjARQnAQ#align=left&display=inline&height=1906&margin=%5Bobject%20Object%5D&originHeight=1906&originWidth=1540&status=done&style=none&width=128)
+![100x100](https://gw.alipayobjects.com/mdn/miniapp_de/afts/img/A*iCMFTpfHrxoAAAAAAAAAAABjARQnAQ#align=left&display=inline&height=1906&margin=%5Bobject%20Object%5D&originHeight=1906&originWidth=1540&status=done&style=none&width=128)
 
 ## 效果示例
 ![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/30af88e3aee4fad81364495deabe6307.png#align=left&display=inline&height=720&margin=%5Bobject%20Object%5D&originHeight=720&originWidth=1280&status=done&style=none&width=1280)
