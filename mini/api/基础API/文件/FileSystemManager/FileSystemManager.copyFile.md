@@ -16,50 +16,50 @@
 
 复制缓存文件：
 ```JavaScript
-let fs = my.getFileSystemManager();
-    my.downloadFile({
-      url: 'https://gw.alipayobjects.com/os/bmw-prod/61b560b7-b50b-4928-b392-c39a1c4bd0fd.txt',
-      success({ apFilePath }) {
-        console.log(JSON.stringify(apFilePath))
-        fs.copyFile({
-          srcPath: apFilePath,
-          destPath: `${my.env.USER_DATA_PATH}/bb.txt`,
-          success: (res) => {
-            console.log(JSON.stringify(res));
-            fs.readFile({
-              filePath: `${my.env.USER_DATA_PATH}/bb.txt`,
-              encoding: "utf8",
-              success: (res) => {
-                console.log(JSON.stringify(res));
-                my.alert({
-                  content: res.data,
-                });
-              }
-            });
-          },
-          fail: (err)=>{
-            console.log(JSON.stringify(err));
-          }
-        });
-      },
-      fail(res) {
-        my.alert({
-          content: res.errorMessage || res.error,
-        });
-      },
-    });
+  let fs = my.getFileSystemManager();
+  my.downloadFile({
+    url: 'https://gw.alipayobjects.com/os/bmw-prod/61b560b7-b50b-4928-b392-c39a1c4bd0fd.txt',
+    success({ apFilePath }) {
+      console.log(JSON.stringify(apFilePath))
+      fs.copyFile({
+        srcPath: apFilePath,
+        destPath: `${my.env.USER_DATA_PATH}/bb.txt`,
+        success: (res) => {
+          console.log(JSON.stringify(res));
+          fs.readFile({
+            filePath: `${my.env.USER_DATA_PATH}/bb.txt`,
+            encoding: "utf8",
+            success: (res) => {
+              console.log(JSON.stringify(res));
+              my.alert({
+                content: res.data,
+              });
+            }
+          });
+        },
+        fail: (err)=>{
+          console.log(JSON.stringify(err));
+        }
+      });
+    },
+    fail(res) {
+      my.alert({
+        content: res.errorMessage || res.error,
+      });
+    },
+  });
 ```
 
 复制用户文件：
 ```javascript
-let fs = my.getFileSystemManager();
-fs.copyFile({
-  srcPath: `${my.env.USER_DATA_PATH}/test/copyFile/path/aa.txt`,
-  destPath: `${my.env.USER_DATA_PATH}test/copyFile/path/dest/bb.txt`,
-  success: (res) => {
- 	console.log("成功");
-  }
-});
+  let fs = my.getFileSystemManager();
+  fs.copyFile({
+    srcPath: `${my.env.USER_DATA_PATH}/test/copyFile/path/aa.txt`,
+    destPath: `${my.env.USER_DATA_PATH}test/copyFile/path/dest/bb.txt`,
+    success: (res) => {
+ 	  console.log("成功");
+    }
+  });
 ```
 
 ## 入参
