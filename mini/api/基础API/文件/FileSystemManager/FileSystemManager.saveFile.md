@@ -14,7 +14,7 @@
 
 ### .js 示例代码
 
-保存本地用户文件：
+保存为本地用户文件：
 
 ```javascript
 let fs = my.getFileSystemManager();
@@ -32,7 +32,7 @@ my.chooseImage({
 });
 ```
 
-保存本地缓存文件：
+保存为本地缓存文件：
 
 ```JavaScript
 let fs = my.getFileSystemManager();
@@ -42,7 +42,6 @@ my.downloadFile({
     console.log(JSON.stringify(apFilePath))
     fs.saveFile({
       tempFilePath: apFilePath,
-      filePath: `${my.env.USER_DATA_PATH}/img.jpg`,
       success: (res1) => {
         console.log(res1.savedFilePath)
       }
