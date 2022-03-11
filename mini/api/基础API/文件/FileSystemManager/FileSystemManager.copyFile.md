@@ -1,6 +1,6 @@
 
 # 简介
-**FileSystemManager.copyFile** 复制文件（支持复制临时文件、缓存文件到沙箱文件）。
+**FileSystemManager.copyFile** 复制文件（支持复制临时文件、缓存文件、用户文件到本地用户文件位置）。
 
 ## 使用限制
 
@@ -13,6 +13,44 @@
 ## 示例代码
 
 ### .js 示例代码
+
+复制缓存文件：
+```JavaScript
+let fs = my.getFileSystemManager();
+    my.downloadFile({
+      url: 'https://gw.alipayobjects.com/os/bmw-prod/61b560b7-b50b-4928-b392-c39a1c4bd0fd.txt',
+      success({ apFilePath }) {
+        console.log(JSON.stringify(apFilePath))
+        fs.copyFile({
+          srcPath: apFilePath,
+          destPath: `${my.env.USER_DATA_PATH}/bb.txt`,
+          success: (res) => {
+            console.log(JSON.stringify(res));
+            fs.readFile({
+              filePath: `${my.env.USER_DATA_PATH}/bb.txt`,
+              encoding: "utf8",
+              success: (res) => {
+                console.log(JSON.stringify(res));
+                my.alert({
+                  content: res.data,
+                });
+              }
+            });
+          },
+          fail: (err)=>{
+            console.log(JSON.stringify(err));
+          }
+        });
+      },
+      fail(res) {
+        my.alert({
+          content: res.errorMessage || res.error,
+        });
+      },
+    });
+```
+
+复制用户文件：
 ```javascript
 let fs = my.getFileSystemManager();
 fs.copyFile({
