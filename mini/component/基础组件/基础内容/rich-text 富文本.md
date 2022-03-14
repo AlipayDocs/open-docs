@@ -178,7 +178,7 @@ Page({
 [mini-html-parser2](https://github.com/ant-mini-program/mini-html-parser) 0.3.0 已解决此问题，若当前使用老版本，请升级到最新的 0.3.0 版本即可。
 
 ### 如何为 rich-text 富文本 添加链接跳转功能？
-受小程序管控原因，rich-text 中的a标签，无法像前端页面中，配置 `<a href="https://www.alipay.com">alipay</a>` 即可实现跳转；小程序中需要使用对应的 [JSAPI](https://opendocs.alipay.com/mini/introduce/open-miniprogram) 或者 [路由JSAPI](https://opendocs.alipay.com/mini/006l0z) 实现跳转路由。
+受小程序管控原因，rich-text 中的a标签，无法像前端页面中，配置 `<a href="https://render.alipay.com/p/s/web-view/index">Webview Demo</a>` 即可实现跳转；小程序中需要使用对应的 [JSAPI](https://opendocs.alipay.com/mini/introduce/open-miniprogram) 或者 [路由JSAPI](https://opendocs.alipay.com/mini/006l0z) 实现跳转路由。
 
 ```javascript
 // 使用上述 [mini-html-parser] 处理 html 字符串
