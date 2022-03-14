@@ -180,8 +180,7 @@ Page({
 ### 如何为 rich-text 富文本 添加链接跳转功能？
 受小程序管控原因，rich-text 中的a标签，无法像前端页面中，配置 `<a href="https://www.alipay.com">alipay</a>` 即可实现跳转；小程序中需要使用对应的 [JSAPI](https://opendocs.alipay.com/mini/introduce/open-miniprogram) 或者 [路由JSAPI](https://opendocs.alipay.com/mini/006l0z) 实现跳转路由。
 
-js
-```
+```javascript
 // 使用上述 [mini-html-parser] 处理 html 字符串
 import parse from 'mini-html-parser2';
 
@@ -231,10 +230,9 @@ Page({
 })
 ```
 
-axml
-```
+```html
 <rich-text nodes={{nodes}} onTap="handleOnTap"></rich-text>
 ```
 
-总结下来：把跳转链接放到 node marks 属性中，通过 rich-text onTap 事件跳转。
+即把跳转链接放到 node marks 属性中，通过 rich-text onTap 事件跳转。
 
