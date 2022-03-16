@@ -32,7 +32,7 @@ Page({
 ### 异步型功能 API
 大部分 API 都是异步型功能 API，例如 [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx)、[my.request](https://opendocs.alipay.com/mini/api/owycmh)。异步型功能 API 的入参都为一个 Object 对象，并包含三个子属性：
 
-| 属性 | 类型 | 必填 | 描述 |
+| **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
@@ -40,7 +40,7 @@ Page({
 
 回调结果若无特殊说明，一般为一个 Object 对象，包含以下子属性：
 
-| 属性 | 类型 | 说明 |
+| **属性** | **类型** | **说明** |
 | --- | --- | --- |
 | errCode | String | 错误码，接口调用成功，errorCode=0 。 |
 | errorMsg | String | 错误信息，接口调用成功返回 `ok` 。 |
