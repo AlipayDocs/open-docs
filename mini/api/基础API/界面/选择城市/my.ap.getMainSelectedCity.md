@@ -58,17 +58,17 @@ Object 类型，属性如下：
 ### success 回调函数
 | **名称** | **类型** | **描述** |
 | --- | --- | --- |
-| name | String | 城市名称 |
-| code | String | 城市编码 |
-| chineseMainLand | Boolean | 是否是大陆 |
-| isManualSelected | Boolean | 是否是手动选择 |
-| settingTime | Number | 设置时间 |
-| districtName | String | 区县名（支付宝客户端 10.1.99 版本及以上） |
-| districtCode | String | 区县编码(客户端10.1.99版本新增) |
+| name | String | 城市名称。 |
+| code | String | 城市编码。 |
+| chineseMainLand | Boolean | 是否是大陆。 |
+| isManualSelected | Boolean | 是否是手动选择。 |
+| settingTime | Number | 设置时间。 |
+| districtName | String | 区县名（支付宝客户端 10.1.99 版本及以上）。 |
+| districtCode | String | 区县编码(客户端10.1.99版本新增)。 |
 
 
 ## 错误码
 | **错误码** | **说明** | **解决方案** |
 | --- | --- | --- |
 | 10001 | 获取城市信息为空。 | 重新选择城市信息。 |
-| 10002 | 城市信息不展示。（支付宝客户端 10.1.90，在支付宝首页的城市选择入口被隐藏时，出现该错误） | 建议升级支付宝客户端版本。 |
+| 10002 | 城市信息不展示。<br/>支付宝客户端 10.1.90，在支付宝首页的城市选择入口被隐藏时，出现该错误。 | 建议升级支付宝客户端版本。 |
