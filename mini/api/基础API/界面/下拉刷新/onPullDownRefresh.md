@@ -62,4 +62,3 @@ Page({
 | --- | --- | --- | --- |
 | pullRefresh | Boolean | 否 | 是否允许下拉刷新。默认 true。<br />**说明**：下拉刷新生效的前提是 allowsBounceVertical 值为 `YES` 。 |
 | allowsBounceVertical | String | 否 | 页面是否支持纵向拽拉超出实际内容。默认 YES，支持 `YES`/`NO`。 |
-
