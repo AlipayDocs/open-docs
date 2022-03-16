@@ -33,7 +33,7 @@
   ],
   "window": {
     "defaultTitle": "Demo"
-  }
+  },
   "tabBar": {
     "textColor": "#dddddd",
     "selectedColor": "#49a9ee",
