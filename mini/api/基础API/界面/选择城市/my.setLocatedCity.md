@@ -1,6 +1,6 @@
 
 # 简介
-**my.setLocatedCity** 是用于修改 [my.chooseCity](/mini/api/ui-city) 中的默认定位城市的名称的 API。
+**my.setLocatedCity** 是用于修改 [my.chooseCity](https://opendocs.alipay.com/mini/006l3p) 中的默认定位城市的名称的 API。
 
 ## 使用限制
 
@@ -298,5 +298,5 @@ Page({
 | --- | --- | --- |
 | 11 | 参数类型错误。 | 检查参数类型是否正确。 |
 | 12 | 必填参数为空。 | 请确认参数   locatedCityId、locatedCityName 是否已填写。 |
-| 13 | locatedCityId 不匹配。 | 请确保与 [my.chooseCity ](https://opendocs.alipay.com/mini/api/ui-city)接口的 onLocatedComplete 的 locatedCityId 保持一致。 |
+| 13 | locatedCityId 不匹配。 | 请确保与 [my.chooseCity ](https://opendocs.alipay.com/mini/006l3p)接口的 onLocatedComplete 的 locatedCityId 保持一致。 |
 
