@@ -26,7 +26,7 @@
 ### onLaunch(object: Object) 及 onShow(object: Object)
 object 属性说明：
 
-| 属性 | **类型** | **描述** |
+| **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | query | Object | 当前小程序的 query，从启动参数的 query 字段解析而来。 |
 | scene | String | 启动小程序的 [场景值](/mini/framework/scene)。 |
