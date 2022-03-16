@@ -58,7 +58,9 @@ Object 类型，属性如下：
 
 
 ### scopes 说明
-一个 scope 表示开发者需要请求用户授权的权限范围，一个 scope 包含至少一个 OpenAPI 接口或者 JSAPI 接口，一次授权可以组合多个 scope 做组合授权，用“,”分隔。
+一个 scope 表示开发者需要请求用户授权的权限范围，一个 scope 包含至少一个 OpenAPI 接口或者 JSAPI 接口。
+
+scopes 可传单个 scope 名称（如 "auth_base"），也可传多个 scope 数据（如 ["auth_user", "auth_zhima"]）。
 
 | **scopes** | **描述** | **包含的服务端 API 接口** |
 | --- | --- | --- |
