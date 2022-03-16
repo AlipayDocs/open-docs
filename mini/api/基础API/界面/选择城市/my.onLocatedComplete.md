@@ -87,14 +87,12 @@ Page({
 | --- | --- | --- |
 | 回调函数 | Function | 小程序地理位置定位完成事件的回调函数。 |
 
-
 ## 回调参数
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | longitude | Number | 当前定位城市经度。 |
 | latitude | Number | 当前定位城市经度。 |
 | locatedCityId | String | 当前定位城市 id，setLocatedCity 的时候带上。 |
-
 
 ### 回调参数示例代码
 ```javascript
