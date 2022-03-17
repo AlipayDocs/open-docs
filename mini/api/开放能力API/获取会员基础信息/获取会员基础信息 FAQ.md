@@ -42,13 +42,13 @@ A：不能在同一个弹框中同时获取会员手机号和头像、昵称。
 详情请参见：
 
 - [获取会员手机号](/mini/introduce/getphonenumber)
-- [获取会员基础信息](/mini/introduce/twn8vq)（获取头像、昵称、性别、所在地区等信息）
+- [获取会员基础信息](/mini/introduce/twn8vq)（获取头像、昵称信息）
 
 ### Q7：“获取会员基础信息” 可以获取支付宝用户的 user_id 吗？
 A：不可以。获取支付宝用户的 user_id 需要在服务器端调用 [alipay.system.oauth.token](https://docs.open.alipay.com/api_9/alipay.system.oauth.token) 。
 
 ### Q8：“获取会员基础信息”可以获取用户身份证、真实姓名等信息吗？
-A：不可以。“获取会员基础信息”只能获取用户头像、昵称、性别、所在地区等信息。
+A：不可以。“获取会员基础信息”只能获取用户头像、昵称信息。
 
 ### Q9：小程序获取会员基础信息时弹出两次授权窗，如何处理？
 A：正常获取会员基础信息仅需使用 [my.getOpenUserInfo](https://opendocs.alipay.com/mini/02otr4) 即可，只涉及一次授权弹窗。在获取用户 user_id + 获取用户基础信息场景需要弹窗两次进行授权确认：一次是 [my.getAuthCode](/mini/api/openapi-authorize) 获取用户授权码的授权框， 另一次是 my.getOpenUserInfo 中获取用户基础信息的授权框。
