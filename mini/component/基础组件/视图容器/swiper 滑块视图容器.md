@@ -36,8 +36,7 @@
   <view class="page-description">滑块视图容器</view>
   <view class="page-section">
     <view class="page-section-demo">
-      <swiper 
-        style="height:150px"
+      <swiper   
         class="demo-swiper"
         previousMargin="10px"
         nextMargin="10px"
