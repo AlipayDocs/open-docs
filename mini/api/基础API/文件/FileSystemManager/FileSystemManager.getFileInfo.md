@@ -34,6 +34,8 @@ fs.getFileInfo({
 
 
 ### success 返回值
+success 回调会携带一个 Object 类型的对象，其参数如下：
+
 | **属性** | **类型** | **说明** |
 | --- | --- | --- |
 | size | Number | 文件大小，以字节为单位。 |
