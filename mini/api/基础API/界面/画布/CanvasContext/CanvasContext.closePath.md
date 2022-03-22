@@ -17,9 +17,8 @@
 
 ## 示例代码
 
-### 示例代码 1
-
-#### .js 示例代码
+### .js 示例代码
+示例代码 1：
 ```javascript
 //.js
 const ctx = my.createCanvasContext('canvas')
@@ -35,9 +34,7 @@ ctx.draw()
 
 ![|738x415](https://cdn.nlark.com/yuque/0/2021/png/179989/1624872196806-d199b5be-c55f-49fe-b1f4-0388cdb14a94.png#align=left&display=inline&height=720&margin=%5Bobject%20Object%5D&name=3.png&originHeight=720&originWidth=1280&size=28578&status=done&style=none&width=1280)
 
-### 示例代码 2
-
-#### .js 示例代码
+示例代码 2：
 ```javascript
 //.js
 const ctx = my.createCanvasContext('canvas')
@@ -55,3 +52,4 @@ ctx.draw()
 
 显示效果如下图所示：
 ![|738x415](https://cdn.nlark.com/yuque/0/2021/png/179989/1624872221547-a3ef4d23-384d-410d-b20b-51ec5d06b55e.png#align=left&display=inline&height=720&margin=%5Bobject%20Object%5D&name=4.png&originHeight=720&originWidth=1280&size=27203&status=done&style=none&width=1280)
+
