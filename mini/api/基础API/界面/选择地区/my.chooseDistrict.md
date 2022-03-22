@@ -182,29 +182,107 @@ my.chooseDistrict({
 })
 ```
 
-## ﻿入参
-| **属性** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| **境内场景** |  |  |  |
-| mainTitle | String | 否 | 境内 Tab 自定义标题。 |
-| mainHeadList | Array | 否 | 头部自定义对象数组。如定位区块、热门城市区块。对象值请参见下方 **HeadModel 表**。 |
-| mainNormalList | Array | 否 | 底部城市列表。<br />当对象为空时，默认使用内置的境内城市列表填充。对象值请参见 **ItemModel 表**。 |
-| mainMergeOptions | Object | 否 | 修改内置数据的参数接口。传值方式为{“key”,"value"}。其中 key 是需要修改的城市的 adCode， value 是展示的城市名。<br /><br />仅在 mainNormalList 为空时生效，支持对默认境内数据差量更新:<br />{"371200":"","542400":"","540600":"那曲","659010":"胡杨河市"}<br /><br />value 为空代表删除对应 adCode 的城市；<br />value 不为空代表更新对应 adCode 的城市。 |
-| **境外 / 港澳台场景** |  |  |  |
-| seniorTitle | String | 否 | 境外 Tab 自定义标题。 |
-| seniorPageList | Array | 否 | 境外多 tab 数据集合, 对象值参见 **PageModel 表**。<br />如果对象为空时，默认使用内置的境外城市列表填充。 |
-| **通用场景** |  |  |  |
-| mode | Int | 是 | 指定场景。枚举如下：<br /><ul><li>0：展示境内；</li><li>1：展示境外；</li><li>2：展示境内+境外。</li> |
-| src | String | 否 | 自定义数据支持文件读取方式。自定义数据量大时，建议使用小程序内置离线包方式，src 为离线包相对地址，文件内参数格式同接口定义。 |
-| success | Function | 否 | 成功回调。 |
-| fail | Function | 否 | 失败回调。 |
+### .json 示例代码
+#### src 模式
+将 chooseDistrict 的入参通过文件方式添加到小程序中，文件内容为接口入参。可应对入参数据量大的场景，如新建 chooseDistrict.json。
+```json
+// chooseDistrict.json 参数参见文档说明
+{
+  "mode":2,
+  "mainHeadList":[
+    { 
+      "title":"定位模块",
+      "type":1
+    }
+  ],
+  "mainMergeOptions":{"371200":"","542400":"","540600":"那曲","659010":"胡杨河市","123456":"测试"}
+}
+```
 
+## 入参
+<table>
+  <tr>
+    <th><b>属性</b></th>
+    <th><b>类型</b></th>
+    <th><b>必填</b></th>
+    <th><b>描述</b></th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>境内场景</b></td>
+  </tr>
+  <tr>
+    <td>mainTitle</td>
+    <td>String</td>
+    <td>否</td>
+    <td>境内 Tab 自定义标题。</td>
+  </tr>
+  <tr>
+    <td>mainHeadList</td>
+    <td>Array</td>
+    <td>否</td>
+    <td>头部自定义对象数组。如定位区块、热门城市区块。对象值请参见下方 <b>HeadModel 表</b>。</td>
+  </tr>
+  <tr>
+    <td>mainNormalList</td>
+    <td>Array</td>
+    <td>否</td>
+    <td>底部城市列表。</br>当对象为空时，默认使用内置的境内城市列表填充。对象值请参见 <b>ItemModel 表</b>。</td>
+  </tr>
+  <tr>
+    <td>mainMergeOptions</td>
+    <td>Object</td>
+    <td>否</td>
+  <td>修改内置数据的参数接口。传值方式为 <code>{“key”,"value"}</code>。其中 key 是需要修改的城市的 adCode， value 是展示的城市名。</br>仅在 mainNormalList 为空时生效，支持对默认境内数据差量更新:<code>{"371200":"","542400":"","540600":"那曲","659010":"胡杨河市"}</code>。</br>value 为空代表删除对应 adCode 的城市；value 不为空代表更新对应 adCode 的城市。</td>
+  </tr>
+  <tr>
+    <td colspan="4"><b>境外 / 港澳台场景</b></td>
+  </tr>
+  <tr>
+    <td>seniorTitle</td>
+    <td>String</td>
+    <td>否</td>
+    <td>境外 Tab 自定义标题。</td>
+  </tr>
+  <tr>
+    <td>seniorPageList</td>
+    <td>Array</td>
+    <td>否</td>
+    <td>境外多 tab 数据集合, 对象值参见 <b>PageModel 表</b>。</br>如果对象为空时，默认使用内置的境外城市列表填充。</td>
+  </tr>
+  <tr>
+    <td colspan="4"><b>通用场景</b></td>
+  </tr>
+  <tr>
+    <td>mode</td>
+    <td>int</td>
+    <td>是</td>
+    <td>指定场景。枚举如下：</br><ul><li>0：展示境内。</li><li>1：展示境外。</li><li>2：展示境内+境外。</li></ul></td>
+  </tr>
+  <tr>
+    <td>src</td>
+    <td>String</td>
+    <td>否</td>
+    <td>自定义数据支持文件读取方式。自定义数据量大时，建议使用小程序内置离线包方式，src 为离线包相对地址，文件内参数格式同接口定义。</td>
+  </tr>
+  <tr>
+    <td>success</td>
+    <td>Function</td>
+    <td>否</td>
+    <td>成功回调。</td>
+  </tr>
+  <tr>
+    <td>fail</td>
+    <td>Function</td>
+    <td>否</td>
+    <td>失败回调。</td>
+  </tr>
+</table>
 
 ### HeadModel 表
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | title | String | 是 | 区块名，如“热门城市”。 |
-| type | Int | 否 | 模块类型。枚举如下：<br /><ul><li>0：常规城市；</li><li>1：定位模块；</li><li>2：展示支付宝提供的热门城市模块。</li> |
+| type | Int | 否 | 模块类型。枚举如下：<br /><ul><li>0：常规城市；</li><li>1：定位模块；</li><li>2：展示支付宝提供的热门城市模块。</li></ul> |
 | list | Array | 否 | 区块城市列表。不支持嵌套，对象值请参见 **ItemModel 表**。 |
 
 
@@ -233,22 +311,4 @@ my.chooseDistrict({
 | name | String | 城市名称。 |
 | adCode | String | 城市编码。 |
 | ext | String | 自定义扩展字段透传。 |
-
-
-### src 模式
-将 chooseDistrict 的入参通过文件方式添加到小程序中，文件内容为接口入参。可应对入参数据量大的场景，如新建 chooseDistrict.json。
-```json
-// chooseDistrict.json 参数参见文档说明
-{
-  "mode":2,
-  "mainHeadList":[
-    { 
-      "title":"定位模块",
-      "type":1
-    }
-  ],
-  "mainMergeOptions":{"371200":"","542400":"","540600":"那曲","659010":"胡杨河市","123456":"测试"}
-}
-```
-
 
