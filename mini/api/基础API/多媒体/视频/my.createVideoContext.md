@@ -19,6 +19,7 @@
 # 接口调用
 
 ## 示例代码
+### .axml 示例代码
 开发者在 .axml 文件中写入如下代码，命名 video id。video id 为开发者在对应 video 标签中自由命名的 ID 属性，例如下方代码中的 myVideo 。
 ```html
 <view>
@@ -34,7 +35,9 @@
    <button type="default" size="defaultSize" onTap="playbackRate"> playbackRate </button>
 </view>
 ```
-﻿开发者在 .js 文件中写入如下代码：
+
+### .js 示例代码
+开发者在 .js 文件中写入如下代码：
 ```javascript
 Page({
   data: {
@@ -81,7 +84,7 @@ Page({
 | pause | 无 | - | 暂停。 |
 | stop | 无 | - | 停止。 |
 | seek | position | Number | 跳转到指定位置，单位为秒（s）。 |
-| requestFullScreen | direction | Number | 进入全屏。<li>0 为正常竖屏。</li><li>90 为横屏。</li><li>-90 为反向横屏。</li>|
+| requestFullScreen | direction | Number | 进入全屏。<br/><ul><li>0：正常竖屏。</li><li>90：横屏。</li><li>-90：反向横屏。</li></ul>|
 | exitFullScreen | 无 | - | 退出全屏。 |
 | showStatusBar | 无 | - | 显示状态栏，仅在 iOS 全屏下有效。 |
 | hideStatusBar | 无 | - | 隐藏状态栏，仅在 iOS 全屏下有效。 |
