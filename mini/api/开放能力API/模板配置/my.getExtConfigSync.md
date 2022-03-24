@@ -12,7 +12,10 @@
 ### .js 示例代码
 ```javascript
 var res = my.getExtConfigSync();
-my.alert('模板ext 同步获取结果：' + JSON.stringify(res));
+my.alert({
+  content: '模板ext 同步获取结果：'+JSON.stringify(res),
+  buttonText: 'OK'
+});
 ```
 
 ## 返回值
