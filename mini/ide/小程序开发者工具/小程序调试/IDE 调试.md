@@ -1,6 +1,6 @@
 
 ## 概述
-我们提供了三种调试方式模拟器 + 调试工具、手机端调试面板、远程调试，供开发者进行调试操作，可根据需要自行选择调试方式。
+IDE 提供了三种调试方式模拟器 + 调试工具、手机端调试面板、远程调试，供开发者进行调试操作，可根据需要自行选择调试方式。
 
 ## 模拟器 + 调试工具
 模拟器中模拟了大部分的真机 API，并且配有调试工具，建议先在模拟器中完成基础功能、样式的调试，然后在真机上验证和调试，最终运行效果以真机为准。
@@ -16,7 +16,7 @@
 ![|697x437](https://cdn.nlark.com/lark/0/2018/gif/149/1533554602563-bac3c785-934a-4119-abc8-a8126f7be2b5.gif#align=left&display=inline&height=1932&margin=%5Bobject%20Object%5D&originHeight=1932&originWidth=3080&status=done&style=none&width=3080)
 
 ### 调试工具
-配合模拟器，我们提供了定制化的 chrome devtool，在其基础上提供比如 axml 等扩展。默认展示的有：
+配合模拟器，IDE 提供了定制化的 chrome devtool，在其基础上提供比如 axml 等扩展。默认展示的有：
 
 - **AXML：** 基于小程序元素的 dom、css 调试
 - **Console：** 运行日志、错误查看
@@ -43,4 +43,4 @@
    - Data 页面 data 数据。
 
 ## 远程调试
-在远程调试模式中，IDE 和手机端建立起一个连接，在 IDE 端可以进行断点、运行时信息检查、Network/Storage 信息查看和远程日志查看等。详情请参见 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug)。
+在远程调试模式中，IDE 和手机端建立起一个连接，在 IDE 端可以进行断点、运行时信息检查、Network/Storage 信息查看和远程日志查看等。可查看 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug)。
