@@ -106,4 +106,4 @@ Object 类型，属性如下：
 
 ### Q：my.saveImage 接口不能保存 Base64 的图片吗？
 
-A：目前 my.saveImage 暂不支持保存 Base64 的图片。
+A：目前已支持保存 `data:image` 开头的 Base64 图片。
