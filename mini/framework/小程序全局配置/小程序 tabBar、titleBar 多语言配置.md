@@ -1,5 +1,5 @@
 
-## 简介
+# 简介
 使用 tabBar、titleBar 多语言配置后，小程序会根据当前手机的语言来读取显示该语言配置。
 
 多语言 tabBar、titleBar 配置如下：
@@ -12,16 +12,16 @@
 **注意：**
 
 - 目前仅支持 zh-Hans（简体中文）、zh-Hant（繁体中文台湾）、zh-HK（繁体中文香港）、en（英文）四种语言。
-- IDE 中请使用**真机调试**查看配置效果。
+- IDE 中请使用 **真机调试** 查看配置效果。
 
 
-文件目录结构示例如下：
+文件目录结构示例如下：</br>
 ![](http://mdn.alipayobjects.com/afts/img/A*z9X-S4YOFfMAAAAAAAAAAAAAAa8wAA/original?bz=openpt_doc&t=M4xk7mU9kmNlh19urXD5KgAAAABkMK8AAAAA#align=left&display=inline&height=614&margin=%5Bobject%20Object%5D&originHeight=614&originWidth=696&status=done&style=none&width=696)
 
-## tabBar 真机效果
+# tabBar 真机效果
 ![](http://mdn.alipayobjects.com/afts/img/A*EN7qS5fNwlUAAAAAAAAAAAAAAa8wAA/original?bz=openpt_doc&t=EXyCvJ5SiOGibXswiQoqEAAAAABkMK8AAAAA#align=left&display=inline&height=854&margin=%5Bobject%20Object%5D&originHeight=854&originWidth=855&status=done&style=none&width=855)
 
-## tabBar 示例代码
+# tabBar 示例代码
  locale 目录中的 app.json 配置示例如下，`items` 中只需配置 `name` 属性的值即可。
 ```json
 // locale/en/app.json 
@@ -86,10 +86,10 @@
 }
 ```
 
-## 属性
+# 属性
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| window | Object | 否 | 设置默认 title |
-| tabBar | Object | 否 | 设置多语言下的 tabBarItem 名称 |
-| pages | Object | 否 | 设置多语言下的每个页面对应的 title |
+| window | Object | 否 | 设置默认 title。 |
+| tabBar | Object | 否 | 设置多语言下的 tabBarItem 名称。 |
+| pages | Object | 否 | 设置多语言下的每个页面对应的 title。 |
 
