@@ -28,7 +28,7 @@
 | permission | Object | 否 | 小程序接口权限相关配置。 |
 | behavior | Object | 否 | 修改小程序运行行为的相关设置。 |
 
-## pages
+# pages
 `app.json` 中的 `pages` 为数组属性，数组中每一项都是字符串，用于指定小程序的页面。在小程序中新增或删除页面，都需要对 `pages` 数组进行修改。
 `pages` 数组的每一项代表对应页面的路径信息，其中，第一项代表小程序的首页。
 页面路径不需要写任何后缀，框架会自动去加载同名的 `.json`、`.js`、`.axml`、`.acss` 文件。举例来说，如果开发目录为：
@@ -58,7 +58,7 @@
 }
 ```
 
-## window
+# window
 `window` 用于设置小程序的状态栏、导航条、标题、窗口背景色等。
 示例代码：
 ```json
@@ -86,7 +86,7 @@
 | titleImage | String | 否 | 导航栏图片地址。 | - |
 | titleBarColor | HexColor | 否 | 导航栏背景色。例：白色 "#FFFFFF"。 | - |
 
-## tabBar
+# tabBar
 如果开发的小程序是一个多 tab 应用（客户端窗口的底部栏可以切换页面），那么可以通过 `tabBar` 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面。
 `tabBar` 与 `pages`、 `window` 配置同级，配置项如下：
 
@@ -137,24 +137,24 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
 ```
 代码中，开发者可通过 [my.setTabBarItem](https://opendocs.alipay.com/mini/api/zu37bk) 动态设置 `tabBar` 中指定 `item` 的内容。
 
-## subPackages
+# subPackages
 启用 [分包加载](https://opendocs.alipay.com/mini/framework/subpackages) 时，声明项目分包结构。
 
-## preloadRule
+# preloadRule
 声明 [分包预下载](https://opendocs.alipay.com/mini/framework/subpackages#%E5%88%86%E5%8C%85%E9%A2%84%E4%B8%8B%E8%BD%BD) 的规则。
 
-## subPackageBuildType
+# subPackageBuildType
 声明 [分包内同一模块的隔离策略](https://opendocs.alipay.com/mini/framework/subpackages#%E5%88%86%E5%8C%85%E5%86%85%E5%90%8C%E4%B8%80%E6%A8%A1%E5%9D%97%E7%9A%84%E9%9A%94%E7%A6%BB%E7%AD%96%E7%95%A5) 。
 
-## plugins
+# plugins
 基础库 1.22.4 及以上，支付宝客户端 10.1.85 及以上开始支持。
 声明小程序需要使用的 [静态插件](https://opendocs.alipay.com/mini/plugin/plugin-usage#%E9%9D%99%E6%80%81%E5%A3%B0%E6%98%8E)。
 
-## useDynamicPlugins
+# useDynamicPlugins
 基础库 1.22.4 及以上，支付宝客户端 10.1.85 及以上开始支持。
 声明小程序需要使用 [动态插件](https://opendocs.alipay.com/mini/plugin/plugin-usage#%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD)。
 
-## lazyCodeLoading
+# lazyCodeLoading
 小程序应用的启动过程中，除了下载阶段以外，默认会执行所有代码（包括当前页面未使用到的所有页面、自定义组件），会对启动耗时有一定影响。
 基础库 2.7.0 及以上 ，支持配置以下 lazyCodeLoading 参数，仅执行当前页面所必须的页面脚本和自定义组件脚本，其他脚本则不会被执行。
 ```javascript
@@ -164,7 +164,7 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
 ```
 **注意：** 由于开启该配置后，当前页面未使用到的代码将不会被执行，可能对某些依赖默认脚本执行先后顺序的逻辑产生影响。
 
-## workers
+# workers
 使用 [Worker](https://opendocs.alipay.com/mini/api/createworker) 处理多线程任务时，设置 Worker 代码文件列表。如：
 ```json
 "workers": [
@@ -172,7 +172,7 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
 ]
 ```
 
-## permission
+# permission
 
 小程序接口权限相关设置。字段类型为 Object，结构为：
 
@@ -184,13 +184,13 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
 | scope.record | PermissionObject | 否 | 麦克风相关权限声明，相关 API：[my.getRecorderManager](https://opendocs.alipay.com/mini/01a8yl)。 |
 | scope.userLocation | PermissionObject | 否 | 位置相关权限声明，相关 API：[my.getLocation](https://opendocs.alipay.com/mini/api/mkxuqd)。 |
 
-### PermissionObject 结构
+## PermissionObject 结构
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | desc | String | 是 | 小程序获取权限时展示的接口用途说明。 |
 
-#### 使用示例
+### 使用示例
 
 ```JSON
 {
@@ -216,13 +216,13 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
 
 ![](https://gw.alipayobjects.com/mdn/rms_282813/afts/img/A*HTBCQrdaRvkAAAAAAAAAAAAAARQnAQ)
 
-## behavior
+# behavior
 用于改变小程序若干运行行为。字段类型为 Object，结构请见下方说明。
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | shareAppMessage | String | 否 | **可选值**：appendQuery。使用小程序默认分享功能时（即不显式设置 [Page.onShareAppMessage](https://opendocs.alipay.com/mini/framework/page-detail#onShareAppMessage(options%3A%20Object))），当设置此字段后，会使客户端生成的用于分享的 `scheme` 带上当前用户打开的页面所携带的 query 参数。<br /> 基础库 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上开始支持，同时需使用 IDE [2.7.0](https://opendocs.alipay.com/mini/ide/download) 及以上版本进行构建。<br />  |
 
-### 使用示例
+## 使用示例
 ```JSON
 {
   "behavior": {
@@ -230,6 +230,6 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
   }
 }
 ```
-## 常见问题
-### Q：A 页面（列表页）设置允许下拉刷新，B 页面（详情页）设置禁止下拉 `allowsBounceVertical: NO`, A 页面跳转 B 页面后再点左上角返回 A 页面，此时 A 页面无法下拉刷新。
+# 常见问题
+## Q：A 页面（列表页）设置允许下拉刷新，B 页面（详情页）设置禁止下拉 `allowsBounceVertical: NO`, A 页面跳转 B 页面后再点左上角返回 A 页面，此时 A 页面无法下拉刷新。
 A：A 页面设置下拉刷新的同时设置 `allowsBounceVertical: YES`,即可解决该问题。记住一个原则：设置下拉刷新的时候一定要设置允许下拉。
