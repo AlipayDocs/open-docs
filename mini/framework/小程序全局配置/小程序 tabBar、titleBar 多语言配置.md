@@ -1,4 +1,3 @@
-
 # 简介
 使用 tabBar、titleBar 多语言配置后，小程序会根据当前手机的语言来读取显示该语言配置。
 
@@ -15,7 +14,7 @@
 - IDE 中请使用 **真机调试** 查看配置效果。
 
 
-文件目录结构示例如下：</br>
+文件目录结构示例如下：<br />
 ![](http://mdn.alipayobjects.com/afts/img/A*z9X-S4YOFfMAAAAAAAAAAAAAAa8wAA/original?bz=openpt_doc&t=M4xk7mU9kmNlh19urXD5KgAAAABkMK8AAAAA#align=left&display=inline&height=614&margin=%5Bobject%20Object%5D&originHeight=614&originWidth=696&status=done&style=none&width=696)
 
 # tabBar 真机效果
