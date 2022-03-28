@@ -7,7 +7,7 @@ Anymock [小程序开发者工具](https://opendocs.alipay.com/mini/ide/download
 ## 安装 Anymock 扩展
 
 ### 1. 下载小程序开发者工具
-下载并安装 [小程序开发者工具](https://opendocs.alipay.com/mini/ide/download)（简称 IDE）。
+下载并安装 小程序开发者工具（简称 IDE）。
 
 ### 2. 安装 Anymock 扩展
 打开小程序开发者工具，打开一个支付宝小程序进入编辑器窗口，在左侧工具栏点击扩展市场图标，搜索 Anymock，进行安装。
@@ -47,7 +47,7 @@ Anymock 功能使用依赖于项目 Token（**注意请勿泄露给他人**）�
 
 ![|723x503](https://mdn.alipayobjects.com/afts/img/A*PMQ4SaklpR4AAAAAAAAAAABkAa8wAA/1024w_1024h_1l.png?bz=openpt_doc&t=e1e2WNDIagpJePO0w74TWgAAAABkMK8AAAAA#align=left&display=inline&height=712&margin=%5Bobject%20Object%5D&originHeight=712&originWidth=1024&status=done&style=none&width=1024)
 
-在项目里调用 my.request 接口，会得到 Anymock 对应接口的返回值
+在项目里调用 my.request 接口，会得到 Anymock 对应接口的返回值。
 ```javascript
 my.request({
    url: 'http://httpbin.org/get',
