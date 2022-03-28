@@ -16,17 +16,17 @@
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| pages | Array | 是 | 设置页面路径 |
-| window | Object | 否 | 设置默认页面的窗口表现 |
-| tabBar | Object | 否 | 设置底部 tabbar 的表现 |
-| subPackages | Object[] | 否 | 分包结构描述 |
-| subPackageBuildType | String | 否 | 分包打包策略 |
-| preloadRule | Object | 否 | 分包预加载规则 |
-| plugins | Object | 否 | 静态插件配置规则 |
-| useDynamicPlugins | Boolean | 否 | 动态插件配置规则 |
-| lazyCodeLoading |  | 否 | 是否开启代码按需执行 |
-| permission | Object | 否 | 小程序接口权限相关配置 |
-| behavior | Object | 否 | 修改小程序运行行为的相关设置 |
+| pages | Array | 是 | 设置页面路径。 |
+| window | Object | 否 | 设置默认页面的窗口表现。 |
+| tabBar | Object | 否 | 设置底部 tabbar 的表现。 |
+| subPackages | Object[] | 否 | 分包结构描述。 |
+| subPackageBuildType | String | 否 | 分包打包策略。 |
+| preloadRule | Object | 否 | 分包预加载规则。 |
+| plugins | Object | 否 | 静态插件配置规则。 |
+| useDynamicPlugins | Boolean | 否 | 动态插件配置规则。 |
+| lazyCodeLoading | String | 否 | 是否开启代码按需执行。 |
+| permission | Object | 否 | 小程序接口权限相关配置。 |
+| behavior | Object | 否 | 修改小程序运行行为的相关设置。 |
 
 ## pages
 `app.json` 中的 `pages` 为数组属性，数组中每一项都是字符串，用于指定小程序的页面。在小程序中新增或删除页面，都需要对 `pages` 数组进行修改。
@@ -92,19 +92,19 @@
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| textColor | HexColor | 否 | 文字颜色 |
-| selectedColor | HexColor | 否 | 选中文字颜色 |
-| backgroundColor | HexColor | 否 | 背景色 |
-| items | Array | 是 | 每个 tab 配置 |
+| textColor | HexColor | 否 | 文字颜色。 |
+| selectedColor | HexColor | 否 | 选中文字颜色。 |
+| backgroundColor | HexColor | 否 | 背景色。 |
+| items | Array | 是 | 每个 tab 配置。 |
 
 每个 item 配置：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| pagePath | String | 是 | 设置页面路径 |
-| name | String | 是 | 名称 |
-| icon | String | 否 | 平常图标路径（非选中状态） |
-| activeIcon | String | 否 | 高亮图标路径（选中状态） |
+| pagePath | String | 是 | 设置页面路径。 |
+| name | String | 是 | 名称。 |
+| icon | String | 否 | 平常图标路径（非选中状态）。 |
+| activeIcon | String | 否 | 高亮图标路径（选中状态）。 |
 
 icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺寸的图片进行非等比拉伸或缩放。
 带有 `tabBar` 的 `app.json` 示例如下：
