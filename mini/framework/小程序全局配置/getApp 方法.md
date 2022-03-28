@@ -41,7 +41,7 @@ console.log(getApp().globalData);
 ```
 `a.js` 和 `b.js` 两个文件中都声明了变量 `localValue`，但并不会互相影响，因为各个文件声明的局部变量和函数只在当前文件下有效。
 
-## 相关文档
+# 相关文档
 
 - [小程序页面介绍](https://opendocs.alipay.com/mini/framework/page)
 - [小程序全局配置介绍](https://opendocs.alipay.com/mini/framework/app)
