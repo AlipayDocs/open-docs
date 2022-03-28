@@ -1,11 +1,11 @@
 
 # 简介
-小程序服务搜索功能目前已开放，开发者可以通过 sitemap.json 配置，或者 [小程序服务收录](https://opendocs.alipay.com/mini/operation/service-included) 功能来配置其小程序页面是否允许小程序算法识别。当页面被小程序算法识别后，系统自动生成小程序服务，并在 [搜索](https://opendocs.alipay.com/mini/operation/search-service) 等场景上曝光，当用户的搜索关键词命中服务名称时，小程序服务可能展示在搜索结果中。
+小程序服务搜索功能目前已开放，开发者可以通过 sitemap.json 配置，或者 [小程序服务收录](https://opendocs.alipay.com/mini/operation/service-included) 功能来配置其小程序页面是否允许小程序算法识别。当页面被小程序算法识别后，系统自动生成小程序服务，并在 [搜索](https://opendocs.alipay.com/mini/operation/basic-information-search-application) 等场景上曝光，当用户的搜索关键词命中服务名称时，小程序服务可能展示在搜索结果中。
 
 ## 使用场景
-目前该能力适用在 [小程序服务同步](https://opendocs.alipay.com/mini/operation/service-synchronization)。当开启后算法识别到小程序服务时，会在 **服务管理** > **服务同步** 中展示服务信息，商户可在列表页补齐信息提交审核，审核通过的小程序服务可在搜索侧展示。 
+目前该能力适用在小程序服务同步。当开启后算法识别到小程序服务时，会在 **服务管理** > **服务同步** 中展示服务信息，商户可在列表页补齐信息提交审核，审核通过的小程序服务可在搜索侧展示。 
 
-![|223x478](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/10334/1603681765167-162909ae-3f22-4bb9-8af9-b569c879f894.png#align=left&display=inline&height=478&margin=%5Bobject%20Object%5D&originHeight=954&originWidth=445&status=done&style=none&width=223)    
+![|223x478](https://cdn.nlark.com/yuque/0/2022/png/179989/1648447526705-c61fccd1-518c-4b6b-98d7-0aabc5865aed.png)    
 
 # sitemap 配置
 小程序根目录下的 `sitemap.json` 文件用于配置小程序及其页面是否允许被支付宝索引，文件内容为一个 JSON 对象，小程序服务收录开关打开时，如果没有 `sitemap.json` 则默认为所有页面都允许被索引。 
@@ -45,4 +45,4 @@
 
 ## 使用步骤
 当在小程序项目中设置了 sitemap 的配置文件（默认为 sitemap.json）时，点击索引页面时便可在 IDE 控制台上显示当前页面是否被索引的调试信息。
-![](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/236382/1604456350281-394bf8a6-71b3-4c6e-b5f3-cb2e885609db.png#align=left&display=inline&height=1041&margin=%5Bobject%20Object%5D&originHeight=1041&originWidth=1920&status=done&style=none&width=1920)
+![](https://cdn.nlark.com/yuque/0/2022/png/179989/1648447533816-9d89a2d9-c848-4a46-bf3a-4a3b0b4ef1b8.png)
