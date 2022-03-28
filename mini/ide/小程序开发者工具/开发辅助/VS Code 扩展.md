@@ -17,7 +17,7 @@
 
 安装后可在扩展市场看到以下两个插件。
 
-![|355x133](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/53103/1619773674365-d58ee02e-7c20-4677-8c15-b88ddc8c3304.png#align=left&display=inline&height=266&margin=%5Bobject%20Object%5D&originHeight=266&originWidth=710&status=done&style=none&width=355)
+![|355x133](https://cdn.nlark.com/yuque/0/2022/png/179989/1648438000826-1d4e86fd-415f-4da2-9a04-a291460a9b2c.png)
 
 ## 使用
 
