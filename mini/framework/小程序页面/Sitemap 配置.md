@@ -21,19 +21,19 @@
 
 | **索引** | **配置示例** |
 | --- | --- |
-| 1.action 不配置默认允许被索引 <br /> 2.path/to/page：被索引 <br /> 3.path/to/page?a=1 ：被索引<br /> 4.其他页面都不会被索引 |``` {"rules":[{  "page": "path/to/page" }] }``` |
-| 1.path/to/page ：不被索引 <br /> 2.其他页面被索引 | ```{ "rules":[{ "action": "disallow", "page": "path/to/page" }] }``` |
-| 所有页面都被索引 | ``` { "rules":[{ "page": "*" }] }``` |
-| 所有页面都不被索引 | ``` { "rules":[{ "action": "disallow", "page": "*" }] }``` |
-| 1.path/to/page：因为冲突不被索引 <br /> 2.其他页面因为冲突也不会被索引 | ``` { "rules":[{ "action": "allow", "page": "path/to/page" }, { "action": "disallow", "page": "path/to/page" }] }``` |
-| 1.path/to/page：被索引 <br /> 2.path/to/page2：不被索引 <br /> 3.其他页面因为冲突不会被索引 | ``` { "rules":[{ "action": "allow", "page": "path/to/page" }, { "action": "disallow", "page": "path/to/page2" }] }``` |
+| <ol><li>action 不配置默认允许被索引。</li><li>path/to/page：被索引。</li><li>path/to/page?a=1 ：被索引。</li><li>其他页面都不会被索引。</li></ol> | `{"rules":[{  "page": "path/to/page" }] }` |
+| <ol><li>path/to/page ：不被索引。</li><li>其他页面被索引。</li></ol> | `{ "rules":[{ "action": "disallow", "page": "path/to/page" }] }` |
+| 所有页面都被索引。 | `{ "rules":[{ "page": "*" }] }` |
+| 所有页面都不被索引。 | `{ "rules":[{ "action": "disallow", "page": "*" }] }` |
+| <ol><li>path/to/page：因为冲突不被索引。</li><li>其他页面因为冲突也不会被索引。</li></ol> | `{ "rules":[{ "action": "allow", "page": "path/to/page" }, { "action": "disallow", "page": "path/to/page" }] }` |
+| <ol><li>path/to/page：被索引。</li><li>path/to/page2：不被索引。</li><li>其他页面因为冲突不会被索引。</li></ol> | `{ "rules":[{ "action": "allow", "page": "path/to/page" }, { "action": "disallow", "page": "path/to/page2" }] }` |
 
 ## 属性
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| rules | Object[] | 是 | 索引规则列表 |
-| action | String | 否 | 命中该规则的页面是否能被索引。<br /> **默认值**：disallow <br /> **可选值**：disallow、allow |
+| rules | Object[] | 是 | 索引规则列表。 |
+| action | String | 否 | 命中该规则的页面是否能被索引。<br /> **默认值**：disallow。 <br /> **可选值**：disallow、allow。 |
 | page | String | 是 | 页面路径。<br /> **说明**：``` * ``` 表示所有页面，不能作为通配符使用。 |
 
 # IDE 调试
