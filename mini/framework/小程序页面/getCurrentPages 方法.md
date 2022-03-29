@@ -58,7 +58,7 @@ getCurrentPages({
 
 # 常见问题
 
-### Q：getCurrentPages 方法怎么获取页面路径？
+## Q：getCurrentPages 方法怎么获取页面路径？
 A：`getCurrentPages()[N].route`，可以获取到页面路径（N 为页面数组栈中页面对象所在序号，最大值为当前页）。
 
 ## Q：getCurrentPages 方法可以获取到参数吗？
