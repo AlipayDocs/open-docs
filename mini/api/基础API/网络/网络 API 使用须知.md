@@ -22,9 +22,9 @@
 
 ## 跳过域名检验
 
-- 若在 IDE 中进行测试，请设置 **忽略 httpRequest 域名合法性检查**。IDE 中调试不受服务器域名白名单影响。
+若在 IDE 中进行测试，请设置 **忽略 http 请求域名合法性检查**。IDE 中调试不受服务器域名白名单影响。
 
-![|723x504](https://mdn.alipayobjects.com/afts/img/A*bCm2Rab9iv0AAAAAAAAAAABkAa8wAA/1024w_1024h_1l.png?bz=openpt_doc&t=28pazEeCtzJiny7uCnkjUQAAAABkMK8AAAAA#align=left&display=inline&height=714&margin=%5Bobject%20Object%5D&originHeight=714&originWidth=1024&status=done&style=stroke&width=1024)
+![|835x702](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*4wF6S7OPlScAAAAAAAAAAAAAARQnAQ)
 
 ## 网络请求
 
