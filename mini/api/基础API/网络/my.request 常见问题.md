@@ -1,4 +1,3 @@
-
 # 小程序网络请求报错排查方案
 1. 通过接口返回的报错信息进行排查，根据报错信息中 error 报错的错误码在 [my.request](https://opendocs.alipay.com/mini/api/owycmh) 文档内的【错误码】表格内进行排查。
 1. 根据 status 的 HTTP 状态码排查具体原因。如果 HTTP 响应码以 5、6 字开头，说明是服务端问题，可能是服务器配置问题、请求接收问题，可以在浏览器中尝试这个地址能否正常访问，是否有报错。
@@ -64,9 +63,9 @@ my.request 是异步执行的，无法同步执行。
 ## my.request 请求报错“无权跨域调用”，如何处理？
 步骤一：在小程序管理中心配置服务器域名白名单。
 
-步骤二：若在 IDE 中进行测试，请设置 **忽略 httpRequest 域名合法性检查**。
+步骤二：若在 IDE 中进行测试，请设置 **忽略 http 请求域名合法性检查**。
 
-![|723x504](https://mdn.alipayobjects.com/afts/img/A*8PeLRrkHKW0AAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=pAdyU_CWC7ojSFeSLB-FAQAAAABkMK8AAAAA#align=left&display=inline&height=558&margin=%5Bobject%20Object%5D&originHeight=558&originWidth=800&status=done&style=none&width=800)
+![|835x702](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*wRsjRpU-WRkAAAAAAAAAAAAAARQnAQ)
 
 ## 在 IDE 预览模式中测试 my.request 为何没有反应？
 在 IDE 中测试 my.request，需在 IDE 真机模式下，且 my.request 请求地址必须要使用 HTTPS 地址。
