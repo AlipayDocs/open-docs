@@ -24,7 +24,7 @@
 
 **重要：**
 
-- 小程序开发过程中，可在开发工具内 **详情 > 域名信息 > 忽略 httpRequest 域名合法性检查** 中选择是否忽略域名合法性检查，如果选择忽略，则在模拟器、预览以及真机调试场景不会校验域名合法性，但小程序上线前必须确保通讯域名在白名单内，否则在正式版本无法调用。
+- 小程序开发过程中，可在开发工具内 **详情 > 域名信息 > 忽略 http 请求域名合法性检查** 中选择是否忽略域名合法性检查，如果选择忽略，则在模拟器、预览以及真机调试场景不会校验域名合法性，但小程序上线前必须确保通讯域名在白名单内，否则在正式版本无法调用。
 - my.request 的请求头默认值为 {'content-type': 'application/json'}，而不是 {'content-type': 'application/x-www-form-urlencoded'}。此外，请求头对象里面的 key 和 value 必须是 String 类型。
 
 # 接口调用
@@ -155,9 +155,9 @@ Object 类型，属性如下：
 ### data 参数说明
 传给服务器的数据最终会是 String 类型，如果 data 不是 String 类型，会被转换成 String 。转换规则如下：
 
-- 若方法为 `GET`，会将数据转换成 query string： encodeURIComponent(k)=encodeURIComponent(v)&encodeURIComponent(k)=encodeURIComponent(v)...
-- 若方法为 `POST` 且 `headers['content-type']` 为 `application/json` ，会对数据进行 JSON 序列化。
-- 若方法为 `POST` 且 `headers['content-type']` 为 `application/x-www-form-urlencoded` ，会将数据转换成 query string： encodeURIComponent(k)=encodeURIComponent(v)&encodeURIComponent(k)=encodeURIComponent(v)...
+- 若方法为 `GET`，会将数据转换成 query string： `encodeURIComponent(k)=encodeURIComponent(v)&encodeURIComponent(k)=encodeURIComponent(v)...`。
+- 若方法为 `POST` 且 `headers['content-type']` 为 `application/json` ，会对数据进行 JSON 序列化。
+- 若方法为 `POST` 且 `headers['content-type']` 为 `application/x-www-form-urlencoded` ，会将数据转换成 query string： `encodeURIComponent(k)=encodeURIComponent(v)&encodeURIComponent(k)=encodeURIComponent(v)...`。
 
 ### referer 说明
 网络请求的 `referer` Header 不可设置。
