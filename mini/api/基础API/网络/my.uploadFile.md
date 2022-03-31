@@ -128,7 +128,7 @@ Object 类型，属性如下：
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | data | String | 服务器返回的数据。 |
-| statusCode | String | HTTP 状态码。 |
+| statusCode | Number | HTTP 状态码。 |
 | header | Object | 服务器返回的 Header。 |
 
 
