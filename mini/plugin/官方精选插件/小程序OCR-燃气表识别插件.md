@@ -14,9 +14,7 @@
 1. 识别插件唤起相机和识别功能，对准燃气表区域扫一扫识别；
 1. 识别成功后返回识别结果和图像到小程序；
 1. 用户可自行修改识别结果，并提交结果。<br/>
-![|224x468](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/5503/1592899834502-5eb6ce8b-4af8-43c8-b404-16374737ff35.png#align=left&display=inline&height=468&margin=%5Bobject%20Object%5D&originHeight=468&originWidth=224&status=done&style=none&width=224) 
-![|224x468](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/5503/1592899850224-f8d861e5-9de4-46b5-9920-74c3e2ca3618.png#align=left&display=inline&height=468&margin=%5Bobject%20Object%5D&originHeight=468&originWidth=224&status=done&style=none&width=224) 
-![|224x466](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/5503/1592899864902-1c119cdb-f705-4a54-a3ae-dd19b72d2b59.png#align=left&display=inline&height=466&margin=%5Bobject%20Object%5D&originHeight=466&originWidth=224&status=done&style=none&width=224)
+![|258x462](https://cdn.nlark.com/yuque/0/2022/png/179989/1648624730038-e9248fb5-d571-4e55-93bf-91ca6b78a561.png) 
 
 # 接入指引
 
@@ -113,4 +111,4 @@ Page({
 ```
 
 ## 预览
-![|258x462](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/122911/1590659136944-5ab1b5cb-4970-4e38-8542-9971ecce9aa4.png#align=left&display=inline&height=462&margin=%5Bobject%20Object%5D&originHeight=1010&originWidth=564&status=done&style=none&width=258)
+![|258x462](https://cdn.nlark.com/yuque/0/2022/png/179989/1648624724529-1dfd1bbd-08f6-4504-8841-9941d1c171c0.png)
