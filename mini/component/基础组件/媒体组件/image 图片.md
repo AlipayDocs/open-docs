@@ -1,6 +1,6 @@
 
 # 简介
-图片。支持 JPG、PNG、SVG、WEBP（iOS 不支持动图）、GIF 等格式。
+图片。支持 JPG、PNG、SVG、WEBP、GIF 等格式。
 
 ## 使用限制
 使用 webview 嵌套 H5 时，若遇到图片资源不显示问题，可参考 [配置 H5 白名单流程](https://opendocs.alipay.com/mini/component/idfvg6) 获取 H5 页面中所有的域名地址（含图片静态资源的地址），全部加入域名白名单中。
