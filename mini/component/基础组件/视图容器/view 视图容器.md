@@ -193,7 +193,7 @@ Page({
 | hidden | Boolean | 是否隐藏。<br />**默认值：** false |
 | class | String | 自定义样式名。 |
 | style | String | 内联样式。 |
-| animation | Object | 用于动画，详见 [my.createAnimation](api/ui-animation#mycreateanimation) 。使用 `my.createAnimation` 生成的动画是通过过渡（Transition）实现的，只会触发 `onTransitionEnd`，不会触发 `onAnimationStart`, `onAnimationIteration`, `onAnimationEnd`。<br />**默认值：**{} |
+| animation | Object | 用于动画，详情可查看 [my.createAnimation](api/ui-animation#mycreateanimation) 。使用 `my.createAnimation` 生成的动画是通过过渡（Transition）实现的，只会触发 `onTransitionEnd`，不会触发 `onAnimationStart`, `onAnimationIteration`, `onAnimationEnd`。<br />**默认值：**{} |
 | hover-stop-propagation | Boolean | 是否阻止当前元素的祖先元素出现点击态。<br />**默认值：** false<br />**版本要求：** 基础库 [1.10.0](/mini/framework/compatibility) 及以上 |
 | onTap | EventHandle | 点击。 |
 | onTouchStart | EventHandle | 触摸动作开始。 |
@@ -216,5 +216,5 @@ Page({
 ## 如何改变 view 的展示顺序？
 将这两个模块嵌入到一个循环里面，每一个循环的小模块加一个类型值进行标识。
 
-## 页面滚动时在不同屏幕滚动到的位置不同，如何解决？
+## 如何解决页面滚动时在屏幕大小不同时滚动到的位置不同问题？
 可使用 [my.pageScrollTo](https://opendocs.alipay.com/mini/api/scroll) 的 selector 选择，给需要滚动的元素定义一个 id 或者 class，打开页面后会自动滚动到该元素位置。 
