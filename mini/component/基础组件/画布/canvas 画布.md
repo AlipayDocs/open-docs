@@ -1,8 +1,7 @@
-
 # 简介
 画布。画布是一个矩形区域，用于在页面上绘制图形，开发者可以控制其每一像素。canvas 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。
 
-基础库 [2.7.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持新的 Canvas 接口（需指定 type 属性）。相关 API 请参见 [获取 Canvas 实例](https://opendocs.alipay.com/mini/01vzqv)。
+基础库 [2.7.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持新的 Canvas 接口（需指定 type 属性）。相关 API 可查看 [获取 Canvas 实例](https://opendocs.alipay.com/mini/01vzqv)。
 
 ## 扫码体验
 ![|127x157](https://gw.alipayobjects.com/zos/skylark/78b29ccd-ea8f-4537-b65c-e6a36d8d32c7/2018/jpeg/b0d9bbad-b532-4773-bd4a-8b330b070b26.jpeg#align=left&display=inline&height=1906&margin=%5Bobject%20Object%5D&originHeight=1906&originWidth=1540&status=done&style=none&width=127)
@@ -218,7 +217,3 @@ Page({
 ```
 **注意：** 如果在开发中遇到 canvas 组件上没有可见的 web 元素覆盖（即：开发视角下无覆盖元素）时也收不到 UI 事件，可以只采用步骤 1 来尝试解决。 
 
-# 相关文档
-
-- [CanvasContext 概览](https://opendocs.alipay.com/mini/api/canvascontext)
-- [my.createCanvasContext](https://opendocs.alipay.com/mini/api/ui-canvas)
