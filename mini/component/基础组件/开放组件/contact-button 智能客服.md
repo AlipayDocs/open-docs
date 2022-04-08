@@ -1,6 +1,5 @@
-
 # 简介
-智能客服能力由蚂蚁集团零号云客服提供。唤起智能客服组件，开通智能客服：进入对应小程序管理后台后，点击  **设置** > **小程序信息** > **在线客服** 即可打开云客服免费使用。详情请参见 [智能客服](/mini/operation/custom-service)。
+智能客服能力由蚂蚁集团零号云客服提供。唤起智能客服组件，开通智能客服：进入对应小程序管理后台后，点击  **设置** > **小程序信息** > **在线客服** 即可打开云客服免费使用。详情可查看 [智能客服](/mini/operation/custom-service)。
 
 ## 使用限制
 
@@ -59,7 +58,7 @@
 | ext-info | String | 选填。该属性主要用于传递一些扩展信息给组件，以实现一些高级功能。该属性值的生成方式为：encodeURIComponent({"字段名":"字段值"})， 其中，字段名和字段值要根据实际使用的功能进行替换。<br />目前通过传入扩展信息可支持的 3 个功能：<br />1.访客名片。需传 cinfo 和 key 两个扩展字段，代码形如在云客服中进入 **设置** > **服务窗配置** > **聊天窗 URL**。点击操作栏中的 **聊天窗 URL** ，获取 `tntInstId`（企业编码）和 `scene`（聊天窗编码）。`encodeURIComponent({"cinfo":"生成的 cinfo","key":"生成的key"})`，cinfo 和 key 的值说明 支付宝小程序接入访客名片；<br />2.聊天窗默认带出用户的小程序订单数据。需传 appId 字段，代码形如`encodeURIComponent({"appId":"商户小程序appid"}) `<br />3.未读客服消息同步至"我的小程序-我的"。同样需传 appId 字段，代码形如 `encodeURIComponent({"appId":"商户小程序appid"})`。 |
 
 
-# FAQ
+# 常见问题
 
 ## contact-button 组件写了没展示，如何查看聊天记录？
 首先检查基础版本库是否匹配，然后在 **支付宝 APP** > **朋友** > **服务提醒** 中查看消息记录。
@@ -70,7 +69,3 @@
 ## 如何获取 tntInstId（企业编码）和 scene（聊天窗编码）？
 在 [云客服](https://csmng.cloud.alipay.com/ccm.htm#/home) 中进入 **设置** > **服务窗配置** > **聊天窗 URL**。点击操作栏中的 **聊天窗 URL** ，获取 `tntInstId`（企业编码）和 `scene`（聊天窗编码）。详情请参见 [智能客服](/mini/operation/custom-service)。
 
-# 相关文档
-
-- [智能客服](/mini/operation/custom-service)
-- [button 按钮](/mini/component/button)
