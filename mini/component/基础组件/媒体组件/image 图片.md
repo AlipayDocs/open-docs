@@ -3,7 +3,7 @@
 图片。支持 JPG、PNG、SVG、WEBP（iOS 不支持动图）、GIF 等格式。
 
 ## 使用限制
-使用 webview 嵌套 H5 时，若遇到图片资源不显示问题，可参考 [配置 H5 白名单流程](https://opendocs.alipay.com/mini/component/idfvg6) 获取 H5 页面中所有的域名地址（含图片静态资源的地址），全部加入域名白名单中。
+使用 webview 嵌套 H5 时，若遇到图片资源不显示问题，可查看 [配置 H5 白名单流程](https://opendocs.alipay.com/mini/component/idfvg6) 获取 H5 页面中所有的域名地址（含图片静态资源的地址），全部加入域名白名单中。
 
 ## 扫码体验
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/66539db61b570eb2b7cf2df4241ea56c.png#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
@@ -149,12 +149,12 @@ mode 有 14 种模式，其中 5 种是缩放模式，9 种是裁剪模式。
 
 **说明**：图片高度不能设置为 auto，如果需要图片高度为 auto，直接设置 mode 为 widthFix。
 
-# FAQ
+# 常见问题
 
 ### image 标签支持读取流文件吗？ 
 小程序中显示二进制数据流的图片，需要先将二进制数据转成 base64 字符串，然后把 base64 字符串放在 image 中的 src 中实现显示。
 
-### 真机调用 image 组件，显示的图片被压缩？
+### 为什么真机调用 image 组件，显示的图片被压缩？
 建议把 mode 值设为 widthFix。
 
 # 相关文档
