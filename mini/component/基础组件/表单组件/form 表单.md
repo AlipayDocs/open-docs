@@ -1,9 +1,7 @@
-
 # 简介
 表单。用于将组件内的用户输入的 [textarea](/mini/component/textarea)、 [switch](/mini/component/switch)、 [input](/mini/component/input) 、[checkbox](/mini/component/checkbox)、[slider](/mini/component/slider)、[radio](/mini/component/radio)、[picker](/mini/component/picker) 等组件提交。
 
 ## 使用限制
-
 - 预览效果建议以真机为准。
 - 目前还不支持 form 表单渲染。
 - formId 需要真机调试才会有返回值。
@@ -102,23 +100,16 @@ button + button {
 | onSubmit | EventHandle | 携带 form 中的数据触发 submit 事件，`event.detail = {value : {'slider': '80'}, buttonTarget: {'dataset': 'buttonDataset'} }` (可以在 submit 按钮上添加自定义参数)。<br />**版本要求：** buttonTarget 支持基础库 [1.7.0](/mini/framework/compatibility)  及以上 |
 | onReset | EventHandle | 表单重置时会触发 reset 事件。 |
 
+# 常见问题
 
-# FAQ
-
-### formId 返回值是否可以自定义？
+### formId 返回值是否支持自定义？
 formId 返回值不支持自定义，设置完成对应属性 report-submit 后支付宝返回。
 
 ### 支付宝小程序消息推送获取的 formId 有效期是多久？用一次会失效一次吗？
 formId 有效期是 7 天，可在 7 天内向用户推送消息。一个 formId 可发送三次
 
-### 小程序接入，付款后调用消息下发返回 formId 为何显示不合法？
+### 为何小程序接入，付款后调用消息下发返回 formId 显示不合法？
 商户的模板是表单类型，表单类的模板消息只允许使用表单组件生成的 formId 发送。
 
-### 小程序 form 表单静默触发吗？
+### 小程序 form 表单是否支持静默触发？
 不支持，需要用户点击触发。
-
-# 相关文档
-
-- [button 按钮](/mini/component/button)<br />
-- [模板消息](https://opendocs.alipay.com/mini/introduce/message)<br />
-- [模板消息快速示例](https://opendocs.alipay.com/mini/quick-example/template-message)<br />
