@@ -1,9 +1,7 @@
-
 # 简介
 单选按钮。
 
 ## 使用限制
-
 - 不支持修改 radio 选中后的宽高。
 - 不支持 radio 按钮 与 [text](/mini/component/text) 标签嵌套，支持平行关系。
 
