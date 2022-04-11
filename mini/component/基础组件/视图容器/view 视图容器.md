@@ -211,10 +211,10 @@ Page({
 | role | - | 表示组件的语义角色。设置为 img 时，组件聚焦后读屏软件会朗读出 **图像** ；设置为 button 时，聚焦后读屏软件会朗读出 **按钮** 。详情请参见 [aria-component](https://opendocs.alipay.com/mini/component/accessibility)。 |
 
 
-# FAQ
+# 常见问题
 
-## 如何改变 view 的展示顺序？
+### 如何改变 view 的展示顺序？
 将这两个模块嵌入到一个循环里面，每一个循环的小模块加一个类型值进行标识。
 
-## 页面滚动时在不同屏幕滚动到的位置不同，如何解决？
+### 页面滚动时在不同屏幕滚动到的位置不同，如何解决？
 可使用 [my.pageScrollTo](https://opendocs.alipay.com/mini/api/scroll) 的 selector 选择，给需要滚动的元素定义一个 id 或者 class，打开页面后会自动滚动到该元素位置。 
