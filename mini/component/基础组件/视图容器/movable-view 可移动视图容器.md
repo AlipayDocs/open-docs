@@ -3,7 +3,6 @@
 可移动的视图容器，在页面中可以拖拽滑动。movable-view 必须在 [movable-area](component/movable-area)  组件中，并且必须是直接子节点，否则不能移动。
 
 ## 使用限制
-
 - 版本要求基础库 1.11.0 及以上，若版本较低，建议做 [兼容处理](/mini/framework/compatibility)。
 - movable-view 必须设置 width 和 height 属性，不设置默认为 10px。
 - movable-view 默认为绝对定位（请不要修改），top 和 left 属性为 0px。
@@ -130,7 +129,7 @@ movable-view {
 | out-of-bounds | Boolean | 超过可移动区域后，movable-view 是否还可以移动。<br />**默认值：** false<br />**版本要求：** 基础库 [1.20.0](/mini/framework/compatibility) 及以上 |
 | x | Number | 定义 x 轴方向的偏移，会换算为 left 属性，如果 x 的值不在可移动范围内，会自动移动到可移动范围。<br />**默认值：** 0 |
 | y | Number | 定义 y 轴方向的偏移，会换算为 top 属性，如果 y 的值不在可移动范围内，会自动移动到可移动范围。<br />**默认值：** 0 |
-| damping | Number | 阻尼系数，用于控制x或y改变时的动画和过界回弹的动画，值越大移动越快。<br />**默认值：** 20<br />**版本要求：** 基础库 [1.20.0](/mini/framework/compatibility) 及以上 |
+| damping | Number | 阻尼系数，用于控制 x 或 y 改变时的动画和过界回弹的动画，值越大移动越快。<br />**默认值：** 20<br />**版本要求：** 基础库 [1.20.0](/mini/framework/compatibility) 及以上 |
 | friction | Number | 摩擦系数，用于控制惯性滑动的动画，值越大摩擦力越大，滑动越快停止；必须大于 0，否则会被设置成默认值。<br />**默认值：** 2<br />**版本要求：** 基础库 [1.20.0](/mini/framework/compatibility) 及以上 |
 | disabled | Boolean | 是否禁用。<br />**默认值：** false |
 | scale | Boolean | 是否支持双指缩放，默认缩放手势生效区域是在 movable-view 内。<br />**默认值：** false<br />**版本要求：** 基础库 [1.20.0](/mini/framework/compatibility) 及以上 |
@@ -149,8 +148,7 @@ movable-view {
 | onChangeEnd | EventHandle | 拖动结束触发的事件，`event.detail = {x: x, y: y}`。 |
 | onScale | EventHandle | 缩放过程中触发的事件，`event.detail = {x, y, scale`}。<br />**版本要求：** 基础库 [1.20.0](/mini/framework/compatibility) 及以上 |
 
-
-### onChange返回值detail.source
+### onChange 返回值 detail.source
 source 字段表示产生移动的原因
 
 | **属性** | **描述** |
