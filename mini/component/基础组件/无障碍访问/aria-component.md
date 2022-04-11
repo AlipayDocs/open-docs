@@ -1,4 +1,3 @@
-
 # 简介
 aria 属性是 [WAI-ARIA](https://www.w3.org/TR/wai-aria/) 标准提供无障碍访问动态、可交互 Web 内容的技术规范。从 基础库 `1.18.0` 版本开始，小程序架的部分基础组件支持 aria 属性，可满足视障人士对于小程序的无障碍访问需求。
 
@@ -14,7 +13,7 @@ aria 属性的核心是 role 属性，该属性表示组件的语义角色。 �
 ```html
 <view class="button" onTap="defaultTap" role="button" aria-label="确定按钮">确定按钮</view>
 ```
-示例中的按钮用 view 组件实现，role 属性设置该 view 组件表达按钮的语义，当读屏软件聚焦该 view 组件的时候，会识别出这个 view 组件是个按钮，朗读出  **按钮 确定按钮**。<br />小程序采用 AXML 语法，失去了 HTML 中许多具有语义的标签，如 H1 、 article 、 header 等，这些标签可配合读屏软件，将更多语义信息提供给用户使用。在小程序中，开发者可以使用 role 属性增强 view 组件的语义，达到和使用 HTML 标签开发一样的效果。<br />例如，一篇文章的html代码如下：
+示例中的按钮用 view 组件实现，role 属性设置该 view 组件表达按钮的语义，当读屏软件聚焦该 view 组件的时候，会识别出这个 view 组件是个按钮，朗读出  **按钮 确定按钮**。<br />小程序采用 AXML 语法，失去了 HTML 中许多具有语义的标签，如 H1 、 article 、 header 等，这些标签可配合读屏软件，将更多语义信息提供给用户使用。在小程序中，开发者可以使用 role 属性增强 view 组件的语义，达到和使用 HTML 标签开发一样的效果。<br />例如，一篇文章的 html 示例代码：
 ```html
 <article>
   <h1>文章标题</h1>
@@ -22,7 +21,7 @@ aria 属性的核心是 role 属性，该属性表示组件的语义角色。 �
   <p>第一段落。。。</p>
 </article>
 ```
-对于小程序而言，尽管没有对应 article 、h1 、h2 等标签的组件，但是通过带有 role 属性的 view 组件，一样可以达到效果，如：
+对于小程序而言，尽管没有对应 article 、h1 、h2 等标签的组件，但是通过带有 role 属性的 view 组件，一样可以达到效果。例如：
 ```html
 <view role="article">
   <view role="heading" aria-level="1">文章标题</view>
@@ -41,7 +40,7 @@ aria-label 可以代替组件内的文本内容，例如：
 ```html
 <image src={{src}} role="img" aria-label="风景画" />
 ```
-`aria-label` 也使用于使用 role 属性的 view 组件，如下：
+`aria-label` 也使用于使用 role 属性的 view 组件，例如：
 ```html
 <view style="background-image:url(./bg.jpg);" role="img" aria-label="风景画"></view>
 ```
@@ -58,14 +57,14 @@ aria-label 可以代替组件内的文本内容，例如：
 实例中的 checkbox 组件获得焦点之后，读屏软件会朗读出 **未选中 复选框内容 复选框**。 aria-labelledby 的值是其他组件的 id 属性，组件 id 属性必须是唯一的，列表渲染的时候请勿给组件设置重复的 id。
 
 ###  aria-checked
-aria-checked 表示 checkbox、switch 等组件是否被选中。聚焦到这些组件后，读屏软件将朗读组件的选中状态 **未选中** 或者 **已选中** ，告诉用户当前组件的选中状态。<br />小程序原生组件，已预内置了该属性，如：
+aria-checked 表示 checkbox、switch 等组件是否被选中。聚焦到这些组件后，读屏软件将朗读组件的选中状态 **未选中** 或者 **已选中** ，告诉用户当前组件的选中状态。<br />小程序原生组件，已预内置了该属性，例如：
 ```html
 <label>
   <checkbox aria-labelledby="content" value={{checked}}/>
   <text id="content">复选框内容</text>
 </label>
 ```
-若使用 [自定义组件](/mini/framework/custom-component-overview) 开发的 checkbox 、 switch 等组件，需要使用 aria-checked 属性，才能使得读屏软件获取组件选中状态。例如，一个自定义 checkbox 组件的 axml 代码：
+若使用 [自定义组件](/mini/framework/custom-component-overview) 开发的 checkbox 、 switch 等组件，需要使用 aria-checked 属性，才能使得读屏软件获取组件选中状态。例如，一个自定义 checkbox 组件的 axml 示例代码：
 ```html
 <view class="my-checkbox" role="checkbox" onTap="handleTap" aria-checked="{{checked}}" aria-labelledby="myCheckboxText">
   <icon type="{{checked ? 'success' : 'clear'}}" size="12"/>
@@ -75,13 +74,13 @@ aria-checked 表示 checkbox、switch 等组件是否被选中。聚焦到这些
   </text>
 </view>
 ```
-示例中，设置 my-checkbox 组件 role 属性的值为 checkbox ，并将组件的选中状态 checked 赋值给 aria-checked 属性，当读屏软件聚焦到该自定义组件时，可以朗读出该组件的选中信息。 该属性也同样适用于 switch 、 radio 等组件。
+示例中，设置 my-checkbox 组件 role 属性的值为 checkbox ，并将组件的选中状态 checked 赋值给 aria-checked 属性，当读屏软件聚焦到该自定义组件时，可以朗读出该组件的选中信息。 该属性也同样适用于 switch、radio 等组件。
 
 ### aria-expanded
 aria-expanded 表示可折叠的组件的展开信息，适合对有折叠功能的组件使用，如折叠菜单、带折叠的下拉菜单等。使用 aria-expanded 属性，可让读屏软件朗读组件的展开状态。
 
 ## 其他 aria 属性
-了解更多 aria 属性请参考 [WAI-ARIA](https://www.w3.org/TR/wai-aria/) 。
+了解更多 aria 属性可查看 [WAI-ARIA](https://www.w3.org/TR/wai-aria/) 。
 
 # 相关信息
 无障碍一词来自英文 Accessibility ，是指任何人（无论是健全人、残疾人，还是老年人、孩子）可在任何时候、任何场景使用或者访问。标准化组织（如[W3C](https://www.w3.org/)、[WAI](https://www.w3.org/WAI/)）制定了 WEB 领域无障碍的标准，支付宝小程序依据现有标准，提供了支付宝小程序无障碍访问功能。
