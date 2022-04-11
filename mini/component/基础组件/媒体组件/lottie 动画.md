@@ -1,6 +1,6 @@
 
 # 简介
-Lottie 是一个用于 Web 和 iOS、Android 的移动库，可使用 Bodymovin 解析以 JSON 格式导出的 Adobe After Effects 动画，并将其本地呈现在移动设备上。以下为 Lottie 动画库适配小程序的方法。有关 Lottie 的详细信息请参见 [Lottie 官方文档](https://github.com/airbnb/lottie-web) 和 [Lottie 官方支持能力列表](http://airbnb.io/lottie/#/supported-features)。相关 API 详情请参见 [my.createLottieContext](https://opendocs.alipay.com/mini/api/createlottiecontext)。
+Lottie 是一个用于 Web 和 iOS、Android 的移动库，可使用 Bodymovin 解析以 JSON 格式导出的 Adobe After Effects 动画，并将其本地呈现在移动设备上。以下为 Lottie 动画库适配小程序的方法。有关 Lottie 的详情可查看 [Lottie 官方文档](https://github.com/airbnb/lottie-web) 和 [Lottie 官方支持能力列表](http://airbnb.io/lottie/#/supported-features)。相关 API 详情可查看 [my.createLottieContext](https://opendocs.alipay.com/mini/api/createlottiecontext)。
 
 ## 使用限制
 支付宝 10.1.35 版本及以上支持 Lottie 动画。
@@ -113,7 +113,7 @@ Lottie 对资源的定义是
 # 常见问题
 
 ## 检测相关 
-UI 设计师已完成的物料资源请先在 [Lottie 平台](https://design.alipay.com/lolita) 上做一次检测，保证物料包的内容文件符合小程序规范。<br />![](https://intranetproxy.alipay.com/skylark/lark/0/2019/png/1949/1570787329993-cc008ea1-7555-4db0-aeaf-6c8e9992e016.png#align=left&display=inline&height=694&margin=%5Bobject%20Object%5D&originHeight=694&originWidth=2124&status=done&style=none&width=2124)﻿
+UI 设计师已完成的物料资源请先在 [Lottie 平台](https://design.alipay.com/lolita) 上做一次检测，保证物料包的内容文件符合小程序规范。<br />![](https://cdn.nlark.com/yuque/0/2022/png/179989/1649386200577-b67b1519-f12a-4cee-bb6b-2f76c2bf2ebe.png)﻿
 
 ## 修复兼容性问题
 如果提示“使用插件版本 5.5.0+，客户端必须也是 5.5.0+，iOS/android 旧版播放器会闪退”，必须重新用兼容性模式导出 JSON。
@@ -128,7 +128,7 @@ UI 设计师已完成的物料资源请先在 [Lottie 平台](https://design.ali
 - Lottie 在 Android 7.0 上硬件加速的问题请参见官方 issue：[https://github.com/airbnb/lottie-android/issues/1453](https://github.com/airbnb/lottie-android/issues/1453)；
 - 客户端 10.1.82 版本默认对 Android7.0 使用软件渲染的方式。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2019/png/1949/1558065270518-fb618014-892e-4337-98ad-b72ab188b4f8.png?x-oss-process=image%2Fresize%2Cw_2400#align=left&display=inline&height=1116&margin=%5Bobject%20Object%5D&originHeight=1116&originWidth=2400&status=done&style=none&width=2568)
+![](https://cdn.nlark.com/yuque/0/2022/png/179989/1649386206315-1a7b0a9a-2c86-47c3-b73d-5b646c932d7f.png)
 
 ### 检查字体问题
 支付宝版本 10.1.72 以下如果用到了 JSON 里面有 font-family="PingFang SC" 的字体，请检查字体问题。因为 Android 没有这个字体，在 Android 某些机器上（以下为部分闪退机型列表）会闪退。
@@ -158,7 +158,7 @@ iOS 系统在应用切到后台的时候会自动移除动画，在应用切回�
 ## 文件压缩
 请在文件当前目录直接进行压缩，不要在外层目录进行压缩。当前不支持遍历目录寻找 JSON 文件，如果解压后第一层未发现 JSON 文件则会被认为不合法。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2019/png/1949/1568014706292-5157bb58-cc20-4eb4-9a78-13b316ccb7c6.png#align=left&display=inline&height=920&margin=%5Bobject%20Object%5D&originHeight=920&originWidth=928&status=done&style=none&width=464)
+![](https://cdn.nlark.com/yuque/0/2022/png/179989/1649386210607-94810890-adb0-43d3-9306-47f9c98c4afc.png)
 
 支持本地 json 文件的解决办法：
 ```json
