@@ -1,4 +1,3 @@
-
 # 简介
 覆盖在原生组件之上的文本视图。可覆盖的原生组件包括 [map](component/map)、[canvas](component/canvas)。
 
@@ -98,9 +97,9 @@ cover-image {
 | onTap | EventHandle | 点击事件回调。<br />**版本要求：**基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 
 
-# FAQ
+# 常见问题
 
-### cover-view 默认背景白色如何取消？
+### 如何取消cover-view 默认背景白色？
 不支持更改背景色，建议更改字体颜色。
 
 ### cover-view 是否支持圆角和阴影？
