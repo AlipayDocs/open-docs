@@ -95,4 +95,3 @@ cover-image {
 | --- | --- | --- |
 | src | String | 图片地址，支持的地址格式同 image 一致。<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
 | onTap | EventHandle | 点击事件回调。<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
-
