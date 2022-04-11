@@ -55,3 +55,6 @@ Object 类型，属性如下：
 | ok | Boolean | 点击 ok 返回 true，点击 cancel 返回 false。 |
 | inputValue | String | 当 ok 返回 true 时，返回用户输入的内容。 |
 
+# 常见问题 FAQ
+## Q：如何隐藏 my.prompt 的输入框？
+A：不支持隐藏，若仅需弹出对话框，可使用 [my.alert](https://opendocs.alipay.com/mini/006l1v)。
