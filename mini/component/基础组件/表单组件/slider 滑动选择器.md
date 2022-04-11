@@ -1,4 +1,3 @@
-
 # 简介
 滑动选择器。
 
@@ -59,7 +58,7 @@ Page(pageData);
 | name | String | 组件名字，用于表单提交获取数据。 |
 | min | Number | 最小值。<br />**默认值：** 0 |
 | max | Number | 最大值。<br />**默认值：** 100 |
-| step | Number | 步长，值必须大于 0，并可被(max - min)整除。<br />**默认值：** 1 |
+| step | Number | 步长，值必须大于 0，并可被（max-min）整除。<br />**默认值：** 1 |
 | disabled | Boolean | 是否禁用。<br />**默认值：** false |
 | value | Number | 当前取值。<br />**默认值：** 0 |
 | show-value | Boolean | 是否显示当前 value。<br />**默认值：** false |
