@@ -1,9 +1,7 @@
-
 # 简介
 [movable-view](component/movable-view) 的可移动区域。
 
 ## 使用限制
-
 - 版本要求基础库 1.11.0 或更高版本；若版本较低，建议做 [兼容处理](/mini/framework/compatibility)。
 - 必须设置 `width` 和 `height` 属性，不设置则默认为 10px。
 
