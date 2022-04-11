@@ -46,7 +46,7 @@ my.getFileInfo({
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| size | Number | 文件大小。 |
+| size | Number | 文件大小。单位：字节（B）。 |
 | digest | String | 摘要结果。 |
 
 
