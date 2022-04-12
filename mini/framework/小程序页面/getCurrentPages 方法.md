@@ -17,7 +17,6 @@
 | --- | --- | --- |
 | getAllPages | Boolean | 获取到当前页面栈的所有实例。<br /> 如果是在宿主内调用，获取到的插件页面实例只是一个代理，只能获取到基本的 `route` 信息，无法调用页面内的方法，反之亦然。<br /> **默认值**：false。<br />**版本要求**：基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上。 |
 
-
 # 示例代码
 可以用于检测当前页面栈是否具有 5 层页面深度：
 ```javascript
@@ -58,7 +57,7 @@ getCurrentPages({
 
 # 常见问题
 
-## Q：getCurrentPages 方法怎么获取页面路径？
+## Q：getCurrentPages 方法如何获取页面路径？
 A：`getCurrentPages()[N].route`，可以获取到页面路径（N 为页面数组栈中页面对象所在序号，最大值为当前页）。
 
 ## Q：getCurrentPages 方法可以获取到参数吗？
