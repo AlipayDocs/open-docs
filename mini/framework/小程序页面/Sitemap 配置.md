@@ -3,7 +3,7 @@
 小程序服务搜索功能目前已开放，开发者可以通过 sitemap.json 配置，或者 [小程序服务收录](https://opendocs.alipay.com/mini/operation/service-included) 功能来配置其小程序页面是否允许小程序算法识别。当页面被小程序算法识别后，系统自动生成小程序服务，并在 [搜索](https://opendocs.alipay.com/mini/operation/basic-information-search-application) 等场景上曝光，当用户的搜索关键词命中服务名称时，小程序服务可能展示在搜索结果中。
 
 ## 使用场景
-目前该能力适用在小程序服务同步。当开启后算法识别到小程序服务时，会在 **服务管理** > **服务同步** 中展示服务信息，商户可在列表页补齐信息提交审核，审核通过的小程序服务可在搜索侧展示。 
+目前该能力适用在小程序服务同步。当开启后算法识别到小程序服务时，会在 **服务管理** > **服务同步** 中展示服务信息，商家可在列表页补齐信息提交审核，审核通过的小程序服务可在搜索侧展示。 
 
 ![|223x478](https://cdn.nlark.com/yuque/0/2022/png/179989/1648447526705-c61fccd1-518c-4b6b-98d7-0aabc5865aed.png)    
 
@@ -29,7 +29,6 @@
 | <ol><li>path/to/page：被索引。</li><li>path/to/page2：不被索引。</li><li>其他页面因为冲突不会被索引。</li></ol> | `{ "rules":[{ "action": "allow", "page": "path/to/page" }, { "action": "disallow", "page": "path/to/page2" }] }` |
 
 ## 属性
-
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | rules | Object[] | 是 | 索引规则列表。 |
@@ -38,7 +37,6 @@
 
 # IDE 调试
 ## 使用限制
-
 - IDE 版本 1.16 及以上。
 - sitemap 的索引提示是默认开启的，如需要关闭 sitemap 的索引提示，可在小程序项目配置文件 mini.project.json 的 setting 中配置字段 checkSiteMap 为 false。
 - sitemap 文件内容最大为 5120 个 UTF8 字符。
