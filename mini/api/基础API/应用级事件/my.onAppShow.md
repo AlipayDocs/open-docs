@@ -35,8 +35,7 @@ apphide() {
 ```
 
 ## 入参
-Object 类型，参数如下：
-
+入参为回调函数：
 | **参数** | **类型** | **描述** |
 | --- | --- | --- |
 | callback | Function | 小程序切前台事件的回调函数。回调函数的参数可查看框架 [app.js 注册小程序](https://opendocs.alipay.com/mini/framework/app-detail) 时 onShow 的回调参数。 |
