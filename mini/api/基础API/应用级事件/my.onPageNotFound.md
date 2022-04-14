@@ -12,6 +12,7 @@
 
 # 接口调用
 ## 示例代码
+### .js 示例代码
 ```javascript
 //.js
 my.onPageNotFound(res => {
