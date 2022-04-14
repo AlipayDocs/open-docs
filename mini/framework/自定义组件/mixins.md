@@ -49,8 +49,7 @@ Component({
 <view>{{name}}: {{age}}</view>
 ```
 
-## 相关文档
-
+# 相关文档
 - [component2 Demo](https://github.com/ant-mini-program/component2-demo)
-- [﻿my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)
+- [my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)
 
