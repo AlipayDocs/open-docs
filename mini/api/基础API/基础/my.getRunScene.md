@@ -4,13 +4,11 @@
 
 ## 使用限制
 
-- 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
-
 ## 示例代码
-
 ### .js 示例代码
 ```javascript
 // .js
@@ -35,15 +33,15 @@ Object 类型，属性如下：
 
 
 ### success 回调函数
-入参为 Object 类型，属性如下：
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| envVersion | String | 小程序当前运行的版本。<br /><ul><li>develop：开发版。</li><li>trial：体验版。</li><li>release：发布版。</li><li>gray：灰度版。</li>|
+| envVersion | String | 小程序当前运行的版本。<br /><ul><li>develop：开发版。</li><li>trial：体验版。</li><li>release：发布版。</li><li>gray：灰度版。</li></ul> |
 
 
 ### fail 回调函数
-入参为 Object 类型，属性如下：
+fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
