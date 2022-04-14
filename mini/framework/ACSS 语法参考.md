@@ -48,7 +48,7 @@ rpx（responsive pixel）可以根据屏幕宽度进行自适应，规定屏幕�
 <view style="color:{{color}};" />
 ```
 
-### class 属性
+## class 属性
 用于接收静态样式，属性值是样式规则中类选择器名（样式类名）的集合，样式类名不需要带上`.`，多个类名间以空格分隔。请静态样式写进 class 中，避免将静态样式写进 style 中，以免影响渲染速度。
 ```html
 <view class="my-awesome-view" />
