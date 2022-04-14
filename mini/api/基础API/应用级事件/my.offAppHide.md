@@ -20,15 +20,15 @@
 ```javascript
 //.js
 onLoad() {
-    my.onAppHide(this.onAppHideHandler)
+  my.onAppHide(this.onAppHideHandler)
 },
 // 监听切换到后台方法
 onAppHideHandler() {
-    console.log('监听切换到后台方法')
+  console.log('监听切换到后台方法')
 },
 // 取消监听切换到后台方法
 offAppHideHanlder() {
-    my.offAppHide(this.onAppHideHandler)
+  my.offAppHide(this.onAppHideHandler)
 },
 ```
 
