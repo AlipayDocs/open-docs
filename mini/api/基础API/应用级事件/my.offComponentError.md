@@ -3,14 +3,11 @@
 **my.offComponentError** 是用于取消监听小程序自定义组件内部 JS 代码的 error 事件。
 
 ## 使用限制
-
 - 基础库 [1.24.9](https://opendocs.alipay.com/mini/framework/lib) 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
-
 ## 示例代码
-
 ### .js 示例代码
 ```javascript
 const callback = (error, method, component) => {
@@ -24,7 +21,8 @@ my.offComponentError(callback)
 ```
 
 ## 入参
-| **属性** | **类型** | **描述** |
+入参为回调函数：
+| **参数** | **类型** | **描述** |
 | --- | --- | --- |
 | 回调函数 | Function | 自定义组件内容 JS 代码运行抛出错误时的回调函数。 |
 
