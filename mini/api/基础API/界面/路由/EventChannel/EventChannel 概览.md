@@ -8,7 +8,7 @@
 # 方法
 | **名称** | **描述** |
 | --- | --- |
-| [EventChannel.emit](https://opendocs.alipay.com/mini/api/eventchannel.emit) | 触发一个事件。 |
-| [EventChannel.on](https://opendocs.alipay.com/mini/api/eventchannel.on) | 持续监听一个事件。 |
-| [EventChannel.once](https://opendocs.alipay.com/mini/api/eventchannel.once) | 监听一个事件一次，触发后失效。 |
-| [EventChannel.off](https://opendocs.alipay.com/mini/api/eventchannel.off) | 取消监听一个事件。给出第二个参数时，只取消给出的监听函数，否则取消该事件的所有监听函数。 |
+| [EventChannel.emit](https://opendocs.alipay.com/mini/02dcow) | 触发一个事件。 |
+| [EventChannel.on](https://opendocs.alipay.com/mini/02deto) | 持续监听一个事件。 |
+| [EventChannel.once](https://opendocs.alipay.com/mini/02dcoy) | 监听一个事件一次，触发后失效。 |
+| [EventChannel.off](https://opendocs.alipay.com/mini/02detq) | 取消监听一个事件。给出第二个参数时，只取消给出的监听函数，否则取消该事件的所有监听函数。 |
