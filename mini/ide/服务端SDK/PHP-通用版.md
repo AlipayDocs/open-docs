@@ -1,4 +1,3 @@
-
 ## 简介
 适用于 PHP 5.5 以上的开发环境。
 
@@ -157,7 +156,7 @@ $request= new AlipayUserUserinfoShareRequest();
 $response= $c->execute($request,"accessToken");
 ```
 
-### 应用授权接口调用示例（ISV 代理商户调用）
+### 应用授权接口调用示例（ISV 代理商家调用）
 ```php
 $c = new AopClient;
 $c->gatewayUrl = "https://openapi.alipay.com/gateway.do";
@@ -177,11 +176,11 @@ $request->bizContent = "{" .
 "    \"secondary_industry_code\":\"10001/20102\"," .
 "    \"secondary_industry_name\":\"IT科技/IT软件与服务\"" .
 "  }";
-//ISV代理商户调用需要传入app_auth_token
+//ISV代理商家调用需要传入app_auth_token
 $response= $c->execute($request,NULL,"app_auth_token");
 ```
 
-### 应用授权接口调用示例（ISV 代理商户调用）（证书）
+### 应用授权接口调用示例（ISV 代理商家调用）（证书）
 ```php
 $c = new AopCertClient;
 $appCertPath = "应用证书路径（要确保证书文件可读），例如：/home/admin/cert/appCertPublicKey.crt";
@@ -211,6 +210,6 @@ $request->bizContent = "{" .
 "    \"secondary_industry_code\":\"10001/20102\"," .
 "    \"secondary_industry_name\":\"IT科技/IT软件与服务\"" .
 "  }";
-//ISV代理商户调用需要传入app_auth_token
+//ISV代理商家调用需要传入app_auth_token
 $response= $c->execute($request,NULL,"app_auth_token");
 ```
