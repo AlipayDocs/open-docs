@@ -114,7 +114,7 @@ Object 类型，参数如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-| events | Object | 否 | 定义页面间通信的事件（接受被打开页面的数据）。基础库 [2.7.7 ](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 |
+| events | Object | 否 | 定义页面间通信的事件（接受被打开页面的数据）。基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 |
 
 
 ### success 回调函数
@@ -122,5 +122,5 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| eventChannel | [EventChannel](https://opendocs.alipay.com/mini/02dcov) | 和被打开页面进行通信。基础库[ 2.7.7 ](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 |
+| eventChannel | [EventChannel](https://opendocs.alipay.com/mini/02dcov) | 和被打开页面进行通信。基础库 [2.7.7 ](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 |
 
