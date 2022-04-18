@@ -1,4 +1,3 @@
-
 # 简介
 在页面间通信中持续监听一个事件。
 
@@ -13,7 +12,7 @@
 
 ### .js 示例代码
 
-**发起** [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx) **调用的页面**：
+**发起** [my.navigateTo](https://opendocs.alipay.com/mini/006l1f) **调用的页面**：
 
 在 `my.navigateTo` 调用中的 `events` 参数挂载需要持续监听的事件：
 
@@ -34,7 +33,7 @@ my.navigateTo({
 });
 ```
 
-**通过** [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx) **打开的页面**：
+**通过 my.navigateTo 打开的页面**：
 
 使用 `EventChannel` 的 `on` 方法挂载需要持续监听的事件：
 
@@ -55,9 +54,10 @@ Page({
 ```
 
 ## 入参
-入参结构为：(String eventName, Function callback)。
 
-| **属性** | **类型** | **必填** | **描述** |
+入参结构为：`(String eventName, Function callback)`。
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | eventName | String | 是 | 需要监听的事件的名称。 |
 | callback | Function | 是 | 事件监听函数。 |
