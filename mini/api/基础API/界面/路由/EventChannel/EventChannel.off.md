@@ -1,4 +1,3 @@
-
 # 简介
 在页面间通信中取消监听一个事件。给出第二个参数时，只取消给出的监听函数，否则取消所有监听函数。
 
@@ -32,9 +31,9 @@ Page({
 ```
 
 ## 入参
-入参结构为：(String eventName, Function callback)。
+入参结构为：`(String eventName, Function callback)`。
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | eventName | String | 是 | 需要取消监听的事件的名称。 |
 | callback | Function | 否 | 事件监听函数。 |
