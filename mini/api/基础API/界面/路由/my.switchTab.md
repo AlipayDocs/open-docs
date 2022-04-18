@@ -5,7 +5,7 @@
 
 通过页面跳转（[my.navigateTo](https://opendocs.alipay.com/mini/006l1f)）或者页面重定向（[my.redirectTo](https://opendocs.alipay.com/mini/006l1b)）所到达的页面，即使是定义在标签页配置中的页面，也不会显示底部的标签栏。标签页的第一个页面必须是首页。
 
-相关问题请参见 [路由FAQ](https://opendocs.alipay.com/mini/006l1n) 。
+相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/006l1n) 。
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
