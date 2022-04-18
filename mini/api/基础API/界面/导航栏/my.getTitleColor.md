@@ -17,7 +17,7 @@
 ### .json 示例代码
 ```json
 {
-    "defaultTitle": "获取导航栏背景颜色"
+  "defaultTitle": "获取导航栏背景颜色"
 }
 ```
 
