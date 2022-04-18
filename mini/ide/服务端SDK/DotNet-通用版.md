@@ -1,6 +1,5 @@
-
 ## 简介
-适用于符合.Net Standard 2.0规范的各类微软框架（如： .Net Framework >= 4.6.1、.Net Core >= 2.0 等）。<br />.Net Framework（3.5 ~ 4.6）的用户可以继续使用 [AlipaySDKNet](https://www.nuget.org/packages/AlipaySDKNet/)。
+适用于符合 .Net Standard 2.0 规范的各类微软框架（如：.Net Framework >= 4.6.1、.Net Core >= 2.0 等）。<br />.Net Framework（3.5 ~ 4.6）的用户可以继续使用 [AlipaySDKNet](https://www.nuget.org/packages/AlipaySDKNet/)。
 
 ## 下载地址
 
@@ -35,7 +34,7 @@ if(response.isSuccess()){
 CertParams certParams = new CertParams
 {
     AlipayPublicCertPath = "支付宝公钥证书路径",
-    AppCertPath = "商户应用证书路径",
+    AppCertPath = "商家应用证书路径",
     RootCertPath = "支付宝根证书路径"
 };
 IAopClient client = new DefaultAopClient("https://openapi.alipay.com/gateway.do", APPID, APP_PRIVATE_KEY, "json", "1.0", "RSA2", "utf-8", false, certParams);
@@ -82,7 +81,7 @@ if(response.isSuccess()){
 CertParams certParams = new CertParams
 {
     AlipayPublicCertPath = "支付宝公钥证书路径",
-    AppCertPath = "商户应用证书路径",
+    AppCertPath = "商家应用证书路径",
     RootCertPath = "支付宝根证书路径"
 };
 IAopClient client = new DefaultAopClient("https://openapi.alipay.com/gateway.do", APPID, APP_PRIVATE_KEY, "json", "1.0", "RSA2", "utf-8", false, certParams);
@@ -120,7 +119,7 @@ AlipayUserUserinfoShareResponse response= client.Execute(request, "accessToken")
 CertParams certParams = new CertParams
 {
     AlipayPublicCertPath = "支付宝公钥证书路径",
-    AppCertPath = "商户应用证书路径",
+    AppCertPath = "商家应用证书路径",
     RootCertPath = "支付宝根证书路径"
 };
 IAopClient client = new DefaultAopClient("https://openapi.alipay.com/gateway.do", APPID, APP_PRIVATE_KEY, "json", "1.0", "RSA2", "utf-8", false, certParams);
@@ -132,7 +131,7 @@ AlipayUserUserinfoShareResponse response= client.CertificateExecute(request, "ac
 //...
 ```
 
-### 应用授权接口调用示例（ISV 代理商户调用）
+### 应用授权接口调用示例（ISV 代理商家调用）
 ```csharp
 IAopClient client = new DefaultAopClient("https://openapi.alipay.com/gateway.do", APPID, APP_PRIVATE_KEY, "json", "1.0", "RSA2", ALIPAY_PUBLIC_KEY, CHARSET, false);
 //实例化具体API对应的request类,类名称和接口名称对应,当前调用接口名称：alipay.open.public.template.message.industry.modify 
@@ -152,13 +151,13 @@ if(response.isSuccess()){
 }
 ```
 
-### 应用授权接口调用示例（ISV 代理商户调用）（证书）
+### 应用授权接口调用示例（ISV 代理商家调用）（证书）
 ```csharp
 //设置证书相关参数
 CertParams certParams = new CertParams
 {
     AlipayPublicCertPath = "支付宝公钥证书路径",
-    AppCertPath = "商户应用证书路径",
+    AppCertPath = "商家应用证书路径",
     RootCertPath = "支付宝根证书路径"
 };
 IAopClient client = new DefaultAopClient("https://openapi.alipay.com/gateway.do", APPID, APP_PRIVATE_KEY, "json", "1.0", "RSA2", "utf-8", false, certParams);
