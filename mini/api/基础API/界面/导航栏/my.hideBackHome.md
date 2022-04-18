@@ -29,7 +29,6 @@ Page({
 });
 ```
 
-### .js 示例代码
 ```javascript
 //.js
 onLoad(){
