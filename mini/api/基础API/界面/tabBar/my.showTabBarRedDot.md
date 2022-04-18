@@ -1,7 +1,7 @@
 # 简介
 **my.showTabBarRedDot** 是显示标签页（tabbar）某一项右上角的红点的 API。
 
-相关问题请参见 [tabBar 常见问题](https://opendocs.alipay.com/mini/006l0v)。
+相关问题可查看 [tabBar 常见问题](https://opendocs.alipay.com/mini/006l0v)。
 
 ## 使用限制
 
