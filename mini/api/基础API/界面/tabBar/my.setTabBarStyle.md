@@ -1,7 +1,7 @@
 # 简介
 **my.setTabBarStyle** 是动态设置标签页（tabbar）的整体样式的 API，如文字颜色、标签背景色、标签边框颜色等。
 
-相关问题请参见 [tabBar 常见问题](https://opendocs.alipay.com/mini/006l0v)。
+相关问题可查看 [tabBar 常见问题](https://opendocs.alipay.com/mini/006l0v)。
 
 ## 使用限制
 
