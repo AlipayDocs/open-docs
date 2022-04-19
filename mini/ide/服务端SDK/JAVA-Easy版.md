@@ -1,7 +1,7 @@
 
 ## 简介
 适用于 JDK 1.8 及其以上版本的开发环境。
-**注意：** 需使用 maven 依赖引入，请勿直接下载 jar 包导入项目。
+**注意：** 需使用 maven 依赖引入，请勿直接下载 JAR 包导入项目。
 
 ## 下载地址
 
@@ -44,24 +44,24 @@ public class Main {
         config.gatewayHost = "openapi.alipay.com";
         config.signType = "RSA2";
 
-        config.appId = "<-- 请填写您的AppId，例如：2019091767145019 -->";
+        config.appId = "<-- 请填写AppId，例如：2019091767145019 -->";
 
         // 为避免私钥随源码泄露，推荐从文件中读取私钥字符串而不是写入源码中
-        config.merchantPrivateKey = "<-- 请填写您的应用私钥，例如：MIIEvQIBADANB ... ... -->";
+        config.merchantPrivateKey = "<-- 请填写应用私钥，例如：MIIEvQIBADANB ... ... -->";
 
         //注：证书文件路径支持设置为文件系统中的路径或CLASS_PATH中的路径，优先从文件系统中加载，加载失败后会继续尝试从CLASS_PATH中加载
-        config.merchantCertPath = "<-- 请填写您的应用公钥证书文件路径，例如：/foo/appCertPublicKey_2019051064521003.crt -->";
-        config.alipayCertPath = "<-- 请填写您的支付宝公钥证书文件路径，例如：/foo/alipayCertPublicKey_RSA2.crt -->";
-        config.alipayRootCertPath = "<-- 请填写您的支付宝根证书文件路径，例如：/foo/alipayRootCert.crt -->";
+        config.merchantCertPath = "<-- 请填写应用公钥证书文件路径，例如：/foo/appCertPublicKey_2019051064521003.crt -->";
+        config.alipayCertPath = "<-- 请填写支付宝公钥证书文件路径，例如：/foo/alipayCertPublicKey_RSA2.crt -->";
+        config.alipayRootCertPath = "<-- 请填写支付宝根证书文件路径，例如：/foo/alipayRootCert.crt -->";
 
         //注：如果采用非证书模式，则无需赋值上面的三个证书路径，改为赋值如下的支付宝公钥字符串即可
-        // config.alipayPublicKey = "<-- 请填写您的支付宝公钥，例如：MIIBIjANBg... -->";
+        // config.alipayPublicKey = "<-- 请填写支付宝公钥，例如：MIIBIjANBg... -->";
 
         //可设置异步通知接收服务地址（可选）
-        config.notifyUrl = "<-- 请填写您的支付类接口异步通知接收服务地址，例如：https://www.test.com/callback -->";
+        config.notifyUrl = "<-- 请填写支付类接口异步通知接收服务地址，例如：https://www.test.com/callback -->";
 
         //可设置AES密钥，调用AES加解密相关接口时需要（可选）
-        config.encryptKey = "<-- 请填写您的AES密钥，例如：aa4BtZ4tspm2wnXLb1ThQA== -->";
+        config.encryptKey = "<-- 请填写AES密钥，例如：aa4BtZ4tspm2wnXLb1ThQA== -->";
 
         return config;
     }
@@ -129,7 +129,7 @@ Factory.Payment.FaceToFace()
     .batchOptional(optionalArgs)
     .preCreate("Apple iPhone11 128G", "2234567890", "5799.00");
 ```
-当想要调用的 OpenAPI 在 SDK 中没有对应的 API 与之对应时，可按如下方式调用 OpenAPI：<br />注意：文件上传类 OpenAPI、生成字符串类的 OpenAPI（老版 SDK 中需使用 sdkExecute）、生成 Form 表单类的 OpenAPI（老版 SDK 中需要使用 pageExecute）本调用方式暂不支持。
+当想要调用的 OpenAPI 在 SDK 中没有对应的 API 与之对应时，可按如下方式调用 OpenAPI：<br />**注意：** 文件上传类 OpenAPI、生成字符串类的 OpenAPI（老版 SDK 中需使用 sdkExecute）、生成 Form 表单类的 OpenAPI（老版 SDK 中需要使用 pageExecute）本调用方式暂不支持。
 ```java
 //设置系统参数（OpenAPI中非biz_content里的参数）
 Map<String, String> textParams = new HashMap<>();
