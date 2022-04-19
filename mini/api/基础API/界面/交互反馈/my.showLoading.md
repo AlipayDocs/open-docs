@@ -1,24 +1,26 @@
-
 # 简介
-**my.showLoading** 是显示加载提示的过渡效果的 API，可与 [my.hideLoading](/mini/api/nzf540) 配合使用。
+**my.showLoading** 是显示加载提示的过渡效果的 API，可与 [my.hideLoading](https://opendocs.alipay.com/mini/006l22) 配合使用。
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/9b97b37bc6021ac42b6772643f2b62ad.png#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
 
 # 接口调用
 
 ## Herbox
+
 [小程序在线](https://herbox-embed.alipay.com/s/doc-loading?theme=light&previewZoom=75&chInfo=openhome-doc) 
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
-    "defaultTitle": "加载提示"
+  "defaultTitle": "加载提示"
 }
 ```
 
@@ -38,6 +40,7 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 // API-DEMO page/API/loading/loading.js
 Page({
@@ -54,6 +57,7 @@ Page({
 ```
 
 ### .acss 示例代码
+
 ```css
 /* API-DEMO page/API/loading/loading.acss */
 .tips{
@@ -70,12 +74,12 @@ Page({
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | content | String | 否 | 提示中的文字内容。 |
-| delay | Number | 否 | 延迟显示，单位为毫秒（ms），默认值为 0。<br />如果在此时间之前调用了 [my.hideLoading](https://opendocs.alipay.com/mini/api/nzf540) 则不会显示。 |
+| delay | Number | 否 | 延迟显示，单位为毫秒（ms），默认值为 0。<br />如果在此时间之前调用了 [my.hideLoading](https://opendocs.alipay.com/mini/006l22) 则不会显示。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
