@@ -32,7 +32,7 @@ my.offComponentError(callback)
 | --- | --- | --- |
 | 回调函数 | Function | 自定义组件内部 JS 代码运行抛出错误时的回调函数。 |
 
-### 回调参数
+### 回调函数
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | error | Error | 标准 error 对象。 |
