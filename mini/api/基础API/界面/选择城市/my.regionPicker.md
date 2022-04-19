@@ -1,10 +1,9 @@
-
 # 简介
 **my.regionPicker** 是多级省市区选择器 API，自带省市区数据源。
 
 ## 使用限制
 
-- 基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.90 或更高版本，若版本较低，建议采取 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。<br />
+- 基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.90 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
@@ -13,6 +12,7 @@
 ## 示例代码
 
 ### .axml 示例代码
+
 ```html
 <!-- .axml -->
 <view class="page">
@@ -76,58 +76,11 @@ Page({
 })
 ```
 
-## ﻿入参
-| **属性** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| title | String | 否 | 标题。 |
-| mergeOptions | Object | 否 | 自定义修改城市数据，支持删除、添加和更新城市信息。 |
-| selectedItem | Array | 否 | 初始选中的省市区名称。不传则默认选中第一个 |
-| success | Function | 否 | 调用成功的回调函数。 |
-| fail | Function | 否 | 调用失败的回调函数。 |
+## 返回示例
 
+### success 回调参数示例
 
-### ﻿
-**说明**： mergeOptions 对城市信息的删除、添加、更新操作不会全局生效，仅单次生效。
-
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| remove | Array | 删除城市信息。 |
-| add | Array | 添加城市信息。 |
-| update | Array | 更新城市信息。 |
-
-
-#### remove 对象
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| id | String | 需要移除的对象 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
-
-
-#### ﻿add 对象
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| id | String | 增加对象的 ID。 |
-| name | String | 增加对象的名称。 |
-| nextId | String | 插入点之后的对象 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
-| subList | Array | 对象下辖的完整的市和区信息。<br />示例：<br />"subList": [{<br />                "name": "北京市",<br />                "id": "110100",<br />                "subList": [{<br />                    "name": "东城区",<br />                    "id": "110101"<br />                }] ```|
-
-
-#### ﻿update 对象
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| id | String | 更新对象的 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
-| name | String | 更新对象的名称。 |
-| subList | Array | 对象下辖的完整的市和区信息。<br />示例：<br />"subList": [{<br />                "name": "北京市",<br />                "id": "110100",<br />                "subList": [{<br />                    "name": "东城区",<br />                    "id": "110101"<br />                }]<br />﻿ |
-
-
-### ﻿success 返回值
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| data | Array | 选择的省市区名称数组。 |
-| code | Array | 选择的省市区ID数组。 |
-
-
-### success 返回值示例
-以下示例值作为参考，为 JSON 格式。
+执行成功时，触发 success 回调，回调参数示例如下（已转换为 JSON 字符串）：
 ```json
 {
   "data": [
@@ -143,14 +96,70 @@ Page({
 }
 ```
 
-### ﻿fail 返回值
+## 入参
+
+Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| title | String | 否 | 标题。 |
+| mergeOptions | Object | 否 | 自定义修改城市数据，支持删除、添加和更新城市信息。 |
+| selectedItem | Array | 否 | 初始选中的省市区名称。不传则默认选中第一个 |
+| success | Function | 否 | 调用成功的回调函数。 |
+| fail | Function | 否 | 调用失败的回调函数。 |
+
+### Object mergeOptions
+
+**说明**：mergeOptions 对城市信息的删除、添加、更新操作不会全局生效，仅单次生效。
+
+| **参数** | **类型** | **描述** |
+| --- | --- | --- |
+| remove | Array | 删除城市信息。 |
+| add | Array | 添加城市信息。 |
+| update | Array | 更新城市信息。 |
+
+#### Array remove
+| **参数** | **类型** | **描述** |
+| --- | --- | --- |
+| id | String | 需要移除的对象 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
+
+#### Array add
+| **参数** | **类型** | **描述** |
+| --- | --- | --- |
+| id | String | 增加对象的 ID。 |
+| name | String | 增加对象的名称。 |
+| nextId | String | 插入点之后的对象 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
+| subList | Array | 对象下辖的完整的市和区信息。<br />示例：<br />"subList": [{<br />&nbsp;&nbsp;"name": "北京市",<br />&nbsp;&nbsp;"id": "110100",<br />&nbsp;&nbsp;"subList": [{<br />&nbsp;&nbsp;&nbsp;&nbsp;"name": "东城区",<br />&nbsp;&nbsp;&nbsp;&nbsp;"id": "110101"<br />&nbsp;&nbsp;}],······<br/>}] |
+
+
+#### Array update
+| **参数** | **类型** | **描述** |
+| --- | --- | --- |
+| id | String | 更新对象的 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
+| name | String | 更新对象的名称。 |
+| subList | Array | 对象下辖的完整的市和区信息。<br />示例：<br />"subList": [{<br />&nbsp;&nbsp;"name": "北京市",<br />&nbsp;&nbsp;"id": "110100",<br />&nbsp;&nbsp;"subList": [{<br />&nbsp;&nbsp;&nbsp;&nbsp;"name": "东城区",<br />&nbsp;&nbsp;&nbsp;&nbsp;"id": "110101"<br />&nbsp;&nbsp;}]<br />}] |
+
+
+### Function success
+
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| data | Array | 选择的省市区名称数组。 |
+| code | Array | 选择的省市区ID数组。 |
+
+### Function fail
+
+fail 回调函数会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | error | String | 错误码。 |
 | errorMessage | String | 错误描述。 |
 
 
-## ﻿错误码
+## 错误码
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 11 | 用户取消选择 | 重新选择即可。 |
