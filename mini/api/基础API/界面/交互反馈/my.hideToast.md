@@ -1,16 +1,19 @@
-
 # 简介
+
 **my.hideToast** 是隐藏弱提示的 API。
 
 ## 使用限制
+
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/e9f3b3c8c7c3cd7d169955c9facf59fa.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
 
 # 接口调用
 
 ## Herbox
+
 [小程序在线](https://herbox-embed.alipay.com/s/doc-toast?theme=light&previewZoom=75&chInfo=openhome-doc) 
 
 ## 示例代码
@@ -106,7 +109,10 @@ Page({
 ```
 
 ## 入参
-| **属性** | **类型** | **必填** | **描述** |
+
+Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | success | Function | 否 | 接口调用成功的回调函数。 |
 | fail | Function | 否 | 接口调用失败的回调函数。 |
