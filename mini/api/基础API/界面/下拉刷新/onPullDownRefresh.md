@@ -1,8 +1,7 @@
-
 # 简介
 **onPullDownRefresh** 是用于在 Page 中自定义 onPullDownRefresh 函数，可以监听该页面的下拉刷新事件。
 
-调用 [my.startPullDownRefresh](https://opendocs.alipay.com/mini/api/ui-pulldown) 后触发下拉刷新动画，然后会触发 onPullDownRefresh 监听方法，效果与用户手动下拉刷新一致。但 [my.startPullDownRefresh](https://opendocs.alipay.com/mini/api/ui-pulldown) 不受 onPullDownRefresh 的 `allowsBounceVertical` 、`pullRefresh` 参数影响。
+调用 [my.startPullDownRefresh](https://opendocs.alipay.com/mini/006l2u) 后触发下拉刷新动画，然后会触发 onPullDownRefresh 监听方法，效果与用户手动下拉刷新一致。但 **my.startPullDownRefresh** 不受 onPullDownRefresh 的 `allowsBounceVertical` 、`pullRefresh` 参数影响。
 
 ## 使用限制
 
@@ -10,20 +9,31 @@
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/bd8dbb40d62dd58710fa54c9fc6ea7af.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
 
 # 接口调用
 
 ## Herbox
+
 [小程序在线](https://herbox-embed.alipay.com/s/doc-pull-down-refresh?theme=light&previewZoom=75&chInfo=openhome-doc) 
 
 ## 示例代码
 
 ### .json 示例代码
+在页面对应的 .json 文件中添加如下配置：
 ```json
 {
-    "defaultTitle": "下拉刷新",
-    "pullRefresh": true
+  "defaultTitle": "下拉刷新",
+  "pullRefresh": true
+}
+```
+在 app.json 文件中添加如下配置：
+```json
+{
+  "window": {
+    "allowsBounceVertical": "YES"
+  }
 }
 ```
 
@@ -57,7 +67,8 @@ Page({
 });
 ```
 
-## 入参
+## 配置
+
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | pullRefresh | Boolean | 否 | 是否允许下拉刷新。默认 true。<br />**说明**：下拉刷新生效的前提是 allowsBounceVertical 值为 `YES` 。 |
