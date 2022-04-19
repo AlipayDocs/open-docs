@@ -78,7 +78,7 @@ Page({
 
 ## 返回示例
 
-### success 回调参数示例
+### success 回调返回示例
 
 执行成功时，触发 success 回调，回调参数示例如下（已转换为 JSON 字符串）：
 ```json
