@@ -37,7 +37,7 @@ tabBar item 配置示例：
   }
 }
 ```
-tabBar 配置示例代码：
+tabBar 配置示例：
 ```json
 // tabBar 示例配置
 {
