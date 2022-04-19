@@ -48,7 +48,7 @@ Object 类型，参数如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-### success 回调函数
+### Function success
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
@@ -58,5 +58,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | inputValue | String | 当 ok 返回 true 时，返回用户输入的内容。 |
 
 # 常见问题
+
 ## Q：如何隐藏 my.prompt 的输入框？
+
 A：不支持隐藏，若仅需弹出对话框，可使用 [my.alert](https://opendocs.alipay.com/mini/006l1v)。
