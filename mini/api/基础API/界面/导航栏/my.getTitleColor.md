@@ -1,4 +1,3 @@
-
 # 简介
 **my.getTitleColor** 是获取导航栏背景色的 API。
 
@@ -10,6 +9,7 @@
 # 接口调用
 
 ## Herbox
+
 [小程序在线](https://herbox-embed.alipay.com/s/doc-get-title-color?theme=light&previewZoom=75&chInfo=openhome-doc) 
 
 ## 示例代码
@@ -65,7 +65,7 @@ Object 类型，参数如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-### success 回调函数
+### Function success
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
