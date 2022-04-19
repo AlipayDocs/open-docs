@@ -1,4 +1,3 @@
-
 # 简介
 **my.setLocatedCity** 是用于修改 [my.chooseCity](https://opendocs.alipay.com/mini/006l3p) 中的默认定位城市的名称的 API。
 
@@ -8,16 +7,19 @@
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://mdn.alipayobjects.com/afts/img/A*uGCmRImDNksAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=4XIxqvsosH7EjPo-LvzPMgAAAABkMK8AAAAA#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
 
 # 接口调用
 
 ## Herbox
+
 [小程序在线](https://herbox-embed.alipay.com/s/doc-choose-city?theme=light&previewZoom=75&chInfo=openhome-doc) 
 
 ## 示例代码
 
 ### .axml 示例代码
+
 ```html
 <!-- .axml -->
 <view class="page">
@@ -269,7 +271,10 @@ Page({
 ```
 
 ## 入参
-| **属性** | **类型** | **必填** | **描述** |
+
+Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | locatedCityId | String | 是 | 当前定位城市 ID，my.chooseCity 接口的 onLocatedComplete 返回。 |
 | locatedCityName | String | 是 | 当前定位城市的名称。 |
@@ -279,17 +284,22 @@ Page({
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
+### Function success
 
-### success 返回值
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | locatedCityName | String | 当前定位城市的名称。 |
 
 
-### fail 返回值
+### Function fail
+
+fail 回调函数会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| error | String | 错误码。 |
+| error | Number | 错误码。 |
 | errorMessage | String | 错误描述。 |
 
 
@@ -298,5 +308,5 @@ Page({
 | --- | --- | --- |
 | 11 | 参数类型错误。 | 检查参数类型是否正确。 |
 | 12 | 必填参数为空。 | 请确认参数   locatedCityId、locatedCityName 是否已填写。 |
-| 13 | locatedCityId 不匹配。 | 请确保与 [my.chooseCity ](https://opendocs.alipay.com/mini/006l3p)接口的 onLocatedComplete 的 locatedCityId 保持一致。 |
+| 13 | locatedCityId 不匹配。 | 请确保与 [my.chooseCity](https://opendocs.alipay.com/mini/006l3p)接口的 onLocatedComplete 的 locatedCityId 保持一致。 |
 
