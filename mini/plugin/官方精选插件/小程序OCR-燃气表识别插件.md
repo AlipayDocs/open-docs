@@ -1,11 +1,10 @@
-
 # 产品介绍
 小程序OCR-燃气表识别插件可实时识别并返回燃气表信息和相关图片数据。该插件是纯前端能力，无需依赖后端，也不会传输任何数据到后端。
 
 支付宝最低支持版本 10.1.92。
 
 # 产品特色
-商家/ISV价值：生活缴费场景，减少人工抄表成本，可以让用户自己完成燃气数据上传。
+商家/服务商（ISV）价值：生活缴费场景，减少人工抄表成本，可以让用户自己完成燃气数据上传。
 
 # 使用流程
 小程序场景下，以自助抄表为例，用户操作流程：
@@ -19,10 +18,10 @@
 # 接入指引
 
 ## 第一步：创建小程序
-要在小程序内使用小程序OCR-燃气表识别插件，首先请完成 [开发者入驻](https://opendocs.alipay.com/mini/introduce/register) 并 [创建小程序](https://opendocs.alipay.com/mini/introduce/create)。
+要在小程序内使用小程序OCR-燃气表识别插件，首先请完成 [平台入驻](https://opendocs.alipay.com/common/02asmu) 并 [创建小程序](https://opendocs.alipay.com/mini/introduce/create)。
 
 ## 第二步：订购插件
-完成创建小程序应用后，使用小程序所属的主体支付宝账号，在 PC 端 [小程序 OCR-燃气表识别插件](https://appstore.alipay.com/abilityprod/detail?abilityCode=PL002020061800011447) 能力详情页点击 **立即订购**，完成插件订购。 
+完成创建小程序后，使用小程序所属的主体支付宝账号，在 PC 端 [小程序 OCR-燃气表识别插件](https://open.alipay.com/plugin/order-page?serviceCode=MP2020121900100066) 能力详情页点击 **立即订购**，完成插件订购。 
 
 ## 第三步：修改小程序参数
 示例插件 APPID：2021001153627163
