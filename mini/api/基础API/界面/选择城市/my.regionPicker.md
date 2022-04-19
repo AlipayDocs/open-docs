@@ -147,7 +147,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | data | Array | 选择的省市区名称数组。 |
-| code | Array | 选择的省市区ID数组。 |
+| code | Array | 选择的省市区 ID 数组。 |
 
 ### Function fail
 
