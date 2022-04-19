@@ -1,8 +1,7 @@
-
 # 简介
 **my.redirectTo** 是关闭当前页面，跳转到应用内的某个指定页面的 API。
 
-相关问题请参见 [路由FAQ](/mini/api/fu8l65) 。
+相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/006l1n) 。
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
@@ -26,13 +25,13 @@ my.redirectTo({
 ```
 以跳转至首页 index 页面为例：
 
-- 使用绝对路径：url: /pages/index/index
-- 使用相对路径：url: ../index/index
+- 使用绝对路径：`url: /pages/index/index`。
+- 使用相对路径：`url: ../index/index`。
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | url | String | 是 | 需要跳转的应用内非 tabbar 的目标页面路径 ,路径后可以带参数。<br />**参数规则：** 路径与参数之间使用`?`分隔，参数键与参数值用`=`相连，不同参数必须用`&`分隔。<br />**示例：**`path?key1=value1&key2=value2` |
 | success | Function | 否 | 调用成功的回调函数。 |
