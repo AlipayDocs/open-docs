@@ -1,6 +1,5 @@
-
 # 简介
-**my.offLocatedComplete** 是取消监听地理位置定位完成事件的 API，只针对 [my.chooseCity](https://opendocs.alipay.com/mini/api/ui-city) 中属性 setLocatedCity 为 true 的情况。
+**my.offLocatedComplete** 是取消监听地理位置定位完成事件的 API，只针对 [my.chooseCity](https://opendocs.alipay.com/mini/006l3p) 中属性 setLocatedCity 为 true 的情况。
 
 ## 使用限制
 
@@ -13,6 +12,7 @@
 ## 示例代码
 
 ### .axml 示例代码
+
 ```html
 <!-- API-DEMO page/API/choose-city/choose-city.axml-->
 <view class="page">
@@ -34,6 +34,7 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 // API-DEMO page/choose-city/choose-city.js
 Page({
@@ -84,9 +85,10 @@ Page({
 ```
 
 ## 入参
+
 入参为回调函数：
 
-| **属性** | **类型** | **描述** |
+| **参数** | **类型** | **描述** |
 | --- | --- | --- |
 | callback | Function | 地理位置定位完成事件的回调函数。 |
 
