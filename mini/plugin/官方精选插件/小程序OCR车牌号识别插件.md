@@ -1,18 +1,17 @@
-
 # 产品介绍
 以小程序插件形式输出，OCR-车牌号识别插件可帮助开发者快速实时识别并返回车牌号信息和相关图片数据。该插件是纯前端能力，无需依赖后端，也不会传输任何数据到后端。
 
 ## 产品特色
-商家/ISV 价值：生活缴费场景，减少人工成本，可以让用户自己完成车牌号数据上传。
+商家/服务商（ISV） 价值：生活缴费场景，减少人工成本，可以让用户自己完成车牌号数据上传。
 
 ## 准入条件
 
-- 仅支持企业支付宝账户使用。
-- 具备一定的技术能力，能够独立或由服务商协助完成技术对接。
+- 仅支持支付宝企业账号使用。
+- 具备一定的技术能力，能够独立或由 ISV 协助完成技术对接。
 - 支持合作后的服务联动处理，数据反馈和异议处理。
 
 ## 场景说明
-以本地生活 app 为例，选择小程序后，展示的识别流程。
+以本地生活 App 为例，选择小程序后，展示的识别流程。
 
 1. 用户在小程序上开启车牌识别功能；
 1. 识别插件唤起相机和识别功能，对准车牌号区域扫一扫识别；
@@ -22,16 +21,16 @@
 ![|320x572](https://mdn.alipayobjects.com/afts/img/A*c3nyTbZcmz0AAAAAAAAAAAAAAa8wAA/original?bz=openpt_doc&t=HFUIlhjKxlM9FZVQTpnj0QAAAABkMK8AAAAA#align=left&display=inline&height=572&margin=%5Bobject%20Object%5D&originHeight=572&originWidth=320&status=done&style=none&width=320)
 
 # 接入指引
-支付宝 App 10.1.92 或更高版本支持OCR车牌号识别插件。
+支付宝 App 10.1.92 或更高版本支持 OCR-车牌号识别插件。
 
 ## 第一步：创建小程序
-要在小程序内使用小程序OCR车牌号识别插件，首先请完成 [开发者入驻](https://opendocs.alipay.com/mini/introduce/register) 并 [创建小程序](https://opendocs.alipay.com/mini/introduce/create)。 
+要在小程序内使用小程序 OCR-车牌号识别插件，首先请完成 [平台入驻](https://opendocs.alipay.com/common/02asmu) 并 [创建小程序](https://opendocs.alipay.com/mini/introduce/create)。 
 
 ## 第二步：订购插件
-完成创建小程序应用后，使用小程序所属的主体支付宝账号，在能力中心订购并获取 [小程序OCR车牌号识别插件](https://nengli.alipay.com/abilityprod/detail?abilityCode=PL002020062200011640)，详情请参考 [插件订购](https://opendocs.alipay.com/mini/plugin/plugin-order#%E8%AE%A2%E8%B4%AD%E5%9F%BA%E7%A1%80%E6%8F%92%E4%BB%B6)。
+完成创建小程序后，使用小程序所属的主体支付宝账号，在插件中心订购并获取 [小程序OCR车牌号识别插件](https://open.alipay.com/plugin/order-page?serviceCode=MP2020121900100072)，详情可查看 [插件获取](https://opendocs.alipay.com/mini/plugin/plugin-order)。
 
 ## 第三步：修改小程序参数
-示例插件 appid：2021001130699293
+示例插件 APPID：2021001130699293
 
 ### app.json 插件配置
 
