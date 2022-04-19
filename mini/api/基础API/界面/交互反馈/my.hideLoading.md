@@ -1,13 +1,15 @@
-
 # 简介
-**my.hideLoading** 是隐藏加载提示的过渡效果的 API，可与 [my.showLoading](/mini/api/bm69kb) 配合使用。
+
+**my.hideLoading** 是隐藏加载提示的过渡效果的 API，可与 [my.showLoading](https://opendocs.alipay.com/mini/006l2f) 配合使用。
 
 ## 使用限制
+
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
 
 ## Herbox
+
 [小程序在线](https://herbox-embed.alipay.com/s/doc-loading?theme=light&previewZoom=75&chInfo=openhome-doc) 
 
 ## 示例代码
@@ -29,9 +31,9 @@ Page({
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | page | Object | 否 | 具体指当前 page 实例，某些场景下，需要指明在哪个 page 执行 hideLoading。  |
 | success | Function | 否 | 调用成功的回调函数。 |
