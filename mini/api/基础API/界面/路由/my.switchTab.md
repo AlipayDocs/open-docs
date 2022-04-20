@@ -37,7 +37,7 @@ tabBar item 配置示例：
   }
 }
 ```
-tabBar 配置示例代码：
+tabBar 配置示例：
 ```json
 // tabBar 示例配置
 {
@@ -78,6 +78,7 @@ Object 类型，参数如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
+## 配置
 
 ### tabBar 配置
 | **属性** | **类型** | **必填** | **描述** |
