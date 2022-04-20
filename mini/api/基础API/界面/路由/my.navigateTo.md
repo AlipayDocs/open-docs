@@ -117,7 +117,7 @@ Object 类型，参数如下：
 | events | Object | 否 | 定义页面间通信的事件（接受被打开页面的数据）。基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 |
 
 
-### success 回调函数
+### Function success
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
