@@ -1,13 +1,13 @@
-
 # 简介
+
 **my.chooseDistrict**  是用于使用支付宝统一样式选择地区的 API。
 
 数据层面支持：
 
 1. 全量地区数据自定义。
-1. 内置数据能力，支持境内城市数据、境外/港澳台城市数据。
-1. 支持基于内置数据差量自定义。
-1. 地区选择支持级联交互。
+2. 内置数据能力，支持境内城市数据、境外/港澳台城市数据。
+3. 支持基于内置数据差量自定义。
+4. 地区选择支持级联交互。
 
 ## 使用限制
 
@@ -15,6 +15,7 @@
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|100x124](https://cdn.nlark.com/yuque/0/2021/png/179989/1624869024841-78a3bc1b-7ff9-458d-bd7d-6978759f3979.png#align=left&display=inline&height=124&margin=%5Bobject%20Object%5D&name=my.chooseDistrict_1.png&originHeight=124&originWidth=100&size=11494&status=done&style=stroke&width=100)
 
 # 接口调用
@@ -22,6 +23,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 my.chooseDistrict({        
   mode:2,
@@ -183,8 +185,11 @@ my.chooseDistrict({
 ```
 
 ### .json 示例代码
+
 #### src 模式
+
 将 chooseDistrict 的入参通过文件方式添加到小程序中，文件内容为接口入参。可应对入参数据量大的场景，如新建 chooseDistrict.json。
+
 ```json
 // chooseDistrict.json 参数参见文档说明
 {
@@ -200,9 +205,10 @@ my.chooseDistrict({
 ```
 
 ## 入参
+
 <table>
   <tr>
-    <th><b>属性</b></th>
+    <th><b>参数</b></th>
     <th><b>类型</b></th>
     <th><b>必填</b></th>
     <th><b>描述</b></th>
@@ -220,13 +226,13 @@ my.chooseDistrict({
     <td>mainHeadList</td>
     <td>Array</td>
     <td>否</td>
-    <td>头部自定义对象数组。如定位区块、热门城市区块。对象值请参见下方 <b>HeadModel 表</b>。</td>
+    <td>头部自定义对象数组。如定位区块、热门城市区块。对象值可查看下方 <b>HeadModel</b>。</td>
   </tr>
   <tr>
     <td>mainNormalList</td>
     <td>Array</td>
     <td>否</td>
-    <td>底部城市列表。</br>当对象为空时，默认使用内置的境内城市列表填充。对象值请参见 <b>ItemModel 表</b>。</td>
+    <td>底部城市列表。</br>当对象为空时，默认使用内置的境内城市列表填充。对象值可查看 <b>ItemModel</b>。</td>
   </tr>
   <tr>
     <td>mainMergeOptions</td>
@@ -247,7 +253,7 @@ my.chooseDistrict({
     <td>seniorPageList</td>
     <td>Array</td>
     <td>否</td>
-    <td>境外多 tab 数据集合, 对象值参见 <b>PageModel 表</b>。</br>如果对象为空时，默认使用内置的境外城市列表填充。</td>
+    <td>境外多 tab 数据集合, 对象值可查看 <b>PageModel</b>。</br>如果对象为空时，默认使用内置的境外城市列表填充。</td>
   </tr>
   <tr>
     <td colspan="4"><b>通用场景</b></td>
@@ -278,34 +284,37 @@ my.chooseDistrict({
   </tr>
 </table>
 
-### HeadModel 表
-| **属性** | **类型** | **必填** | **描述** |
+### HeadModel
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | title | String | 是 | 区块名，如“热门城市”。 |
 | type | Int | 否 | 模块类型。枚举如下：<br /><ul><li>0：常规城市；</li><li>1：定位模块；</li><li>2：展示支付宝提供的热门城市模块。</li></ul> |
-| list | Array | 否 | 区块城市列表。不支持嵌套，对象值请参见 **ItemModel 表**。 |
+| list | Array | 否 | 区块城市列表。不支持嵌套，对象值可查看 **ItemModel**。 |
 
 
-### ItemModel 表
-| **属性** | **类型** | **必填** | **描述** |
+### ItemModel
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | name | String | 是 | 城市名。 |
-| adCode | String | 是 | 行政区划代码。不同行政区域对应的代码可参见 [中华人民共和国县以上行政区划代码](http://www.mca.gov.cn/article/sj/xzqh/1980/201803/201803131454.html)。 |
+| adCode | String | 是 | 行政区划代码。不同行政区域对应的代码可查看 [中华人民共和国县以上行政区划代码](http://www.mca.gov.cn/article/sj/xzqh/1980/201803/201803131454.html)。 |
 | spell | String | 否 | 城市名对应拼音拼写，方便用户检索。 |
 | appendName | String | 否 | 子标题。 |
 | ext | String | 否 | 额外信息。 |
-| subList | Array | 否 | 支持级联，自定义次级城市列表，列表内对象字段见 **ItemModel 表**。 |
+| subList | Array | 否 | 支持级联，自定义次级城市列表，列表内对象字段可查看 **ItemModel**。 |
 
 
-### PageModel 表 (境外样式下需要)
-| **属性** | **类型** | **必填** | **描述** |
+### PageModel (境外样式下需要)
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | title | String | 是 | 境外左侧 tab 名称，不带左侧 tab 时可不填。 |
-| headList | Array | 否 | 头部对象集合，不支持嵌套，对象值请参见 **HeadModel 表**。 |
-| normalList | Array | 否 | 城市列表，对象值请参见 **ItemModel 表**。 |
+| headList | Array | 否 | 头部对象集合，不支持嵌套，对象值可查看 **HeadModel**。 |
+| normalList | Array | 否 | 城市列表，对象值可查看 **ItemModel**。 |
 
+### Function success
 
-### success 返回值说明
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | name | String | 城市名称。 |
