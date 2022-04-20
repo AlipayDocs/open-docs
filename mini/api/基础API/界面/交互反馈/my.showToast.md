@@ -106,9 +106,9 @@ Page({
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | content | String | 否 | 文字内容。 |
 | type | String | 否 | toast 类型，展示相应图标，默认 none，支持 success / fail / exception / none。其中 exception 类型必须传文字信息。 |
@@ -116,4 +116,3 @@ Object 类型，属性如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-
