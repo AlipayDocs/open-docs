@@ -18,3 +18,4 @@ A：因为有层级的原因，所以会有返回按钮。可以先调用 [my.re
 
 ### Q：my.onPageNotFound 能否处理跳转失败？
 A：[my.onPageNotFound](https://opendocs.alipay.com/mini/01zdng) 和 [App.onPageNotFound](https://opendocs.alipay.com/mini/framework/app-detail#onPageNotFound(object%3A%20Object)) 只能响应小程序冷启动或热启动时的页面找不到事件。使用 [my.navigateTo](https://opendocs.alipay.com/mini/006l1f) 等路由 API 时，如果要处理目标页面不存在的场景，请使用 fail() 回调方法。
+
