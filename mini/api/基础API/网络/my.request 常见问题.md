@@ -40,7 +40,6 @@ my.request 是异步执行的，无法同步执行。
 小程序会自带 HTTP Referer，暂时不支持自定义设置 HTTP Referer。
 
 ## my.request 是否支持 IP 地址请求？是否支持 IPv6 域名？
-
 - my.request 暂不支持 IP 地址请求，不支持 HTTP 请求，请使用 HTTPS 请求。
 - my.request 暂不支持 IPv6 域名。
 - my.request 不建议使用关于 127.0.0.1 的测试请求。
@@ -49,10 +48,9 @@ my.request 是异步执行的，无法同步执行。
 小程序针对服务端回设的 cookie 不会禁用掉，会设置到小程序进程中，下次小程序进行请求会自动将已有的 cookie 带入到服务端请求中。前端获取不到 cookie，也不会对 cookie 做任何操作。
 
 ## my.request 与 my.httpRequest 的区别是什么呢？
-
 - my.request 是 my.httpRequest 的升级优化，都是小程序端与服务器端交互发起网络请求，体验上没有大的区别。
 - 支付宝客户端已不再维护 my.httpRequest，建议使用 my.request。另外，钉钉客户端尚不支持 my.request。若在钉钉客户端开发小程序，则需要使用 my.httpRequest。
-- my.httpRequest 的请求头默认值为{'content-type': 'application/x-www-form-urlencoded'}。my.request的请求头默认值为{'content-type': 'application/json'}。此外，请求头对象里面的 key 和 value 必须是 String 类型。
+- my.httpRequest 的请求头默认值为 {'content-type': 'application/x-www-form-urlencoded'}。my.request 的请求头默认值为 {'content-type': 'application/json'}。此外，请求头对象里面的 key 和 value 必须是 String 类型。
 - 版本要求：基础库 1.11.0 或更高版本；支付宝客户端 10.1.32 或更高版本。
 
 # 请求异常类 FAQ
@@ -61,9 +59,8 @@ my.request 是异步执行的，无法同步执行。
 此报错是未添加服务器域名白名单所致，请检查并确保已添加服务器域名白名单。
 
 ## my.request 请求报错“无权跨域调用”，如何处理？
-步骤一：在小程序管理中心配置服务器域名白名单。
-
-步骤二：若在 IDE 中进行测试，请设置 **忽略 http 请求域名合法性检查**。
+- 在开放平台控制台对应小程序中配置服务器域名白名单。
+- 若在 IDE 中进行测试，请设置 **忽略 http 请求域名合法性检查**。
 
 ![|835x702](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*wRsjRpU-WRkAAAAAAAAAAAAAARQnAQ)
 
@@ -77,30 +74,28 @@ my.request 是异步执行的，无法同步执行。
 建议排查后台获取参数值时，与前端携带参数的 key 是否保持一致。
 
 ## 使用 my.request 传参，为何参数出现乱码？
-您可以选择以下两种方法中的一种进行解决：
-
+可以选择以下两种方法中的其中一种进行解决：
 - 使用 POST 请求。
 - 在前端使用 encodeURIComponent("你好呀") ，后端使用 URLDecoder.decode(aa, "UTF-8")  解析。
 
 ## my.request 请求报错 "error":19，如何处理?
-
 - 请确认请求 URL 地址在外网是否能正常请求，HTTPS 协议，小程序真机上都是线上环境的正式请求，不能使用局域网本地请求。
-- 一般如：HTTP 404、500、504 等异常错误，建议打开 **IDE** **调试器 > Network**可以查看具体的错误信息，然后根据对应 HTTP 错误码对症处理。
+- 一般如：HTTP 404、500、504 等异常错误，建议打开 **IDE** **调试器 > Network** 可以查看具体的错误信息，然后根据对应 HTTP 错误码对症处理。
 - SSL 证书不正确导致的，建议更换网站 SSL 证书。
 
 ## my.request 为何显示请求失败，提示 "error":2 入参有误？
-
 - 可能是链接过长导致，建议参数放在 data 中处理。
-- 建议检查请求时传递的数据是否正常，格式是否正确，可以在请求前打印下入参数据日志。
+- 建议检查请求时传递的数据是否正常，格式是否正确，可以在请求前打印入参数据日志。
 
 ## my.request 请求报错 {"data":"请求超时异常", "error":14, "headers": "{…}", "status":13, "errorMessage": "JSON parse data error"} ，如何处理?
 因返回数据格式 text 与入参 dataType 值 JSON 不一致而导致接口报错，请修改后台返回数据格式为 JSON。
 
-## my.request 接口设置超时时间后依旧超时？
-timeout 设置超时时间，Android 会不生效（默认是 30 秒，不同的网络状态也不一样，WIFI 为15 秒， 4G 为 20 秒）后续会更新统一，具体更新请关注小程序 [基础库更新日志](https://opendocs.alipay.com/mini/ide/framework-changelog)。
+## my.request 请求超时？
+- 请优先确认请求 URL 地址是否能正常请求。
+- my.request 默认超时时间为 30s，上限为 60s，可根据实际业务情况设置超时时间。
 
 ## 本地调试时接口报错提示"error 12"或"似乎已断开与互联网的连接"？
-请检查app的局域网权限是否正常。比如 iOS 系统的 **设置** 中，找到支付宝App，确认 **本地网络** 选项是否打开。
+请检查 App 的局域网权限是否正常。例如 iOS 系统的 **设置** 中，找到支付宝 App，确认 **本地网络** 选项是否打开。
 
 ## 请求接口报错 “N22106”？
 小程序出现权限调用 code: N22106 表示：my.request 请求域名不在白名单。建议配置域名白名单。
