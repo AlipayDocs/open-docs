@@ -1,6 +1,6 @@
-MapContext 实例，可通过 [my.createMapContext ](https://opendocs.alipay.com/mini/api/ui-map)获取。
+MapContext 实例，可通过 [my.createMapContext](https://opendocs.alipay.com/mini/api/ui-map) 获取。
 
-MapContext 通过 ID 跟一个 map 组件绑定，操作对应的 [map 组件](https://opendocs.alipay.com/mini/component/map)。
+MapContext 通过 ID 跟一个 map 组件绑定，操作对应的 [map 地图](https://opendocs.alipay.com/mini/component/map)。
 
 ## 方法列表
 
@@ -31,12 +31,10 @@ MapContext 通过 ID 跟一个 map 组件绑定，操作对应的 [map 组�
 | [MapContext.translateMarker](https://opendocs.alipay.com/mini/api/sg7chr) | 平移 marker 接口。 |
 | [MapContext.updateComponents](https://opendocs.alipay.com/mini/api/bph944) | 增量更新地图接口。 |
 
-
 ## 错误码
-错误码信息请参见：
+
+错误码信息可查看：
 
 - [Andriod 地图错误码对照表](https://lbs.amap.com/api/android-sdk/guide/map-tools/error-code)
 - [iOS 地图错误码对照](https://lbs.amap.com/api/ios-sdk/guide/map-tool/errorcode/)
-
-
 
