@@ -1,13 +1,14 @@
-
 # 简介
-**my.createMapContext** 是创建并返回一个地图上下文对象 [mapContext](api/mapcontext) 的 API。<br />相关组件详情，请参见 [**地图**](/mini/component/map)[map](/mini/component/map)。
+**my.createMapContext** 是创建并返回一个地图上下文对象 [mapContext](https://opendocs.alipay.com/mini/api/mapcontext) 的 API。<br />相关组件详情，可查看 [map 地图](https://opendocs.alipay.com/mini/component/map)。
 
 ## 使用限制
+
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
 
 ## Herbox
+
 [小程序在线](https://herbox-embed.alipay.com/s/doc-map?theme=light&previewZoom=75&chInfo=openhome-doc) 
 
 ## 示例代码
@@ -52,21 +53,12 @@ Page({
 }）
 ```
 
-## 入参
-Object 类型，属性如下：
+#### PageContext.setData(Object)
 
-| **属性** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| mapId | String | 是 | [﻿map 组件](https://opendocs.alipay.com/mini/component/map) 的 ID。 |
+初始化或重置地图数据，参数可选。
 
+**基础库** [1.10.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本开始支持；**支付宝客户端** 10.1.32 或更高版本开始支持，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 
-## 返回值
-返回值为 [MapContext](api/mapcontext)。
-
-## PageContext.setData(Object)
-初始化或重置地图数据，参数可选。<br />**基础库** [1.10.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本开始支持；**支付宝客户端** 10.1.32 或更高版本开始支持，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
-
-### 示例代码
 ```javascript
 //  .js
 this.setData({
@@ -124,8 +116,20 @@ this.setData({
 });
 ```
 
+## 入参
+
+| **参数** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| mapId | String | 是 | [map 地图](https://opendocs.alipay.com/mini/component/map) 的 ID。 |
+
+
+## 返回值
+
+返回值为 [MapContext](https://opendocs.alipay.com/mini/api/mapcontext)。
+
 ## 错误码
-错误码信息请参见：
+
+错误码信息可查看：
 
 - [Andriod 地图错误码对照表](https://lbs.amap.com/api/android-sdk/guide/map-tools/error-code)
 - [iOS 地图错误码对照](https://lbs.amap.com/api/ios-sdk/guide/map-tool/errorcode/)
