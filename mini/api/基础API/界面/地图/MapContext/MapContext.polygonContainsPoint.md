@@ -64,7 +64,7 @@ Object 类型，参数如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 
 ### Object polygon/point
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | latitude | Number | 是 | 纬度。 |
 | longitude | Number | 是 | 经度。 |
