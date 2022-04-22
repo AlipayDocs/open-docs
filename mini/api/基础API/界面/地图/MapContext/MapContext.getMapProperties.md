@@ -1,5 +1,5 @@
-
 # 简介 
+
 **MapContext.getMapProperties** 用于获取地图的属性信息。
 
 ## 使用限制
@@ -10,6 +10,7 @@
 # 接口调用
 
 ## 示例代码
+
 ```javascript
 this.mapCtx = my.createMapContext('map');
 this.mapCtx.getMapProperties({
@@ -19,15 +20,25 @@ this.mapCtx.getMapProperties({
 });
 ```
 
-## 返回值
+## 入参
+
+Object 类型，参数如下：
+
+| **属性** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| success | Function | 否 | 调用成功的回调函数。 |
+
+### Function success
+
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| is3d | Boolean | 是否是 3D 地图引擎。<br />更多信息可参见：[高德开放平台-3D 地图](https://lbs.amap.com/api/javascript-api/guide/map/3d-map/?sug_index=0)。<br /><br />版本限制：<ul><li>支付宝客户端 10.1.82  或更高版本。</li><li>基础库 1.23.0 或更高版本。</li></ul> |
+| is3d | Boolean | 是否是 3D 地图引擎。<br />更多信息可查看：[高德开放平台-3D 地图](https://lbs.amap.com/api/javascript-api/guide/map/3d-map/?sug_index=0)。<br /><br />版本限制：<ul><li>支付宝客户端 10.1.82  或更高版本。</li><li>基础库 1.23.0 或更高版本。</li></ul> |
 | isSupportAnim | Boolean | 是否支持动画。<br /><br />版本限制：<ul><li>支付宝客户端 10.1.82  或更高版本。</li><li>基础库 1.23.0 或更高版本。</li></ul> |
-| sdkName | String | 地图中使用的 SDK 名称。<br />更多信息可参见 ：<ul><li>[高德地图 Android SDK简介](https://lbs.amap.com/api/android-sdk/summary/)</li><li>[高德地图 iOS SDK简介](https://lbs.amap.com/api/ios-sdk/summary)</li></ul> 版本限制：<ul><li>支付宝客户端 10.1.90  或更高版本。</li><li>基础库 1.23.0 或更高版本。</li></ul> |
-| sdkVersion | String | 地图中使用的 SDK 版本号。<br />更多信息可参见 ：<ul><li>[高德地图 Android SDK简介](https://lbs.amap.com/api/android-sdk/summary/)</li><li>[高德地图 iOS SDK简介](https://lbs.amap.com/api/ios-sdk/summary)</li></ul>版本限制：<ul><li>支付宝客户端 10.1.90 或更高版本。</li><li>基础库 1.23.0 或更高版本。</li></ul> |
+| sdkName | String | 地图中使用的 SDK 名称。<br />更多信息可查看：<ul><li>[高德地图 Android SDK简介](https://lbs.amap.com/api/android-sdk/summary/)</li><li>[高德地图 iOS SDK简介](https://lbs.amap.com/api/ios-sdk/summary)</li></ul> 版本限制：<ul><li>支付宝客户端 10.1.90  或更高版本。</li><li>基础库 1.23.0 或更高版本。</li></ul> |
+| sdkVersion | String | 地图中使用的 SDK 版本号。<br />更多信息可查看 ：<ul><li>[高德地图 Android SDK简介](https://lbs.amap.com/api/android-sdk/summary/)</li><li>[高德地图 iOS SDK简介](https://lbs.amap.com/api/ios-sdk/summary)</li></ul>版本限制：<ul><li>支付宝客户端 10.1.90 或更高版本。</li><li>基础库 1.23.0 或更高版本。</li></ul> |
 | isSupportOversea | Boolean | 是否支持海外地图。<br /><br />版本限制：<ul><li>支付宝客户端 10.1.90 或更高版本。</li><li>基础库 1.23.0 或更高版本。</li></ul> |
-| needStyleV7 | Boolean | 是否需要 7.x 版本自定义地图样式配置文件。<br />更多信息可参见 ：<ul><li>[高德地图 Android 自定义地图](https://lbs.amap.com/api/android-sdk/guide/create-map/custom/?sug_index=2)</li><li>[高德地图 iOS 自定义地图](https://lbs.amap.com/api/ios-sdk/guide/create-map/custom/?sug_index=1)</li></ul>版本限制：<ul><li>支付宝客户端 10.1.90 或更高版本。</li><li>基础库 1.23.0 或更高版本。</li></ul> |
-
+| needStyleV7 | Boolean | 是否需要 7.x 版本自定义地图样式配置文件。<br />更多信息可查看 ：<ul><li>[高德地图 Android 自定义地图](https://lbs.amap.com/api/android-sdk/guide/create-map/custom/?sug_index=2)</li><li>[高德地图 iOS 自定义地图](https://lbs.amap.com/api/ios-sdk/guide/create-map/custom/?sug_index=1)</li></ul>版本限制：<ul><li>支付宝客户端 10.1.90 或更高版本。</li><li>基础库 1.23.0 或更高版本。</li></ul> |
 
 
