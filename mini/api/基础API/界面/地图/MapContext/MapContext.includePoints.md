@@ -1,5 +1,5 @@
-
 # 简介
+
 **MapContext.includePoints** 用于缩放视野到指定可视区域。
 
 ## 使用限制
@@ -12,6 +12,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // .js
 this.mapCtx = my.createMapContext('map');
@@ -28,13 +29,16 @@ this.mapCtx.includePoints({
 ```
 
 ## 入参
-| **属性** | **类型** | **必填** | **描述** |
+
+Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| points | `Array<Object>` | 是 | 要显示在可视区域内的坐标点列表。 |
-| padding | `Array<Number>` | 否 | 坐标点形成的矩形边缘到地图边缘的距离。格式为 [上，右，下，左]，如果数据只有一项，则上下左右的 padding 一致。 |
+| points | Array\<Object\> | 是 | 要显示在可视区域内的坐标点列表。 |
+| padding | Array\<Number\> | 否 | 坐标点形成的矩形边缘到地图边缘的距离。格式为 [上，右，下，左]，如果数据只有一项，则上下左右的 padding 一致。 |
 
 
-### points 结构
+### Object points
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | longitude | Number | 是 | 经度。 |
