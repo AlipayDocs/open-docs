@@ -1,5 +1,5 @@
-
 # 简介
+
 **my.calculateRoute** 是计算路径 API。根据起点和终点的地理位置，智能规划最佳出行路线，并计算不同出行方式下的行动距离和所需时间。
 
 默认规划步行路线，支持规划步行、公交、骑行和驾车四种路线。
@@ -12,6 +12,9 @@
 # 接口调用
 
 ## 示例代码
+
+### .js 示例代码
+
 ```javascript
 //.js
 my.calculateRoute({
@@ -32,22 +35,23 @@ my.calculateRoute({
 ```
 
 ## 入参
-Object 类型，属性如下：
+
+Object 类型，参数如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| searchType | String | 否 | 搜索类型。<br />可选取值为 "walk"、"bus"、"drive"、"ride"。<br />默认值为 "walk"。 |
+| searchType | String | 否 | 搜索类型。<br />可选值：<ul><li>walk：步行。</li><li>bus：公交。</li><li>drive：驾车。</li><li>ride：骑行。</li></ul>默认值为 `walk`。 |
 | startLat | Number | 是 | 起点纬度。 |
 | startLng | Number | 是 | 起点经度。 |
 | endLat | Number | 是 | 终点纬度。 |
 | endLng | Number | 是 | 终点经度。 |
-| throughPoints | Array | 否 | 途径点，仅驾车规划有效，即 searchType=“drive”时有效。 |
-| mode | Number | 否 | 仅在驾车模式和公交模式支持，具体值见 **mode 参数列表**。 |
-| city | String | 是 | 公交模式下必填。传参可填写城市中文名称或城市名称拼音。例如： `city:'hangzhou'` 或  `city:'杭州'`。 |
+| throughPoints | Array | 否 | 途径点，仅驾车规划有效，即 searchType=“drive” 时有效。 |
+| mode | Number | 否 | 仅在驾车模式和公交模式支持，具体值见 **Number mode**。 |
+| city | String | 是 | 公交模式下必填。传参可填写城市中文名称或城市名称拼音。例如：`city:'hangzhou'` 或  `city:'杭州'`。 |
 | destinationCity | String | 是 | 公交跨城模式下必填。 |
+| success | Function | 否 | 调用成功的回调函数。 |
 
-
-## mode 参数列表
+### Number mode
 | **mode** | **模式** | **描述** |
 | --- | --- | --- |
 | 0 | 最快捷模式 | 速度优先（时间）。 |
@@ -61,20 +65,18 @@ Object 类型，属性如下：
 | 8 | - | 躲避收费和拥堵。 |
 | 9 | - | 不走高速且躲避收费和拥堵。 |
 
+### Function success
 
-## 返回值
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | success | Boolean | 是否成功。成功返回 true，失败返回 false。 |
-| distance | Number | 距离，单位为 米。 |
-| duration | Number | 时间，单位为 秒。 |
-
+| distance | Number | 距离，单位为米。 |
+| duration | Number | 时间，单位为秒。 |
 
 ## 错误码
-错误码信息请参见：
-
+错误码信息可查看：
 - [Andriod 地图错误码对照表](https://lbs.amap.com/api/android-sdk/guide/map-tools/error-code)
 - [iOS 地图错误码对照](https://lbs.amap.com/api/ios-sdk/guide/map-tool/errorcode/)
-
-
 
