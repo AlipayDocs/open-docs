@@ -61,6 +61,7 @@ Object 类型，参数如下：
 | --- | --- | --- | --- |
 | polygon | Array\<Object\> | 是 | 矩形区域的经纬度范围。 |
 | point | Object | 是 | 经纬度度的值。 |
+| success | Function | 否 | 调用成功的回调函数。 |
 
 ### Object polygon/point
 | **属性** | **类型** | **必填** | **描述** |
