@@ -13,6 +13,35 @@
 # 接口调用
 
 ## 示例代码
+
+### .axml 示例代码
+
+```html
+//.axml
+<map
+  id="map"
+  customMapStyle="light"
+  longitude="{{longitude}}"
+  latitude="{{latitude}}"
+  scale="{{scale}}"
+  controls="{{controls}}"
+  onControlTap="controltap"
+  markers="{{markers}}"
+  onMarkerTap="markertap"
+  polyline="{{polyline}}"
+  polygon="{{polygon}}"
+  circles="{{circles}}"
+  onRegionChange="regionchange"
+  onTap="tap"
+  onCalloutTap="callouttap"
+  show-location style="width: 100%; height: 200px;"
+  include-points="{{includePoints}}"
+  ground-overlays="{{ground-overlays}}">
+</map>
+```
+
+### .js 示例代码
+
 ```javascript
 //.js
 onReady() {
@@ -52,53 +81,43 @@ onReady() {
   }
 ```
 
+## 返回示例
 
-```html
-//.axml
-<map
-        id="map"
-        customMapStyle="light"
-        longitude="{{longitude}}"
-        latitude="{{latitude}}"
-        scale="{{scale}}"
-        controls="{{controls}}"
-        onControlTap="controltap"
-        markers="{{markers}}"
-        onMarkerTap="markertap"
-        polyline="{{polyline}}"
-        polygon="{{polygon}}"
-        circles="{{circles}}"
-        onRegionChange="regionchange"
-        onTap="tap"
-        onCalloutTap="callouttap"
-        show-location style="width: 100%; height: 200px;"
-        include-points="{{includePoints}}"
-        ground-overlays="{{ground-overlays}}">
-</map>
+### success 返回示例
+
+执行成功时，触发 success 回调，回调参数示例如下：
+
+```json
+{
+    distance:328,
+    duration:262,
+    success:true
+}
 ```
 
 ## 入参
-Object 类型，属性如下：
 
-| **属性名** | **类型** | **必填** | **描述** |
+Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| searchType | String | 否 | 搜索类型："walk"（步行）, "bus"（公交）, "drive"（驾车）, "ride"（骑行）。默认值为 'walk'。<br />基础库 1.13.0 或更高版本开始支持。 |
+| searchType | String | 否 | 搜索类型。<br />可选值：<ul><li>walk：步行。</li><li>bus：公交。</li><li>drive：驾车。</li><li>ride：骑行。</li></ul>默认值为 `walk`。<br />基础库 1.13.0 或更高版本开始支持。 |
 | startLat | Number | 是 | 起点纬度。 |
 | startLng | Number | 是 | 起点经度。 |
 | endLat | Number | 是 | 终点纬度。 |
 | endLng | Number | 是 | 终点经度。 |
-| throughPoints | Array | 否 | 途径点，仅驾车规划有效，即 searchType=“drive”时有效。<br />基础库 1.13.0 或更高版本开始支持。 |
+| throughPoints | Array | 否 | 途径点，仅驾车规划有效，即 searchType=“drive” 时有效。<br />基础库 1.13.0 或更高版本开始支持。 |
 | routeColor | HexColor | 否 | 路线颜色，该值仅在 2D 地图中生效。<br />基础库 1.13.0 或更高版本开始支持。 |
-| iconPath | String | 否 | 路线纹理。<br />基础库 1.11.0 及以下版本中，3D 地图中该参数优先级高于 routeColor，即纹理会覆盖颜色值。<br />基础库 1.13.0 及以上版本建议不设置该参数，因为在 3D 地图下提供了默认的纹理图案，图片尺寸建议为 2 的整数幂，如64*64。 |
+| iconPath | String | 否 | 路线纹理。<br />基础库 1.11.0 及以下版本中，3D 地图中该参数优先级高于 routeColor，即纹理会覆盖颜色值。<br />基础库 1.13.0 及以上版本建议不设置该参数，因为在 3D 地图下提供了默认的纹理图案，图片尺寸建议为 2 的整数幂，例如 64*64。 |
 | iconWidth | Int | 否 | 纹理宽度。<br />基础库1.11.0 及以下版本中，该参数才生效。<br />基础库 1.13.0 及以上版本建议不设置该参数，因为在 3D 地图下提供了默认的纹理宽度。 |
 | routeWidth | Int | 否 | 路线宽度。在不设置纹理时有效。<br />基础库 1.13.0 及以上版本建议不再设置，在 2D 地图下提供了默认值，3D 地图下不需要设置。 |
 | zIndex | Int | 否 | 覆盖物的 Z 轴坐标。<br />基础库 1.11.0 或更高版本开始支持。 |
-| mode | Int | 否 | 仅在驾车模式和公交模式支持，具体值见mode 参数列表。 |
+| mode | Int | 否 | 仅在驾车模式和公交模式支持，具体值见 **Int mode**。 |
 | city | String | 是 | 公交模式下必填 。 |
 | destinationCity | String | 是 | 公交跨城模式下必填。 |
+| success | Function | 否 | 调用成功的回调函数。 |
 
-
-### mode 参数列表
+### Int mode
 | **mode** | **bus** | **drive** |
 | --- | --- | --- |
 | 0 | 最快捷模式 | 速度优先（时间）。 |
@@ -112,20 +131,12 @@ Object 类型，属性如下：
 | 8 | - | 躲避收费和拥堵。 |
 | 9 | - | 不走高速且躲避收费和拥堵。 |
 
+### Function success
 
-### success 返回值
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | success | Boolean | 是否成功。 |
 | distance | Number | 距离。 |
 | duration | Number | 时间，单位为秒。 |
-
-
-### success 返回值示例
-```json
-{
-    distance:328,
-    duration:262,
-    success:true
-}
-```
