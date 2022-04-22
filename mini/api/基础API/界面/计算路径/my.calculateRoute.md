@@ -38,7 +38,7 @@ my.calculateRoute({
 
 Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | searchType | String | 否 | 搜索类型。<br />可选值：<ul><li>walk：步行。</li><li>bus：公交。</li><li>drive：驾车。</li><li>ride：骑行。</li></ul>默认值为 `walk`。 |
 | startLat | Number | 是 | 起点纬度。 |
