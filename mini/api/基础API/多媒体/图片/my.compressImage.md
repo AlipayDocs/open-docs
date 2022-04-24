@@ -1,5 +1,5 @@
-
 # 简介
+
 **my.compressImage** 是压缩图片的 API。
 
 ## 使用限制
@@ -8,9 +8,11 @@
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://cdn.nlark.com/yuque/0/2021/png/179989/1625190959093-f5836ae3-634e-4880-8594-2c8d4f0c603e.png#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&name=1.png&originHeight=157&originWidth=127&size=13508&status=done&style=stroke&width=127)
 
 ## 效果示例
+
 ![|723x407](https://cdn.nlark.com/yuque/0/2021/png/179989/1625190968147-0a952a95-d39e-438d-8cc5-4595113f6b8f.png#align=left&display=inline&height=576&margin=%5Bobject%20Object%5D&name=2.png&originHeight=720&originWidth=1280&size=33056&status=done&style=stroke&width=1024)
 
 # 接口调用
@@ -18,6 +20,7 @@
 ## 示例代码
 
 ### .axml 示例代码
+
 ```html
 <!-- API-DEMO page/API/compress-image/compress-image.axml-->
 <view class="page">
@@ -35,6 +38,7 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 // API-DEMO page/API/compress-image/compress-image.js
 Page({
@@ -63,29 +67,21 @@ Page({
 ```
 
 ## 入参
-Object 类型，属性如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | apFilePaths | String Array | 是 | 要压缩的图片地址数组。 |
-| compressLevel | Number | 否 | 压缩级别，支持 0 ~ 4 的整数，默认为 4。详见下文 compressLevel 表说明。 |
+| compressLevel | Number | 否 | 压缩级别。<br />可选值：<ul><li>0：低质量。</li><li>1：中等质量。</li><li>2：高质量。</li><li>3：不压缩。</li><li>4：根据网络适应。</li></ul>默认值：4。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
+### Function success
 
-### success 回调函数
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| apFilePaths | String Array | 压缩后的路径数组。 |
-
-
-### compressLevel 表
-| **compressLevel** | **描述** |
-| --- | --- |
-| 0 | 低质量 |
-| 1 | 中等质量 |
-| 2 | 高质量 |
-| 3 | 不压缩 |
-| 4 | 根据网络适应 |
-
+| apFilePaths | StringArray | 压缩后的路径数组。 |
