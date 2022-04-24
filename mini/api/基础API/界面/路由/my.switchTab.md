@@ -3,7 +3,7 @@
 
 如果小程序是一个多标签（tab）应用，即客户端窗口的底部栏可以切换页面，那么可以通过标签页配置项指定标签栏的表现形式，以及标签切换时显示的对应页面。
 
-通过页面跳转（[my.navigateTo](https://opendocs.alipay.com/mini/006l1f)）或者页面重定向（[my.redirectTo](https://opendocs.alipay.com/mini/006l1b)）所到达的页面，即使是定义在标签页配置中的页面，也不会显示底部的标签栏。标签页的第一个页面必须是首页。
+通过页面跳转（[my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx)）或者页面重定向（[my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky)）所到达的页面，即使是定义在标签页配置中的页面，也不会显示底部的标签栏。标签页的第一个页面必须是首页。
 
 相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/006l1n) 。
 
