@@ -48,6 +48,9 @@ Object 类型，参数如下：
 
 
 ### Function success
+
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | keys | String Array | 当前 storage 中所有的 key。 |
