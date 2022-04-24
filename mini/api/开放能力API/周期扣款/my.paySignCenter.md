@@ -7,6 +7,7 @@
 ## 使用限制
 
 - 支付宝客户端 10.0.18 及以上版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 此 API 暂不支持在 IDE 模拟器上调试，请以 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 结果为准。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
@@ -53,27 +54,8 @@ Page({
 })
 ```
 
-## 入参
-入参为 Object 类型，属性如下：
+## 返回示例
 
-| **属性** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| signStr | String | 是 | 签约字符串。 |
-| success | Function | 否 | 调用成功的回调函数。 |
-| fail | Function | 否 | 调用失败的回调函数。 |
-| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-
-
-## 返回值
-返回值为 JSON 格式，属性如下：
-
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| result | JSON | 处理结果。 |
-| resultStatus | String | 错误码，具体含义见下表。 |
-
-
-### 返回值示例
 ```javascript
 {
 "result":"{
@@ -101,6 +83,25 @@ Page({
 "resultStatus":"7000"
 }
 ```
+
+## 入参
+入参为 Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| signStr | String | 是 | 签约字符串。 |
+| success | Function | 否 | 调用成功的回调函数。 |
+| fail | Function | 否 | 调用失败的回调函数。 |
+| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+
+
+## 返回值
+返回值为 JSON 格式，属性如下：
+
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| result | JSON | 处理结果。 |
+| resultStatus | String | 错误码，具体含义见下表。 |
 
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
