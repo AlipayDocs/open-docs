@@ -1,7 +1,7 @@
 # 简介
 **my.reLaunch** 是关闭当前所有页面，跳转到应用内的某个指定页面的 API。
 
-相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/006l1n) 。
+相关问题可查看 [路由 FAQ](https://opendocs.alipay.com/mini/api/fu8l65) 。
 
 ## 使用限制
 
