@@ -2,7 +2,7 @@
 # 简介
 > 从基础库 [2.7.9](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始，本接口已停止维护，请使用 [Canvas](https://opendocs.alipay.com/mini/01vzqv) 代替。
 
-**my.createCanvasContext** 是创建 [canvas](/mini/component/canvas) 绘图上下文的 API。该绘图上下文只作用于对应 `canvasId` 的 [`<canvas/>`](component/canvas) 。
+**my.createCanvasContext** 是创建 [canvas](https://opendocs.alipay.com/mini/component/canvas) 绘图上下文的 API。该绘图上下文只作用于对应 `canvasId` 的 `<canvas/>` 。
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
@@ -19,4 +19,4 @@
 **string canvasId**<br />定义在 `<canvas/>` 上的 ID。
 
 ## 返回值
-返回值为 [CanvasContext](api/canvascontext)。
+返回值为 [CanvasContext](https://opendocs.alipay.com/mini/api/canvascontext)。
