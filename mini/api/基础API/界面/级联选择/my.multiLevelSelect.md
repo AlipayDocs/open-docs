@@ -1,21 +1,24 @@
-
 # 简介
-**my.multiLevelSelect** 是级联选择功能 API。主要用于选择多级关联数据，比如省市区的信息选择。
+
+**my.multiLevelSelect** 是级联选择功能 API。主要用于选择多级关联数据，例如省市区的信息选择。
 
 ## 使用限制
+
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
 
 ## Herbox
+
 [小程序在线](https://herbox-embed.alipay.com/s/doc-multi-level-select?theme=light&previewZoom=75&chInfo=openhome-doc) 
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
-     "defaultTitle": "多级联选择器"
+  "defaultTitle": "多级联选择器"
 }
 ```
 
@@ -77,29 +80,29 @@ Page({
 ```
 
 ## 入参
-入参为 Object 类型，属性如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+入参为 Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | title | String | 否 | 标题。 |
-| list | JsonArray | 是 | 选择数据列表。具体对象值参见下方 list 对象表。 |
+| list | JSONArray | 是 | 选择数据列表。具体对象值可查看下方 **JSONArray list**。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
+### JSONArray list
 
-### list 对象
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | name | String | 是 | 条目名称。 |
 | subList | JsonArray | 否 | 子条目列表。 |
 
+### Function success
 
-### success 回调函数
-入参为 Object 类型，属性如下：
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | success | Boolean | 是否选择完成，取消返回 false。 |
 | result | JsonArray | 选择的结果，如 [{“name”:”杭州市”},{“name”:”上城区”},{“name”:”古翠街道”}]。 |
-
