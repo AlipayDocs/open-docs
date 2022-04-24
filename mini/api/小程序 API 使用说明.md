@@ -1,4 +1,4 @@
-支付宝小程序为开发者提供了丰富的 [小程序 API](https://opendocs.alipay.com/mini/api/vzt2xm) 和 [服务端 API](https://opendocs.alipay.com/mini/server-api)，开发者可方便快捷地调用这些 API 完成相关任务。
+支付宝小程序为开发者提供了丰富的 [小程序 API](https://opendocs.alipay.com/mini/api) 和 [服务端 API](https://opendocs.alipay.com/mini/server-api)，开发者可方便快捷地调用这些 API 完成相关任务。
 > **注意**：小程序文档仅提供了与小程序开发相关的服务端 API 概览，更多服务端 API 的内容可查看 [服务端 API](https://opendocs.alipay.com/mini/server-api)。
 
 - 小程序前端 API 包括基础、应用级事件、界面、多媒体、缓存、文件、位置、网络、设备、数据安全、分享、自定义通用菜单、更新管理、web-view 组件控制、升级支付宝最新版本、开放能力（基础能力、支付能力、资金能力、会员能力、营销能力、安全能力）等多个大类。
