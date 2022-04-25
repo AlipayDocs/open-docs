@@ -34,7 +34,7 @@ Object 类型，参数如下：
 | --- | --- | --- | --- |
 | filePath | String | 是 | 要追加内容的文件路径。 |
 | data | String/ArrayBuffer | 是 | 要追加的文本或二进制数据。 |
-| encoding | String | 否 | 指定写入文件的字符编码。<br />可选值：<ul><li>ascii</li><li>base64</li><li>hex</li><li>binary</li><li>ucs2/ucs-2/utf16le/utf-16le</li><li>utf-8/utf8</li><li>latin1</li><ul/><b>默认值</b>：utf8。 |
+| encoding | String | 否 | 指定写入文件的字符编码。<br />可选值：<ul><li>ascii</li><li>base64</li><li>hex</li><li>binary</li><li>ucs2/ucs-2/utf16le/utf-16le</li><li>utf-8/utf8</li><li>latin1</li></ul>**默认值**：utf8。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -46,4 +46,3 @@ Object 类型，参数如下：
 | 10022 | 指定文件不存在。 |
 | 10024 | 指定的路径没有写的权限。 |
 | 10025 | 指定路径是一个已经存在的目录。 |
-
