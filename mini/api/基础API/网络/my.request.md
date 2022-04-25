@@ -9,7 +9,7 @@
 - my.request 目前只支持 HTTPS 协议的请求。
 - **基础库** [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；**支付宝客户端** 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-> 请预先在 [**支付宝小程序管理中心**](https://open.alipay.com/mini/dev/list) **> 小程序详情 > 设置 > 开发设置 > 服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTP 请求（my.request）、上传文件（my.uploadFile）。
+> 请登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTP 请求（my.request）、上传文件（my.uploadFile）。
 >
 > ![|706x73](https://mdn.alipayobjects.com/afts/img/A*xM4NR6VRbfwccJpPkvUyrwBkAa8wAA/original?bz=openpt_doc&t=up10AFIkdB4BgOJNk-44NgAAAABkMK8AAAAA#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&originHeight=168&originWidth=1624&status=done&style=none&width=1624)
 >
@@ -22,9 +22,9 @@
 ## 扫码体验
 ![|175x216](https://gw.alipayobjects.com/zos/skylark-tools/public/files/cedb01a73389c4346ed7c8c72de928a0.jpeg#align=left&display=inline&height=216&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=175)
 
-**重要：**
+**重要**：
 
-- 小程序开发过程中，可在开发工具内 **详情 > 域名信息 > 忽略 http 请求域名合法性检查** 中选择是否忽略域名合法性检查，如果选择忽略，则在模拟器、预览以及真机调试场景不会校验域名合法性，但小程序上线前必须确保通讯域名在白名单内，否则在正式版本无法调用。
+- 小程序开发过程中，可在开发工具内 **详情** > **域名信息** > **忽略 http 请求域名合法性检查** 中选择是否忽略域名合法性检查，如果选择忽略，则在模拟器、预览以及真机调试场景不会校验域名合法性，但小程序上线前必须确保通讯域名在白名单内，否则在正式版本无法调用。
 - my.request 的请求头默认值为 {'content-type': 'application/json'}，而不是 {'content-type': 'application/x-www-form-urlencoded'}。此外，请求头对象里面的 key 和 value 必须是 String 类型。
 
 # 接口调用
