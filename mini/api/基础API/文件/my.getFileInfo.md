@@ -1,4 +1,3 @@
-
 # 简介
 **my.getFileInfo** 是获取文件信息的 API。
 
@@ -8,9 +7,11 @@
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/6b701ceeda8e89e8a76065f67b4f4946.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
 
 ## 效果示例
+
 ![|300x540](https://gw.alipayobjects.com/zos/skylark-tools/public/files/b5510bb7efd866b5a5368099d62156c8.gif#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&originHeight=540&originWidth=300&status=done&style=stroke&width=300)
 
 # 接口调用
@@ -18,6 +19,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // .js
 my.getFileInfo({
@@ -30,24 +32,22 @@ my.getFileInfo({
 ```
 
 ## 入参
-入参为Object类型，属性如下
 
-| **属性** | **类型** | **是否必填** | **描述** |
+Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| apFilePath | String | 必须 | 文件路径（本地路径）。 |
-| digestAlgorithm | String | 可选 | 摘要算法，支持 md5 和 sha1，默认为 md5。 |
-| success | Function | 可选 | 调用成功的回调函数。 |
-| fail | Function | 可选 | 调用失败的回调函数。 |
-| complete | Function | 可选 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+| apFilePath | String | 是 | 文件路径（本地路径）。 |
+| digestAlgorithm | String | 否 | 摘要算法，支持 md5 和 sha1，默认为 md5。 |
+| success | Function | 否 | 调用成功的回调函数。 |
+| fail | Function | 否 | 调用失败的回调函数。 |
+| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
+### Function success
 
-## success 回调函数
-入参为Object类型，属性如下
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | size | Number | 文件大小。单位：字节（B）。 |
 | digest | String | 摘要结果。 |
-
-
-
