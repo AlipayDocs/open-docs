@@ -1,5 +1,5 @@
-
 # 简介
+
 **my.getSavedFileInfo** 是获取保存的文件信息的 API。
 
 ## 使用限制
@@ -8,14 +8,17 @@
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/5b1c31f689c9407c3d43ba17a18f34f5.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
 
 ## 效果示例
+
 ![|300x536](https://gw.alipayobjects.com/zos/skylark-tools/public/files/3fd64a0c32311e0d9014e9a095473aae.gif#align=left&display=inline&height=536&margin=%5Bobject%20Object%5D&originHeight=536&originWidth=300&status=done&style=stroke&width=300)
 
 # 接口调用
 
 ## 示例代码
+
 使用 [my.saveFile](https://opendocs.alipay.com/mini/api/xbll1q) 保存的地址才能够使用 my.getSavedFileInfo。
 
 ### .js 示例代码
@@ -43,17 +46,20 @@ var that = this;
 ```
 
 ## 入参
-Object 类型，属性如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | apFilePath | String | 是 | 文件路径。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
+### Function success
 
-### success 回调函数
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | size | Number | 文件大小。 |
