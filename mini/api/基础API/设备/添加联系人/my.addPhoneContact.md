@@ -1,5 +1,5 @@
-
 # 简介
+
 **my.addPhoneContact** 是用户可以选择将表单以“创建新联系人”或“添加到现有联系人”的方式，写入联系人资料到手机系统的通讯录的 API。
 
 ## 使用限制
@@ -8,14 +8,18 @@
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/923c02f9255e2892e76c94feea5c4df1.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
 
 ## 效果示例
+
 ![|300x540](https://gw.alipayobjects.com/zos/skylark-tools/public/files/9f9bf631614f647b544bdd8ebdbce69f.gif#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&originHeight=540&originWidth=300&status=done&style=stroke&width=300)
 
 # 接口调用
 
 ## 示例代码
+
+### .json 示例代码
 ```json
 // API-DEMO page/API/contact/contact.json
 {
@@ -23,6 +27,7 @@
 }
 ```
 
+### .axml 示例代码
 
 ```html
 <!-- API-DEMO page/API/contact/contact.axml-->
@@ -262,6 +267,7 @@
 </view>
 ```
 
+### .js 示例代码
 
 ```javascript
 // API-DEMO page/API/contact/contact.js
@@ -376,45 +382,45 @@ Page({
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| photoFilePath | String | 否 | 头像本地文件路径 |
-| nickName | String | 否 | 昵称 |
-| lastName | String | 否 | 姓氏 |
-| middleName | String | 否 | 中间名 |
-| firstName | String | 否 | 名字 |
-| remark | String | 否 | 备注 |
-| mobilePhoneNumber | String | 否 | 手机号 |
-| alipayAccount | String | 否 | 支付宝账号 |
-| addressCountry | String | 否 | 联系地址国家 |
-| addressState | String | 否 | 联系地址省份 |
-| addressCity | String | 否 | 联系地址城市 |
-| addressStreet | String | 否 | 联系地址街道 |
-| addressPostalCode | String | 否 | 联系地址邮政编码 |
-| organization | String | 否 | 公司 |
-| title | String | 否 | 职位 |
-| workFaxNumber | String | 否 | 工作传真 |
-| workPhoneNumber | String | 否 | 工作电话 |
-| hostNumber | String | 否 | 公司电话 |
-| email | String | 否 | 电子邮件 |
-| url | String | 否 | 网站 |
-| workAddressCountry | String | 否 | 工作地址国家 |
-| workAddressState | String | 否 | 工作地址省份 |
-| workAddressCity | String | 否 | 工作地址城市 |
-| workAddressStreet | String | 否 | 工作地址街道 |
-| workAddressPostalCode | String | 否 | 工作地址邮政编码 |
-| homeFaxNumber | String | 否 | 住宅传真 |
-| homePhoneNumber | String | 否 | 住宅电话 |
-| homeAddressCountry | String | 否 | 住宅地址国家 |
-| homeAddressState | String | 否 | 住宅地址省份 |
-| homeAddressCity | String | 否 | 住宅地址城市 |
-| homeAddressStreet | String | 否 | 住宅地址街道 |
-| homeAddressPostalCode | String | 否 | 住宅地址邮政编码 |
-| success | Function | 否 | 调用成功的回调函数 |
-| fail | Function | 否 | 调用失败的回调函数 |
-| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行） |
+| photoFilePath | String | 否 | 头像本地文件路径。 |
+| nickName | String | 否 | 昵称。 |
+| lastName | String | 否 | 姓氏。 |
+| middleName | String | 否 | 中间名。 |
+| firstName | String | 否 | 名字。 |
+| remark | String | 否 | 备注。 |
+| mobilePhoneNumber | String | 否 | 手机号。 |
+| alipayAccount | String | 否 | 支付宝账号。 |
+| addressCountry | String | 否 | 联系地址国家。 |
+| addressState | String | 否 | 联系地址省份。 |
+| addressCity | String | 否 | 联系地址城市。 |
+| addressStreet | String | 否 | 联系地址街道。 |
+| addressPostalCode | String | 否 | 联系地址邮政编码。 |
+| organization | String | 否 | 公司。 |
+| title | String | 否 | 职位。 |
+| workFaxNumber | String | 否 | 工作传真。 |
+| workPhoneNumber | String | 否 | 工作电话。 |
+| hostNumber | String | 否 | 公司电话。 |
+| email | String | 否 | 电子邮件。 |
+| url | String | 否 | 网站。 |
+| workAddressCountry | String | 否 | 工作地址国家。 |
+| workAddressState | String | 否 | 工作地址省份。 |
+| workAddressCity | String | 否 | 工作地址城市。 |
+| workAddressStreet | String | 否 | 工作地址街道。 |
+| workAddressPostalCode | String | 否 | 工作地址邮政编码。 |
+| homeFaxNumber | String | 否 | 住宅传真。 |
+| homePhoneNumber | String | 否 | 住宅电话。 |
+| homeAddressCountry | String | 否 | 住宅地址国家。 |
+| homeAddressState | String | 否 | 住宅地址省份。 |
+| homeAddressCity | String | 否 | 住宅地址城市。 |
+| homeAddressStreet | String | 否 | 住宅地址街道。 |
+| homeAddressPostalCode | String | 否 | 住宅地址邮政编码。 |
+| success | Function | 否 | 调用成功的回调函数。 |
+| fail | Function | 否 | 调用失败的回调函数。 |
+| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 以上字段视不同 ROM 中内置的联系人 App 的支持程度不同，可能不支持 Emoji 表情和颜文字。当不支持时，此项会被忽略。
 
@@ -422,7 +428,7 @@ Object 类型，属性如下：
 成功则返回：addPhoneContact response:{"success":true}
 
 ## 错误码
-| **错误码** | **错误信息** | **说明** | **解决方案** |
+| **错误码** | **错误信息** | **描述** | **解决方案** |
 | --- | --- | --- | --- |
 | 3 | fail ${detail} | 调用失败，detail 中是详细信息。 | - |
 | 11 | fail cancel | 用户取消操作。 | 用户正常交互流程分支，不需要特殊处理。 |
