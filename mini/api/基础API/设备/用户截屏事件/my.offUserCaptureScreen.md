@@ -73,7 +73,7 @@ Page({
 });
 ```
 
-### 是否需要传 callback 值
+## 是否需要传 callback 值
 
 - 不传递 callback 值，则会移除监听所有的事件回调。示例代码如下：
 ```javascript
