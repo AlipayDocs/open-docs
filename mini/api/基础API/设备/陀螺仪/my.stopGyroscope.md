@@ -1,5 +1,5 @@
-
 # 简介
+
 **my.stopGyroscope** 停止监听陀螺仪数据。
 
 ## 使用限制
@@ -12,11 +12,12 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // page.js
 Page({
-	onReady() {
-  	this.gyroscopeChangeCallback = function (res) {
+  onReady() {
+    this.gyroscopeChangeCallback = function (res) {
       console.log('gyroData.rotationRate.x = ' + res.x);
       console.log('gyroData.rotationRate.y = ' + res.y);
       console.log('gyroData.rotationRate.z = ' + res.z);
@@ -29,7 +30,7 @@ Page({
     });
   },
   onUnload() {
-  	my.stopGyroscope({
+    my.stopGyroscope({
       success: () => {
         my.offGyroscopeChange(this.gyroscopeChangeCallback);
       }
@@ -39,9 +40,10 @@ Page({
 ```
 
 ## 入参
-为 Object 类型。
 
-| **属性** | **类型** | **必填** | **描述** |
+Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | success | function | 否 | 接口调用成功的回调函数。 |
 | fail | function | 否 | 接口调用失败的回调函数。 |
