@@ -1,21 +1,27 @@
-
 # 简介
-**my.getSystemInfo** 是获取手机系统信息的 API。<br />如果只需获取 **clientName**、**clientVersion**、**language**、**platform** 字段，推荐使用更加轻量化的 [my.env](https://opendocs.alipay.com/mini/api/env) API。
+
+**my.getSystemInfo** 是获取手机系统信息的 API。
+
+如果只需获取 **clientName**、**clientVersion**、**language**、**platform** 字段，推荐使用更加轻量化的 [my.env](https://opendocs.alipay.com/mini/api/env) API。
 
 ## 使用限制
+
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/fcf5eb6913c727b207a27d2a9d383362.png#align=left&display=inline&height=158&margin=%5Bobject%20Object%5D&originHeight=158&originWidth=128&status=done&style=none&width=128)
 
 # 接口调用
 
 ## Herbox
+
 [小程序在线](https://herbox-embed.alipay.com/s/doc-get-system-info?theme=light&previewZoom=75&chInfo=openhome-doc) 
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 // API-DEMO page/API/get-system-info/get-system-info.json
 {
@@ -61,6 +67,7 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 // API-DEMO page/API/get-system-info/get-system-info.js
 Page({
@@ -85,17 +92,17 @@ Page({
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
+### Function success
 
-### success 回调函数
-入参为 Object 类型，属性如下：
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
@@ -115,24 +122,9 @@ Object 类型，属性如下：
 | screenHeight | Number | 屏幕高度。<br />基础库 1.1.1 或更高版本开始支持。 |
 | brand | String | 手机品牌。<br />基础库 1.4.0 或更高版本开始支持。 |
 | fontSizeSetting | Number | 用户设置字体大小。<br />基础库 1.4.0 或更高版本开始支持。 |
-| app | String | 当前运行的客户端。若当前为支付宝，则有效值为 "alipay"。不同的客户端，对应的有效值如下：<br />- 支付宝：alipay
+| app | String | 当前运行的客户端。若当前为支付宝，则有效值为 "alipay"。不同的客户端，对应的有效值如下：<ul><li>alipay：支付宝。</li><li>UC：UC浏览器。</li><li>QUARK：夸克浏览器。</li><li>AK：阿里健康。</li><li>amap：高德。</li><li>YK：优酷。</li><li>DINGTALK：钉钉。</li></ul> |
 
-- UC浏览器：UC
-
-- 夸克浏览器：QUARK
-
-- 阿里健康：AK
-
-- 高德：amap
-
-- 优酷：YK
-
-- 钉钉：DINGTALK
-
- |
-
-
-### model 参数
+#### model 参数
 对于 iPhone，model 参数将返回 iPhone 内部代码（Internal Name）。iPhone 手机型号与对应的 model 返回值如下表所示：
 
 | **手机型号** | **model 返回值** |
