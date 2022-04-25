@@ -262,7 +262,7 @@ A：上传图片是服务端通过二进制流接受图片，之后服务端只�
 ## Q：调用 my.uploadfile，为何报错: error: 4，无权限调用此接口？
 A：请求的 URL 没有配置白名单，建议添加 URL 的域名为白名单。
 
-## Q7：小程序是否支持上传 excel 文件？
+## Q：小程序是否支持上传 excel 文件？
 A：目前 my.uploadFile 上传文件类型支持图片、视频、音频（ image / video / audio）,暂不支持其他类型的文件。
 
 ## Q：my.uploadFile 支持多张图片同时上传吗？
