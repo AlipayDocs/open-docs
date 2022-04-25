@@ -47,8 +47,8 @@ if (result2.stats) {
 ### Stats/Object stats
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| mode | long | - |
-| size | long | 文件大小。 |
-| lastAccessedTime | long | 上次访问时间。 |
-| lastModifiedTime | long | 上次修改时间。 |
+| mode | Long | - |
+| size | Long | 文件大小。 |
+| lastAccessedTime | Long | 上次访问时间。 |
+| lastModifiedTime | Long | 上次修改时间。 |
 
