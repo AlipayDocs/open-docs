@@ -1,4 +1,3 @@
-
 # 简介
 停止监听设备方向变化事件。
 
@@ -12,6 +11,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // page.js
 Page({
@@ -31,7 +31,7 @@ Page({
 
 ## 入参
 
-### function callback
+### Function callback
 设备方向变化事件的回调函数。
 
 **注意**：若 my.offDeviceMotionChange 没有传入任何 `callback` 参数，则会取消监听所有的设备方向变化事件回调函数。
