@@ -1,4 +1,3 @@
-
 ## 简介
 获取设备是否开启无障碍模式。
 
@@ -12,6 +11,7 @@
 ### 示例代码
 
 #### .js 示例代码
+
 ```javascript
 my.isScreenReaderEnabled({
  success(res) {
@@ -22,17 +22,19 @@ my.isScreenReaderEnabled({
 })
 ```
 
-### 入参
-Object 类型，属性如下：
+## 入参
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
+### Function success
 
-#### object.success 参数
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | screenReaderEnabled | Boolean | 是否开启无障碍模式 |
