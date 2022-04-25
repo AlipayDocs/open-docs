@@ -1,25 +1,32 @@
-
 # 简介
-**my.vibrateLong** 是调用触发较长时间的振动 (400ms)的 API。
+**my.vibrateLong** 是调用触发较长时间的振动（400ms）的 API。
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/5bfebd220003eb791db3c6918e54b814.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
 
 ## 效果示例
+
 ![|300x540](https://gw.alipayobjects.com/zos/skylark-tools/public/files/49414b61c24e9b44545b83e68e76393f.gif#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&originHeight=540&originWidth=300&status=done&style=stroke&width=300)
 
 # 接口调用
 
 ## 示例代码
+
+### .json 示例代码
+
 ```json
 // API-DEMO page/API/vibrate/vibrate.json
 {
     "defaultTitle": "Vibrate"
 }
 ```
+
+### .axml 示例代码
+
 ```html
 <!-- API-DEMO page/API/vibrate/vibrate.axml-->
 <view class="page">
@@ -34,6 +41,9 @@
   </button>
 </view>
 ```
+
+### .js 示例代码
+
 ```javascript
 // API-DEMO page/API/vibrate/vibrate.js
 Page({
