@@ -341,19 +341,19 @@
     <td>图片</td>
   </tr>
   <tr>
-    <td><a href="https://opendocs.alipay.com/mini/006ld2">my.chooseImage</a></td>
+    <td><a href="https://opendocs.alipay.com/mini/api/media/image/my.chooseimage">my.chooseImage</a></td>
   </tr>
   <tr>
-    <td><a href="https://opendocs.alipay.com/mini/006ldb">my.previewImage</a></td>
+    <td><a href="https://opendocs.alipay.com/mini/api/media/image/my.previewimage">my.previewImage</a></td>
   </tr>
   <tr>
-    <td><a href="https://opendocs.alipay.com/mini/006ldd">my.saveImage</a></td>
+    <td><a href="https://opendocs.alipay.com/mini/api/media/image/my.saveimage">my.saveImage</a></td>
   </tr>
   <tr>
-    <td><a href="https://opendocs.alipay.com/mini/006ld5">my.compressImage</a></td>
+    <td><a href="https://opendocs.alipay.com/mini/api/media/image/my.compressimage">my.compressImage</a></td>
   </tr>
   <tr>
-    <td><a href="https://opendocs.alipay.com/mini/006ld9">my.getImageInfo</a></td>
+    <td><a href="https://opendocs.alipay.com/mini/api/media/image/my.getimageinfo">my.getImageInfo</a></td>
   </tr>
   <tr>
     <td rowspan="11">设备</td>
