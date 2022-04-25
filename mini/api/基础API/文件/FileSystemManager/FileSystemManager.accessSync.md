@@ -1,4 +1,3 @@
-
 # 简介
 [FileSystemManager.access](https://opendocs.alipay.com/mini/api/0226oe) 的同步版本。
 
@@ -6,7 +5,7 @@
 
 - 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，参见 [接入准备](https://opendocs.alipay.com/mini/02pk4y) 。
+- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，可查看 [接入准备](https://opendocs.alipay.com/mini/02pk4y) 。
 - 此 API 暂不支持在 IDE 模拟器上测试，开发中请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 进行测试。
 
 # 接口调用
@@ -22,7 +21,8 @@ console.log(result);
 
 ## 入参
 
-#### String path
+### String path
+
 要判断是否存在的文件/目录路径。
 
 ## 错误码
@@ -30,4 +30,3 @@ console.log(result);
 | --- | --- |
 | 10022 | 文件 / 目录不存在。 |
 | 10024 | 传入的路径没有读的权限。 |
-
