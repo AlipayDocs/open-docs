@@ -1,4 +1,3 @@
-
 # 简介
 [FileSystemManager.saveFile](https://opendocs.alipay.com/mini/api/022b6n) 的同步版本。
 
@@ -6,7 +5,7 @@
 
 - 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，参见 [接入准备](https://opendocs.alipay.com/mini/02pk4y) 。
+- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，可查看 [接入准备](https://opendocs.alipay.com/mini/02pk4y) 。
 - 此 API 暂不支持在 IDE 模拟器上测试，开发中请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 进行测试。
 
 # 接口调用
@@ -14,6 +13,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 const fs = my.getFileSystemManager();
 my.downloadFile({
@@ -27,22 +27,22 @@ my.downloadFile({
 
 ## 入参
 
-#### String tempFilePath
+### String tempFilePath
 临时存储文件路径。
 
-#### String filePath
+### String filePath
 要存储的文件路径。
 
 **说明：** 如果不传，默认存储在小程序缓存目录
 
 ### 返回值
-| **名称** | **类型** | **描述** |
+
+| **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | savedFilePath | String | 存储后的文件路径。 |
 
-
 ## 错误码
-| **错误码** | **说明** |
+| **错误码** | **描述** |
 | --- | --- |
 | 10022 | 指定文件不存在。 |
 | 10024 | 指定的路径没有写的权限。 |
