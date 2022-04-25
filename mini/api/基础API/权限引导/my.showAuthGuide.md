@@ -1,20 +1,22 @@
-
 # 简介
 **my.showAuthGuide** 是通过权限引导模块以图文等形式向用户弹出 Dialog，引导用户打开相应的权限的 API。
 
 权限引导的核心是引导而非权限判断，调用时机应该在业务方确认所需权限被限制的时候；此外权限引导弹框受疲劳度等因素控制。
 
 ## 使用限制
+
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
 
 ## Herbox
+
 [小程序在线](https://herbox-embed.alipay.com/s/doc-show-auth-guide?theme=light&previewZoom=75&chInfo=openhome-doc) 
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 // API-DEMO page/API/show-auth-guide/show-auth-guide.json
 {
@@ -23,6 +25,7 @@
 ```
 
 ### .axml 示例代码
+
 ```html
 <!-- API-DEMO page/API/show-auth-guide/show-auth-guide.axml-->
 <view class="page">
@@ -56,9 +59,9 @@ Page({
 ```
 
 ## 入参
-入参为 Object 类型，属性如下：
+入参为 Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | authType | String | 是 | 引导的权限标识，用于标识该权限类型(如 LBS)。 |
 | success | Function | 否 | 调用成功的回调函数。 |
