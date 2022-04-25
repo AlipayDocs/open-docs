@@ -19,7 +19,7 @@
 
 ## 示例代码
 
-### .js 示例代码
+### .json 示例代码
 
 ```json
 // API-DEMO page/API/vibrate/vibrate.json
