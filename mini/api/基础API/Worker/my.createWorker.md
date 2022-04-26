@@ -41,5 +41,5 @@ worker.terminate();
 ### String scriptPath
 worker 入口文件的 **绝对路径**。
 
-### 返回值
+## 返回值
 返回一个 [Worker](https://opendocs.alipay.com/mini/api/worker) 对象。
