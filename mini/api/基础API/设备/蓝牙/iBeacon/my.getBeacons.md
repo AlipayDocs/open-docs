@@ -1,5 +1,5 @@
-
 # 简介
+
 **my.getBeacons** 是获取已经搜索到的 iBeacon 设备的 API。
 
 ## 使用限制
@@ -11,6 +11,8 @@
 # 接口调用
 
 ## 示例代码
+
+
 ```javascript
 // .js
 my.getBeacons({
@@ -25,17 +27,16 @@ my.getBeacons({
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
-### success 回调函数
-Object 类型，属性如下：
+### Function success
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
@@ -44,7 +45,7 @@ Object 类型，属性如下：
 | errorMsg | String | 错误描述信息，成功则为 ok。 |
 
 
-### iBeacon 结构
+#### ObjectArray beacons
 beacons  属性的数组由以下属性构成：
 
 | **属性** | **类型** | **描述** |
@@ -56,18 +57,16 @@ beacons  属性的数组由以下属性构成：
 | accuracy | Number | iBeacon 设备的距离。 |
 | rssi | Number | iBeacon 信号强度。 |
 
-
-### fail 回调函数 
-入参为 Object 类型，属性如下：
+### Function fail 
+fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | error | String | 错误码。 |
 | errorMessage | String | 错误信息。 |
 
-
 ## 错误码
-| **错误码** | **说明** | **说明** |
+| **错误码** | **说明** | **描述** |
 | --- | --- | --- |
 | 11000 | unsupport | 系统或设备不支持。 |
 | 11001 | bluetooth invalid | 蓝牙服务不可用。 |
@@ -76,4 +75,3 @@ beacons  属性的数组由以下属性构成：
 | 11004 | already discovering | 已经开始搜索。 |
 | 11006 | uuid invalid | UUID 格式错误。 |
 | 11008 | uuids empty | 参数错误，UUID 数组为空。 |
-
