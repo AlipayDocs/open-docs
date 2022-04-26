@@ -3,7 +3,7 @@
 
 目标小程序可通过 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing) 来唤起指定的开发版本。
 
-相关问题请参见 [小程序相互跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
+相关问题可查看 [小程序相互跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
@@ -31,9 +31,9 @@ my.navigateToMiniProgram({
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | appId | String | 是 | 要跳转的目标小程序 appId。 |
 | path | String | 否 | 打开的页面路径，如果为空则打开首页。 |
@@ -42,17 +42,15 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（）调用成功、失败都会执行。 |
 
-
-### 错误码
+## 错误码
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
-| 30 | 目标应用不允许被跳转。 | 需检查目标应用跳转设置，登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > **设置** > **基础设置** > **小程序互相跳转** 中设置 **允许所有小程序跳转** 或 **指定小程序跳转**。 |
+| 30 | 目标应用不允许被跳转。 | 需检查目标应用跳转设置，登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要设置的小程序，进入小程序详情页 > **设置** > **基础设置** > **小程序互相跳转** 中设置 **允许所有小程序跳转** 或 **指定小程序跳转**。 |
 | 31 | 跳转失败。 | 可能是目标应用信息查询失败导致，建议检查跳转的目标应用是否已经上架。<br />**注意**：APPID 长度为 8 位的小程序暂不支持跳转。 |
 
+# 常见问题 FAQ
 
-## 常见问题 FAQ
-
-### Q：my.navigateToMiniProgram 的 extraData 的参数在哪里获取？ extraData 是否可以添加多个参数？自定义参数中间使用的什么符号进行拼接？如何获取自定义的参数
+## Q：my.navigateToMiniProgram 的 extraData 的参数在哪里获取？ extraData 是否可以添加多个参数？自定义参数中间使用的什么符号进行拼接？如何获取自定义的参数
 A：目标小程序可在 App.onLaunch( )、App.onShow( ) 中获取到这份数据。extraData可以是一个包含多个参数的对象。
 
 ```js
@@ -77,20 +75,5 @@ App({
 
 ```
 
-### Q：小程序如何跳转收藏有礼页面？
-A：可参考如下代码。更多详情请参见 [小程序有礼](https://opendocs.alipay.com/mini/operation/app-with-benefit)。
-```javascript
-// .js
-my.navigateToMiniProgram({
-     appId: '2018122562686742',//收藏有礼小程序的appid，固定值请勿修改
-     path: 'pages/index/index?originAppId=2017082508366123&newUserTemplate=20190130000000119123',//收藏有礼跳转地址和参数
-     success: (res) => {
-       // 跳转成功
-       my.alert({ content: 'success' });
-     },
-     fail: (error) => {
-       // 跳转失败
-       my.alert({ content: 'fail' });
-     }
-   });
-```
+## Q：小程序如何唤起小程序营销活动？
+A：可查看 [小程序营销](https://opendocs.alipay.com/mini/operation/app-with-benefit)。
