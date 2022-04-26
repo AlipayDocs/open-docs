@@ -1,10 +1,9 @@
-
 # 简介
-信任该 SSID，对于需要 Portal 认证的 WIFI，不会弹出 portal 认证页面。为**iOS特有接口**。
+信任该 SSID，对于需要 Portal 认证的 WIFI，不会弹出 portal 认证页面。为 **iOS特有接口**。
 
 # 使用限制
 
-- **基础库** [1.14.0](https://opendocs.alipay.com/mini/framework/compatibility) 开始支持。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.14.0](https://opendocs.alipay.com/mini/framework/compatibility) 开始支持。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
@@ -24,9 +23,9 @@ if (my.env.platform === 'iOS') {
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | SSID | String | 是 | Wi-Fi 设备 SSID。 |
 | success | Function | 否 | 接口调用成功的回调函数。 |
