@@ -9,9 +9,9 @@
 
 # 接口调用
 
-## 代码示例
+## 示例代码
 
-### .js 代码示例
+### .js 示例代码
 ```javascript
 my.connectWifi({
   SSID: '',
