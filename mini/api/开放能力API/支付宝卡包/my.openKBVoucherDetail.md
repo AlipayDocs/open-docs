@@ -1,8 +1,7 @@
-
 # 简介
 **my.openKBVoucherDetail** 是用于打开当前用户的某张券的（口碑）详情页的 API。
 
-有关支付宝卡包详细功能，参见 [支付宝卡包产品介绍](introduce/voucher)。
+有关支付宝卡包详细功能，参见 [支付宝卡包产品介绍](https://opendocs.alipay.com/mini/introduce/voucher)。
 
 支付宝特色 API，支持 my.ap.openKBVoucherDetail 调用。
 
@@ -20,15 +19,15 @@
 my.openKBVoucherDetail({passId:"20170921"}); 
 // 传入partnerId 和 serialNumber来打开
 my.openKBVoucherDetail({
-      partnerId:"2088xxxx",
-      serialNumber:"20170921"
-    });
+  partnerId:"2088xxxx",
+  serialNumber:"20170921"
+});
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | passId | String | 是 | 卡实例 ID（如果传入了 partnerId 和 serialNumber 则不需传入）。 |
 | partnerId | String | 是 | 商户编号（即商户 PID，如果传入了 passId 则不需传入）。 |
