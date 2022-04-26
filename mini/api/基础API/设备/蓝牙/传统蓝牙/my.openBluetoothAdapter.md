@@ -1,4 +1,3 @@
-
 # 简介
 **my.openBluetoothAdapter** 是初始化小程序蓝牙模块的 API，生效周期为调用 my.openBluetoothAdapter 至调用 [my.closeBluetoothAdapter](https://opendocs.alipay.com/mini/api/wvko0w) 或小程序被销毁为止。 
 
@@ -6,7 +5,7 @@
 
 ## 使用限制
 
-- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 在调用 my.openBluetoothAdapter API之前，调用小程序其它蓝牙模块相关 API，API 会返回错误。
    - 错误码：10000。
@@ -16,16 +15,26 @@
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/7c724fcc6736c7411a95f7a2850300a6.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
 
 ## 效果示例
+
 ![|723x407](https://gw.alipayobjects.com/zos/skylark-tools/public/files/2022f03efbaba2245141b2f095caa839.png#align=left&display=inline&height=420&margin=%5Bobject%20Object%5D&originHeight=720&originWidth=1280&status=done&style=stroke&width=746)
 
 # 接口调用
 
 ## 示例代码
 
+### .json 示例代码
+```json
+{
+    "defaultTitle": "Bluetooth"
+}
+```
+
 ### .acss 示例代码
+
 ```css
 /* .acss */
 .help-info {
@@ -35,13 +44,6 @@
 .help-title {
   padding:10px;
   color:#FC0D1B;
-}
-```
-
-### .json 示例代码
-```json
-{
-    "defaultTitle": "Bluetooth"
 }
 ```
 
@@ -417,29 +419,29 @@ Page({
 ```
 
 ## 入参
-Object 类型，属性如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | autoClose | Boolean | 否 | 表示是否在离开当前页面时自动断开蓝牙，不传值默认为 true。<br />**注意**：仅支持 Android  系统。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
+### Function success
 
-### success 回调函数
-入参为 Object 类型，属性如下：
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | isSupportBLE | Boolean | 是否支持 BLE。 |
 
-
 ## 错误码
+
 | **错误码** | **说明** | **解决方案** |
 | --- | --- | --- |
 | 12 | 蓝牙未打开。 | 请尝试打开蓝牙。 |
 | 13 | 与系统服务的链接暂时丢失。 | 请尝试重新连接。 |
 | 14 | 未授权支付宝使用蓝牙功能。 | 请授权支付宝使用蓝牙功能。 |
-| 15 | 未知错误。 |  |
-
+| 15 | 未知错误。 | - |
