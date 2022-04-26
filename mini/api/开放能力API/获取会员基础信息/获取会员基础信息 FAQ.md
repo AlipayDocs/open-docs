@@ -44,7 +44,7 @@ A：不能在同一个弹框中同时获取会员手机号和头像、昵称。
 - [获取会员基础信息](https://opendocs.alipay.com/mini/introduce/twn8vq)（获取头像、昵称信息）
 
 ### Q：“获取会员基础信息” 可以获取支付宝用户的 user_id 吗？
-A：不可以。获取支付宝用户的 user_id 需要在服务器端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4)（换取授权访问令牌接口）。
+A：不可以。获取支付宝用户的 user_id 需要在服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4)（换取授权访问令牌接口）。
 
 ### Q：“获取会员基础信息”可以获取用户身份证、真实姓名等信息吗？
 A：不可以。“获取会员基础信息”只能获取用户头像、昵称信息。
