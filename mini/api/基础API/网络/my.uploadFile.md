@@ -1,39 +1,44 @@
-
 # 简介
+
 **my.uploadFile** 是上传本地资源到开发者服务器的 API。
 
 ## 使用限制
+
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-> 请预先在 [**支付宝小程序管理中心**](https://open.alipay.com/mini/dev/list) > 小程序详情 >**设置 > 开发设置 > 服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTP 请求（my.request）、上传文件（my.uploadFile）。
+> 请登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTP 请求（my.request）、上传文件（my.uploadFile）。
 >
 > ![|706x73](http://mdn.alipayobjects.com/afts/img/A*xM4NR6VRbfy_8SFDkgXUhQBkAa8wAA/original?bz=openpt_doc&t=JgMQtxsM9S7uH5pPEDbN9wAAAABkMK8AAAAA#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&originHeight=168&originWidth=1624&status=done&style=stroke&width=1624)
 >
 > **注意**：域名添加或删除后仅对新版本小程序生效，老版本仍使用修改前的域名配置。
 
-
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/d1f6c80ce1f38600a43b90ad8730efae.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
 
 ## 效果示例
+
 ![|723x407](https://gw.alipayobjects.com/zos/skylark-tools/public/files/d5875d1a94433734166ca5760c485107.png#align=left&display=inline&height=420&margin=%5Bobject%20Object%5D&originHeight=720&originWidth=1280&status=done&style=stroke&width=746)
 
 # 接口调用
 
 ## 示例代码
+
+### .json 示例代码
+
 **注意**：案例仅供参考，建议使用自己的地址进行测试。
 ```json
 {
     "defaultTitle": "Upload File"
 }
 ```
-
+### .axml 示例代码
 ```html
 <!-- API-DEMO page/upload-file/upload-file.axml -->
 <view class="page">
   <button type="primary" onTap="uploadFile">上传图片</button>
 </view>
 ```
-
+### .js 示例代码
 ```javascript
 // API-DEMO page/API/upload-file/upload-file.js
 Page({
@@ -61,7 +66,10 @@ Page({
   },
 });
 ```
-上传文件的后端代码：
+
+### .java 示例代码
+
+上传文件的服务端代码：
 ```java
 
 import java.io.IOException;
@@ -106,9 +114,10 @@ public class UploadServlet extends HttpServlet {
 ```
 
 ## 入参
-Object 类型，属性如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | url | String | 是 | 开发者服务器地址。 |
 | filePath | String | 是 | 要上传文件资源的本地定位符。 |
@@ -121,16 +130,15 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
+### Function success
 
-### success 回调函数
-入参为 Object 类型，属性如下：
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | data | String | 服务器返回的数据。 |
 | statusCode | Number | HTTP 状态码。 |
 | header | Object | 服务器返回的 Header。 |
-
 
 ## 错误码
 
@@ -154,8 +162,8 @@ Object 类型，属性如下：
         <td>无权限调用（N22106）</td>
         <td rowspan="2">
             <ul>
-                <li>配置请求白名单，请预先在 <a href="https://open.alipay.com/dev/workspace">开放平台控制台</a> > 小程序详情 > <b>设置</b> > <b>开发设置</b> > <b>服务器域名白名单</b> 中配置域名白名单。域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。</li>
-                <li>若是账号问题，不能登录管理后台配置，开发版测试可以先在 IDE 右上角点击 <b>详情</b> > <b>域名信息</b> 下勾选 “<b>忽略 request 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>” 或 “<b>忽略 Webview 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>”，再预览调试请求。</li>
+                <li>配置请求白名单，请预先登录 <a href="https://open.alipay.com/dev/workspace">开放平台控制台</a> > 点击要配置的小程序，进入小程序详情页 > <b>设置</b> > <b>开发设置</b> > <b>服务器域名白名单</b> 中配置域名白名单。域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。</li>
+                <li>若是账号问题，不能登录管理后台配置，开发版测试可以先在 IDE 右上角点击 <b>详情</b> > <b>域名信息</b> 下勾选 <b>忽略 request 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>或 <b>忽略 Webview 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>，再预览调试请求。</li>
                 <li>建议做下兼容，不要使用 my.saveFile 保存文件后返回的 apFilePath 作为上传 filePath 的入参。</li>
             </ul>
         </td>
@@ -214,7 +222,6 @@ Object 类型，属性如下：
 | UploadTask.abort() | 中断上传任务 |
 | UploadTask.onProgressUpdate(function callback) | 监听上传进度变化事件 |
 
-
 ### 示例代码
 ```javascript
 const task = my.uploadFile({
@@ -228,36 +235,35 @@ task.onProgressUpdate(({progress, totalBytesWritten, totalBytesExpectedToWrite})
 task.abort()
 ```
 
-## 常见问题 FAQ
+# 常见问题 FAQ
 
-### Q1：小程序上传图片可以自动转成 Base64 (基于 64 个可打印字符来表示二进制数据的方法)吗？
+## Q：小程序上传图片可以自动转成 Base64 (基于 64 个可打印字符来表示二进制数据的方法)吗？
 A：小程序暂不支持图片转成 Base64。
 
-### Q2：my.uploadFile 如何获取服务器返回的错误信息呢？
+## Q：my.uploadFile 如何获取服务器返回的错误信息呢？
 A：解决方案：
 
 1. 可以通过 success 回调中的 data 参数获取。
+2. 可以在服务端增加一个日志获取接口。如果上传失败，就请求到日志获取接口获取详细的失败日志。
 
-1. 可以在服务端增加一个日志获取接口。如果上传失败，就请求到日志获取接口获取详细的失败日志。
-
-### Q3：my.uploadFile 默认超时时间是多少？是否可以设置默认延长时间？
+## Q：my.uploadFile 默认超时时间是多少？是否可以设置默认延长时间？
 A：my.uploadFile 默认超时时间是 30s，目前无法设置默认延长时间。
 
-### Q4：使用 my.uploadFile 上传文件，为何报错 error:12？
+## Q：使用 my.uploadFile 上传文件，为何报错 error:12？
 A：上传失败导致报错 error:12 ，造成上传失败的可能原因有：
-1. 文件过大
-2. 上传时间超过 30s
-3. 没有权限
-4. 文件未找到 / 文件不是一个正常的文件
+1. 文件过大。
+2. 上传时间超过 30s。
+3. 没有权限。
+4. 文件未找到 / 文件不是一个正常的文件。
 
-### Q5：使用 my.uploadFile 上传图片至后台，接收的是二进制图片，再从后台发送小程序前台对应的二进制图片，小程序前台是如何解析呢？
-A：上传图片是后端通过二进制流接受图片，之后后端只需提供对应的图片在服务器上的位置地址就可以。
+## Q：使用 my.uploadFile 上传图片至后台，接收的是二进制图片，再从后台发送小程序前台对应的二进制图片，小程序前台是如何解析呢？
+A：上传图片是服务端通过二进制流接受图片，之后服务端只需提供对应的图片在服务器上的位置地址就可以。
 
-### Q6：调用 my.uploadfile，为何报错: error: 4，无权限调用此接口？
+## Q：调用 my.uploadfile，为何报错: error: 4，无权限调用此接口？
 A：请求的 URL 没有配置白名单，建议添加 URL 的域名为白名单。
 
-### Q7：小程序是否支持上传 excel 文件？
+## Q：小程序是否支持上传 excel 文件？
 A：目前 my.uploadFile 上传文件类型支持图片、视频、音频（ image / video / audio）,暂不支持其他类型的文件。
 
-### Q8：my.uploadFile 支持多张图片同时上传吗？
+## Q：my.uploadFile 支持多张图片同时上传吗？
 A：my.uploadFile 暂不支持多张图片同时上传，一次只能上传一张图片。
