@@ -1,5 +1,5 @@
 # 简介
-**my.navigateToMiniProgram** 是用于跳转到其他小程序的 API。
+**my.navigateToMiniProgram** 是用于跳转到其它小程序的 API。
 
 目标小程序可通过 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing) 来唤起指定的开发版本。
 
