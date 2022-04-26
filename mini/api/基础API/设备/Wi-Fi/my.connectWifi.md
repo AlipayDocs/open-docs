@@ -1,4 +1,3 @@
-
 # 简介
 连接 Wi-Fi。若已知 Wi-Fi 信息，可以直接利用该接口连接。
 
@@ -24,9 +23,9 @@ my.connectWifi({
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | SSID | String | 是 | Wi-Fi 设备 SSID。 |
 | BSSID | String | 否 | Wi-Fi 设备 BSSID。 |
@@ -35,6 +34,3 @@ Object 类型，属性如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Funciton | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-
-
-
