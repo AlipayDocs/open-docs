@@ -1,15 +1,16 @@
-
 # 简介
 **my.startBeaconDiscovery** 是开始搜索附近的 iBeacon 设备的 API。
 
 ## 使用限制
 
-- 支付宝客户端 10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。 
+- 支付宝客户端 10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。 
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
 
 ## 示例代码
+
+### .js 示例代码
 ```javascript
 // .js
 my.startBeaconDiscovery({
@@ -25,9 +26,9 @@ my.startBeaconDiscovery({
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | uuids | StringArray | 是 | 目标 iBeacon 设备广播的 UUIDs。 |
 | success | Function | 否 | 调用成功的回调函数。 |
@@ -40,8 +41,9 @@ Object 类型，属性如下：
 - iBeacon 需要位置权限。iOS 11 及以后版本的手机，通过手机控制中心的快捷开关打开蓝牙，无法使用 iBeacon，需要在 设置 > 蓝牙 中开启蓝牙，方可使用。<br />
 - 建议在 [my.onBeaconUpdate](https://opendocs.alipay.com/mini/api/kvdg9y) 回调中处理发现到的 iBeacon 设备信息。<br />
 
-### fail 回调函数
-入参为 Object 类型，属性如下：
+### Function fail
+
+fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
@@ -59,4 +61,3 @@ Object 类型，属性如下：
 | 11004 | already discovering | 已经开始搜索。 |
 | 11006 | uuid invalid | UUID 格式错误。 |
 | 11008 | uuids empty | 参数错误，UUID 数组为空。 |
-
