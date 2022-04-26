@@ -1,18 +1,20 @@
-
 # 简介
+
 **my.getBLEDeviceCharacteristics** 是获取蓝牙设备所有 characteristic（特征值）的 API。
 
 ## 使用限制
 
-- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 支持 iOS 客户端，Android 5.0 及以上版本客户端。
 - 建立连接后先执行 [my.getBLEDeviceServices](https://opendocs.alipay.com/mini/api/uzsg75) 与 [my.getBLEDeviceCharacteristics](https://opendocs.alipay.com/mini/api/fmg9gg)，再进行与蓝牙设备的数据交互。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/da75862c7ff0e6f5e92f462ae4ca5bd2.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
 
 ## 效果示例
+
 ![|723x407](https://gw.alipayobjects.com/zos/skylark-tools/public/files/482c25e2e1b141977f90c29108326ec0.png#align=left&display=inline&height=420&margin=%5Bobject%20Object%5D&originHeight=720&originWidth=1280&status=done&style=stroke&width=746)
 
 # 接口调用
@@ -20,6 +22,7 @@
 ## 示例代码
 
 ### .acss 示例代码
+
 ```css
 /* .acss */
 .help-info {
@@ -411,9 +414,9 @@ Page({
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | deviceId | String | 是 | 蓝牙设备 ID，参考 device 对象。 |
 | serviceId | String | 是 | 蓝牙特征值对应 service 的 UUID。 |
@@ -421,16 +424,16 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
+### Function success
 
-### success 回调函数
-入参为 Object 类型，属性如下：
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | characteristics | Array | 设备特征值列。 |
 
+#### Array characteristic
 
-### characteristic 对象
 蓝牙设备 characteristic （特征值）信息。
 
 | **属性** | **类型** | **描述** |
@@ -440,12 +443,11 @@ Object 类型，属性如下：
 | value | Hex String | 蓝牙设备特征值对应的 16 进制值。 |
 | properties | Object | 该特征值支持的操作类型。 |
 
+#### Object properties
 
-### properties 对象
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | read | Boolean | 该特征值是否支持 read 操作。 |
 | write | Boolean | 该特征值是否支持 write 操作。 |
 | notify | Boolean | 该特征值是否支持 notify 操作。 |
 | indicate | Boolean | 该特征值是否支持 indicate 操作。 |
-
