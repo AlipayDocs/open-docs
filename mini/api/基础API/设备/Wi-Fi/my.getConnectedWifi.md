@@ -33,13 +33,13 @@ Object 类型，参数如下：
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **秒速** |
+| **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | wifi | WifiInfo | Wi-Fi 信息。 |
 
 #### WifiInfo wifi
 
-| **属性** | **类型** | **秒速** |
+| **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | SSID | String | Wi-Fi 的 SSID。 |
 | BSSID | String | Wi-Fi 的 BSSID。 |
