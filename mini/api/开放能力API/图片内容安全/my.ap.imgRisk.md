@@ -1,8 +1,7 @@
-
 # 简介
 **my.ap.imgRisk** 是图片风险任务提交接口，用于识别图片是否有色情、违禁违法等内容。
 
-有关图片内容安全的产品和接入介绍，请参见 [图片内容安全](https://opendocs.alipay.com/mini/introduce/img_risk)。
+有关图片内容安全的产品和接入介绍，可查看 [图片内容安全](https://opendocs.alipay.com/mini/introduce/img_risk)。
 
 ## 使用限制
 
@@ -42,27 +41,25 @@ my.ap.imgRisk
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| pid | String | 是 | 合作者身份 ID。即商户与支付宝签约后，商户获得的支付宝商户唯一识别码。 |
+| pid | String | 是 | 合作者身份 ID。即商家与支付宝签约后，商家获得的支付宝商家唯一识别码。 |
 | appId | String | 是 | 小程序的 APPID。 |
 | bizContext | Map | 是 | 需要识别的业务参数。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
-### bizContext 属性说明
+### Map bizContext
 | **属性** | **类型** | **必填** | **最大长度** | **描述** | **示例值** |
 | --- | --- | --- | --- | --- | --- |
 | risk_type | String | 是 | 1024 | 风险类型。 | 固定传 img_risk |
 | content | String | 是 | 128 | 需要验证的图片 URL。 | [https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3180559933,1841450308&fm=26&gp=0.jpg](https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3180559933,1841450308&fm=26&gp=0.jpg) |
 
-
-### success 回调函数
-Object 类型，属性如下：
+### Function success
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **最大长度** | **描述** | **示例值** |
 | --- | --- | --- | --- | --- |
@@ -71,12 +68,10 @@ Object 类型，属性如下：
 | success | Boolean | - | 是否调用成功。 | true |
 | uniqueId | String | 1024 | 业务唯一识别码。 | xxxxxxxxxxxxxxxxx |
 
-
-### fail 回调函数
-Object 类型，属性如下：
+### Function fail
+fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | errorCode | String | 错误码。 |
 | errorMessage | String | 错误信息。 |
-
