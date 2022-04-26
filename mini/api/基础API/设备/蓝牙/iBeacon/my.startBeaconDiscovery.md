@@ -38,7 +38,7 @@ Object 类型，参数如下：
 **说明**：
 
 - uuid1、uuid2 为目标 iBeacon 的 UUID，可从硬件厂商获取，如果为空，无法搜索到 iBeacon。<br />
-- iBeacon 需要位置权限。iOS 11 及以后版本的手机，通过手机控制中心的快捷开关打开蓝牙，无法使用 iBeacon，需要在 设置 > 蓝牙 中开启蓝牙，方可使用。<br />
+- iBeacon 需要位置权限。iOS 11 及以后版本的手机，通过手机控制中心的快捷开关打开蓝牙，无法使用 iBeacon，需要在 **设置** > **蓝牙** 中开启蓝牙，方可使用。
 - 建议在 [my.onBeaconUpdate](https://opendocs.alipay.com/mini/api/kvdg9y) 回调中处理发现到的 iBeacon 设备信息。<br />
 
 ### Function fail
@@ -49,7 +49,6 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- |
 | error | String | 错误码。 |
 | errorMessage | String | 错误信息。 |
-
 
 ## 错误码
 | **错误码** | **描述** | **说明** |
