@@ -196,7 +196,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| action | String | 是 | 使用 RSA 加密还是 RSA 解密。可选值为：<br /><li> **encrypt**  为加密。</li><li> **decrypt**  为解密。</li>|
+| action | String | 是 | 使用 RSA 加密还是 RSA 解密。可选值为：<br /><ul><li> **encrypt**  为加密。</li><li> **decrypt**  为解密。</li></ul>|
 | text | String | 是 | 要处理的文本，加密为原始文本，解密为 Base64 编码格式文本。 |
 | key | String | 是 | RSA 密钥。<br />加密使用公钥，解密使用私钥。 |
 | success | Function | 否 | 调用成功的回调函数。 |
