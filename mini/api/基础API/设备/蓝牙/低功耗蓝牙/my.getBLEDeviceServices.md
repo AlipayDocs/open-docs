@@ -1,24 +1,27 @@
-
 # 简介
 **my.getBLEDeviceServices** 是获取所有已发现的蓝牙设备的 API，包括已经和本机处于连接状态的设备。
 
 ## 使用限制
 
-- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 支持 iOS 客户端，Android 5.0 及以上版本客户端。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/b78436ea1396f5bbcd702cd8db77186d.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
 
 ## 效果示例
+
 ![|723x407](https://gw.alipayobjects.com/zos/skylark-tools/public/files/6fafc6048769544f55190149f0f55ab0.png#align=left&display=inline&height=420&margin=%5Bobject%20Object%5D&originHeight=720&originWidth=1280&status=done&style=none&width=746)
 
 
 # 接口调用
 
 ## 示例代码
+
+### .js 示例代码
 ```javascript
 // .js 
 //获取连接设备的server，必须要在连接状态状态之下才能获取
@@ -46,7 +49,12 @@
   },
 ```
 
-### 返回值示例
+## 返回示例
+
+### success 回调返回示例
+
+执行成功时，触发 success 回调，回调参数示例如下：
+
 ```json
 {
     "services": [{
@@ -66,25 +74,26 @@
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | deviceId | String | 是 | 蓝牙设备 ID。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
+### Function success
 
-### success 返回值
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | services | Array | 已发现的设备服务列表。 |
 
 
-### services 对象
+#### Array services
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| isPrimary | Boolean | 该服务是否为主服务。<li> `true` 为主服务。</li><li>`false` 不是主服务。</li>|
+| isPrimary | Boolean | 该服务是否为主服务。<ul><li> `true` 为主服务。</li><li>`false` 不是主服务。</li></ul> |
 | serviceId | String | 蓝牙设备特征值对应服务的 UUID。 |
-
