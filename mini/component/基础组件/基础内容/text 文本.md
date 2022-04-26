@@ -8,7 +8,7 @@
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-text?theme=light&previewZoom=75&chInfo=openhome-doc) 
+[小程序在线](https://opendocs.alipay.com/examples/4ba7cd59-c4b5-4877-ba85-299e460ee87d) 
 
 ## 示例代码
 
