@@ -78,7 +78,7 @@ Page({
 | name | String | 是 | 标签名。支持部分受信任的 HTML 节点。 |
 | attrs | Object | 否 | 属性。支持部分受信任的属性，遵循 Pascal 命名法。 |
 | children | Array | 否 | 子节点列表。结构和 nodes 相同。 |
-| marks | Object | 否 | 可在 tap 和 longTap 事件中接收。<br /> **说明**：自基础库 [2.7.1](https://opendocs.alipay.com/mini/01iq3i) 起，在 tap 和 longTap 事件中，可以通过 event.detail.marks 获得从触发事件的节点到根节点上所有的 marks 合并结果。如果存在同名数据，子节点将覆盖父节点。<br /> |
+| marks | Object | 否 | 可在 tap 和 longTap 事件中接收。<br /> **说明**：自基础库 [2.7.1](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起，在 tap 和 longTap 事件中，可以通过 event.detail.marks 获得从触发事件的节点到根节点上所有的 marks 合并结果。如果存在同名数据，子节点将覆盖父节点。<br /> |
 
 受信任的 HTML 节点及属性。支持 class 和 style 属性，不支持 id 属性。
 
