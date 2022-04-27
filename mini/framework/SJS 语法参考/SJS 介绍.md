@@ -106,6 +106,12 @@ hello alipay
 - 引用时务必使用 **.sjs** 文件后缀。
 - 若定义了一个 .sjs 模块，但从未引用，则该模块不会被解析与运行。
 
+# FAQ
+
+## sjs中是否可以引用npm包？
+
+可以引用，但只能引用npm包中的sjs文件。
+
 # 相关文档
 - [运算符](https://opendocs.alipay.com/mini/framework/operator)
 - [语句](https://opendocs.alipay.com/mini/framework/sjs-statement)
