@@ -4,7 +4,7 @@
 
 ## 使用限制
 
-- view 组件可通过固定宽度或者高度，使用 overflow-x 或者 overflow-y 设置为 scroll 属性进行滚动，也可通过 [scroll-view](/mini/component/scroll-view) 制作滚动视图。
+- view 组件可通过固定宽度或者高度，使用 overflow-x 或者 overflow-y 设置为 scroll 属性进行滚动，也可通过 [scroll-view](https://opendocs.alipay.com/mini/component/scroll-view) 制作滚动视图。
 - view 组件不支持覆盖 map 组件，可通过同层渲染实现 [cover-view](https://opendocs.alipay.com/mini/component/cover-view) 覆盖 [map](https://opendocs.alipay.com/mini/component/map) 组件。
 
 ## 扫码体验
@@ -193,21 +193,21 @@ Page({
 | hidden | Boolean | 是否隐藏。<br />**默认值：** false |
 | class | String | 自定义样式名。 |
 | style | String | 内联样式。 |
-| animation | Object | 用于动画，详见 [my.createAnimation](api/ui-animation#mycreateanimation) 。使用 `my.createAnimation` 生成的动画是通过过渡（Transition）实现的，只会触发 `onTransitionEnd`，不会触发 `onAnimationStart`, `onAnimationIteration`, `onAnimationEnd`。<br />**默认值：**{} |
-| hover-stop-propagation | Boolean | 是否阻止当前元素的祖先元素出现点击态。<br />**默认值：** false<br />**版本要求：** 基础库 [1.10.0](/mini/framework/compatibility) 及以上 |
+| animation | Object | 用于动画，详见 [my.createAnimation](https://opendocs.alipay.com/mini/api/ui-animation#mycreateanimation) 。使用 `my.createAnimation` 生成的动画是通过过渡（Transition）实现的，只会触发 `onTransitionEnd`，不会触发 `onAnimationStart`, `onAnimationIteration`, `onAnimationEnd`。<br />**默认值：**{} |
+| hover-stop-propagation | Boolean | 是否阻止当前元素的祖先元素出现点击态。<br />**默认值：** false<br />**版本要求：** 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | onTap | EventHandle | 点击。 |
 | onTouchStart | EventHandle | 触摸动作开始。 |
 | onTouchMove | EventHandle | 触摸后移动。 |
 | onTouchEnd | EventHandle | 触摸动作结束。 |
 | onTouchCancel | EventHandle | 触摸动作被打断，如来电提醒，弹窗。 |
 | onLongTap | EventHandle | 长按 500ms 之后触发，触发了长按事件后进行移动将不会触发屏幕的滚动。 |
-| onTransitionEnd | EventHandle | 过渡（Transition）结束时触发。<br />**版本要求：** 基础库 [1.8.0](/mini/framework/compatibility) 及以上 |
+| onTransitionEnd | EventHandle | 过渡（Transition）结束时触发。<br />**版本要求：** 基础库 [1.8.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | onAnimationIteration | EventHandle | 每开启一次新的动画过程时触发。（第一次不触发）<br />**版本要求：** 基础库 [1.8.0](/mini/framework/compatibility) 及以上 |
-| onAnimationStart | EventHandle | 动画开始时触发。<br />**版本要求：** 基础库 [1.8.0](/mini/framework/compatibility) 及以上 |
-| onAnimationEnd | EventHandle | 动画结束时触发。<br />**版本要求：** 基础库 [1.8.0](/mini/framework/compatibility) 及以上 |
-| onAppear | EventHandle | 当前元素可见面积超过50%时触发。<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
-| onDisappear | EventHandle | 当前元素不可见面积超过50%时触发。<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
-| onFirstAppear | EventHandle | 当前元素首次可见面积达到50%时触发。<br />**版本要求：** 基础库 [1.9.4](/mini/framework/compatibility) 及以上 |
+| onAnimationStart | EventHandle | 动画开始时触发。<br />**版本要求：** 基础库 [1.8.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| onAnimationEnd | EventHandle | 动画结束时触发。<br />**版本要求：** 基础库 [1.8.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| onAppear | EventHandle | 当前元素可见面积超过50%时触发。<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| onDisappear | EventHandle | 当前元素不可见面积超过50%时触发。<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| onFirstAppear | EventHandle | 当前元素首次可见面积达到50%时触发。<br />**版本要求：** 基础库 [1.9.4](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | role | - | 表示组件的语义角色。设置为 img 时，组件聚焦后读屏软件会朗读出 **图像** ；设置为 button 时，聚焦后读屏软件会朗读出 **按钮** 。详情请参见 [aria-component](https://opendocs.alipay.com/mini/component/accessibility)。 |
 
 
