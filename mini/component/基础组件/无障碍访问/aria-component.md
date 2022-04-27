@@ -64,7 +64,7 @@ aria-checked 表示 checkbox、switch 等组件是否被选中。聚焦到这些
   <text id="content">复选框内容</text>
 </label>
 ```
-若使用 [自定义组件](/mini/framework/custom-component-overview) 开发的 checkbox 、 switch 等组件，需要使用 aria-checked 属性，才能使得读屏软件获取组件选中状态。例如，一个自定义 checkbox 组件的 axml 示例代码：
+若使用 [自定义组件](https://opendocs.alipay.com/mini/framework/custom-component-overview) 开发的 checkbox 、 switch 等组件，需要使用 aria-checked 属性，才能使得读屏软件获取组件选中状态。例如，一个自定义 checkbox 组件的 axml 示例代码：
 ```html
 <view class="my-checkbox" role="checkbox" onTap="handleTap" aria-checked="{{checked}}" aria-labelledby="myCheckboxText">
   <icon type="{{checked ? 'success' : 'clear'}}" size="12"/>
