@@ -2,7 +2,7 @@
 aria 属性是 [WAI-ARIA](https://www.w3.org/TR/wai-aria/) 标准提供无障碍访问动态、可交互 Web 内容的技术规范。从 基础库 `1.18.0` 版本开始，小程序架的部分基础组件支持 aria 属性，可满足视障人士对于小程序的无障碍访问需求。
 
 ## 使用限制
-支持 aria 属性的小程序组件有：[view](/mini/component/view)、[text](/mini/component/text)、[icon](/mini/component/icon)、[button](/mini/component/button)、[label](/mini/component/label)、[checkbox](/mini/component/checkbox)、[switch](/mini/component/switch)、[image](/mini/component/image)、[radio](/mini/component/radio)。
+支持 aria 属性的小程序组件有：[view](https://opendocs.alipay.com/mini/component/view)、[text](https://opendocs.alipay.com/mini/component/text)、[icon](https://opendocs.alipay.com/mini/component/icon)、[button](https://opendocs.alipay.com/mini/component/button)、[label](https://opendocs.alipay.com/mini/component/label)、[checkbox](https://opendocs.alipay.com/mini/component/checkbox)、[switch](https://opendocs.alipay.com/mini/component/switch)、[image](https://opendocs.alipay.com/mini/component/image)、[radio](https://opendocs.alipay.com/mini/component/radio)。
 
 # 使用
 
@@ -64,7 +64,7 @@ aria-checked 表示 checkbox、switch 等组件是否被选中。聚焦到这些
   <text id="content">复选框内容</text>
 </label>
 ```
-若使用 [自定义组件](/mini/framework/custom-component-overview) 开发的 checkbox 、 switch 等组件，需要使用 aria-checked 属性，才能使得读屏软件获取组件选中状态。例如，一个自定义 checkbox 组件的 axml 示例代码：
+若使用 [自定义组件](https://opendocs.alipay.com/mini/framework/custom-component-overview) 开发的 checkbox 、 switch 等组件，需要使用 aria-checked 属性，才能使得读屏软件获取组件选中状态。例如，一个自定义 checkbox 组件的 axml 示例代码：
 ```html
 <view class="my-checkbox" role="checkbox" onTap="handleTap" aria-checked="{{checked}}" aria-labelledby="myCheckboxText">
   <icon type="{{checked ? 'success' : 'clear'}}" size="12"/>
