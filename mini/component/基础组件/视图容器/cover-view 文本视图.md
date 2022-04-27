@@ -1,9 +1,9 @@
 # 简介
-覆盖在原生组件之上的文本视图。可覆盖的原生组件包括 [map](component/map)、[canvas](component/canvas)。
+覆盖在原生组件之上的文本视图。可覆盖的原生组件包括 [map](https://opendocs.alipay.com/mini/component/map)、[canvas](https://opendocs.alipay.com/mini/component/canvas)。
 
 ## 使用限制
 
-- 版本要求基础库 1.10.0 及以上，若版本较低，建议做 [兼容处理](/mini/framework/compatibility)。
+- 版本要求基础库 1.10.0 及以上，若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 实际效果请以真机为准。
 
 ## 扫码体验
