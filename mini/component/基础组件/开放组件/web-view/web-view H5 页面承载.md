@@ -3,7 +3,7 @@
 
 web-view 可以打开的 H5 页面的域名限于开发者维护的 H5 域名白名单（开放平台控制台 > 小程序详情页 > 设置 > 开发设置 > H5域名配置），仅支持添加开发者可控制的域名。若 web-view 提示访问受限，可参考 [页面访问受限解决方案](https://opendocs.alipay.com/mini/component/access)。
 
-开发过程中遇到问题可查看 [web-view 常见问题](/mini/component/mg7rvg)。
+开发过程中遇到问题可查看 [web-view 常见问题](https://opendocs.alipay.com/mini/component/mg7rvg)。
 
 ## 使用限制
 
@@ -78,28 +78,28 @@ web-view 载入的 H5 页面可以使用手动引入 https://appx/web-view.min.j
 
 | **接口类别** | **接口名** | **描述** |
 | --- | --- | --- |
-| 导航栏 | [my.navigateTo](/mini/api/zwi8gx) | 保留当前页面，跳转到应用内的某个指定页面。 |
-| 导航栏 | [my.navigateBack](/mini/api/kc5zbx) | 关闭当前页面，返回上一级或多级页面。 |
-| 导航栏 | [my.switchTab](/mini/api/ui-tabbar) | 跳转到指定 tabBar 页面，并关闭其他所有非 tabBar 页面。 |
-| 导航栏 | [my.reLaunch](/mini/api/hmn54z) | 关闭当前所有页面，跳转到应用内的某个指定页面。 |
-| 导航栏 | [my.redirectTo](/mini/api/fh18ky) | 关闭当前页面，跳转到应用内的某个指定页面。 |
+| 导航栏 | [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx) | 保留当前页面，跳转到应用内的某个指定页面。 |
+| 导航栏 | [my.navigateBack](https://opendocs.alipay.com/mini/api/kc5zbx) | 关闭当前页面，返回上一级或多级页面。 |
+| 导航栏 | [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) | 跳转到指定 tabBar 页面，并关闭其他所有非 tabBar 页面。 |
+| 导航栏 | [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) | 关闭当前所有页面，跳转到应用内的某个指定页面。 |
+| 导航栏 | [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) | 关闭当前页面，跳转到应用内的某个指定页面。 |
 | 图片 | [my.chooseImage](https://opendocs.alipay.com/mini/api/media/image/my.chooseimage) | 拍照或从手机相册中选择图片（可将获取到的图片路径通过 `my.postMessage()` 将相关数据传递给小程序后进行图片上传）。 |
 | 图片 | [my.previewImage](https://opendocs.alipay.com/mini/api/media/image/my.previewimage) | 预览图片。 |
-| 位置 | [my.getLocation](/mini/api/mkxuqd) | 获取用户当前的地理位置信息。 |
-| 位置 | [my.openLocation](/mini/api/as9kin) | 使用支付宝内置地图查看位置。 |
-| 交互反馈 | [my.alert](/mini/api/ui-feedback) | 警告框。 |
-| 交互反馈 | [my.showLoading](/mini/api/bm69kb) | 显示加载提示。 |
-| 交互反馈 | [my.hideLoading](/mini/api/nzf540) | 隐藏加载提示。 |
-| 缓存 | [my.setStorage](/mini/api/eocm6v) | 将数据存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的数据。 |
-| 缓存 | [my.getStorage](/mini/api/azfobl) | 获取缓存数据。 |
-| 缓存 | [my.removeStorage](/mini/api/of9hze) | 删除缓存数据。 |
-| 缓存 | [my.clearStorage](/mini/api/storage) | 清除本地数据缓存。 |
-| 缓存 | [my.getStorageInfo](/mini/api/zvmanq) | 异步获取当前缓存的相关信息。 |
-| 网络状态 | [my.getNetworkType](/mini/api/network-status) | 获取当前网络状态。 |
+| 位置 | [my.getLocation](https://opendocs.alipay.com/mini/api/mkxuqd) | 获取用户当前的地理位置信息。 |
+| 位置 | [my.openLocation](https://opendocs.alipay.com/mini/api/as9kin) | 使用支付宝内置地图查看位置。 |
+| 交互反馈 | [my.alert](https://opendocs.alipay.com/mini/api/ui-feedback) | 警告框。 |
+| 交互反馈 | [my.showLoading](https://opendocs.alipay.com/mini/api/bm69kb) | 显示加载提示。 |
+| 交互反馈 | [my.hideLoading](https://opendocs.alipay.com/mini/api/nzf540) | 隐藏加载提示。 |
+| 缓存 | [my.setStorage](https://opendocs.alipay.com/mini/api/eocm6v) | 将数据存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的数据。 |
+| 缓存 | [my.getStorage](https://opendocs.alipay.com/mini/api/azfobl) | 获取缓存数据。 |
+| 缓存 | [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) | 删除缓存数据。 |
+| 缓存 | [my.clearStorage](https://opendocs.alipay.com/mini/api/storage) | 清除本地数据缓存。 |
+| 缓存 | [my.getStorageInfo](https://opendocs.alipay.com/mini/api/zvmanq) | 异步获取当前缓存的相关信息。 |
+| 网络状态 | [my.getNetworkType](https://opendocs.alipay.com/mini/api/network-status) | 获取当前网络状态。 |
 | 分享 | my.startShare | 分享当前页面,当执行my.startShare() 时会唤起当前小程序页面的分享功能。 |
-| 唤起支付 | [my.tradePay](/mini/api/openapi-pay) | 唤起支付（仅支持使用该 API 唤起支付，不支持使用 H5 进行支付） |
+| 唤起支付 | [my.tradePay](https://opendocs.alipay.com/mini/api/openapi-pay) | 唤起支付（仅支持使用该 API 唤起支付，不支持使用 H5 进行支付） |
 | 向小程序发送消息 | my.postMessage | 向小程序发送消息，自定义一组或多组 key 、 value 数据，格式为 JSON ，如：`my.postMessage({name:"测试web-view"})`。 |
-| 监听小程序发过来的消息 | my.onMessage | 监听小程序发过来的消息， [webview组件控制](/mini/api/webview-context)。 |
+| 监听小程序发过来的消息 | my.onMessage | 监听小程序发过来的消息， [webview组件控制](https://opendocs.alipay.com/mini/api/webview-context)。 |
 | 获取当前环境 | my.getEnv | 获取当前环境。 |
 
 
