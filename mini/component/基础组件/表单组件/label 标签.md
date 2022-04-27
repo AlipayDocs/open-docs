@@ -1,10 +1,9 @@
-
 # 简介
 用于改进表单组件的可用性。使用 for 属性找到对应组件的 id，或者将组件放在该标签下。当点击时，就会聚焦对应的组件。for 优先级高于内部组件，内部有多个组件的时候默认触发第一个组件。
 
 ## 使用限制
 label标签不支持onTap、catchTap等点击事件。
-目前可以绑定的组件有：[checkbox](component/checkbox)、[radio](component/radio)、[input](component/input)、[textarea](component/textarea)。
+目前可以绑定的组件有：[checkbox](https://opendocs.alipay.com/mini/component/checkbox)、[radio](https://opendocs.alipay.com/mini/component/radio)、[input](https://opendocs.alipay.com/mini/component/input)、[textarea](https://opendocs.alipay.com/mini/component/textarea)。
 
 ## 扫码体验
 ![|127x157](https://gw.alipayobjects.com/zos/skylark/80846e43-3df4-4711-aa73-04f4af3e70a5/2018/jpeg/a9c328e5-d510-4a26-8595-0cd380313c7c.jpeg#align=left&display=inline&height=1906&margin=%5Bobject%20Object%5D&originHeight=1906&originWidth=1540&status=done&style=none&width=128)
