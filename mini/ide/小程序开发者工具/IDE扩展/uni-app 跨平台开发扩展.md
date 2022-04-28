@@ -1,13 +1,12 @@
-
 # 简介
-uni-app 跨平台开发扩展支持在支付宝小程序开发者工具中将 uni-app 工程编译为微信、百度、字节跳动小程序。 请确保安装的是最新版本小程序开发者工具。
+uni-app 跨平台开发扩展支持在支付宝小程序开发者工具（IDE）中将 uni-app 工程编译为微信、百度、字节跳动小程序。 请确保安装的是最新版本 IDE。
 
 # 第一步 安装 uni-app 跨平台开发扩展
 完成以下操作，安装 uni-app 开发扩展： 
 
-1. 打开小程序开发者工具，选择 **扩展市场** > **uni-app**，点击 **安装**。
+1. 打开 IDE，选择 **扩展市场** > **uni-app**，点击 **安装**。
 ![|697x435](https://gw.alipayobjects.com/zos/skylark-tools/public/files/2c7bad3b2e98e7d0e46a1e35f11cdfea.jpeg?x-oss-process=image/resize,w_1500#align=left&display=inline&height=450&margin=%5Bobject%20Object%5D&originHeight=937&originWidth=1500&status=done&style=none&width=720)
-1. 安装完成后，单击启用。
+1. 安装完成后，点击 **启用**。
 ![|697x215](https://gw.alipayobjects.com/zos/skylark-tools/public/files/ac244999cdc8bb7c7c7a92b1b8f47ce2.jpeg#align=left&display=inline&height=222&margin=%5Bobject%20Object%5D&originHeight=380&originWidth=1230&status=done&style=none&width=720)
 
 # 第二步 开启微信小程序编译
@@ -20,7 +19,7 @@ uni-app 跨平台开发扩展支持在支付宝小程序开发者工具中将 un
    - MacOS：/Applications/wechatwebdevtools.app
    - Windows：C:/Program Files (x86)/Tencent/微信web开发者工具。**说明：**
       - 只有首次使用时需要配置 IDE 安装路径
-      - 微信开发者工具必须打开服务端口，否则无法唤醒IDE。详细信息，请参见：微信开发文档 - 工具 - 安全设置。![|641x187](https://cdn.nlark.com/yuque/0/2021/png/179989/1625552800860-2f96437a-1734-4970-9192-b1c647217ac2.png#align=left&display=inline&height=556&margin=%5Bobject%20Object%5D&name=1581329863986-f629796e-b5fd-4baa-b1cc-b402f51ecf7f.png&originHeight=556&originWidth=1908&size=220332&status=done&style=none&width=1908)
+      - 微信开发者工具必须打开服务端口，否则无法唤醒IDE。详细信息可查看 微信开发文档 - 工具 - 安全设置。![|641x187](https://cdn.nlark.com/yuque/0/2021/png/179989/1625552800860-2f96437a-1734-4970-9192-b1c647217ac2.png#align=left&display=inline&height=556&margin=%5Bobject%20Object%5D&name=1581329863986-f629796e-b5fd-4baa-b1cc-b402f51ecf7f.png&originHeight=556&originWidth=1908&size=220332&status=done&style=none&width=1908)
 3. 点击 **开始编译**。编译后，若 IDE 路径配置正确，并自动打开微信小程序 IDE，并加载编译后的微信小程序产物。
 
 # 第三步 开启字节跳动编译
