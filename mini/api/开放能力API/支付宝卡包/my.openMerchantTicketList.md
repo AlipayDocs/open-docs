@@ -1,8 +1,7 @@
-
 # 简介
 **my.openMerchantTicketList** 是打开某个商户的票列表的 API。
 
-有关支付宝卡包详细功能，参见 [支付宝卡包产品介绍](introduce/voucher)。
+有关支付宝卡包详细功能，可查看 [支付宝卡包产品介绍](https://opendocs.alipay.com/mini/introduce/voucher)。
 
 支付宝特色 API，支持 my.ap.openMerchantTicketList 调用。
 
@@ -20,9 +19,9 @@ my.openMerchantTicketList({partnerId:'2088xxxx'});
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | partnerId | String | 是 | 商户编号，即商户 PID。 |
 
