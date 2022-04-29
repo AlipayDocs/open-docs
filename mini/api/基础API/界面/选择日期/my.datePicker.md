@@ -11,11 +11,8 @@
 
 # 接口调用
 
-## Herbox
-
-[小程序在线](https://herbox-embed.alipay.com/s/doc-date-picker?theme=light&previewZoom=75&chInfo=openhome-doc) 
-
-## 示例代码
+## 示例
+[小程序在线](https://opendocs.alipay.com/examples/eccf6b98-6a66-4584-8c36-2020d618b6a9) 
 
 ### .json 示例代码
 
