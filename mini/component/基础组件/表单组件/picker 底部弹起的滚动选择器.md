@@ -11,10 +11,9 @@
 
 # 使用
 
-## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-picker?theme=light&previewZoom=75&chInfo=openhome-doc) 
+## 示例
 
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/0fd1591a-cd48-4cb3-85dc-18e68ca30223) 
 
 ### .axml 示例代码
 ```html
