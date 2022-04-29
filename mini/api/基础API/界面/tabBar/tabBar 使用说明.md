@@ -53,4 +53,4 @@
   }
 }
 ```
-代码中，开发者可以通过 [my.setTabBarItem](https://opendocs.alipay.com/mini/006l0a) 动态设置 tabBar 中指定 item 的内容。
+代码中，开发者可以通过 [my.setTabBarItem](https://opendocs.alipay.com/mini/api/zu37bk) 动态设置 tabBar 中指定 item 的内容。
