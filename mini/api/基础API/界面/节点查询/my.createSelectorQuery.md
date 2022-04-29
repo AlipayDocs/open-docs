@@ -1,24 +1,27 @@
-
 # 简介
+
 **my.createSelectorQuery** 是用于返回一个 SelectorQuery 对象实例的 API。
 
 ## 使用限制
 
-- 基础库 [1.4.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端  10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
-- `my.createSelectorQuery()` 检测渲染层上的所有节点。要限定检测范围，推荐使用 `this.createSelectorQuery()`。详情请参见 [页面运行机制](https://opendocs.alipay.com/mini/framework/page-detail#Page.prototype.createSelectorQuery)。
+- 基础库 [1.4.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端  10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- `my.createSelectorQuery()` 检测渲染层上的所有节点。要限定检测范围，推荐使用 `this.createSelectorQuery()`。详情可查看 [页面运行机制](https://opendocs.alipay.com/mini/framework/page-detail#Page.prototype.createSelectorQuery)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/2acd429bacf285e962c28166b6c60b82.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
 
 # 接口调用
 
 ## Herbox
+
 [小程序在线](https://herbox-embed.alipay.com/s/doc-create-selector-query?theme=light&previewZoom=75&chInfo=openhome-doc) 
 
 ## 示例代码
 
 ### .axml 示例代码
+
 ```html
 <!-- API-DEMO page/API/create-selector-query/create-selector-query.axml-->
 <view class="page">
