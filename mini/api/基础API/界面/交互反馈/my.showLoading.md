@@ -77,7 +77,7 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | content | String | 否 | 提示中的文字内容。 |
-| delay | Number | 否 | 延迟显示，单位为毫秒（ms），默认值为 0。<br />如果在此时间之前调用了 [my.hideLoading](https://opendocs.alipay.com/mini/006l22) 则不会显示。 |
+| delay | Number | 否 | 延迟显示，单位为毫秒（ms），默认值为 0。<br />如果在此时间之前调用了 **my.hideLoading** 则不会显示。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
