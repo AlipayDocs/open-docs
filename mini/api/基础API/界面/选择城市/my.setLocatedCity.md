@@ -1,5 +1,5 @@
 # 简介
-**my.setLocatedCity** 是用于修改 [my.chooseCity](https://opendocs.alipay.com/mini/006l3p) 中的默认定位城市的名称的 API。
+**my.setLocatedCity** 是用于修改 [my.chooseCity](https://opendocs.alipay.com/mini/api/ui-city) 中的默认定位城市的名称的 API。
 
 ## 使用限制
 
@@ -289,7 +289,6 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- |
 | locatedCityName | String | 当前定位城市的名称。 |
 
-
 ### Function fail
 
 fail 回调函数会携带一个 Object 类型的对象，其属性如下：
@@ -299,11 +298,9 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 | error | Number | 错误码。 |
 | errorMessage | String | 错误描述。 |
 
-
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 11 | 参数类型错误。 | 检查参数类型是否正确。 |
 | 12 | 必填参数为空。 | 请确认参数   locatedCityId、locatedCityName 是否已填写。 |
-| 13 | locatedCityId 不匹配。 | 请确保与 [my.chooseCity](https://opendocs.alipay.com/mini/006l3p)接口的 onLocatedComplete 的 locatedCityId 保持一致。 |
-
+| 13 | locatedCityId 不匹配。 | 请确保与 **my.chooseCity** 的 onLocatedComplete 的 locatedCityId 保持一致。 |
