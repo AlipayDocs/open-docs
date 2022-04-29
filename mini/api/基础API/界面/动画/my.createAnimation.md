@@ -1,6 +1,6 @@
 # 简介
 
-**my.createAnimation** 是用于创建动画实例 [animation](https://opendocs.alipay.com/api/ui-animation#animation) 的 API。调用实例的方法来描述动画，最后通过动画实例的 `export` 方法将动画数据导出并传递给组件的 `animation` 属性。
+**my.createAnimation** 是用于创建动画实例 [animation](https://opendocs.alipay.com/mini/api/ui-animation#animation) 的 API。调用实例的方法来描述动画，最后通过动画实例的 `export` 方法将动画数据导出并传递给组件的 `animation` 属性。
 
 ## 使用限制
 
