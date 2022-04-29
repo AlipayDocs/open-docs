@@ -14,11 +14,9 @@
 
 # 接口调用
 
-## Herbox
+## 示例
 
-[小程序在线](https://herbox-embed.alipay.com/s/doc-get-system-info?theme=light&previewZoom=75&chInfo=openhome-doc) 
-
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/e8058a45-89da-4dcb-8a7d-48f3d0640b95) 
 
 ### .json 示例代码
 
