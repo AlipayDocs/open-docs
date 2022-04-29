@@ -14,11 +14,7 @@
 
 # 接口调用
 
-## Herbox
-
-[小程序在线](https://herbox-embed.alipay.com/s/doc-api-navigator?theme=light&previewZoom=75&chInfo=openhome-doc) 
-
-## 示例代码
+## 示例
 
 ### .js 示例代码
 ```javascript
