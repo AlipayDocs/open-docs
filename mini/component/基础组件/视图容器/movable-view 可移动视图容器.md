@@ -12,10 +12,9 @@
 
 # 使用
 
-## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-movable-view?theme=light&previewZoom=75&chInfo=openhome-doc) 
+## 示例
 
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/feb2372d-8cde-4c45-813e-dceb72240e0d) 
 
 ### .json 示例代码
 ```json
