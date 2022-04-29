@@ -1,30 +1,34 @@
 # 简介
-**my.request** 是用于发起网络请求的 API。
-
-更多问题请参见 [my.request 常见问题](https://opendocs.alipay.com/mini/00hxw8)。
+**my.request** 是用于发起 HTTPS 网络请求的 API。
 
 ## 使用限制
 
-- my.request 目前支持 GET/POST/PUT/DELETE（其中 PUT 和 DELETE 请求在支付宝客户端 10.1.95 或更高版本支持）。
+### 协议 / 方法
+
 - my.request 目前只支持 HTTPS 协议的请求。
+- my.request 目前支持 GET/POST/PUT/DELETE（其中 PUT 和 DELETE 请求在支付宝客户端 10.1.95 或更高版本支持）。
 - **基础库** [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；**支付宝客户端** 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-> 请预先在 [**支付宝小程序管理中心**](https://open.alipay.com/mini/dev/list) **> 小程序详情 > 设置 > 开发设置 > 服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTP 请求（my.request）、上传文件（my.uploadFile）。
->
-> ![|706x73](https://mdn.alipayobjects.com/afts/img/A*xM4NR6VRbfwccJpPkvUyrwBkAa8wAA/original?bz=openpt_doc&t=up10AFIkdB4BgOJNk-44NgAAAABkMK8AAAAA#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&originHeight=168&originWidth=1624&status=done&style=none&width=1624)
->
-> **注意**：域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。
->
-> 在 IDE 上进行调试时，请使用真机预览调试。
->
-> 支付宝客户端已不再维护 [my.httpRequest](https://opendocs.alipay.com/support/01rb31#my.request%20%E4%B8%8E%20my.httpRequest%20%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F)，建议使用 my.request。另外，钉钉客户端尚不支持 my.request。若在钉钉客户端开发小程序，则需要使用 my.httpRequest。
+### 域名白名单
+
+- 请先在 [**支付宝小程序管理中心**](https://open.alipay.com/mini/dev/list) **> 小程序详情 > 设置 > 开发设置 > 服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTPS 请求（my.request）、上传文件（my.uploadFile）。
+
+![|706x73](https://mdn.alipayobjects.com/afts/img/A*xM4NR6VRbfwccJpPkvUyrwBkAa8wAA/original?bz=openpt_doc&t=up10AFIkdB4BgOJNk-44NgAAAABkMK8AAAAA#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&originHeight=168&originWidth=1624&status=done&style=none&width=1624)
+
+- **注意**：域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。
+
+### IDE / 多端
+
+- 在 IDE 上进行调试时，请使用真机预览调试。
+
+- 支付宝客户端已不再维护 [my.httpRequest](https://opendocs.alipay.com/support/01rb31#my.request%20%E4%B8%8E%20my.httpRequest%20%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F)，建议使用 my.request。另外，钉钉客户端尚不支持 my.request。若在钉钉客户端开发小程序，则需要使用 my.httpRequest。
 
 ## 扫码体验
 ![|175x216](https://gw.alipayobjects.com/zos/skylark-tools/public/files/cedb01a73389c4346ed7c8c72de928a0.jpeg#align=left&display=inline&height=216&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=175)
 
 **重要：**
 
-- 小程序开发过程中，可在开发工具内 **详情 > 域名信息 > 忽略 http 请求域名合法性检查** 中选择是否忽略域名合法性检查，如果选择忽略，则在模拟器、预览以及真机调试场景不会校验域名合法性，但小程序上线前必须确保通讯域名在白名单内，否则在正式版本无法调用。
+- 小程序开发过程中，可在开发工具内 **详情 > 域名信息 > 忽略 HTTP 请求域名合法性检查** 中选择是否忽略域名合法性检查，如果选择忽略，则在模拟器、预览以及真机调试场景不会校验域名合法性，但小程序上线前必须确保所请求的域名在域名白名单内，否则在正式版本无法调用。
 - my.request 的请求头默认值为 {'content-type': 'application/json'}，而不是 {'content-type': 'application/x-www-form-urlencoded'}。此外，请求头对象里面的 key 和 value 必须是 String 类型。
 
 # 接口调用
@@ -109,32 +113,30 @@ my.request({
 ```javascript
 // .js
 my.request({
-      url: 'https://lb-bp1ex83f422co.sec.cloud.alipay.com/delete',
-      method: 'DELETE',
-      data: {
-        from: '支付宝',
-        production: 'AlipayJSAPI',
-      },
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      dataType: 'json',
-      responseType: 'text',
-      responseCharset:'utf-8',
-      success: function(res) {
-        console.log("正常请求" + JSON.stringify(res))
-        my.alert({
-          content: "正常请求" + JSON.stringify(res)
-        })
-      },
-      fail: function(res) {
-        my.alert({
-          content: "请求fail" + JSON.stringify(res)
-        })
-      },
-      complete: function(res) {
-      }
-});
+  url: "https://httpbin.org/delete",
+  method: "DELETE",
+  data: {
+    from: "支付宝",
+    production: "AlipayJSAPI",
+  },
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded",
+  },
+  dataType: "json",
+  success: function (res) {
+    console.log("正常请求" + JSON.stringify(res))
+    my.alert({
+      content: "正常请求" + JSON.stringify(res),
+    })
+  },
+  fail: function (res) {
+    my.alert({
+      content: "请求fail" + JSON.stringify(res),
+    })
+  },
+  complete: function (res) {},
+})
+
 ```
 
 ## 入参
@@ -198,8 +200,6 @@ Object 类型，属性如下：
 | text | 返回的内容格式不符。 |
 | base64 | 转换失败。 |
 
-![|723x75](https://mdn.alipayobjects.com/afts/img/A*vtR5Q7ttYyiX9VBLv1JmVQBkAa8wAA/original?bz=openpt_doc&t=fATCX_-7I4pcMKAl6pUhJAAAAABkMK8AAAAA#align=left&display=inline&height=83&margin=%5Bobject%20Object%5D&originHeight=83&originWidth=800&status=done&style=stroke&width=800)
-
 ## 返回值 RequestTask
 网络请求任务对象。调用 `my.request` 后返回的请求对象。
 
@@ -212,3 +212,4 @@ Object 类型，属性如下：
 const task = my.request({url: 'https://httpbin.org/post'})
 task.abort();
 ```
+
