@@ -1,6 +1,6 @@
 # 简介
 
-**my.hideLoading** 是隐藏加载提示的过渡效果的 API，可与 [my.showLoading](https://opendocs.alipay.com/mini/006l2f) 配合使用。
+**my.hideLoading** 是隐藏加载提示的过渡效果的 API，可与 [my.showLoading](https://opendocs.alipay.com/mini/api/bm69kb) 配合使用。
 
 ## 使用限制
 
@@ -30,4 +30,9 @@ Page({
 
 ## 入参
 Object 类型，参数如下：
-
+| **参数** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| page | Object | 否 | 具体指当前 page 实例，某些场景下，需要指明在哪个 page 执行 hideLoading。 |
+| success | Function | 否 | 调用成功的回调函数。 |
+| fail | Function | 否 | 调用失败的回调函数。 |
+| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
