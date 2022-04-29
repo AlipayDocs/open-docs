@@ -7,10 +7,9 @@
 
 # 使用
 
-## Herbox
-[小程序在线](https://opendocs.alipay.com/examples/4ba7cd59-c4b5-4877-ba85-299e460ee87d) 
+## 示例
 
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/4ba7cd59-c4b5-4877-ba85-299e460ee87d) 
 
 ### .axml 示例代码
 ```html
