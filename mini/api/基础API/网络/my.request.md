@@ -3,12 +3,6 @@
 
 ## 使用限制
 
-### 协议 / 方法
-
-- my.request 目前只支持 HTTPS 协议的请求。
-- my.request 目前支持 GET/POST/PUT/DELETE（其中 PUT 和 DELETE 请求在支付宝客户端 10.1.95 或更高版本支持）。
-- **基础库** [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；**支付宝客户端** 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 ### 域名白名单
 
 - 请先在 [**支付宝小程序管理中心**](https://open.alipay.com/mini/dev/list) **> 小程序详情 > 设置 > 开发设置 > 服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTPS 请求（my.request）、上传文件（my.uploadFile）。
@@ -17,6 +11,12 @@
 
 - **注意**：域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。
 
+### 协议 / 方法
+
+- my.request 目前只支持 HTTPS 协议的请求。
+- my.request 目前支持 GET/POST/PUT/DELETE（其中 PUT 和 DELETE 请求在支付宝客户端 10.1.95 或更高版本支持）。
+- **基础库** [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；**支付宝客户端** 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 ### IDE / 多端
 
 - 在 IDE 上进行调试时，请使用真机预览调试。
@@ -160,6 +160,7 @@ Object 类型，属性如下：
 - 若方法为 `GET`，会将数据转换成 query string： `encodeURIComponent(k)=encodeURIComponent(v)&encodeURIComponent(k)=encodeURIComponent(v)...`。
 - 若方法为 `POST` 且 `headers['content-type']` 为 `application/json` ，会对数据进行 JSON 序列化。
 - 若方法为 `POST` 且 `headers['content-type']` 为 `application/x-www-form-urlencoded` ，会将数据转换成 query string： `encodeURIComponent(k)=encodeURIComponent(v)&encodeURIComponent(k)=encodeURIComponent(v)...`。
+- 请求头的默认值为 {'content-type': 'application/json'}，而不是 {'content-type': 'application/x-www-form-urlencoded'}。
 
 ### referer 说明
 网络请求的 `referer` Header 不可设置。
