@@ -8,10 +8,9 @@
 
 # 使用
 
-## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-canvas?theme=light&previewZoom=75&chInfo=openhome-doc) 
+## 示例
 
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/14e91d68-3c09-43ce-8904-0fb8f04dbd7b) 
 
 ### Canvas2D
 ```javascript
