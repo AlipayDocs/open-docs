@@ -59,4 +59,4 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 ## Q：如何隐藏 my.prompt 的输入框？
 
-A：不支持隐藏，若仅需弹出对话框，可使用 [my.alert](https://opendocs.alipay.com/mini/006l1v)。
+A：不支持隐藏，若仅需弹出对话框，可使用 [my.alert](https://opendocs.alipay.com/mini/api/ui-feedback)。
