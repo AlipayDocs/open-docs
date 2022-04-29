@@ -2,7 +2,7 @@
 
 **my.removeTabBarBadge** 是移除标签页（tabbar）某一项右上角的文本的 API。
 
-相关问题可查看 [tabBar 常见问题](https://opendocs.alipay.com/mini/006l0v)。
+相关问题可查看 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
 
 ## 使用限制
 
@@ -32,4 +32,3 @@ Object 类型，参数如下：
 | success | Function | 否 | 接口调用成功的回调函数。 |
 | fail | Function | 否 | 接口调用失败的回调函数。 |
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
-
