@@ -1,5 +1,5 @@
-
 # 简介
+
 **MapContext.getSkew** 用于获取当前地图的倾斜角。
 
 ## 使用限制
@@ -12,6 +12,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // .js
 this.mapCtx = my.createMapContext('map');
@@ -22,8 +23,19 @@ this.mapCtx.getSkew({
 });
 ```
 
-## 出参
+## 入参
+
+Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| success | Function | 否 | 调用成功的回调函数。 |
+
+### Function success
+
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| skew | Number | 倾斜角。取值范围为 0~60°。 |
+| skew | Number | 倾斜角。取值范围为 0 ~ 60°。 |
 
