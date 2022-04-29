@@ -1,13 +1,13 @@
 # 简介
 **my.navigateTo** 是从当前页面，跳转到应用内的某个指定页面的 API。
 
-相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/006l1n) 。
+相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/api/fu8l65) 。
 
 ## 使用限制
 
-- 可使用 [my.navigateBack](https://opendocs.alipay.com/mini/006l1j) 返回到原来页面。
+- 可使用 [my.navigateBack](https://opendocs.alipay.com/mini/api/kc5zbx) 返回到原来页面。
 - 小程序中页面栈最多十层。
-- my.navigateTo 和 [my.redirectTo](https://opendocs.alipay.com/mini/006l1b) 不允许跳转到选项卡（tabbar）页面；若需跳转到 tabbar 页面，请使用 [my.switchTab](https://opendocs.alipay.com/mini/006l13)。
+- my.navigateTo 和 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 不允许跳转到选项卡（tabbar）页面；若需跳转到 tabbar 页面，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -116,11 +116,10 @@ Object 类型，参数如下：
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 | events | Object | 否 | 定义页面间通信的事件（接受被打开页面的数据）。基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 |
 
-
 ### Function success
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| eventChannel | [EventChannel](https://opendocs.alipay.com/mini/02dcov) | 和被打开页面进行通信。基础库 [2.7.7 ](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 |
+| eventChannel | [EventChannel](https://opendocs.alipay.com/mini/api/eventchannel) | 和被打开页面进行通信。基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 |
 
