@@ -1,6 +1,8 @@
 # 简介
 **my.request** 是用于发起 HTTPS 网络请求的 API。
 
+更多问题请参见 [my.request 常见问题](https://opendocs.alipay.com/mini/00hxw8)。
+
 ## 使用限制
 
 ### 域名白名单
@@ -213,4 +215,3 @@ Object 类型，属性如下：
 const task = my.request({url: 'https://httpbin.org/post'})
 task.abort();
 ```
-
