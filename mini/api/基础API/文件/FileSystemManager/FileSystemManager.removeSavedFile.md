@@ -1,4 +1,3 @@
-
 # 简介
 **FileSystemManager.removeSavedFile** 删除该小程序下已保存的本地缓存文件。
 
@@ -6,25 +5,29 @@
 
 - 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，参见 [接入准备](https://opendocs.alipay.com/mini/02pk4y) 。
+- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，可查看 [接入准备](https://opendocs.alipay.com/mini/02pk4y) 。
 
 # 接口调用
 
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 let fs = my.getFileSystemManager();
 fs.removeSavedFile({
   filePath: `${my.env.USER_DATA_PATH}/test.txt`,
   success: (res) => {
-		console.log("删除成功");
+    console.log("删除成功");
   }
 });
 ```
 
 ## 入参
-| **属性** | **类型** | **必填** | **描述** |
+
+Object 类型，参数如下：
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | filePath | String | 是 | 需要删除的文件路径。 |
 | success | Function | 否 | 调用成功的回调函数。 |
@@ -33,9 +36,8 @@ fs.removeSavedFile({
 
 
 ## 错误码
-| **错误码** | **说明** |
+| **错误码** | **描述** |
 | --- | --- |
 | 10022 | 文件不存在。 |
 | 10024 | 指定路径没有写权限。 |
 | 15 | 删除文件失败。 |
-
