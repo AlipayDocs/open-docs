@@ -2,7 +2,7 @@
 
 **onTabItemTap** 是切换标签（tab）时触发，可用于监听 tabBar 的点击事件。
 
-相关问题可查看 [tabBar 常见问题](https://opendocs.alipay.com/mini/006l0v)。
+相关问题可查看 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
 
 ## 使用限制
 
