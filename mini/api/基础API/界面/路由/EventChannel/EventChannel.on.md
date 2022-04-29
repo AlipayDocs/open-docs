@@ -12,7 +12,7 @@
 
 ### .js 示例代码
 
-**发起** [my.navigateTo](https://opendocs.alipay.com/mini/006l1f) **调用的页面**：
+**发起** [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx) **调用的页面**：
 
 在 `my.navigateTo` 调用中的 `events` 参数挂载需要持续监听的事件：
 
