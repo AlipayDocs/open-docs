@@ -16,11 +16,9 @@
 
 # 接口调用
 
-## Herbox
+## 示例
 
-[小程序在线](https://herbox-embed.alipay.com/s/doc-api-navigator?theme=light&previewZoom=75&chInfo=openhome-doc) 
-
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/54f22bf0-aa24-4679-9dc7-6187b2f1f978) 
 
 ### .json 示例代码
 tabBar item 配置示例：
