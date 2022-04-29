@@ -66,8 +66,8 @@ scopes 可传入单个 scope 名称（如 "auth_base"），也可传入包含多
 
 | **scopes** | **描述** | **包含的服务端 API 接口** |
 | --- | --- | --- |
-| auth_base | 静默授权，不会弹出授权浮窗。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4)（换取授权访问令牌接口）获取支付宝会员标识（user_id）。 | alipay.system.oauth.token |
-| auth_user | 主动授权，弹出授权浮窗，需要用户手动点击同意。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4) 换取授权访问令牌，然后调用  [alipay.user.info.share](https://opendocs.alipay.com/open/02dvf6) （支付宝会员授权信息查询接口）获取用户授权信息。| alipay.system.oauth.token alipay.user.info.share
+| auth_base | 授权获取用户唯一标识和授权访问令牌。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4)（换取授权访问令牌接口）获取支付宝会员标识（user_id）。此参数不会弹出授权浮窗。 | alipay.system.oauth.token |
+| auth_user | 授权获取支付宝会员信息。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4) 换取授权访问令牌，然后调用  [alipay.user.info.share](https://opendocs.alipay.com/open/02dvf6) （支付宝会员授权信息查询接口）获取用户已授权的信息。| alipay.system.oauth.token alipay.user.info.share
 
 ### Function success
 
