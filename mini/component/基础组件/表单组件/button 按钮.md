@@ -1,4 +1,3 @@
-
 # 简介
 需要重点强调该操作并且引导用户去点击的入口通过按钮表达。
 
@@ -113,10 +112,10 @@ button + button {
 | hover-class | String | 按钮按下去的样式类。`button-hover` 默认为 `{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}，hover-class="none"` 时表示没有被点击效果。<br />**默认值：** button-hover |
 | hover-start-time | Number | 按住后多少时间后出现点击状态，单位毫秒。<br />**默认值：** 20 |
 | hover-stay-time | Number | 手指松开后点击状态保留时间，单位毫秒。<br />**默认值：** 70 |
-| hover-stop-propagation | Boolean | 是否阻止当前元素的祖先元素出现被点击样式。<br />**默认值：** false<br />**版本要求：** 基础库 [1.10.0](/mini/framework/compatibility) 及以上 |
-| form-type | String | 有效值：submit、 reset，用于 [form 表单](/mini/component/form) 组件，点击分别会触发 submit/reset 事件。 |
-| open-type | String | 开放能力。<br />**版本要求：** 基础库 [1.1.0](/mini/framework/compatibility) 及以上 |
-| scope | String | 当 open-type 为 getAuthorize 时有效。<br />**版本要求：** 基础库 [1.11.0](/mini/framework/compatibility) 及以上 |
+| hover-stop-propagation | Boolean | 是否阻止当前元素的祖先元素出现被点击样式。<br />**默认值：** false<br />**版本要求：** 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| form-type | String | 有效值：submit、 reset，用于 [form 表单](https://opendocs.alipay.com/mini/component/form) 组件，点击分别会触发 submit/reset 事件。 |
+| open-type | String | 开放能力。<br />**版本要求：** 基础库 [1.1.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| scope | String | 当 open-type 为 getAuthorize 时有效。<br />**版本要求：** 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | onTap | EventHandle | 点击。<br />**说明：** 每点击一次会触发一次事件，建议自行使用代码防止重复点击,可以使用 js 防抖和节流实现。 |
 | public-id | String | 生活号 id，必须是当前小程序同主体且已关联的生活号，`open-type="lifestyle"` 时有效。 |
 | onGetAuthorize | EventHandle | 当 open-type 为 getAuthorize 时有效。<br />当授权成功时触发。<br />**版本要求**：基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
@@ -127,11 +126,10 @@ button + button {
 ###  open-type 有效值
 | **属性** | **描述** |
 | --- | --- |
-| share | 触发 [自定义分享](/mini/introduce/share)，可使用 [my.canIUse](/mini/api/can-i-use)('button.open-type.share') 判断。<br />**版本要求**：基础库 [1.1.0](/mini/framework/compatibility) 及以上 |
-| getAuthorize | 支持小程序授权，可使用 [my.canIUse](/mini/api/can-i-use)('button.open-type.getAuthorize') 判断。<br />**版本要求**：基础库 [1.11.0](/mini/framework/compatibility) 及以上 |
-| contactShare | 分享到通讯录好友，可使用 [my.canIUse](/mini/api/can-i-use)('button.open-type.contactShare') 判断。<br />**版本要求**：基础库 [1.11.0](/mini/framework/compatibility) 及以上 |
-| lifestyle | [关注生活号](/mini/introduce/bntnry)，可使用 [my.canIUse](/mini/api/can-i-use)('button.open-type.lifestyle') 判断。<br />**版本要求**：基础库 [1.11.0](/mini/framework/compatibility) 及以上 |
-
+| share | 触发 [自定义分享](/mini/introduce/share)，可使用 [my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)('button.open-type.share') 判断。<br />**版本要求**：基础库 [1.1.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| getAuthorize | 支持小程序授权，可使用 `my.canIUse('button.open-type.getAuthorize')` 判断。<br />**版本要求**：基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| contactShare | 分享到通讯录好友，可使用 `my.canIUse('button.open-type.contactShare')` 判断。<br />**版本要求**：基础库 **1.11.0** 及以上 |
+| lifestyle | [关注生活号](/mini/introduce/bntnry)，可使用 `my.canIUse('button.open-type.lifestyle')` 判断。<br />**版本要求**：基础库 **1.11.0** 及以上 |
 
 ###  scope 有效值
 当 open-type 为 getAuthorize 时，可以设置 scope 为以下值：
@@ -155,7 +153,7 @@ button + button {
 
 # 相关文档
 
-- [contact-button 智能客服](https://opendocs.alipay.com/mini/component/contact-button)<br />
-- [my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)<br />
-- [my.getPhoneNumber](https://opendocs.alipay.com/mini/api/getphonenumber)<br />
-- [my.getOpenUserInfo](https://opendocs.alipay.com/mini/api/ch8chh)<br />
+- [contact-button 智能客服](https://opendocs.alipay.com/mini/component/contact-button)
+- [my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)
+- [my.getPhoneNumber](https://opendocs.alipay.com/mini/api/getphonenumber)
+- [my.getOpenUserInfo](https://opendocs.alipay.com/mini/api/ch8chh)
