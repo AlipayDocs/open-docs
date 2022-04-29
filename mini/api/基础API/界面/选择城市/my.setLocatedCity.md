@@ -11,12 +11,9 @@
 ![|127x157](https://mdn.alipayobjects.com/afts/img/A*uGCmRImDNksAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=4XIxqvsosH7EjPo-LvzPMgAAAABkMK8AAAAA#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
 
 # 接口调用
+## 示例
 
-## Herbox
-
-[小程序在线](https://herbox-embed.alipay.com/s/doc-choose-city?theme=light&previewZoom=75&chInfo=openhome-doc) 
-
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/156c8058-9de0-4016-bd5c-0999188202a0) 
 
 ### .axml 示例代码
 
