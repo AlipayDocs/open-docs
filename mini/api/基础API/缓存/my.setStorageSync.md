@@ -21,11 +21,8 @@
 
 # 接口调用
 
-## Herbox
-
-[小程序在线](https://herbox-embed.alipay.com/s/doc-storage?&chInfo=openhome-doc) 
-
-## 示例代码
+## 示例
+[小程序在线](https://opendocs.alipay.com/examples/e4f97280-1e31-4262-a4ee-498a786dd4a0) 
 
 ### .js 示例代码
 
