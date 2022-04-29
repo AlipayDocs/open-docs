@@ -9,10 +9,9 @@ checkbox 不支持修改选中的背景颜色样式。
 
 # 使用
 
-## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-checkbox?theme=light&previewZoom=75&chInfo=openhome-doc) 
+## 示例
 
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/1f7b18aa-c290-47f0-ae3a-84f11413c0b4)
 
 ### .axml 示例代码
 ```html
