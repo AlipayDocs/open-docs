@@ -1,7 +1,7 @@
 # 简介
 **onPullDownRefresh** 是用于在 Page 中自定义 onPullDownRefresh 函数，可以监听该页面的下拉刷新事件。
 
-调用 [my.startPullDownRefresh](https://opendocs.alipay.com/mini/006l2u) 后触发下拉刷新动画，然后会触发 onPullDownRefresh 监听方法，效果与用户手动下拉刷新一致。但 **my.startPullDownRefresh** 不受 onPullDownRefresh 的 `allowsBounceVertical` 、`pullRefresh` 参数影响。
+调用 [my.startPullDownRefresh](https://opendocs.alipay.com/mini/api/ui-pulldown) 后触发下拉刷新动画，然后会触发 onPullDownRefresh 监听方法，效果与用户手动下拉刷新一致。但 **my.startPullDownRefresh** 不受 onPullDownRefresh 的 `allowsBounceVertical` 、`pullRefresh` 参数影响。
 
 ## 使用限制
 
