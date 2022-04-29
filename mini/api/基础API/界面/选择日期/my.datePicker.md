@@ -100,7 +100,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| format | String | 否 | 返回的日期格式。<br /><ul><li>yyyy-MM-dd（默认）。</li><li>HH:mm 。</li><li>yyyy-MM-dd HH:mm 。</li><li>yyyy-MM（最低基础库版本：[1.1.1](https://opendocs.alipay.com/framework/compatibility)，可通过 `canIUse('datePicker.object.format.yyyy-MM')` 判断）。</li><li>yyyy（最低基础库版本：<b>1.1.1</b>，可通过 `canIUse('datePicker.object.format.yyyy')` 判断）。</li></ul> |
+| format | String | 否 | 返回的日期格式。<br /><ul><li>yyyy-MM-dd（默认）。</li><li>HH:mm 。</li><li>yyyy-MM-dd HH:mm 。</li><li>yyyy-MM（最低基础库版本：[1.1.1](https://opendocs.alipay.com/mini/framework/compatibility)，可通过 `canIUse('datePicker.object.format.yyyy-MM')` 判断）。</li><li>yyyy（最低基础库版本：<b>1.1.1</b>，可通过 `canIUse('datePicker.object.format.yyyy')` 判断）。</li></ul> |
 | currentDate | String | 否 | 初始选择的日期时间，默认当前时间。 |
 | startDate | String | 否 | 最小日期时间。 |
 | endDate | String | 否 | 最大日期时间。 |
@@ -122,4 +122,3 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 11 | 用户取消操作。 | 这是用户正常交互流程分支，不需要特殊处理。 |
-
