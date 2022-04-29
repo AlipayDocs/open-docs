@@ -8,11 +8,9 @@
 
 # 接口调用
 
-## Herbox
-
-[小程序在线](https://herbox-embed.alipay.com/s/doc-get-title-color?theme=light&previewZoom=75&chInfo=openhome-doc) 
-
 ## 示例代码
+
+[小程序在线](https://opendocs.alipay.com/examples/e8797275-4ed8-48ce-8d15-da107782c8ae) 
 
 ### .json 示例代码
 ```json
