@@ -216,4 +216,5 @@ Page({
 将这两个模块嵌入到一个循环里面，每一个循环的小模块加一个类型值进行标识。
 
 ### 页面滚动时在不同屏幕滚动到的位置不同，如何解决？
-可使用 [my.pageScrollTo](https://opendocs.alipay.com/mini/api/scroll) 的 selector 选择，给需要滚动的元素定义一个 id 或者 class，打开页面后会自动滚动到该元素位置。 
+可使用 [my.pageScrollTo](https://opendocs.alipay.com/mini/api/scroll) 的 selector 选择，给需要滚动的元素定义一个 id 或者 class，打开页面后会自动滚动到该元素位置。
+
