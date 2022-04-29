@@ -5,7 +5,7 @@
 
 通过页面跳转（[my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx)）或者页面重定向（[my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky)）所到达的页面，即使是定义在标签页配置中的页面，也不会显示底部的标签栏。标签页的第一个页面必须是首页。
 
-相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/006l1n) 。
+相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/api/fu8l65) 。
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
@@ -87,7 +87,6 @@ Object 类型，参数如下：
 | selectedColor | HexColor | 否 | 选中文字颜色。 |
 | backgroundColor | HexColor | 否 | 背景色。 |
 | items | Array | 是 | 每个标签（tab）配置。 |
-
 
 ### item 配置
 | **属性** | **类型** | **必填** | **描述** |
