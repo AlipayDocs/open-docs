@@ -1,7 +1,7 @@
 # 简介
 **my.navigateBack** 是关闭当前页面，返回上一级或多级页面的 API。可通过 [Page.getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 获取当前的页面栈信息，决定需要返回几层。
 
-相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/006l1n) 。
+相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/api/fu8l65) 。
 
 
 ## 使用限制
