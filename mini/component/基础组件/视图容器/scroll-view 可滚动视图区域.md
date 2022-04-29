@@ -17,7 +17,7 @@
 
 # 使用
 
-## 示例代码
+## 示例
 
 [小程序在线](https://opendocs.alipay.com/examples/506a2716-e6cf-4f5c-a835-a7c8b3487d9f)
 
