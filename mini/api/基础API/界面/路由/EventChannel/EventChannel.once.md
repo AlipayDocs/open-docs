@@ -12,7 +12,7 @@
 
 ### .js 示例代码
 
-在 [my.navigateTo](https://opendocs.alipay.com/mini/006l1f) 调用中的 `events` 参数挂载监听事件，该事件触发一次后将会解除监听。
+在 [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx) 调用中的 `events` 参数挂载监听事件，该事件触发一次后将会解除监听。
 
 ```JavaScript
 // 通过 my.navigateTo 打开的页面
