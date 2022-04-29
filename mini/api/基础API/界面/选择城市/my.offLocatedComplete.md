@@ -1,5 +1,5 @@
 # 简介
-**my.offLocatedComplete** 是取消监听地理位置定位完成事件的 API，只针对 [my.chooseCity](https://opendocs.alipay.com/mini/006l3p) 中属性 setLocatedCity 为 true 的情况。
+**my.offLocatedComplete** 是取消监听地理位置定位完成事件的 API，只针对 [my.chooseCity](https://opendocs.alipay.com/mini/api/ui-city) 中属性 setLocatedCity 为 true 的情况。
 
 ## 使用限制
 
