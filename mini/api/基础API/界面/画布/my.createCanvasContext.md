@@ -12,8 +12,8 @@
 
 # 接口调用
 
-## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-canvas?theme=light&previewZoom=75&chInfo=openhome-doc) 
+## 示例
+[小程序在线](https://opendocs.alipay.com/examples/14e91d68-3c09-43ce-8904-0fb8f04dbd7b) 
 
 ## 入参
 **string canvasId**<br />定义在 `<canvas/>` 上的 ID。
