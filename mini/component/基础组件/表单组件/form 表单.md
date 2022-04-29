@@ -1,11 +1,11 @@
 # 简介
-表单。用于将组件内的用户输入的 [textarea](/mini/component/textarea)、 [switch](/mini/component/switch)、 [input](/mini/component/input) 、[checkbox](/mini/component/checkbox)、[slider](/mini/component/slider)、[radio](/mini/component/radio)、[picker](/mini/component/picker) 等组件提交。
+表单。用于将组件内的用户输入的 [textarea](https://opendocs.alipay.com/mini/component/textarea)、 [switch](https://opendocs.alipay.com/mini/component/switch)、 [input](https://opendocs.alipay.com/mini/component/input) 、[checkbox](https://opendocs.alipay.com/mini/component/checkbox)、[slider](https://opendocs.alipay.com/mini/component/slider)、[radio](https://opendocs.alipay.com/mini/component/radio)、[picker](https://opendocs.alipay.com/mini/component/picker) 等组件提交。
 
 ## 使用限制
 - 预览效果建议以真机为准。
 - 目前还不支持 form 表单渲染。
 - formId 需要真机调试才会有返回值。
-- 当点击 form 表单中 form-type 为 submit 的 [button](/mini/component/button) 组件时，会将表单组件值进行提交，需要在表单组件中加上 name 来作为 key。
+- 当点击 form 表单中 form-type 为 submit 的 [button](https://opendocs.alipay.com/mini/component/button) 组件时，会将表单组件值进行提交，需要在表单组件中加上 name 来作为 key。
 
 ## 扫码体验
 ![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/ba69acdbd15ac8dfc96755054c229a2d.png#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
@@ -96,8 +96,8 @@ button + button {
 ## 属性说明
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| report-submit | Boolean | onSubmit 回调是否返回 formId。用于发送 [模板消息](/mini/introduce/message)，使用前可使用 [canIUse](/mini/api/can-i-use) ('form.report-submit')判断是否支持。<br />**注意：** formId 需要真机调试才会有返回值。<br />**版本要求：** 基础库 [1.3.0](/mini/framework/compatibility) 及以上 |
-| onSubmit | EventHandle | 携带 form 中的数据触发 submit 事件，`event.detail = {value : {'slider': '80'}, buttonTarget: {'dataset': 'buttonDataset'} }` (可以在 submit 按钮上添加自定义参数)。<br />**版本要求：** buttonTarget 支持基础库 [1.7.0](/mini/framework/compatibility)  及以上 |
+| report-submit | Boolean | onSubmit 回调是否返回 formId。用于发送 [模板消息](https://opendocs.alipay.com/mini/introduce/message)，使用前可使用 [canIUse](https://opendocs.alipay.com/mini/api/can-i-use) ('form.report-submit')判断是否支持。<br />**注意：** formId 需要真机调试才会有返回值。<br />**版本要求：** 基础库 [1.3.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| onSubmit | EventHandle | 携带 form 中的数据触发 submit 事件，`event.detail = {value : {'slider': '80'}, buttonTarget: {'dataset': 'buttonDataset'} }` (可以在 submit 按钮上添加自定义参数)。<br />**版本要求：** buttonTarget 支持基础库 [1.7.0](https://opendocs.alipay.com/mini/framework/compatibility)  及以上 |
 | onReset | EventHandle | 表单重置时会触发 reset 事件。 |
 
 # 常见问题
