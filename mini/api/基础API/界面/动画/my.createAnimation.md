@@ -168,7 +168,6 @@ Object 类型，参数如下：
 | bottom | length | 设置 bottom 值：长度值，单位为 px，例如：300 px。 |
 | right | length | 设置 right 值：长度值，单位为 px，例如：300 px。 |
 
-
 ### 旋转
 | **方法** | **参数** | **说明** |
 | --- | --- | --- |
@@ -177,7 +176,6 @@ Object 类型，参数如下：
 | rotateY | deg | deg 范围 -180 ~ 180，在 Y 轴旋转一个 deg 角度。 |
 | rotateZ | deg | deg 范围 -180 ~ 180，在 Z 轴旋转一个 deg 角度。 |
 | rotate3d | (x, y , z, deg) | 同 [transform-function rotate3d](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d)。 |
-
 
 ### 缩放
 
@@ -189,7 +187,6 @@ Object 类型，参数如下：
 | scaleZ | sz | 在 Z 轴缩放 sy 倍。 |
 | scale3d | (sx,sy,sz) | 在 X 轴缩放 sx 倍，在 Y 轴缩放 sy 倍，在 Z 轴缩放 sz 倍。 |
 
-
 ### 偏移
 
 | **方法** | **参数** | **说明** |
@@ -200,7 +197,6 @@ Object 类型，参数如下：
 | translateZ | tz | 在 Z 轴偏移 tz，单位 px。 |
 | translate3d | (tx,ty,tz) | 在 X 轴偏移 tx，在 Y 轴偏移 ty，在 Z 轴偏移 tz，单位 px。 |
 
-
 ### 倾斜
 
 | **方法** | **参数** | **说明** |
@@ -209,14 +205,12 @@ Object 类型，参数如下：
 | skewX | ax | 参数范围 -180 ~ 180。Y 轴坐标不变，X 轴坐标延顺时针倾斜 ax 度。 |
 | skewY | ay | 参数范围 -180~180。X 轴坐标不变，Y 轴坐标延顺时针倾斜 ay 度。 |
 
-
 ### 矩阵变形
 
 | **方法** | **参数** | **说明** |
 | --- | --- | --- |
 | matrix | (a,b,c,d,tx,ty) | 同 [transform-function](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix)。 |
 | matrix3d | (a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3, a4, b4, c4, d4) | 同 [transform-function matrix3d](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d)。 |
-
 
 ### 动画队列
 
