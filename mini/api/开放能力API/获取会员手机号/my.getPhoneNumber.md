@@ -1,13 +1,13 @@
 # 简介
 **my.getPhoneNumber** 是获取支付宝用户绑定的手机号的 API。因为需要用户主动触发才能发起获取手机号，所以该功能不由 API 直接调用，必须点击 [button 组件](https://opendocs.alipay.com/mini/component/button) 来触发。
 
-相关问题可查看 [获取会员手机号 FAQ](https://opendocs.alipay.com/mini/006lmr)。
+相关问题可查看 [获取会员手机号 FAQ](https://opendocs.alipay.com/mini/api/dwou7f)。
 
 有关获取会员手机号更多信息，可查看 [获取会员手机号](https://opendocs.alipay.com/mini/introduce/getphonenumber)。
 
 ## 使用限制
 
-- 基础库 [1.16.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.35 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 基础库 [1.16.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.35 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 目前该功能需要在开发者后台完成敏感信息申请才可以使用此功能，入口为 **开发管理** > **功能列表** > **添加功能** > **获取会员手机号** > **用户信息申请**，此功能需谨慎使用，若支付宝发现信息存在超出约定范围使用或者不合理使用等情况，支付宝有权永久回收该小程序的该接口权限。
@@ -126,7 +126,7 @@ A：
 ```
 
 - 请确保已登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置的应用，点击进入应用详情页 > **设置** > **开发设置** ，设置 **接口加签方式**，**接口内容加密方式** 和 **应用网关**，可参见 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。(若缺失这三个设置，在调用 my.getPhoneNumber 时可能只返回 response 不会返回sign)。
-> 应用网关用于接收支付宝异步通知，例如口碑开店中，需要配置此网关来接收 [开发者门店被动通知](https://opendocs.alipay.com/open/205/105251/#%E5%BC%80%E5%8F%91%E8%80%85%E9%97%A8%E5%BA%97%E8%A2%AB%E5%8A%A8%E9%80%9A%E7%9F%A5) 。且一个 APPID 只能配置一个对应的应用网关,应用网关以 https:// 或 http://开头。
+> 应用网关用于接收支付宝异步通知，例如口碑开店中，需要配置此网关来接收开发者门店被动通知。且一个 APPID 只能配置一个对应的应用网关,应用网关以 https:// 或 http://开头。
 > 可查看 [开发设置](https://opendocs.alipay.com/mini/introduce/setting)。
 
 ## Q：为什么调用 my.getPhoneNumber 没有获取到手机号？
