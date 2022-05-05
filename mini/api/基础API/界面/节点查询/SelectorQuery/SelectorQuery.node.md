@@ -23,7 +23,7 @@ Page({
   onCanvasReady() {
     my.createSelectorQuery().select('#canvas').node((res) => {
       //console.log(res.node);
-      const canvasContext = node.getContext('webgl');
+      const canvasContext = res.node.getContext('webgl');
       //...
     }).exec();  
   }
