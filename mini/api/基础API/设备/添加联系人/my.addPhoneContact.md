@@ -4,7 +4,7 @@
 
 ## 使用限制
 
-- 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/lib)  或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/lib)  或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -432,4 +432,3 @@ Object 类型，参数如下：
 | --- | --- | --- | --- |
 | 3 | fail ${detail} | 调用失败，detail 中是详细信息。 | - |
 | 11 | fail cancel | 用户取消操作。 | 用户正常交互流程分支，不需要特殊处理。 |
-
