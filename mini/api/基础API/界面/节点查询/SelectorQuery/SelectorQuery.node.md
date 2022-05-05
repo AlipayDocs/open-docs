@@ -1,10 +1,9 @@
-
 # 简介
 **SelectorQuery.node** 是获取 Node 节点实例。目前支持 [Native Canvas](https://opendocs.alipay.com/mini/component/canvas) 的获取。
 
 ## 使用限制
 
-- 基础库 [2.7.0](https://opendocs.alipay.com/mini/01iq3i) 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [2.7.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
