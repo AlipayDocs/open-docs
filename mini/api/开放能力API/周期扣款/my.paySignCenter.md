@@ -9,7 +9,7 @@
 - 支付宝客户端 10.0.18 及以上版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂不支持在 IDE 模拟器上调试，请以 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 结果为准。
 - 此 API 暂仅支持企业支付宝小程序使用。
-- 不支持在 IoT 环境下使用此 API。
+- 不支持在 IoT 小程序中使用。
 
 # 接口调用
 
@@ -102,9 +102,11 @@ Page({
 
 ### 1. 如何获取签约字符串？
 
-将 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02fkb3?scene=35) （支付宝个人协议页面签约）接口的返回值的 body 字段做一次 urlencode 处理，将其结果做为 signStr 的值传入 my.paySignCenter。
+调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02fkb3?scene=35)（支付宝个人协议页面签约接口）传入周期扣款约定等相关信息创建签约协议内容。
 
-如果支付宝提供了您使用的对应语言的 SDK，可以查看 [先签约，后代扣 > 创建签约协议内容](https://opendocs.alipay.com/mini/012kfn#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%88%9B%E5%BB%BA%E7%AD%BE%E7%BA%A6%E5%8D%8F%E8%AE%AE%E5%86%85%E5%AE%B9) 。
+将 SDK 的返回值中的 body 字段进行一次 urlencode 处理，将其结果做为 signStr 的值传入 my.paySignCenter。
+
+示例以及详细信息请查看 [先签约，后代扣 > 创建签约协议内容](https://opendocs.alipay.com/mini/012kfn#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%88%9B%E5%BB%BA%E7%AD%BE%E7%BA%A6%E5%8D%8F%E8%AE%AE%E5%86%85%E5%AE%B9) 。
 
 请注意，示例代码中提到的 `alipayClient.pageExecute(request, 'get');` 这种方式会返回一个 URL 地址，您需要使用 `alipayClient.sdkExecute(request);` 的方式来获取正确的 signStr。
 
@@ -128,3 +130,9 @@ String signStr = URLEncoder.encode(response.getBody(), "UTF-8");
 因为您传了 return_url 导致签约完成后会跳到该 url，这样就跳出了小程序，您再回来小程序的时候，小程序的接口认为没有完成业务，所以就显示 6001 了。
 
 小程序场景下 return_url 参数是不需要的，因为小程序接口本身有 success 回调方法，您直接在 success 回调方法中获取信息即可，不需要再指定 return_url。
+
+### 4. 签约失败常见原因
+
+1. 请检查您是否添加了对应的能力。
+    请联系您的产品的支付宝业务经理BD为您添加对应的能力。
+2. 请检查您调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02fkb3?scene=35)（支付宝个人协议页面签约接口）时的参数是否正确，如 `product_code` 等。
