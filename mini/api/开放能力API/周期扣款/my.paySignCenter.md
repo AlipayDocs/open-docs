@@ -57,9 +57,6 @@ Page({
 })
 ```
 
-
-## 返回示例
-
 ## 入参
 
 入参为 Object 类型，参数如下：
@@ -80,7 +77,7 @@ Page({
 | result | JSON | 处理结果。 |
 | resultStatus | String | 错误码，具体含义见下表。 |
 
-### success 回调返回示例
+### success 回调结果示例
 
 执行成功时，触发 success 回调，回调内容示例如下：
 
