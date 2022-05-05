@@ -3,4 +3,4 @@
 # 方法
 | **名称** | **描述** |
 | --- | --- |
-| [CanvasGradient.addColorStop](https://opendocs.alipay.com/mini/026t0s) | 添加颜色的渐变点。 |
+| [CanvasGradient.addColorStop](https://opendocs.alipay.com/mini/api/addColorStop) | 添加颜色的渐变点。 |
