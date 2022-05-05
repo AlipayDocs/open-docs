@@ -1,11 +1,11 @@
-
 # 简介
 **SelectorQuery.fields** 用于获取节点的相关信息。需要获取的字段在 fields 中指定。
 
 ## 使用限制
 
-- 基础库 [2.7.3](https://opendocs.alipay.com/mini/01iq3i) 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- computedStyle 的优先级高于 size，当同时在 computedStyle 里指定了 width/height 并且设置 size: true，则会优先返回 computedStyle 获取到的 width/height。
 
 # 接口调用
 
@@ -69,7 +69,7 @@ Page({
 
 | **属性** | **类型** | **默认值** | **必填** | **描述** |
 | --- | --- | --- | --- | --- |
-| id | Boolean | false | 否 | 节点id，基础库 [2.7.4](https://opendocs.alipay.com/mini/01iq3i) 开始支持，可通过 `my.canIUse('createSelectorQuery.return.fields.object.id')` 检测。 |
+| id | Boolean | false | 否 | 节点id，基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，可通过 `my.canIUse('createSelectorQuery.return.fields.object.id')` 检测。 |
 | dataset | Boolean | false | 否 | 是否返回节点 dataset。 |
 | rect | Boolean | false | 否 | 是否返回节点布局位置（`left` `right` `top` `bottom`）。 |
 | size | Boolean | false | 否 | 是否返回节点尺寸（`width` `height`）。 |
@@ -86,6 +86,3 @@ Page({
 
 ##### Object res
 节点的相关信息。
-
-## Tip
-computedStyle 的优先级高于 size，当同时在 computedStyle 里指定了 width/height 并且设置 size: true，则会优先返回 computedStyle 获取到的 width/height。
