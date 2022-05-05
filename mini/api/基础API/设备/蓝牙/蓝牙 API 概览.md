@@ -20,7 +20,6 @@
 ![|723x756](http://mdn.alipayobjects.com/afts/img/A*FoPBTqHoP1sAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=ahoz2azNPv_9wUCIO3OU3wAAAABkMK8AAAAA#align=left&display=inline&height=887&margin=%5Bobject%20Object%5D&originHeight=887&originWidth=848&status=done&style=stroke&width=848)
 
 # 蓝牙 API
-
 <table>
   <tr>
     <th><b>蓝牙类型</b></th>
