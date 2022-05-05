@@ -51,4 +51,3 @@ if (result2.stats) {
 | size | Long | 文件大小。 |
 | lastAccessedTime | Long | 上次访问时间。 |
 | lastModifiedTime | Long | 上次修改时间。 |
-
