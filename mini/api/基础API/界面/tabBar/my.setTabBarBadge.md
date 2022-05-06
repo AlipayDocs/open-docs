@@ -2,7 +2,7 @@
 
 **my.setTabBarBadge** 是为标签页（tabbar）某一项的右上角添加文本的 API。可用于设置消息条数的红点提醒。
 
-相关问题请参见 [tabBar 常见问题](https://opendocs.alipay.com/mini/006l0v)。
+相关问题请参见 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
 
 ## 使用限制
 
