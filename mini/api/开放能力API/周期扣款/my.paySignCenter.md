@@ -65,7 +65,7 @@ Page({
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| signStr | String | 是 | 签约字符串。请参考 [周期扣款 > 接入指南](https://opendocs.alipay.com/mini/012kfn#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9AJSAPI%20%E5%94%A4%E8%B5%B7%E7%AD%BE%E7%BA%A6%E9%A1%B5%E9%9D%A2) 来获取该字符串。 |
+| signStr | String | 是 | 签约字符串，可查看 [周期扣款接入指南](https://opendocs.alipay.com/mini/012kfn#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9AJSAPI%20%E5%94%A4%E8%B5%B7%E7%AD%BE%E7%BA%A6%E9%A1%B5%E9%9D%A2) 来获取该字符串。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -100,21 +100,22 @@ Page({
 | 6001 | 用户中途取消。 | 请用户重新签约。 |
 | 6002 | 网络连接错误。 | 请检查网络连接后重试。 |
 
-## 常见问题
+# 常见问题
 
-### 1. 如何获取签约字符串？
-
-调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02fkb3?scene=35)（支付宝个人协议页面签约接口）传入周期扣款约定等相关信息创建签约协议内容。
+## Q：如何获取签约字符串？
+A：调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02fkb3?scene=35)（支付宝个人协议页面签约接口）传入周期扣款约定等相关信息创建签约协议内容。
 
 将 SDK 的返回值中的 body 字段进行一次 urlencode 处理，将其结果做为 signStr 的值传入 my.paySignCenter。
 
-示例以及详细信息请查看 [先签约，后代扣 > 创建签约协议内容](https://opendocs.alipay.com/mini/012kfn#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%88%9B%E5%BB%BA%E7%AD%BE%E7%BA%A6%E5%8D%8F%E8%AE%AE%E5%86%85%E5%AE%B9) 。
+示例以及详细信息可查看 [创建签约协议内容](https://opendocs.alipay.com/mini/012kfn#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%88%9B%E5%BB%BA%E7%AD%BE%E7%BA%A6%E5%8D%8F%E8%AE%AE%E5%86%85%E5%AE%B9) 。
 
-请注意，示例代码中提到的 `alipayClient.pageExecute(request, 'get');` 这种方式会返回一个 URL 地址，您需要使用 `alipayClient.sdkExecute(request);` 的方式来获取正确的 signStr。
+**注意**，
 
-### 2. 唤起的签约界面显示 无效签名
+示例代码中提到的 `alipayClient.pageExecute(request, 'get');` 这种方式会返回一个 URL 地址，您需要使用 `alipayClient.sdkExecute(request);` 的方式来获取正确的 signStr。
 
-请检查您传入的 signStr 是否正确。请对照以下内容进行自查：
+## Q：唤起的签约界面显示 无效签名，如何处理？
+
+A：请检查您传入的 signStr 是否正确。请对照以下内容进行自查：
 
 传入的 signStr 需要形如：`alipay_sdk%3Dalipay-sdk-java-dynamicVersionNo%26app_id%3D2019072465924554%26biz_content%3D...`。
 
@@ -125,16 +126,15 @@ AlipayUserAgreementPageSignResponse response = alipayClient.sdkExecute(request);
 String signStr = URLEncoder.encode(response.getBody(), "UTF-8");
 ```
 
-### 3. 用户签约成功后回调显示报错 6001
+## Q：用户签约成功后回调显示报错 6001，如何处理？
 
-如果要在小程序中使用，您发起的签约请求中不能带 return_url 字段。
+A：如果要在小程序中使用，您发起的签约请求中不能带 return_url 字段。
 
 因为您传了 return_url 导致签约完成后会跳到该 url，这样就跳出了小程序，您再回来小程序的时候，小程序的接口认为没有完成业务，所以就显示 6001 了。
 
 小程序场景下 return_url 参数是不需要的，因为小程序接口本身有 success 回调方法，您直接在 success 回调方法中获取信息即可，不需要再指定 return_url。
 
-### 4. 签约失败常见原因
-
-1. 请检查您是否添加了对应的能力。
-    请联系您的产品的支付宝业务经理BD为您添加对应的能力。
-2. 请检查您调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02fkb3?scene=35)（支付宝个人协议页面签约接口）时的参数是否正确，如 `product_code` 等。
+## Q：签约失败常见原因有哪些？
+A：
+1. 请检查您是否添加了对应的能力。<br />请联系您的产品的支付宝业务人员为您添加对应的能力。
+2. 请检查调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02fkb3?scene=35)（支付宝个人协议页面签约接口）时的参数是否正确，如 `product_code` 等。
