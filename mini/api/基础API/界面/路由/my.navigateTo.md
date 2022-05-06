@@ -131,4 +131,5 @@ my.navigateTo 是保留当前页面，跳转到新页面，小程序导航栏的
 A: 暂不支持监听小程序导航栏的左上角的 **返回上一页** 按钮 或 **返回首页** 按钮。
 
 ## Q： 如何隐藏小程序中的导航栏的 返回上一页 按钮？
-A：无法直接隐藏，但是可以先调用 [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 方法关闭当前所有页面去跳转到此页面，然后配合使用 [my.hideBackHome](https://opendocs.alipay.com/mini/api/ui-navigate) 隐藏导航栏 **返回首页** 按钮。
+A：无法直接隐藏小程序导航栏的 **返回上一页** 按钮，但是可以参考以下方案达到隐藏效果：   
+先调用 [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 方法关闭当前所有页面去跳转到新页面，此时小程序导航栏不出现 **返回上一页** 按钮，但是会出现 **返回首页** 按钮。这时配合使用 [my.hideBackHome](https://opendocs.alipay.com/mini/api/ui-navigate) 隐藏导航栏 **返回首页** 按钮，即可达到隐藏效果。
