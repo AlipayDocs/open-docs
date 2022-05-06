@@ -134,5 +134,5 @@ A：如果要在小程序中使用，您发起的签约请求中不能带 return
 
 ## Q：签约失败常见原因有哪些？
 A：
-1. 请检查您是否添加了对应的能力。<br />请联系您的产品的支付宝业务人员为您添加对应的能力。
+1. 请检查小程序是否添加了对应的能力。
 2. 请检查调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02fkb3?scene=35)（支付宝个人协议页面签约接口）时的参数是否正确，如 `product_code` 等。
