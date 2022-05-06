@@ -1,6 +1,8 @@
 # 简介
 
-**my.paySignCenter** 是用于在支付宝小程序内启动**先签约，后代扣**服务的 API。
+**my.paySignCenter** 是用于在支付宝小程序内唤起周期扣款签约页面的 API。
+
+![example.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1649831018195-a839f066-fce5-4f8f-9a55-b00332c84a44.png)
 
 有关周期扣款的签约流程、使用场景等更多信息，需要查看 [周期扣款](https://opendocs.alipay.com/mini/006srl)。
 
