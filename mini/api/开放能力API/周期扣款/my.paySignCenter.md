@@ -109,9 +109,7 @@ A：调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02
 
 示例以及详细信息可查看 [创建签约协议内容](https://opendocs.alipay.com/mini/012kfn#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%88%9B%E5%BB%BA%E7%AD%BE%E7%BA%A6%E5%8D%8F%E8%AE%AE%E5%86%85%E5%AE%B9) 。
 
-**注意**，
-
-示例代码中提到的 `alipayClient.pageExecute(request, 'get');` 这种方式会返回一个 URL 地址，您需要使用 `alipayClient.sdkExecute(request);` 的方式来获取正确的 signStr。
+**注意**：示例代码中提到的 `alipayClient.pageExecute(request, 'get');` 这种方式会返回一个 URL 地址，需要使用 `alipayClient.sdkExecute(request);` 的方式来获取正确的 signStr。
 
 ## Q：唤起的签约界面显示 无效签名，如何处理？
 
