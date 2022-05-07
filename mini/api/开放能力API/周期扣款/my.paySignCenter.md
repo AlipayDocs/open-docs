@@ -113,11 +113,11 @@ A：调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02
 
 ## Q：唤起的签约界面显示 无效签名，如何处理？
 
-A：请检查您传入的 signStr 是否正确。请对照以下内容进行自查：
+A：请检查传入的 signStr 是否正确。请对照以下内容进行自查：
 
 传入的 signStr 需要形如：`alipay_sdk%3Dalipay-sdk-java-dynamicVersionNo%26app_id%3D2019072465924554%26biz_content%3D...`。
 
-如果您是使用 SDK 获取的 signStr，您得到的是这样的字符串: `alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=2019072465924554&biz_content=...`，需要先将这段字符串进行一次 urlencode。使用 Java SDK 示例代码如下：
+如果是使用 SDK 获取的 signStr，得到的是这样的字符串: `alipay_sdk=alipay-sdk-java-dynamicVersionNo&app_id=2019072465924554&biz_content=...`，需要先将这段字符串进行一次 urlencode。使用 Java SDK 示例代码如下：
 
 ```java
 AlipayUserAgreementPageSignResponse response = alipayClient.sdkExecute(request);
@@ -126,13 +126,13 @@ String signStr = URLEncoder.encode(response.getBody(), "UTF-8");
 
 ## Q：用户签约成功后回调显示报错 6001，如何处理？
 
-A：如果要在小程序中使用，您发起的签约请求中不能带 return_url 字段。
+A：如果要在小程序中使用，发起的签约请求中不能带 return_url 字段。
 
-因为您传了 return_url 导致签约完成后会跳到该 url，这样就跳出了小程序，您再回来小程序的时候，小程序的接口认为没有完成业务，所以就显示 6001 了。
+因为传了 return_url 导致签约完成后会跳到该 url，这样就跳出了小程序，再回来小程序的时候，小程序的接口认为没有完成业务，所以就显示 6001 了。
 
-小程序场景下 return_url 参数是不需要的，因为小程序接口本身有 success 回调方法，您直接在 success 回调方法中获取信息即可，不需要再指定 return_url。
+小程序场景下 return_url 参数是不需要的，因为小程序接口本身有 success 回调方法，直接在 success 回调方法中获取信息即可，不需要再指定 return_url。
 
 ## Q：签约失败常见原因有哪些？
 A：
-1. 请检查小程序是否添加了对应的能力。
+1. 请检查小程序是否添加了对应的能力，可查看 [添加能力](https://opendocs.alipay.com/mini/012kfm#%E6%B7%BB%E5%8A%A0%E8%83%BD%E5%8A%9B)。
 2. 请检查调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02fkb3?scene=35)（支付宝个人协议页面签约接口）时的参数是否正确，如 `product_code` 等。
