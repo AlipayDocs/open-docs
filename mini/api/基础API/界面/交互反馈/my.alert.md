@@ -1,4 +1,3 @@
-
 # 简介
 **my.alert** 方法用于弹出一个带有标题、内容以及确认按钮的警告框。
 
@@ -17,7 +16,6 @@
 ## 示例
 
 [小程序在线](https://opendocs.alipay.com/examples/caeb252f-f08f-4569-8489-338e707969dc) 
-
 
 ### .axml 示例代码
 ```html
@@ -53,6 +51,7 @@ Page({
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -64,20 +63,20 @@ Object 类型，参数如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-# FAQ
-### Q1:  警告框内容 content 文字如何进行换行？
-A:  content 文字可通过 \n 或 \r\n 进行换行，代码示例： 
+# 常见问题
+## Q：警告框内容 content 文字如何进行换行？
+A：content 文字可通过 \n 或 \r\n 进行换行，代码示例： 
 ```javascript
 my.alet({
   content: '第一行\n第二行\r\n第三行'
 })
 ```
 
-### Q2:  content 属性支持设置样式吗？content 属性支持html解析吗？
-A:  content 不支持设置样式和 html 解析。如有相关需求，可使用 [Modal](https://opendocs.alipay.com/mini/component-ext/modal) 组件实现一个自定义弹窗。
+## Q：content 属性支持设置样式吗？content 属性支持html解析吗？
+A：content 不支持设置样式和 html 解析。如有相关需求，可使用 [Modal](https://opendocs.alipay.com/mini/component-ext/modal) 组件实现一个自定义弹窗。
 
-### Q3:  content 属性文字对齐方式？
-A:  在安卓系统下，content属性文字是左对齐的；在 IOS 系统下，content 属性文字是居中对齐的。
+## Q：content 属性文字对齐方式？
+A：在安卓系统下，content属性文字是左对齐的；在 iOS 系统下，content 属性文字是居中对齐的。
 
-### Q4: 在 my.alert 唤起警告框后进行页面跳转，警告框是否消失？
-如果在 my.alert 唤起警告框后进行跳转页面，在安卓系统下页面跳转后 my.alert 警告框依然存在，在 IOS 系统下跳转页面后 my.alert 警告框消失。 
+## Q：在 my.alert 唤起警告框后进行页面跳转，警告框是否消失？
+A：如果在 my.alert 唤起警告框后进行跳转页面，在安卓系统下页面跳转后 my.alert 警告框依然存在，在 iOS 系统下跳转页面后 my.alert 警告框消失。 
