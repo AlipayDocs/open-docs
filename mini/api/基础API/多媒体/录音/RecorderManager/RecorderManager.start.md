@@ -26,7 +26,7 @@ recorderManager.start({
 | sampleRate | Number | 8000 | 否 | 采样率。 | - |
 | numberOfChannels | Number | 1 | 否 | 录音通道数。 | - |
 | encodeBitRate | Number | 48000 | 否 | 编码码率，有效值见下方 **采样率与编码码率限制 **表。 | - |
-| format | String | AAC | 否 | 音频格式,支持格式：AAC，MP3。 | MP3 从支付宝客户端版本 10.1.80 开始支持。 |
+| format | String | aac | 否 | 音频格式,支持格式：aac、mp3。 | mp3 从支付宝客户端版本 10.1.80 开始支持。 |
 | frameSize | Number | - | 否 | 指定帧大小，单位 KB。传入 frameSize 后，每录制指定帧大小的内容后，会回调录制的文件内容，不指定则不会回调。暂仅支持 MP3 格式。 | 支付宝客户端版本 10.1.80 开始支持。 |
 | audioSource | String | auto | 否 | 指定录音的音频输入源，可通过 [my.getAvailableAudioSources](https://opendocs.alipay.com/mini/00bg4t) 获取当前可用的音频源。 | - |
 
