@@ -69,5 +69,5 @@ Page({
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| pullRefresh | Boolean | 否 | 是否允许下拉刷新。默认 false。<br />**说明**：下拉刷新生效的前提是 allowsBounceVertical 值为 `YES` 。 |
+| pullRefresh | Boolean | 否 | 是否允许下拉刷新。<br />Android 端默认值是 true，iOS 端默认值是 false。<br />**说明**：下拉刷新生效的前提是 allowsBounceVertical 值为 `YES` 。 |
 | allowsBounceVertical | String | 否 | 页面是否支持纵向拽拉超出实际内容。默认 YES，支持 `YES`/`NO`。 |
