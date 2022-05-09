@@ -1,7 +1,7 @@
 # 简介
 **my.stopPullDownRefresh** 是停止当前页面的下拉刷新的 API。
 
-调用 [my.startPullDownRefresh](https://opendocs.alipay.com/mini/006l2u) 后触发下拉刷新动画，效果与用户手动下拉刷新一致（会触发 [onPullDownRefresh](https://opendocs.alipay.com/mini/006l30) 监听方法）。
+调用 [my.startPullDownRefresh](https://opendocs.alipay.com/mini/api/ui-pulldown) 后触发下拉刷新动画，效果与用户手动下拉刷新一致（会触发 [onPullDownRefresh](https://opendocs.alipay.com/mini/api/wo21qk) 监听方法）。
 
 当处理完数据刷新后，my.stopPullDownRefresh 可停止当前页面的下拉刷新。
 
@@ -65,4 +65,3 @@ Object 类型，参数如下：
 | success | Function | 否 | 接口调用成功的回调函数。 |
 | fail | Function | 否 | 接口调用失败的回调函数。 |
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
-

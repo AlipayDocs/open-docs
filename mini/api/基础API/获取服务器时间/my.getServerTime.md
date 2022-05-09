@@ -11,11 +11,9 @@ my.getServerTime 是获取当前服务器时间（从 1970 年 1 月 1 日 0 时
 
 # 接口调用
 
-## Herbox
+## 示例
 
-[小程序在线](https://herbox-embed.alipay.com/s/doc-get-server-time?theme=light&previewZoom=75&chInfo=openhome-doc) 
-
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/a0582ce9-e2e1-40de-b2dd-cd810d433afe) 
 
 ### .axml 示例代码
 

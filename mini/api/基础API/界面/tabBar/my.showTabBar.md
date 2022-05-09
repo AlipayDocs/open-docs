@@ -1,7 +1,7 @@
 # 简介
 **my.showTabBar** 是显示标签页（tabbar）的 API。
 
-相关问题可查看 [tabBar 常见问题](https://opendocs.alipay.com/mini/006l0v)。
+相关问题可查看 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
 
 ## 使用限制
 

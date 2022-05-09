@@ -1,6 +1,5 @@
-
 # 简介
-**my.onAppHide** 是监听小程序切后台事件的 API。该事件与框架 [app.js 注册小程序](https://opendocs.alipay.com/mini/framework/app-detail) 时 onHide 参数的回调时机一致。对应的取消监听 API 请参见 [my.offAppHide](https://opendocs.alipay.com/mini/006kyk)。
+**my.onAppHide** 是监听小程序切后台事件的 API。该事件与框架 [app.js 注册小程序](https://opendocs.alipay.com/mini/framework/app-detail) 时 onHide 参数的回调时机一致。对应的取消监听 API 请参见 [my.offAppHide](https://opendocs.alipay.com/mini/api/dldh0a)。
 
 ## 使用限制
 - 基础库 [1.20.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.68 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
@@ -37,4 +36,3 @@ offAppHideHanlder() {
 | **参数** | **类型** | **描述** |
 | --- | --- | --- |
 | callback | Function | 小程序切后台事件的回调函数。 |
-

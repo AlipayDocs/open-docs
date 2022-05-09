@@ -1,6 +1,5 @@
-
 # 简介
-**my.saveImage** 是将在线图片保存至本地相册的 API。推荐使用 [my.saveImagetophotosalbum](https://opendocs.alipay.com/mini/02eizl)。
+**my.saveImage** 是将在线图片保存至本地相册的 API。推荐使用 [my.saveImagetophotosalbum](https://opendocs.alipay.com/mini/api/media/image/my.saveImagetophotosalbum)。
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
@@ -100,7 +99,6 @@ Object 类型，属性如下：
 | 16 | 手机相册存储空间不足 （仅在 iOS 上可用）。 | 释放手机存储空间。 |
 | 17 | 保存图片过程中的其他错误。 | 稍后重试。 |
 | 2001 | 用户拒绝给小程序授权。 | 提示用户接受小程序授权。 |
-
 
 ## 常见问题 FAQ
 

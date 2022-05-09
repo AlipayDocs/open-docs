@@ -1,13 +1,12 @@
 # 简介
-**my.navigateTo** 是从当前页面，跳转到应用内的某个指定页面的 API。
+**my.navigateTo** 保留当前页面，跳转到应用内的某个页面。
 
-相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/api/fu8l65) 。
+可使用 [my.navigateBack](https://opendocs.alipay.com/mini/api/kc5zbx) 返回到原来页面。
 
 ## 使用限制
 
-- 可使用 [my.navigateBack](https://opendocs.alipay.com/mini/api/kc5zbx) 返回到原来页面。
-- 小程序中页面栈最多十层。
-- my.navigateTo 和 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 不允许跳转到选项卡（tabbar）页面；若需跳转到 tabbar 页面，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar)。
+- my.navigateTo 不允许跳转到选项卡（tabbar）页面，若需跳转到 tabbar 页面，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar)。
+- 小程序中页面栈最多十层，超过十层会无法跳转。   
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -18,22 +17,15 @@
 
 ## 示例
 
-### .json 示例代码
-```json
-{
-    "defaultTitle": "Navigator"
-}
-```
-
 ### .axml 示例代码
 ```html
 <!-- navigateTo.axml-->
 <view class="page">
   <view class="page-section">
-    <button type="primary" onTap="navigateTo">跳转新页面</button>
-    <button type="primary" onTap="redirectTo">在当前页面打开新页面</button>
-    <button type="primary" onTap="switchTab">跳转到“我的”</button>
-    <button type="primary" onTap="reLaunch">重新打开</button>
+    <button type="primary" onTap="navigateTo">保留当前页面，跳转到新页面</button>
+    <button type="primary" onTap="redirectTo">关闭当前页面，跳转到新页面</button>
+    <button type="primary" onTap="reLaunch">关闭所有页面，跳转到新页面</button>
+    <button type="primary" onTap="switchTab">跳转到tabbar页面“我的”，并关闭其他所有非 tabBar 页面</button>
   </view>
 </view>
 ```
@@ -69,16 +61,18 @@ Page({
 })
 ```
 #### 页面间通信
-上一个页面通过 my.navigateTo 打开下一个页面时，可以通过 `events` 监听从下一个页面发来的事件，以及通过 `success` 回调获得页面间的通信通道。
+通过 my.navigateTo 打开一个页面时，可以通过 `events` 监听从被打开页面发来的事件，以及通过 `success` 回调获得页面间的通信通道。
 ```javascript
 my.navigateTo({ 
   url: './opened-page',
   events: {
+  // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
     openedToOpener(data) {
       console.log(data); // { "message": "Hello Opener Page!" }
     }
   },
   success(res) {
+  // 通过 eventChannel 向被打开页面传送数据
   	res.eventChannel.emit('openerToOpened', {
       message: 'Hi Opened Page!'
     });
@@ -94,6 +88,7 @@ Page({
     eventChannel.emit('openedToOpener', {
       message: 'Hello Opener Page!'
     });
+    // 监听 openerToOpened 事件，获取上一页面通过 eventChannel 传送到当前页面的数据
     eventChannel.on('openerToOpened', data => {
       console.log(data); // { "message": "Hi Opened Page!" }
     });
@@ -107,10 +102,10 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | url | String | 是 | 需要跳转的应用内非 tabbar 的目标页面路径，路径后可以带参数。<br />**参数规则**：路径与参数之间使用 `?` 分隔，参数键与参数值用 `=` 相连，不同参数必须用 `&` 分隔。<br />**示例**：`path?key1=value1&key2=value2`。<br />**注意**：若 `path` 后包含特殊字符（例如 %），则需要对 `path` 后包含特殊字符的 `key=value` 参数进行 encode，否则将无法正常跳转。 |
+| events | Object | 否 | 定义页面间通信的事件监听，用于接受被打开页面传送的数据。基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-| events | Object | 否 | 定义页面间通信的事件（接受被打开页面的数据）。基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 |
 
 ### Function success
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
@@ -119,3 +114,22 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- |
 | eventChannel | [EventChannel](https://opendocs.alipay.com/mini/api/eventchannel) | 和被打开页面进行通信。基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 |
 
+# 常见问题
+## Q：如何在跳转后的页面接收 my.navigateTo 的 url 属性传的参数？
+A：可以通过页面的生命周期函数 [onLoad(query: Object)](https://opendocs.alipay.com/mini/framework/page-detail#onLoad(query%3A%20Object)) 方法的 query 参数获取。
+
+## Q：小程序多次通过 my.navigateTo 跳转，尝试几次后为何再点击不会跳转了？
+A：小程序中页面栈最多十层，超过十层会无法跳转。建议通过 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 方法判断页面栈峰值，超过后用重定向接口 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 跳转页面。
+
+## Q：my.navigateTo、my.redirectTo、my.reLaunch 的区别是什么？
+A：三者区别在于页面层级关系的保留。   
+my.navigateTo 是保留当前页面，跳转到新页面，小程序导航栏的左上角会出现 **返回上一页** 按钮。   
+[my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 是关闭当前页面，跳转到新页面。当页面栈深度为 1 时，小程序导航栏的左上角不会出现 **返回上一页** 按钮， 当页面深度大于 1 时，会出现 **返回上一页** 按钮。   
+[my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 是关闭所有页面，跳转到新页面，小程序导航栏的左上角会出现 **返回首页** 按钮。
+
+## Q：如何监听小程序导航栏的左上角的 返回上一页 按钮 或 返回首页 按钮？
+A：暂不支持监听小程序导航栏的左上角的 **返回上一页** 按钮 或 **返回首页** 按钮。
+
+## Q：如何隐藏小程序中的导航栏的 返回上一页 按钮？
+A：无法直接隐藏小程序导航栏的 **返回上一页** 按钮，但是可以参考以下方案达到隐藏效果：   
+先调用 [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 方法关闭当前所有页面去跳转到新页面，此时小程序导航栏不出现 **返回上一页** 按钮，但是会出现 **返回首页** 按钮。这时配合使用 [my.hideBackHome](https://opendocs.alipay.com/mini/api/ui-navigate) 隐藏导航栏 **返回首页** 按钮，即可达到隐藏效果。

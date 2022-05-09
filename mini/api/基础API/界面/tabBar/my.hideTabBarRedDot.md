@@ -2,7 +2,7 @@
 
 **my.hideTabBarRedDot** 是隐藏标签页（tabbar）某一项右上角的红点的 API。
 
-相关问题可查看 [tabBar 常见问题](https://opendocs.alipay.com/mini/006l0v)。
+相关问题可查看 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
 
 ## 使用限制
 

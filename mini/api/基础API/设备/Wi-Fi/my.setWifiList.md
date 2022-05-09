@@ -1,4 +1,3 @@
-
 # 简介
 接口设置 wifiList 中 AP 的相关信息。一般需在 [my.onGetWifiList](https://opendocs.alipay.com/mini/api/ongetwifilist) 回调内调用，为 iOS 特有接口。
 
@@ -37,20 +36,18 @@ my.onGetWifiList(function(res) {
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| wifiList | Array<WifiList> | 是 | 提供预设的 Wi-Fi 信息列表。 |
+| wifiList | Array\<WifiList\> | 是 | 提供预设的 Wi-Fi 信息列表。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
-| complete | Funciton | 否 | 调用结束的回调函数（调用成功、失败都会执行。 |
+| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
-### wifiList
+### Array\<WifiList\> wifiList
 | **属性** | **类型** | **必填** | **秒速** |
 | --- | --- | --- | --- |
 | SSID | String | 否 | Wi-Fi 的 SSID。 |
 | BSSID | String | 否 | Wi-Fi 的 BSSID。 |
 | password | string | 否 | Wi-Fi 设备密码。 |
-

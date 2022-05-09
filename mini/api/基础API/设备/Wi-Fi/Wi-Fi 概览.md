@@ -1,6 +1,5 @@
-
 # 简介
-在小程序中支持搜索周边的 Wi-Fi，同时可以针对指定 Wi-Fi，传入密码发起连接。如何接入以及更多介绍信息，请参见 [无线局域网(Wi-Fi)](https://opendocs.alipay.com/mini/introduce/wifi)。
+在小程序中支持搜索周边的 Wi-Fi，同时可以针对指定 Wi-Fi，传入密码发起连接。如何接入以及更多介绍信息，可查看 [无线局域网(Wi-Fi)](https://opendocs.alipay.com/mini/introduce/wifi)。
 
 # 连接指定 Wi-Fi 接口调用时序
 
@@ -90,25 +89,24 @@ my.onWifiConnected(res => {
 | [my.onGetWifiList](https://opendocs.alipay.com/mini/api/ongetwifilist) | 监听在获取到 Wi-Fi 列表数据时的事件，在回调中将返回 wifiList。 |
 | [my.offGetWifiList](https://opendocs.alipay.com/mini/api/offgetwifilist) | 取消监听在获取到 Wi-Fi 列表数据时的事件。 |
 | [my.getConnectedWifi](https://opendocs.alipay.com/mini/api/getconnectedwifi) | 获取已连接中的 Wi-Fi 信息。 |
-| [my.registerSSID](https://opendocs.alipay.com/mini/api/register) | 信任该SSID，对于需要 Portal 认证的 WIFI，不会弹出 portal 认证页面。 |
-| [my.unregisterSSID](https://opendocs.alipay.com/mini/api/unregister) | 不再信任该SSID，对于需要 Portal 认证的 WIFI，继续弹出 portal 认证页面。 |
+| [my.registerSSID](https://opendocs.alipay.com/mini/api/register) | 信任该SSID，对于需要 Portal 认证的 Wi-Fi，不会弹出 portal 认证页面。 |
+| [my.unregisterSSID](https://opendocs.alipay.com/mini/api/unregister) | 不再信任该SSID，对于需要 Portal 认证的 Wi-Fi，继续弹出 portal 认证页面。 |
 
 
 # 错误码列表
 | **错误码** | **备注** |
 | --- | --- |
-| 12000 | 未先调用 my.startWifi 接口 |
-| 12001 | 当前系统不支持相关能力 |
-| 12002 | Wi-Fi 密码错误 |
-| 12003 | 连接超时 |
-| 12004 | 重复连接 Wi-Fi |
-| 12005 | Android 特有，未打开 Wi-Fi 开关 |
-| 12006 | Android 特有，未打开 GPS 定位开关 |
-| 12007 | 用户拒绝授权链接 Wi-Fi |
-| 12008 | 无效 SSID |
-| 12009 | 系统运营商配置拒绝连接 Wi-Fi |
-| 12010 | 系统其他错误，需要在 errorMessage 打印具体的错误原因 |
-| 12011 | 应用在后台无法配置 Wi-Fi |
-| 12012 | Wi-Fi 功能暂时不能使用 |
-| 12013 | 没有已连接的 wifi |
-
+| 12000 | 未先调用 my.startWifi 接口。 |
+| 12001 | 当前系统不支持相关能力。 |
+| 12002 | Wi-Fi 密码错误。 |
+| 12003 | 连接超时。 |
+| 12004 | 重复连接 Wi-Fi。 |
+| 12005 | Android 特有，未打开 Wi-Fi 开关。 |
+| 12006 | Android 特有，未打开 GPS 定位开关。 |
+| 12007 | 用户拒绝授权链接 Wi-Fi。 |
+| 12008 | 无效 SSID。 |
+| 12009 | 系统运营商配置拒绝连接 Wi-Fi。 |
+| 12010 | 系统其他错误，需要在 errorMessage 打印具体的错误原因。 |
+| 12011 | 应用在后台无法配置 Wi-Fi。 |
+| 12012 | Wi-Fi 功能暂时不能使用。 |
+| 12013 | 没有已连接的 Wi-Fi。 |

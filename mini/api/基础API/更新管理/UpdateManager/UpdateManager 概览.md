@@ -6,10 +6,10 @@
 # 方法
 | **名称** | **描述** |
 | --- | --- |
-| [UpdateManager.applyUpdate](api/neau2a) | 当小程序新版本下载完成后（即收到 `onUpdateReady` 回调），强制小程序重启并使用新版本。 |
-| [UpdateManager.onCheckForUpdate](api/nm7dtb) | 监听向支付宝后台请求检查更新结果事件。 |
-| [UpdateManager.onUpdateReady](api/gfz316) | 监听小程序有版本更新事件。 |
-| [UpdateManager.onUpdateFailed](api/sy1k0e) | 监听小程序更新失败事件。 |
+| [UpdateManager.applyUpdate](https://opendocs.alipay.com/mini/api/neau2a) | 当小程序新版本下载完成后（即收到 `onUpdateReady` 回调），强制小程序重启并使用新版本。 |
+| [UpdateManager.onCheckForUpdate](https://opendocs.alipay.com/mini/api/nm7dtb) | 监听向支付宝后台请求检查更新结果事件。 |
+| [UpdateManager.onUpdateReady](https://opendocs.alipay.com/mini/api/gfz316) | 监听小程序有版本更新事件。 |
+| [UpdateManager.onUpdateFailed](https://opendocs.alipay.com/mini/api/sy1k0e) | 监听小程序更新失败事件。 |
 
 # 示例代码
 ```javascript

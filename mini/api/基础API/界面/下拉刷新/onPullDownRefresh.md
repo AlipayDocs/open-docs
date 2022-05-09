@@ -1,7 +1,7 @@
 # 简介
 **onPullDownRefresh** 是用于在 Page 中自定义 onPullDownRefresh 函数，可以监听该页面的下拉刷新事件。
 
-调用 [my.startPullDownRefresh](https://opendocs.alipay.com/mini/006l2u) 后触发下拉刷新动画，然后会触发 onPullDownRefresh 监听方法，效果与用户手动下拉刷新一致。但 **my.startPullDownRefresh** 不受 onPullDownRefresh 的 `allowsBounceVertical` 、`pullRefresh` 参数影响。
+调用 [my.startPullDownRefresh](https://opendocs.alipay.com/mini/api/ui-pulldown) 后触发下拉刷新动画，然后会触发 onPullDownRefresh 监听方法，效果与用户手动下拉刷新一致。但 **my.startPullDownRefresh** 不受 onPullDownRefresh 的 `allowsBounceVertical` 、`pullRefresh` 参数影响。
 
 ## 使用限制
 
@@ -69,5 +69,5 @@ Page({
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| pullRefresh | Boolean | 否 | 是否允许下拉刷新。默认 true。<br />**说明**：下拉刷新生效的前提是 allowsBounceVertical 值为 `YES` 。 |
+| pullRefresh | Boolean | 否 | 是否允许下拉刷新。<br />Android 端默认值是 true，iOS 端默认值是 false。<br />**说明**：下拉刷新生效的前提是 allowsBounceVertical 值为 `YES` 。 |
 | allowsBounceVertical | String | 否 | 页面是否支持纵向拽拉超出实际内容。默认 YES，支持 `YES`/`NO`。 |

@@ -1,4 +1,3 @@
-
 # 简介
 [FileSystemManager.writeFile](https://opendocs.alipay.com/mini/api/022b6s) 的同步版本。
 
@@ -6,7 +5,7 @@
 
 - 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，参见 [接入准备](https://opendocs.alipay.com/mini/02pk4y) 。
+- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，可查看 [接入准备](https://opendocs.alipay.com/mini/02pk4y) 。
 - 此 API 暂不支持在 IDE 模拟器上测试，开发中请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 进行测试。
 
 # 接口调用
@@ -14,6 +13,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 const fs = my.getFileSystemManager();
 const result = fs.writeFileSync(
@@ -26,33 +26,23 @@ console.log(result);
 
 ## 入参
 
-#### String filePath
+### String filePath
 要写入的文件路径 (本地路径)。
 
-#### String|ArrayBuffer data
+### String|ArrayBuffer data
 要写入的文本或二进制数据。
 
-#### String encoding
+### String encoding
+
 指定写入文件的字符编码。
 
-### encoding 合法值
-| **值** | **说明** |
-| --- | --- |
-| ascii | - |
-| base64 | - |
-| hex | - |
-| binary | - |
-| ucs2/ucs-2/utf16le/utf-16le | - |
-| utf-8/utf8 | - |
-| latin1 | - |
-
+可选值：<ul><li>ascii</li><li>base64</li><li>hex</li><li>binary</li><li>ucs2/ucs-2/utf16le/utf-16le</li><li>utf-8/utf8</li><li>latin1</li></ul>
 
 ## 错误码
-| **错误码** | **说明** |
+
+| **错误码** | **描述** |
 | --- | --- |
 | 10024 | 指定的路径没有写的权限。 |
 | 3 | 未知错误，文件写入失败。 |
-| 10028 | 写入文件单个超过10M 或者写入文件夹超过 50M。 |
-
-
+| 10028 | 写入文件单个超过 10M 或者写入文件夹超过 50M。 |
 

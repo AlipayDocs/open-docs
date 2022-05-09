@@ -8,7 +8,7 @@
 
 # 接口调用
 
-## 示例代码
+## 示例
 
 [小程序在线](https://opendocs.alipay.com/examples/e8797275-4ed8-48ce-8d15-da107782c8ae) 
 

@@ -12,11 +12,9 @@
 
 # 接口调用
 
-## Herbox
+## 示例
 
-[小程序在线](https://herbox-embed.alipay.com/s/doc-toast?theme=light&previewZoom=75&chInfo=openhome-doc) 
-
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/4ea987bd-989d-4ed4-ba22-20fa34ea7615) 
 
 ### .json 示例代码
 ```json

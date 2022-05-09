@@ -1,4 +1,3 @@
-
 # 简介
 **IntersectionObserver.observe** 用于指定目标节点并开始监听相交状态变化情况。
 
@@ -26,7 +25,7 @@
 | boundingClientRect | Object | 目标边界。 |
 | relativeRect | Object | 参照区域的边界。 |
 | time | Number | 相交检测时的时间戳。 |
-| dataset | Object | 目标节点的 dataset 信息，使用前需要将 [my.createIntersectionObserver](https://opendocs.alipay.com/mini/api/intersectionobserver) 的 dataset 入参设置为 true。基础库 [2.7.0](https://opendocs.alipay.com/mini/01iq3i) 开始支持。 |
+| dataset | Object | 目标节点的 dataset 信息，使用前需要将 [my.createIntersectionObserver](https://opendocs.alipay.com/mini/api/intersectionobserver) 的 dataset 入参设置为 true。基础库 [2.7.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
 
 **res.intersectionRect 属性**
 

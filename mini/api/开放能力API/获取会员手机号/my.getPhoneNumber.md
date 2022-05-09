@@ -1,13 +1,13 @@
 # 简介
 **my.getPhoneNumber** 是获取支付宝用户绑定的手机号的 API。因为需要用户主动触发才能发起获取手机号，所以该功能不由 API 直接调用，必须点击 [button 组件](https://opendocs.alipay.com/mini/component/button) 来触发。
 
-相关问题可查看 [获取会员手机号 FAQ](https://opendocs.alipay.com/mini/006lmr)。
+相关问题可查看 [获取会员手机号 FAQ](https://opendocs.alipay.com/mini/api/dwou7f)。
 
 有关获取会员手机号更多信息，可查看 [获取会员手机号](https://opendocs.alipay.com/mini/introduce/getphonenumber)。
 
 ## 使用限制
 
-- 基础库 [1.16.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.35 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 基础库 [1.16.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.35 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 目前该功能需要在开发者后台完成敏感信息申请才可以使用此功能，入口为 **开发管理** > **功能列表** > **添加功能** > **获取会员手机号** > **用户信息申请**，此功能需谨慎使用，若支付宝发现信息存在超出约定范围使用或者不合理使用等情况，支付宝有权永久回收该小程序的该接口权限。
@@ -28,7 +28,7 @@
 ```
 
 ### .js 示例代码
-用户点击同意后，即可通过my.getPhoneNumber()获取用户绑定的手机号。
+用户点击同意后，即可通过 my.getPhoneNumber() 获取用户绑定的手机号。
 ```javascript
 my.getPhoneNumber({
     success: (res) => {
@@ -47,7 +47,7 @@ my.getPhoneNumber({
 
 ## 返回示例
 
-res.response 为完整的报文数据，前端需要将该报文发送到开发者服务端做验签和解密处理（详细的服务端处理流程可查看 **接口内容加密方式**，服务端解密后的明文示例如下：
+res.response 为完整的报文数据，前端需要将该报文发送到开发者服务端做验签和解密处理（详细的服务端处理流程可查看 **接口内容加密方式**），服务端解密后的明文示例如下：
 
 ### 正常响应
 ```json
@@ -117,7 +117,7 @@ success 回调会携带一个 Object 类型的对象，其参数如下：
 # 常见问题
 ## Q：调用 my.getPhoneNumber 获取手机号报错，该如何处理？
 A：
-- 请检查小程序后台已添加 **获取会员手机号** 功能包，并已在 **隐私内容申请** 中 **申请手机号**（若在小程序后台看不到敏感信息申请的入口，请使用主账号登录）。申请路径为：[开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置的应用，点击进入应用详情页 > **管理** > **能力管理**，添加 **获取会员手机号** 能力 > **用户信息申请**。
+- 请检查小程序已添加 **获取会员手机号** 功能包，并已在 **隐私内容申请** 中 **申请手机号**（若在小程序详情页看不到敏感信息申请的入口，请使用主账号登录）。申请路径为：[开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置的应用，点击进入应用详情页 > **管理** > **能力管理**，添加 **获取会员手机号** 能力 > **用户信息申请**。
 - 请确保小程序添加了 JSAPI 基础包 （否则会报无权限）。 
 - 请确保前端 AXML 中按照 button 授权方式，先获取用户授权然后使用 my.getPhoneNumber 进行获取（否则会报无效的授权关系）。
 
@@ -125,9 +125,7 @@ A：
 <button a:if="{{canIUseAuthButton}}" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'>    授权手机号</button>
 ```
 
-- 请确保已登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置的应用，点击进入应用详情页 > **设置** > **开发设置** ，设置 **接口加签方式**，**接口内容加密方式** 和 **应用网关**，可参见 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。(若缺失这三个设置，在调用 my.getPhoneNumber 时可能只返回 response 不会返回sign)。
-> 应用网关用于接收支付宝异步通知，例如口碑开店中，需要配置此网关来接收 [开发者门店被动通知](https://opendocs.alipay.com/open/205/105251/#%E5%BC%80%E5%8F%91%E8%80%85%E9%97%A8%E5%BA%97%E8%A2%AB%E5%8A%A8%E9%80%9A%E7%9F%A5) 。且一个 APPID 只能配置一个对应的应用网关,应用网关以 https:// 或 http://开头。
-> 可查看 [开发设置](https://opendocs.alipay.com/mini/introduce/setting)。
+- 请确保已在小程序详情页完成 [接口加签方式](https://opendocs.alipay.com/common/02mriz) 、[接口内容加密方式](https://opendocs.alipay.com/common/02mse3)、[应用网关](https://opendocs.alipay.com/common/02qibh) 设置，若缺失这三个设置，在调用 my.getPhoneNumber 时可能只返回 response 不会返回 sign。<br />应用网关用于接收支付宝异步通知，例如口碑开店中，需要配置此网关来接收开发者门店被动通知。且一个 APPID 只能配置一个对应的应用网关，应用网关以 https:// 或 http:// 开头。<br />
 
 ## Q：为什么调用 my.getPhoneNumber 没有获取到手机号？
 A：一般情况下都是当前用户的支付宝账号没有绑定手机号所致，需要当前用户登录 [账号管理](https://custweb.alipay.com/account/index.htm)，绑定手机号。

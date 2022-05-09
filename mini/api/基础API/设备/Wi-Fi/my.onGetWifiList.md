@@ -1,4 +1,3 @@
-
 # 简介
 监听在获取到 Wi-Fi 列表数据时的事件，在回调中将返回 wifiList。
 
@@ -12,6 +11,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 my.onGetWifiList(function(res) {
   console.log(res)
@@ -19,19 +19,19 @@ my.onGetWifiList(function(res) {
 ```
 
 ## 入参
-**function callback**<br />获取到 Wi-Fi 列表数据事件的回调函。
 
-## callback 参数
+### Function callback
+
+获取到 Wi-Fi 列表数据事件的回调函数，会携带一个 Object 类型的对象，其属性如下：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| wifiList | Array<WifiList> | Wi-Fi 列表数据。 |
+| wifiList | Array\<WifiList\> | Wi-Fi 列表数据。 |
 
-
-### WifiList
+#### WifiList wifiList
 | **属性** | **类型** | **秒速** |
 | --- | --- | --- |
 | SSID | String | Wi-Fi 的 SSID。 |
 | BSSID | String | Wi-Fi 的 BSSID。 |
 | secure | Boolean | Wi-Fi 是否安全。 |
 | signalStrength | Number | Wi-Fi 信号强度。取值 0 ～ 100，值越大强度越大。 |
-

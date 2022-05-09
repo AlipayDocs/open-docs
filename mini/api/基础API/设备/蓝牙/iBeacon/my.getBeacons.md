@@ -4,14 +4,13 @@
 
 ## 使用限制
 
-- 支付宝客户端 10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 支付宝客户端 10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - Android 在支付宝客户端 10.1.28 或之前的版本中，使用该接口返回的 rssi 值不能动态更新，建议使用事件触发方式。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
 
 ## 示例代码
-
 
 ```javascript
 // .js
@@ -43,7 +42,6 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | beacons | ObjectArray | iBeacon 设备列表。 |
 | errCode | String | errorCode=0，接口调用成功。 |
 | errorMsg | String | 错误描述信息，成功则为 ok。 |
-
 
 #### ObjectArray beacons
 beacons  属性的数组由以下属性构成：

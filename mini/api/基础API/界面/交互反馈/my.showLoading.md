@@ -1,5 +1,5 @@
 # 简介
-**my.showLoading** 是显示加载提示的过渡效果的 API，可与 [my.hideLoading](https://opendocs.alipay.com/mini/006l22) 配合使用。
+**my.showLoading** 是显示加载提示的过渡效果的 API，可与 [my.hideLoading](https://opendocs.alipay.com/mini/api/nzf540) 配合使用。
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
@@ -77,8 +77,7 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | content | String | 否 | 提示中的文字内容。 |
-| delay | Number | 否 | 延迟显示，单位为毫秒（ms），默认值为 0。<br />如果在此时间之前调用了 [my.hideLoading](https://opendocs.alipay.com/mini/006l22) 则不会显示。 |
+| delay | Number | 否 | 延迟显示，单位为毫秒（ms），默认值为 0。<br />如果在此时间之前调用了 **my.hideLoading** 则不会显示。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-

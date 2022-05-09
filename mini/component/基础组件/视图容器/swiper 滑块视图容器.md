@@ -14,10 +14,9 @@
 
 # 使用
 
-[小程序在线](https://herbox-embed.alipay.com/s/doc-swiper?theme=light&previewZoom=75&chInfo=openhome-doc)
+## 示例
 
-
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/953000e8-8817-4770-afa6-d4f58803ae56)
 
 ### .json 示例代码
 ```javascript
