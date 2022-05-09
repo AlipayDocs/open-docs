@@ -16,12 +16,12 @@
 my.ap.updateAlipayClient({
   success: () => {
     my.alert({
-      title: '升级成功',
+      title: '跳转成功',
     });
   },
   fail: () => {
     my.alert({
-      title: '升级失败',
+      title: '跳转失败',
     });
   },
 });
