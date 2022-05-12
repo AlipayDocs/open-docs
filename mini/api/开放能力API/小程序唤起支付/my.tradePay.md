@@ -84,4 +84,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 ### Q：web-view 中如何进行支付？
 A：web-view 中也可以通过 my.tradePay API 进行支付，不支持 H5 网页支付。
 
+### Q：小程序唤起支付可以支付其它 APPID 或者 PID 的订单吗？
+A：小程序 my.tradePay 接口不会限制创建 tradeNO 交易号参数的应用 APPID，只要交易号合法即可。
+
 更多问题可查看 [小程序支付 / 支付宝预授权 FAQ](https://opendocs.alipay.com/mini/api/tmz0kq) 。
