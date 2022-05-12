@@ -53,7 +53,7 @@ Page({
   scrollTo() {
     my.pageScrollTo({
       scrollTop: parseInt(this.data.scrollTop),
-            duration: 300,
+      duration: 300,
     });
   },
 });
