@@ -67,7 +67,7 @@ web-view 不支持抓包。可自行在 H5 页面中调试，保证 H5 显示没
 建议使用 H5 刷新页面的方式。
 
 ### H5 页面如何判断当前打开环境的方法？
-判断是小程序的 web-view，还是支付宝内置浏览器可以使用 my.getEnv 接口，调用 my.getEnv 前需要在 H5 页面中引入 https://appx/web-view.min.js 依赖。
+判断是小程序的 web-view，还是支付宝内置浏览器可以使用 my.getEnv 接口，调用 my.getEnv 前需要在 H5 页面中引入 `https://appx/web-view.min.js` 依赖。
 ```javascript
 //判断是否运行在小程序环境里
 my.getEnv(function(res){
