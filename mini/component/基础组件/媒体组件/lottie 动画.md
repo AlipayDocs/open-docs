@@ -1,4 +1,3 @@
-
 # 简介
 Lottie 是一个用于 Web 和 iOS、Android 的移动库，可使用 Bodymovin 解析以 JSON 格式导出的 Adobe After Effects 动画，并将其本地呈现在移动设备上。以下为 Lottie 动画库适配小程序的方法。有关 Lottie 的详情可查看 [Lottie 官方文档](https://github.com/airbnb/lottie-web) 和 [Lottie 官方支持能力列表](http://airbnb.io/lottie/#/supported-features)。相关 API 详情可查看 [my.createLottieContext](https://opendocs.alipay.com/mini/api/createlottiecontext)。
 
@@ -65,7 +64,7 @@ Page({
 | assets-path | String | false | 资源地址。"/" 表明是小程序根目录。<br />**版本要求：** 支付宝客户端 10.1.50 及以上 |
 | placeholder | String | true | 兜底图或者降级图地址。<br /><ul><li>1. 支持本地资源，案例：'/image/lottie/lottie2_default.png'。</li><li>支持 http 的 cdn 地址、近端地址。</li><li>小程序场景不支持 djangoId。</li></ul> **版本要求：** 支付宝客户端 10.1.52 及以上 |
 | django-id | String | false | Lottie 在线资源。远端的 Zip 文件地址。Lottie 组件会执行 MD5 校验、解压、获取等过程，在过程中显示 placeHolder 图片。<br />与 path 二选一<br />**版本要求：** 支付宝客户端 10.1.52 及以上 |
-| md5 | String | false | 在线资源的 md5 校验。<br />djangoId=[https://b.zip](https://b.zip/)<br />可以使用 b.zip 加密 获取 md5 值<br />md5="77c6c86fc89ba94cc0a9271b77ae77d2"<br />**版本要求：** 支付宝客户端 10.1.52 及以上 |
+| md5 | String | false | 在线资源的 md5 校验。<br />djangoId=`https://b.zip`。<br />可以使用 b.zip 加密 获取 md5 值<br />md5="77c6c86fc89ba94cc0a9271b77ae77d2"<br />**版本要求：** 支付宝客户端 10.1.52 及以上 |
 | optimize | Boolean | false | 降级。降级是指如遇低端设备，Lottie 会降级展示为 placeHolder。<br />当 optimize 为 true ，并且传入了 placeHolder 时，在低端设备上只会展示 placeHolder，不展示 Lottie。<br />低端设备如下所示：<br /><ul><li>iOS ：小于等于 iPhone6P</li><li>Android：内存容量小于 3G</li></ul> **默认值：** false<br />**版本要求：** 支付宝客户端 10.1.52 及以上 |
 | onDataReady | EventHandle | - | 当数据下载+视图创建完成时触发。 |
 | onDataFailed | EventHandle | - | 数据加载失败时触发。 |
@@ -97,7 +96,7 @@ UI 设计师提供的 Lottie 动画可能会带有目录 `images/`，里面保�
    - w：宽度
    - h：高度
    - u：根目录
-   - p：具体文件<br />因此如果图片资源统一放在一个单独 URL 里，例如 [http://xxx.xxx.com/images/img_0.png](http://xxx.xxx.com/images/img_0.png)，那么需要将 `[http://xxx.xxx.com/](http://xxx.xxx.com/)` 配置在 `assetsPath` 参数中。
+   - p：具体文件<br />因此如果图片资源统一放在一个单独 URL 里，例如 `http://xxx.xxx.com/images/img_0.png`，那么需要将 `http://xxx.xxx.com/` 配置在 `assetsPath` 参数中。
 
 #### Base64 support
 Lottie 对资源的定义是 
