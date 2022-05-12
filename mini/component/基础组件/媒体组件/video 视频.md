@@ -1,4 +1,3 @@
-
 # 简介
 用户可通过 video 组件播放视频，目前仅支持优酷指定渠道上传的视频，视频上传详情请参见 [视频播放](https://opendocs.alipay.com/mini/introduce/video)。相关 API：[my.createVideoContext](https://opendocs.alipay.com/mini/api/media/video/my.createvideocontext)。
 
@@ -11,9 +10,11 @@
    - 如果是由于 poster 实际的宽高比跟容器的宽高比不一致，请通过 poster-size 进行调整。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/ffcb08caac192788a1dcae326da38bbf.png#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
 
 ## 效果示例
+
 ![|300x601](https://gw.alipayobjects.com/zos/skylark-tools/public/files/bef7c084b9e83ef9bb6ae932918e2e86.png#align=left&display=inline&height=601&margin=%5Bobject%20Object%5D&originHeight=601&originWidth=300&status=done&style=none&width=300)
 
 # 使用
@@ -88,8 +89,8 @@ Page({
 | --- | --- | --- |
 | style | String | 内联样式。 |
 | class | String | 外部样式名。 |
-| src | String | 要播放视频的资源地址，支持优酷视频编码（支付宝客户端 10.1.75）。<br />src 支持的协议如下：<br />vid/showId: XMzg2Mzc5MzMwMA==<br />apFilePath: https://resource/xxx.video |
-| poster | String | 视频封面图的 url，支持 jpg、png 等图片，如 [https://***.jpg](https://***.jpg)。如果不传的话，默认取视频的首帧图作为封面图。 
+| src | String | 要播放视频的资源地址，支持优酷视频编码（支付宝客户端 10.1.75）。<br />src 支持的协议如下：<br />vid/showId: XMzg2Mzc5MzMwMA==<br />apFilePath: `https://resource/xxx.video`。 |
+| poster | String | 视频封面图的 url，支持 jpg、png 等图片，如 `https://***.jpg`。如果不传的话，默认取视频的首帧图作为封面图。 
 | poster-size | String | 当 poster 高宽比跟视频高宽不匹配时，如何显示 poster，设置规则同 background-size 一致。<br />**默认值：** contain |
 | object-fit | String | 当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充。<br />**默认值：** contain |
 | initial-time | Number | 指定视频初始播放位置，单位 s。<br /> **版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
