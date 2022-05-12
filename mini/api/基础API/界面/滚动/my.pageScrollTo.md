@@ -1,11 +1,8 @@
 
 # 简介
-**my.pageScrollTo** 是滚动到页面的目标位置的 API。
+**my.pageScrollTo** 是滚动到页面的目标位置的 API。支持滚动距离和选择器两种方式定位，滚动距离优先级高于选择器。
 
 ## 使用限制
-
-- scrollTop 的优先级比 selector 高。
-- 使用 my.pageScrollTo 跳转小程序顶部时，必须将 scrollTop 值设为大于 0，方可实现跳转。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
