@@ -97,7 +97,7 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 | param error | 参数错误。 | 检查入参格式是否符合文档要求。 |
 | SYSTEM_OUT_ERROR | 系统繁忙。 | 请稍后再试。 |
 | INVALID_PARAMETER | 缺少必选参数或参数有误。 | 检查参数是否正确或者缺失。 |
-| OVER_LIMIT | 超过调用量限制。 | 如需增加额度，请发邮件至 RiskGoCSC@service.alipay.com 进行申请。 |
+| OVER_LIMIT | 超过调用量限制。 | 如需增加额度，请发邮件至 `RiskGoCSC@service.alipay.com` 进行申请。 |
 
 # 常见问题 FAQ
 
