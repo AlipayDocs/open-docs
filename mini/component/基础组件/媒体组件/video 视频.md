@@ -89,7 +89,7 @@ Page({
 | --- | --- | --- |
 | style | String | 内联样式。 |
 | class | String | 外部样式名。 |
-| src | String | 要播放视频的资源地址，支持优酷视频编码（支付宝客户端 10.1.75）。<br />src 支持的协议如下：<br />vid/showId: XMzg2Mzc5MzMwMA==<br />apFilePath: `https://resource/xxx.video` |
+| src | String | 要播放视频的资源地址，支持优酷视频编码（支付宝客户端 10.1.75）。<br />src 支持的协议如下：<br />vid/showId: XMzg2Mzc5MzMwMA==<br />apFilePath: `https://resource/xxx.video`。 |
 | poster | String | 视频封面图的 url，支持 jpg、png 等图片，如 `https://***.jpg`。如果不传的话，默认取视频的首帧图作为封面图。 
 | poster-size | String | 当 poster 高宽比跟视频高宽不匹配时，如何显示 poster，设置规则同 background-size 一致。<br />**默认值：** contain |
 | object-fit | String | 当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充。<br />**默认值：** contain |
