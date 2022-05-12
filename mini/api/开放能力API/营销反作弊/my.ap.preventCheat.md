@@ -69,7 +69,7 @@ Object 类型，参数如下：
 | bank_card_no     | String | 否 | 128 | 银行卡号。 | 62223456765456 |
 | cert_no | String | 否 | 128 | 用于输入用户的身份证号码。 | 230109199911110921 |
 | client_ip | String | 否 | 128 | 账号登录 IP。 | 192.168.0.1 |
-| email_address | String | 否 | 128 | 邮箱账号。 | zhifubao@163.com |
+| email_address | String | 否 | 128 | 邮箱账号。 | `zhifubao@163.com` |
 | imei | String | 否 | 128 | 手机序列号。 | 865736031418584 |
 | imsi | String | 否 | 128 | 国际移动用户识别码。 | 460001234567890 |
 | mac_address | String | 否 | 128 | MAC 地址或设备唯一标识。 | 42.118.71.72 |
@@ -108,4 +108,4 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 | param error | 参数错误。 | 检查入参格式是否符合文档要求。 |
 | SYSTEM_OUT_ERROR | 系统繁忙。 | 请稍后再试。 |
 | INVALID_PARAMETER | 缺少必选参数或参数有误。 | 检查参数是否正确或者缺失。 |
-| OVER_LIMIT | 超过调用量限制。 | 如需增加额度，请发邮件至 RiskGoCSC@service.alipay.com 进行申请。 |
+| OVER_LIMIT | 超过调用量限制。 | 如需增加额度，请发邮件至 `RiskGoCSC@service.alipay.com` 进行申请。 |
