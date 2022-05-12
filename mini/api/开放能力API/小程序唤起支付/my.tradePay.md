@@ -2,21 +2,13 @@
 
 **my.tradePay** 是用于发起支付的 API。更多信息可查看 [小程序支付](https://opendocs.alipay.com/mini/introduce/pay)。
 
-相关问题可查看 [小程序支付 / 支付宝预授权 FAQ](https://opendocs.alipay.com/mini/api/tmz0kq) 。
-
 ## 使用限制
 
 此 API 暂仅支持企业支付宝小程序使用。
 
-## 扫码体验
-
-![|128x158](https://gw.alipayobjects.com/zos/skylark-tools/public/files/376f4e660588cdfca2364f8f2afe8400.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
-
 # 接口调用
 
 ## 示例代码
-
-### .js 示例代码
 
 #### 小程序支付
 
@@ -86,3 +78,10 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | 6001 | 用户中途取消。 | <ul><li>请用户重新签约 / 支付。</li><li>检查 tradeNO 的入参是否为正常入参，参数数据为 [alipay.trade.create](https://opendocs.alipay.com/mini/02j1c4)（统一收单交易创建接口）返回的“trade_no”。</li><li><b>alipay.trade.create</b>（统一收单交易创建接口）在小程序场景中 <b>buyer_id</b> 参数必填，且入参的 <b>buyer_id</b>（用户 user_id，2088 开头）必须和前端唤起支付的支付宝账号一致。</li></ul> |
 | 6002 | 网络连接出错。 | 检查网络连接后重试。 |
 | 6004 | 处理结果未知（有可能已经成功）。 | 请调用 [alipay.trade.query](https://opendocs.alipay.com/mini/02j2c2)（统一收单线下交易查询接口）查询商户订单列表中订单的支付状态，以查询接口实际返回的支付状态为准。 |
+
+# FAQ
+
+### Q：web-view 中如何进行支付？
+A：web-view 中也可以通过 my.tradePay API 进行支付，不支持 H5 网页支付。
+
+更多问题可查看 [小程序支付 / 支付宝预授权 FAQ](https://opendocs.alipay.com/mini/api/tmz0kq) 。
