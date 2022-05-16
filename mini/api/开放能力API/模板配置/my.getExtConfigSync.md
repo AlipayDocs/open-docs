@@ -18,9 +18,7 @@ my.alert({
 ```
 
 ## 返回值
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| data | Object | 模板 `ext.json` 中的 [ext](https://opendocs.alipay.com/mini/isv/creatminiapp#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 字段对象。 |
+返回模板 `ext.json` 中的 [ext](https://opendocs.alipay.com/mini/isv/creatminiapp#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 字段的值。
 
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
