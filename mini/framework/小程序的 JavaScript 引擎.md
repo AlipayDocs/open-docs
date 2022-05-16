@@ -1,4 +1,5 @@
 # 运行引擎
+
 小程序的 JavaScript 代码分为逻辑层脚本和 SJS 脚本，它们运行在相同的 JavaScript 引擎的不同线程中。 
 
 在不同操作系统上，小程序的 JavaScript 引擎是不同的。在 iOS 平台上，脚本运行在操作系统提供的 JavaScriptCore 引擎上；而在 Android 平台上，脚本则运行在支付宝提供的 V8 引擎上。
