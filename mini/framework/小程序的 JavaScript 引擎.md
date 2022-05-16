@@ -10,6 +10,7 @@
 **注意**：小程序引擎中禁止访问 globalThis、global ，因此无法直接使用 [babel-polyfill](https://babeljs.io/docs/en/babel-polyfill)。
 
 # 客户端操作系统对 ES6 扩展内置对象支持情况
+
 下表是各个操作系统对 ES6 扩展的内置对象的支持情况：
 
 | **Object** | **iOS 8** | **iOS 9** | **iOS 10 及以上** | **Android** |
@@ -86,12 +87,14 @@
 | Promise | 支持 | 支持 | 支持 | 支持 |
 
 # 对动态执行脚本的限制
+
 出于安全考虑，小程序限制了部分 ES 的语法和 API ：
 - 不支持 eval 使用。
 - setTimeout 和 setInterval 函数仅支持函数做回调参数，不可动态执行代码。
 - 不支持使用 new Function 创建函数。
 
 # 模块名保留字
+
 小程序的逻辑层支持 ES2015 模块化语法，但是将浏览器部分内置对象名（如 window、document）作保留字使用，以应对未来的不时之需，这些保留字不可用做模块名。保留字有：globalThis、global、AlipayJSBridge、fetch、self、window、document、location、XMLHttpRequest。更多详情可查看 [框架概述](https://opendocs.alipay.com/mini/framework/overview) 中对模块名保留字的介绍。
 
 # 相关文档
