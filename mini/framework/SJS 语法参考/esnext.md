@@ -38,6 +38,7 @@ var obj = {
   },
 };
 ```
+
 **注意**：不支持 super 关键字，不能在对象方法中使用 super。
 
 # 模板字符串（template string）
