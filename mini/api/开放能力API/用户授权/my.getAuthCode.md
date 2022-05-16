@@ -79,7 +79,6 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | authErrorScopes | Object | 失败的授权类型，key 是授权失败的 scope，value 是对应的错误码。 |
 | authSuccessScopes | Array | 成功的授权 scope。 |
 
-
 ## 错误码
 
 | **错误码** | **描述** | **解决方案** |
