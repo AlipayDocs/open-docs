@@ -103,5 +103,3 @@ A：scopes 参数传 auth_base 不会弹出授权浮窗，可以直接获取 aut
 A：调用 my.getAuthCode 获取到的 authCode 值是不一样的，但是在同一个支付宝账号登录的情况下，根据此值获取到的 user_id 是唯一的。
 
 更多常见问题可查看 [用户授权 FAQ](https://opendocs.alipay.com/mini/api/bpubha) 。
-
-
