@@ -4,7 +4,7 @@
 
 为了创造更良好的支付宝小程序用户体验，不允许在小程序的首屏引导用户授权。需要在用户充分了解小程序的业务内容后再引导用户授权。
 
-授权码换取支付宝用户信息等更多介绍请参见 [用户授权](https://opendocs.alipay.com/mini/introduce/authcode)。
+授权码换取支付宝用户信息等更多介绍可查看 [用户授权](https://opendocs.alipay.com/mini/introduce/authcode)。
 
 ## 使用限制
 
@@ -67,7 +67,7 @@ scopes 可传入单个 scope 名称（如 "auth_base"），也可传入包含多
 | **scopes** | **描述** | **包含的服务端 API 接口** |
 | --- | --- | --- |
 | auth_base | 授权获取用户唯一标识和授权访问令牌。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4)（换取授权访问令牌接口）获取支付宝会员标识（user_id）。此参数不会弹出授权浮窗。 | alipay.system.oauth.token |
-| auth_user | 授权获取支付宝会员信息。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4) 换取授权访问令牌，然后调用  [alipay.user.info.share](https://opendocs.alipay.com/open/02dvf6) （支付宝会员授权信息查询接口）获取用户已授权的信息。| alipay.system.oauth.token alipay.user.info.share
+| auth_user | 授权获取支付宝会员信息。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4) 换取授权访问令牌，然后调用  [alipay.user.info.share](https://opendocs.alipay.com/open/02dvf6) （支付宝会员授权信息查询接口）获取用户已授权的信息。| alipay.system.oauth.token、alipay.user.info.share |
 
 ### Function success
 
@@ -88,20 +88,20 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | 10 | Empty Data | <ol><li>因为 scopes 入参错误导致数据获取不到（参数错误会先弹出 <b>服务正忙，请稍后再试</b>），检查 scopes 入参是否正确。</li><li>用户关闭弹窗导致数据获取不到，可在 fail 回调中做引导授权，重新调用 my.getAuthCode 授权。</li></ol> |
 | 11 | 用户点击拒绝授权 | <ol><li>建议在需要获取用户信息前，增加获取权限的用途和引导提示，引导用户接受小程序授权，增加用户体验。</li><li>可在 fail 回调中做引导授权，重新调用 my.getAuthCode 授权。</li></ol> |
 
-## 常见问题
+# 常见问题
 
-### Q：web-view 中如何进行用户授权？
-A：web-view 中不支持调用 my.getAuthCode 接口。如果要在 web-view 中获取用户信息，请在小程序上下文中获取后传递到 web-view 中。[小程序和 web-view 通信示例](https://opendocs.alipay.com/support/01rb22)
+## Q：web-view 中如何进行用户授权？
+A：web-view 中不支持调用 my.getAuthCode 接口。如果要在 web-view 中获取用户信息，请在小程序上下文中获取后传递到 web-view 中，可查看 [小程序与web-view内嵌H5相互通信](https://opendocs.alipay.com/support/01rb22)
 
-### Q：如何同时进行用户基础信息、手机号、证件等授权（聚合授权）？
-A：alipay.user.info.share 接口的每个用户信息字段（如：用户姓名，手机号码，生日等）需要单独申请开通，开通权限的字段会聚合展示在授权浮窗。[查看申请流程](https://opendocs.alipay.com/support/01rayg)。
+## Q：如何同时进行用户基础信息、手机号、证件等授权（聚合授权）？
+A：alipay.user.info.share 接口的每个用户信息字段（如：用户姓名，手机号码，生日等）需要单独申请开通，开通权限的字段会聚合展示在授权浮窗，可查看 [用户信息申请流程](https://opendocs.alipay.com/support/01rayg)。
 
-### Q：如何静默获取用户信息？
+## Q：如何静默获取用户信息？
 A：scopes 参数传 auth_base 不会弹出授权浮窗，可以直接获取 auth_code。服务端将 auth_code 作为入参调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4)（换取授权访问令牌接口）可以获取支付宝会员标识（user_id）。
 
-### Q：调用 my.getAuthCode 获取到的 authCode 值是否每个用户是唯一的呢？
+## Q：调用 my.getAuthCode 获取到的 authCode 值是否每个用户是唯一的呢？
 A：调用 my.getAuthCode 获取到的 authCode 值是不一样的，但是在同一个支付宝账号登录的情况下，根据此值获取到的 user_id 是唯一的。
 
-更多常见问题请查看 [用户授权 FAQ](https://opendocs.alipay.com/mini/api/bpubha) 。
+更多常见问题可查看 [用户授权 FAQ](https://opendocs.alipay.com/mini/api/bpubha) 。
 
 
