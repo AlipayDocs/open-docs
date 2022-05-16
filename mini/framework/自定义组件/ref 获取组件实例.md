@@ -1,4 +1,5 @@
 从 `1.14.0` 版本开始，自定义组件支持使用 ref 获取自定义组件实例，可以使用 [my.canIUse('component2') ](https://opendocs.alipay.com/mini/api/can-i-use)做兼容。 并且，需要在 IDE 中的 **详情** > **项目配置** 中，勾选 component2。
+
 ```javascript
 // /pages/index/index.js
 Page({
@@ -41,6 +42,7 @@ Component({
 ```
 
 # 自定义组件 ref 定义段
+
 自基础库 `1.18.0` 开始，自定义组件（component2）支持使用 ref 定义段指定调用者传递ref时获取的值。未使用 ref 定义段时，调用者传递 ref 获取的值是自定义组件的 `this` （插件的自定义组件将返回 `null`)。 使用这个定义段时，将以这个定义段的函数返回值代替。
 ```javascript
 // 自定义组件内部
@@ -69,4 +71,3 @@ Page({
 # 相关文档
 - [自定义组件介绍](https://opendocs.alipay.com/mini/framework/custom-component-overview)
 - [my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)
-
