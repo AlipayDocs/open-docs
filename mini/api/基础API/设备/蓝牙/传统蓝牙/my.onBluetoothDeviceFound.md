@@ -178,7 +178,9 @@ Page({
           return;
         }
         my.alert({ content: JSON.stringify(res) });
-        devid = res.devices[0].deviceId;
+        this.setData({
+          devid: res.devices[0].deviceId,
+        });
       },
       fail: error => {
         my.alert({ content: JSON.stringify(error) });
@@ -370,7 +372,7 @@ Page({
   },
   onBluetoothAdapterStateChange(res) {
     if (res.error) {
-      my.alert({ content: JSON.stringify(error) });
+      my.alert({ content: JSON.stringify(res.error) });
     } else {
       my.alert({ content: '本机蓝牙状态变化：' + JSON.stringify(res) });
     }
@@ -389,7 +391,7 @@ Page({
   },
   onBLEConnectionStateChanged(res) {
     if (res.error) {
-      my.alert({ content: JSON.stringify(error) });
+      my.alert({ content: JSON.stringify(res.error) });
     } else {
       my.alert({ content: '连接状态变化：' + JSON.stringify(res) });
     }
@@ -423,4 +425,3 @@ Function 类型。callback 回调函数的入参为 Object 类型，属性如下
 | deviceId | String | 设备 ID。 |
 | RSSI | Number | 设备信号强度。 |
 | advertisData | Hex String | 设备的广播内容。 |
-

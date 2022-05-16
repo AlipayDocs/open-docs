@@ -183,7 +183,9 @@ Page({
           return;
         }
         my.alert({ content: JSON.stringify(res) });
-        devid = res.devices[0].deviceId;
+        this.setData({
+          devid: res.devices[0].deviceId,
+        });
       },
       fail: error => {
         my.alert({ content: JSON.stringify(error) });
@@ -375,7 +377,7 @@ Page({
   },
   onBluetoothAdapterStateChange(res) {
     if (res.error) {
-      my.alert({ content: JSON.stringify(error) });
+      my.alert({ content: JSON.stringify(res.error) });
     } else {
       my.alert({ content: '本机蓝牙状态变化：' + JSON.stringify(res) });
     }
@@ -394,7 +396,7 @@ Page({
   },
   onBLEConnectionStateChanged(res) {
     if (res.error) {
-      my.alert({ content: JSON.stringify(error) });
+      my.alert({ content: JSON.stringify(res.error) });
     } else {
       my.alert({ content: '连接状态变化：' + JSON.stringify(res) });
     }
@@ -422,4 +424,3 @@ Object 类型，属性如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-
