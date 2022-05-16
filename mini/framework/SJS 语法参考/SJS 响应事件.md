@@ -66,6 +66,7 @@ export default {
 # 使用方法
 ## 事件回调
 ### 入参
+
 接受两个参数：
 | **参数** | **描述** |
 | --- | --- |
@@ -100,7 +101,6 @@ SJS 函数的第二个参数 ownerComponent 指向该事件 event.currentTarget 
 | setTimeout | (fn, timeout) | 同浏览器平台，仅能被同 Descriptor 对象的 clearTimeout 取消，返回该请求对应的标识符（可用于取消）。<br /><ol><li>fn 回调函数。</li><li>timeout 超时时间。</li></ol> |
 | clearTimeout | id | 取消指定的 `setTimeout`。仅能取消由该 Descriptor 自己发起的。id 标识符（`setTimeout` 返回值）。 |
 
-
 #### 4. 基础组件 Descriptor 描述对象
 通过 event.instance 可以获得 event.currentTarget 的 Descriptor 描述对象，除了上述自定义组件/页面的方法外，还具有如下方法：
 
@@ -114,7 +114,7 @@ SJS 函数的第二个参数 ownerComponent 指向该事件 event.currentTarget 
 | removeClass | (...classNames) | 移除指定样式名（可多个），不允许移除 a-* 开头的样式名。 |
 | setStyle | style | 添加指定的行内样式。支持 rpx。设置的样式优先级比组件 axml 里面定义的样式高。每次调用都会覆盖上一次的调用。<br />style 样式字符串或键值对象。 |
 | getDOMProperty | properties | properties 基础元素的 DOM 属性名数组。<br />基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。获取基础元素的 DOM 属性。支持的属性如下：<br /><ul><li>scrollLeft</li><li>scrollTop</li></ul> |
-| setDOMProperty | properties | properties 基础元素的 DOM 属性对象。<br />基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。设置基础元素的 DOM 属性。支持的属性如下：<br /> <ul><li>scrollLeft</li><li>scrollTop</li></ul> |
+| setDOMProperty | properties | properties 基础元素的 DOM 属性对象。<br />基础库 **2.7.4** 起支持。设置基础元素的 DOM 属性。支持的属性如下：<br /> <ul><li>scrollLeft</li><li>scrollTop</li></ul> |
 
 #### 5. composedPath()
 基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持，获取事件路径。返回值为数组，数组的元素为基础元素的 Descriptor 描述对象。使用插件时，宿主小程序内的事件路径会跳过属于插件的描述对象，插件内的事件路径也会跳过属于宿主小程序的描述对象。
