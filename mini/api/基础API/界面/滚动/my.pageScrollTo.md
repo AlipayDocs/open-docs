@@ -3,7 +3,7 @@
 **my.pageScrollTo** 是滚动到页面的目标位置的 API。支持滚动距离和选择器两种方式定位，滚动距离优先级高于选择器。
 
 ## 使用限制
-- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/fddf26af471fde54223b5c44dc7e772d.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
@@ -69,7 +69,6 @@ Page({
 | success | Function | 否 | 接口调用成功的回调函数。 |
 | fail | Function | 否 | 接口调用失败的回调函数。 |
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
-
 
 ### selector 语法
 当传入 selector 参数，框架会执行 document.querySelector(selector) 以选取目标节点。
