@@ -79,12 +79,12 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | 6002 | 网络连接出错。 | 检查网络连接后重试。 |
 | 6004 | 处理结果未知（有可能已经成功）。 | 请调用 [alipay.trade.query](https://opendocs.alipay.com/mini/02j2c2)（统一收单线下交易查询接口）查询商户订单列表中订单的支付状态，以查询接口实际返回的支付状态为准。 |
 
-# FAQ
+# 常见问题 FAQ
 
-### Q：web-view 中如何进行支付？
+## Q：web-view 中如何进行支付？
 A：web-view 中也可以通过 my.tradePay API 进行支付，不支持 H5 网页支付。
 
-### Q：小程序唤起支付可以支付其它 APPID 或者 PID 的订单吗？
+## Q：小程序唤起支付可以支付其它 APPID 或者 PID 的订单吗？
 A：小程序 my.tradePay 接口不会限制创建 tradeNO 交易号参数的应用 APPID，只要交易号合法即可。
 
 更多问题可查看 [小程序支付 / 支付宝预授权 FAQ](https://opendocs.alipay.com/mini/api/tmz0kq) 。
