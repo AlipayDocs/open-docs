@@ -52,19 +52,7 @@ Page({
   data: {
     hasNetworkType: false
   },
-  onLoad() {
-    this.onChange = this.onChange.bind(this);
-    // my.onNetworkChange(this.onChange);
-  },
-  onChange(res){
-    console.log('onNetworkChange', res);
-    this.setData({
-      hasNetworkType: true,
-      networkType: res.networkType
-    });
-  },
   onUnload() {
-    // my.offNetworkChange(this.onChange);
   },
   getNetworkType() {
     my.getNetworkType({
@@ -115,4 +103,3 @@ Object 类型，属性如下：
 | --- | --- | --- |
 | networkAvailable | Boolean | 网络是否可用。 |
 | networkType | String | 网络类型值 UNKNOWN / NOTREACHABLE / WIFI / 3G / 2G / 4G / WWAN。 |
-

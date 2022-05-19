@@ -35,7 +35,7 @@ Page({
     my.getServerTime({
       success: (res) => {
         my.alert({
-          content: res.time,
+          content: `${res.time}`,
         });
       },
     });
@@ -59,4 +59,3 @@ Object 类型，属性如下：
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | time | Number | 获取当前服务器时间，返回一个数值，代表从 1970 年 1 月 1 日 0 时 0 分 0 秒（UTC）距离当前时间的毫秒数。 |
-
