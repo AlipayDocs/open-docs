@@ -122,7 +122,7 @@ Object 类型，参数如下：
 | url | String | 是 | 开发者服务器地址。 |
 | filePath | String | 是 | 要上传文件资源的本地路径。 |
 | fileName | String | 是 | 文件名，即对应的 key，开发者在服务器端通过这个 key 可以获取到文件二进制内容。 |
-| fileType | String | 是 | 文件类型支持图片、视频、音频。 |
+| fileType | String | 是 | 文件类型支持图片、视频、音频，对应的值分别为 "image"、"video"、"audio"。 |
 | hideLoading | Bool | 否 | 是否隐藏 loading 图（默认值为 false）。 |
 | header | Object | 否 | HTTP 请求 Header。 |
 | formData | Object | 否 | HTTP 请求中其他额外的 form 数据。 |
