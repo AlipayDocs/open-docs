@@ -25,24 +25,24 @@
 // .js
 my.ap.preventCheat({
   // 请自行替换 xxxxx 各个参数
-  pid:'xxxxxxxxxxxxxxxx',
+  pid: "xxxxxxxxxxxxxxxx",
   bizContext: {
-        "service": "marketing", 
-        "risk_type": "riskinfo_anticheat_common", 
-        "pid": "xxxxxxxxxxxxxxxx", 
-        "mobile_no": "xxxxxxxxxxx", 
-        "user_id": "xxxxxxxxxxxxxxxxx", 
-        "bank_card_no": "xxxxxxxxxxx", 
-        "client_ip": "null", 
-        "email_address": "null", 
-        "imei": "null", 
-        "imsi": "null", 
-        "mac_address": "null", 
-        "extended_info": "null"
-        },
-  success(e) {
+    service: "marketing",
+    risk_type: "riskinfo_anticheat_common",
+    pid: "xxxxxxxxxxxxxxxx",
+    mobile_no: "xxxxxxxxxxx",
+    user_id: "xxxxxxxxxxxxxxxxx",
+    bank_card_no: "xxxxxxxxxxx",
+    client_ip: "null",
+    email_address: "null",
+    imei: "null",
+    imsi: "null",
+    mac_address: "null",
+    extended_info: "null",
   },
-})
+  success(e) {},
+});
+
 ```
 
 ## 入参
