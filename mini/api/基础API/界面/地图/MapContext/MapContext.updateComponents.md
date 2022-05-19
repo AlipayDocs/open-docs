@@ -12,40 +12,40 @@
 ## 示例代码
 ```javascript
 // .js
-this.mapCtx = my.createMapContext('map');
+this.mapCtx = my.createMapContext("map");
 this.mapCtx.updateComponents({
-    scale: 14,
-    longitude: 120.131441,
-    latitude: 30.279383,
-    command:{                                   
-        // marker动画
-        markerAnim:[
-            {
-                type:0           // 跳动动画 10.1.35
-                markerId:xxx,
-            }
-        ],     
-    },
-    setting:{
-        // 手势
-        gestureEnable:0/1,
-        // 比例尺
-        showScale:0/1,
-        // 指南针
-        showCompass:0/1,
-        // 双手下滑
-        tiltGesturesEnabled:0/1,
-        // 交通路况展示
-        trafficEnabled:0/1,                     
-        // 地图POI信息
-        showMapText:0/1, 
-        // 高德地图logo位置
-        logoPosition:{centerX:150, centerY:90},                       
-    },
-    markers:[{},{}],
-    polyline:[{},{}],
-    include-points:[{},{}],
-    include-padding:{left:0, right:0, top:0, bottom:0},
+  scale: 14,
+  longitude: 120.131441,
+  latitude: 30.279383,
+  command: {
+    // marker动画
+    markerAnim: [
+      {
+        type: 0, // 跳动动画 10.1.35
+        markerId: "markerId",
+      },
+    ],
+  },
+  setting: {
+    // 手势
+    gestureEnable: 0 / 1,
+    // 比例尺
+    showScale: 0 / 1,
+    // 指南针
+    showCompass: 0 / 1,
+    // 双手下滑
+    tiltGesturesEnabled: 0 / 1,
+    // 交通路况展示
+    trafficEnabled: 0 / 1,
+    // 地图POI信息
+    showMapText: 0 / 1,
+    // 高德地图logo位置
+    logoPosition: { centerX: 150, centerY: 90 },
+  },
+  markers: [{}, {}],
+  polyline: [{}, {}],
+  "include-points": [{}, {}],
+  "include-padding": { left: 0, right: 0, top: 0, bottom: 0 },
 });
 ```
 
@@ -61,4 +61,3 @@ this.mapCtx.updateComponents({
 | include-padding | Object | 视野在地图 padding 范围内展示。 |
 | setting | Object | 设置。 |
 | command | Object | 命令，可用于更新 marker 动画。 |
-
