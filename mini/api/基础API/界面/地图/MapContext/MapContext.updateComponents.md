@@ -28,17 +28,17 @@ this.mapCtx.updateComponents({
   },
   setting: {
     // 手势
-    gestureEnable: 0 / 1,
+    gestureEnable: true, // false 或 true
     // 比例尺
-    showScale: 0 / 1,
+    showScale: true, // false 或 true
     // 指南针
-    showCompass: 0 / 1,
+    showCompass: true, // false 或 true
     // 双手下滑
-    tiltGesturesEnabled: 0 / 1,
+    tiltGesturesEnabled: true, // false 或 true
     // 交通路况展示
-    trafficEnabled: 0 / 1,
+    trafficEnabled: true, // false 或 true
     // 地图POI信息
-    showMapText: 0 / 1,
+    showMapText: true, // false 或 true
     // 高德地图logo位置
     logoPosition: { centerX: 150, centerY: 90 },
   },
