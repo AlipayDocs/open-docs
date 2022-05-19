@@ -88,10 +88,10 @@ Page({
 地理位置定位完成时，触发回调函数，回调参数示例如下：
 ```javascript
 {
-  longitude:100.3,
-  latitude:30.1,
-  locatedCityId:""
-}
+  longitude: 100.3,
+  latitude: 30.1,
+  locatedCityId: "",
+};
 ```
 
 ## 入参
