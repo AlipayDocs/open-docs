@@ -1,11 +1,11 @@
 # 简介
 
-**my.uploadFile** 是上传本地资源到开发者服务器的 API。
+**my.uploadFile** 是上传本地资源到开发者服务器的 API，客户端发起的是一个 HTTPS POST 请求。
 
 ## 使用限制
 
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-> 请登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTP 请求（my.request）、上传文件（my.uploadFile）。
+> 请登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTPS 请求（my.request）、上传文件（my.uploadFile）。
 >
 > ![|706x73](http://mdn.alipayobjects.com/afts/img/A*xM4NR6VRbfy_8SFDkgXUhQBkAa8wAA/original?bz=openpt_doc&t=JgMQtxsM9S7uH5pPEDbN9wAAAABkMK8AAAAA#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&originHeight=168&originWidth=1624&status=done&style=stroke&width=1624)
 >
@@ -120,9 +120,9 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | url | String | 是 | 开发者服务器地址。 |
-| filePath | String | 是 | 要上传文件资源的本地定位符。 |
+| filePath | String | 是 | 要上传文件资源的本地路径。 |
 | fileName | String | 是 | 文件名，即对应的 key，开发者在服务器端通过这个 key 可以获取到文件二进制内容。 |
-| fileType | String | 是 | 文件类型支持图片、视频、音频（ image / video / audio）。 |
+| fileType | String | 是 | 文件类型支持图片、视频、音频，对应的值分别为 "image"、"video"、"audio"。 |
 | hideLoading | Bool | 否 | 是否隐藏 loading 图（默认值为 false）。 |
 | header | Object | 否 | HTTP 请求 Header。 |
 | formData | Object | 否 | HTTP 请求中其他额外的 form 数据。 |
@@ -230,10 +230,17 @@ const task = my.uploadFile({
   fileName: 'file',
   filePath: '...',
 });
-task.onProgressUpdate(({progress, totalBytesWritten, totalBytesExpectedToWrite}) => {
+task.onProgressUpdate(payload => {
+  const { progress, totalBytesWritten, totalBytesExpectedToWrite } = payload;
 })
 task.abort()
 ```
+
+其中，payload 参数的含义如下：
+
+- progress: 上传进度
+- totalBytesWritten: 当前长度
+- totalBytesExpectedToWrite: 总长度
 
 # 常见问题 FAQ
 
@@ -263,7 +270,8 @@ A：上传图片是服务端通过二进制流接受图片，之后服务端只�
 A：请求的 URL 没有配置白名单，建议添加 URL 的域名为白名单。
 
 ## Q：小程序是否支持上传 excel 文件？
-A：目前 my.uploadFile 上传文件类型支持图片、视频、音频（ image / video / audio）,暂不支持其他类型的文件。
+A：目前 my.uploadFile 上传文件类型支持图片、视频、音频，暂不支持其他类型的文件。
 
 ## Q：my.uploadFile 支持多张图片同时上传吗？
 A：my.uploadFile 暂不支持多张图片同时上传，一次只能上传一张图片。
+
