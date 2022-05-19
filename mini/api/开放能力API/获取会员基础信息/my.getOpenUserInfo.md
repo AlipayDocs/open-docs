@@ -2,7 +2,7 @@
 # 简介
 **my.getOpenUserInfo** 是获取支付宝会员的基础信息（头像图片地址、昵称）的 API。
 
-获取支付宝会员基础信息需要用户进行授权。授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的点击来触发。将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，当用户点击并同意之后，可以通过`my.getOpenUserInfo` 接口获取到支付宝会员的基础信息。
+获取支付宝会员基础信息需要用户进行授权,授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发， `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `userinfo`。用户点击并同意之后，可以通过 `my.getOpenUserInfo` 接口获取到支付宝会员的基础信息。
 
 添加 [获取会员基础信息](https://opendocs.alipay.com/mini/introduce/twn8vq) 能力后才可以调用该接口。<br />
 
@@ -20,10 +20,14 @@
 唤起授权框，推荐兼容方案如下：
 ```html
 <!-- .axml -->
-<button a:if="{{canIUseAuthButton}}" open-type="getAuthorize" 
-onGetAuthorize="onGetAuthorize" onError="onAuthError" 
-scope='userInfo'>
-    会员基础信息授权
+<button
+  a:if="{{canIUseAuthButton}}"
+  open-type="getAuthorize" 
+  onGetAuthorize="onGetAuthorize"
+  onError="onAuthError" 
+  scope='userInfo'
+>
+  会员基础信息授权
 </button>
 ```
 
@@ -91,15 +95,7 @@ success 回调函数会携带一个 Object 类型的对象，属性被解析后�
 
 # 常见问题 FAQ
 ### Q：调用 my.getOpenUserInfo，报错“无效的授权关系”，如何处理？
-A：用户 **主动授权** 后调用`my.getOpenUserInfo` 才能获取用户支付宝会员的基础信息。授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发操作。需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `userinfo` ，示例代码如下：
-```html
-<!-- .axml -->
-<button a:if="{{canIUseAuthButton}}" open-type="getAuthorize" 
-onGetAuthorize="onGetAuthorize" onError="onAuthError" 
-scope='userInfo'>
-    会员基础信息授权
-</button>
-```
+A：用户 **主动授权** 后调用`my.getOpenUserInfo` 才能获取用户支付宝会员的基础信息。授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发操作，需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `userinfo`。
 
 ### Q：调用 my.getOpenUserInfo，报错 "ISV权限不足"，如何处理？
 A：“获取会员信息”功能包已下架，若之前创建的应用已添加了“获取会员信息”的功能包则能正常调用接口，未添加的则无法再添加此功能。 新创建的应用请使用 [获取会员基础信息](https://opendocs.alipay.com/mini/introduce/twn8vq) my.getOpenUserInfo 接口。
@@ -115,9 +111,9 @@ A：“获取会员信息”功能包已下架，若之前创建的应用已添�
 ### Q：“获取会员基础信息” 可以获取支付宝用户的 user_id 吗？
 A：不可以。获取支付宝用户的 user_id 需要在服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4)（换取授权访问令牌接口）。
 
-更多问题请参阅 [获取会员基础信息 FAQ](https://opendocs.alipay.com/mini/api/qcn29g)<br />
-
 ### Q：“获取会员基础信息”可以获取用户身份证、真实姓名等信息吗？
 A：不可以。“获取会员基础信息”只能获取用户头像、昵称信息。
+
+更多问题请参阅 [获取会员基础信息 FAQ](https://opendocs.alipay.com/mini/api/qcn29g)
 
 
