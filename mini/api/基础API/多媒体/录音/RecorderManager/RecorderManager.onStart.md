@@ -14,12 +14,12 @@
 ### .js 示例代码
 ```javascript
 let recorderManager = my.getRecorderManager();
-recorderManager.onStrart(res => {
+recorderManager.onStart(res => {
  console.log('开始录音');
 })
 ```
 
 ## 入参
 
-### function callback
+### Function callback
 录音开始事件的回调函数
