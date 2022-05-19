@@ -16,7 +16,7 @@
 my.connectSocket({
   url: '开发者的服务器地址'
 });
-my.onSocketOpen(function(res){
+my.onSocketOpen(function(){
   console.log('WebSocket 连接已打开！');
 });
 my.onSocketError(function(res){
@@ -30,4 +30,3 @@ Obejct 类型，属性如下：
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | callback | Function | 是 | WebSocket 错误事件的回调函数。 |
-
