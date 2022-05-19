@@ -26,7 +26,6 @@
 my.ap.preventCheat({
   // 请自行替换 xxxxx 各个参数
   pid:'xxxxxxxxxxxxxxxx',
-  appId:'xxxxxxxxxxxxxxxx',
   bizContext: {
         "service": "marketing", 
         "risk_type": "riskinfo_anticheat_common", 
@@ -52,7 +51,6 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | pid | String | 是 | 小程序的开放平台账号。 |
-| appId | String | 是 | 小程序对应的 APPID。 |
 | bizContext | Map | 是 | 需要识别的业务参数。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
