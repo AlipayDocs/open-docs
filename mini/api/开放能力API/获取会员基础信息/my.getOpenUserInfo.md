@@ -88,10 +88,6 @@ success 回调函数会携带一个 Object 类型的对象，属性被解析后�
 | --- | --- | --- |
 | avatar | String | 头像图片地址。 |
 | nickName | String | 昵称。 |
-| gender | - | 强制返回空值 |
-| countryCode | - | 强制返回空值 |
-| province | - | 强制返回空值 |
-| city | - | 强制返回空值 |
 
 # 常见问题 FAQ
 ### Q：调用 my.getOpenUserInfo，报错“无效的授权关系”，如何处理？
