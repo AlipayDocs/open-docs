@@ -3,9 +3,9 @@
 
 此 API 涉及获取用户隐私信息，使用此 API 前请对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
 
-获取支付宝会员手机号需要用户进行授权，授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发， `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `phoneNumber`。用户点击并同意之后，可以通过 `my.getPhoneNumber` 接口获取到支付宝会员加密后的手机号。最后在服务端结合签名算法和 AES 密钥进行解密获取手机号，方法可查看 [接口内容加解密方式](https://opendocs.alipay.com/common/02mse3)
-
 目前该功能需要在开发者后台完成敏感信息申请后才可以使用，入口为 **开发管理** > **功能列表** > **添加功能** > **获取会员手机号** > **用户信息申请**，此功能需谨慎使用，若支付宝发现信息存在超出约定范围使用或者不合理使用等情况，支付宝有权永久回收该小程序的该接口权限。
+
+获取支付宝会员手机号需要用户进行授权，授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发， `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `phoneNumber`。用户点击并同意之后，可以通过 `my.getPhoneNumber` 接口获取到支付宝会员加密后的手机号。最后在服务端结合签名算法和 AES 密钥进行解密获取手机号，方法可查看 [接口内容加解密方式](https://opendocs.alipay.com/common/02mse3)
 
 更多信息请参阅 [获取会员手机号](https://opendocs.alipay.com/mini/introduce/getphonenumber)。
 
