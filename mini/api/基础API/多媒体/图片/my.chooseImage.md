@@ -18,70 +18,20 @@
 
 ## 示例代码
 
-### .json 示例代码
-```json
-// API-DEMO page/API/image/image.json
-{
-    "defaultTitle": "图片"
-}
-```
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/API/image/image.axml -->
-<view class="page">
-  <view class="page-section">
-    <view class="page-section-btns">
-      <view onTap="chooseImage">选择照片</view>
-      <view onTap="previewImage">预览照片</view>
-      <view onTap="saveImage">保存照片</view>
-    </view>
-  </view>
-</view>
-```
-
 ### .js 示例代码
 ```javascript
-// API-DEMO page/API/image/image.js
-Page({
-  chooseImage() {
-    my.chooseImage({
-      sourceType: ['camera','album'],
-      count: 2,
-      success: (res) => {
-        my.alert({
-          content: JSON.stringify(res),
-        });
-      },
-      fail:()=>{
-        my.showToast({
-          content: 'fail', // 文字内容
-        });
-      }
-    })
-  },
-  previewImage() {
+my.chooseImage({
+  sourceType: ['camera','album'],
+  count: 2,
+  success: (res) => {
+    console.log(res);
     my.previewImage({
       current: 2,
-      urls: [
-        'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
-        'https://img.alicdn.com/tps/TB1pfG4IFXXXXc6XXXXXXXXXXXX.jpg',
-        'https://img.alicdn.com/tps/TB1h9xxIFXXXXbKXXXXXXXXXXXX.jpg'
-      ],
-    });
-  },
-  saveImage() {
-    my.saveImage({
-      url: 'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
-      showActionSheet: true,
-      success: () => {
-        my.alert({
-          title: '保存成功',
-        });
-      },
+      // res.tempFilePaths本地临时文件列表
+      urls: res.tempFilePaths,
     });
   }
-});
+})
 ```
 
 
@@ -101,21 +51,19 @@ Object 类型，属性如下：
 ### success 回调函数
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| apFilePaths | String Array | 图片的路径数组。 |
-| tempFiles | Array.<Object> | 图片的本地临时文件列表。 |
+| tempFilePaths | String Array | 图片的[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)路径列表。 |
+| tempFiles | Array.<Object> | 图片的[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)列表。 |
 
 
 #### res.tempFiles 结构
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| path | String | 本地临时文件路径（本地路径）。 |
-| size | Number | 本地临时文件大小，单位为 B。 |
+| path | String | [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)路径。 |
+| size | Number | [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)大小，单位为 B。 |
 
 
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 11 | 用户取消操作。 | 这是用户正常交互流程分支，不需要特殊处理。 |
-
-
 
