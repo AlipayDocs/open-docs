@@ -185,7 +185,9 @@ Page({
           return;
         }
         my.alert({ content: JSON.stringify(res) });
-        devid = res.devices[0].deviceId;
+        this.setData({
+          devid: res.devices[0].deviceId,
+        });
       },
       fail: error => {
         my.alert({ content: JSON.stringify(error) });
@@ -377,7 +379,7 @@ Page({
   },
   onBluetoothAdapterStateChange(res) {
     if (res.error) {
-      my.alert({ content: JSON.stringify(error) });
+      my.alert({ content: JSON.stringify(res.error) });
     } else {
       my.alert({ content: '本机蓝牙状态变化：' + JSON.stringify(res) });
     }
@@ -396,7 +398,7 @@ Page({
   },
   onBLEConnectionStateChanged(res) {
     if (res.error) {
-      my.alert({ content: JSON.stringify(error) });
+      my.alert({ content: JSON.stringify(res.error) });
     } else {
       my.alert({ content: '连接状态变化：' + JSON.stringify(res) });
     }

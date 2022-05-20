@@ -48,7 +48,7 @@ Page({
     this.mapCtx = my.createMapContext('map');
   },
   // ... ...
-}）
+})
 ```
 
 #### PageContext.setData(Object)

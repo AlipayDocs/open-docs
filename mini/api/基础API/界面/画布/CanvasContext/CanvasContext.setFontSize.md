@@ -20,7 +20,7 @@
 ### .js 示例代码
 ```javascript
 //.js
-const ctx = my.createCanvasContext('canvas')；
+const ctx = my.createCanvasContext('canvas');
 ctx.setFontSize(14)
 ctx.fillText('14', 20, 20)
 ctx.setFontSize(22)

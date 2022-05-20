@@ -44,7 +44,6 @@
 Page({
   uploadFile() {
     my.chooseImage({
-      chooseImage: 1,
       success: res => {
         const path = res.apFilePaths[0];
         console.log(path);
@@ -274,4 +273,3 @@ A：目前 my.uploadFile 上传文件类型支持图片、视频、音频，暂�
 
 ## Q：my.uploadFile 支持多张图片同时上传吗？
 A：my.uploadFile 暂不支持多张图片同时上传，一次只能上传一张图片。
-

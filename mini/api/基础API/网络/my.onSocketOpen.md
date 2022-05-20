@@ -15,7 +15,7 @@
 my.connectSocket({
   url: 'test.php',
 });
-my.onSocketOpen(function(res) {
+my.onSocketOpen(function() {
   console.log('WebSocket 连接已打开！');
 });
 ```
@@ -27,4 +27,3 @@ Object 类型，属性如下：
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | callback | Function | 是 | WebSocket 连接打开事件的回调函数。 |
-

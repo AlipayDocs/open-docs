@@ -67,7 +67,7 @@ Object 类型，参数如下：
 ## Q：警告框内容 content 文字如何进行换行？
 A：content 文字可通过 \n 或 \r\n 进行换行，代码示例： 
 ```javascript
-my.alet({
+my.alert({
   content: '第一行\n第二行\r\n第三行'
 })
 ```

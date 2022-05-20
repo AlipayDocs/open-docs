@@ -268,7 +268,7 @@ my.chooseDistrict({
     <td>src</td>
     <td>String</td>
     <td>否</td>
-    <td>自定义数据支持文件读取方式。自定义数据量大时，建议使用小程序内置离线包方式，src 为离线包相对地址，文件内参数格式同接口定义。</td>
+    <td>自定义数据文件地址。自定义数据量大时，建议将数据文件内置在小程序内。文件内参数格式同接口定义。</td>
   </tr>
   <tr>
     <td>success</td>
@@ -320,4 +320,3 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | name | String | 城市名称。 |
 | adCode | String | 城市编码。 |
 | ext | String | 自定义扩展字段透传。 |
-
