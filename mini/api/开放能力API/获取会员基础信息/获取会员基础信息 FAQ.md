@@ -1,5 +1,5 @@
 ### Q：调用 my.getOpenUserInfo，报错“无效的授权关系”，如何处理？
-A：用户 **主动触发** 才能发起获取会员基础信息请求，不能由 API 直接获取会员基础信息，需使用 [button 组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发操作。需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `userinfo` ，示例代码如下：
+A：用户 **主动授权** 后调用`my.getOpenUserInfo` 才能获取用户支付宝会员的基础信息。授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发操作。需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `userinfo` ，示例代码如下：
 ```html
 <!-- .axml -->
 <button a:if="{{canIUseAuthButton}}" open-type="getAuthorize" 
