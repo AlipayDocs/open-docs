@@ -114,6 +114,14 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- |
 | eventChannel | [EventChannel](https://opendocs.alipay.com/mini/api/eventchannel) | 和被打开页面进行通信。基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 |
 
+
+## 错误码
+| **error** | **errorMessage** | **描述** |
+| --- | --- | --- |
+| 1 | `${url} resolved to ${pagePath} is not found` | 目标页面路径不存在 |
+| 1 | `${url} is not found in plugin` | 目标页面是插件页面，但该插件并没有声明该页面 |
+| 1 | `${url} resolved to ${pagePath} is tab, which is not valid` | my.navigateTo 不允许跳转到选项卡（tabbar）页面，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) |
+
 # 常见问题
 ## Q：如何在跳转后的页面接收 my.navigateTo 的 url 属性传的参数？
 A：可以通过页面的生命周期函数 [onLoad(query: Object)](https://opendocs.alipay.com/mini/framework/page-detail#onLoad(query%3A%20Object)) 方法的 query 参数获取。
