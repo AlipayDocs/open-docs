@@ -1,22 +1,29 @@
-
 # 简介
+
 **my.getLaunchOptionsSync** 是获取小程序启动时的参数的 API。与 [App.onLaunch](https://opendocs.alipay.com/mini/framework/app-detail#onLaunch(object%3A%20Object)%20%E5%8F%8A%20onShow(object%3A%20Object)) 的回调参数一致。
 
+该函数只针对[冷启动场景](https://opendocs.alipay.com/mini/framework/operating-mechanism)，针对[热启动场景](https://opendocs.alipay.com/mini/framework/operating-mechanism)，可以使用 [my.getEnterOptionsSync](https://opendocs.alipay.com/mini/api/029i75)，该方法会获取最新进入小程序的参数。
+
 ## 使用限制
+
 - 基础库 [1.21.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.75 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 部分版本在无 `referrerInfo` 的时候会返回 `undefined`，建议使用 `options.referrerInfo && options.referrerInfo.appId` 进行判断。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
+
 ## 示例代码
+
 ### .js 示例代码
+
 ```javascript
 // .js
 let options = my.getLaunchOptionsSync();
-console.log(options)
+console.log(options);
 ```
 
 ## 返回值
+
 返回一个 Object 类型的对象，其属性如下：
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
@@ -26,7 +33,26 @@ console.log(options)
 | referrerInfo | Object | 来源消息。 |
 
 ### Object referrerInfo
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | appId | String | 来源小程序。 |
 | extraData | Object | 来源小程序传过来的数据。 |
+
+# 常见问题
+
+## 小程序未上线，如何测试启动参数？
+
+小程序未上架过版本，可通过开发版/体验版进行测试，详情参考【[调试跳转未上线小程序版本（开发版/体验版）](https://opendocs.alipay.com/support/01rb0j)】。
+
+## 在 IDE 上如何测试启动参数？
+
+请参考：[IDE配置/获取全局参数和页面参数（启动参数）](https://opensupport.alipay.com/support/helpcenter/144/201602518599)
+
+# 相关资料
+
+- [小程序 scheme 链接介绍](https://opensupport.alipay.com/support/helpcenter/142/201602496413)
+   外部 APP/浏览器 唤起小程序，需要通过 scheme 调用，在 scheme 中可以传参和设置跳转的首页参数。
+- [如何在小程序启动后获取启动参数](https://opendocs.alipay.com/support/01rb2a)
+- [【经验分享】支付宝小程序如何获取外部链接携带的参数](https://forum.alipay.com/mini-app/post/35101021)
+   详细讲解了小程序码或链接唤起的小程序如何获取启动参数。
