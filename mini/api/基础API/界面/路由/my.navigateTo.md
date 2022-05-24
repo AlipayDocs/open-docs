@@ -7,6 +7,7 @@
 
 - my.navigateTo 不允许跳转到选项卡（tabbar）页面，若需跳转到 tabbar 页面，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar)。
 - 小程序中页面栈最多十层，超过十层会无法跳转。   
+- 如果在小程序插件内调用此 API，只能跳转到此插件的页面，不能跳转到宿主页面或其他插件页面。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
