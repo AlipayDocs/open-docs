@@ -1,6 +1,6 @@
-
 # 简介
-获取本次小程序启动时的参数。如果当前是 [冷启动](https://opendocs.alipay.com/mini/framework/operating-mechanism)，则返回值与 App.onLaunch 的回调参数一致；如果当前是热启动，则返回值与 App.onShow 一致。
+
+获取本次小程序启动时的参数。如果当前是 [冷启动](https://opendocs.alipay.com/mini/framework/operating-mechanism)，则返回值与 [`App.onLaunch`](https://opendocs.alipay.com/mini/framework/app-detail) 的回调参数一致；如果当前是 [热启动](https://opendocs.alipay.com/mini/framework/operating-mechanism)，则返回值与 [`App.onShow`](https://opendocs.alipay.com/mini/framework/app-detail) 一致。
 
 ## 使用限制
 - 基础库 [2.7.5](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 或更高版本。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
@@ -28,4 +28,3 @@ console.log(options);
 | --- | --- | --- |
 | appId | String | 来源小程序。 |
 | extraData | Object | 来源小程序传过来的数据。 |
-
