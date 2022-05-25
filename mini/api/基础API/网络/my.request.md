@@ -6,12 +6,13 @@
 ## 使用限制
 
 ### 域名白名单
+小程序/第三方应用在以下 API 调用时只能与白名单中的域名进行通讯：HTTPS 请求（my.request）、上传文件（my.uploadFile）。
+- 小程序配置域名白名单：登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。<br />
+![|900x378](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*bvjBRIYPwaMAAAAAAAAAAAAAARQnAQ)
+- 第三方应用配置域名白名单：登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > **三方应用** > 点击要配置的第三方应用，进入第三方应用详情页 > **设置** > **开发设置** > **域名白名单** 中配置域名白名单。<br />
+![|900x252](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*sxVlQa-jxSgAAAAAAAAAAAAAARQnAQ)
 
-- 请登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTPS 请求（my.request）、上传文件（my.uploadFile）。
-
-![|706x73](https://mdn.alipayobjects.com/afts/img/A*xM4NR6VRbfwccJpPkvUyrwBkAa8wAA/original?bz=openpt_doc&t=up10AFIkdB4BgOJNk-44NgAAAABkMK8AAAAA#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&originHeight=168&originWidth=1624&status=done&style=none&width=1624)
-
-- **注意**：域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。
+**注意**：域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。
 
 ### 协议 / 方法
 
@@ -29,13 +30,13 @@
 
 **重要**：
 
-- 小程序开发过程中，可在开发工具内 **详情** > **域名信息** > **忽略 HTTP 请求域名合法性检查** 中选择是否忽略域名合法性检查，如果选择忽略，则在模拟器、预览以及真机调试场景不会校验域名合法性，但小程序上线前必须确保通讯域名在白名单内，否则在正式版本将无法调用。
+- 小程序开发过程中，可在小程序开发者工具（IDE） **详情** > **域名信息** > **忽略 HTTP 请求域名合法性检查** 中选择是否忽略域名合法性检查，如果选择忽略，则在模拟器、预览以及真机调试场景不会校验域名合法性，但小程序上线前必须确保通讯域名在白名单内，否则在正式版本将无法调用。
 - my.request 的请求头默认值为 {'content-type': 'application/json'}，而不是 {'content-type': 'application/x-www-form-urlencoded'}。此外，请求头对象里面的 key 和 value 必须是 String 类型。
 
 # 接口调用
 
 ## 示例代码
-**注意**：案例仅供参考，建议使用自己的地址进行测试。
+**注意**：示例仅供参考，建议使用自己的地址进行测试。
 
 ### dataType 为 json 示例
 ```javascript
@@ -148,7 +149,7 @@ Object 类型，参数如下：
 | url      | String               | 是       | 目标服务器 URL。                                             |
 | headers  | Object               | 否       | 设置请求的 HTTP 头对象，默认 {'content-type': 'application/json'}，该对象里面的 key 和 value 必须是 String 类型。 |
 | method   | String               | 否       | 默认 GET，目前支持 GET/POST/PUT/DELETE。                     |
-| data     | Object / ArrayBuffer | 否       | 详见 **data 参数说明**（ArrayBuffer 在支付宝客户端 10.1.95 或更高版本支持）。 |
+| data     | Object / ArrayBuffer | 否       | 可查看 **data 参数说明**（ArrayBuffer 在支付宝客户端 10.1.95 或更高版本支持）。 |
 | timeout  | Number               | 否       | 超时时间，单位 ms，默认 30000。                              |
 | dataType | String               | 否       | 期望返回的数据格式，默认 JSON，支持 JSON、text、base64、arraybuffer（10.1.70 版本开始支持）。 |
 | success  | Function             | 否       | 调用成功的回调函数。                                         |
