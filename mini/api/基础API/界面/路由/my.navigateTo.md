@@ -102,7 +102,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| url | String | 是 | 需要跳转的应用内非 tabbar 的目标页面路径，路径后可以带参数。<br />**参数规则**：路径与参数之间使用 `?` 分隔，参数键与参数值用 `=` 相连，不同参数必须用 `&` 分隔。<br />**示例**：`path?key1=value1&key2=value2`。<br />**注意**：若 `path` 后包含特殊字符（例如 %），则需要对 `path` 后包含特殊字符的 `key=value` 参数进行 encode，否则将无法正常跳转。 |
+| url | String | 是 | 需要跳转的应用内非 tabbar 的目标页面路径，路径后可以带参数。带参数时请参考[小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)|
 | events | Object | 否 | 定义页面间通信的事件监听，用于接受被打开页面传送的数据。基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
@@ -125,7 +125,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 # 常见问题
 ## Q：如何在跳转后的页面接收 my.navigateTo 的 url 属性传的参数？
-A：可以通过页面的生命周期函数 [onLoad(query: Object)](https://opendocs.alipay.com/mini/framework/page-detail#onLoad(query%3A%20Object)) 方法的 query 参数获取。
+A：请参考[小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。
 
 ## Q：小程序多次通过 my.navigateTo 跳转，尝试几次后为何再点击不会跳转了？
 A：小程序中页面栈最多十层，超过十层会无法跳转。建议通过 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 方法判断页面栈峰值，超过后用重定向接口 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 跳转页面。
