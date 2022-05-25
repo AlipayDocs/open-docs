@@ -29,13 +29,9 @@
 
 ### .axml 示例代码
 ```html
-<!-- API-DEMO page/API/get-system-info/get-system-info.axml-->
+<!-- get-system-info.axml-->
 <view class="page">
   <view class="page-section">
-    <view class="page-section-demo">
-      <text>手机型号</text>
-      <input type="text" disabled="{{true}}" value="{{systemInfo.model}}"></input>
-    </view>
     <view class="page-section-demo">
       <text>语言</text>
       <input type="text" disabled="{{true}}" value="{{systemInfo.language}}"></input>
@@ -48,14 +44,6 @@
       <text>window宽度</text>
       <input type="text" disabled="{{true}}" value="{{systemInfo.windowWidth}}"></input>
     </view>
-    <view class="page-section-demo">
-      <text>window高度</text>
-      <input type="text" disabled="{{true}}" value="{{systemInfo.windowHeight}}"></input>
-    </view>
-    <view class="page-section-demo">
-      <text>DPI</text>
-      <input type="text" disabled="{{true}}" value="{{systemInfo.pixelRatio}}"></input>
-    </view>
     <view class="page-section-btns">
       <view onTap="getSystemInfo">获取手机系统信息</view>
       <view onTap="getSystemInfoSync">同步获取手机系统信息</view>
@@ -67,7 +55,7 @@
 ### .js 示例代码
 
 ```javascript
-// API-DEMO page/API/get-system-info/get-system-info.js
+// get-system-info.js
 Page({
   data: {
     systemInfo: {}
@@ -81,6 +69,7 @@ Page({
       }
     })
   },
+  // 对等的同步接口
   getSystemInfoSync() {
     this.setData({
       systemInfo: my.getSystemInfoSync(),
@@ -106,20 +95,21 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- |
 | model | String | 手机型号。 |
 | pixelRatio | Number | 设备像素比。 |
-| windowWidth | Number | 窗口宽度。 |
-| windowHeight | Number | 窗口高度。 |
+| windowWidth | Number | 窗口宽度。单位：px |
+| windowHeight | Number | 窗口高度。 单位：px|
 | language | String | 支付宝设置的语言。<br />分别有以下值：zh-Hans（简体中文）、en（English）、zh-Hant（繁体中文（台湾））、zh-HK（繁体中文（香港））。 |
 | version | String | 支付宝版本号。 |
-| storage | String | 设备磁盘容量。<br />基础库 1.1.1 或更高版本开始支持。 |
-| currentBattery | String | 当前电量百分比。<br />基础库 1.1.1 或更高版本开始支持。 |
-| system | String | 系统版本。<br />基础库 1.1.1 或更高版本开始支持。 |
-| platform | String | 系统名：Android，iOS / iPhone OS 。<br />基础库 1.1.1 或更高版本开始支持。 |
-| titleBarHeight | Number | 标题栏高度。<br />基础库 1.1.1 或更高版本开始支持。 |
-| statusBarHeight | Number | 状态栏高度。<br />基础库 1.1.1 或更高版本开始支持。 |
-| screenWidth | Number | 屏幕宽度。<br />基础库 1.1.1 或更高版本开始支持。 |
-| screenHeight | Number | 屏幕高度。<br />基础库 1.1.1 或更高版本开始支持。 |
-| brand | String | 手机品牌。<br />基础库 1.4.0 或更高版本开始支持。 |
-| fontSizeSetting | Number | 用户设置字体大小。<br />基础库 1.4.0 或更高版本开始支持。 |
+| storage | String | 设备磁盘容量。 |
+| currentBattery | String | 当前电量百分比。 |
+| system | String | 系统版本。 |
+| platform | String | 系统名：Android，iOS / iPhone OS 。|
+| titleBarHeight | Number | 标题栏高度。 |
+| statusBarHeight | Number | 状态栏高度。单位：px |
+| screen | Object | 屏幕宽度和高度。结构为： { width: Number, height: Number } 单位：px。|
+| screenWidth | Number | 屏幕宽度。单位：px。screenWidth 数值在 Android系统下不准确，请用 screenWidth/pixelRatio 计算出正确的数值。|
+| screenHeight | Number | 屏幕高度。 单位：px。screenHeight 数值在 Android系统下不准确，请用 screenWidth/pixelRatio 计算出正确的数值。|
+| brand | String | 手机品牌。 |
+| fontSizeSetting | Number | 用户设置字体大小。单位：px |
 | app | String | 当前运行的客户端。若当前为支付宝，则有效值为 "alipay"。不同的客户端，对应的有效值如下：<ul><li>alipay：支付宝。</li><li>UC：UC浏览器。</li><li>QUARK：夸克浏览器。</li><li>AK：阿里健康。</li><li>amap：高德。</li><li>YK：优酷。</li><li>DINGTALK：钉钉。</li></ul> |
 
 #### model 参数
@@ -154,4 +144,8 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | iPhone 12 | iPhone13,2 |
 | iPhone 12 Pro | iPhone13,3 |
 | iPhone 12 Pro Max | iPhone13,4 |
-
+| iPhone SE | iPhone14,6 |
+| iPhone 13 mini | iPhone14,4 |
+| iPhone 13 | iPhone14,5 |
+| iPhone 13 Pro | iPhone14,2 |
+| iPhone 13 Pro Max | iPhone14,3 |
