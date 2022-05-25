@@ -1,7 +1,6 @@
 # 简介
 **my.reLaunch** 是关闭所有页面，跳转到应用内的某个页面。
 
-可使用 [my.navigateBack](https://opendocs.alipay.com/mini/api/kc5zbx) 返回到原来页面。
 
 ## 使用限制
 
