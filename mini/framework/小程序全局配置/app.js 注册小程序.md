@@ -25,7 +25,7 @@ object 属性说明：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| query | Object | 当前小程序的 query，从启动参数的 query 字段解析而来。 |
+| query | Object | 当前小程序的 query，从启动参数的 query 字段解析而来，解析规则可查看 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。 |
 | scene | String | 启动小程序的 [场景值](https://opendocs.alipay.com/mini/framework/scene)。 |
 | path | String | 当前小程序的页面地址，从启动参数 page 字段解析而来，page 忽略时默认为首页。 |
 | referrerInfo | Object | 来源信息。 |
@@ -68,7 +68,7 @@ App({
 
 - 不要在 `onShow()` 中进行 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 或 [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx) 等操作页面栈的行为。
 - 不要在 `onLaunch()` 里调用 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 方法，因为此时 `page` 还未生成。
-
+- app.json 应用配置 `behaivor` 支持配置项 `decodeQuery`，当设置为 `disable` 后，不会再对键值额外再做 `decodeComponent`，可查看 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。
 
 ## onHide()
 小程序从前台进入后台时触发 `onHide()` 。
