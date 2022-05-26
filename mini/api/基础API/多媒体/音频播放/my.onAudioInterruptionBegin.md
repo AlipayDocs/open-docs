@@ -1,14 +1,13 @@
-
 # 简介
 **my.onAudioInterruptionBegin** 是监听音频因为系统占用而被中断的开始事件。为异步接口。
 
-更多信息，请参见 [音频播放](https://opendocs.alipay.com/mini/00d6hx)。
+更多信息，请查看 [音频播放](https://opendocs.alipay.com/mini/00d6hx)。
 
 ## 使用限制
 
 - 基础库 [1.23.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.87 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
-- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，否则将导致音频无法播放，可查看 [接入准备](https://opendocs.alipay.com/mini/02p19p)。
+- 使用此 API 前，请先在开放平台控制台 **添加能力**，否则将导致音频无法播放，请查看 [接入准备](https://opendocs.alipay.com/mini/02p19p)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
@@ -108,8 +107,8 @@ offAudioInterruptionEnd() {
 ```
 
 ## 入参
-Object 类型，属性如下：
+Object 类型，参数如下：
 
-| 属性 | 类型 | 描述 |
+| **参数** | **类型** | **描述** |
 | --- | --- | --- |
 | callback | Function | 音频因为受到系统占用而被中断的开始事件的回调函数。 |
