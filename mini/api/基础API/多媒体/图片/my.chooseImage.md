@@ -48,14 +48,14 @@ Object 类型，参数如下：
 ### success 回调函数
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| tempFilePaths | StringArray | 图片的[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)路径列表。 |
-| tempFiles | Array\<Object\> | 图片的[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)列表。 |
+| tempFilePaths | StringArray | 图片的 [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6) 路径列表。 |
+| tempFiles | Array\<Object\> | 图片的 [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6) 列表。 |
 
 #### res.tempFiles 结构
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| path | String | [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)路径。 |
-| size | Number | [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)大小，单位为 B。 |
+| path | String | [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6) 路径。 |
+| size | Number | [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6) 大小，单位为 B。 |
 
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
