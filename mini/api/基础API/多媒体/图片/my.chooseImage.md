@@ -51,7 +51,7 @@ Object 类型，参数如下：
 | tempFilePaths | StringArray | 图片的 [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6) 路径列表。 |
 | tempFiles | Array\<Object\> | 图片的 [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6) 列表。 |
 
-#### res.tempFiles 结构
+#### Array\<Object\> tempFiles 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | path | String | [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6) 路径。 |
