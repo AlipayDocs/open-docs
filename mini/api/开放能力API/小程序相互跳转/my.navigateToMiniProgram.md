@@ -36,11 +36,12 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | appId | String | 是 | 要跳转的目标小程序 appId。 |
-| path | String | 否 | 打开的页面路径，如果为空则打开首页。 |
+| path | String | 否 | 打开的页面路径，如果为空则打开首页。<br />path 中 ? 后内容会成为页面参数，在小程序的 `Page.onLoad(query)` 回调函数中可以获取到页面参数，解析规则可查看 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。 |
+| query | Object | 否 | 用于设置目标小程序的全局参数，目标小程序可通过 `App.onLaunch()`、`App.onShow()` 、`my.getLaunchOptionsSync()` 获取到全局参数。<br />基础库 [2.7.19](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
 | extraData | Object | 否 | 需要传递给目标小程序的数据库，为键值对的格式，数值的类型为字符串。<br />目标小程序可在 `App.onLaunch()`、`App.onShow()` 中获取到这份数据。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
-| complete | Function | 否 | 调用结束的回调函数（）调用成功、失败都会执行。 |
+| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
