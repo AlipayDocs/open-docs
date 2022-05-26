@@ -39,7 +39,7 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | count | Number | 否 | 最大可选照片数，默认为 1 张。 |
-| sizeType	 | StringArray | 否 | 图片类型。<li>original 原图</li><li>compressed 压缩图</li>默认二者都有。 |
+| sizeType	 | StringArray | 否 | 图片类型。<br />可选值：<ul><li>original：原图。</li><li>compressed：压缩图。</li></ul>默认二者都有。 |
 | sourceType | String Array | 否 | 相册选取或者拍照，默认 ['camera','album']。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
