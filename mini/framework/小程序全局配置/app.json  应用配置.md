@@ -217,7 +217,9 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
 ![](https://gw.alipayobjects.com/mdn/rms_282813/afts/img/A*HTBCQrdaRvkAAAAAAAAAAAAAARQnAQ)
 
 # behavior
+
 用于改变小程序若干运行行为。字段类型为 Object，结构请见下方说明。
+
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | shareAppMessage | String | 否 | **可选值**：appendQuery。<br />使用小程序默认分享功能时（即不显式设置 [Page.onShareAppMessage](https://opendocs.alipay.com/mini/framework/page-detail#onShareAppMessage(options%3A%20Object))），当设置此字段后，会使客户端生成的用于分享的 `scheme` 带上当前用户打开的页面所携带的 query 参数。<br /> 基础库 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上开始支持，同时需使用 IDE [2.7.0](https://opendocs.alipay.com/mini/ide/download) 及以上版本进行构建。 |
