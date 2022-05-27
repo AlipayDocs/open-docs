@@ -59,33 +59,33 @@ Page({
 
 Object 类型，参数如下：
 
-| **参数** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| scanType | Array | 否 | 扫码识别类型，默认值为 ['qrCode','barCode']。<br />可选值：<br /><ul><li>qrCode：二维码。</li><li>barCode：条码。</li><li>dmCode：DM码。</li><li>pdf417Code：PDF417码。</li><li>narrowCode：窄条二维码。</li><li>hmCode：异构码。</li></ul> |
-| hideAlbum | Boolean | 否 | 不允许从相册选择图片，只能从相机扫码。默认值为 false。 |
-| success | Function | 否 | 调用成功的回调函数。 |
-| fail | Function | 否 | 调用失败的回调函数。 |
-| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+| **参数**  | **类型** | **必填** | **描述**                                                     |
+| --------- | -------- | -------- | ------------------------------------------------------------ |
+| scanType  | Array    | 否       | 扫码识别类型，默认值为 ['qrCode','barCode']。<br />可选值：<br /><ul><li>qrCode：二维码。</li><li>barCode：条码。</li><li>dmCode：DM 码。</li><li>pdf417Code：PDF417 码。</li><li>narrowCode：窄条二维码。</li><li>hmCode：异构码。</li></ul> |
+| hideAlbum | Boolean  | 否       | 不允许从相册选择图片，只能从相机扫码。默认值为 false。       |
+| success   | Function | 否       | 调用成功的回调函数。                                         |
+| fail      | Function | 否       | 调用失败的回调函数。                                         |
+| complete  | Function | 否       | 调用结束的回调函数（调用成功、失败都会执行）。               |
 
 ### Function success
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| code | String | 扫码所得数据。 |
-| qrCode | String | 扫描二维码时返回二维码数据。请直接使用 `code` 字段。 |
-| barCode | String | 扫描条形码时返回条形码数据。请直接使用 `code` 字段。 |
-| scanType | String | 码类型。 |
-| result | String | 码内容。 |
-| imageChannel | String | 来源。 |
-| rawData | String | Base64 字节流。 |
+| **属性**     | **类型** | **描述**                                             |
+| ------------ | -------- | ---------------------------------------------------- |
+| code         | String   | 扫码所得数据。                                       |
+| qrCode       | String   | 扫描二维码时返回二维码数据。请直接使用 `code` 字段。 |
+| barCode      | String   | 扫描条形码时返回条形码数据。请直接使用 `code` 字段。 |
+| scanType     | String   | 码类型。                                             |
+| result       | String   | 码内容。                                             |
+| imageChannel | String   | 来源。                                               |
+| rawData      | String   | Base64 字节流。                                      |
 
 ## 错误码
-| **错误码** | **说明** | **解决方案** |
-| --- | --- | --- |
-| 10 | 用户取消操作后返回。 | 为用户正常交互流程分支，不需要进行特殊处理。 |
-| 11 | 操作失败。 | 具体原因需要联系支付宝协助排查。 |
+| **错误码** | **说明**             | **解决方案**                                 |
+| ---------- | -------------------- | -------------------------------------------- |
+| 10         | 用户取消操作后返回。 | 为用户正常交互流程分支，不需要进行特殊处理。 |
+| 11         | 操作失败。           | 具体原因需要联系支付宝协助排查。             |
 
 # 常见问题 FAQ
 ## Q：小程序体验码扫码后为什么页面一直在加载中呢？
