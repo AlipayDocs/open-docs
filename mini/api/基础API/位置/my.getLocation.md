@@ -92,8 +92,8 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| longitude | String | 经度 |
-| latitude | String | 纬度 |
+| longitude | String | 经度，范围为 -180~180，负数表示西经 |
+| latitude | String | 纬度，范围为 -90~90，负数表示南纬 |
 | accuracy | String | 精确度，单位米 (m)。 |
 | horizontalAccuracy | String | 水平精确度，单位为米 (m)。 |
 | country | String | 国家（type > 0 生效）。 |
