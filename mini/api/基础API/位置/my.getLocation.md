@@ -22,44 +22,23 @@
 
 ## 示例代码
 
-### .acss 示例代码
-
-```css
-/* get-location.acss */
-.page-body-info {
-  height: 250rpx;
-}
-.page-body-text-small {
-  font-size: 24rpx;
-  color: #000;
-  margin-bottom: 100rpx;
-}
-.page-body-text-location {
-  display: flex;
-  font-size: 50rpx;
-}
-.page-body-text-location text {
-  margin: 10rpx;
-}
-```
-
 ### .axml 示例代码
 
 ```html
 <!-- get-location.axml-->
 <view class="page">
   <view class="page-section">
+    <view class="page-section-btns">
+        <button onTap="getLocation">获取位置</button>
+    </view>
     <view class="page-section-demo">
-      <view>当前位置经纬度</view>
       <block a:if="{{hasLocation === true}}">
+        <view>当前位置经纬度</view>
         <view class="page-body-text-location">
-          <text>E{{location.longitude[0]}}°{{location.longitude[1]}}′</text>
-          <text>N{{location.latitude[0]}}°{{location.latitude[1]}}′</text>
+          <view>经度: {{longitude}}</view>
+          <view>纬度: {{latitude}}</view>
         </view>
       </block>
-    </view>
-    <view class="page-section-btns">
-      <view onTap="getLocation">获取位置</view>
     </view>
   </view>
 </view>
@@ -71,34 +50,28 @@
 Page({
   data: {
     hasLocation: false,
+    longitude: 0,
+    latitude: 0,
   },
-  getLocatio() {
+  getLocation() {
     my.showLoading();
     my.getLocation({
       success: (res) => {
-        my.hideLoading();
         this.setData({
           hasLocation: true,
-          location: formatLocation(res.longitude, res.latitude)
+          longitude: res.longitude,
+          latitude: res.latitude
         })
       },
       fail: (res) => {
-        my.hideLoading();
-        console.log(res.error, res.errorMessage);
         my.alert({ title: '定位失败' });
+      },
+      complete: () => {
+        my.hideLoading();
       },
     })
   }
 })
-
-function formatLocation(longitude, latitude) {
-  longitude = Number(longitude).toFixed(2),
-  latitude = Number(latitude).toFixed(2)
-  return {
-    longitude: longitude.toString().split('.'),
-    latitude: latitude.toString().split('.')
-  }
-}
 ```
 
 ## 入参
@@ -143,10 +116,10 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 | error | Number | 错误码。 |
 | errorMessage | String | 错误信息。 |
 
-## 错误码
+## 错误码 
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
-| 11 | 请确认定位相关权限已开启。 | 包含 “GPS未开启” 和 “未打开允许支付宝使用定位的开关” 两种情况。参照 FAQ 问题1 |
+| 11 | 请确认定位相关权限已开启。 | 包含 “GPS未开启” 和 “未打开允许支付宝使用定位的开关” 两种情况。参照 常见问题 Q1 |
 | 12 | 网络异常，请稍后再试。 | 提示用户检查当前网络。 |
 | 13 | 定位失败，请稍后再试。 | 提示用户再次尝试。 |
 | 14 | 业务定位超时。 | 提示用户再次尝试。 |
@@ -154,11 +127,7 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 # 常见问题
 
-## Q：my.getLocation 第一次允许授权后删除小程序应用，重新打开会需要重新授权吗？ 
+## Q1：my.getLocation 第一次允许授权后删除小程序应用，重新打开会需要重新授权吗？ 
 
 A：需要重新授权，删除小程序应用后会将获取定位的授权关系一起删除。
-
-## Q：小程序如何区分 “未授权位置信息给支付宝APP” 和 “GPS未开启” 两种状态。
-
-A：错误码为 11 时， 包含 “GPS未开启” 和 “未打开允许支付宝使用定位的开关” 两种情况。此时，可通过 my.getSystemSetting 接口的返回参数 locationEnabled 来判断用户是否开启地理位置的系统开关。
 
