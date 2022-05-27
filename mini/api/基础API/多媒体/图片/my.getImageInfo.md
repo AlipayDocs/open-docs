@@ -1,10 +1,9 @@
-
 # 简介
 **my.getImageInfo** 是获取图片信息的 API。
 
 ## 使用限制
 
-- 基础库 [1.4.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。 
+- 基础库 [1.4.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -65,25 +64,23 @@ my.getImageInfo({
 ## 入参
 Object 类型，属性如下：
 
-| **属性** | **类型** | **必填** | **描述** |
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| src | String | 是 | 图片路径，目前支持：网络图片路径、[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)、[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)、[包文件路径](https://opendocs.alipay.com/mini/03dt4s#%E4%BB%A3%E7%A0%81%E5%8C%85%E6%96%87%E4%BB%B6)，暂不支持[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 |
+| src | String | 是 | 图片路径，支持网络图片路径、[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)、[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)、[包文件路径](https://opendocs.alipay.com/mini/03dt4s#%E4%BB%A3%E7%A0%81%E5%8C%85%E6%96%87%E4%BB%B6)，暂不支持 [本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ### success 回调函数
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| width | Number | 图片宽度（单位为 px）。 |
-| height | Number | 图片高度（单位为 px）。 |
+| width | Number | 图片宽度，单位为 px。 |
+| height | Number | 图片高度，单位为 px。 |
 | path | String | 图片本地路径。 |
-| orientation | String | 返回图片的方向，有效值见下表。 |
+| orientation | String | 返回图片的方向，枚举值见下表。 |
 | type | String | 返回图片的格式。 |
 
-
-### orientation 参数说明
+#### orientation 参数说明
 | **枚举值** | **说明** |
 | --- | --- |
 | up | 默认。 |
@@ -94,4 +91,3 @@ Object 类型，属性如下：
 | down-mirrored	 | 同 down，但水平翻转。 |
 | left-mirrored	 | 同 left，但垂直翻转。 |
 | right-mirrored	 | 同 right，但垂直翻转。 |
-
