@@ -160,3 +160,11 @@ iOS、Android 支持以下编码格式： H.264、H.265、AAC。
 
 ### video 组件，把 loop 字段设置为循环播放，在播放第二次的时候，把视频资源删除，发现无法播放 ？
 虽然再次播放拉取的是缓存中的视频，但是还是会校验视频资源的。
+
+### 出现异常问题自查步骤
+* 原始AXML中是否包含三要素【id="main-map"】【class="nbcomponentanimation-main-map"】【<param name="id" value="main-map">】
+* id不能为【drawing area root】【content root】【RenderView】【TileGrid container】【Page TiledBacking containment】【ancestor clipping】等保留关键字
+* id不能包含一些特殊字符，如【 * 】【 / 】，保证为大小写字母【 - 】【 _ 】组成
+* id长度最好保持适中，不要以当前小程序id、当前unix时间戳作为部分内容，导致id过长
+* 保证id关键字在AXML的唯一性，若id为【main-map】，请尽量不要出现【main-map-wapper】类似的id值，可能会生成WKCompositingView导致同层组件添加位置出错
+* 可以尝试 `raw-controls`属性，可解决h5的video组件在支付宝容器内出现层级过高的问题
