@@ -220,16 +220,21 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
 用于改变小程序若干运行行为。字段类型为 Object，结构请见下方说明。
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| shareAppMessage | String | 否 | **可选值**：appendQuery。使用小程序默认分享功能时（即不显式设置 [Page.onShareAppMessage](https://opendocs.alipay.com/mini/framework/page-detail#onShareAppMessage(options%3A%20Object))），当设置此字段后，会使客户端生成的用于分享的 `scheme` 带上当前用户打开的页面所携带的 query 参数。<br /> 基础库 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上开始支持，同时需使用 IDE [2.7.0](https://opendocs.alipay.com/mini/ide/download) 及以上版本进行构建。<br />  |
+| shareAppMessage | String | 否 | **可选值**：appendQuery。<br />使用小程序默认分享功能时（即不显式设置 [Page.onShareAppMessage](https://opendocs.alipay.com/mini/framework/page-detail#onShareAppMessage(options%3A%20Object))），当设置此字段后，会使客户端生成的用于分享的 `scheme` 带上当前用户打开的页面所携带的 query 参数。<br /> 基础库 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上开始支持，同时需使用 IDE [2.7.0](https://opendocs.alipay.com/mini/ide/download) 及以上版本进行构建。 |
+| decodeQuery | String | 否 | **可选值**：disable。<br />小程序在解析全局参数、页面参数时默认会对键/值做 `encodeURIComponent`。当设置为 `disable` 后，则不再对键/值做`encodeURIComponent`，解析规则详情可查看 [小程序全局/页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)，基础库 [2.7.18](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上开始支持，同时需使用 [IDE 3.0.0](https://opendocs.alipay.com/mini/ide/download) 及以上版本进行构建。 |
 
 ## 使用示例
 ```JSON
 {
   "behavior": {
-    "shareAppMessage": "appendQuery" // 通过此配置，可选择默认分享功能是否带上query参数。
+    "shareAppMessage": "appendQuery", // 通过此配置，可选择默认分享功能是否带上query参数。
+    "decodeQuery": "disable" // 设置为disable后，基础库不再对全局/页面参数的键/值做encodeURIComponent
   }
 }
 ```
+
 # 常见问题
 ## Q：A 页面（列表页）设置允许下拉刷新，B 页面（详情页）设置禁止下拉 `allowsBounceVertical: NO`, A 页面跳转 B 页面后再点左上角返回 A 页面，此时 A 页面无法下拉刷新。
-A：A 页面设置下拉刷新的同时设置 `allowsBounceVertical: YES`,即可解决该问题。记住一个原则：设置下拉刷新的时候一定要设置允许下拉。
+A：A 页面设置下拉刷新的同时设置 `allowsBounceVertical: YES`,即可解决该问题。
+
+**注意**：设置下拉刷新的时候一定要设置允许下拉。
