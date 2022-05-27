@@ -102,7 +102,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| url | String | 是 | 需要跳转的应用内非 tabbar 的目标页面路径，路径后可以带参数。带参数时请参考[小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)|
+| url | String | 是 | 需要跳转的应用内非 tabbar 的目标页面路径，路径后可以带参数。带参数时请参考 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)|
 | events | Object | 否 | 定义页面间通信的事件监听，用于接受被打开页面传送的数据。基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
@@ -117,15 +117,31 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 
 ## 错误码
-| **error** | **errorMessage** | **描述** |
-| --- | --- | --- |
-| 1 | `${url} resolved to ${pagePath} is not found` | 目标页面路径不存在 |
-| 1 | `${url} is not found in plugin` | 目标页面是插件页面，但该插件并没有声明该页面 |
-| 1 | `${url} resolved to ${pagePath} is tab, which is not valid` | my.navigateTo 不允许跳转到选项卡（tabbar）页面，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) |
+
+<table>
+  <tr>
+    <th><b>error</b></th>
+    <th><b>errorMessage</b></th>
+    <th><b>描述</b></th>
+  </tr>
+  <tr>
+    <td rowspan="3">1</td>
+    <td><code>${url} resolved to ${pagePath} is not found</code></td>
+    <td>目标页面路径不存在。</td>
+  </tr>
+  <tr>
+    <td><code>${url} is not found in plugin</code></td>
+    <td>目标页面是插件页面，但该插件并没有声明该页面。</td>
+  </tr>
+  <tr>
+    <td><code>${url} resolved to ${pagePath} is tab, which is not valid</code></td>
+    <td>my.navigateTo 不允许跳转到选项卡（tabbar）页面，请使用 <a href="https://opendocs.alipay.com/mini/api/ui-tabbar">my.switchTab</a>。</td>
+  </tr>
+</table>
 
 # 常见问题
 ## Q：如何在跳转后的页面接收 my.navigateTo 的 url 属性传的参数？
-A：请参考[小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。
+A：请参考 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。
 
 ## Q：小程序多次通过 my.navigateTo 跳转，尝试几次后为何再点击不会跳转了？
 A：小程序中页面栈最多十层，超过十层会无法跳转。建议通过 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 方法判断页面栈峰值，超过后用重定向接口 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 跳转页面。
