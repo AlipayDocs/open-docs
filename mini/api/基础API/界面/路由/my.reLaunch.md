@@ -19,10 +19,10 @@
 ```javascript
 Page({
   my.reLaunch({
-    // 若 path 后包含特殊字符（例如 %），则需要对 path 后包含特殊字符的 key=value 参数进行 encode，否则将无法正常跳转。
-    url: '/page/index?id=12&name=%22%E5%B0%8F%E6%98%8E%22&percentage=20%25'
+    // 特殊字符（中文等）需要 encode 处理，否则无法正常跳转
+    url: `/page/index?id=12&name=${encodeURIComponent('小明')}&percentage=${encodeURIComponent('%')}`
   }, success: () => {
-    console.log("跳转成功的回调");
+    console.log("跳转成功");
   })
 })
 ```
