@@ -1,5 +1,5 @@
 # 简介
-**my.navigateBackMiniProgram** 是用于跳转回上一个小程序的 API。只有当前小程序是由其他小程序跳转而来，调用此 API 才有效果
+**my.navigateBackMiniProgram** 是用于跳转回上一个小程序的 API。只有当前小程序是由其他小程序跳转而来，调用此 API 才有效果。
 
 更多小程序互相跳转问题，可查看 [小程序相互跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
 
