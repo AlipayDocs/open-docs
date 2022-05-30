@@ -138,6 +138,6 @@ A：如果要在小程序中使用，发起的签约请求中不能带 return_ur
 
 A:
 1. 请检查小程序是否添加了对应的能力，可查看 [添加能力](https://opendocs.alipay.com/mini/012kfm#%E6%B7%BB%E5%8A%A0%E8%83%BD%E5%8A%9B)。
-2. 请检查调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02fkb3?scene=35)（支付宝个人协议页面签约接口）时的参数是否正确。我们提供了一些典型错误供查：
+2. 请检查调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02fkb3?scene=35)（支付宝个人协议页面签约接口）时的参数是否正确。我们提供了一些典型错误供排查：
    a. `product_code` 和 `personal_product_code` 这两个参数是否传了正确的值，请检查是否传反，请检查传值是否符合文档要求。详细传值请参考[文档的请求参数](https://opendocs.alipay.com/mini/02fkb3#%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0)。
    b. 请检查 `period_rule_params.single_amount` 单次扣款最大金额是否符合额度限制，请参考：[周期扣款额度限制](https://opendocs.alipay.com/support/01rg2v)
