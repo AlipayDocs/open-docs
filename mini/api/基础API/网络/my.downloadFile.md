@@ -87,11 +87,11 @@ Object 类型，属性如下：
 | **错误码** | **说明**                 | **解决方案**                  |
 | ---------- | ------------------------ | ----------------------------- |
 | 12         | 下载失败。               | 建议检查网络和服务器。        |
-| 13         | 没有权限。               | 建议检查权限。                |
 | 20         | 请求的 URL 不支持 HTTP。 | 建议将请求的 URL 改成 HTTPS。 |
 
 ## FAQ
 
 ### 1、my.downloadFile 接口下载的文件在哪里？
 
-通过 my.downloadFile 接口下载的文件，其路径样式符合 `https://resource/xxx` 类型，属于[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。本地临时文件随时有可能会被回收，推荐使用 my.saveImage 接口将下载后的文件存储为[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)，代码示例详见[此处](https://opendocs.alipay.com/mini/03dt4s#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)。
+通过 my.downloadFile 接口下载的文件，其路径样式符合 `https://resource/xxx` 类型，属于[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。本地临时文件随时有可能会被回收，推荐使用 my.saveFile 接口将下载后的文件存储为[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)，代码示例详见[此处](https://opendocs.alipay.com/mini/03dt4s#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)。
+
