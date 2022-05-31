@@ -1,5 +1,6 @@
-
 ## 开发工具
+### 为什么开发工具解析二维码失败？
+目前只支持小程序后台生成的普通的二维码。不支持圆形异构码和第三方平台生成的二维码。对异构码的解析后续将会进行支持。
 
 ### IDE 如何配置启动参数？
 界面右上角选择 添加编译模式 > 自定义编译条件，配置全局参数。
@@ -14,7 +15,7 @@
 一次三小时。
 
 ### Windows下安装 IDE，提示“安装程序并未成功地运行完成”？
-![|499x360](https://cdn.nlark.com/yuque/0/2021/png/201640/1624956701378-e9c647bd-a139-4eee-81d3-b8f331dea6dd.png#align=left&display=inline&height=360&margin=%5Bobject%20Object%5D&originHeight=360&originWidth=499&status=done&style=none&width=499)
+![|499x360](https://cdn.nlark.com/yuque/0/2021/png/201640/1624956701378-e9c647bd-a139-4eee-81d3-b8f331dea6dd.png)
 
 此问题是由于之前 IDE 没有被正确卸载，下载 [IDE 注册表清理脚本](https://gw.alipayobjects.com/os/volans-demo/d73f4ce3-149c-4b5b-a698-7d1a88e10552/cleanRegForAlipayIDE.reg) 后双击运行进行清理，之后重新尝试安装即可。
 
@@ -52,7 +53,7 @@
 ### IOT 小程序打包过程中问题？
 重启 IDE，然后打开项目再次上传。
 
-### IDE上传小程序时本地的 node_modules 会上传吗？ 
+### IDE 上传小程序时本地的 node_modules 会上传吗？ 
 会上传 node_modules，不支持自动过滤 node_modules，上传时会打包所有文件，可手动将 node_modules 文件夹过滤后，再打包上传。
 
 ### 上线的小程序在管理后台是否可以设置强制版本更新？
