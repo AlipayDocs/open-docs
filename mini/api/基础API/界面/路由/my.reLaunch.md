@@ -3,7 +3,7 @@
 
 ## 使用限制
 
-- 如果在小程序插件内调用此 API，只能跳转到此插件的页面，不能跳转到宿主页面或其他插件页面。
+- 如果在小程序插件内调用此 API，只能跳转到此插件的页面，不能跳转到宿主小程序页面或其他插件页面。
 - 基础库 [1.4.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
@@ -32,7 +32,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| url | String | 是 | 需要跳转的应用内目标页面路径，路径后可以带参数，带参数时请参考 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。 |
+| url | String | 是 | 需要跳转的应用内目标页面路径。若跳转到 tab bar 页面，不支持传参。若跳转到非 tab bar 页面支持传参，路径后带参数时请参考 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
