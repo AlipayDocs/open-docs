@@ -1,7 +1,7 @@
 # 简介
 **my.request** 是用于发起 HTTPS 网络请求的 API。
 
-更多问题请参见 [my.request 常见问题](https://opendocs.alipay.com/mini/00hxw8)。
+更多问题可查看 [my.request 常见问题](https://opendocs.alipay.com/mini/00hxw8)。
 
 ## 使用限制
 
@@ -150,7 +150,7 @@ Object 类型，参数如下：
 | headers  | Object               | 否       | 设置请求的 HTTP 头对象，默认 {'content-type': 'application/json'}，该对象里面的 key 和 value 必须是 String 类型。 |
 | method   | String               | 否       | 默认 GET，目前支持 GET/POST/PUT/DELETE。                     |
 | data     | Object / ArrayBuffer | 否       | 可查看 **data 参数说明**（ArrayBuffer 在支付宝客户端 10.1.95 或更高版本支持）。 |
-| timeout  | Number               | 否       | 超时时间，单位 ms，默认 30000。                              |
+| timeout  | Number               | 否       | 超时时间，单位 ms，取值 0 ~ 30000，默认值 30000。                              |
 | dataType | String               | 否       | 期望返回的数据格式，默认 JSON，支持 JSON、text、base64、arraybuffer（10.1.70 版本开始支持）。 |
 | success  | Function             | 否       | 调用成功的回调函数。                                         |
 | fail     | Function             | 否       | 调用失败的回调函数。                                         |
