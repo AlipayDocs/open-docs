@@ -129,7 +129,7 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 # 常见问题 FAQ
 
 ## Q：如果系统权限未开启，接口调用报错，如何引导开启系统权限？
-A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-auth-guide) 接口，引导用户开启相关系统权限。
+A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-auth-guide) 引导用户开启相关系统权限。
 
 ## Q：my.getLocation 第一次允许授权后删除小程序应用，重新打开会需要重新授权吗？ 
 A：需要重新授权，删除小程序应用后会将获取定位的授权关系一起删除。
