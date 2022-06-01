@@ -8,7 +8,7 @@
 
 - 基础库 [1.23.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.87 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
-- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，否则将导致音频无法播放，可查看 [接入准备](https://opendocs.alipay.com/mini/02p19p)。
+- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，否则将导致音频无法播放且没有错误提示，可查看 [接入准备](https://opendocs.alipay.com/mini/02p19p)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
