@@ -1,4 +1,3 @@
-
 # 简介
 拍摄视频或从手机相册中选视频。
 
@@ -37,20 +36,17 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ### sourceType 的合法值
 | **值** | **说明** |
 | --- | --- |
 | album | 从相册选择视频。 |
 | camera | 使用相机拍摄视频。 |
 
-
 ### camera 的合法值
 | **值** | **说明** |
 | --- | --- |
 | back | 默认拉起后置摄像头。 |
 | front | 默认拉起前置摄像头。 |
-
 
 ### success 回调函数
 | **属性** | **类型** | **说明** |
@@ -61,3 +57,7 @@ Object 类型，属性如下：
 | height | Number | 返回选定视频的高度。 |
 | width | Number | 返回选定视频的宽度。 |
 
+# 常见问题 FAQ
+
+## Q：如果系统权限未开启，接口调用报错，如何引导开启系统权限？
+A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-auth-guide) 引导用户开启相关系统权限。
