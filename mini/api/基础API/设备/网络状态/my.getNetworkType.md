@@ -1,9 +1,9 @@
-
 # 简介
 **my.getNetworkType** 是获取当前网络状态的 API。
 
 ## 使用限制
-此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- Android 用户需要将支付宝客户端的 **获取手机信息** 授权设置为 **始终允许** 才能获取到 4G/5G 的网络类型。若授权设置为 **询问** 或 **拒绝**，则接口无法获取网络类型，`networkType` 的返回值为 `UNKNOWN`。
 
 ## 扫码体验
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/22ff3ede2bb9a8def0ff2814a28690d2.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
