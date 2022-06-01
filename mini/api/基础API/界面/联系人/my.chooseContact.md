@@ -408,3 +408,8 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | mobile | String | 账号对应的手机号码。<br />**注意**：<br /><ul><li>请在手机端开启支付宝客户端的通讯录权限，否则可能出现获取不到手机号码的情况。</li><li>手机本地系统通讯录号码需要与支付宝好友手机号码一致，否则可能出现获取不到手机号码的情况。</li></ul> |
 | realName | String | 账号的真实姓名。 |
 | displayName | String | 账号的显示名称，即支付宝设置的备注名称，默认为朋友圈里面的昵称。 |
+
+# 常见问题 FAQ
+
+## Q：如果系统权限未开启，接口调用报错，如何引导开启系统权限？
+A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-auth-guide) 引导用户开启相关系统权限。
