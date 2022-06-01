@@ -2,6 +2,8 @@
 
 获取本次小程序启动时的参数。如果当前是 [冷启动](https://opendocs.alipay.com/mini/framework/operating-mechanism)，则返回值与 [`App.onLaunch`](https://opendocs.alipay.com/mini/framework/app-detail) 的回调参数一致；如果当前是 [热启动](https://opendocs.alipay.com/mini/framework/operating-mechanism)，则返回值与 [`App.onShow`](https://opendocs.alipay.com/mini/framework/app-detail) 一致。
 
+获取小程序启动时的参数的其他方法请参考：[如何在小程序启动后获取启动参数](https://opendocs.alipay.com/support/01rb2a)。
+
 ## 使用限制
 - 基础库 [2.7.5](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 或更高版本。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
@@ -28,3 +30,19 @@ console.log(options);
 | --- | --- | --- |
 | appId | String | 来源小程序。 |
 | extraData | Object | 来源小程序传过来的数据。 |
+
+# 常见问题
+
+## 小程序未上线，如何测试启动参数？
+
+小程序未上架过版本，可通过开发版/体验版进行测试，详情参考【[调试跳转未上线小程序版本（开发版/体验版）](https://opendocs.alipay.com/support/01rb0j)】。
+
+## 在 IDE 上如何测试启动参数？
+
+请参考：[IDE配置/获取全局参数和页面参数（启动参数）](https://opensupport.alipay.com/support/helpcenter/144/201602518599)
+
+## 如何从浏览器或外部 APP 携带参数跳转到小程序？
+
+该 API 用来获取小程序启动参数。如果想从外部唤起小程序，可以通过唤起支付宝的 scheme 来跳转到小程序，在 scheme 中可以加入需要跳转的小程序、小程序页面、参数等。详情请参考：[小程序 scheme 链接介绍](https://opensupport.alipay.com/support/helpcenter/142/201602496413)。
+
+社区有一篇较详细的讲解了小程序码或链接唤起的小程序如何获取启动参数的文档：[【经验分享】支付宝小程序如何获取外部链接携带的参数](https://forum.alipay.com/mini-app/post/35101021)。

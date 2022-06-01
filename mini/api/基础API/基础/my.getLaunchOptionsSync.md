@@ -2,7 +2,7 @@
 
 **my.getLaunchOptionsSync** 是获取小程序启动时的参数的 API。与 [App.onLaunch](https://opendocs.alipay.com/mini/framework/app-detail#onLaunch(object%3A%20Object)%20%E5%8F%8A%20onShow(object%3A%20Object)) 的回调参数一致。
 
-该函数是获取 [冷启动](https://opendocs.alipay.com/mini/framework/operating-mechanism) 时的启动参数。针对 [热启动场景](https://opendocs.alipay.com/mini/framework/operating-mechanism)，可以使用 [my.getEnterOptionsSync](https://opendocs.alipay.com/mini/api/029i75)，该方法会获取最新进入小程序的参数。
+该函数是获取 [冷启动](https://opendocs.alipay.com/mini/framework/operating-mechanism) 时的启动参数。针对 [热启动场景](https://opendocs.alipay.com/mini/framework/operating-mechanism)，可以使用 [my.getEnterOptionsSync](https://opendocs.alipay.com/mini/api/029i75)，该方法会获取最新进入小程序的参数。获取小程序启动时的参数的其他方法请参考：[如何在小程序启动后获取启动参数](https://opendocs.alipay.com/support/01rb2a)。
 
 ## 使用限制
 
@@ -49,10 +49,8 @@ console.log(options);
 
 请参考：[IDE配置/获取全局参数和页面参数（启动参数）](https://opensupport.alipay.com/support/helpcenter/144/201602518599)
 
-# 相关资料
+## 如何从浏览器或外部 APP 携带参数跳转到小程序？
 
-- [小程序 scheme 链接介绍](https://opensupport.alipay.com/support/helpcenter/142/201602496413)
-   外部 APP/浏览器 唤起小程序，需要通过 scheme 调用，在 scheme 中可以传参和设置跳转的首页参数。
-- [如何在小程序启动后获取启动参数](https://opendocs.alipay.com/support/01rb2a)
-- [【经验分享】支付宝小程序如何获取外部链接携带的参数](https://forum.alipay.com/mini-app/post/35101021)
-   详细讲解了小程序码或链接唤起的小程序如何获取启动参数。
+该 API 用来获取小程序启动参数。如果想从外部唤起小程序，可以通过唤起支付宝的 scheme 来跳转到小程序，在 scheme 中可以加入需要跳转的小程序、小程序页面、参数等。详情请参考：[小程序 scheme 链接介绍](https://opensupport.alipay.com/support/helpcenter/142/201602496413)。
+
+社区有一篇较详细的讲解了小程序码或链接唤起的小程序如何获取启动参数的文档：[【经验分享】支付宝小程序如何获取外部链接携带的参数](https://forum.alipay.com/mini-app/post/35101021)。
