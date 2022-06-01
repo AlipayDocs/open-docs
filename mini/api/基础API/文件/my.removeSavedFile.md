@@ -1,6 +1,6 @@
 
 # 简介
-**my.removeSavedFile** 是删除某个保存的文件的 API。
+**my.removeSavedFile** 是删除某个[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)的API。
 
 ## 使用限制
 
@@ -21,15 +21,15 @@
 ```javascript
 // .js
 my.getSavedFileList({
+  success:(res)=>{
+    my.removeSavedFile({
+      apFilePath:res.fileList[0].apFilePath,
       success:(res)=>{
-        my.removeSavedFile({
-          apFilePath:res.fileList[0].apFilePath,
-          success:(res)=>{
-            console.log('remove success')
-          }
-        })
+        console.log('remove success')
       }
-    });
+    })
+  }
+});
 ```
 
 ## 入参
@@ -37,7 +37,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| apFilePath | String | 是 | 文件路径。 |
+| apFilePath | String | 是 | [本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)路径，不支持删除其它类型文件的文件路径。注：[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)当小程序关闭后会自动清理，不需要主动删除；[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)请通过[FileSystemManager.removeSavedFile](https://opendocs.alipay.com/mini/api/0229pv)进行删除。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
