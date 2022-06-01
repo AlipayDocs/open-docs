@@ -22,3 +22,8 @@ setTimeout(() => {
  recorderManager.stop()
 }, 600000);
 ```
+
+# 常见问题 FAQ
+
+## Q：如果系统权限未开启，接口调用报错，如何引导开启系统权限？
+A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-auth-guide) 引导用户开启相关系统权限。
