@@ -78,7 +78,6 @@ Page({
 | 照片权限 | PHOTO | iOS | - |
 | push通知栏权限 | NOTIFICATION | Android | - |
 | 自启动权限 | SELFSTARTING | Android | - |
-| lbs总开关 | LBSSERVICE | iOS | - |
-| lbs开关(app) | LBS | iOS | - |
+| LBS开关 | LBS | iOS / Android | - |
 | 蓝牙 | BLUETOOTH | iOS / Android | 客户端 10.2.33、基础库 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。<br />可通过 `my.canIUse('showAuthGuide.object.authType.BLUETOOTH') ` 进行检测。 |
 
