@@ -1,4 +1,5 @@
 # 简介
+
 **my.connectBLEDevice** 是连接低功耗蓝牙设备的 API。
 
 ## 使用限制
