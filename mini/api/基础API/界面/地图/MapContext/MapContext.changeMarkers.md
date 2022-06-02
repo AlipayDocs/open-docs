@@ -1,4 +1,3 @@
-
 # 简介
 **MapContext.changeMarkers** 用于添加、删除、更新指定的标记（marker）。
 
@@ -6,6 +5,7 @@
 
 - 基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.82 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 
 # 接口调用
 
@@ -45,7 +45,6 @@ this.mapCtx.changeMarkers({
   }
 });
 ```
-
 
 ## 入参
 | **属性** | **类型** | **描述** |
