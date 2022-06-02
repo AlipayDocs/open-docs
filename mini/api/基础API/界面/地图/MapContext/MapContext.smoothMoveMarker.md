@@ -1,10 +1,10 @@
-
 # 简介
 **MapContext.smoothMoveMarker** 用于指定标记（marker）进行动画。
 
 ## 使用限制
 
 - 基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.90 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。 
+- 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
@@ -53,13 +53,11 @@ this.mapCtx.smoothMoveMarker({
 | targetDistances | Array | 否 | 指定需要 callback 的目标距离数组。 |
 | action | String | 否 | 指定操作动画。<ul><li>`action:'stop'` 表示提前结束动画。</li></ul> |
 
-
 ## 回调事件
 | **回调事件** | **类型** | **描述** |
 | --- | --- | --- |
 | onMarkerMove | Function | 在指定距离点的回调事件。<br />具体对象值请参见下方 onMarkerMove 对象表。 |
 | onMarkerMoveEnd | Function | 动画结束的回调事件。 |
-
 
 ### onMarkerMove 对象
 | **属性** | **类型** | **描述** |
@@ -68,7 +66,6 @@ this.mapCtx.smoothMoveMarker({
 | targetDistance | Array | 目标点的距离。 |
 | latitude | Number | 纬度。 |
 | longitude | Number | 经度。 |
-
 
 ### 回调事件示例代码
 ```html
@@ -108,5 +105,3 @@ Page({
   }
 });
 ```
-
-
