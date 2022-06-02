@@ -47,7 +47,7 @@ this.mapCtx.changeMarkers({
 ```
 
 ## 入参
-| **属性** | **类型** | **描述** |
+| **参数** | **类型** | **描述** |
 | --- | --- | --- |
 | add | Array | 需要添加的 marker 数组。 |
 | remove | Array | 需要删除的 marker 数组。 |
