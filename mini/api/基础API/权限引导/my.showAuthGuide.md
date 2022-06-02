@@ -61,11 +61,10 @@ Page({
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| authType | String | 是 | 引导的权限标识，用于标识该权限类型(如 LBS)。 |
+| authType | String | 是 | 引导的权限标识，用于标识该权限类型，详情可查看 **支持的 authType**。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-
 
 ### 支持的 authType
 | **权限名称** | **权限码** | **支持平台** | **描述** |
@@ -76,9 +75,7 @@ Page({
 | 通讯录权限 | ADDRESSBOOK | iOS | - |
 | 相机权限 | CAMERA | iOS | - |
 | 照片权限 | PHOTO | iOS | - |
-| push通知栏权限 | NOTIFICATION | Android | - |
+| push 通知栏权限 | NOTIFICATION | Android | - |
 | 自启动权限 | SELFSTARTING | Android | - |
-| lbs总开关 | LBSSERVICE | iOS | - |
-| lbs开关(app) | LBS | iOS | - |
+| lbs 开关 | LBS | iOS / Android | - |
 | 蓝牙 | BLUETOOTH | iOS / Android | 客户端 10.2.33、基础库 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。<br />可通过 `my.canIUse('showAuthGuide.object.authType.BLUETOOTH') ` 进行检测。 |
-
