@@ -94,3 +94,6 @@ A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-au
 
 ## Q：小程序体验码扫码后为什么页面一直在加载中呢？
 A：建议检查下后台配置的域名白名单，首页存在网络请求必须配置白名单。
+
+## Q: 我传递了错误的 scanType 参数，还能正常调用扫码功能吗？
+A: 如果您传递了错误的 scanType 参数，小程序仍会尝试识别，如果识别成功则会触发 success 回调。
