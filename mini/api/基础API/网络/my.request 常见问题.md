@@ -1,4 +1,5 @@
 # 小程序网络请求报错排查方案
+
 1. 通过接口返回的报错信息进行排查，根据报错信息 error 中的错误码对照 [my.request](https://opendocs.alipay.com/mini/api/owycmh) 的错误码表格进行排查。
 2. 根据 status 的 HTTP 状态码排查具体原因。如果 HTTP 响应码以 5、6 字开头，说明是服务端问题，可能是服务器配置问题、请求接收问题，可以在浏览器中尝试这个地址能否正常访问，是否有报错。
 3. 根据 errorMessage 参数中的错误信息进行排查，例如 "JSON parse data error" 为请求格式错误。
