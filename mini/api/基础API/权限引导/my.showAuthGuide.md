@@ -73,7 +73,7 @@ Page({
 | 桌面快捷权限 | SHORTCUT | Android | - |
 | 麦克风权限 | MICROPHONE | iOS | - |
 | 通讯录权限 | ADDRESSBOOK | iOS | - |
-| 相机权限 | CAMERA | iOS | - |
+| 相机权限 | CAMERA | iOS / Android | - |
 | 照片权限 | PHOTO | iOS | - |
 | push 通知栏权限 | NOTIFICATION | Android | - |
 | 自启动权限 | SELFSTARTING | Android | - |
