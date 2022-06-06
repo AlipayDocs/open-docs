@@ -6,6 +6,7 @@
 ## 使用限制
 
 ### 域名白名单
+
 小程序/第三方应用在以下 API 调用时只能与白名单中的域名进行通讯：HTTPS 请求（my.request）、上传文件（my.uploadFile）。
 - 小程序配置域名白名单：登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。<br />
 ![|900x378](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*bvjBRIYPwaMAAAAAAAAAAAAAARQnAQ)
