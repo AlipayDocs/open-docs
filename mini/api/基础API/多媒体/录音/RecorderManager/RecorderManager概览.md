@@ -26,3 +26,4 @@
 | [RecorderManager.offStop](https://opendocs.alipay.com/mini/02velk) | 取消监听录音结束事件。 |
 | [RecorderManager.onFrameRecorded](https://opendocs.alipay.com/mini/02vell) | 监听已录制完制定帧大小的文件事件。如果设置了 frameSize，则会回调此事件。 |
 | [RecorderManager.offFrameRecorded](https://opendocs.alipay.com/mini/02velm) | 取消监听已录制完制定帧大小的文件事件。 |
+| [RecorderManager.onDecibelChange](https://opendocs.alipay.com/mini/01acgm) | 监听声音的分贝变化回调事件。 |
