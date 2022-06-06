@@ -242,27 +242,20 @@ Page({
         my.showToast({ content: 'complete回调' })
       },
     })
-    my.onLocatedComplete({
-      success: (res) => {
-        my.setLocatedCity({
-          locatedCityId: res.locatedCityId,
-          locatedCityName: this.data.localcity,
-          success: (result) => {
-            console.log(result)
-          },
-          fail: (error) => {
-            my.alert({
-              content: `修改当前定位城市失败${JSON.stringify(error)}`,
-            })
-          },
-        })
-      },
-      fail: (error) => {
-        my.alert({
-          content: `onLocatedComplete失败${JSON.stringify(error)}`,
-        })
-      },
-    })
+    my.onLocatedComplete((res) => {
+      my.setLocatedCity({
+        locatedCityId: res.locatedCityId,
+        locatedCityName: this.data.localcity,
+        success: (result) => {
+          console.log(result);
+        },
+        fail: (error) => {
+          my.alert({
+            content: `修改当前定位城市失败${JSON.stringify(error)}`,
+          });
+        },
+      });
+    });
   },
 })
 ```
