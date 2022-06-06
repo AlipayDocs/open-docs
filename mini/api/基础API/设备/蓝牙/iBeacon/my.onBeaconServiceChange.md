@@ -13,10 +13,7 @@
 ## 示例代码
 ```javascript
 // .js
-my.onBeaconServiceChange({
-  success: (res) => {
-  },
-})
+my.onBeaconServiceChange((res) => {});
 ```
 
 ## 入参
@@ -44,4 +41,3 @@ my.onBeaconServiceChange({
 | 11004 | already discovering | 已经开始搜索。 |
 | 11006 | uuid invalid | UUID 格式错误。 |
 | 11008 | uuids empty | 参数错误，UUID 数组为空。 |
-

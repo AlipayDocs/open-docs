@@ -45,41 +45,48 @@
 
 ```javascript
 //.js
-onReady() {
+Page({
+  onReady() {
     // 使用 my.createMapContext 获取 map 上下文
     this.mapCtx.showRoute({
-      searchType: "walk",                // 搜索类型：10.1.50新增，有"walk", "bus", "drive", "ride", 默认值为walk
-      startLat: 30.257839,              // 起点纬度
-      startLng: 120.062726,             // 起点经度
-      endLat: 30.256718,                // 终点纬度
-      endLng: 120.059985,               // 终点经度
-      throughPoints: [{ lat: 39.866958, lng: 116.494231 }, { lat: 39.9357, lng: 116.581092 }],//途径点：10.1.50新增,仅驾车规划有效，searchType=“drive”
-      routeColor: '#FFB90F',            // 路线颜色  10.1.50之后，该值仅在2d地图中生效
-      iconWidth: 10,                    // 纹理宽度  10.1.35 iconPath设置时才生效。10.1.50建议不再设置，在3d地图下提供了默认的纹理宽度。
-      routeWidth: 10,                   // 路线宽度  在不设置纹理时有效。 10.1.50建议不再设置，在2d地图下提供了默认值，3d不需要设置。
-      zIndex: 4,                         // 覆盖物 Z 轴坐标  10.1.35
-      mode: 0,                        // 只有驾车模式和公交模式支持，可选,具体值见下表
-      city: 'hangzhou',                 // 公交模式下必填    
-      destinationCity: 'hangzhou',      // 公交跨城模式下必填
-      success: function(res) {
-        console.log(res, 2323)
-      }
+      searchType: "walk", // 搜索类型：10.1.50新增，有"walk", "bus", "drive", "ride", 默认值为walk
+      startLat: 30.257839, // 起点纬度
+      startLng: 120.062726, // 起点经度
+      endLat: 30.256718, // 终点纬度
+      endLng: 120.059985, // 终点经度
+      throughPoints: [
+        { lat: 39.866958, lng: 116.494231 },
+        { lat: 39.9357, lng: 116.581092 },
+      ], //途径点：10.1.50新增,仅驾车规划有效，searchType=“drive”
+      routeColor: "#FFB90F", // 路线颜色  10.1.50之后，该值仅在2d地图中生效
+      iconWidth: 10, // 纹理宽度  10.1.35 iconPath设置时才生效。10.1.50建议不再设置，在3d地图下提供了默认的纹理宽度。
+      routeWidth: 10, // 路线宽度  在不设置纹理时有效。 10.1.50建议不再设置，在2d地图下提供了默认值，3d不需要设置。
+      zIndex: 4, // 覆盖物 Z 轴坐标  10.1.35
+      mode: 0, // 只有驾车模式和公交模式支持，可选,具体值见下表
+      city: "hangzhou", // 公交模式下必填
+      destinationCity: "hangzhou", // 公交跨城模式下必填
+      success: function (res) {
+        console.log(res, 2323);
+      },
     });
-    console.log(1121)
+    console.log(1121);
   },
   onLoad() {
-    //  this.mapCtx = my.createMapContext('map');
- this.mapCtx = my.createMapContext('map');
+    this.mapCtx = my.createMapContext("map");
     this.setData({
-      includePoints:[ {
-        latitude: 30.257839,
-      longitude: 120.062726,
-      },{
-        latitude: 30.256718,
-      longitude: 120.059985,
-      }]
-    })
-  }
+      includePoints: [
+        {
+          latitude: 30.257839,
+          longitude: 120.062726,
+        },
+        {
+          latitude: 30.256718,
+          longitude: 120.059985,
+        },
+      ],
+    });
+  },
+});
 ```
 
 ## 返回示例
