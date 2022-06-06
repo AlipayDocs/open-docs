@@ -17,8 +17,10 @@
 ### 协议 / 方法
 
 - my.request 目前只支持 HTTPS 协议的请求。
+- 支付宝客户端 10.2.30 或更高版本，my.request 支持 IPv6 域名。
 - 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；**支付宝客户端** 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+
 ### IDE / 多端
 
 - 在 IDE 上进行调试时，请使用真机预览调试。
