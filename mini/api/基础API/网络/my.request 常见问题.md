@@ -42,7 +42,7 @@ A：小程序会自带 HTTP Referer，暂时不支持自定义设置 HTTP Refere
 ## Q：my.request 是否支持 IP 地址请求？是否支持 IPv6 域名？
 A：
 - my.request 暂不支持 IP 地址请求，不支持 HTTP 请求，请使用 HTTPS 请求。
-- my.request 暂不支持 IPv6 域名。
+- 支付宝客户端 10.2.30 或更高版本，my.request 支持 IPv6 域名。
 - my.request 不建议使用关于 127.0.0.1 的测试请求。
 
 ## Q：小程序是否支持 cookie？
