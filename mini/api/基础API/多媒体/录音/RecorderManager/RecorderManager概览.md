@@ -1,4 +1,5 @@
 # 简介
+
 获取全局唯一的录音管理器，可通过 [my.getRecorderManager](https://opendocs.alipay.com/mini/api/getrecordermanager) 获取。
 
 ## 使用限制
