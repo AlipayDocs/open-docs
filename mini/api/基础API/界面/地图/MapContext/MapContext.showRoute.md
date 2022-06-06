@@ -69,7 +69,6 @@ Page({
         console.log(res, 2323);
       },
     });
-    console.log(1121);
   },
   onLoad() {
     this.mapCtx = my.createMapContext("map");
@@ -97,9 +96,9 @@ Page({
 
 ```json
 {
-    distance:328,
-    duration:262,
-    success:true
+  "distance": 328,
+  "duration": 262,
+  "success": true
 }
 ```
 
