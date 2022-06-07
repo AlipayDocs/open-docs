@@ -1,4 +1,5 @@
 # 简介
+
 **my.navigateToMiniProgram** 是用于跳转到其它小程序的 API。
 
 目标小程序可通过 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing) 来唤起指定的开发版本。
@@ -6,6 +7,7 @@
 相关问题可查看 [小程序相互跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
 
 ## 使用限制
+
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
