@@ -16,18 +16,21 @@
 ```javascript
 // .js
 my.navigateToMiniProgram({
-      appId: 'xxxx',
-      path: 'pages/index/index',
-      extraData:{
-        "data1":"test"
-      },
-      success: (res) => {
-        console.log(JSON.stringify(res))
-      },
-      fail: (res) => {
-        console.log(JSON.stringify(res))
-      }
-    });
+  appId: 'xxxx',
+  path: 'pages/index/index',
+  query:{
+    "data":"test query"
+  },
+  extraData:{
+    "data1":"test"
+  },
+  success: (res) => {
+    console.log(JSON.stringify(res))
+  },
+  fail: (res) => {
+    console.log(JSON.stringify(res))
+  }
+});
 ```
 
 ## 入参
