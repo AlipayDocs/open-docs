@@ -22,6 +22,7 @@
 - 针对 [marker](https://opendocs.alipay.com/mini/api/hpi21r) 的 icon 图标进行的定制渲染布局不支持点击事件。
 - 针对 [marker](https://opendocs.alipay.com/mini/api/hpi21r) 的 customCallout 气泡进行定制渲染的布局提供点击事件响应能力。在 calloutTap 事件响应点击事件，此时 data 数据字段会多一个 layoutId 标识事件点击目标，layoutId 即为定制渲染布局中的被点击组件的 ID。
 - 以下为渲染前与渲染相对布局后对比图：<br />![](https://mdn.alipayobjects.com/afts/img/A*WA1sQbRh39sAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=ktiPlKDJDWd8L4up4qap_AAAAABkMK8AAAAA#align=left&display=inline&height=279&margin=%5Bobject%20Object%5D&originHeight=279&originWidth=354&status=done&style=none&width=354)       ![](https://mdn.alipayobjects.com/afts/img/A*POkaR5JUHxYAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=D4P2DRjYE0PmK07z2U_45AAAAABkMK8AAAAA#align=left&display=inline&height=274&margin=%5Bobject%20Object%5D&originHeight=274&originWidth=324&status=done&style=none&width=324)               <br />
+- 支持 customCallout 默认气泡样式背景的个性化设置。
 
 ## 示例代码
 
@@ -135,7 +136,7 @@ const markers=[{
       src:"/layout/marker_icon.xml"
     },
   	customCallout:{
-      canShowOnTap:true,
+    canShowOnTap:true,
       layout:{
         params:{
           title:"标题栏",
@@ -146,8 +147,7 @@ const markers=[{
       layoutBubble:{
         style:"bubble",
         bgColor:"#898986",
-        borderRadius:0,
-        padding:16
+        borderRadius:0, 
       }
     }
  }];
@@ -175,10 +175,18 @@ const markers=[{
 | border-radius | Number | 元素的圆角边框圆角半径。<br />**默认值：** 0 |
 | border-width | Number | 元素的边框宽度。<br />**默认值：** 0 |
 
+customCallout 气泡背景个性化设置 layoutBubble 属性说明
+
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| style | String | 设置气泡边框，默认带气泡背景。设置为 none 时，隐藏背景。<br />**默认值：** bubble |
+| bgColor | String | 气泡背景色。|
+| borderRadius | Number | 气泡圆角设置。|
+
 ## 组件
 地图高级定制渲染组件包含 box（区域）、text（文本）、image（图片）、lottie（动画）。
 
-## box
+### box
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | layout | String | 布局类型：<br /><ul><li>relative：相对布局</li><li>horizontal：水平布局</li><li>vertical：垂直布局、复杂布局</li></ul> **注意：** iOS 在 10.1.92 以下版本不支持 horizontal 和 vertical。<br />**默认值：** relative |
@@ -186,7 +194,7 @@ const markers=[{
 | vertical-align | String | 子元素垂直对齐方式，有效值：middle。 |
 
 
-## text
+### text
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | text | String | 文本内容。 |
@@ -196,12 +204,12 @@ const markers=[{
 | number-of-lines | Number | 文本最大显示行数。 |
 | stroke-color | String | 文本文字描边颜色。<br />**默认值：** #FFFFFFFF |
 | stroke-width | Number | 文本文字描边宽度。 |
-| text-align | String | 文本对齐方式。有效值：left，center，right。<br />**默认值：** left |
-| font-weight | String | 文本字体粗细程度。有效值：normal，bold。<br />**默认值：** nomal |
+| text-align | String | 文本对齐方式。有效值：left、center、right。<br />**默认值：** left |
+| font-weight | String | 文本字体粗细程度。有效值：normal、bold。<br />**默认值：** nomal |
 
-## image
-支持 ：
-* 绝对路径：如 https://gw.alipayobjects.com/XXX
+### image
+支持：
+* 绝对路径：如 'https://gw.alipayobjects.com/XXX'
 * 相对路径（基准为根目录）：如 /img/testPic.png
 
 **注意：** 相对路径不支持 ./img/testPic.png 方式。
@@ -211,7 +219,7 @@ const markers=[{
 | src | String | 图片路径。 |
 | placeholder | String | 占位图路径。 |
 
-## lottie
+### lottie
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | src | String | 动画路径。 |
