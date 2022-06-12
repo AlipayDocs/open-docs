@@ -82,8 +82,8 @@ Object 类型，参数如下：
 
 # 常见问题 FAQ
 
-## Q：有目标小程序的 scheme （以 alipays:// 开头），如何跳转？
-A：如果 scheme 中的是 appId 是 16 位数字，且只包含 page、query 参数，则可以转换成 my.navigateMiniProgram 的调用；其他情况（appId 为 8 位，或者有额外参数等），需使用 my.ap.navigateToAlipayPage 跳转，并联系相关的支付宝 BD 申请加入白名单。参考转换代码如下（注意 scheme 中的 `page` 对应调用参数中的 `path`）：
+## Q：只有目标小程序的 scheme （以 alipays:// 开头），如何使用 my.navigateMiniProgram 跳转？
+A：如果 scheme 中的 appId 是 16 位，且只包含 page、query 参数，则可以转换成 my.navigateMiniProgram 的调用；其他情况（appId 为 8 位，或者有额外参数），需使用 [my.ap.navigateToAlipayPage](https://opendocs.alipay.com/mini/api/navigatetoalipaypage) 跳转，并联系目标业务相关的支付宝 BD 申请加入白名单。参考转换代码如下（注意 scheme 中的 `page` 对应调用参数中的 `path`）：
 ```javascript
 function schemeToParams(scheme) {
   var parseQuery = (str) => {
@@ -120,8 +120,8 @@ function schemeToParams(scheme) {
 }
 ```
 
-## Q：my.navigateMiniProgram 的参数如何转换为等价的 scheme ？
-A：如果参数只含 appId、path、query，则可以转换成等价的 scheme。scheme 不支持 extraData。参考转换代码如下（注意 scheme 中的 `page` 对应调用参数中的 `path`）：
+## Q：my.navigateMiniProgram 的调用参数如何转换为等价的 scheme ？
+A：如果调用参数只含 appId、path、query，则可以转换成等价的 scheme。extraData 不支持在 scheme 中使用。参考转换代码如下（注意 scheme 中的 `page` 对应调用参数中的 `path`）：
 ```javascript
 function paramsToScheme(params) {
   var { appId, path, query, extraData } = params;
