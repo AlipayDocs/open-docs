@@ -2,7 +2,7 @@
 
 **my.navigateToMiniProgram** 是用于跳转到其它小程序的 API。
 
-如需跳转到目标小程序的指定开发版本，请参考 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing)
+如需跳转到目标小程序开发中的版本，请参考 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing)
 
 有关小程序跳转的更多知识，可查看 [小程序相互跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。 
 
@@ -17,7 +17,7 @@
 ```javascript
 // 跳转小程序示例代码
 my.navigateToMiniProgram({
-  appId: 'xxxxxxxxxxxxxxx',
+  appId: 'xxxxxxxxxxxxxxx', // 16 位数字
   path: 'pages/index/index?p=1&q=2', 
   query: {
     a: 'foo',
@@ -81,6 +81,64 @@ Object 类型，参数如下：
 | 31 | 跳转失败。 | 检查 appId 参数。appId 为 16 位数字，由开放平台在小程序创建时分配。<br>注意：如果目标小程序未上架，调用本接口仍会触发 success 回调而非失败报错，未通过 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing) 指定跳转开发版的用户将看到 “暂未找到此功能” 提示页 |
 
 # 常见问题 FAQ
+
+## Q：有目标小程序的 scheme （以 alipays:// 开头），如何跳转？
+A：如果 scheme 中的是 appId 是 16 位数字，且只包含 page、query 参数，则可以转换成 my.navigateMiniProgram 的调用；其他情况（appId 为 8 位，或者有额外参数等），需使用 my.ap.navigateToAlipayPage 跳转，并联系相关的支付宝 BD 申请加入白名单。参考转换代码如下（注意 scheme 中的 `page` 对应调用参数中的 `path`）：
+```javascript
+function schemeToParams(scheme) {
+  var parseQuery = (str) => {
+    var ret = {};
+    str.split('&').forEach(s => {
+      var p = s.includes('=') ? s.indexOf('=') : s.length;
+      ret[decodeURIComponent(s.slice(0, p))] = decodeURIComponent(s.slice(p + 1));
+    });
+    return ret;
+  };
+  var params = {};
+  var query = parseQuery(scheme.slice(scheme.indexOf('?') + 1));
+  for (var k in query) {
+    var v = query[k];
+    if (k == 'appId') {
+      if (v.length != 16) {
+        params = false;
+        break;
+      }
+    } else if (k == 'page') {
+      k = 'path';
+    } else if (k == 'query') {
+      v = parseQuery(v);
+    } else {
+      params = false;
+      break;
+    }
+    params[k] = v;
+  }
+  if (!params) {
+    console.log('! 请使用 my.ap.navigateToAlipayPage() 跳转', scheme);
+  }
+  return params;
+}
+```
+
+## Q：my.navigateMiniProgram 的参数如何转换为等价的 scheme ？
+A：如果参数只含 appId、path、query，则可以转换成等价的 scheme。scheme 不支持 extraData。参考转换代码如下（注意 scheme 中的 `page` 对应调用参数中的 `path`）：
+```javascript
+function paramsToScheme(params) {
+  var { appId, path, query, extraData } = params;
+  var ret = `alipays://platformapi/startapp?appId=${appId}`;
+  if (path) {
+    ret += `&page=${path}`;
+  }
+  if (query) {
+    query = Object.keys(query).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(query[k])}`).join('&');
+    ret += `&query=${encodeURIComponent(query)}`;
+  }
+  if (extraData) {
+    console.log('! extraData 不支持在 scheme 中使用', params);
+  }
+  return ret;
+}
+```
 
 ## Q：小程序如何唤起小程序营销活动？
 A：可查看 [小程序营销](https://opendocs.alipay.com/mini/operation/app-with-benefit)。
