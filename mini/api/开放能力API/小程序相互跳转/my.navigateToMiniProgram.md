@@ -2,7 +2,7 @@
 
 **my.navigateToMiniProgram** 是用于跳转到其它小程序的 API。
 
-如需跳转到目标小程序开发中的版本，请参考 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing)
+如需跳转到目标小程序的指定开发版本，请参考 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing)
 
 有关小程序跳转的更多知识，可查看 [小程序相互跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。 
 
@@ -82,9 +82,10 @@ Object 类型，参数如下：
 
 # 常见问题 FAQ
 
-## Q：只有目标小程序的 scheme （以 alipays:// 开头），如何使用 my.navigateMiniProgram 跳转？
-A：如果 scheme 中的 appId 是 16 位，且只包含 page、query 参数，则可以转换成 my.navigateMiniProgram 的调用；其他情况（appId 为 8 位，或者有额外参数），需使用 [my.ap.navigateToAlipayPage](https://opendocs.alipay.com/mini/api/navigatetoalipaypage) 跳转，并联系目标业务相关的支付宝 BD 申请加入白名单。参考转换代码如下（注意 scheme 中的 `page` 对应调用参数中的 `path`）：
+## Q：拿到目标小程序的 scheme （以 alipays:// 开头），如何使用跳转？
+A：如果 scheme 中 appId 是 16 位，且只包含 page、query 参数，则应转换成 my.navigateMiniProgram 调用；其他情况（appId 为 8 位，或者有额外参数），需使用 [my.ap.navigateToAlipayPage](https://opendocs.alipay.com/mini/api/navigatetoalipaypage) 跳转，并联系目标业务相关的支付宝 BD 申请加入白名单。参考转换逻辑如下：
 ```javascript
+// 将 scheme 转换成 navigateMiniProgram 可接受的参数
 function schemeToParams(scheme) {
   var parseQuery = (str) => {
     var ret = {};
@@ -100,7 +101,8 @@ function schemeToParams(scheme) {
     var v = query[k];
     if (k == 'appId') {
       if (v.length != 16) {
-        params = false;
+        console.log(`! 非 16 位 appId '${v}'`;
+        params = null;
         break;
       }
     } else if (k == 'page') {
@@ -108,35 +110,37 @@ function schemeToParams(scheme) {
     } else if (k == 'query') {
       v = parseQuery(v);
     } else {
-      params = false;
+      console.log(`! 不支持参数 '${k}' `);
+      params = null;
       break;
     }
     params[k] = v;
   }
   if (!params) {
-    console.log('! 请使用 my.ap.navigateToAlipayPage() 跳转', scheme);
+    console.log(`! 请使用 my.ap.navigateToAlipayPage() 跳转 '${scheme}'`);
   }
   return params;
 }
 ```
 
 ## Q：my.navigateMiniProgram 的调用参数如何转换为等价的 scheme ？
-A：如果调用参数只含 appId、path、query，则可以转换成等价的 scheme。extraData 不支持在 scheme 中使用。参考转换代码如下（注意 scheme 中的 `page` 对应调用参数中的 `path`）：
+A：如果调用参数只含 appId、path、query，则可以转换成等价的 scheme。extraData 不支持在 scheme 中使用。参考转换逻辑如下：
 ```javascript
+// 将 navigateMiniProgram 转换成 scheme
 function paramsToScheme(params) {
   var { appId, path, query, extraData } = params;
-  var ret = `alipays://platformapi/startapp?appId=${appId}`;
+  var scheme = `alipays://platformapi/startapp?appId=${appId}`;
   if (path) {
-    ret += `&page=${path}`;
+    scheme += `&page=${encodeURIComponent(path)}`;
   }
   if (query) {
     query = Object.keys(query).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(query[k])}`).join('&');
-    ret += `&query=${encodeURIComponent(query)}`;
+    scheme += `&query=${encodeURIComponent(query)}`;
   }
-  if (extraData) {
+  if (extraData && Object.keys(extraData).length) {
     console.log('! extraData 不支持在 scheme 中使用', params);
   }
-  return ret;
+  return scheme;
 }
 ```
 
