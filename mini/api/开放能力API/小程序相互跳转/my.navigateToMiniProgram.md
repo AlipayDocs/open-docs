@@ -82,7 +82,7 @@ Object 类型，参数如下：
 
 # 常见问题 FAQ
 
-## Q：拿到目标小程序的 scheme （以 alipays:// 开头），如何使用跳转？
+## Q：拿到目标小程序的 scheme （以 alipays:// 开头），应该如何跳转？
 A：如果 scheme 中 appId 是 16 位，且只包含 page、query 参数，则应转换成 my.navigateMiniProgram 调用；其他情况（appId 为 8 位，或者有额外参数），需使用 [my.ap.navigateToAlipayPage](https://opendocs.alipay.com/mini/api/navigatetoalipaypage) 跳转，并联系目标业务相关的支付宝 BD 申请加入白名单。参考转换逻辑如下：
 ```javascript
 // 将 scheme 转换成 navigateMiniProgram 可接受的参数
