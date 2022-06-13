@@ -8,7 +8,7 @@
 
 ## 使用限制
 
-此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+* 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
 
@@ -143,6 +143,16 @@ function paramsToScheme(params) {
   return scheme;
 }
 ```
+
+## Q：想要跳转某些官方小程序，请问如何获取 appId？
+A：优先查看官方公开的 [appCode 列表](https://opendocs.alipay.com/mini/api/navigatetoalipaypage#String%20appCode) 并使用 my.ap.navigateToAlipayPage 跳转；如果 appCode 尚未包含所需业务，再参考以下表格；如果仍然没找到，并确实有强需求，可联系合作的支付宝 BD
+
+| **小程序** | **appId** | **描述** |
+| --- | --- | --- |
+| 我的小程序 | 2018072560844004 | 支付宝小程序官方出品，与你的小程序相关的内容和服务都在这 |
+| 集分宝 | 2019092567759928 | 集分宝的官方小程序 |
+| 支付宝校园缴费 | 2021002140649424 | 支付宝教育缴费是由支付宝推出的一款平台型的教育缴费服务 |
+
 
 ## Q：小程序如何唤起小程序营销活动？
 A：可查看 [小程序营销](https://opendocs.alipay.com/mini/operation/app-with-benefit)。
