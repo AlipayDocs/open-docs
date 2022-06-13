@@ -208,7 +208,7 @@ SocketTask 指 WebSocket 任务，可通过 my.connectSocket 接口传入参数 
 | 7 | 服务器返回的 https 证书无效。 | 小程序必须使用 HTTPS/WSS 发起网络请求。请求时系统会对服务器域名使用的 HTTPS 证书进行校验，如果校验失败，则请求不能成功发起。由于系统限制，不同平台对于证书要求的严格程度不同。为了保证小程序的兼容性，建议开发者按照最高标准进行证书配置，并使用相关工具检查现有证书，确保其符合要求。 |
 | 8 | 服务端返回协议头无效。 | 从 2019 年 5 月开始新创建的小程序，默认强制使用 HTTPS 和 WSS 协议，不再支持 HTTP 和WS 协议。 |
 | 9 | WebSocket 请求没有指定 Sec-WebSocket-Protocol 请求头。 | 请指定 Sec-WebSocket-Protocol 请求头。 |
-| 10 | 网络连接没有打开，无法发送消息。 | <ul><li>在未传入参数 multiple = true 时：<br />请正常连接服务器后再调用 [my.sendSocketMessage](https://opendocs.alipay.com/mini/api/mr91d1) 发送数据消息，可通过 [my.onSocketOpen](https://opendocs.alipay.com/mini/api/itm5og) 监听事件来判断与服务器建立正确连接。<br /><b>注意</b>：通过 WebSocket 连接发送数据，需要先使用 [my.connectSocket](https://opendocs.alipay.com/mini/api/vx19c3) 发起连接，在 [my.onSocketOpen](https://opendocs.alipay.com/mini/api/itm5og) 回调之后再调用 <b>my.sendSocketMessage</b> 发送数据。</li><li>在传入参数 multiple = true 时：<br />此时为 WebSocket 多实例模式，可在 socketTask.onOpen() 回调中再使用 socketTask.send() 接口发送消息。</li></ul> |
+| 10 | 网络连接没有打开，无法发送消息。 | <ul><li>在未传入参数 multiple = true 时：<br />请正常连接服务器后再调用 [my.sendSocketMessage](https://opendocs.alipay.com/mini/api/mr91d1) 发送数据消息，可通过 [my.onSocketOpen](https://opendocs.alipay.com/mini/api/itm5og) 监听事件来判断与服务器建立正确连接。<br /><b>注意</b>：通过 WebSocket 连接发送数据，需要先使用 [my.connectSocket](https://opendocs.alipay.com/mini/api/vx19c3) 发起连接，在 <b>my.onSocketOpen</b> 回调之后再调用 <b>my.sendSocketMessage</b> 发送数据。</li><li>在传入参数 multiple = true 时：<br />此时为 WebSocket 多实例模式，可在 socketTask.onOpen() 回调中再使用 socketTask.send() 接口发送消息。</li></ul> |
 | 11 | 消息发送失败。 | 稍后重试。 |
 | 12 | 无法申请更多内存来读取网络数据。 | 请检查内存。 |
 
