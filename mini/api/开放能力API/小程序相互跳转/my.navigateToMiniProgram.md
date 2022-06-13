@@ -2,37 +2,63 @@
 
 **my.navigateToMiniProgram** 是用于跳转到其它小程序的 API。
 
-目标小程序可通过 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing) 来唤起指定的开发版本。
+如需跳转到目标小程序的指定开发版本，请参考 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing)
 
-相关问题可查看 [小程序相互跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
+有关小程序跳转的更多知识，可查看 [小程序相互跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。 
 
 ## 使用限制
 
-此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+* 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
 
 ## 示例代码
 
-### .js 示例代码
 ```javascript
-// .js
+// 跳转小程序示例代码
 my.navigateToMiniProgram({
-  appId: 'xxxx',
-  path: 'pages/index/index',
-  query:{
-    "data":"test query"
+  appId: 'xxxxxxxxxxxxxxx', // 16 位数字
+  path: 'pages/index/index?p=1&q=2', 
+  query: {
+    a: 'foo',
+    b: 'bar',
   },
-  extraData:{
-    "data1":"test"
+  extraData: {
+    x: {
+      y: 'z'
+    },
   },
-  success: (res) => {
-    console.log(JSON.stringify(res))
+  success: () => {
+    console.log('navigateToMiniProgram success');
   },
   fail: (res) => {
-    console.log(JSON.stringify(res))
+    my.alert({
+      title: 'navigateToMiniProgram fail',
+      content: JSON.stringify(res),
+    });
   }
 });
+
+// 目标小程序获取页面参数
+Page({
+  onLoad(query) {
+    console.log('query:', query); // query: { p: 1, q: 2 }
+  },
+});
+
+// 目标小程序获取应用参数
+App({
+  onLaunch(options) {
+    const { query, referrerInfo: { extraData } = {} } = options;
+    console.log('query:', query); // query: { a: 'foo', b: 'bar' }
+    console.log('extraData:', extraData); // extraData: { x: { y: 'z' } }
+  },
+  onSomeButtonTap() {
+    const { query, referrerInfo: { extraData } = {} } = my.getLaunchOptionsSync();
+    // ...
+  },
+});
+
 ```
 
 ## 入参
@@ -40,46 +66,89 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| appId | String | 是 | 要跳转的目标小程序 appId。 |
-| path | String | 否 | 打开的页面路径，如果为空则打开首页。<br />path 中 ? 后内容会成为页面参数，在小程序的 `Page.onLoad(query)` 回调函数中可以获取到页面参数，解析规则可查看 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。 |
-| query | Object | 否 | 用于设置目标小程序的全局参数，目标小程序可通过 `App.onLaunch()`、`App.onShow()` 、`my.getLaunchOptionsSync()` 获取到全局参数。<br />基础库 [2.7.19](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
-| extraData | Object | 否 | 需要传递给目标小程序的数据库，为键值对的格式，数值的类型为字符串。<br />目标小程序可在 `App.onLaunch()`、`App.onShow()` 中获取到这份数据。 |
-| success | Function | 否 | 调用成功的回调函数。 |
+| appId | String | 是 | 要跳转的目标小程序 appId |
+| path | String | 否 | 要打开的目标小程序页面路径。省略此参数则打开目标小程序首页。<br />path 中`?`后的内容会被解析为页面的 query 参数，目标小程序可在 `Page.onLoad(query)` 中获取。参数解析规则可参考 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。 |
+| query | Object | 否 | 传给目标小程序启动参数的 query 字段，目标小程序可在 `App.onLaunch(options)` 或 `App.onShow(options)` 中通过 options.query 获取，也可通过 my.getLaunchOptionsSync().query 获取。<br />基础库从 2.7.19 开始支持此参数，使用 1.x 版本的小程序需要 [升级基础库](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)。 |
+| extraData | Object | 否 | 传给目标小程序的额外数据。<br />目标小程序可在 `App.onLaunch(options)` 或 `App.onShow(options)` 中通过 options.referrerInfo?.extraData 获取。 |
+| success | Function | 否 | 调用成功的回调函数。|
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
-| 30 | 目标应用不允许被跳转。 | 需检查目标应用跳转设置，登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要设置的小程序，进入小程序详情页 > **设置** > **基础设置** > **小程序互相跳转** 中设置 **允许所有小程序跳转** 或 **指定小程序跳转**。 |
-| 31 | 跳转失败。 | 可能是目标应用信息查询失败导致，建议检查跳转的目标应用是否已经上架。<br />**注意**：APPID 长度为 8 位的小程序暂不支持跳转。 |
+| 30 | 目标应用不允许被跳转。 | 检查目标小程序的设置。操作路径：[开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要设置的小程序，进入小程序详情页 > **设置** > **基础设置** > **小程序互相跳转** 中设置 **允许所有小程序跳转** 或 **指定小程序跳转**。 |
+| 31 | 跳转失败。 | 检查 appId 参数。appId 为 16 位数字，由开放平台在小程序创建时分配。<br>注意：如果目标小程序未上架，调用本接口仍会触发 success 回调而非失败报错，未通过 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing) 指定跳转开发版的用户将看到 “暂未找到此功能” 提示页 |
 
 # 常见问题 FAQ
 
-## Q：my.navigateToMiniProgram 的 extraData 的参数在哪里获取？ extraData 是否可以添加多个参数？自定义参数中间使用的什么符号进行拼接？如何获取自定义的参数
-A：目标小程序可在 App.onLaunch( )、App.onShow( ) 中获取到这份数据。extraData可以是一个包含多个参数的对象。
-
-```js
-// 跳转小程序示例代码
-my.navigateToMiniProgram({
-  appId: 'targetAppId',
-  extraData: {
-    key1: 'some data',
-    key2: {
-      foo: 'bar'
+## Q：拿到目标小程序的 scheme （以 alipays:// 开头），应该如何跳转？
+A：如果 scheme 中 appId 是 16 位，且只包含 page、query 参数，则应转换成 my.navigateMiniProgram 调用；其他情况（appId 为 8 位，或者有额外参数），需使用 [my.ap.navigateToAlipayPage](https://opendocs.alipay.com/mini/api/navigatetoalipaypage) 跳转，并联系目标业务相关的支付宝 BD 申请加入白名单。参考转换逻辑如下：
+```javascript
+// 将 scheme 转换成 navigateMiniProgram 可接受的参数
+function schemeToParams(scheme) {
+  var parseQuery = (str) => {
+    var ret = {};
+    str.split('&').forEach(s => {
+      var p = s.includes('=') ? s.indexOf('=') : s.length;
+      ret[decodeURIComponent(s.slice(0, p))] = decodeURIComponent(s.slice(p + 1));
+    });
+    return ret;
+  };
+  var params = {};
+  var query = parseQuery(scheme.slice(scheme.indexOf('?') + 1));
+  for (var k in query) {
+    var v = query[k];
+    if (k == 'appId') {
+      if (v.length != 16) {
+        console.log(`! 非 16 位 appId '${v}'`;
+        params = null;
+        break;
+      }
+    } else if (k == 'page') {
+      k = 'path';
+    } else if (k == 'query') {
+      v = parseQuery(v);
+    } else {
+      console.log(`! 不支持参数 '${k}' `);
+      params = null;
+      break;
     }
+    params[k] = v;
   }
-})
-
-// 获取extraData示例代码
-App({
-  onLaunch(options) {
-    const { referrerInfo = {}, appId } = options
-    const { key1, key2 } = referrerInfo.extraData || {}
+  if (!params) {
+    console.log(`! 请使用 my.ap.navigateToAlipayPage() 跳转 '${scheme}'`);
   }
-});
-
+  return params;
+}
 ```
 
-## Q：小程序如何唤起小程序营销活动？
-A：可查看 [小程序营销](https://opendocs.alipay.com/mini/operation/app-with-benefit)。
+## Q：my.navigateMiniProgram 的调用参数如何转换为等价的 scheme ？
+A：如果调用参数只含 appId、path、query，则可以转换成等价的 scheme。extraData 不支持在 scheme 中使用。参考转换逻辑如下：
+```javascript
+// 将 navigateMiniProgram 转换成 scheme
+function paramsToScheme(params) {
+  var { appId, path, query, extraData } = params;
+  var scheme = `alipays://platformapi/startapp?appId=${appId}`;
+  if (path) {
+    scheme += `&page=${encodeURIComponent(path)}`;
+  }
+  if (query) {
+    query = Object.keys(query).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(query[k])}`).join('&');
+    scheme += `&query=${encodeURIComponent(query)}`;
+  }
+  if (extraData && Object.keys(extraData).length) {
+    console.log('! extraData 不支持在 scheme 中使用', params);
+  }
+  return scheme;
+}
+```
+
+## Q：想要跳转某些官方小程序，请问如何获取 appId？
+A：优先查看官方公开的 [appCode 列表](https://opendocs.alipay.com/mini/api/navigatetoalipaypage#String%20appCode) 并使用 my.ap.navigateToAlipayPage 跳转；如果 appCode 尚未包含所需业务，再参考以下表格；如果仍然没找到，并确实有强需求，可联系合作的支付宝 BD
+
+| **小程序** | **appId** | **描述** |
+| --- | --- | --- |
+| 我的小程序 | 2018072560844004 | 支付宝小程序官方出品，与你的小程序相关的内容和服务都在这 |
+| 集分宝 | 2019092567759928 | 集分宝的官方小程序 |
+| 支付宝校园缴费 | 2021002140649424 | 支付宝教育缴费是由支付宝推出的一款平台型的教育缴费服务 |
