@@ -158,43 +158,43 @@ SocketTask 指 WebSocket 任务，可通过 my.connectSocket 接口传入参数 
 
 ### SocketTask.send(Object object)
 
-通过 WebSocket 发送数据。接口参数同 [my.sendSocketMessage](https://opendocs.alipay.com/mini/api/mr91d1)。
+通过 WebSocket 发送数据，接口参数同 [my.sendSocketMessage](https://opendocs.alipay.com/mini/api/mr91d1)。
 
 ### SocketTask.close(Object object)
 
-关闭 WebSocket 连接。接口参数同 [my.closeSocket](https://opendocs.alipay.com/mini/api/network)。
+关闭 WebSocket 连接，接口参数同 [my.closeSocket](https://opendocs.alipay.com/mini/api/network)。
 
 ### SocketTask.onOpen(function callback)
 
-监听 WebSocket 连接打开事件。接口参数同 [my.onSocketOpen](https://opendocs.alipay.com/mini/api/itm5og)。
+监听 WebSocket 连接打开事件，接口参数同 [my.onSocketOpen](https://opendocs.alipay.com/mini/api/itm5og)。
 
 ### SocketTask.onClose(function callback)
 
-监听 WebSocket 连接关闭事件。接口参数同 [my.onSocketClose](https://opendocs.alipay.com/mini/api/foqk6g)。
+监听 WebSocket 连接关闭事件，接口参数同 [my.onSocketClose](https://opendocs.alipay.com/mini/api/foqk6g)。
 
 ### SocketTask.onError(function callback)
 
-监听 WebSocket 错误事件。接口参数同 [my.onSocketError](https://opendocs.alipay.com/mini/api/giu3c2)。
+监听 WebSocket 错误事件，接口参数同 [my.onSocketError](https://opendocs.alipay.com/mini/api/giu3c2)。
 
 ### SocketTask.onMessage(function callback)
 
-监听 WebSocket 接受到服务器的消息事件。接口参数同 [my.onSocketMessage](https://opendocs.alipay.com/mini/api/gecnap)。
+监听 WebSocket 接受到服务器的消息事件，接口参数同 [my.onSocketMessage](https://opendocs.alipay.com/mini/api/gecnap)。
 
 ### SocketTask.offOpen(function callback)
 
-取消监听 WebSocket 连接打开事件。接口参数同 [my.offSocketOpen](https://opendocs.alipay.com/mini/api/dva3t8)。
+取消监听 WebSocket 连接打开事件，接口参数同 [my.offSocketOpen](https://opendocs.alipay.com/mini/api/dva3t8)。
 
 ### SocketTask.offClose(function callback)
 
-取消监听 WebSocket 连接关闭事件。接口参数同 [my.offSocketClose](https://opendocs.alipay.com/mini/api/qc4q3t)。
+取消监听 WebSocket 连接关闭事件，接口参数同 [my.offSocketClose](https://opendocs.alipay.com/mini/api/qc4q3t)。
 
 ### SocketTask.offError(function callback)
 
-取消监听 WebSocket 错误事件。接口参数同 [my.offSocketError](https://opendocs.alipay.com/mini/api/kk7vv7)。
+取消监听 WebSocket 错误事件，接口参数同 [my.offSocketError](https://opendocs.alipay.com/mini/api/kk7vv7)。
 
 ### SocketTask.offMessage(function callback)
 
-取消监听 WebSocket 接受到服务器的消息事件。接口参数同 [my.offSocketMessage](https://opendocs.alipay.com/mini/api/roziyq)。
+取消监听 WebSocket 接受到服务器的消息事件，接口参数同 [my.offSocketMessage](https://opendocs.alipay.com/mini/api/roziyq)。
 
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
