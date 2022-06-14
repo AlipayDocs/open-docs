@@ -260,7 +260,7 @@ Page({
 需要添加属性 `controlled="{{true}}"` ，也可以在 `onInput` 事件里把输入的值通过 setData 再赋值给 value，再去 setData 设置 value。
 ```javascript
 //axml
-<input class="internet_input" value="{{textValue}}" onInput="keyNum" controlled={{true}} type="text"  />
+<input class="internet_input" value="{{textValue}}" onInput="keyNum" controlled="{{true}}" type="text"  />
 //input如何用js清空
 keyNum() {
       this.setData({
