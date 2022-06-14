@@ -15,10 +15,7 @@
 
 ```javascript
 // .js
-my.onBeaconUpdate({
-  success: (res) => {
-  },
-})
+my.onBeaconUpdate((res) => {});
 ```
 
 ## 入参

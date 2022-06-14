@@ -184,84 +184,68 @@
 //初始化
 my.openBluetoothAdapter({
   success: (res) => {
-  	console.log(res);
-  }
+    console.log(res);
+  },
 });
 //注册发现事件
-my.onBluetoothDeviceFound({
-  success: (res) => {
-	let device = res.devices[0];
-	//连接发现的设备
-	my.connectBLEDevice({
-	  deviceId: deviceId,
-	  success: (res) => {
-		console.log(res)
-	  },
-	  fail:(res) => {
-	  },
-	  complete: (res)=>{
-	  }
-	});
-	//停止搜索
-	my.stopBluetoothDevicesDiscovery({
-	  success: (res) => {
-		console.log(res)
-	  },
-	  fail:(res) => {
-	  },
-	  complete: (res)=>{
-	  }
-	});
-  }
+my.onBluetoothDeviceFound((res) => {
+  let device = res.devices[0];
+  //连接发现的设备
+  my.connectBLEDevice({
+    deviceId: device.deviceId,
+    success: (res) => {
+      console.log(res);
+    },
+    fail: (res) => {},
+    complete: (res) => {},
+  });
+  //停止搜索
+  my.stopBluetoothDevicesDiscovery({
+    success: (res) => {
+      console.log(res);
+    },
+    fail: (res) => {},
+    complete: (res) => {},
+  });
 });
 //注册连接事件
-my.onBLEConnectionStateChanged({
-  success: (res) => {
-  	console.log(res);
-	if (res.connected) {
-		//开始读写notify等操作
-        my.notifyBLECharacteristicValueChange({
-          deviceId: deviceId,
-          serviceId: serviceId,
-          characteristicId: characteristicId,
-          success: (res) => {
-          	console.log(res)
-          },
-          fail:(res) => {
-          },
-          complete: (res)=>{
-          }
-        });
-	}
+my.onBLEConnectionStateChanged((res) => {
+  console.log(res);
+  if (res.connected) {
+    //开始读写notify等操作
+    my.notifyBLECharacteristicValueChange({
+      deviceId: deviceId,
+      serviceId: serviceId,
+      characteristicId: characteristicId,
+      success: (res) => {
+        console.log(res);
+      },
+      fail: (res) => {},
+      complete: (res) => {},
+    });
   }
 });
 //注册接收read或notify的数据
-my.onBLECharacteristicValueChange({
-  success: (res) => {
-  	console.log(res);
-  }
+my.onBLECharacteristicValueChange((res) => {
+  console.log(res);
 });
 //开始搜索
 my.startBluetoothDevicesDiscovery({
-  services: ['fff0'],
+  services: ["fff0"],
   success: (res) => {
-  	console.log(res)
+    console.log(res);
   },
-  fail:(res) => {
-  },
-  complete: (res)=>{
-  }
+  fail: (res) => {},
+  complete: (res) => {},
 });
 //断开连接
 my.disconnectBLEDevice({
   deviceId: deviceId,
   success: (res) => {
-  	console.log(res)
+    console.log(res);
   },
-  fail:(res) => {
-  },
-  complete: (res)=>{
-  }
+  fail: (res) => {},
+  complete: (res) => {},
 });
 //注销事件
 my.offBluetoothDeviceFound();
@@ -269,11 +253,8 @@ my.offBLEConnectionStateChanged();
 my.offBLECharacteristicValueChange();
 //退出蓝牙模块
 my.closeBluetoothAdapter({
-  success: (res) => {
-  },
-  fail:(res) => {
-  },
-  complete: (res)=>{
-  }
+  success: (res) => {},
+  fail: (res) => {},
+  complete: (res) => {},
 });
 ```

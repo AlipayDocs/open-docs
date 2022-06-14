@@ -21,17 +21,20 @@ SelectorQuery.context 是获取节点Context实例查询请求。目前支持 [V
 //page.js
 Page({
   onReady() {
-    my.createSelectorQuery().select('#map').context((res) => {
-			if (res && res.context) {
-        const mapContext = res.context;
-        mapContext.getSkew({
-          success: res => {
-            console.log(res.skew);
-          }
+    my.createSelectorQuery()
+      .select("#map")
+      .context((res) => {
+        if (res && res.context) {
+          const mapContext = res.context;
+          mapContext.getSkew({
+            success: (res) => {
+              console.log(res.skew);
+            },
+          });
         }
-      }
-    }).exec();
-  }
+      })
+      .exec();
+  },
 });
 ```
 
