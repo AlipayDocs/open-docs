@@ -1,5 +1,5 @@
 # 简介
-可通过 web-view 组件在小程序中嵌入 H5 页面。小程序不直接支持外跳 H5，web-view 部分地满足跳转 H5 的需求。关于小程序跳转，更完整内容可查看 [小程序跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
+可通过 web-view 组件在小程序中嵌入 H5 页面。小程序不直接支持外跳 H5，web-view 部分地满足跳转 H5 的需求。关于小程序跳转的内容可查看 [小程序跳转问题 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
 
 web-view 可以打开的 H5 页面的域名限于开发者维护的 H5 域名白名单（开放平台控制台 > 小程序详情页 > 设置 > 开发设置 > H5域名配置），仅支持添加开发者可控制的域名。若 web-view 提示访问受限，可参考 [页面访问受限解决方案](https://opendocs.alipay.com/mini/component/access)。
 
@@ -163,4 +163,3 @@ Page({
   }
 });
 ```
-
