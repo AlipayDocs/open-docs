@@ -14,20 +14,21 @@
 ### .js 示例代码
 ```javascript
 // .js
-const updateManager = my.getUpdateManager();updateManager.onCheckForUpdate(function (res) {
+const updateManager = my.getUpdateManager();
+updateManager.onCheckForUpdate(function (res) {
   // 检查更新结果
   console.log(res.hasUpdate);
-})
+});
 updateManager.onUpdateReady(function () {
   my.confirm({
-    title: '更新提示',
-    content: '新版本已经准备好，是否重启应用？',    
-    success: function (res) { 
-    	if (res.confirm) {
-    		// 新版本已经下载好，调用 applyUpdate 应用新版本并重启
-      	updateManager.applyUpdate();
-			}
-		}  
+    title: "更新提示",
+    content: "新版本已经准备好，是否重启应用？",
+    success: function (res) {
+      if (res.confirm) {
+        // 新版本已经下载好，调用 applyUpdate 应用新版本并重启
+        updateManager.applyUpdate();
+      }
+    },
   });
 });
 updateManager.onUpdateFailed(function () {
@@ -36,6 +37,7 @@ updateManager.onUpdateFailed(function () {
 ```
 
 ## 返回值
+
 返回值为 [UpdateManager](api/ngwgfi)。
 
 # 常见问题 FAQ
