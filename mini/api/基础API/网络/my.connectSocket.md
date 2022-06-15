@@ -147,7 +147,7 @@ Object 类型，属性如下：
 | url | String | 是 | 目标服务器接口地址。<br />**注意：** 部分新发布的小程序只支持 wss 协议。 |
 | data | Object | 否 | 请求的参数。 |
 | header | Object | 否 | 设置请求的头部。 |
-| multiple | Boolean | 否 | 是否多实例。传入 true 时，将返回一个包含 SocketTask 的实例。 |
+| multiple | Boolean | 否 | 是否多实例。传入 true 时，将返回一个 SocketTask 实例。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
