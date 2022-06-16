@@ -74,3 +74,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | aliaddress | [my.getAddress](https://opendocs.alipay.com/mini/api/lymgfk) | 收货地址。 |
 | userInfo | [my.getOpenUserInfo](https://opendocs.alipay.com/mini/api/ch8chh) | 唤起授权界面，用户可以授权小程序获取支付宝会员的基础信息 。 |
 
+# 常见问题 FAQ
+
+## Q：my.getAuthCode 的授权关系可以通过 my.getSetting 接口查询吗？
+A：不可以。[my.getOpenUserInfo](https://opendocs.alipay.com/mini/api/ch8chh) 接口的授权关系可以查询。
