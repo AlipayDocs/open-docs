@@ -16,6 +16,7 @@
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
+| entryPagePath | String | 否 | 小程序默认启动首页。 |
 | pages | Array | 是 | 设置页面路径。 |
 | window | Object | 否 | 设置默认页面的窗口表现。 |
 | tabBar | Object | 否 | 设置底部 tabbar 的表现。 |
@@ -24,9 +25,13 @@
 | preloadRule | Object | 否 | 分包预加载规则。 |
 | plugins | Object | 否 | 静态插件配置规则。 |
 | useDynamicPlugins | Boolean | 否 | 动态插件配置规则。 |
+| usingComponents | Array | 否 | 设置全局自定义组件声明。 |
 | lazyCodeLoading | String | 否 | 是否开启代码按需执行。 |
 | permission | Object | 否 | 小程序接口权限相关配置。 |
 | behavior | Object | 否 | 修改小程序运行行为的相关设置。 |
+
+# entryPagePath
+指定小程序的默认启动路径（首页）。如果不填，将默认为 pages 列表的第一项。不支持带页面路径参数。<br />注意：此特性从基础库 [2.7.20](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)，[IDE 3.1.2](https://opendocs.alipay.com/mini/ide/download) 开始支持。若强依赖此特性，建议设置最低基础库版本号为2.7.20。否则，在低版本的基础库，会因为无法识别正确的首页而导致地渲染出『小房子』。
 
 # pages
 `app.json` 中的 `pages` 为数组属性，数组中每一项都是字符串，用于指定小程序的页面。在小程序中新增或删除页面，都需要对 `pages` 数组进行修改。
@@ -59,6 +64,18 @@
   ]
 }
 ```
+
+# usingComponents
+在 app.json 中声明的自定义组件将会认为成全局自定义组件，在小程序各页面或自定义组件中可以直接使用无需额外声明。
+```json
+{
+  "usingComponents": {
+    "com1": "/components/com1/index",
+    "com2": "./components/com2/index"
+  }
+}
+```
+**注意**：[IDE3.1.2](https://opendocs.alipay.com/mini/ide/download) 及以上开始支持。该功能声明的组件将要被所有页面和组件依赖，可能会影响性能，且会占用主包大小，建议开启 app.lazyCodeLoading。
 
 # window
 `window` 用于设置小程序的状态栏、导航条、标题、窗口背景色等。
