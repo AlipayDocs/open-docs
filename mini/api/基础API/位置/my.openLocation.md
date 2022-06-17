@@ -36,7 +36,7 @@ Object 类型，参数如下：
 | longitude | String | 是 | 经度，范围为 -180~180，负数表示西经。|
 | latitude | String | 是 | 纬度，范围为 -90~90，负数表示南纬。 |
 | name | String | 是 | 位置名称。 |
-| address | String | 是 | 位置的详细说明。 |
+| address | String | 是 | 地址的详细说明。 |
 | scale | Number | 否 | 地图缩放比例，范围 3 ~ 19，默认为 15。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
