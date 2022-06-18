@@ -55,7 +55,8 @@ App({
   },
   onSomeButtonTap() {
     const { query, referrerInfo: { extraData } = {} } = my.getLaunchOptionsSync();
-    // ...
+    console.log('query:', query); // query: { a: 'foo', b: 'bar' }
+    console.log('extraData:', extraData); // extraData: { x: { y: 'z' } }
   },
 });
 
@@ -83,9 +84,10 @@ Object 类型，参数如下：
 # 常见问题 FAQ
 
 ## Q：拿到目标小程序的 scheme （以 alipays:// 开头），应该如何跳转？
-A：如果 scheme 中 appId 是 16 位，且只包含 page、query 参数，则应转换成 my.navigateMiniProgram 调用；其他情况（appId 为 8 位，或者有额外参数），需使用 [my.ap.navigateToAlipayPage](https://opendocs.alipay.com/mini/api/navigatetoalipaypage) 跳转，并联系目标业务相关的支付宝业务人员申请加入白名单。参考转换逻辑如下：
+A：如果 scheme 中 appId 是 16 位，且只包含 page、query 参数，则应转换成 my.navigateMiniProgram 调用；其他情况（appId 为 8 位，或者有额外参数），需使用 [my.ap.navigateToAlipayPage](https://opendocs.alipay.com/mini/api/navigatetoalipaypage) 跳转，并联系合作的支付宝业务人员申请加入白名单。参考转换逻辑如下：
 ```javascript
 // 将 scheme 转换成 navigateMiniProgram 可接受的参数
+// 注意：此代码主要用来说明转换逻辑，可作为线下工具使用，不建议直接用于线上
 function schemeToParams(scheme) {
   var parseQuery = (str) => {
     var ret = {};
@@ -101,7 +103,7 @@ function schemeToParams(scheme) {
     var v = query[k];
     if (k == 'appId') {
       if (v.length != 16) {
-        console.log(`! 非 16 位 appId '${v}'`;
+        console.log(`! 非 16 位 appId '${v}'`);
         params = null;
         break;
       }
@@ -121,12 +123,16 @@ function schemeToParams(scheme) {
   }
   return params;
 }
+// 使用示例
+var scheme = 'alipays://platformapi/startapp?appId=2022061812345678&page=%2Fpages%2Findex%2Findex&query=foo%3Dbar';
+console.log(schemeToParams(scheme));
 ```
 
 ## Q：my.navigateMiniProgram 的调用参数如何转换为等价的 scheme ？
 A：如果调用参数只含 appId、path、query，则可以转换成等价的 scheme。extraData 不支持在 scheme 中使用。参考转换逻辑如下：
 ```javascript
-// 将 navigateMiniProgram 转换成 scheme
+// 将 my.navigateMiniProgram 的参数转换成 scheme
+// 注意：此代码主要用来说明转换逻辑，可作为线下工具使用，不建议直接用于线上
 function paramsToScheme(params) {
   var { appId, path, query, extraData } = params;
   var scheme = `alipays://platformapi/startapp?appId=${appId}`;
@@ -142,6 +148,13 @@ function paramsToScheme(params) {
   }
   return scheme;
 }
+// 使用示例
+var params = {
+  appId: '2022061812345678',
+  path: '/pages/index/index',
+  query: { foo: 'bar' }
+};
+console.log(paramsToScheme(params));
 ```
 
 ## Q：想要跳转某些官方小程序，请问如何获取 appId？
