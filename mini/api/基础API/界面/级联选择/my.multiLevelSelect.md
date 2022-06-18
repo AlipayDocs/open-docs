@@ -20,33 +20,35 @@ my.multiLevelSelect({
     name: "杭州市",
     subList: [{
       name: "西湖区",
-      subList: [{
-        name: "古翠街道"
-      },{
-        name: "文新街道"
-      }]
+      subList: [
+        { name: "古翠街道" },
+        { name: "文新街道" }
+      ]
     },{
       name: "上城区",
-      subList: [{
-        name: "延安街道"
-      },{
-        name: "龙翔桥街道"
-      }]
+      subList: [
+        { name: "延安街道" },
+        { name: "龙翔桥街道" }
+      ]
     }]
   },{
     name: "北京市",
-    subList: [{
-      name: "东城区"
-    },{
-      name: "西城区"
+    subList: [
+      { name: "东城区" },
+      { name: "西城区" }
     }]
   }],
   success: (res) => {
-    if (res.success) {
-      my.alert({ title: '已选择: ' + JSON.stringify(res.result) });
-    } else {
-      my.alert({ title: '未选择' });
-    }
+    my.alert({
+      title: 'multiLevelSelect success',
+      content: res.success ? '已选择: ' + JSON.stringify(res.result) : '未选择'
+    });
+  },
+  fail: (res) => {
+    my.alert({
+      title: 'multiLevelSelect fail',
+      content: JSON.stringify(res)
+    });
   }
 });
 ```
@@ -93,19 +95,21 @@ success 回调函数会收到一个 Object 类型的参数，其属性如下：
 A：需要自己实现，可参考以下代码：
 ```javascript
 // 封装 my.multiLevelSelect
+// 对于传入的 list，只向底层接口传递 name 和 subList
+// 对于选中的结果，替换成对应的完整条目再回调
 function multiLevelSelect({ title, list, success, fail, complete }) {
   const clean = ({ name, subList }) => {
     return { name, subList: subList && subList.map(clean) };
   };
-  const lookup = (array, index = 0, pool = list) => {
+  const lookup = (array, index, pool) => {
     if (array && index < array.length) {
       array[index] = pool.filter(x => x.name === array[index].name)[0];
       lookup(array, index + 1, array[index].subList);
-      delete array[index].subList;
+      delete array[index].subList; // 方便演示。真实代码请删除此行，避免副作用
     }
   };
   const cast = func => func && (res => {
-    res.success && lookup(res.result);
+    res.success && lookup(res.result, 0, list);
     func(res);
   });
   return my.multiLevelSelect({
@@ -134,11 +138,16 @@ multiLevelSelect({
     }]
   }],
   success: (res) => {
-    if (res.success) {
-      my.alert({ title: '已选择: ' + JSON.stringify(res.result) });
-    } else {
-      my.alert({ title: '未选择' });
-    }
+    my.alert({
+      title: 'multiLevelSelect success',
+      content: res.success ? '已选择: ' + JSON.stringify(res.result) : '未选择'
+    });
+  },
+  fail: (res) => {
+    my.alert({
+      title: 'multiLevelSelect fail',
+      content: JSON.stringify(res)
+    });
   }
 });
 ```
