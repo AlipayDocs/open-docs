@@ -90,60 +90,47 @@ success 回调函数会收到一个 Object 类型的参数，其属性如下：
 ## 常见问题 FAQ
 
 ### Q：选择结果如何才能包含除了 name 以外的更多字段（如 id 等）？
-A：选择结果中只包含 name。如需支持其他字段，可参考以下代码自行实现：
+A：需要自己实现，可参考以下代码：
 ```javascript
 // 封装 my.multiLevelSelect
-function myMultiLevelSelect({ title, list, success, fail, complete }) {
-  function clean({ name, subList }) {
+function multiLevelSelect({ title, list, success, fail, complete }) {
+  const clean = ({ name, subList }) => {
     return { name, subList: subList && subList.map(clean) };
-  }
-  function cast(res) {
-    if (res.success) {
-      var items = list;
-      res.result = res.result.map(({ name }) => {
-        for (var item of items) {
-          if (item.name === name) {
-            items = item.subList || [];
-            // 选择的结果包含 id 和 name
-            return { id: item.id, name };
-            // 亦可直接返回原条目
-            // return item;
-          }
-        }
-        console.log('! 转换失败。请检查 list 数据');
-        return { name };
-      });
+  };
+  const lookup = (array, index = 0, pool = list) => {
+    if (array && index < array.length) {
+      array[index] = pool.filter(x => x.name === array[index].name)[0];
+      lookup(array, index + 1, array[index].subList);
+      delete array[index].subList;
     }
-    return res;
-  }
+  };
+  const cast = func => func && (res => {
+    res.success && lookup(res.result);
+    func(res);
+  });
   return my.multiLevelSelect({
-    title,
-    list: list.map(clean),
-    success: res => success && success(cast(res)),
-    fail,
-    complete: res => complete && complete(cast(res)),
+    title, list: list.map(clean),
+    success: cast(success), fail, complete: cast(complete),
   });
 }
 
 // 调用示例
-myMultiLevelSelect({
+multiLevelSelect({
   title: '多级联选择器',
   list: [{
     id: 300, name: "杭州市",
     subList: [{
       id: 310, name: "西湖区",
-      subList: [{
-        id: 311, name: "古翠街道"
-      },{
-        id: 312, name: "文新街道"
-      }]
+      subList: [
+        { id: 311, name: "古翠街道" },
+        { id: 312, name: "文新街道" }
+      ]
     },{
       id: 320, name: "上城区",
-      subList: [{
-        id: 321, name: "延安街道"
-      },{
-        id: 322, name: "龙翔桥街道"
-      }]
+      subList: [
+        { id: 321, name: "延安街道" },
+        { id: 322, name: "龙翔桥街道" }
+      ]
     }]
   }],
   success: (res) => {
