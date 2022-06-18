@@ -108,13 +108,13 @@ function multiLevelSelect({ title, list, success, fail, complete }) {
       delete array[index].subList; // 方便演示。真实代码请删除此行，避免副作用
     }
   };
-  const cast = func => func && (res => {
+  const wrap = func => func && (res => {
     res.success && lookup(res.result, 0, list);
     func(res);
   });
   return my.multiLevelSelect({
     title, list: list.map(clean),
-    success: cast(success), fail, complete: cast(complete),
+    success: wrap(success), fail, complete: wrap(complete),
   });
 }
 
