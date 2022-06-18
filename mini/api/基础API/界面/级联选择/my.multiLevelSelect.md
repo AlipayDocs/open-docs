@@ -74,7 +74,7 @@ list 中的每个 Object 支持的属性如下表
 | name | String | 是 | 条目名称。 |
 | subList | JsonArray | 否 | 子条目列表。subList 的结构与 list 相同，即支持多级嵌套 |
 
-注意：除了 name 和 subList 以外的属性实际会被忽略，但会增大 list 数量量，Android 版本上可能导致功能异常。参见后文已知问题
+注意：除了 name 和 subList 以外的属性实际会被忽略，但也会增大 list 数据量，Android 版本上可能导致功能异常。参见后文 **Bug & Tip**
 
 ### Function success
 
@@ -83,20 +83,18 @@ success 回调函数会收到一个 Object 类型的参数，其属性如下：
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | success | Boolean | 用户是否完成选择 |
-| result | Object[] | 选择的结果，如 [{"name":"杭州市"},{"name":"上城区"},{"name":"古翠街道"}]<br>结果中每个条目只包含 name 属性。如需要传递更多属性，请参考后文**常见问题 FAQ** |
+| result | Object[] | 选择的结果，如 [{"name":"杭州市"},{"name":"上城区"},{"name":"古翠街道"}] |
 
-## 已知缺陷
+## Bug & Tip
 
 - `bug` Android 版本对于过大的入参 list 支持有缺陷，数据超过 100K 时在部分机型上选择器不能弹出。建议通过删除额外字段等方式控制 list 数据大小
 
-## 常见问题 FAQ
+- `tip` 如果希望在选择结果里包含除了 name 以外的更多字段（如 id 等），可参考以下代码自行实现：
 
-### Q：选择结果如何才能包含除了 name 以外的更多字段（如 id 等）？
-A：需要自己实现，可参考以下代码：
 ```javascript
 // 封装 my.multiLevelSelect
-// 对于传入的 list，只向底层接口传递 name 和 subList
-// 对于选中的结果，替换成对应的完整条目再回调
+// - 对于传入的数据，只向底层接口传递 name 和 subList
+// - 对于选中的结果，替换成对应的完整数据条目再回调
 function multiLevelSelect({ title, list, success, fail, complete }) {
   const clean = ({ name, subList }) => {
     return { name, subList: subList && subList.map(clean) };
