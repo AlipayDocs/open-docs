@@ -124,7 +124,7 @@ function schemeToParams(scheme) {
   return params;
 }
 // 使用示例
-const scheme = 'alipays://platformapi/startapp?appId=2022061812345678&page=%2Fpages%2Findex%2Findex&query=foo%3Dbar';
+var scheme = 'alipays://platformapi/startapp?appId=2022061812345678&page=%2Fpages%2Findex%2Findex&query=foo%3Dbar';
 console.log(schemeToParams(scheme));
 ```
 
@@ -149,7 +149,7 @@ function paramsToScheme(params) {
   return scheme;
 }
 // 使用示例
-const params = {
+var params = {
   appId: '2022061812345678',
   path: '/pages/index/index',
   query: { foo: 'bar' }
