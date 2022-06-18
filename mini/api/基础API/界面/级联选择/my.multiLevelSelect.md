@@ -85,12 +85,18 @@ success 回调函数会收到一个 Object 类型的参数，其属性如下：
 | success | Boolean | 用户是否完成选择 |
 | result | Object[] | 选择的结果，如 [{"name":"杭州市"},{"name":"上城区"},{"name":"古翠街道"}] |
 
+## 错误码
+
+| **错误码** | **描述** | **解决方案** |
+| --- | --- | --- |
+| 2 | 参数无效 | 检查入参 list |
+
+
 ## Bug & Tip
 
 - `bug` Android 版本对于过大的入参 list 支持有缺陷，数据超过 100K 时在部分机型上选择器不能弹出。建议通过删除额外字段等方式控制 list 数据大小
-
-- `tip` 如果希望在选择结果里包含除了 name 以外的更多字段（如 id 等），可参考以下代码自行实现：
-
+- `bug` 如果传入的 list 为 null，会触发 success 回调（res.success 为 false）而非 fail 回调
+- `tip` 若希望选择结果里包含除了 name 以外的更多字段（如 id 等），可参考以下代码自行实现：
 ```javascript
 // 封装 my.multiLevelSelect
 // - 对于传入的数据，只向底层接口传递 name 和 subList
@@ -103,7 +109,7 @@ function multiLevelSelect({ title, list, success, fail, complete }) {
     if (array && index < array.length) {
       array[index] = pool.filter(x => x.name === array[index].name)[0];
       lookup(array, index + 1, array[index].subList);
-      delete array[index].subList; // 方便演示。真实代码请删除此行，避免副作用
+      delete array[index].subList; // 方便回调中的 my.alert 演示。真实代码请删除此行，避免副作用
     }
   };
   const wrap = func => func && (res => {
