@@ -3,9 +3,63 @@
 
 在小程序中跳转支付宝业务或打开链接，请按下表分情况处理：
 
+<tr>
+  <td colspan=2>跳转目标</td>
+  <td>打开方法</td>
+</tr>
+<tr>
+  <td rowspan=3>支付宝业务</td>
+  <td><b>appCode 列表</b>中列举的业务</td>
+  <td>使用 my.ap.navigateToAlipayPage()</td>
+</tr>
+<tr>
+  <td>已知 appId 的官方小程序</td>
+  <td>使用 [my.navigateToMiniProgram()](https://opendocs.alipay.com/mini/02sz8n)</td>
+</tr>
+<tr>
+  <td>其他情况</td>
+  <td>联系合作的支付宝业务人员</td>
+</tr>
+<tr>
+  <td rowspan=3>支付宝 URL<br>https://*.alipay.com/*</td>
+  <td>以 https://render.alipay.com/p/ 开头的 URL</td>
+  <td>使用 my.ap.navigateToAlipayPage()</td>
+</tr>
+<tr>
+  <td>域名为 ur.alipay.com 或 m.alipay.com 的短链接，或以 https://ds.alipay.com/?scheme= 开头的 URL</td>
+  <td>参考/使用本文档<b>附录 1</b>的代码，转换为实际目标地址后再按本表判断</td>
+</tr>
+<tr>
+  <td>其他情况</td>
+  <td><b>申请添加白名单</b>，然后使用 my.ap.navigateToAlipayPage()</td>
+</tr>
+<tr>
+  <td rowspan=3>支付宝 scheme<br>alipays://*</td>
+  <td>scheme 中的 appId 为 16 位</td>
+  <td>转换成 [my.navigateToMiniProgram() 调用](https://opendocs.alipay.com/mini/02sz8n#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%20FAQ)</td>
+</td>
+<tr>
+  <td>scheme 中的 appId 为 20000067</td>
+  <td>参考/使用本文档<b>附录 1</b>的代码，转换为实际目标地址后按照本表判断</td>
+</td>
+<tr>
+  <td>其他情况</td>
+  <td><b>申请添加白名单</b>，然后使用 my.ap.navigateToAlipayPage()</td>
+</tr>
+<tr>
+  <td rowspan=2>非支付宝 URL</td>
+  <td>开发者自有域名</td>
+  <td>使用 [web-view 组件](https://opendocs.alipay.com/mini/component/web-view)</td>
+</tr>
+<tr>
+  <td>第三方域名</td>
+  <td><b>申请添加白名单</b>，然后使用 my.ap.navigateToAlipayPage()</td>
+</tr>
+</table>
 
 上表中 **申请添加白名单** 的情况，所涉及的 URL 或 scheme 一般均为支付宝业务人员出于特殊合作需要定向提供给小程序开发者，并通过内部流程添加白名单（否则无法跳转）。暂不提供自助申请入口，如有相关诉求，请联系合作的支付宝业务人员。
 
+本文附录部分提供了针对 url 或 scheme 的链接转换和代码生成逻辑。在对上表基本理解的基础上，开发者可直接使用附录代码作为工具，取代人工判断。
 
 关于小程序各场景下的跳转限制及实现方法，可查看 [小程序跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
 
@@ -178,13 +232,13 @@ function getRealTarget(url) {
   };
   
   const trace = [];
-	const fail = (msg, last) => {
-		trace.push(last);
-		return Promise.resolve({ error: msg, trace });
-	};
-	const success = () => {
-		return Promise.resolve({ result: trace[trace.length - 1], trace });
-	};
+  const fail = (msg, last) => {
+    trace.push(last);
+    return Promise.resolve({ error: msg, trace });
+  };
+  const success = () => {
+    return Promise.resolve({ result: trace[trace.length - 1], trace });
+  };
   
   const resolveUrl = url => {
     if (trace.indexOf(url) < 0) {
@@ -238,36 +292,35 @@ getRealTarget('alipays://platformapi/startapp?appId=2021002143614743&page=pages/
 ```javascript
 /*
  * 以下代码主要用于演示如何针对跳转目标选择跳转方法
- * 亦可用作开发辅助工具。代码可运行于浏览器或 Node.js 环境
+ * 亦可用作开发辅助工具
  */
 
 // 生成跳转代码
-// 参数 target 接受通过 getRealTarget(url) 得到的 result，即以下两种：
-//  - 字符串: url or scheme
+// 参数 target，接受附录 1 中的 getRealTarget(url) 得到的 result，两种形式：
+//  - 字符串: url 或 scheme
 //  - Object: { appId, path, query }
+// 返回的代码中包含的错误处理，其中 console.log 打印的信息供开发者参考
 function generateCode(target) {
   var prep, api, params, fail;
   if (typeof target == 'string') {
-  	prep = `var targetUrl = ${JSON.stringify(target)};\n`;
+    prep = `var targetUrl = ${JSON.stringify(target)};\n`;
     api = 'my.ap.navigateToAlipayPage';
     params = { path: target.startsWith('alipays://') ? '${targetUrl}' : '${encodeTargetUrl}' };
     if (!target.startsWith('https://render.alipay.com/p/')) {
       params.fail = '${fail}';
     }
-    encodeTarget = `encodeURIComponent(${JSON.stringify(target)})`;
-    if (target.startsWith('alipays://') || /^https:\/\/[^\/]+\.alipay\.com\//.test(target)) {
-      fail = res => {
-        console.log('navigateToAlipayPage 失败。目标地址', targetUrl, '未加白，请联系合作的支付宝业务人员');
-        my.showToast({ content: '跳转失败' });
-      };
-    } else {
-      fail = res => {
-        console.log('navigateToAlipayPage 失败。目标地址', targetUrl, '未加白，请考虑使用 web-view 组件或联系合作的支付宝业务人员');
-        my.showToast({ content: '跳转失败' });
-      };
-    }
+    fail = target.startsWith('alipays://') || /^https:\/\/[^\/]+\.alipay\.com\//.test(target) ? res => {
+      console.log('navigateToAlipayPage 失败。目标地址', targetUrl, '未加白，请联系合作的支付宝业务人员');
+      my.showToast({ content: '跳转失败' });
+    } : res => {
+      console.log('navigateToAlipayPage 失败。目标地址', targetUrl, '未加白，请考虑使用 web-view 组件或联系合作的支付宝业务人员');
+      my.showToast({ content: '跳转失败' });
+    };
   } else {
-  	prep = '';
+    if (!target.appId || target.appId.length != 16) {
+      throw new Error('navigateToMiniProgram 只支持 16 位 appId');
+    }
+    prep = '';
     api = 'my.navigateToMiniProgram';
     params = { ...target, fail: '${fail}' };
     fail = res => {
@@ -282,8 +335,7 @@ function generateCode(target) {
   return `${prep}${api}(${JSON.stringify(params, null, 2)});`
     .replace('"${targetUrl}"', 'targetUrl')
     .replace('"${encodeTargetUrl}"', 'encodeURIComponent(targetUrl)')
-    .replace('"${fail}"', fail ? fail.toString().replace(/^  /mg, '') : '')
-    .trim();
+    .replace('"${fail}"', fail ? fail.toString().replace(/^  /mg, '') : '');
 }
 
 // 示例：跳转支付宝活动页
@@ -294,12 +346,12 @@ console.log(code, '\n');
 var code = generateCode('https://www.baidu.com/');
 console.log(code, '\n');
 
-// 示例：跳转小程序
-var code = generateCode({ appId: '2000000020000000', path: '/pages/index/index', query: { x: 100 } });
-console.log(code, '\n');
-
 // 示例：跳转支付宝 scheme
 var code = generateCode('alipays://platformapi/startapp?appId=20000042');
+console.log(code, '\n');
+
+// 示例：跳转小程序
+var code = generateCode({ appId: '2000000020000000', path: '/pages/index/index', query: { x: 100 } });
 console.log(code, '\n');
 
 ```
