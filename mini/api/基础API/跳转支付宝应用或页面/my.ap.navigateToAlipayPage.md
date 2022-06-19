@@ -2,7 +2,7 @@
 **my.ap.navigateToAlipayPage** 是用于跳转到支付宝官方业务或运营活动页面的 API。
 
 在小程序中跳转支付宝业务或打开链接，请按下表分情况处理：
-
+<table>
 <tr>
   <td colspan=2>跳转目标</td>
   <td>打开方法</td>
