@@ -5,7 +5,7 @@
 <table>
 <tr>
   <td colspan=2>跳转目标</td>
-  <td>打开方法</td>
+  <td>跳转方法</td>
 </tr>
 <tr>
   <td rowspan=3>支付宝业务</td>
