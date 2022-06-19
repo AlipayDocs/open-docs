@@ -110,7 +110,7 @@ fail 回调的参数为一个 Object，其 error 属性为错误码
 A：一般都是因为 URL 不是以 https://render.alipay.com/p/ 开头且未添加白名单，导致不能跳转，低版本客户端伴有 toast 提示。处理办法请参考本文档**简介**部分的表格及说明。
 
 ## Q：使用 my.ap.navigateToAlipayPage 打开 H5 页面为何发生 url 参数丢失？
-A：历史原因，此接口要求对 url 做二次编码再传入，即需要向 path 传入 encodeURIComponent(url），否则内部的 decode 过程可能造成 url 的子参数丢失/混乱。
+A：历史原因，此接口要求对 url 做二次编码再传入，即需要向 path 传入 encodeURIComponent(url），否则内部的 decode 过程可能造成 url 的子参数被破坏。
 
 ## Q：使用 my.ap.navigateToAlipayPage 跳转生活号文章有一个过渡空白过程，是否正常？
 A：是正常的，属于正常加载流程。
