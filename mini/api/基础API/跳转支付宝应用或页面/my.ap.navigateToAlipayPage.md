@@ -21,12 +21,12 @@
   <td>联系合作的支付宝业务人员</td>
 </tr>
 <tr>
-  <td rowspan=3>支付宝 URL<br>`https://*.alipay.com/*`</td>
-  <td>以 `https://render.alipay.com/p/` 开头的 URL</td>
+  <td rowspan=3>支付宝 URL<br><i>https&colon;//*.alipay.com/*</i></td>
+  <td>以 https&colon;//render.alipay.com/p/ 开头的 URL</td>
   <td>使用 my.ap.navigateToAlipayPage()</td>
 </tr>
 <tr>
-  <td>域名为 `ur.alipay.com` 或 `m.alipay.com` 的短链接，或以 `https://ds.alipay.com/?scheme=` 开头的 URL</td>
+  <td>域名为 ur.alipay.com 或 m.alipay.com 的短链接<br>或以 https&colon;//ds.alipay.com/?scheme= 开头的 URL</td>
   <td>参考本文档 <b>附录 1</b>，转换为实际目标地址后再按本表判断</td>
 </tr>
 <tr>
@@ -34,7 +34,7 @@
   <td><b>申请添加白名单</b>，然后使用 my.ap.navigateToAlipayPage()</td>
 </tr>
 <tr>
-  <td rowspan=3>支付宝 scheme<br>`alipays://*`</td>
+  <td rowspan=3>支付宝 scheme<br><i>alipays://*</i></td>
   <td>scheme 中的 appId 为 16 位</td>
   <td>转换成 <a taget="_blank" href="https://opendocs.alipay.com/mini/02sz8n#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%20FAQ">my.navigateToMiniProgram() 调用</a></td>
 </td>
@@ -57,11 +57,12 @@
 </tr>
 </table>
 
-上表中 **申请添加白名单** 的情况，所涉及的 URL 或 scheme 一般均为支付宝业务人员出于特殊合作需要定向提供给小程序开发者，并通过内部流程添加白名单（否则无法跳转）。暂不提供自助申请入口，如有相关诉求，请联系合作的支付宝业务人员。
+上表中需要 **申请添加白名单** 的情况，所涉及的 URL 或 scheme 均为支付宝业务人员出于特殊合作需要定向提供给小程序开发者，并通过内部流程添加白名单（否则无法跳转）。暂不提供申请添加白名单的线上流程，如有相关诉求，请联系合作的支付宝业务人员。
 
-本文档的 <b>附录</b> 提供了针对 url 或 scheme 的链接转换和代码生成逻辑。在对上表内容有了解的基础上，开发者可直接使用附录代码作为工具，取代人工判断。
+本文档的 <b>附录</b> 部分提供了链接转换和代码生成的示例。在对上表内容有了解的基础上，开发者可直接使用附录代码作为工具，取代人工判断。
 
 关于小程序各场景下的跳转限制及实现方法，可查看 [小程序跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
+
 
 
 ## 使用限制
