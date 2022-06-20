@@ -2,7 +2,7 @@
 # 简介
 **UpdateManager.onCheckForUpdate** 是用于监听向支付宝后台请求检查更新结果事件的 API。支付宝在小程序冷启动时自动检查更新，不需由开发者主动触发。
 
-自动检查更新完成之后一段时间内会触发更新结果事件，因此请在 App.onLaunch 等较早执行的生命周期里监听该事件。onCheckForUpdate 注册太晚可能会导致监听不到更新结果事件。
+自动检查更新完成之后一段时间内会触发更新结果事件，因此请在 [App.onLaunch](https://opendocs.alipay.com/mini/framework/app-detail#onLaunch(object%3A%20Object)%20%E5%8F%8A%20onShow(object%3A%20Object)) 等较早执行的生命周期里监听该事件。onCheckForUpdate 注册太晚可能会导致监听不到更新结果事件。
 
 关于小程序的更新机制，可以查看 [更新机制](https://opendocs.alipay.com/support/01rb0k) 文档。
 
@@ -33,5 +33,5 @@ Object 类型，属性如下：
 # 常见问题 FAQ
 
 ## Q：为什么我在 button 按钮上注册了一个点击回调，点击之后无法检测到更新？
-A：在小程序的启动过程中会自动检测当前小程序是否有版本更新，自动检查更新完成之后一段时间内会触发更新结果事件。如果 onCheckForUpdate 事件监听执行较晚可能会接收不到更新结果事件。
+A：在小程序的启动过程中会自动检测当前小程序是否有版本更新，自动检查更新完成之后一段时间内会触发更新结果事件。如果 onCheckForUpdate 事件监听执行较晚可能会接收不到更新结果事件，因此请在 [App.onLaunch](https://opendocs.alipay.com/mini/framework/app-detail#onLaunch(object%3A%20Object)%20%E5%8F%8A%20onShow(object%3A%20Object)) 等较早执行的生命周期里监听该事件
 
