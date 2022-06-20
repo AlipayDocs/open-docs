@@ -71,3 +71,11 @@ Page({
 
 ### selector 语法
 当传入 selector 参数，框架会执行 document.querySelector(selector) 以选取目标节点，支持标准的 CSS 选择器语法。
+
+# 常见问题 FAQ
+
+## Q：为什么调用 my.pageScrollTo 页面没有滚动？
+A：请确认下滚动行为是否是 scroll-view 等组件内发生的，my.pageScrollTo 是页面滚动的 API。
+
+## Q：my.pageScrollTo 支持跨自定义组件的后代选择器吗？
+A：目前 my.pageScrollTo 只支持标准的 CSS 选择器。
