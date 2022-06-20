@@ -17,7 +17,7 @@
 ```javascript
 // 跳转小程序示例代码
 my.navigateToMiniProgram({
-  appId: 'xxxxxxxxxxxxxxx', // 16 位数字
+  appId: 'xxxxxxxxxxxxxxx', // 16 位
   path: 'pages/index/index?p=1&q=2', 
   query: {
     a: 'foo',
