@@ -36,7 +36,7 @@
 <tr>
   <td rowspan=3>支付宝 scheme<br><i>alipays://*</i></td>
   <td>scheme 中的 appId 为 16 位</td>
-  <td>转换成 <a taget="_blank" href="https://opendocs.alipay.com/mini/02sz8n#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%20FAQ">my.navigateToMiniProgram() 调用</a></td>
+  <td><a taget="_blank" href="https://opendocs.alipay.com/mini/02sz8n#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%20FAQ">转换成 my.navigateToMiniProgram() 调用 </a></td>
 </td>
 <tr>
   <td>scheme 中的 appId 为 20000067</td>
