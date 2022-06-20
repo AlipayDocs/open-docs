@@ -78,13 +78,13 @@ Object 类型，参数如下：
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
-| 30 | 目标应用不允许被跳转。 | 检查目标小程序的设置。操作路径：[开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要设置的小程序，进入小程序详情页 > **设置** > **基础设置** > **小程序互相跳转** 中设置 **允许所有小程序跳转** 或 **指定小程序跳转**。 |
-| 31 | 跳转失败。 | 检查 appId 参数。appId 为 16 位数字，由开放平台在小程序创建时分配。<br>注意：如果目标小程序未上架，调用本接口仍会触发 success 回调而非失败报错，未通过 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing) 指定跳转开发版的用户将看到 “暂未找到此功能” 提示页 |
+| 30 | 目标应用不允许被跳转。 | 请目标小程序检查设置。操作路径：[开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要设置的小程序，进入小程序详情页 > **设置** > **基础设置** > **小程序互相跳转** 中设置 **允许所有小程序跳转** 或 **指定小程序跳转**。 |
+| 31 | 跳转失败。 | 检查 appId 参数。appId 为 16 位数字，由开放平台在小程序创建时分配。<br>注意：如果目标小程序未上架，调用本接口仍会触发 success 回调而非失败报错，未通过 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing) 指定跳转开发版的用户将看到 “暂未找到此功能” 提示页。 |
 
 # 常见问题 FAQ
 
 ## Q：拿到目标小程序的 scheme （以 alipays:// 开头），应该如何跳转？
-A：如果 scheme 中 appId 是 16 位，且只包含 page、query 参数，则应转换成 my.navigateMiniProgram 调用；其他情况（appId 为 8 位，或者有额外参数），需使用 [my.ap.navigateToAlipayPage](https://opendocs.alipay.com/mini/api/navigatetoalipaypage) 跳转，并联系合作的支付宝业务人员申请加入白名单。参考转换逻辑如下：
+A：scheme 是用于从外部应用打开支付宝，在小程序内部一般不能直接使用。如果 scheme 中 appId 是 16 位，且只包含 page、query 参数，则应转换成 my.navigateMiniProgram 调用；其他情况（appId 为 8 位，或者有额外参数），需使用 [my.ap.navigateToAlipayPage](https://opendocs.alipay.com/mini/api/navigatetoalipaypage) 跳转，并联系合作的支付宝业务人员申请加入白名单。参考转换逻辑如下：
 ```javascript
 // 将 scheme 转换成 navigateMiniProgram 可接受的参数
 // 注意：此代码主要用来说明转换逻辑，可作为线下工具使用，不建议直接用于线上
@@ -123,6 +123,7 @@ function schemeToParams(scheme) {
   }
   return params;
 }
+
 // 使用示例
 var scheme = 'alipays://platformapi/startapp?appId=2022061812345678&page=%2Fpages%2Findex%2Findex&query=foo%3Dbar';
 console.log(schemeToParams(scheme));
@@ -148,6 +149,7 @@ function paramsToScheme(params) {
   }
   return scheme;
 }
+
 // 使用示例
 var params = {
   appId: '2022061812345678',
@@ -157,11 +159,14 @@ var params = {
 console.log(paramsToScheme(params));
 ```
 
-## Q：想要跳转某些官方小程序，请问如何获取 appId？
-A：优先查看官方公开的 [appCode 列表](https://opendocs.alipay.com/mini/api/navigatetoalipaypage#String%20appCode) 并使用 my.ap.navigateToAlipayPage 跳转；如果 appCode 尚未包含所需业务，再参考以下表格；如果仍然没找到，并确实有强需求，可联系合作的支付宝业务人员。
+# 附录：部分官方小程序 appId 列表
+
+在小程序中跳转官方业务，请先查看官方公开的 [appCode 列表](https://opendocs.alipay.com/mini/api/navigatetoalipaypage#String%20appCode) 并使用 my.ap.navigateToAlipayPage 跳转；如果 appCode 中未找到，再参考下表:
 
 | **小程序** | **appId** | **描述** |
 | --- | --- | --- |
 | 我的小程序 | 2018072560844004 | 支付宝小程序官方出品，与支付宝用户的小程序相关的内容和服务都在这。 |
 | 集分宝 | 2019092567759928 | 集分宝的官方小程序。 |
 | 支付宝校园缴费 | 2021002140649424 | 支付宝教育缴费是由支付宝推出的一款平台型的教育缴费服务。 |
+
+如果 appCode 列表及上表均未包含所需跳转的官方小程序，并确实有强需求，可联系合作的支付宝业务人员。
