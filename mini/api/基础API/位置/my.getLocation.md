@@ -6,7 +6,6 @@
 
 ## 使用限制
 
-- 此 API 实际表现请以真机为准。
 - 基础库 [1.1.1](https://opendocs.alipay.com/mini/framework/lib) 或更高版本开始支持。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
@@ -133,3 +132,6 @@ A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-au
 
 ## Q：my.getLocation 第一次允许授权后删除小程序应用，重新打开会需要重新授权吗？ 
 A：需要重新授权，删除小程序应用后会将获取定位的授权关系一起删除。
+
+## Q：如何在 IDE 模拟器调试 my.getLocation 接口？
+A：可以在模拟器工具栏中点击定位按钮，自定义当前位置的经纬度。
