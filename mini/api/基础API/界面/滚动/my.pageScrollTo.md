@@ -62,12 +62,12 @@ Page({
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| scrollTop | Number | 否 | 滚动到页面的目标位置，单位为 px。使用 my.pageScrollTo 跳转小程序顶部时，必须将 scrollTop 值设为大于 0，方可实现跳转。 |
+| scrollTop | Number | 否 | 滚动到页面的目标位置，单位为 px。|
 | duration | Number | 否 | 滚动动画的时长，单位为 ms（毫秒）。默认值为 0。<br />基础库 1.20.0 或更高版本开始支持。 |
-| selector | String | 否 | 选择器。<br />基础库 1.20.0 或更高版本开始支持。 |
+| selector | String | 否 | CSS 选择器。<br />基础库 1.20.0 或更高版本开始支持。 |
 | success | Function | 否 | 接口调用成功的回调函数。 |
 | fail | Function | 否 | 接口调用失败的回调函数。 |
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### selector 语法
-当传入 selector 参数，框架会执行 document.querySelector(selector) 以选取目标节点。
+当传入 selector 参数，框架会执行 document.querySelector(selector) 以选取目标节点，支持标准的 CSS 选择器语法。
