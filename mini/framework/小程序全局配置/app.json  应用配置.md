@@ -31,7 +31,9 @@
 | behavior | Object | 否 | 修改小程序运行行为的相关设置。 |
 
 # entryPagePath
-指定小程序的默认启动路径（首页）。如果不填，将默认为 pages 列表的第一项。不支持带页面路径参数。<br />注意：此特性从基础库 [2.7.20](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)，[IDE 3.1.2](https://opendocs.alipay.com/mini/ide/download) 开始支持。若强依赖此特性，建议设置最低基础库版本号为2.7.20。否则，在低版本的基础库，会因为无法识别正确的首页而导致地渲染出『小房子』。
+指定小程序的默认启动路径（首页）。如果不填，将默认为 pages 列表的第一项。不支持带页面路径参数。
+
+**注意**：此特性从基础库 [2.7.20](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)，[IDE 3.1.2](https://opendocs.alipay.com/mini/ide/download) 开始支持。若强依赖此特性，建议设置最低基础库版本号为 2.7.20。否则，在低版本的基础库，会因为无法识别正确的首页而导致渲染出 **返回首页** 图标。
 
 # pages
 `app.json` 中的 `pages` 为数组属性，数组中每一项都是字符串，用于指定小程序的页面。在小程序中新增或删除页面，都需要对 `pages` 数组进行修改。
