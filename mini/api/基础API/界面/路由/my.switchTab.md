@@ -62,3 +62,31 @@ Object 类型，参数如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+
+
+## 错误码
+
+<table>
+  <tr>
+    <th><b>error</b></th>
+    <th><b>errorMessage</b></th>
+    <th><b>描述</b></th>
+  </tr>
+  <tr>
+    <td rowspan="4">1</td>
+    <td><code>${url} resolved to ${pagePath} is not found</code></td>
+    <td>目标页面路径不存在。</td>
+  </tr>
+  <tr>
+    <td><code>${url} is not found in plugin</code></td>
+    <td>目标页面是插件页面，但该插件并没有声明该页面。</td>
+  </tr>
+  <tr>
+    <td><code>${url} resolved to ${pagePath} is not tab,  which is not valid</code></td>
+    <td>my.switchTab 只允许跳转到选项卡（tabbar）页面。</td>
+  </tr>
+  <tr>
+    <td><code>plugin can not use switchTab</code></td>
+    <td>不支持插件调用 my.switchTab。</td>
+  </tr>
+</table>
