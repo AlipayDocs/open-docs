@@ -6,8 +6,26 @@
 ## 使用限制
 
 - 基础库 [1.14.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- 此接口为异步请求接口，首先需要发起风险识别请求，获取任务 ID。等待 500 毫秒（ms）后再通过任务 ID 请求结果。
+- 此接口为异步请求接口，首先需要发起风险识别请求，获取任务 ID。等待 500 毫秒后，再通过 [my.ap.imgRiskCallback](https://opendocs.alipay.com/mini/api/ze6675) 接口传递任务 ID 请求结果。
 - 此 API 暂仅支持企业支付宝小程序使用。
+
+# 接口调用
+
+## 示例代码
+
+### .js 示例代码
+```javascript
+// .js
+my.ap.imgRisk({
+  pid:'xxxxxxxxxxxxxxxx',  // 替换成您的 pid
+  bizContext: {
+    'risk_type': 'img_risk',
+    content: 'http://www.xxxxxx.com.cn//xxxxxx/xxxxxxx/images/xxxx/xx/xxx.png'
+  },
+  success(e) {
+  },
+})
+```
 
 ### 1. 调用参数说明
 
@@ -19,27 +37,8 @@
 - REJECTED：拒绝，代表此图片风险程度高，不能发布展示。
 - PASSED：通过，代表此图片的风险程度低，可以发布展示。
 
-### 3. 图片风险任务提交
-
-# 接口调用
-
-## 示例代码
-
-### .js 示例代码
-```javascript
-// .js
-my.ap.imgRisk({
-  pid:'xxxxxxxxxxxxxxxx',  
-  bizContext: {
-    'risk_type': 'img_risk',
-    content: 'http://www.xxxxxx.com.cn//xxxxxx/xxxxxxx/images/xxxx/xx/xxx.png'
-  },
-  success(e) {
-  },
-})
-```
-
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -73,3 +72,17 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- |
 | errorCode | String | 错误码。 |
 | errorMessage | String | 错误信息。 |
+
+## 错误码
+
+| 错误码 | 描述     | 解决方案                                                     |
+| ------ | -------- | ------------------------------------------------------------ |
+| 4      | 无权调用 | 请在开放平台中添加能力包，并进行签约。具体可查看图片内容安全的[接入准备](https://opendocs.alipay.com/mini/02ttpx)。 |
+
+## FAQ
+
+### 1、my.ap.imgRisk 接口无论上传什么返回 riskResultDesc 都为空？
+
+图片内容安全系列接口为异步接口，包含 my.ap.imgRisk 和 my.ap.imgRiskCallback 两个接口。需要先通过 my.ap.imgRisk 接口获取 apply_id，再通过 my.ap.imgRiskCallback 接口获取最终结果。
+
+
