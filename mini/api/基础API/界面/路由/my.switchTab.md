@@ -26,7 +26,6 @@ my.switchTab({
 ```
 
 ### [tabBar 配置](https://opendocs.alipay.com/mini/framework/app-json#tabBar)示例：
-(在 app.json 中配置。标签页的第一个页面必须是首页, 即 tabBar.items[0] 和 pages[0] 必须是同一个页面，否则 tab bar 配置不生效。)
 ```app.json
 {
   "pages": [
