@@ -156,6 +156,8 @@ icon 图标推荐大小为 60×60 px 大小，系统会对传入的非推荐尺�
 ```
 代码中，开发者可通过 [my.setTabBarItem](https://opendocs.alipay.com/mini/api/zu37bk) 动态设置 `tabBar` 中指定 `item` 的内容。
 
+**注意**：tab 栏第一个页面必须是首页, 即 app.json 里的 tabBar.items[0] 和 pages[0] 必须是同一个页面，否则tab bar 设置不生效
+
 # subPackages
 启用 [分包加载](https://opendocs.alipay.com/mini/framework/subpackages) 时，声明项目分包结构。
 
