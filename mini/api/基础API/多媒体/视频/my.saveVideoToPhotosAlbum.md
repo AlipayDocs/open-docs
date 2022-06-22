@@ -38,6 +38,7 @@ my.saveVideoToPhotosAlbum({
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
