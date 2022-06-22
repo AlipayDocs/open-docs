@@ -1,4 +1,3 @@
-
 # 简介
 **my.getBackgroundAudioManager** 是获取后台音频播放器的 API，与前景音频相对应，可以在用户离开当前小程序后继续播放音频。
 
