@@ -1,7 +1,9 @@
 # 简介
-**my.rsa** 是非对称加密的 API。
+**my.rsa** 是非对称加密的 API。非对称加密使用不同的加密密钥与解密密钥，加密密钥（公钥）是公开信息，而解密密钥（私钥）是需要保密的。
 
-加密与解密过程分别放置在客户端与服务端，私钥也放在服务端（若私钥放在客户端，容易泄露而导致安全问题）。
+请在小程序运行环境使用公钥进行加密，在服务端使用私钥进行解密。私钥请保存在服务端（若私钥放在客户端，容易泄露而导致安全问题）。
+
+使用 [支付宝开放平台开发助手](https://opendocs.alipay.com/common/02kipl) 生成密钥。
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
@@ -18,7 +20,7 @@
 
 ### .js 示例代码
 
-小程序端加密、解密：
+小程序端加密：
 ```javascript
 // .js
 Page({
@@ -48,80 +50,35 @@ Page({
      },
    });
  },
- onDecrypt: function () {
-   my.rsa({
-     action: 'decrypt',
-     text: this.data.inputValue,
-     // 设置私钥，需替换你自己的私钥
-     key: 'MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAMqaLR1RJVDTiEvo\n' +
-     'ZkY8wUrz53obO6VqA/bupJQFjEgl8TTgpP44dV4UVvor7ydYN5rmaSZmsiCnTbbN\n' +
-     'lUOB1Y80zrbei4HAeWx+bZ6R7Lw+lDF9dqPyWEz23ysmULgURzSzxCntDn+5iujB\n' +
-     'BtP2bq3sEUrd6A47bE4rMulhKp9tAgMBAAECgYBjsfRLPdfn6v9hou1Y2KKg+F5K\n' +
-     'ZsY2AnIK+6l+sTAzfIAx7e0ir7OJZObb2eyn5rAOCB1r6RL0IH+MWaN+gZANNG9g\n' +
-     'pXvRgcZzFY0oqdMZDuSJjpMTj7OEUlPyoGncBfvjAg0zdt9QGAG1at9Jr3i0Xr4X\n' +
-     '6WrFhtfVlmQUY1VsoQJBAPK2Qj/ClkZNtrSDfoD0j083LcNICqFIIGkNQ+XeuTwl\n' +
-     '+Gq4USTyaTOEe68MHluiciQ+QKvRAUd4E1zeZRZ02ikCQQDVscINBPTtTJt1JfAo\n' +
-     'wRfTzA0Lvgig136xLLeQXREcgq1lzgkf+tGyUGYoy9BXsV0mOuYAT9ldja4jhJeq\n' +
-     'cEulAkEAuSJ5KjV9dyb0RIFAz5C8d8o5KAodwaRIxJkPv5nCZbT45j6t9qbJxDg8\n' +
-     'N+vghDlHI4owvl5wwVlAO8iQBy8e8QJBAJe9CVXFV0XJR/n/XnER66FxGzJjVi0f\n' +
-     '185nOlFARI5CHG5VxxT2PUCo5mHBl8ctIj+rQvalvGs515VQ6YEVDCECQE3S0AU2\n' +
-     'BKyFVNtTpPiTyRUWqig4EbSXwjXdr8iBBJDLsMpdWsq7DCwv/ToBoLg+cQ4Crc5/\n5DChU8P30EjOiEo=',
-     success: (result) => {
-       this.setData({ outputValue: result.text });
-     },
-     fail(e) {
-       my.alert({
-         content: e.errorMessage || e.error,
-       });
-     },
-   });
- },
 });
 ```
 
 ### .java 示例代码
 
-#### 服务端加密、解密
-
-服务端加密示例代码：
-```java
-	/**    
-	 * 公钥加密     
-	 * @param data     源数据     
-	 * @param publicKey    公钥(BASE64编码)    
-	 * @return     
-	 * @throws Exception     
-	 */    
-	public static byte[] encrypt_PublicKey(byte[] data, String publicKey) throws Exception {  
-		byte[] keyBytes = Base64.getDecoder().decode(publicKey);//使用JDK的util包下的base64实现解码
-		X509EncodedKeySpec x509KeySpec = new X509EncodedKeySpec(keyBytes);       
-		KeyFactory keyFactory = KeyFactory.getInstance(KEY_ALGORITHM);//使用KeyFactory工厂处理公钥
-		Key publicK = keyFactory.generatePublic(x509KeySpec);        // 对数据加密        
-		Cipher cipher = Cipher.getInstance(keyFactory.getAlgorithm());//使用Cipher.getInstance加密        
-		cipher.init(Cipher.ENCRYPT_MODE, publicK);        
-		int inputLen = data.length;        
-		ByteArrayOutputStream out = new ByteArrayOutputStream();        
-		int offSet = 0;        
-		byte[] cache;        
-		int i = 0;        // 对数据分段加密       
-		while (inputLen - offSet > 0) {           
-			if (inputLen - offSet > MAX_ENCRYPT_BLOCK) {                
-				cache = cipher.doFinal(data, offSet, MAX_ENCRYPT_BLOCK);            
-			} else {                
-				cache = cipher.doFinal(data, offSet, inputLen - offSet);            
-			}            
-			out.write(cache, 0, cache.length);            
-			i++;            
-			offSet = i * MAX_ENCRYPT_BLOCK;        
-		}        
-		byte[] encryptedData = out.toByteArray();        
-		out.close();        
-		return encryptedData;    
-	}
-```
+#### 服务端解密
 
 服务端解密示例代码：
 ```java
+	/**
+	* 测试用例
+	*/
+	//密钥需要注意的是生成密钥时选择格式：PKCS8(java适用)      
+	static String privateKey="MIICcwIBADANBgkqhkiG9w0BAQEFAASCAl0wggJZAgEAAoGBAJ7UdweIrNol3OI/Cu2aVbvaBoPH7QOWFoamFVTBaSaW9Yd3qa15WuvsazkIdp/xj1clt+SgcfxoRameGT2FgfL4m5A9iNgCCQrohWljr22dGt2tXjb4NE8lLAOp8quoFtg1ij1101LI7+6LFgk8shXB2tFMxS7X2h5JIhUC8BNZAgMBAAECf2W/toEdDZ6yos5NlLKiLEorYgEKEsw5WjToMMIbJUGTc7dU8V4wYA7DZe0jftr35NvvTd8o6dzI79e5cHH5FUWKXqEldMqeTzFfPLPgyAaevxDvyBO3Z6mCkIA1ptNLfj47JTdpabc2al6qFZfJfOro+ufT/aIE1pWoLF/GARECQQD2rLyhBiRZfFf9bnUAWaG3RNE5i7Ef7t64DBZO9frZe660a8Xk8Yxzi7KMviq9aIY6LgsV1Ake2W97CcbGNtBrAkEApNWV7YwqLRM8yBO3VIflzsbtuk3RjicwjxzJzkLhR91xvWQDLx50L7kt0e1SNcuVJw3Xr0yGfPNAw4vE9FQMSwJAewyn+9tIfqscaXuUOdx8YyOdCwu4C6nox/6fkjv6KkscVzv7t70WxvzE0Jh8UYe2jYcyWG0xL4Zfqgyyb2YgiQJAKxltyl8L6B1Pl0EQfpnKDPcW0c/nKzQ0DjeIzNXP8eqFAvBTpM5hstjIkktrY4WHyl5kNwHbaHByTq8NIJWZYQJASWfwM30dJ5YAVq3ZMYkY0AeyQuJptdW4m3UJZWb2HyNU/KfPnGJ+OEO2A7XaFeRfO177RUvCqiwPAL4Y4pFvdw==";    
+	//加密算法RSA    
+	public static final String KEY_ALGORITHM = "RSA";//使用默认的算法      
+	//RSA最大解密密文大小  ; 需要注意，如果用的是2048位密钥，这里需要改为256 ; 1024密钥是 128 
+	private static final int MAX_DECRYPT_BLOCK = 256/2;
+	public static void main(String[] args) throws Exception {    
+		test(); 
+	}  
+	public static void test() throws Exception {       
+		System.out.println("—— 私钥解密 ——");            
+		String encodedDataStr=new String(Base64.getEncoder().encode(encodedData));//加密后问密文需要使用Base64编码然后转换成string返回前端
+		System.out.println("---:base64处理:  " + encodedDataStr);        
+		byte[] decodedData = decrypt_PrivateKey(encodedData, privateKey);//解密        
+		String str = new String(decodedData);        
+		System.out.println("解密后内容:  " + str);//小程序服务端加解密!  
+	}
 	/**     
 	 *  
 	 * 私钥解密     
@@ -155,38 +112,6 @@ Page({
 		byte[] decryptedData = out.toByteArray();        
 		out.close();        
 		return decryptedData;    
-	}
-```
-
-#### Java 测试用例
-```java
-	/**
-	* 测试用例
-	*/
-	//密钥需要注意的是生成密钥时选择格式：PKCS8(java适用)    
-	static String publicKey="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCe1HcHiKzaJdziPwrtmlW72gaDx+0DlhaGphVUwWkmlvWHd6mteVrr7Gs5CHaf8Y9XJbfkoHH8aEWpnhk9hYHy+JuQPYjYAgkK6IVpY69tnRrdrV42+DRPJSwDqfKrqBbYNYo9ddNSyO/uixYJPLIVwdrRTMUu19oeSSIVAvATWQIDAQAB";    
-	static String privateKey="MIICcwIBADANBgkqhkiG9w0BAQEFAASCAl0wggJZAgEAAoGBAJ7UdweIrNol3OI/Cu2aVbvaBoPH7QOWFoamFVTBaSaW9Yd3qa15WuvsazkIdp/xj1clt+SgcfxoRameGT2FgfL4m5A9iNgCCQrohWljr22dGt2tXjb4NE8lLAOp8quoFtg1ij1101LI7+6LFgk8shXB2tFMxS7X2h5JIhUC8BNZAgMBAAECf2W/toEdDZ6yos5NlLKiLEorYgEKEsw5WjToMMIbJUGTc7dU8V4wYA7DZe0jftr35NvvTd8o6dzI79e5cHH5FUWKXqEldMqeTzFfPLPgyAaevxDvyBO3Z6mCkIA1ptNLfj47JTdpabc2al6qFZfJfOro+ufT/aIE1pWoLF/GARECQQD2rLyhBiRZfFf9bnUAWaG3RNE5i7Ef7t64DBZO9frZe660a8Xk8Yxzi7KMviq9aIY6LgsV1Ake2W97CcbGNtBrAkEApNWV7YwqLRM8yBO3VIflzsbtuk3RjicwjxzJzkLhR91xvWQDLx50L7kt0e1SNcuVJw3Xr0yGfPNAw4vE9FQMSwJAewyn+9tIfqscaXuUOdx8YyOdCwu4C6nox/6fkjv6KkscVzv7t70WxvzE0Jh8UYe2jYcyWG0xL4Zfqgyyb2YgiQJAKxltyl8L6B1Pl0EQfpnKDPcW0c/nKzQ0DjeIzNXP8eqFAvBTpM5hstjIkktrY4WHyl5kNwHbaHByTq8NIJWZYQJASWfwM30dJ5YAVq3ZMYkY0AeyQuJptdW4m3UJZWb2HyNU/KfPnGJ+OEO2A7XaFeRfO177RUvCqiwPAL4Y4pFvdw==";    
-	//加密算法RSA    
-	public static final String KEY_ALGORITHM = "RSA";//使用默认的算法     
-	//RSA最大加密明文大小   
-	private static final int MAX_ENCRYPT_BLOCK = 117;    
-	//RSA最大解密密文大小  ; 需要注意，如果用的是2048位密钥，这里需要改为256 ; 1024密钥是 128 
-	private static final int MAX_DECRYPT_BLOCK = 256/2;
-	public static void main(String[] args) throws Exception {    
-		test(); 
-	}  
-	static void test() throws Exception {       
-		System.out.println("—— 公钥加密 —— 私钥解密 ——");        
-		String source = "小程序服务端加解密!";//需要加密的原文
-		System.out.println("加密前原文:  " + source);        
-		byte[] data = source.getBytes();        
-		byte[] encodedData = encrypt_PublicKey(data, publicKey);//加密        
-		System.out.println("加密后内容:  " + new String(encodedData));//没有处理过的密文字符串        
-		String   encodedDataStr=new String(Base64.getEncoder().encode(encodedData));//加密后问密文需要使用Base64编码然后转换成string返回前端
-		System.out.println("---:base64处理:  " + encodedDataStr);        
-		byte[] decodedData = decrypt_PrivateKey(encodedData, privateKey);//解密        
-		String str = new String(decodedData);        
-		System.out.println("解密后内容:  " + str);//小程序服务端加解密!  
 	}
 ```
 
@@ -224,3 +149,8 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- |
 | 10 | 参数错误 | 建议检查参数是否正确。 |
 | 11 | key 错误 | 建议检查 key 是否正确。 |
+
+# 常见问题 FAQ
+
+## Q：加解密的公私钥如何生成？
+A：可以使用 [支付宝开放平台开发助手](https://opendocs.alipay.com/common/02kipl) 生成密钥。
