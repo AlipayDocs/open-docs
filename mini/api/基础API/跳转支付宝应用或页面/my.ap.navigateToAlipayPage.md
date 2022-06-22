@@ -289,7 +289,7 @@ getRealTarget('alipays://platformapi/startapp?appId=2021002143614743&page=pages/
 
 ```
 
-# 附录 2. 生成跳转代码的代码
+## 附录 2. 生成跳转代码的代码
 ```javascript
 /*
  * 以下代码主要用于演示如何针对跳转目标选择跳转方法，亦可用作开发辅助工具
