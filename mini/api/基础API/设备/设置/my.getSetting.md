@@ -77,4 +77,4 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 # 常见问题 FAQ
 
 ## Q：my.getAuthCode 的授权关系可以通过 my.getSetting 接口查询吗？
-A：不可以。[my.getOpenUserInfo](https://opendocs.alipay.com/mini/api/ch8chh) 接口的授权关系可以查询。
+A：不可以。[my.getOpenUserInfo](https://opendocs.alipay.com/mini/api/ch8chh) 接口的授权关系可以通过 my.getSetting 返回的 userInfo 字段查询。
