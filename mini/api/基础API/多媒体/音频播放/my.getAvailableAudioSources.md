@@ -1,14 +1,12 @@
-
 # 简介
 **my.getAvailableAudioSources** 是获取当前支持的音频输入源的 API。
 
-更多信息，请参见 [音频播放](https://opendocs.alipay.com/mini/00d6hx)。
+更多信息，可查看 [音频播放 API 使用说明](https://opendocs.alipay.com/mini/03l3fn)。
 
 ## 使用限制
 
 - 基础库 [1.23.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.87 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- IDE 模拟器暂不支持调试，请以真机调试结果为准。
-- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，否则将导致音频无法播放，可查看 [接入准备](https://opendocs.alipay.com/mini/02p19p)。
+- 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
