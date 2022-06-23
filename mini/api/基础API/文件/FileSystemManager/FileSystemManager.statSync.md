@@ -1,4 +1,5 @@
 # 简介
+
 [FileSystemManager.statSync](https://opendocs.alipay.com/mini/api/022b6o) 的同步版本。
 
 ## 使用限制
