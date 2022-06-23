@@ -4,7 +4,6 @@
 ## 使用限制
 
 - 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，可查看 [接入准备](https://opendocs.alipay.com/mini/02pk4y) 。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
@@ -43,4 +42,3 @@ Object 类型，参数如下：
 | 10024 | 指定的路径没有写的权限。 |
 | 3 | 未知错误，文件写入失败。 |
 | 10028 | 写入文件单个超过 10M 或者写入文件夹超过 50M。 |
-
