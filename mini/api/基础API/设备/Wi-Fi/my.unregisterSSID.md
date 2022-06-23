@@ -1,5 +1,5 @@
 # 简介
-不再信任该 SSID，对于需要 Portal 认证的 WIFI，继续弹出 portal 认证页面。为 **iOS特有接口**。
+不再信任该 SSID，对于需要 Portal 认证的 Wi-Fi，继续弹出 portal 认证页面。为 **iOS特有接口**。
 
 # 使用限制
 
