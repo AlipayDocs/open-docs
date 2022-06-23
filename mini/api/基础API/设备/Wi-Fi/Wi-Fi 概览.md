@@ -1,5 +1,5 @@
 # 简介
-在小程序中支持搜索周边的 Wi-Fi，同时可以针对指定 Wi-Fi，传入密码发起连接。如何接入以及更多介绍信息，可查看 [无线局域网(Wi-Fi)](https://opendocs.alipay.com/mini/introduce/wifi)。
+在小程序中支持搜索周边的 Wi-Fi，同时可以针对指定 Wi-Fi，传入密码发起连接。
 
 # 连接指定 Wi-Fi 接口调用时序
 
