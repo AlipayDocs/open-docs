@@ -1,5 +1,4 @@
 # 简介
-
 **FileSystemManager.stat** 用于获取文件 Stats 对象。
 
 ## 使用限制
