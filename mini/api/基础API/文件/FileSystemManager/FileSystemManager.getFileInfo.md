@@ -5,7 +5,6 @@
 
 - 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，可查看 [接入准备](https://opendocs.alipay.com/mini/02pk4y) 。
 
 # 接口调用
 
@@ -47,4 +46,3 @@ success 回调会携带一个 Object 类型的对象，其参数如下：
 | **错误码** | **描述** |
 | --- | --- |
 | 10024 | 指定文件没有读的权限。 |
-
