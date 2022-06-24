@@ -1,9 +1,10 @@
 # 简介
-**FileSystemManager** 文件管理器，可通过 [my.getFileSystemManager](https://opendocs.alipay.com/mini/api/0226oc) 获取。如何接入以及更多介绍信息，可查看 [文件管理器](https://opendocs.alipay.com/mini/introduce/022rw2)。
+**FileSystemManager** 文件管理器，可通过 [my.getFileSystemManager](https://opendocs.alipay.com/mini/api/0226oc) 获取。
+
+小程序被用户添加到手机后，以用户维度隔离，有一块独立的文件存储区域。即同一台手机，仅支持每个手机用户访问自己登录账号下的文件，不支持访问其它登录用户的文件，同一个用户不同 APPID 之间的文件也不能互相访问。
 
 ## 使用限制
-- 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- 使用 **FileSystemManager** 前，请先在开放平台控制台 **创建小程序**、**添加能力**，可查看 [接入准备](https://opendocs.alipay.com/mini/02pk4y) 。
+基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 
 # 概览
 | **名称** | **功能说明** |
@@ -36,3 +37,7 @@
 | [FileSystemManager.unzip](https://opendocs.alipay.com/mini/api/0229q3) | 用于解压文件。 |
 | [FileSystemManager.writeFile](https://opendocs.alipay.com/mini/api/022b6s) | 用于写文件。 |
 | [FileSystemManager.writeFileSync](https://opendocs.alipay.com/mini/api/024whd) | [FileSystemManager.writeFile](https://opendocs.alipay.com/mini/api/022b6s) 的同步版本。 |
+
+# 文件分类及操作
+
+文件主要分为代码包文件、本地文件，具体定义及操作可查看 [文件系统](https://opendocs.alipay.com/mini/03dt4s)。
