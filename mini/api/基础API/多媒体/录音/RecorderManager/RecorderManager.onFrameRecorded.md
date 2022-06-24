@@ -4,7 +4,6 @@
 ## 使用限制
 
 - 支付宝 10.1.80，基础库 [1.12.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
-- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，可查看 [接入准备](https://opendocs.alipay.com/mini/02pj5u)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 - iOS 只支持 iOS11 以上系统。
 
@@ -25,7 +24,7 @@ recorderManager.start({
 
 ## 入参
 
-### function callback
+### Function callback
 已录制完指定帧大小的文件事件的回调函数。
 
 #### callback参数
@@ -35,4 +34,3 @@ recorderManager.start({
 | --- | --- | --- |
 | frameBuffer | ArrayBuffer | 录音分片数据。 |
 | isLastFrame | Boolean | 当前帧是否正常录音结束前的最后一帧。 |
-
