@@ -95,8 +95,8 @@
 
 | 执行代码                                  | iOS        | Android |
 | ----------------------------------------- | ---------- | ------- |
-| new Date("yyyy-mm-dd hh:mm:ss").getTime() | **不支持** | 支持    |
-| new Date("yyyy/mm/dd hh:mm:ss").getTime() | 支持       | 支持    |
+| new Date("yyyy-MM-dd HH:mm:ss").getTime() | **不支持** | 支持    |
+| new Date("yyyy/MM/dd HH:mm:ss").getTime() | 支持       | 支持    |
 
 # 对动态执行脚本的限制
 
