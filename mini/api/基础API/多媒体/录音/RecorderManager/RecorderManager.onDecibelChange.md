@@ -3,7 +3,6 @@
 **RecorderManager.onDecibelChange** 用于监听声音的分贝变化回调事件。
 
 ## 使用限制
-- 使用此 API 前，请先在开放平台控制台 创建小程序、添加能力，可查看 [接入准备](https://opendocs.alipay.com/mini/02pj5u)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
