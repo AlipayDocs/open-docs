@@ -4,7 +4,6 @@
 ## 使用限制
 
 - 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，可查看 [接入准备](https://opendocs.alipay.com/mini/02pk4y) 。
 - 读取小程序包内容前需在 mini.project.json 中配置可读取的小程序文件内容。
 - 填写地址为文件的绝对路径，*代表任意的名称，需要开发者自行填写。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
@@ -63,4 +62,3 @@ Object 类型，参数如下：
 | 10022 | 文件/目录不存在。 |
 | 10024 | 指定的路径没有读权限。 |
 | 3 | 文件读取未知错误。 |
-
