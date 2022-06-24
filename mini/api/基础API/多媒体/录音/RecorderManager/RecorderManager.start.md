@@ -14,14 +14,14 @@
 ```javascript
 let recorderManager = my.getRecorderManager();
 recorderManager.start({
- duration: 600000,
+ duration: 60000,
 })
 ```
 
 ## 入参
 | **参数** | **类型** | **默认值** | **必填** | **描述** | **备注** |
 | --- | --- | --- | --- | --- | --- |
-| duration | Number | 60000 | 否 | 录音的时长，默认值 180000，单位毫秒（ms），最大值 180000（3 分钟）。 | - |
+| duration | Number | 60000 | 否 | 录音的时长，单位毫秒（ms），最大值 180000（3 分钟）。 | - |
 | sampleRate | Number | 8000 | 否 | 采样率。 | - |
 | numberOfChannels | Number | 1 | 否 | 录音通道数。 | - |
 | encodeBitRate | Number | 48000 | 否 | 编码码率，有效值见下方 **采样率与编码码率限制 **表。 | - |
