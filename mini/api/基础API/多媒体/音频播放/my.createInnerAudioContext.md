@@ -1,14 +1,13 @@
 # 简介
 
-**my.createInnerAudioContext** 是在小程序内创建并返回内部音频（与背景音频相对应） InnerAudioContext 对象的 API。内部音频即“前景音频”，当用户离开小程序（或屏幕息屏）时音频停止播放。
+**my.createInnerAudioContext** 是在小程序内创建并返回内部音频（与背景音频相对应） InnerAudioContext 对象的 API，内部音频即“前景音频”，当用户离开小程序（或屏幕息屏）时音频停止播放。
 
-更多信息，请参见 [音频播放](https://opendocs.alipay.com/mini/00d6hx)。
+更多信息，可查看 [音频播放 API 使用说明](https://opendocs.alipay.com/mini/03l3fn)。
 
 ## 使用限制
 
 - 基础库 [1.23.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.87 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- IDE 模拟器暂不支持调试，请以真机调试结果为准。
-- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，否则将导致音频无法播放且没有错误提示，可查看 [接入准备](https://opendocs.alipay.com/mini/02p19p)。
+- 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
@@ -203,9 +202,9 @@ A：onTimeUpdate 等监听事件在再次进入页面时失效不执行，二次
 
 ### Q: 优酷音频码如何获取？
 
-A: 请参考 [音频播放能力介绍](https://opendocs.alipay.com/mini/00d6hx)。
+A: 可查看 [音频播放 API 使用说明](https://opendocs.alipay.com/mini/03l3fn)。
 
-> 小程序音频播放能力仅支持播放优酷的音频源，开发者需要使用 平台入驻 后的支付宝账号登录优酷，并将音频 [上传优酷](https://mp.youku.com/new/upload_home) 以获取音频码，具体方法见 [接入指南](https://opendocs.alipay.com/mini/02p19q) 的第一步。
+> 小程序音频播放能力仅支持播放优酷的音频源，开发者需要使用 **平台入驻** 后的支付宝账号登录优酷，并将音频 [上传优酷](https://mp.youku.com/new/upload_home) 以获取音频码，具体方法见 **音频播放 API 使用说明** 的 **上传音频** 步骤。
 
 ### Q: 我确认我的音频码是有效的，但播放报错 10007？
 
