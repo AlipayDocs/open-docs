@@ -15,7 +15,7 @@
 ```javascript
 const fs = my.getFileSystemManager()
 fs.unzip({
-  zipFilePath: `${my.env.USER_DATA_PATH}/tesy.zip`,
+  zipFilePath: `${my.env.USER_DATA_PATH}/test.zip`,
   targetPath: '${my.env.USER_DATA_PATH}/test',
   success(res) {
     console.log(res)
