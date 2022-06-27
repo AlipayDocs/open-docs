@@ -2,6 +2,8 @@
 
 拍摄视频或从手机相册中选视频。
 
+注意：支付宝会将选取的视频文件名重命名为 `.video` 后缀并存到临时文件路径中，没有改变视频源格式。
+
 ## 使用限制
 
 - 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/compatibility) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
