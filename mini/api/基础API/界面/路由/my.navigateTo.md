@@ -140,7 +140,7 @@ fail 回调函数会收到一个 Object 类型的对象，其 error 属性为错
 # 常见问题
 
 ## Q：小程序多次通过 my.navigateTo 跳转，尝试几次后为何再点击不会跳转了？
-A：小程序中页面栈深度限制为 10。可通过 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 判断页面栈深度。使用 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 不会增加页面栈深度，但跳转后无法返回到当面页，使用时请综合考虑。
+A：小程序中页面栈深度限制为 10。可通过 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 判断页面栈深度。使用 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 不增加页面栈深度，但即返回时不能回到当前页（会直接到上一页），使用时请综合考虑。
 
 ## Q：my.navigateTo、my.redirectTo、my.reLaunch 的区别是什么？
 A：三者区别在于页面层级关系的保留。   
