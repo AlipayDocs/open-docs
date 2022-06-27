@@ -58,7 +58,7 @@ Object 类型，参数如下：
 
 # 常见问题 FAQ
 
-## Q：使用 my.redirectTo 跳转的页面为何不显示底部的 tab bar ？
+## Q：使用 my.redirectTo 跳转的页面不显示底部的 tab bar，怎么办？
 A：若要跳转到 app.json 中 tabBar.items 中列举的页面 ，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) 跳转，可正常显示 tab bar。
 
 ## Q：my.navigateTo、my.redirectTo、my.reLaunch 的区别是什么？
