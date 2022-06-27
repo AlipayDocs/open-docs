@@ -49,7 +49,7 @@ Object 类型，参数如下：
 | deviceId | String | 是 | 蓝牙设备 ID，参考 device 对象。 |
 | serviceId | String | 是 | 蓝牙特征值对应 service 的 UUID。 |
 | characteristicId | String | 是 | 蓝牙特征值的 UUID。 |
-| value | Hex String | 是 | 蓝牙设备特征值对应的值，为 16 进制字符串，限制在 20 字节内。 |
+| value | Hex String \| ArrayBuffer | 是 | 蓝牙设备特征值对应的值，为 16 进制字符串或 ArrayBuffer，限制在 20 字节内。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
