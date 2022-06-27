@@ -58,6 +58,9 @@ Object 类型，参数如下：
 
 # 常见问题 FAQ
 
+## Q：使用 my.redirectTo 跳转的页面为何不显示底部的 tab bar ？
+A：若要跳转到 app.json 中 tabBar.items 中列举的页面 ，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) 跳转，可正常显示 tab bar。
+
 ## Q：my.navigateTo、my.redirectTo、my.reLaunch 的区别是什么？
 A：三者区别在于页面层级关系的保留。   
 
@@ -66,9 +69,6 @@ A：三者区别在于页面层级关系的保留。
 - [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 是关闭所有页面，跳转到新页面，即将页面栈深度置为 1。
 
 当页面栈深度为 1 时，小程序导航栏上没有 **返回上一页按钮**，通常会有 **返回首页** 按钮（如果当前不在首页）；当页面栈深度大于 1 时，**返回上一页按钮** 出现，**返回首页按钮** 隐藏。
-
-## Q：使用 my.redirectTo 跳转的页面为何不显示底部的 tab bar ？
-A：若要跳转到 app.json 中 tabBar.items 中列举的页面 ，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) 跳转，可正常显示 tab bar。
 
 ## Q：如何隐藏小程序导航栏左侧的 返回上一页按钮 或 返回首页按钮？
 A，**返回上一页按钮** 的显示与否，由小程序框架根据页面栈深度决定，不提供直接隐藏的接口。如需要达到隐藏的效果，可使用 [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 进行跳转，然后使用 [my.hideBackHome](https://opendocs.alipay.com/mini/api/ui-navigate) 隐藏左上角的返回首页按钮。
