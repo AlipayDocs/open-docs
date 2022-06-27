@@ -73,7 +73,7 @@ A：除非主动清除 或 卸载支付宝客户端，缓存数据会永久保�
 ## Q：如何更新小程序缓存？
 A：可以使用 [my.setStorage](https://opendocs.alipay.com/mini/api/eocm6v) 或 [my.setStorageSync](https://opendocs.alipay.com/mini/api/cog0du) 存入相同的 key 即可覆盖之前的缓存。
 
-## Q：小程序本地存储 getStorage 和 h5 本地存储 localStorage 的区别。
+## Q：小程序本地存储 setStorage 和 h5 本地存储 localStorage 的区别。
 A：h5本地存储 localStorage 在做数据存储的时候，只能存储 String 类型的值。当存储的值需要为 Object 类型时，需要在读和写的时候都做一步特殊处理。
   小程序本地存储支持 String 和 Object 两种数据类型的存储。
 
