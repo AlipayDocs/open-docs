@@ -38,4 +38,32 @@ Object 类型，属性如下：
 | 2 | 参数无效，没有传 filePath 参数。 |
 | 15 | 没有开启相册权限（iOS only）。 |
 | 16 | 手机相册存储空间不足（iOS only）。 |
-| 17 | 保存图片过程中的其他错误。一般情况下由于filePath的值不符合要求导致，请检查filePath值。 |
+| 17 | 保存图片过程中的其他错误。一般情况下由于 filePath 的值不符合要求导致，请检查 filePath 值。 |
+
+## 已知问题
+- 连续调用 my.saveImageToPhotosAlbum 时只会触发success一次回调，规避办法：请在 my.saveImageToPhotosAlbum 的 complete 触发后再接着调用 my.saveImageToPhotosAlbum。例如：
+  ```
+  Page({
+    onReady() {
+      // 连续保存多张图片
+      this.saveImages([
+        'https://gw.alipayobjects.com/zos/skylark-tools/public/files/66539db61b570eb2b7cf2df4241ea56c.png',
+        'https://gw.alipayobjects.com/zos/skylark-tools/public/files/66539db61b570eb2b7cf2df4241ea56c.png',
+        'https://gw.alipayobjects.com/zos/skylark-tools/public/files/66539db61b570eb2b7cf2df4241ea56c.png',
+      ]);
+    },
+    async saveImages(filePaths) {
+      for (const filePath of filePaths) {
+        await new Promise(resolve => {
+          my.saveImageToPhotosAlbum({
+            filePath: filePath,
+            complete(res) {
+              console.log(res);
+              resolve(res);
+            }
+          })
+        })
+      }
+    }
+  });
+  ```
