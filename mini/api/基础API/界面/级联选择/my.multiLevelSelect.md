@@ -92,7 +92,7 @@ success 回调函数会收到一个 Object 类型的参数，其属性如下：
 | 2 | 参数无效 | 检查入参 list |
 
 
-## Bug & Tip
+# Bug & Tip
 
 - `bug` Android 版本对于过大的入参 list 支持有缺陷，数据超过 100K 时在部分机型上选择器不能弹出。建议通过删除额外字段等方式控制 list 数据大小
 - `bug` 如果传入的 list 为 null，会触发 success 回调（res.success 为 false）而非 fail 回调
