@@ -1,11 +1,12 @@
 # 简介
-**my.navigateTo** 保留当前页面，跳转到应用内的某个页面。
+**my.navigateTo** 保留当前页面，跳转到新页面。
 
-可使用 [my.navigateBack](https://opendocs.alipay.com/mini/api/kc5zbx) 返回到原来页面。
+跳转成功后，在目标页面使用 [my.navigateBack](https://opendocs.alipay.com/mini/api/kc5zbx) 可返回到当前页。my.navigateTo 使页面栈深度增加（最多到 10，再调没有效果），my.navigateBack 或用户返回操作使页面栈深度减小，[my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) 和 [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 则会即关闭所有其他页面再打开目标页面，页面栈深度直接变成 1。
+
+**注意：** 请勿使用 my.navigateTo 跳转到 tabBar 页面（app.json 中 tabBar.items 中列举的页面），否则会导致非预期的行为（如底部 tab bar 不显示）。如需跳转 tabBar 页面，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar)。
 
 ## 使用限制
 
-- my.navigateTo 不允许跳转到选项卡（tabbar）页面，若需跳转到 tabbar 页面，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar)。
 - 小程序中页面栈最多十层，超过十层会无法跳转。   
 - 如果在小程序插件内调用此 API，只能跳转到此插件的页面，不能跳转到宿主页面或其他插件页面。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
@@ -102,14 +103,14 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| url | String | 是 | 需要跳转的应用内非 tabbar 的目标页面路径，路径后可以带参数。带参数时请参考 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)|
+| url | String | 是 | 需要跳转的应用内非 tabBar 的目标页面路径，路径后可以带参数，参数解析规则请参考 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)<br>如需跳转到 tabBar 页面，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) |
 | events | Object | 否 | 定义页面间通信的事件监听，用于接受被打开页面传送的数据。基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### Function success
-success 回调函数会携带一个 Object 类型的对象，其属性如下：
+success 回调函数会收到一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
@@ -117,15 +118,16 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 
 ## 错误码
+fail 回调函数会收到一个 Object 类型的对象，其 error 属性为错误码，errorMessage 属性为错误消息。
 
 <table>
   <tr>
-    <th><b>error</b></th>
-    <th><b>errorMessage</b></th>
-    <th><b>描述</b></th>
+    <th>error</th>
+    <th>errorMessage</th>
+    <th>描述</th>
   </tr>
   <tr>
-    <td rowspan="3" align="center" >1</td>
+    <td rowspan="2" align="center" >1</td>
     <td><code>${url} resolved to ${pagePath} is not found</code></td>
     <td>目标页面路径不存在。</td>
   </tr>
@@ -136,24 +138,24 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 </table>
 
 # 常见问题
-## Q：如何在跳转后的页面接收 my.navigateTo 的 url 属性传的参数？
-A：请参考 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。
 
 ## Q：小程序多次通过 my.navigateTo 跳转，尝试几次后为何再点击不会跳转了？
 A：小程序中页面栈最多十层，超过十层会无法跳转。建议通过 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 方法判断页面栈峰值，超过后用重定向接口 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 跳转页面。
 
 ## Q：my.navigateTo、my.redirectTo、my.reLaunch 的区别是什么？
 A：三者区别在于页面层级关系的保留。   
-  &ensp;&ensp;my.navigateTo 是保留当前页面，跳转到新页面，小程序导航栏的左上角会出现 **返回上一页** 按钮。   
-  &ensp;&ensp;[my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 是关闭当前页面，跳转到新页面。当页面栈深度为 1 时，小程序导航栏的左上角不会出现 **返回上一页** 按钮,当页面深度大于 1 时，会出现 **返回上一页** 按钮。   
-  &ensp;&ensp;[my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 是关闭所有页面，跳转到新页面，小程序导航栏的左上角会出现 **返回首页** 按钮。
+
+- my.navigateTo 是保留当前页面，跳转到新页面，页面栈深度加 1。
+- [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 是关闭当前页面，跳转到新页面，不改变页面栈深度。
+- [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 是关闭所有页面，跳转到新页面，即将页面栈深度置为 1。
+
+当页面栈深度为 1 时，小程序导航栏上没有返回按钮，通常会有 **返回首页** 按钮（如果当前不在首页）；当页面栈深度大于 1 时，**返回上一页按钮** 出现，**返回首页按钮** 隐藏。
 
 ## Q：如何监听小程序导航栏的左上角的 返回上一页 按钮 或 返回首页 按钮？
 A：暂不支持监听小程序导航栏的左上角的 **返回上一页** 按钮 或 **返回首页** 按钮。
 
-## Q：如何隐藏小程序中的导航栏的 返回上一页 按钮？
-A：无法直接隐藏小程序导航栏的 **返回上一页** 按钮，但是可以参考以下方案达到隐藏效果：   
-先调用 [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 方法关闭当前所有页面去跳转到新页面，此时小程序导航栏不出现 **返回上一页** 按钮，但是会出现 **返回首页** 按钮。这时配合使用 [my.hideBackHome](https://opendocs.alipay.com/mini/api/ui-navigate) 隐藏导航栏 **返回首页** 按钮，即可达到隐藏效果。
+## Q：如何隐藏小程序导航栏左侧的 返回上一页按钮 或 返回首页按钮？
+A，**返回上一页按钮** 的显示与否，由小程序框架根据页面栈深度决定，不提供直接隐藏的接口。如需要达到隐藏的效果，可使用 [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 进行跳转，然后使用 [my.hideBackHome](https://opendocs.alipay.com/mini/api/ui-navigate) 隐藏左上角的返回首页按钮。
 
-## Q：使用 my.navigateTo 或者 my.redirectTo 跳转的页面为什么不显示底部的 tab 栏？
-A：通过页面跳转 my.navigateTo 或者页面重定向 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 所到达的页面，即使它是定义在 tabBar 配置中的页面，也不会显示底部的 tab 栏。若要跳转到 tab 页面，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) 方法。
+## Q：使用 my.navigateTo 或者 my.redirectTo 跳转的页面为什么不显示底部的 tab bar？
+A：通过页面跳转 my.navigateTo 或者页面重定向 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 所到达的页面，即使已经在 app.json 的 tabBar.items 配置，也不会显示底部的 tab bar。若要跳转到 tabBar 页面，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) 。
