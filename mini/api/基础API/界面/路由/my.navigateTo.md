@@ -125,17 +125,13 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
     <th><b>描述</b></th>
   </tr>
   <tr>
-    <td rowspan="3">1</td>
+    <td rowspan="3" align="center" >1</td>
     <td><code>${url} resolved to ${pagePath} is not found</code></td>
     <td>目标页面路径不存在。</td>
   </tr>
   <tr>
     <td><code>${url} is not found in plugin</code></td>
     <td>目标页面是插件页面，但该插件并没有声明该页面。</td>
-  </tr>
-  <tr>
-    <td><code>${url} resolved to ${pagePath} is tab, which is not valid</code></td>
-    <td>my.navigateTo 不允许跳转到选项卡（tabbar）页面，请使用 <a href="https://opendocs.alipay.com/mini/api/ui-tabbar">my.switchTab</a>。</td>
   </tr>
 </table>
 
@@ -148,9 +144,9 @@ A：小程序中页面栈最多十层，超过十层会无法跳转。建议通�
 
 ## Q：my.navigateTo、my.redirectTo、my.reLaunch 的区别是什么？
 A：三者区别在于页面层级关系的保留。   
-my.navigateTo 是保留当前页面，跳转到新页面，小程序导航栏的左上角会出现 **返回上一页** 按钮。   
-[my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 是关闭当前页面，跳转到新页面。当页面栈深度为 1 时，小程序导航栏的左上角不会出现 **返回上一页** 按钮， 当页面深度大于 1 时，会出现 **返回上一页** 按钮。   
-[my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 是关闭所有页面，跳转到新页面，小程序导航栏的左上角会出现 **返回首页** 按钮。
+  &ensp;&ensp;my.navigateTo 是保留当前页面，跳转到新页面，小程序导航栏的左上角会出现 **返回上一页** 按钮。   
+  &ensp;&ensp;[my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 是关闭当前页面，跳转到新页面。当页面栈深度为 1 时，小程序导航栏的左上角不会出现 **返回上一页** 按钮,当页面深度大于 1 时，会出现 **返回上一页** 按钮。   
+  &ensp;&ensp;[my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 是关闭所有页面，跳转到新页面，小程序导航栏的左上角会出现 **返回首页** 按钮。
 
 ## Q：如何监听小程序导航栏的左上角的 返回上一页 按钮 或 返回首页 按钮？
 A：暂不支持监听小程序导航栏的左上角的 **返回上一页** 按钮 或 **返回首页** 按钮。
@@ -158,3 +154,6 @@ A：暂不支持监听小程序导航栏的左上角的 **返回上一页** 按�
 ## Q：如何隐藏小程序中的导航栏的 返回上一页 按钮？
 A：无法直接隐藏小程序导航栏的 **返回上一页** 按钮，但是可以参考以下方案达到隐藏效果：   
 先调用 [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 方法关闭当前所有页面去跳转到新页面，此时小程序导航栏不出现 **返回上一页** 按钮，但是会出现 **返回首页** 按钮。这时配合使用 [my.hideBackHome](https://opendocs.alipay.com/mini/api/ui-navigate) 隐藏导航栏 **返回首页** 按钮，即可达到隐藏效果。
+
+## Q：使用 my.navigateTo 或者 my.redirectTo 跳转的页面为什么不显示底部的 tab 栏？
+A：通过页面跳转 my.navigateTo 或者页面重定向 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 所到达的页面，即使它是定义在 tabBar 配置中的页面，也不会显示底部的 tab 栏。若要跳转到 tab 页面，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) 方法。
