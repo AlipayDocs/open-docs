@@ -4,7 +4,7 @@
 
 ## 使用限制
 
-- 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/compatibility) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/compatibility) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
@@ -56,7 +56,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **说明** |
 | --- | --- | --- |
-| tempFilePath | String | 选定视频的临时文件路径。<br />基础库  [1.11.0](https://docs.alipay.com/mini/framework/compatibility) 及以上版本支持。 |
+| tempFilePath | String | 选定视频的临时文件路径。<br />基础库  [1.11.0](https://docs.alipay.com/mini/framework/compatibility) 及以上版本支持。 |
 | duration | Number | 选定视频的时间长度。 |
 | size | Number | 选定视频的数据量大小。 |
 | height | Number | 返回选定视频的高度。 |
