@@ -1,5 +1,5 @@
 # 简介
-**my.createVideoContext** 是传入 video id，返回一个 videoContext 上下文的 API。video id 为开发者在对应 video 标签中自由命名的 ID 属性。
+**my.createVideoContext** 是传入 video id，返回一个 videoContext 上下文的 API。video id 为开发者在对应 video 标签中自由命名的 id 属性。
 
 通过 videoContext 可以操作一个 [video 视频](https://opendocs.alipay.com/mini/component/video) 组件。
 
@@ -39,7 +39,7 @@ iOS、Android 支持以下编码格式： H.264、AAC。
 # 接口调用
 ## 示例代码
 ### .axml 示例代码
-开发者在 .axml 文件中写入如下代码，命名 video id。video id 为开发者在对应 video 标签中自由命名的 ID 属性，`src` 属性中需传入优酷视频的视频码进行播放，例如下方代码中的 myVideo ：
+开发者在 .axml 文件中写入如下代码。其中 video id 为开发者在对应 video 标签中自由命名的 id 属性，例如下方代码中的 myVideo；src 属性中需传入优酷视频的视频码进行播放。
 ```html
 <view>
 <!-- onPlay 的类型是 EventHandle。为当开始/继续播放时触发 play 事件。 -->
@@ -60,8 +60,10 @@ iOS、Android 支持以下编码格式： H.264、AAC。
 ```javascript
 Page({
   data: {
-
-  // src 为要播放的视频资源地址，支持优酷视频编码（支付宝客户端 10.1.75）。src 支持的协议如下：vid/showId: XMzg2Mzc5MzMwMA== apFilePath: https://resource/xxx.video。
+    // src 为要播放的视频资源地址，支持优酷视频编码（支付宝客户端 10.1.75）。
+    // src 支持的协议如下：
+    // 1. vid/showId: XMzg2Mzc5MzMwMA==
+    // 2. apFilePath: https://resource/xxx.video
     src: "XNDM0OTQzMDc2OA==",
   },
   onLoad() {
@@ -124,7 +126,14 @@ Page({
 | 1008 | 网络错误。 | 检查网络。 |
 | 1009 | 搜索视频出错（源出错的一种）。 | 检查源。 |
 | 1010 | 准备超时，也可认为是网络太慢或数据源太慢导致的播放失败。 | 检查是否因网络或数据原因导致的超时错误。 |
-| 1023 | 播放中内部错误（FFmpeg 内错误）。 | 检查 FFmpeg。 |
+| 1023 | 播放中内部错误（FFmpeg 内错误）。 | 检查资源是否符合标准。 |
 | 2004 | 播放过程中加载时间超时。 | 检查并重试。 |
-| 3001 | audio 渲染出错。 | 检查 audio 渲染。 |
-| 3002 | 硬解码错误。 | 检查硬解码。 |
+| 3001 | audio 渲染出错。 | 检查音频资源是否符合标准。 |
+| 3002 | 硬解码错误。 | 检查设备的硬解码功能是否正常。 |
+
+## FAQ
+
+### 1、怎么知道 videoContext 中方法是否调用成功？例如：我调用了videoContext.play(), 怎么知道成功失败？
+
+可以在 axml 文件中，通过 video 组件的 onError 属性监听视频播放是否出现了错误。
+
