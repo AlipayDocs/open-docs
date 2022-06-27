@@ -1,7 +1,5 @@
 # 简介
-**my.hideTabBar** 是隐藏标签页（tabbar）的 API。
-
-相关问题请参见 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
+**my.hideTabBar** 隐藏 tabBar。
 
 ## 使用限制
 
@@ -15,10 +13,11 @@
 ### .js 示例代码
 
 ```javascript
-// .js
 my.hideTabBar({
-  animation: true
-})
+  animation: true,
+  success: (res) => console.log('hideTabBar success'),
+  fail: (res) => my.alert({ title: 'hideTabBar failed', content: JSON.stringify(res) }),
+});
 ```
 
 ## 入参
@@ -32,3 +31,16 @@ Object 类型，参数如下：
 | fail | Function | 否 | 接口调用失败的回调函数。 |
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
 
+## 错误码
+fail 回调会收到一个 Object 类型的参数，其 error 为错误码
+
+| **错误码** | **描述** | **解决方案** |
+| --- | --- | --- |
+| 11 | 当前页面不带 tabBar  | 在正确的页面上调用此接口 |
+
+
+# 常见问题 FAQ
+
+// 待整理补充
+
+更多相关问题请参见 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
