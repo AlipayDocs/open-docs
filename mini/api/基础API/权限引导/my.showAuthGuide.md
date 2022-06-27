@@ -2,7 +2,7 @@
 
 **my.showAuthGuide** 是通过权限引导模块以图文等形式向用户弹出 Dialog，引导用户打开相应的权限的 API。
 
-权限引导的核心是引导而非权限判断，调用时机应该在业务方确认所需权限被限制的时候；此外权限引导弹框受疲劳度等因素控制。
+权限引导的核心是引导而非权限判断，调用时机应该在业务方确认所需权限被限制的时候；此外权限引导弹框受弹框已弹出次数等因素控制。
 
 ## 使用限制
 
@@ -12,14 +12,14 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/examples/cc634a7b-94dd-4f82-afd5-89fd88bcfd00) 
+[小程序在线](https://opendocs.alipay.com/examples/cc634a7b-94dd-4f82-afd5-89fd88bcfd00)
 
 ### .json 示例代码
 
 ```json
 // API-DEMO page/API/show-auth-guide/show-auth-guide.json
 {
-    "defaultTitle": "权限引导"
+  "defaultTitle": "权限引导"
 }
 ```
 
@@ -39,19 +39,20 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 // API-DEMO page/API/show-auth-guide/show-auth-guide.js
 Page({
   showAuthGuide() {
-    my.showAuthGuide({ 
-        authType:'LBS',
-        success:(res)=>{
-            //shown为true时表示会显示权限引导弹窗，为false时表示用户已经授权
-            my.alert({content: '调用成功：'+JSON.stringify(res), });
-        },
-        fail:(error)=>{
-            my.alert({content: '调用失败：'+JSON.stringify(error), });
-        },
+    my.showAuthGuide({
+      authType: "LBS",
+      success: (res) => {
+        // shown 为 true 时表示会显示权限引导弹窗，为 false 时表示用户已经授权
+        my.alert({ content: "调用成功：" + JSON.stringify(res) });
+      },
+      fail: (error) => {
+        my.alert({ content: "调用失败：" + JSON.stringify(error) });
+      },
     });
   },
 });
@@ -69,6 +70,7 @@ Page({
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### 支持的 authType
+
 | **权限名称** | **权限码** | **支持平台** | **描述** |
 | --- | --- | --- | --- |
 | 后台保活权限 | BACKGROUNDER | Android | - |
@@ -80,4 +82,4 @@ Page({
 | push 通知栏权限 | NOTIFICATION | Android | - |
 | 自启动权限 | SELFSTARTING | Android | - |
 | lbs 开关 | LBS | iOS / Android | - |
-| 蓝牙 | BLUETOOTH | iOS / Android | 客户端 10.2.33、基础库 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。<br />可通过 `my.canIUse('showAuthGuide.object.authType.BLUETOOTH') ` 进行检测。 |
+| 蓝牙 | BLUETOOTH | iOS / Android | 客户端 10.2.33、基础库 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。<br />可通过 `my.canIUse('showAuthGuide.object.authType.BLUETOOTH')` 进行检测。 |
