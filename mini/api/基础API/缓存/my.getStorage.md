@@ -2,14 +2,11 @@
 # 简介
 **my.getStorage** 是获取缓存数据的异步接口。
 
-支持内嵌 webview 内缓与小程序缓存隔离，获取内嵌 webview 指定 key 的缓存不会同时返回小程序相同 key下的缓存数据。
+
+小程序缓存默认具有支付宝账号和小程序 ID 两级隔离。   
+支持内嵌 webview 内缓与小程序缓存隔离，获取内嵌 webview 指定 key 的缓存不会同时返回小程序相同 key 下的缓存数据。
 
 ## 使用限制
-
-- 缓存数据本地加密存储，通过 API 读取时会自动解密返回。
-- 覆盖安装支付宝（不是先删除再安装）、关闭小程序，这两种操作均不会导致小程序缓存失效。<br />开发者调用 API 存储的缓存数据，需要自行调用对应的删除/清除 API 进行删除。<br />长期未使用或在应用中心删除的小程序的缓存数据也会被系统清理。
-- 小程序缓存默认具有支付宝账号和小程序 ID 两级隔离。
-- iOS 客户端支持 iTunes 备份。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -23,11 +20,10 @@
 
 ### .js 示例代码
 ```javascript
-//.js
 my.getStorage({
   key: 'currentCity',
   success: function(res) {
-    my.alert({content: '获取成功：' + res.data.cityName});
+    my.alert({content: '获取成功：' + res.data});
   },
   fail: function(res){
     my.alert({content: res.errorMessage});
@@ -55,3 +51,27 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- |
 | data | Object/String | key 对应的内容。 |
 
+
+## 错误码
+
+
+
+| **error** | **errorMessage** | **解决方案** |
+| --- | --- | --- |
+| 11 | 查无此key | 不存在指定 key 的缓存数据| 
+
+
+
+# 常见问题
+
+## Q：缓存API存储的缓存什么情况下会被清除？
+A：卸载支付宝客户端会清除缓存数据；长期未使用或在应用中心删除的小程序的缓存数据也会被系统清理。覆盖安装支付宝（不是先删除再安装）、支付宝设置中心清除缓存、关闭小程序，这三种操作不会导致小程序缓存失效。
+ 
+## Q：如何主动清除缓存？
+A：可以通过 [my.clearStorage](https://opendocs.alipay.com/mini/api/storage) 或 [my.clearStorageSync](https://opendocs.alipay.com/mini/api/ulv85u) 清除当前小程序下的本地数据缓存， 通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 或 [my.removeStorageSync](https://opendocs.alipay.com/mini/api/ytfrk4) 移除指定 key 的本地缓存。
+
+## Q：my.setStorage 接口存储的缓存有效期？
+A：除非主动清除 或 卸载支付宝客户端，缓存数据会永久保存在本地。
+
+## Q：插件和小程序的存储是否互通?
+A：插件和小程序的缓存存储不通用，独立隔离。
