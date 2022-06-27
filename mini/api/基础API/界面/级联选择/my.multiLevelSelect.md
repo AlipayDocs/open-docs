@@ -118,7 +118,7 @@ function multiLevelSelect({ title, list, success, fail, complete }) {
   });
   return my.multiLevelSelect({
     title, list: list.map(clean),
-    success: wrap(success), fail, complete: wrap(complete),
+    success: wrap(success), fail, complete: wrap(complete)
   });
 }
 
