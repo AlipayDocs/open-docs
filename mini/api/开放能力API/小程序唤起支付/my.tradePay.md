@@ -1,6 +1,6 @@
 # 简介
 
-**my.tradePay** 是用于发起支付的 API。更多信息可查看 [小程序支付](https://opendocs.alipay.com/mini/introduce/pay)。
+**my.tradePay** 是用于发起支付的 API。
 
 ## 使用限制
 
