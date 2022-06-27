@@ -27,7 +27,7 @@
 const CanvasContext = my.createCanvasContext('canvas');
 CanvasContext.toTempFilePath({
   success(res) {
-  //res.apFilePath
+    console.log(res.apFilePath);
   }
 })
 ```
@@ -55,8 +55,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| tempFilePath | String | 客户端内部路径。例如 `/sdcard/xxx`，小程序内不识别。 |
-| apFilePath | String | http 协议临时路径。例如 `http://res/xxx.image`，小程序内可正常使用。 |
+| apFilePath | String | 图片路径([本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6))。 |
 
 ### Function fail
 
