@@ -1,9 +1,10 @@
 # 简介
+
 **my.writeBLECharacteristicValue** 是向低功耗蓝牙设备特征值中写入数据的 API。
 
 ## 使用限制
 
-- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 支付宝客户端 10.0.18  或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 支持 iOS 客户端，Android 5.0 及以上版本客户端。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 设备的特征值必须支持 write 才可以成功调用，具体可查看 [my.getBLEDeviceCharacteristics](https://opendocs.alipay.com/mini/api/fmg9gg) 中特征值的 properties 属性。
@@ -23,6 +24,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // .js
 my.writeBLECharacteristicValue({
@@ -31,16 +33,15 @@ my.writeBLECharacteristicValue({
   characteristicId: characteristicId,
   value: 'fffe',
   success: (res) => {
-    console.log(res)
+    console.log(res);
   },
-  fail:(res) => {
-  },
-  complete: (res)=>{
-  }
+  fail: (res) => {},
+  complete: (res) => {},
 });
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -52,4 +53,3 @@ Object 类型，参数如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-
