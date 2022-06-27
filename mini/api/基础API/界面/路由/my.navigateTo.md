@@ -118,7 +118,7 @@ success 回调函数会收到一个 Object 类型的对象，其属性如下：
 
 
 ## 错误码
-fail 回调函数会收到一个 Object 类型的对象，其 error 属性为错误码，errorMessage 属性为错误消息
+fail 回调函数会收到一个 Object 类型的对象，其 error 属性为错误码，errorMessage 属性为错误消息。
 
 <table>
   <tr>
