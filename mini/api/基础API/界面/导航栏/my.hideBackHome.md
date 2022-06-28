@@ -1,12 +1,12 @@
 
 # 简介
-**my.hideBackHome** 是隐藏标题栏上的返回首页图标（如下图所示）和右上角通用菜单中的返回首页功能的 API。
+**my.hideBackHome** 是隐藏标题栏上的 **返回首页** 按钮和右上角通用菜单中的返回首页功能的 API。
+
+当用户打开的小程序最底层页面是非首页且非 tabbar 页面时，默认展示 **返回首页** 按钮，可以通过调用 my.hideBackHome 进行隐藏。
 
 ## 使用限制
 
 - 基础库 [1.16.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.52 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- 用户启动小程序时，若进入的页面不是小程序首页，则会在左上角出现 **返回首页** 图标。
-- 如果 app.json 中将 **当前页面 path** 配置为 `tabbar` 时，左上角不会出现 **返回首页** 图标。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 效果示例
@@ -43,3 +43,9 @@ Page({
     }, 5000)
 });
 ```
+
+# 常见问题 FAQ
+
+## Q：如何隐藏页面的回退按钮？
+A：暂无 API 可以直接隐藏页面的回退按钮。可以先通过 my.reLaunch 进行页面跳转，在被跳转的页面里调用 my.hideBackHome 隐藏返回首页按钮。
+
