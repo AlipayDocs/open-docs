@@ -4,7 +4,7 @@
 
 ## 使用限制
 
-- 支付宝客户端  10.0.18  或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 支持 iOS 客户端，Android 5.0 及以上版本客户端。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 若小程序在之前已搜索过某个蓝牙设备，即可直接传入之前搜索获取的 deviceId 尝试连接该设备，无需进行搜索操作。
@@ -58,7 +58,7 @@
       <button type="primary" onTap="closeBluetoothAdapter">关闭本机蓝牙</button>
       <button type="primary" onTap="getBluetoothAdapterState">获取蓝牙状态</button>
     </view>
-    
+
     <view class="page-section-title">扫描蓝牙设备</view>
     <view class="page-section-demo">
       <button type="primary" onTap="startBluetoothDevicesDiscovery">开始搜索</button>
@@ -66,7 +66,7 @@
       <button type="primary" onTap="getConnectedBluetoothDevices">所有已连接的设备</button>
       <button type="primary" onTap="stopBluetoothDevicesDiscovery">停止搜索</button>
     </view>
-    
+
     <view class="page-section-title">连接设备</view>
     <view class="page-section-demo">
       <input class="input" onInput="bindKeyInput" type="{{text}}" placeholder="输入要连接的设备的deviceId"></input>
@@ -75,7 +75,7 @@
       <button type="primary" onTap="getBLEDeviceCharacteristics">获取读写特征</button>
       <button type="primary" onTap="disconnectBLEDevice">断开设备连接</button>
     </view>
-    
+
     <view class="page-section-title">读写数据</view>
     <view>
       <text>
@@ -94,7 +94,7 @@
       <button type="primary" onTap="writeBLECharacteristicValue">写入数据</button>
       <button type="primary" onTap="offBLECharacteristicValueChange">取消特征值监听</button>
     </view>
-    
+
     <view class="page-section-title">其他事件</view>
     <view class="page-section-demo">
       <button type="primary" onTap="bluetoothAdapterStateChange">本机蓝牙状态变化</button>
