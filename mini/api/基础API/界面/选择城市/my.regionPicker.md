@@ -1,30 +1,14 @@
 # 简介
-**my.regionPicker** 是多级省市区选择器 API，自带省市区数据源。
+**my.regionPicker** 是唤起多级省市区选择器的 API，自带省市区数据源。
 
 ## 使用限制
 
 - 基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.90 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
 
 ## 示例代码
-
-### .axml 示例代码
-
-```html
-<!-- .axml -->
-<view class="page">
-  <view class="page-description">多级省市区选择器</view>
-  <view class="page-section">
-    <view class="page-section-title">regionPicker</view>
-    <view class="page-section-demo">
-      <button type="primary" onTap="regionPicker">选择城市</button>
-    </view>
-  </view>
-</view>
-```
 
 ### .js 示例代码
 ```javascript
@@ -164,3 +148,11 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- |
 | 11 | 用户取消选择 | 重新选择即可。 |
 | 10001 | 用户没有选择数据 | 重新选中数据即可。 |
+
+# 常见问题 FAQ
+
+## Q：可以获取 my,regionPicker 中的省市区数据吗？
+A：不能直接通过 my.regionPicker 获取省市区数据，只能作为选择器使用。可以通过 [高德 Web API](https://lbs.amap.com/api/webservice/guide/api/district/) 获取最新行政区信息。
+
+## Q：my.regionPicker 不包含最新的行政区信息怎么办？
+A：可以通过 mergeOptions 参数自定义修改城市数据，支持删除、添加和更新城市信息。
