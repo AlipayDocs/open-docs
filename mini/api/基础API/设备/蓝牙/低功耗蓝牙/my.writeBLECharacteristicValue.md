@@ -23,15 +23,22 @@
 
 ## 示例代码
 
+详细示例请参考：<https://opendocs.alipay.com/mini/api/tmew6e>
+
 ### .js 示例代码
 
 ```javascript
 // .js
+// 向蓝牙设备发送一个 0x00 的 16 进制数据
+const buffer = new ArrayBuffer(1);
+const dataView = new DataView(buffer);
+dataView.setUint8(0, 0);
+
 my.writeBLECharacteristicValue({
   deviceId: deviceId,
   serviceId: serviceId,
   characteristicId: characteristicId,
-  value: 'fffe',
+  value: buffer,
   success: (res) => {
     console.log(res);
   },
@@ -49,7 +56,25 @@ Object 类型，参数如下：
 | deviceId | String | 是 | 蓝牙设备 ID，参考 device 对象。 |
 | serviceId | String | 是 | 蓝牙特征值对应 service 的 UUID。 |
 | characteristicId | String | 是 | 蓝牙特征值的 UUID。 |
-| value | Hex String \| ArrayBuffer | 是 | 蓝牙设备特征值对应的值，为 16 进制字符串或 ArrayBuffer，限制在 20 字节内。 |
+| value | ArrayBuffer \| Hex String | 是 | 蓝牙设备特征值对应的二进制值，需要转为 ArrayBuffer 或 16 进制字符串。小程序不会对写入数据包大小做限制，但系统与蓝牙设备会限制蓝牙 4.0 单次传输的数据大小，超过最大字节数后会发生写入错误，建议每次写入不超过 20 字节。。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+
+# 常见问题 FAQ
+
+## 如何获取写入的结果？如何确定写入是否成功？
+
+该 API 的 success 回调的第一个参数是不带写入的数据的，仅代表向设备发送该请求成功。
+
+可以通过 `my.onBLECharacteristicValueChange` 来监听设备上值的变化。可以通过 `my.offBLECharacteristicValueChange` 来取消监听。
+
+在开启监听之后，当特征值有变化时会自动回调该函数。
+
+## 小程序发送写入请求成功后机器没有收到写入值？
+
+请按以下步骤进行排查：
+
+1. 请检查入参中的 `deviceId` 是否正确，是否连接到了正确的设备。
+2. 请检查入参中的 `serviceId` 是否正确，是否设置了正确的 id。
+3. 请检查入参中的 `characteristicId` 是否正确，是否设置了正确的 id。
