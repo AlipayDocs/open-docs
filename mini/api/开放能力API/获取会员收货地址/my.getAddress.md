@@ -1,14 +1,13 @@
 # 简介
-**my.getAddress** 是商家在寄送外卖、快递或其它场景需要用户填写地址信息时，可通过调用此 API 直接获取地址数据，无需用户手动填写。详情可查看 [获取会员收货地址](https://opendocs.alipay.com/mini/introduce/getaddress) 能力介绍。
+**my.getAddress** 是获取用户收货地址的 API。
 
-调用接口时会弹出授权框，用户点击弹框按钮同意授权后，可以通过接口获取到返回的收货地址数据。若用户未授权，则无法返回正确信息。
+接口调用时会弹出用户已录入的收货地址列表供其选择，返回选中的项。如果用户尚未授权，会先弹出授权框，如果拒绝授权则触发 fail 回调。
+已授权的用户，也可在小程序设置中撤销对当前小程序的”用户信息“授权。
 
 ## 使用限制
 
-- 基础库 [1.20.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.75 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- 由于开发者工具版本限制，目前 my.getAddress 接口暂不支持在开发者工具调试和真机调试，仅支持真机预览。开发者请调至 **预览** 模式，在支付宝客户端扫码查看效果。
 - 此 API 暂仅支持企业支付宝小程序使用。
-- 因该 JSAPI 涉及获取用户隐私信息，使用该 JSAPI 前，请对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/mini/introduce/01sxqf)。
+- 基础库 [1.20.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.75 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 
 # 接口调用
 
@@ -16,48 +15,24 @@
 
 ### .js 示例代码
 ```javascript
-// .js
 my.getAddress({
   success: (res) => {
+   if (res.resultStatus == 9000) {
     my.alert({
-      title: JSON.stringify(res)
+      title: "getAddress success",
+      content: JSON.stringify(res.result)
+    });
+   } else {
+     console.log("getAddress cancel", JSON.stringify(res));
+   }
+  },
+  fail: (res) => {
+    my.alert({
+      title: "getAddress fail",
+      content: JSON.stringify(res)
     });
   }
 });
-```
-
-## 返回示例
-
-#### 正常响应
-```json
-// 正常响应
-{
-  "resultStatus": "9000",
-  "result": {
-    "address": "浙江省杭州市西湖区西溪路556号", // 详细地址
-    "country": "中国", // 国家名称
-    "prov": "浙江省", // 省
-    "city": "杭州市", // 市
-    "area": "西湖区", // 区
-    "street": "", // 街道
-    "fullname": "张三", // 名称
-    "mobilePhone": "182XXXXXXX" // 手机号
-  }
-}
-```
-
-#### 服务端接口异常响应
-```json
-// 用户取消操作响应
-{ 
-  "result": '',
-  "resultStatus": '6001'
-}
-// 用户拒绝授权响应
-{
-  "error": 4,
-  "errorMessage": "无权调用该接口"
-}
 ```
 
 ## 入参
@@ -70,17 +45,43 @@ Object 类型，参数如下：
 | fail | Function | 否 | 接口调用失败的回调函数。 |
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
 
-### Function success
+## success 回调
 
-success 回调函数会携带一个 Object 类型的对象，其属性如下：
+用户通过授权并完成或取消选择，会触发 success 回调。success 回调将收到一个 Object 类型的参数，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| address | String | 详细地址。 |
-| country | String | 国家名称。 |
-| prov | String | 省。 |
-| city | String | 市。 |
-| area | String | 区。 |
-| street | String | 街道。 |
-| fullname | String | 用户名。 |
-| mobilePhone | String | 手机号。 |
+| resultStatus | Number | 结果码。9000 表示用户选择了一个地址；6001 表示用户未做选择直接返回。 |
+| result | Object \| "" | 结果详情。resultStatus 为 9000 时 result 为包含地址信息的对象（详见下文 <b>Object result</b>），resultStatus 为 6001 时，result 为空字符串。 
+
+注意：当前 IDE 模拟器内的 my.getAddress 与真机上略有差异，用户授权但不选择直接返回时，不会有回调函数
+
+### Object result
+用户选择的地址信息，包含以下属性：
+
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| address | String | 详细地址。如 "浙江省杭州市西湖区西溪路556号" |
+| country | String | 国家。如 "中国" | 
+| prov | String | 省。如 "浙江省" | 
+| city | String | 市。如 "杭州市" | 
+| area | String | 区。如 "西湖区" | 
+| street | String | 街道。如 "古荡街道" | 
+| fullname | String | 名称。如 "张三" | 
+| mobilePhone | String | 手机号。如 "18100000000" |
+
+## fail 回调
+
+用户拒绝授权发生其他异常，会触发 fail 回调，收到的参数对象包含 error(错误码） 和 errorMessage（错误消息） 属性：
+
+| **错误码** | **错误消息** | **解决方案** |
+| --- | --- | --- |
+| 4 | 无权限调用该接口。 | 下次调用 my.getAddress 时，仍会弹出授权框，如果用户同意授权，则会进入 success 回调 |
+
+# 常见问题 FAQ
+
+## Q：my.getAddress 每次都会弹授权提示框吗？授权有效期是多久？
+A：如果用户没有授权，每次调用都会弹出授权提示；如果已经授权，则不会再弹，直到用户通过小程序设置撤销了“用户信息”授权。
+
+## Q：my.getAddress 能否返回省市区编码？
+A：暂未提供此能力。需要开发者自己用名称匹配。
