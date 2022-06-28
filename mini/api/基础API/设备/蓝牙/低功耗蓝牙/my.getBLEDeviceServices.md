@@ -1,9 +1,10 @@
 # 简介
+
 **my.getBLEDeviceServices** 是获取所有已发现的蓝牙设备的 API，包括已经和本机处于连接状态的设备。
 
 ## 使用限制
 
-- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 支持 iOS 客户端，Android 5.0 及以上版本客户端。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 此 API 暂仅支持企业支付宝小程序使用。
@@ -16,14 +17,16 @@
 
 ![|723x407](https://gw.alipayobjects.com/zos/skylark-tools/public/files/6fafc6048769544f55190149f0f55ab0.png#align=left&display=inline&height=420&margin=%5Bobject%20Object%5D&originHeight=720&originWidth=1280&status=done&style=none&width=746)
 
-
 # 接口调用
 
 ## 示例代码
 
+完整蓝牙能力示例请见 [my.connectBLEDevice](https://opendocs.alipay.com/mini/api/tmew6e) 中的示例代码。
+
 ### .js 示例代码
+
 ```javascript
-// .js 
+// .js
 //获取连接设备的server，必须要在连接状态状态之下才能获取
   getBLEDeviceServices() {
     my.getConnectedBluetoothDevices({
@@ -57,23 +60,29 @@
 
 ```json
 {
-    "services": [{
-        "isPrimary": true,
-        "serviceId": "00001800-0000-1000-8000-00805f9b34fb"
-    }, {
-        "isPrimary": true,
-        "serviceId": "00001801-0000-1000-8000-00805f9b34fb"
-    }, {
-        "isPrimary": true,
-        "serviceId": "d0611e78-bbb4-4591-a5f8-487910ae4366"
-    }, {
-        "isPrimary": true,
-        "serviceId": "9fa480e0-4967-4542-9390-d343dc5d04ae"
-    }]
+  "services": [
+    {
+      "isPrimary": true,
+      "serviceId": "00001800-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "isPrimary": true,
+      "serviceId": "00001801-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "isPrimary": true,
+      "serviceId": "d0611e78-bbb4-4591-a5f8-487910ae4366"
+    },
+    {
+      "isPrimary": true,
+      "serviceId": "9fa480e0-4967-4542-9390-d343dc5d04ae"
+    }
+  ]
 }
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -87,13 +96,13 @@ Object 类型，参数如下：
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| services | Array | 已发现的设备服务列表。 |
-
+| **属性** | **类型** | **描述**               |
+| -------- | -------- | ---------------------- |
+| services | Array    | 已发现的设备服务列表。 |
 
 #### Array services
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| isPrimary | Boolean | 该服务是否为主服务。<ul><li> `true` 为主服务。</li><li>`false` 不是主服务。</li></ul> |
+| isPrimary | Boolean | 该服务是否为主服务。<ul><li> `true` 为主服务。</li><li>`false` 不是主服务。</li></ul> |
 | serviceId | String | 蓝牙设备特征值对应服务的 UUID。 |

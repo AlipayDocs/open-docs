@@ -2,6 +2,8 @@
 
 拍摄视频或从手机相册中选视频。
 
+注意：支付宝会将选取的视频文件名重命名为 `.video` 后缀并存到一个临时路径下，没有改变视频源格式。
+
 ## 使用限制
 
 - 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/compatibility) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
@@ -67,3 +69,38 @@ Object 类型，属性如下：
 ## Q：如果系统权限未开启，接口调用报错，如何引导开启系统权限？
 
 A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-auth-guide) 引导用户开启相关系统权限。
+
+## Q: 如何上传用户选择的视频？
+
+A：可以配合 [my.uploadFile](https://opendocs.alipay.com/mini/api/kmq4hc) 一起使用。
+
+```js
+Page({
+  uploadFile() {
+    my.chooseVideo({
+      sourceType: ['album', 'camera'],
+      maxDuration: 60,
+      camera: 'back',
+      success(res) {
+        console.log("chooseVideo", res)
+        const path = res.tempFilePath;
+        console.log(path);
+        my.uploadFile({
+          url: 'https://httpbin.org/post',
+          fileType: 'video',
+          fileName: 'user-selected-video',
+          filePath: path,
+          formData: { extra: '其他信息' },
+          success: res => {
+            console.log("success res", res)
+            my.alert({ title: '上传成功' });
+          },
+          fail: err => {
+            my.alert({ title: '上传失败', content: JSON.stringify(err) });
+          },
+        });
+      },
+    });
+  },
+});
+```

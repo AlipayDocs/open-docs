@@ -4,9 +4,9 @@
 
 ## 使用限制
 
-- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 支持 iOS 客户端，Android 5.0 及以上版本客户端。
-- 建立连接后先执行 [my.getBLEDeviceServices](https://opendocs.alipay.com/mini/api/uzsg75) 与 [my.getBLEDeviceCharacteristics](https://opendocs.alipay.com/mini/api/fmg9gg)，再进行与蓝牙设备的数据交互。
+- 建立连接后先执行 [my.getBLEDeviceServices](https://opendocs.alipay.com/mini/api/uzsg75) 与 [my.getBLEDeviceCharacteristics](https://opendocs.alipay.com/mini/api/fmg9gg)，再进行与蓝牙设备的数据交互。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 ## 扫码体验
@@ -26,23 +26,25 @@
 ```css
 /* .acss */
 .help-info {
-  padding:10px;
-  color:#000000;
+  padding: 10px;
+  color: #000000;
 }
 .help-title {
-  padding:10px;
-  color:#FC0D1B;
+  padding: 10px;
+  color: #fc0d1b;
 }
 ```
 
 ### .json 示例代码
+
 ```json
 {
-    "defaultTitle": "Bluetooth"
+  "defaultTitle": "Bluetooth"
 }
 ```
 
 ### .axml 示例代码
+
 ```html
 <!-- .axml-->
 <view class="page">
@@ -88,6 +90,7 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 // .js
 Page({
@@ -102,14 +105,14 @@ Page({
   //获取本机蓝牙开关状态
   openBluetoothAdapter() {
     my.openBluetoothAdapter({
-      success: res => {
+      success: (res) => {
         if (!res.isSupportBLE) {
           my.alert({ content: '抱歉，您的手机蓝牙暂不可用' });
           return;
         }
         my.alert({ content: '初始化成功！' });
       },
-      fail: error => {
+      fail: (error) => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -119,21 +122,21 @@ Page({
       success: () => {
         my.alert({ content: '关闭蓝牙成功！' });
       },
-      fail: error => {
+      fail: (error) => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
   },
   getBluetoothAdapterState() {
     my.getBluetoothAdapterState({
-      success: res => {
+      success: (res) => {
         if (!res.available) {
           my.alert({ content: '抱歉，您的手机蓝牙暂不可用' });
           return;
         }
         my.alert({ content: JSON.stringify(res) });
       },
-      fail: error => {
+      fail: (error) => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -159,7 +162,7 @@ Page({
           }
         });
       },
-      fail: error => {
+      fail: (error) => {
         my.alert({ content: '启动扫描失败' + JSON.stringify(error) });
       },
     });
@@ -167,11 +170,11 @@ Page({
   //停止扫描
   stopBluetoothDevicesDiscovery() {
     my.stopBluetoothDevicesDiscovery({
-      success: res => {
+      success: (res) => {
         my.offBluetoothDeviceFound();
         my.alert({ content: '操作成功！' });
       },
-      fail: error => {
+      fail: (error) => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -179,7 +182,7 @@ Page({
   //获取正在连接中的设备
   getConnectedBluetoothDevices() {
     my.getConnectedBluetoothDevices({
-      success: res => {
+      success: (res) => {
         if (res.devices.length === 0) {
           my.alert({ content: '没有在连接中的设备！' });
           return;
@@ -189,7 +192,7 @@ Page({
           devid: res.devices[0].deviceId,
         });
       },
-      fail: error => {
+      fail: (error) => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -197,10 +200,10 @@ Page({
   //获取所有搜索到的设备
   getBluetoothDevices() {
     my.getBluetoothDevices({
-      success: res => {
+      success: (res) => {
         my.alert({ content: JSON.stringify(res) });
       },
-      fail: error => {
+      fail: (error) => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -214,10 +217,10 @@ Page({
   connectBLEDevice() {
     my.connectBLEDevice({
       deviceId: this.data.devid,
-      success: res => {
+      success: (res) => {
         my.alert({ content: '连接成功' });
       },
-      fail: error => {
+      fail: (error) => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -229,7 +232,7 @@ Page({
       success: () => {
         my.alert({ content: '断开连接成功！' });
       },
-      fail: error => {
+      fail: (error) => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -237,20 +240,20 @@ Page({
   //获取连接设备的server，必须要再连接状态状态之下才能获取
   getBLEDeviceServices() {
     my.getConnectedBluetoothDevices({
-      success: res => {
+      success: (res) => {
         if (res.devices.length === 0) {
           my.alert({ content: '没有已连接的设备' });
           return;
         }
         my.getBLEDeviceServices({
           deviceId: this.data.devid,
-          success: res => {
+          success: (res) => {
             my.alert({ content: JSON.stringify(res) });
             this.setData({
               serid: res.services[0].serviceId,
             });
           },
-          fail: error => {
+          fail: (error) => {
             my.alert({ content: JSON.stringify(error) });
           },
         });
@@ -260,7 +263,7 @@ Page({
   //获取连接设备的charid，必须要再连接状态状态之下才能获取（这里分别筛选出读写特征字）
   getBLEDeviceCharacteristics() {
     my.getConnectedBluetoothDevices({
-      success: res => {
+      success: (res) => {
         if (res.devices.length === 0) {
           my.alert({ content: '没有已连接的设备' });
           return;
@@ -271,14 +274,14 @@ Page({
         my.getBLEDeviceCharacteristics({
           deviceId: this.data.devid,
           serviceId: this.data.serid,
-          success: res => {
+          success: (res) => {
             my.alert({ content: JSON.stringify(res) });
             //特征字对象属性见文档，根据属性匹配读写特征字并记录，然后后面读写使用
             this.setData({
               charid: res.characteristics[0].characteristicId,
             });
           },
-          fail: error => {
+          fail: (error) => {
             my.alert({ content: JSON.stringify(error) });
           },
         });
@@ -288,7 +291,7 @@ Page({
   //读写数据
   readBLECharacteristicValue() {
     my.getConnectedBluetoothDevices({
-      success: res => {
+      success: (res) => {
         if (res.devices.length === 0) {
           my.alert({ content: '没有已连接的设备' });
           return;
@@ -303,10 +306,10 @@ Page({
           //1、安卓读取服务
           // serviceId:'0000180d-0000-1000-8000-00805f9b34fb',
           // characteristicId:'00002a38-0000-1000-8000-00805f9b34fb',
-          success: res => {
+          success: (res) => {
             my.alert({ content: JSON.stringify(res) });
           },
-          fail: error => {
+          fail: (error) => {
             my.alert({ content: '读取失败' + JSON.stringify(error) });
           },
         });
@@ -315,7 +318,7 @@ Page({
   },
   writeBLECharacteristicValue() {
     my.getConnectedBluetoothDevices({
-      success: res => {
+      success: (res) => {
         if (res.devices.length === 0) {
           my.alert({ content: '没有已连接的设备' });
           return;
@@ -331,10 +334,10 @@ Page({
           //serviceId:'0000180d-0000-1000-8000-00805f9b34fb',
           //characteristicId:'00002a39-0000-1000-8000-00805f9b34fb',
           value: 'ABCD',
-          success: res => {
+          success: (res) => {
             my.alert({ content: '写入数据成功！' });
           },
-          fail: error => {
+          fail: (error) => {
             my.alert({ content: JSON.stringify(error) });
           },
         });
@@ -343,7 +346,7 @@ Page({
   },
   notifyBLECharacteristicValueChange() {
     my.getConnectedBluetoothDevices({
-      success: res => {
+      success: (res) => {
         if (res.devices.length === 0) {
           my.alert({ content: '没有已连接的设备' });
           return;
@@ -363,7 +366,7 @@ Page({
             });
             my.alert({ content: '监听成功' });
           },
-          fail: error => {
+          fail: (error) => {
             my.alert({ content: '监听失败' + JSON.stringify(error) });
           },
         });
@@ -375,7 +378,9 @@ Page({
   },
   //其他事件
   bluetoothAdapterStateChange() {
-    my.onBluetoothAdapterStateChange(this.getBind('onBluetoothAdapterStateChange'));
+    my.onBluetoothAdapterStateChange(
+      this.getBind('onBluetoothAdapterStateChange')
+    );
   },
   onBluetoothAdapterStateChange(res) {
     if (res.error) {
@@ -385,7 +390,9 @@ Page({
     }
   },
   offBluetoothAdapterStateChange() {
-    my.offBluetoothAdapterStateChange(this.getBind('onBluetoothAdapterStateChange'));
+    my.offBluetoothAdapterStateChange(
+      this.getBind('onBluetoothAdapterStateChange')
+    );
   },
   getBind(name) {
     if (!this[`bind${name}`]) {
@@ -404,7 +411,9 @@ Page({
     }
   },
   offBLEConnectionStateChanged() {
-    my.offBLEConnectionStateChanged(this.getBind('onBLEConnectionStateChanged'));
+    my.offBLEConnectionStateChanged(
+      this.getBind('onBLEConnectionStateChanged')
+    );
   },
   onUnload() {
     this.offBLEConnectionStateChanged();
@@ -416,6 +425,7 @@ Page({
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -430,26 +440,26 @@ Object 类型，参数如下：
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| characteristics | Array | 设备特征值列。 |
+| **属性**        | **类型** | **描述**       |
+| --------------- | -------- | -------------- |
+| characteristics | Array    | 设备特征值列。 |
 
 #### Array characteristic
 
 蓝牙设备 characteristic （特征值）信息。
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| characteristicId | String | 蓝牙设备特征值的 UUID。 |
-| serviceId | String | 蓝牙设备特征值对应服务的 UUID。 |
-| value | Hex String | 蓝牙设备特征值对应的 16 进制值。 |
-| properties | Object | 该特征值支持的操作类型。 |
+| **属性**         | **类型**   | **描述**                         |
+| ---------------- | ---------- | -------------------------------- |
+| characteristicId | String     | 蓝牙设备特征值的 UUID。          |
+| serviceId        | String     | 蓝牙设备特征值对应服务的 UUID。  |
+| value            | Hex String | 蓝牙设备特征值对应的 16 进制值。 |
+| properties       | Object     | 该特征值支持的操作类型。         |
 
 #### Object properties
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| read | Boolean | 该特征值是否支持 read 操作。 |
-| write | Boolean | 该特征值是否支持 write 操作。 |
-| notify | Boolean | 该特征值是否支持 notify 操作。 |
-| indicate | Boolean | 该特征值是否支持 indicate 操作。 |
+| **属性** | **类型** | **描述**                         |
+| -------- | -------- | -------------------------------- |
+| read     | Boolean  | 该特征值是否支持 read 操作。     |
+| write    | Boolean  | 该特征值是否支持 write 操作。    |
+| notify   | Boolean  | 该特征值是否支持 notify 操作。   |
+| indicate | Boolean  | 该特征值是否支持 indicate 操作。 |
