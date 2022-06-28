@@ -35,8 +35,8 @@ Object 类型，参数如下：
 | --- | --- | --- | --- |
 | index | Number | 是 | 标签页的项数序号，最左边的为 0，往右顺次增大。 |
 | text | String | 是 | 标签页按钮上的文字。 |
-| iconPath | String | 否 | 图片路径，建议尺寸为 81px * 81px，支持 PNG/JPEG/JPG/GIF 图片格式，支持网络图片。 |
-| selectedIconPath | String | 否 | 选中时的图片路径，建议尺寸为 81px * 81px，支持 PNG/JPEG/JPG/GIF 图片格式，支持网络图片。 |
+| iconPath | String | 否 | 图片路径，建议尺寸为 81px * 81px，支持 PNG/JPEG/JPG/GIF 图片格式，支持网络图片。<br>对应 app.json 中 tabBar.items[index] 的 icon 属性。 |
+| selectedIconPath | String | 否 | 选中时的图片路径，建议尺寸为 81px * 81px，支持 PNG/JPEG/JPG/GIF 图片格式，支持网络图片。<br>对应 app.json 中 tabBar.items[index] 的 activeIcon 属性。 |
 | success | Function | 否 | 接口调用成功的回调函数。 |
 | fail | Function | 否 | 接口调用失败的回调函数。 |
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
