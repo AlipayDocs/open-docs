@@ -36,8 +36,9 @@ Page({
   onLoad() { },
   loadFontFace() {
     my.loadFontFace({
-      family: 'Bitstream Vera Serif Bold',
-      source: 'url("https://sungd.github.io/Pacifico.ttf")',
+      // 替换成要加载的字体和文件
+      family: 'Alibaba PuHuiTi',
+      source: 'url("https://gw.alipayobjects.com/os/bmw-prod/ddaac792-b682-4f39-9c7e-4bd6d7bda2f7.ttf")',
       success() {
         my.alert({
           title: 'loadfontface 成功!!!',
