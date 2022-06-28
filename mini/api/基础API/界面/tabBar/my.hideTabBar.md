@@ -1,5 +1,5 @@
 # 简介
-**my.hideTabBar** 隐藏 tabBar。
+**my.hideTabBar** 是隐藏 tabBar 的 API。
 
 ## 使用限制
 
@@ -34,13 +34,13 @@ Object 类型，参数如下：
 ## 错误码
 fail 回调会收到一个 Object 类型的参数，其 error 为错误码
 
-| **错误码** | **描述** | **解决方案** |
+| **错误码** | **错误消息** | **解决方案** |
 | --- | --- | --- |
-| 11 | 当前页面不带 tabBar  | 在正确的页面上调用此接口 |
+| 11 | 当前页面不在 tabBar 上。  | 报错原因为 app.json 中未配置 tabBar。请在配置以后再在 tabBar 页面中调用本接口。 |
 
 
-# 常见问题 FAQ
+# Bug & Tip
 
-// 待整理补充
+* `Bug` app.json 里已配置 tabBar 的情况下，在通过 my.nativeTo/my.redirectTo 到达的页面里，调用此 API 无回调。
 
-更多相关问题请参见 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
+更多 tabBar 相关问题可查看 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
