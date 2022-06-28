@@ -1,12 +1,15 @@
 # 简介
-**onPullDownRefresh** 是用于在 Page 中自定义 onPullDownRefresh 函数，可以监听该页面的下拉刷新事件。
+**onPullDownRefresh** 可以监听该页面的用户下拉刷新事件。
 
-调用 [my.startPullDownRefresh](https://opendocs.alipay.com/mini/api/ui-pulldown) 后触发下拉刷新动画，然后会触发 onPullDownRefresh 监听方法，效果与用户手动下拉刷新一致。但 **my.startPullDownRefresh** 不受 onPullDownRefresh 的 `allowsBounceVertical` 、`pullRefresh` 参数影响。
+需要在 app.json 的 window 选项中配置 `"allowsBounceVertical": "YES"`，并且在页面对应的 .json 文件中配置 `"pullRefresh": true`，当前页面才允许下拉刷新。
+
+可以调用 [my.startPullDownRefresh](https://opendocs.alipay.com/mini/api/ui-pulldown) 主动触发下拉刷新，调用后触发下拉刷新动画，效果与用户手动下拉刷新一致，可以触发 onPullDownRefresh 事件监听。但 **my.startPullDownRefresh** 不受 onPullDownRefresh 的 `allowsBounceVertical` 、`pullRefresh` 参数影响。
+
+调用 [my.stopPullDownRefresh](https://opendocs.alipay.com/mini/api/pmhkbb) 可以停止当前页面的下拉刷新。
 
 ## 使用限制
 
-- 需要在 app.json 的 window 选项中配置 `"allowsBounceVertical":"YES"`，在页面对应的 .json 配置文件中配置 `"pullRefresh":true` 选项，才可开启页面下拉刷新事件。
-- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
 
@@ -69,5 +72,10 @@ Page({
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| pullRefresh | Boolean | 否 | 是否允许下拉刷新。<br />Android 端默认值是 true，iOS 端默认值是 false。<br />**说明**：下拉刷新生效的前提是 allowsBounceVertical 值为 `YES` 。 |
+| pullRefresh | Boolean | 否 | 是否允许下拉刷新。<br />默认值是 false。<br />**说明**：下拉刷新生效的前提是 allowsBounceVertical 值为 `YES` 。 |
 | allowsBounceVertical | String | 否 | 页面是否支持纵向拽拉超出实际内容。默认 YES，支持 `YES`/`NO`。 |
+
+# 常见问题 FAQ
+
+## Q：为什么 onPullDownRefresh 回调不触发？
+A：需要在用户主动下拉刷新或者调用 my.startPullDownRefresh 后才会触发 onPullDownRefresh 回调，如果是用户主动下拉刷新，需要在 app.json 中设置 allowsBounceVertical: 'YES', 在页面的 json 文件中设置 pullRefresh: true。
