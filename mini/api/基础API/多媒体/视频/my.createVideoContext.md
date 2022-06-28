@@ -63,7 +63,7 @@ Page({
     // src 为要播放的视频资源地址，支持优酷视频编码（支付宝客户端 10.1.75）。
     // src 支持的协议如下：
     // 1. vid/showId: XMzg2Mzc5MzMwMA==
-    // 2. apFilePath: https://resource/xxx.video
+    // 2. tempFilePath (本地缓存文件): https://resource/xxx.video
     src: "XNDM0OTQzMDc2OA==",
   },
   onLoad() {
@@ -97,6 +97,20 @@ Page({
   },
 });
 ```
+特别的，tempFilePath ([本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)) 可以通过 [my.chooseVideo](https://opendocs.alipay.com/mini/api/media/video/my.choosevideo) 接口选取视频获得，例如：
+```js
+my.chooseVideo({
+  sourceType: ["album", "camera"],
+  maxDuration: 30,
+  camera: "back",
+  compressed: false,
+  success: (res) => {
+    // 该路径可用来播放视频
+    const videoPath = res.tempFilePath;
+    console.log(`videoPath = ${videoPath}`)
+  },
+})
+```
 
 ## videoContext 方法列表
 | **方法** | **参数** | **类型** | **描述** |
@@ -126,7 +140,7 @@ Page({
 | 1008 | 网络错误。 | 检查网络。 |
 | 1009 | 搜索视频出错（源出错的一种）。 | 检查源。 |
 | 1010 | 准备超时，也可认为是网络太慢或数据源太慢导致的播放失败。 | 检查是否因网络或数据原因导致的超时错误。 |
-| 1023 | 播放中内部错误（FFmpeg 内错误）。 | 检查资源是否符合标准。 |
+| 1023 | 播放中内部错误（FFmpeg 错误）。 | 检查资源是否符合标准，具体可参考本文中的“支持格式”小节。|
 | 2004 | 播放过程中加载时间超时。 | 检查并重试。 |
 | 3001 | audio 渲染出错。 | 检查音频资源是否符合标准。 |
 | 3002 | 硬解码错误。 | 检查设备的硬解码功能是否正常。 |
