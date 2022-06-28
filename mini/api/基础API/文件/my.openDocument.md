@@ -56,7 +56,7 @@ Object 类型，属性如下：
 
 # Bug & Tips
 
-- 当前 Android 客户端中 my.openDocument 打开 PDF 预览不支持含有图片图层重叠的 PDF 显示，可以直接使用图片形式的 PDF。
+- Android：暂不支持显示 PDF 的签名。
 - iOS: 10.2.60之前的版本不支持[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)。
 - Android: 10.2.60之前的版本不支持[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。
 - iOS: 通过[my.downloadFile](https://opendocs.alipay.com/mini/api/xr054r)获取的本地临时文件路径可能因为下载的文件头信息设置不规范进而打开失败(由于系统原因)。可通过将本地临时文件保存为本地用户文件（指定`filePath`值带`pdf`后缀）来规避，例如：
