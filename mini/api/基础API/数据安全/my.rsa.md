@@ -122,7 +122,7 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | action | String | 是 | 使用 RSA 加密还是 RSA 解密。可选值为：<br /><ul><li> encrypt：加密。</li><li>decrypt：解密。</li></ul>|
-| text | String | 是 | 要处理的文本，加密为原始文本，解密为 Base64 编码格式文本。 |
+| text | String | 是 | 加密时传入待加密的明文，解密时传入待解密的密文。 |
 | key | String | 是 | RSA 密钥。<br />加密使用公钥，解密使用私钥。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
@@ -133,7 +133,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| text | String | 经过处理过后得到的文本，加密为 Base64编码文本，解密为原始文本。 |
+| text | String | 加密时返回加密后的密文，解密时返回解密后的明文。 |
 
 ### Function fail
 fail 回调函数会携带一个 Object 类型的对象，其属性如下：
