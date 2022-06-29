@@ -1,13 +1,13 @@
 # 简介
-**my.getRunData** 是获取用户一个自然天内的运动步数信息的 API。详情可查看 [运动数据](https://opendocs.alipay.com/mini/introduce/rundata) 能力介绍。
+**my.getRunData** 是获取用户一个自然天内的运动步数信息的 API。目前只支持查询最近 30 天内的运动数据，若超过 30 天，则返回的步数信息为 0。
 
-调用本 API 时无需再接入授权 API，系统将自动会检查用户是否已授权。若用户尚未授权，则会弹出授权框；用户同意授权后，可获取到返回的加密数据。 然后在服务端结合签名算法和 AES 密钥进行解密，获取运动数据，方法可查看 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
+在开放平台控制台 > 开发设置中配置 **接口内容加密方式** 后，my.getRunData 可获取到加密后的运动数据。开通 [运动数据](https://opendocs.alipay.com/mini/introduce/rundata) 能力并申请用户信息后，在服务端结合签名算法和 AES 密钥对加密后的运动数据进行解密，方法可查看 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
+
+IDE 模拟器暂不支持调试，请以真机调试结果为准。
 
 ## 使用限制
 
-- 目前只支持查询最近 30 天内的运动数据，若超过 30 天，则返回的步数信息为 0。
 - 基础库 [1.17.1](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
@@ -18,7 +18,8 @@
 ```javascript
 // .js
 my.getRunData({
-  countDate: '2018-12-19',
+  // 替换为最近三十天内的日期
+  countDate: '2022-06-27',
   fail: (res) => {
     console.log('get pedometer encrypted fail:'+JSON.stringify(res))
   },
@@ -26,6 +27,7 @@ my.getRunData({
     let that = this;
     console.log('get pedometer encrypted success:'+JSON.stringify(res))
     my.request({
+      // 替换为开发者自己的服务端接口进行解密
       url: 'http://www.telmo.cn/gateway/decrypt',
       data: {
         encryptContent: res.response
@@ -117,13 +119,16 @@ Object 类型，参数如下：
 
 # 常见问题 FAQ
 
-## Q：安卓系统下的用户在未开启 my.getRunData 时，调用这个方法为何报错：SYNC getAPPInfo do not execute callback？
-A：这是已知问题，会在基础库 **1.23.0** 版本修复，原因是同步 API 容器底层偶现异常导致，具体发布信息可查看 [基础库更新日志](https://opendocs.alipay.com/mini/ide/framework-changelog)。
-
-## Q：调用 my.getRunData 运动数据为何报错缺少加密配置？
+## Q：调用 my.getRunData 为何报错缺少加密配置？
 A：未配置开放平台 AES 密钥导致的报错。
 
 - 登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置 AES 密钥的应用，点击进入应用详情页 > **设置** > **开发设置** 页面配置 AES 密钥。
 - 还可在开放平台控制台 **账户中心** > **密钥管理** > **开放平台密钥** > [接口内容加密方式](https://openhome.alipay.com/dev/workspace/key-manage) 找到需配置 AES 加密方式的应用，点击 **设置** 进行配置。
 
 两个入口选择其一即可完成配置，详细说明请 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
+
+## Q：服务端解密 my.getRunData 获取的运动数据为何报错 ISV权限不足？
+A：登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > 能力管理 > 搜索运动数据 > 点击 **用户信息申请** > 申请 my.queryStepDailyCount 权限。
+
+![运动数据](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*9BfURadvtPUAAAAAAAAAAAAAARQnAQ)
+![用户信息申请](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*-PA8QLoNqPQAAAAAAAAAAAAAARQnAQ)
