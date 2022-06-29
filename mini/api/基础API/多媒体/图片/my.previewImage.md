@@ -16,68 +16,15 @@
 
 ## 示例代码
 
-### .json 示例代码
-```json
-{
-    "defaultTitle": "图片"
-}
-```
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/API/image/image.axml -->
-<view class="page">
-  <view class="page-section">
-    <view class="page-section-btns">
-      <view onTap="chooseImage">选择照片</view>
-      <view onTap="previewImage">预览照片</view>
-      <view onTap="saveImage">保存照片</view>
-    </view>
-  </view>
-</view>
-```
-
 ### .js 示例代码
 ```javascript
-// API-DEMO page/API/image/image.js
-Page({
-  chooseImage() {
-    my.chooseImage({
-      sourceType: ['camera','album'],
-      count: 2,
-      success: (res) => {
-        my.alert({
-          content: JSON.stringify(res),
-        });
-      },
-      fail:()=>{
-        my.showToast({
-          content: 'fail', // 文字内容
-        });
-      }
-    })
-  },
-  previewImage() {
-    my.previewImage({
-      current: 2,
-      urls: [
-        'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
-        'https://img.alicdn.com/tps/TB1pfG4IFXXXXc6XXXXXXXXXXXX.jpg',
-        'https://img.alicdn.com/tps/TB1h9xxIFXXXXbKXXXXXXXXXXXX.jpg'
-      ],
-    });
-  },
-  saveImage() {
-    my.saveImage({
-      url: 'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
-      showActionSheet: true,
-      success: () => {
-        my.alert({
-          title: '保存成功',
-        });
-      },
-    });
-  }
+my.previewImage({
+  current: 2,
+  urls: [
+    'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
+    'https://img.alicdn.com/tps/TB1pfG4IFXXXXc6XXXXXXXXXXXX.jpg',
+    'https://img.alicdn.com/tps/TB1h9xxIFXXXXbKXXXXXXXXXXXX.jpg'
+  ],
 });
 ```
 
@@ -86,7 +33,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| urls | Array | 是 | 要预览的图片地址。<br />支持网络url、[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)、[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)，暂不支持[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 |
+| urls | Array | 是 | 要预览的图片地址。<br />支持网络url、[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)、[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)，暂不支持[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 <br /> 注: iOS 10.2.70 开始支持[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 |
 | current | Number | 否 | 当前显示图片索引，默认值为 0，即 urls 中的第一张图片。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
