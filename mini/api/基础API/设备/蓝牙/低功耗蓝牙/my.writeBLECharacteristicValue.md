@@ -65,11 +65,9 @@ Object 类型，参数如下：
 
 ## 如何获取写入的结果？如何确定写入是否成功？
 
-该 API 的 success 回调的第一个参数是不带写入的数据的，仅代表向设备发送该请求成功。
+可以通过 [`my.onBLECharacteristicValueChange`](https://opendocs.alipay.com/mini/api/cdu501) 来监听设备上值的变化。可以通过 [`my.offBLECharacteristicValueChange`](https://opendocs.alipay.com/mini/api/dlxobk) 来取消监听。
 
-可以通过 `my.onBLECharacteristicValueChange` 来监听设备上值的变化。可以通过 `my.offBLECharacteristicValueChange` 来取消监听。
-
-在开启监听之后，当特征值有变化时会自动回调该函数。
+该 API 的 success 回调的第一个参数是不带写入的数据的，仅代表向设备发送该请求成功。可在 success 回调中主动调用 [`my.readBLECharacteristicValue`](https://opendocs.alipay.com/mini/api/zro0ka)。调用后在 [`my.onBLECharacteristicValueChange`](https://opendocs.alipay.com/mini/api/cdu501) 事件中接收数据返回。
 
 ## 小程序发送写入请求成功后机器没有收到写入值？
 
