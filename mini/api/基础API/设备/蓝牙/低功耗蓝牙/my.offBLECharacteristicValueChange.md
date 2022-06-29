@@ -45,7 +45,7 @@ Function 类型。callback 回调函数入参为 Object 类型，属性如下：
 
 | **属性**         | **类型**   | **描述**                         |
 | ---------------- | ---------- | -------------------------------- |
-| deviceId         | String     | 蓝牙设备 ID，参考 device 对象。  |
+| deviceId         | String     | 蓝牙设备 ID。Android 上为设备 MAC 地址，iOS 上为设备 UUID。  |
 | serviceId        | String     | 蓝牙特征值对应 service 的 UUID。 |
 | characteristicId | String     | 蓝牙特征值的 UUID。              |
 | value            | Hex String | 特征值最新的 16 进制值。         |

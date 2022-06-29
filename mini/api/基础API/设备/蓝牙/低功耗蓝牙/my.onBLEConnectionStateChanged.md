@@ -431,5 +431,5 @@ Function 类型。callback 回调函数入参为 Object 类型，属性如下：
 
 | **属性**  | **类型** | **描述**                        |
 | --------- | -------- | ------------------------------- |
-| deviceId  | String   | 蓝牙设备 ID，参考 device 对象。 |
+| deviceId  | String   | 蓝牙设备 ID。Android 上为设备 MAC 地址，iOS 上为设备 UUID。 |
 | connected | Boolean  | 连接目前的状态。                |
