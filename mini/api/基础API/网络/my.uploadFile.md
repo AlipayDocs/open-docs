@@ -119,7 +119,7 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | url | String | 是 | 开发者服务器地址。 |
-| filePath | String | 是 | 要上传文件资源的本地路径。 |
+| filePath | String | 是 | 要上传文件资源的本地路径([本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6))。 <br /> 注：10.2.70 开始支持 [本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)、[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 |
 | fileName | String | 是 | 文件名，即对应的 key，开发者在服务器端通过这个 key 可以获取到文件二进制内容。 |
 | fileType | String | 是 | 文件类型支持图片、视频、音频，对应的值分别为 "image"、"video"、"audio"。 |
 | hideLoading | Bool | 否 | 是否隐藏 loading 图（默认值为 false）。 |
@@ -163,7 +163,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
             <ul>
                 <li>配置请求白名单，请预先登录 <a href="https://open.alipay.com/dev/workspace">开放平台控制台</a> > 点击要配置的小程序，进入小程序详情页 > <b>设置</b> > <b>开发设置</b> > <b>服务器域名白名单</b> 中配置域名白名单。域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。</li>
                 <li>若是账号问题，不能登录管理后台配置，开发版测试可以先在 IDE 右上角点击 <b>详情</b> > <b>域名信息</b> 下勾选 <b>忽略 request 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>或 <b>忽略 Webview 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>，再预览调试请求。</li>
-                <li>建议做下兼容，不要使用 my.saveFile 保存文件后返回的 apFilePath 作为上传 filePath 的入参。</li>
+                <li>建议做下兼容，不要使用 my.saveFile 保存文件后返回的 apFilePath 作为上传 filePath 的入参。注：10.2.70 开始支持。</li>
             </ul>
         </td>
     </tr>
@@ -178,7 +178,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
     <tr>
         <td rowspan="2">11</td>
         <td>not have permission to upload</td>
-        <td>出于安全策略，不能使用 my.saveFile 保存文件后返回的 apFilePath 作为上传 filePath 的入参。</td>
+        <td>出于安全策略，不能使用 my.saveFile 保存文件后返回的 apFilePath 作为上传 filePath 的入参。 注：10.2.70 开始支持。</td>
     </tr>
     <tr>
         <td>文件不存在</td>
