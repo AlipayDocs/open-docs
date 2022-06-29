@@ -1,6 +1,10 @@
 
 # 简介
-开启小程序页面返回询问对话框。<br />调用后，用户点击页面左上角返回按钮时，会出现如下对话框：<br />![enable.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1651127749522-3f26bd66-5891-4368-91dd-8cdbf2ccd36b.png#align=left&display=inline&height=107&margin=%5Bobject%20Object%5D&name=enable.png&originHeight=303&originWidth=849&size=26032&status=done&style=stroke&width=300)
+开启小程序页面返回询问对话框。
+
+调用后，用户点击页面左上角返回按钮或使用手机返回键和返回手势尝试关闭小程序页面时，会出现如下对话框：
+
+![enable.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1651127749522-3f26bd66-5891-4368-91dd-8cdbf2ccd36b.png#align=left&display=inline&height=107&margin=%5Bobject%20Object%5D&name=enable.png&originHeight=303&originWidth=849&size=26032&status=done&style=stroke&width=300)
 
 ## 使用限制
 
@@ -8,6 +12,7 @@
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 - 不支持小程序插件内使用。
 - 不支持在小程序首页调用。
+- 用户通过 Home 键或右上角胶囊按钮的“×”退出小程序时不会触发询问对话框。
 - 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 
 # 接口调用
