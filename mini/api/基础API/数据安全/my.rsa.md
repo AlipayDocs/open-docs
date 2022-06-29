@@ -3,7 +3,7 @@
 
 请在小程序运行环境使用公钥进行加密，在服务端使用私钥进行解密。私钥请保存在服务端（若私钥放在客户端，容易泄露而导致安全问题）。
 
-使用 [支付宝开放平台开发助手](https://opendocs.alipay.com/common/02kipl) 生成密钥。
+可使用 [支付宝开放平台开发助手](https://opendocs.alipay.com/common/02kipl) 生成密钥。
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
@@ -62,11 +62,11 @@ Page({
 	/**
 	* 测试用例
 	*/
-	//密钥需要注意的是生成密钥时选择格式：PKCS8(java适用)      
+	// 密钥需要注意的是生成密钥时选择格式：PKCS8(java适用)      
 	static String privateKey="MIICcwIBADANBgkqhkiG9w0BAQEFAASCAl0wggJZAgEAAoGBAJ7UdweIrNol3OI/Cu2aVbvaBoPH7QOWFoamFVTBaSaW9Yd3qa15WuvsazkIdp/xj1clt+SgcfxoRameGT2FgfL4m5A9iNgCCQrohWljr22dGt2tXjb4NE8lLAOp8quoFtg1ij1101LI7+6LFgk8shXB2tFMxS7X2h5JIhUC8BNZAgMBAAECf2W/toEdDZ6yos5NlLKiLEorYgEKEsw5WjToMMIbJUGTc7dU8V4wYA7DZe0jftr35NvvTd8o6dzI79e5cHH5FUWKXqEldMqeTzFfPLPgyAaevxDvyBO3Z6mCkIA1ptNLfj47JTdpabc2al6qFZfJfOro+ufT/aIE1pWoLF/GARECQQD2rLyhBiRZfFf9bnUAWaG3RNE5i7Ef7t64DBZO9frZe660a8Xk8Yxzi7KMviq9aIY6LgsV1Ake2W97CcbGNtBrAkEApNWV7YwqLRM8yBO3VIflzsbtuk3RjicwjxzJzkLhR91xvWQDLx50L7kt0e1SNcuVJw3Xr0yGfPNAw4vE9FQMSwJAewyn+9tIfqscaXuUOdx8YyOdCwu4C6nox/6fkjv6KkscVzv7t70WxvzE0Jh8UYe2jYcyWG0xL4Zfqgyyb2YgiQJAKxltyl8L6B1Pl0EQfpnKDPcW0c/nKzQ0DjeIzNXP8eqFAvBTpM5hstjIkktrY4WHyl5kNwHbaHByTq8NIJWZYQJASWfwM30dJ5YAVq3ZMYkY0AeyQuJptdW4m3UJZWb2HyNU/KfPnGJ+OEO2A7XaFeRfO177RUvCqiwPAL4Y4pFvdw==";    
-	//加密算法RSA    
+	// 加密算法RSA    
 	public static final String KEY_ALGORITHM = "RSA";//使用默认的算法      
-	//RSA最大解密密文大小  ; 需要注意，如果用的是2048位密钥，这里需要改为256 ; 1024密钥是 128 
+	// RSA最大解密密文大小; 需要注意，如果用的是2048位密钥，这里需要改为256; 1024密钥是 128 
 	private static final int MAX_DECRYPT_BLOCK = 256/2;
 	public static void main(String[] args) throws Exception {    
 		test(); 
@@ -121,8 +121,8 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| action | String | 是 | 使用 RSA 加密还是 RSA 解密。可选值为：<br /><ul><li> encrypt：加密。</li><li>decrypt：解密。</li></ul>|
-| text | String | 是 | 加密时传入待加密的明文，解密时传入待解密的密文。 |
+| action | String | 是 | 使用 RSA 加密还是 RSA 解密。可选值为：<br /><ul><li> encrypt：加密。</li><li>decrypt：解密。</li></ul> |
+| text | String | 是 | 算法输入。加密时传入明文，解密时传入密文（base64编码）。 |
 | key | String | 是 | RSA 密钥。<br />加密使用公钥，解密使用私钥。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
@@ -133,7 +133,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| text | String | 加密时返回加密后的密文，解密时返回解密后的明文。 |
+| text | String | 算法输出。加密时得到密文（base64编码），解密时得到明文。 |
 
 ### Function fail
 fail 回调函数会携带一个 Object 类型的对象，其属性如下：
