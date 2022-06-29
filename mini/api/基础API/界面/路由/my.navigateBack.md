@@ -1,7 +1,7 @@
 # 简介
-**my.navigateBack** 是关闭当前页面，返回上一级或多级页面的 API。可通过 [Page.getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 获取当前的页面栈信息，决定需要返回几层。
+**my.navigateBack** 是关闭当前页面，返回上一级或多级页面的 API。
 
-相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/api/fu8l65) 。
+可通过 [getCurrentPages()](https://opendocs.alipay.com/mini/framework/getcurrentpages) 获取当前的页面栈信息，决定需要返回几层。
 
 
 ## 使用限制
@@ -14,41 +14,9 @@
 
 ## 示例代码
 
-### .json 示例代码
-```json
-{
-  "defaultTitle": "Navigator"
-}
-```
-
-### .axml 示例代码
-当前页面的 .axml 示例代码：
-```html
-<!-- navigateBack.axml-->
-<view class="page">
-  <view class="page-section">
-    <button type="primary" onTap="navigateBack">返回上一页</button>
-    <button type="primary" onTap="navigateBackDelta">返回上一页的上一页</button>
-  </view>
-</view>
-```
-上一级页面的 .axml 示例代码：
-```html
-<!-- navigateTo.axml-->
-<view class="page">
-  <view class="page-section">
-    <button type="primary" onTap="navigateTo">跳转新页面</button>
-    <button type="primary" onTap="redirectTo">在当前页面打开新页面</button>
-    <button type="primary" onTap="switchTab">跳转到“我的”</button>
-    <button type="primary" onTap="reLaunch">重新打开</button>
-  </view>
-</view>
-```
-
 ### .js 示例代码
 当前页面的 .js 示例代码：
 ```javascript
-// navigateBack.js
 Page({
   navigateBack() {
     my.navigateBack() // 返回上一页
@@ -58,41 +26,23 @@ Page({
   }
 })
 ```
-上一级页面的 .js 示例代码：
-```javascript
-// navigateTo.js
-Page({
-  navigateTo() {
-    my.navigateTo({ url: './back' })
-  },
-  redirectTo() {
-    my.redirectTo({ url: './back' })
-  },
-  reLaunch() {
-    my.reLaunch({
-      url: '/demo/my',
-    })
-  },
-  switchTab() {
-    my.switchTab({
-        url: '/demo/my',
-        success: () => {
-          my.showToast({
-            content: '成功',
-            type: 'success',
-            duration: 4000
-          });
-        }
-      }
-    );
-  },
-})
-```
 
 ## 入参
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| delta | Number | 否 | 返回的页面数，如果 delta 大于现有打开的页面数，则返回到首页。默认值为 1。 |
+| delta | Number | 否 | 回退的页面数。默认值为 1。如果 delta 大于等于打开的页面栈深度，则返回到栈底页面。 |
+| success | Function | 否 | 调用成功的回调函数。 |
+| fail | Function | 否 | 调用失败的回调函数。 |
+| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+
+## Function fail
+fail 回调会收到一个 Object 类型的参数，其 error 属性为出错信息：
+
+| **error** | **说明** | **解决方案** |
+| --- | --- | --- |
+| "already top of navigation" | 当前页面栈的深度为 1，无法再回退 | 避免在最后一个页面上调用。可使用 [getCurrentPages()](https://opendocs.alipay.com/mini/framework/getcurrentpages) 获取当前页面栈深度，提前判断。 |
+
+
 
 # 常见问题 FAQ
 
@@ -146,3 +96,5 @@ A：暂不提供 API 层面的支持。开发者可以自行实现间接传值�
 
 ## Q：能否使用 my.navigateBack 退出小程序？
 A：my.navigateBack 不能退出小程序，在最后一个页面调用会触发 fail 回调。退出小程序请使用 [my.exitMiniProgram](https://opendocs.alipay.com/mini/api/my.exitMiniProgram)（请注意该 API 的调用要由用户主动触发才能成功）。
+
+更多相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/api/fu8l65) 。
