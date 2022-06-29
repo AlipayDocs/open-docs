@@ -2,16 +2,11 @@
 # 简介
 **my.loadFontFace** 是动态加载网络字体的 API。
 
-## 使用限制
+目前支持 woff，otf，ttf，sfnt 字体，字体文件地址必须是 https 协议。
 
-- 文件地址需为下载类型。
-- iOS 仅支持 HTTPS 格式文件地址。
-- 支付宝小程序目前只支持 woff，otf，ttf，sfnt 字体。
+## 使用限制
 - 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 支付宝小程序不支持 woff2 字体，原因是：
-   - 相对其他格式字体，对内存占用较高。
-   - 此字体支持对于内核 so size 有较大负担，目前支付宝使用的 u4 内核 3.0 将 woff2 格式支持给裁剪了，导致无法正常显示， 建议使用其他格式。
 
 # 接口调用
 
@@ -29,8 +24,19 @@
         loadFontFace
       </button>
     </view>
+    <view class="custom-web-font">
+      自定义字体
+    </view>
   </view>
 </view>
+```
+
+### .acss 示例代码
+```css
+.custom-web-font {
+  font-family: 'My Font';
+  font-size: 40px;
+}
 ```
 
 ### .js 示例代码
@@ -41,8 +47,9 @@ Page({
   onLoad() { },
   loadFontFace() {
     my.loadFontFace({
-      family: 'Bitstream Vera Serif Bold',
-      source: 'url("https://sungd.github.io/Pacifico.ttf")',
+      // 替换成自定义的字体和文件
+      family: 'My Font',
+      source: 'url("https://gw.alipayobjects.com/os/bmw-prod/b558eecf-5d4f-4481-9e61-ad6fd241857a.ttf")',
       success() {
         my.alert({
           title: 'loadfontface 成功!!!',
@@ -63,7 +70,7 @@ Page({
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| global | Boolean | 否 | 是否全局生效。<br/>默认值 `false`。</br>[2.7.15](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)开始支持。 |
+| global | Boolean | 否 | 是否全局生效。<br/>默认值 `false`。</br>[2.7.15](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
 | family | String | 是 | 字体名称。 |
 | source | String | 是 | 字体资源地址。 |
 | desc | Object | 否 | 字体描述符。 |
@@ -79,3 +86,25 @@ Page({
 | weight | String | 否 | 字体粗细，默认值为 normal，可选值为 normal / bold / 100 / 200../ 900。 |
 | variant | String | 否 | 设置小型大写字母的字体显示文本，默认值为 normal，可选值为 normal / small-caps / inherit。 |
 
+### Function success
+
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| status | String | 加载字体结果。loaded 表示加载成功，error 表示加载失败 |
+
+## 错误码
+
+| **错误码** | **描述** | **解决方案** |
+| --- | --- | --- |
+| 10 | 加载失败 | 检查字体文件是否为可下载的 https 链接 |
+
+
+# 常见问题 FAQ
+
+## Q：my.loadfontface 支持加载 woff2 字体吗？
+A：支付宝小程序不支持 woff2 字体。相对其他格式字体，woff2 字体内存占用较高，建议使用其他格式。
+
+## Q：my.loadfontface 下载的字体只在当前页面生效吗？
+A：my.loadfontface 只会在当前页面加载对应字体文件，如果需要在多个页面加载字体，请分别在进入页面时加载字体文件。
