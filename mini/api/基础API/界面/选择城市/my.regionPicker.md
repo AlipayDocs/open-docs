@@ -19,36 +19,33 @@ Page({
       mergeOptions: {
         // 新增
         add: [{
-          "id": "x100",
-          "name": "新省",
-          "nextId": "340000",
-          "subList": [{
-            "name": "新市",
-            "id": "x110",
-            "subList": [{
-              "name": "新区",
-              "id": "x111"
-            }]
+          pid: '340000',
+          id: 'x1',
+          name: '新市',
+          nextId: '340800',
+          subList: [{
+            name: '新区',
+            id: 'x11',
           }]
         }],
         // 删除
         remove: [{
-          "id": "330000"
+          id: '330000'
         }],
         // 更新
         update: [{
-          "id": "110000",
-          "name": "北京",
-          "subList": [{
-            "name": "北京市",
-            "id": "110100",
-            "subList": [{
-              "name": "东城区",
-              "id": "110101"
+          id: '110000',
+          name: '北京',
+          subList: [{
+            name: '北京市',
+            id: '110100',
+            subList: [{
+              name: '东城区',
+              id: '110101'
             }]
           }]
         }],
-        selectedItem: ["广东", "深圳", "福田区"],
+        selectedItem: ['广东', '深圳', '福田区'],
       },
       success: (res) => {
         my.alert({
@@ -110,9 +107,10 @@ Object 类型，参数如下：
 #### Array add
 | **参数** | **类型** | **描述** |
 | --- | --- | --- |
+| pid | String | 增加对象的父对象的 ID，新增省份对象时无需此参数。可通过 my.regionPicker 回调参数里 code 字段获得 |
 | id | String | 增加对象的 ID。 |
 | name | String | 增加对象的名称。 |
-| nextId | String | 插入点之后的对象 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
+| nextId | String | 增加对象之后的对象 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
 | subList | Array | 对象下辖的完整的市和区信息。<br />示例：<br />"subList": [{<br />&nbsp;&nbsp;"name": "北京市",<br />&nbsp;&nbsp;"id": "110100",<br />&nbsp;&nbsp;"subList": [{<br />&nbsp;&nbsp;&nbsp;&nbsp;"name": "东城区",<br />&nbsp;&nbsp;&nbsp;&nbsp;"id": "110101"<br />&nbsp;&nbsp;}],······<br/>}] |
 
 
