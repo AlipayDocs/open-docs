@@ -94,7 +94,7 @@ Page({
 | --- | --- | --- | --- |
 | delta | Number | 否 | 返回的页面数，如果 delta 大于现有打开的页面数，则返回到首页。默认值为 1。 |
 
-## 常见问题 FAQ
+# 常见问题 FAQ
 
 ## Q：使用 my.navigateBack 返回以后，到达的页面如何刷新？小程序是否可以监听返回按钮点击或页面返回事件？
 A：使用 my.navigateBack 返回所到达的页面并不会自动刷新。当前页面可以监听到导航返回按钮（以及 Android 系统返回键）被点击，但不支持监听左滑手势、API 调用等其他方式导致的返回。无论哪种方式，返回所到达的页面均会触发 [onShow](https://opendocs.alipay.com/mini/framework/page-detail#onShow()) 生命周期事件，故可利用这一点在其中添加必要的处理。注意 onShow 并不一定是返回导致的，需要自行判断，一种实现方式如下：
