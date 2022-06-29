@@ -16,49 +16,33 @@
 
 ## 示例代码
 
-### .axml 示例代码
-```html
-<!-- API-DEMO page/API/get-image-info/get-image-info.axml-->
-<view class="page">
-  <view class="page-description">获取图片信息 API</view>
-  <view class="page-section">
-    <view class="page-section-title">my.getImageInfo</view>
-    <view class="page-section-demo">
-      <image src="{{src}}" onError="imageError" onLoad="imageLoad" />
-      <button type="primary" onTap="getImageInfo">获取图片信息</button>
-    </view>
-  </view>
-</view>
-```
-
 ### .js 示例代码
 ```javascript
-// .js
-//网络图片路径
+// 网络图片路径
 my.getImageInfo({
-      src:'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
-      success:(res)=>{
-        console.log(JSON.stringify(res))
-      }
-    })
-//apFilePath
+  src:'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
+  success:(res)=>{
+    console.log(JSON.stringify(res))
+  }
+})
+// 本地临时文件
 my.chooseImage({
-      success: (res) => {
-        my.getImageInfo({
-          src:res.apFilePaths[0],
-          success:(res)=>{
-            console.log(JSON.stringify(res))
-          }
-        })
-      },
-    })
-//相对路径
-my.getImageInfo({
-      src:'image/api.png',
+  success: (res) => {
+    my.getImageInfo({
+      src:res.apFilePaths[0],
       success:(res)=>{
         console.log(JSON.stringify(res))
       }
     })
+  },
+})
+// 包文件路径
+my.getImageInfo({
+  src:'image/api.png',
+  success:(res)=>{
+    console.log(JSON.stringify(res))
+  }
+})
 ```
 
 ## 入参
@@ -66,7 +50,7 @@ Object 类型，属性如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| src | String | 是 | 图片路径，支持网络图片路径、[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)、[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)、[包文件路径](https://opendocs.alipay.com/mini/03dt4s#%E4%BB%A3%E7%A0%81%E5%8C%85%E6%96%87%E4%BB%B6)，暂不支持 [本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 |
+| src | String | 是 | 图片路径，支持网络图片路径、[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)、[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)、[包文件路径](https://opendocs.alipay.com/mini/03dt4s#%E4%BB%A3%E7%A0%81%E5%8C%85%E6%96%87%E4%BB%B6)，暂不支持 [本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。<br /> 注: iOS 10.2.70 开始支持[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
