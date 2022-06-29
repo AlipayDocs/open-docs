@@ -1,9 +1,7 @@
 # 简介
 **my.getRunData** 是获取用户一个自然天内的运动步数信息的 API。目前只支持查询最近 30 天内的运动数据，若超过 30 天，则返回的步数信息为 0。
 
-my.getRunData 可获取到加密后的运动数据。
-
-解密运动数据需要配置 AES 密钥。登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置 AES 密钥的应用，点击进入应用详情页 > **设置** > **开发设置** 页面配置 AES 密钥。配置完密钥后需要在服务端结合签名算法和 AES 密钥进行解密，方法可查看 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
+在开放平台控制台 > 开发设置中配置 **接口内容加密方式** 后，my.getRunData 可获取到加密后的运动数据，然后在服务端结合签名算法和 AES 密钥进行解密，方法可查看 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
 
 服务端解密运动数据需要开通 [运动数据](https://opendocs.alipay.com/mini/introduce/rundata) 能力并申请用户信息。更多信息。
 
@@ -131,7 +129,7 @@ A：未配置开放平台 AES 密钥导致的报错。
 
 两个入口选择其一即可完成配置，详细说明请 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
 
-## Q：服务端调用 openapi 解密 my.getRunData 获取的运动数据为何报错 ISV权限不足？
+## Q：服务端解密 my.getRunData 获取的运动数据为何报错 ISV权限不足？
 A：登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > 能力管理 > 搜索运动数据 > 点击 **用户信息申请** > 申请 my.queryStepDailyCount 权限。
 
 ![运动数据](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*9BfURadvtPUAAAAAAAAAAAAAARQnAQ)
