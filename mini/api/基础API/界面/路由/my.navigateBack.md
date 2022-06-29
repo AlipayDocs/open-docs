@@ -145,4 +145,4 @@ Page({
 A：不提供 API 层面的支持。开发者可以自行实现间接传值，参考上一条问题答案中的示例代码。
 
 ## Q：能否使用 my.navigateBack 退出小程序？
-A：my.navigateBack 不能退出小程序，在最后一个页面调用会触发 fail 回调。退出小程序请使用 [my.exitMiniProgram]((https://opendocs.alipay.com/mini/api/my.exitMiniProgram))（请注意此 API 的调用需要由用户触发）。
+A：my.navigateBack 不能退出小程序，在最后一个页面调用会触发 fail 回调。退出小程序请使用 [my.exitMiniProgram](https://opendocs.alipay.com/mini/api/my.exitMiniProgram)（请注意此 API 的调用需要由用户触发）。
