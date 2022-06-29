@@ -1,8 +1,8 @@
 
 # 简介
-**my.loadFontFace** 是动态加载网络字体的 API。字体文件地址需为下载类型，并且字体文件地址必须是 https 协议。
+**my.loadFontFace** 是动态加载网络字体的 API。
 
-目前支持 woff，otf，ttf，sfnt 字体。
+目前支持 woff，otf，ttf，sfnt 字体，字体文件地址必须是 https 协议。
 
 ## 使用限制
 - 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
@@ -24,8 +24,19 @@
         loadFontFace
       </button>
     </view>
+    <view class="custom-web-font">
+      自定义字体
+    </view>
   </view>
 </view>
+```
+
+### .acss 示例代码
+```css
+.custom-web-font {
+  font-family: 'My Font';
+  font-size: 40px;
+}
 ```
 
 ### .js 示例代码
@@ -36,9 +47,9 @@ Page({
   onLoad() { },
   loadFontFace() {
     my.loadFontFace({
-      // 替换成要加载的字体和文件
-      family: 'Alibaba PuHuiTi',
-      source: 'url("https://gw.alipayobjects.com/os/bmw-prod/ddaac792-b682-4f39-9c7e-4bd6d7bda2f7.ttf")',
+      // 替换成自定义的字体和文件
+      family: 'My Font',
+      source: 'url("https://gw.alipayobjects.com/os/bmw-prod/b558eecf-5d4f-4481-9e61-ad6fd241857a.ttf")',
       success() {
         my.alert({
           title: 'loadfontface 成功!!!',
@@ -81,13 +92,13 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| status | String | 下载状态。loaded 表示下载成功，error 表示下载失败 |
+| status | String | 加载字体结果。loaded 表示加载成功，error 表示加载失败 |
 
 ## 错误码
 
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
-| 10 | 下载失败 | 检查字体文件是否为可下载的 https 链接 |
+| 10 | 加载失败 | 检查字体文件是否为可下载的 https 链接 |
 
 
 # 常见问题 FAQ
