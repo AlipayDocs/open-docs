@@ -7,7 +7,7 @@
 - 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
 - 支持 iOS 客户端，Android 5.0 及以上版本客户端。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
-- 设备的特征值必须支持 notify/indicate 才可以成功调用，具体可参照 characteristic（特征值）的 [properties 属性](https://opendocs.alipay.com/mini/api/fmg9gg#success%20%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0)。
+- 设备的特征值必须支持 notify/indicate 才可以成功调用，具体可参照 characteristic（特征值）的 [properties 属性](https://opendocs.alipay.com/mini/api/fmg9gg#Function%20success)。
 - 必须先启用 notify 才能监听到设备特征值变化的 notify 功能事件。
 - 订阅操作成功后需要设备主动更新特征值的 value，才会触发 [my.onBLECharacteristicValueChange](https://opendocs.alipay.com/mini/api/cdu501) 。
 - 订阅方式效率比较高，推荐使用订阅代替 read 方式。
@@ -49,7 +49,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| deviceId | String | 是 | 蓝牙设备 ID，参考 device 对象。 |
+| deviceId | String | 是 | 蓝牙设备 ID。Android 上为设备 MAC 地址，iOS 上为设备 UUID。 |
 | serviceId | String | 是 | 蓝牙特征值对应 service 的 UUID。 |
 | characteristicId | String | 是 | 蓝牙特征值的 UUID。 |
 | descriptorId | String | 否 | notify 的 descriptor 的 UUID（Android 系统特有，默认值为 00002902-0000-10008000-00805f9b34fb）。 |

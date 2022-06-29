@@ -53,10 +53,10 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| deviceId | String | 是 | 蓝牙设备 ID，参考 device 对象。 |
+| deviceId | String | 是 | 蓝牙设备 ID。Android 上为设备 MAC 地址，iOS 上为设备 UUID。 |
 | serviceId | String | 是 | 蓝牙特征值对应 service 的 UUID。 |
 | characteristicId | String | 是 | 蓝牙特征值的 UUID。 |
-| value | ArrayBuffer \| Hex String | 是 | 蓝牙设备特征值对应的二进制值，需要转为 ArrayBuffer 或 16 进制字符串。小程序不会对写入数据包大小做限制，但系统与蓝牙设备会限制蓝牙 4.0 单次传输的数据大小，超过最大字节数后会发生写入错误，建议每次写入不超过 20 字节。。 |
+| value | ArrayBuffer \| Hex String | 是 | 蓝牙设备特征值对应的二进制值，需要转为 ArrayBuffer 或 16 进制字符串。小程序不会对写入数据包大小做限制，但系统与蓝牙设备会限制蓝牙 4.0 单次传输的数据大小，超过最大字节数后会发生写入错误，建议每次写入不超过 20 字节。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -67,9 +67,9 @@ Object 类型，参数如下：
 
 该 API 的 success 回调的第一个参数是不带写入的数据的，仅代表向设备发送该请求成功。
 
-可以通过 `my.onBLECharacteristicValueChange` 来监听设备上值的变化。可以通过 `my.offBLECharacteristicValueChange` 来取消监听。
+可以通过调用 [`my.notifyBLECharacteristicValueChange`](https://opendocs.alipay.com/mini/api/pdzk44) 激活设备上的主动通知(请注意，这需要你的设备支持 notify，详情请查看该文档)。然后使用 [`my.onBLECharacteristicValueChange`](https://opendocs.alipay.com/mini/api/cdu501) 来监听设备上值的变化。可以通过 [`my.offBLECharacteristicValueChange`](https://opendocs.alipay.com/mini/api/dlxobk) 来取消监听。
 
-在开启监听之后，当特征值有变化时会自动回调该函数。
+此外，主动调用 [`my.readBLECharacteristicValue`](https://opendocs.alipay.com/mini/api/zro0ka) 也可以在 [`my.onBLECharacteristicValueChange`](https://opendocs.alipay.com/mini/api/cdu501) 中接收数据返回。
 
 ## 小程序发送写入请求成功后机器没有收到写入值？
 

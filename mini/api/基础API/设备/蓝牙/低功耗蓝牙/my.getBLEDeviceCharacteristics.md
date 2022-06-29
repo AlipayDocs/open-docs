@@ -430,7 +430,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| deviceId | String | 是 | 蓝牙设备 ID，参考 device 对象。 |
+| deviceId | String | 是 | 蓝牙设备 ID。Android 上为设备 MAC 地址，iOS 上为设备 UUID。 |
 | serviceId | String | 是 | 蓝牙特征值对应 service 的 UUID。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
