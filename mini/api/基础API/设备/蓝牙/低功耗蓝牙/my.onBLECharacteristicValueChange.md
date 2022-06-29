@@ -429,7 +429,9 @@ Page({
 
 Function 类型。callback 回调函数入参为 Object 类型，属性如下：
 
-| **属性**  | **类型** | **描述**                        |
-| --------- | -------- | ------------------------------- |
-| deviceId  | String   | 蓝牙设备 ID，参考 device 对象。 |
-| connected | Boolean  | 连接目前的状态。                |
+| **属性**         | **类型**    | **描述**                        |
+| ---------------- | ----------- | ------------------------------- |
+| characteristicId | String      | 蓝牙特征值的 UUID。              |
+| deviceId         | String      | 蓝牙设备 ID，参考 device 对象。  |
+| serviceId        | String      | 蓝牙特征值对应 service 的 UUID。 |
+| value            | Hex String  | 特征最新的值。                   |
