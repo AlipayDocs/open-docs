@@ -1,11 +1,13 @@
 # 简介
 **my.getRunData** 是获取用户一个自然天内的运动步数信息的 API。目前只支持查询最近 30 天内的运动数据，若超过 30 天，则返回的步数信息为 0。
 
-my.getRunData 接口会自动检查用户是否已授权，无需开发者主动调用授权相关接口。若用户尚未授权，则会弹出授权框；用户同意授权后，可获取到返回的加密数据。 然后在服务端结合签名算法和 AES 密钥进行解密，获取运动数据，方法可查看 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
+my.getRunData 可获取到加密后的运动数据。
+
+解密运动数据需要配置 AES 密钥。登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置 AES 密钥的应用，点击进入应用详情页 > **设置** > **开发设置** 页面配置 AES 密钥。配置完密钥后需要在服务端结合签名算法和 AES 密钥进行解密，方法可查看 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
+
+服务端解密运动数据需要开通 [运动数据](https://opendocs.alipay.com/mini/introduce/rundata) 能力并申请用户信息。更多信息。
 
 IDE 模拟器暂不支持调试，请以真机调试结果为准。
-
-更多信息， 可查看 [运动数据](https://opendocs.alipay.com/mini/introduce/rundata) 能力介绍
 
 ## 使用限制
 
