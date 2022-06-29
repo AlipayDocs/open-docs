@@ -1,30 +1,14 @@
 # 简介
-**my.regionPicker** 是多级省市区选择器 API，自带省市区数据源。
+**my.regionPicker** 是唤起多级省市区选择器的 API，自带省市区数据源。
 
 ## 使用限制
 
 - 基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.90 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
 
 ## 示例代码
-
-### .axml 示例代码
-
-```html
-<!-- .axml -->
-<view class="page">
-  <view class="page-description">多级省市区选择器</view>
-  <view class="page-section">
-    <view class="page-section-title">regionPicker</view>
-    <view class="page-section-demo">
-      <button type="primary" onTap="regionPicker">选择城市</button>
-    </view>
-  </view>
-</view>
-```
 
 ### .js 示例代码
 ```javascript
@@ -35,36 +19,33 @@ Page({
       mergeOptions: {
         // 新增
         add: [{
-          "id": "x100",
-          "name": "新省",
-          "nextId": "340000",
-          "subList": [{
-            "name": "新市",
-            "id": "x110",
-            "subList": [{
-              "name": "新区",
-              "id": "x111"
-            }]
+          pid: '340000',
+          id: 'x1',
+          name: '新市',
+          nextId: '340800',
+          subList: [{
+            name: '新区',
+            id: 'x11',
           }]
         }],
         // 删除
         remove: [{
-          "id": "330000"
+          id: '330000'
         }],
         // 更新
         update: [{
-          "id": "110000",
-          "name": "北京",
-          "subList": [{
-            "name": "北京市",
-            "id": "110100",
-            "subList": [{
-              "name": "东城区",
-              "id": "110101"
+          id: '110000',
+          name: '北京',
+          subList: [{
+            name: '北京市',
+            id: '110100',
+            subList: [{
+              name: '东城区',
+              id: '110101'
             }]
           }]
         }],
-        selectedItem: ["广东", "深圳", "福田区"],
+        selectedItem: ['广东', '深圳', '福田区'],
       },
       success: (res) => {
         my.alert({
@@ -126,9 +107,10 @@ Object 类型，参数如下：
 #### Array add
 | **参数** | **类型** | **描述** |
 | --- | --- | --- |
+| pid | String | 增加对象的父对象的 ID，新增省份对象时无需此参数。可通过 my.regionPicker 回调参数里 code 字段获得 |
 | id | String | 增加对象的 ID。 |
 | name | String | 增加对象的名称。 |
-| nextId | String | 插入点之后的对象 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
+| nextId | String | 增加对象之后的对象 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
 | subList | Array | 对象下辖的完整的市和区信息。<br />示例：<br />"subList": [{<br />&nbsp;&nbsp;"name": "北京市",<br />&nbsp;&nbsp;"id": "110100",<br />&nbsp;&nbsp;"subList": [{<br />&nbsp;&nbsp;&nbsp;&nbsp;"name": "东城区",<br />&nbsp;&nbsp;&nbsp;&nbsp;"id": "110101"<br />&nbsp;&nbsp;}],······<br/>}] |
 
 
@@ -164,3 +146,11 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- |
 | 11 | 用户取消选择 | 重新选择即可。 |
 | 10001 | 用户没有选择数据 | 重新选中数据即可。 |
+
+# 常见问题 FAQ
+
+## Q：可以获取 my,regionPicker 中的省市区数据吗？
+A：不能直接通过 my.regionPicker 获取省市区数据，只能作为选择器使用。可以通过 [高德 Web API](https://lbs.amap.com/api/webservice/guide/api/district/) 获取最新行政区信息。
+
+## Q：my.regionPicker 不包含最新的行政区信息怎么办？
+A：可以通过 mergeOptions 参数自定义修改城市数据，支持删除、添加和更新城市信息。
