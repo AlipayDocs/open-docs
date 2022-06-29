@@ -96,8 +96,8 @@ Page({
 
 # 常见问题 FAQ
 
-## Q：使用 my.navigateBack 返回，如何通知所到达的页面刷新？是否可以监听返回按钮点击或页面返回事件实现？
-A：使用 my.navigateBack 返回所到达的页面并不会自动刷新。当前页面可以通过 [onBack](https://opendocs.alipay.com/mini/framework/page-detail#events) 监听到导航栏上返回按钮（以及 Android 系统返回键）被点击，但不支持监听左滑手势、API 调用等其他方式导致的返回。但无论哪种返回方式，当前页面关闭前都会触发 [onUnload](https://opendocs.alipay.com/mini/framework/page-detail#onUnload\(\))，返回到达的页面均会触发 [onShow](https://opendocs.alipay.com/mini/framework/page-detail#onShow()) ，故可利用这个机制进行必要的处理。注意 onShow 并不一定是返回导致的，需要自行判断。一种实现方式如下：
+## Q：使用 my.navigateBack 返回，如何通知所到达的页面刷新？是否可以通过监听返回按钮点击或页面返回事件达到这一目的？
+A：使用 my.navigateBack 返回所到达的页面并不会自动刷新。当前页面可以通过 [onBack](https://opendocs.alipay.com/mini/framework/page-detail#events) 监听到导航栏上返回按钮（以及 Android 系统返回键）被点击，但不支持监听左滑手势、API 调用等其他方式导致的返回。但无论哪种返回方式，当前页面关闭前都会触发 [onUnload](https://opendocs.alipay.com/mini/framework/page-detail#onUnload\(\))，返回到达的页面均会触发 [onShow](https://opendocs.alipay.com/mini/framework/page-detail#onShow()) ，故可利用这个机制进行必要的处理。注意 onShow 事情并不一定是通过返回触发，需要自行判断。一种实现方式如下：
 
 ```javascript
 
