@@ -1,4 +1,5 @@
 # 简介
+
 **my.getFileSystemManager** 获取全局唯一的文件管理器。如何接入以及更多介绍信息，可查看 [FileSystemManager 概览](https://opendocs.alipay.com/mini/api/0226od)。
 
 ## 使用限制
