@@ -91,8 +91,6 @@
 | **参数** | **类型** | **描述** |
 | --- | --- | --- |
 | foo | String | 业务自定义参数，key 和 value 为配置文件中的对应值 {"foo":"bar"}。 |
-| --- | --- | --- |
-
 
 ## 获取数据
 通过调用 JSAPI getBackgroundFetchData  获取预加载的数据：
