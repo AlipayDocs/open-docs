@@ -52,5 +52,8 @@ fail 回调会收到一个 Object 类型的参数，其 error 属性为错误码
 # Bug & Tip
 
 * `Bug` app.json 里已配置 tabBar 的情况下，在通过 my.nativeTo/my.redirectTo 到达的页面里，调用此 API 无回调。
+* `Tip` my.setTabBarBadge() 和 my.setTabBarItem() 同时使用时，有概率会遇到 badge 被遮盖的情况。可通过改为在 setTabBarItem 的 succes 回调里调用 setTabBarItem 解决。
 
 相关问题请参见 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
+
+
