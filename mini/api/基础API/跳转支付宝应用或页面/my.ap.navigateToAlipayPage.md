@@ -14,7 +14,7 @@
 </tr>
 <tr>
   <td>已知 appId 的官方小程序</td>
-  <td>使用 <a taget="_blank" href="https://opendocs.alipay.com/mini/02sz8n">my.navigateToMiniProgram()</a></td>
+  <td>使用 <a taget="_blank" href="https://opendocs.alipay.com/mini/api/yz6gnx">my.navigateToMiniProgram()</a></td>
 </tr>
 <tr>
   <td>其他情况</td>
@@ -36,7 +36,7 @@
 <tr>
   <td rowspan=3>支付宝 scheme<br><i>alipays://*</i></td>
   <td>scheme 中的 appId 为 16 位</td>
-  <td><a taget="_blank" href="https://opendocs.alipay.com/mini/02sz8n#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%20FAQ">转换成 my.navigateToMiniProgram() 调用</a></td>
+  <td><a taget="_blank" href="https://opendocs.alipay.com/mini/0090ty">转换成 my.navigateToMiniProgram() 调用</a></td>
 </td>
 <tr>
   <td>scheme 中的 appId 为 20000067</td>
@@ -61,8 +61,7 @@
 
 本文档的 <b>附录</b> 部分提供了链接转换和代码生成的示例。在对上表内容有了解的基础上，开发者可直接使用附录代码作为工具，取代人工判断。
 
-关于小程序各场景下的跳转限制及实现方法，可查看 [小程序跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
-
+关于小程序各场景下的跳转限制及实现方法，可查看 [小程序跳转 FAQ](https://opendocs.alipay.com/mini/0090ty)。
 
 
 ## 使用限制
@@ -80,7 +79,7 @@
 my.ap.navigateToAlipayPage({
   appCode:'alipayScan',
   success:(res) => {
-    console.log('navigateToAlipayPage success'，JSON.stringify(res)});
+    console.log('navigateToAlipayPage success', JSON.stringify(res));
   },
   fail:(res) => {
     my.alert({ title: 'navigateToAlipayPage fail', content: JSON.stringify(res) });
@@ -157,12 +156,12 @@ Object 类型，属性如下：
 fail 回调的参数为一个 Object，其 error 属性为错误码
 | **错误码** | **说明** | **解决方案** |
 | --- | --- | --- |
-| 2 | 参数错误，打开失败。<br><br>注：旧版本（10.2.70 以下）客户端界面上也会有相应 toast 提示。 | <ul><li>如使用 appCode，请检查拼写是否有误。</li><li>如使用 path，请确保传入的参数是以 https://render.alipay.com/p/ 开头或已由支付宝业务人员为当前小程序添加白名单。</li></ul> |
+| 2 | 参数错误，打开失败。<br><br>注：旧版本（10.2.70 以下）客户端界面上也会有相应 toast 提示。 | <ul><li>如使用 appCode，请检查拼写是否有误。</li><li>如使用 path，请确保传入的参数是以 'https://render.alipay.com/p/' 开头或已由支付宝业务人员为当前小程序添加白名单。</li></ul> |
 
 # 常见问题
 
 ## Q：使用 my.ap.navigateToAlipayPage 打开 H5 页面为何提示“参数错误，打开失败”？
-A：一般都是因为 URL 不是以 https://render.alipay.com/p/ 开头且未添加白名单，跳转失败（进于 fail 回调），低版本客户端伴有 toast 提示。处理办法请参考本文档 **简介** 部分的指引表格及关于添加白名单的说明。
+A：一般都是因为 URL 不是以 'https://render.alipay.com/p/' 开头且未添加白名单，跳转失败（进于 fail 回调），低版本客户端伴有 toast 提示。处理办法请参考本文档 **简介** 部分的指引表格及关于添加白名单的说明。
 
 ## Q：使用 my.ap.navigateToAlipayPage 打开 H5 页面为何发生 url 参数丢失？
 A：历史原因，此接口要求对 url 做二次编码再传入，即需要向 path 传入 encodeURIComponent(url），否则内部的 decode 过程可能造成 url 的参数被破坏。
@@ -174,7 +173,7 @@ A：是正常的，属于生活号文章页本身特有的加载流程。
 A：暂不支持跳转基金页面。
 
 ## Q：香港支付宝小程序支持 my.ap.navigateToAlipayPage 吗？
-A：针对国际业务的特殊性，支付宝有专门的团队支持，关于香港版小程的咨询请点击以下链接：[https://global.alipay.com/open/faq.htm](https://global.alipay.com/open/faq.htm) 。
+A：针对国际业务的特殊性，支付宝有专门的团队支持，关于香港版小程序的咨询请点击以下链接：[https://global.alipay.com/open/faq.htm](https://global.alipay.com/open/faq.htm) 。
 
 # 附录
 
