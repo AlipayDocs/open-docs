@@ -65,4 +65,4 @@ Component({
 可在组件的 didMount 中将组件挂载到对应的页面上，即可在页面中调用组件级别的 setData 只触发组件重新渲染。
 
 # 相关文档
-[性能解决方案](https://opendocs.alipay.com/mini/introduce/PerformanceSolution)
+[性能解决方案](https://opendocs.alipay.com/mini/018tp6)
