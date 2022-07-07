@@ -1,5 +1,5 @@
 # 简介
-可通过 web-view 组件在小程序中嵌入 H5 页面。小程序不直接支持外跳 H5，web-view 部分地满足跳转 H5 的需求。关于小程序跳转的内容可查看 [小程序跳转问题 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
+可通过 web-view 组件在小程序中嵌入 H5 页面。小程序不直接支持外跳 H5，web-view 部分地满足跳转 H5 的需求。关于小程序跳转的内容可查看 [小程序跳转问题 FAQ](https://opendocs.alipay.com/mini/0090ty)。
 
 web-view 可以打开的 H5 页面的域名限于开发者维护的 H5 域名白名单（开放平台控制台 > 小程序详情页 > 设置 > 开发设置 > H5域名配置），仅支持添加开发者可控制的域名。若 web-view 提示访问受限，可参考 [页面访问受限解决方案](https://opendocs.alipay.com/mini/component/access)。
 
@@ -17,7 +17,7 @@ web-view 可以打开的 H5 页面的域名限于开发者维护的 H5 域名白
 
 - 包含中文等特殊字符的 URL，请先使用 encodeURL() 编码。
 - 主文档 URL、iframe 里的主文档 URL，以及后续跳转的主文档 URL，其域名均需要加入 H5 域名白名单，否则无法访问。<br>
-- H5 域名白名单维护方法请参见 [**配置 H5 域名**](https://opendocs.alipay.com/mini/component/idfvg6) 。不支持添加阿里（天猫、淘宝等）域名，且域名总数量不超过 20 个。<br>
+- H5 域名白名单维护方法请参见 [配置 H5 域名](https://opendocs.alipay.com/mini/component/idfvg6) 。不支持添加阿里（天猫、淘宝等）域名，且域名总数量不超过 20 个。<br>
 - **H5 域名白名单变更后需要小程序发版，新的白名单仅对新版小程序生效。**
 
 
@@ -64,7 +64,7 @@ Page({
 ## 属性说明
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| src | String | web-view 要渲染的 H5 网页 URL ，需要在如下路径中 **支付宝小程序管理中心 **>** 设置 **>** 开发设置 **> **H5域名配置** 进行 H5 域名白名单配置。请参见 [**配置 H5 域名**](https://opendocs.alipay.com/mini/component/idfvg6)**。** |
+| src | String | web-view 要渲染的 H5 网页 URL ，需要在如下路径中 **支付宝小程序管理中心 **>** 设置 **>** 开发设置 **> **H5域名配置** 进行 H5 域名白名单配置。 |
 | onMessage | EventHandle | 网页向小程序 postMessage 消息。`e.detail = { data }` |
 | onLoad | EventHandle | 网页加载成功时触发此事件。`e.detail = { src }`<br />**版本要求**：基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
 | onError | EventHandle | 网页加载失败时触发此事件。`e.detail = { src }`<br />**版本要求**：基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
