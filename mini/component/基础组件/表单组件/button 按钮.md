@@ -125,10 +125,10 @@ button + button {
 ###  open-type 有效值
 | **属性** | **描述** |
 | --- | --- |
-| share | 触发 [自定义分享](/mini/introduce/share)，可使用 [my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)('button.open-type.share') 判断。<br />**版本要求**：基础库 [1.1.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| share | 触发 [自定义分享](https://opendocs.alipay.com/mini/framework/page-detail#%E9%A1%B5%E9%9D%A2%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0)，可使用 [my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)('button.open-type.share') 判断。<br />**版本要求**：基础库 [1.1.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | getAuthorize | 支持小程序授权，可使用 `my.canIUse('button.open-type.getAuthorize')` 判断。<br />**版本要求**：基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | contactShare | 分享到通讯录好友，可使用 `my.canIUse('button.open-type.contactShare')` 判断。<br />**版本要求**：基础库 **1.11.0** 及以上 |
-| lifestyle | [关注生活号](/mini/introduce/bntnry)，可使用 `my.canIUse('button.open-type.lifestyle')` 判断。<br />**版本要求**：基础库 **1.11.0** 及以上 |
+| lifestyle | [关注生活号](https://opendocs.alipay.com/mini/introduce/bntnry)，可使用 `my.canIUse('button.open-type.lifestyle')` 判断。<br />**版本要求**：基础库 **1.11.0** 及以上 |
 
 ###  scope 有效值
 当 open-type 为 getAuthorize 时，可以设置 scope 为以下值：
@@ -142,7 +142,7 @@ button + button {
 # FAQ
 
 ### 使用 button 点击授权获取手机号，服务端要怎么解密？
-请参见文档 [内容加密接入指引](https://opendocs.alipay.com/mini/2019110100244259)。
+请查看文档 [内接口内容加密方试](https://opendocs.alipay.com/common/02mse3)。
 
 ### button 如何去除默认边框？
 修改 class 属性为：border: 0; padding: 0;
@@ -150,9 +150,4 @@ button + button {
 ### 如何实现自定义分享中的 button: 页面分享按钮触发？
 通过给 button 组件设置属性 open-type="share"，可以在用户点击按钮后触发。
 
-# 相关文档
 
-- [contact-button 智能客服](https://opendocs.alipay.com/mini/component/contact-button)
-- [my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)
-- [my.getPhoneNumber](https://opendocs.alipay.com/mini/api/getphonenumber)
-- [my.getOpenUserInfo](https://opendocs.alipay.com/mini/api/ch8chh)
