@@ -66,7 +66,7 @@
 
 ## 使用限制
 
-- 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本，支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
@@ -94,7 +94,7 @@ my.ap.navigateToAlipayPage({
     market: 'N',
   },
   success:(res) => {
-    console.log('navigateToAlipayPage success'，JSON.stringify(res)});
+    console.log('navigateToAlipayPage success'，JSON.stringify(res));
   },
   fail:(res) => {
     my.alert({ title: 'navigateToAlipayPage fail', content: JSON.stringify(res) });
@@ -108,7 +108,7 @@ my.ap.navigateToAlipayPage({
 my.ap.navigateToAlipayPage({
   path: encodeURIComponent('https://render.alipay.com/p/404'), // 注意只支持特定前缀的 URL，且需要整体冗余编码
   success:(res) => {
-    console.log('navigateToAlipayPage success'，JSON.stringify(res)});
+    console.log('navigateToAlipayPage success'，JSON.stringify(res));
   },
   fail:(res) => {
     my.alert({ title: 'navigateToAlipayPage fail', content: JSON.stringify(res) });
@@ -119,7 +119,7 @@ my.ap.navigateToAlipayPage({
 my.ap.navigateToAlipayPage({
   path: 'alipays://platformapi/startapp?appId=00000000', // 注意 scheme 需要申请添加白名单
   success:(res) => {
-    console.log('navigateToAlipayPage success'，JSON.stringify(res)});
+    console.log('navigateToAlipayPage success'，JSON.stringify(res));
   },
   fail:(res) => {
     my.alert({ title: 'navigateToAlipayPage fail', content: JSON.stringify(res) });
