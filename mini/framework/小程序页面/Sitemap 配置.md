@@ -1,5 +1,5 @@
 # 简介
-小程序服务搜索功能目前已开放，开发者可以通过 sitemap.json 配置，或者 [小程序服务收录](https://opendocs.alipay.com/mini/operation/service-included) 功能来配置其小程序页面是否允许小程序算法识别。当页面被小程序算法识别后，系统自动生成小程序服务，并在 [搜索](https://opendocs.alipay.com/mini/operation/basic-information-search-application) 等场景上曝光，当用户的搜索关键词命中服务名称时，小程序服务可能展示在搜索结果中。
+小程序服务搜索功能目前已开放，开发者可以通过 sitemap.json 配置，或者 [小程序服务收录](https://opendocs.alipay.com/b/03al9f) 功能来配置其小程序页面是否允许小程序算法识别。当页面被小程序算法识别后，系统自动生成小程序服务，并在 [搜索](https://opendocs.alipay.com/b/03al66) 等场景上曝光，当用户的搜索关键词命中服务名称时，小程序服务可能展示在搜索结果中。
 
 ## 使用场景
 
