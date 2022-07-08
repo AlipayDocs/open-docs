@@ -1,5 +1,5 @@
 # 简介
-智能客服能力由蚂蚁集团零号云客服提供。唤起智能客服组件，开通智能客服：进入对应小程序管理后台后，点击  **设置** > **小程序信息** > **在线客服** 即可打开云客服免费使用。详情可查看 [智能客服](https://opendocs.alipay.com/mini/operation/custom-service)。
+智能客服能力由蚂蚁集团零号云客服提供。唤起智能客服组件，开通智能客服：进入对应小程序管理后台后，点击  **设置** > **小程序信息** > **在线客服** 即可打开云客服免费使用。详情可查看 [智能客服](https://opendocs.alipay.com/b/03al9b)。
 
 ## 使用限制
 
@@ -66,4 +66,4 @@
 进入 **小程序控制台** > **设置** > **小程序信息** > **在线客服**，选择是否显示客服图标。
 
 ## 如何获取 tntInstId（企业编码）和 scene（聊天窗编码）？
-在 [云客服](https://csmng.cloud.alipay.com/ccm.htm#/home) 中进入 **设置** > **服务窗配置** > **聊天窗 URL**。点击操作栏中的 **聊天窗 URL** ，获取 `tntInstId`（企业编码）和 `scene`（聊天窗编码）。详情请参见 [智能客服](https://opendocs.alipay.com/mini/operation/custom-service)。
+在 [云客服](https://csmng.cloud.alipay.com/ccm.htm#/home) 中进入 **设置** > **服务窗配置** > **聊天窗 URL**。点击操作栏中的 **聊天窗 URL** ，获取 `tntInstId`（企业编码）和 `scene`（聊天窗编码）。
