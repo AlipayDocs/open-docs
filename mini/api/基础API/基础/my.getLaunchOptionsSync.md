@@ -47,10 +47,10 @@ console.log(options);
 
 ## 在 IDE 上如何测试启动参数？
 
-请参考：[IDE配置/获取全局参数和页面参数（启动参数）](https://opensupport.alipay.com/support/helpcenter/144/201602518599)
+请参考：[IDE配置/获取全局参数和页面参数（启动参数）](https://opendocs.alipay.com/support/01rb7b)
 
 ## 如何从浏览器或外部 APP 携带参数跳转到小程序？
 
-该 API 用来获取小程序启动参数。如果想从外部唤起小程序，可以通过唤起支付宝的 scheme 来跳转到小程序，在 scheme 中可以加入需要跳转的小程序、小程序页面、参数等。详情请参考：[小程序 scheme 链接介绍](https://opensupport.alipay.com/support/helpcenter/142/201602496413)。
+该 API 用来获取小程序启动参数。如果想从外部唤起小程序，可以通过唤起支付宝的 scheme 来跳转到小程序，在 scheme 中可以加入需要跳转的小程序、小程序页面、参数等。详情请参考：[小程序 scheme 链接介绍](https://opendocs.alipay.com/support/01rb18)。
 
 社区有一篇较详细的讲解了小程序码或链接唤起的小程序如何获取启动参数的文档：[【经验分享】支付宝小程序如何获取外部链接携带的参数](https://forum.alipay.com/mini-app/post/35101021)。
