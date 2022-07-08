@@ -39,12 +39,3 @@ view {
 
 ![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/4f86582eabf8293eae3b1e207037b18f.png#align=left&display=inline&height=720&margin=%5Bobject%20Object%5D&originHeight=720&originWidth=1280&status=done&style=none&width=1280)
 
-# 相关文档
-
-- [小程序页面介绍](https://opendocs.alipay.com/mini/framework/page)
-- [数据绑定](https://opendocs.alipay.com/mini/framework/data-binding)
-- [条件渲染](https://opendocs.alipay.com/mini/framework/conditional-render)
-- [列表渲染](https://opendocs.alipay.com/mini/framework/list-render)
-- [模板](https://opendocs.alipay.com/mini/framework/axml-template)
-- [引用](https://opendocs.alipay.com/mini/framework/import)
-
