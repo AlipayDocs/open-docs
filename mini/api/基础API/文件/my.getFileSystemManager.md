@@ -1,6 +1,6 @@
 # 简介
 
-**my.getFileSystemManager** 获取全局唯一的文件管理器，用于文件及目录读写等操作。更多介绍信息，可查看 [FileSystemManager 概览](https://opendocs.alipay.com/mini/api/0226od)。
+**my.getFileSystemManager** 获取全局唯一的文件管理器，用于文件及目录读写等操作。更多信息可查看 [FileSystemManager 概览](https://opendocs.alipay.com/mini/api/0226od)。
 
 ## 使用限制
 
