@@ -1,7 +1,7 @@
 # 简介
 **my.openMerchantVoucherList** 是打开当前用户的某个商户的券列表的 API。
 
-打开支付宝卡列表。有关支付宝卡包详细功能，可查看 [支付宝卡包产品介绍](https://opendocs.alipay.com/mini/introduce/voucher)。
+打开支付宝卡列表。有关支付宝卡包详细功能，可查看 [支付宝卡包产品介绍](https://opendocs.alipay.com/open/199/105225)。
 
 支付宝特色 API，支持 my.ap.openMerchantVoucherList 调用。
 
