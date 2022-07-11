@@ -122,7 +122,7 @@ success 回调会携带一个 Object 类型的对象，其参数如下：
 
 # 常见问题 FAQ
 ### Q：调用 my.getPhoneNumber，报错“无效的授权关系”，如何处理？
-A：用户 **主动授权** 后调用`my.getPhoneNumber` 才能获取用户支付宝会员的手机号。授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发操作，需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `phoneNumber`。
+A：用户 **主动授权** 后调用`my.getPhoneNumber` 才能获取用户支付宝会员的手机号。授权行为通过 `<button>` 组件的 **点击** 动作来触发操作，需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `phoneNumber`。
 
 ### Q：调用 my.getPhoneNumber 获取手机号报错，该如何处理？
 A：
@@ -132,4 +132,4 @@ A：
 ### Q：为什么调用 my.getPhoneNumber 没有获取到手机号？
 A：一般情况下都是当前用户的支付宝账号没有绑定手机号所致，需要当前用户登录 [账号管理](https://custweb.alipay.com/account/index.htm)，绑定手机号。
 
-更多问题请参阅 [获取会员手机号 FAQ](https://opendocs.alipay.com/mini/api/dwou7f)。
+更多问题请查看 [获取会员手机号 FAQ](https://opendocs.alipay.com/mini/api/dwou7f)。
