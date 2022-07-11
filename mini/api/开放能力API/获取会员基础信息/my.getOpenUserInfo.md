@@ -106,6 +106,6 @@ A：不可以。获取支付宝用户的 user_id 需要在服务端调用 alipay
 ### Q：“获取会员基础信息”可以获取用户身份证、真实姓名等信息吗？
 A：不可以。“获取会员基础信息”只能获取用户头像、昵称信息。
 
-更多问题请参阅 [获取会员基础信息 FAQ](https://opendocs.alipay.com/mini/api/qcn29g?ref=api)
+更多问题请参阅 [获取会员基础信息 FAQ](https://opendocs.alipay.com/mini/api/qcn29g)
 
 
