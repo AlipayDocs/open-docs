@@ -93,7 +93,7 @@
 
 通过 new Date(...) 解析日期字符串时，iOS 系统不支持使用短线连接的日期形式，即：
 
-| 执行代码                                  | iOS        | Android |
+| **执行代码**                               |   **iOS**  |**Android** |
 | ----------------------------------------- | ---------- | ------- |
 | new Date("yyyy-MM-dd HH:mm:ss").getTime() | **不支持** | 支持    |
 | new Date("yyyy/MM/dd HH:mm:ss").getTime() | 支持       | 支持    |
