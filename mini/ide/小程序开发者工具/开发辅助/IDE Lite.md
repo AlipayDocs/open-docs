@@ -9,7 +9,7 @@ IDE Lite 提供了一种功能集中的简约高性能的使用方法，开发�
 ![|660x520](https://cdn.nlark.com/yuque/0/2021/png/179989/1629801787478-4397f803-d613-4b72-af33-bcfb01e1af90.png#align=left&display=inline&height=520&margin=%5Bobject%20Object%5D&name=lite1.png&originHeight=1091&originWidth=1385&size=539248&status=done&style=none&width=660)
 
 ## 使用说明
-[IDE 1.19](https://opendocs.alipay.com/mini/ide/1.19) 及以上版本支持 IDE Lite。
+IDE 1.19 及以上版本支持 IDE Lite。
 
 # 使用方法
 
