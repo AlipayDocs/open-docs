@@ -54,7 +54,7 @@ Object 类型，参数如下：
 | resultStatus | Number | 结果码。9000 表示用户选择了一个地址；6001 表示用户未做选择直接返回。 |
 | result | Object \| "" | 结果详情。resultStatus 为 9000 时 result 为包含地址信息的对象（详见下文 <b>Object result</b>），resultStatus 为 6001 时，result 为空字符串。 
 
-注意：当前 IDE 模拟器内的 my.getAddress 与真机上略有差异，用户授权但不选择直接返回时，不会有回调函数
+注意：当前 IDE 模拟器内的 my.getAddress 与真机上略有差异，用户授权但不选择直接返回时，不会有回调函数。
 
 ### Object result
 用户选择的地址信息，包含以下属性：
@@ -72,7 +72,7 @@ Object 类型，参数如下：
 
 ## fail 回调
 
-用户拒绝授权发生其他异常，会触发 fail 回调，收到的参数对象包含 error(错误码） 和 errorMessage（错误消息） 属性：
+用户拒绝授权发生其他异常，会触发 fail 回调，收到的参数对象包含 error(错误码） 和 errorMessage（错误消息） 属性。
 
 | **错误码** | **错误消息** | **解决方案** |
 | --- | --- | --- |
