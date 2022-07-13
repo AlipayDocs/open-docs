@@ -1,7 +1,7 @@
 # 简介
 **my.openKBVoucherDetail** 是用于打开当前用户的某张券的（口碑）详情页的 API。
 
-有关支付宝卡包详细功能，参见 [支付宝卡包产品介绍](https://opendocs.alipay.com/mini/introduce/voucher)。
+有关支付宝卡包详细功能，参见 [支付宝卡包产品介绍](https://opendocs.alipay.com/open/199/105225)。
 
 支付宝特色 API，支持 my.ap.openKBVoucherDetail 调用。
 
