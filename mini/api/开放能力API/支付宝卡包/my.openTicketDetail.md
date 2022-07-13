@@ -1,7 +1,7 @@
 # 简介
 **my.openTicketDetail** 是打开当前用户的某张票的详情页的 API。
 
-有关支付宝卡包详细功能，可查看 [支付宝卡包产品介绍](https://opendocs.alipay.com/mini/introduce/voucher)。
+有关支付宝卡包详细功能，可查看 [支付宝卡包产品介绍](https://opendocs.alipay.com/open/199/105225)。
 
 支付宝特色 API，支持 my.ap.openTicketDetail 调用。
 
