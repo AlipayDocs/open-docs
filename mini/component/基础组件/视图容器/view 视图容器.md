@@ -14,7 +14,7 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/examples/2759a114-64e1-47ca-920b-70dc4d28c650)
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/view/index&defaultOpenedFiles=pages/view/index&theme=light)
 
 ### .axml 示例代码
 ```html
