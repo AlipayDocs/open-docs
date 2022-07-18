@@ -11,61 +11,10 @@
 
 # 使用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/009a0d12-7f54-4cbf-afbb-47820cb6aec2)
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/picker-view/index&defaultOpenedFiles=pages/picker-view/index&theme=light)
 
-### .axml 示例代码
-```html
-<!-- API-DEMO page/component/picker-view/picker-view.axml -->
-<view class="page">
-  <view class="page-description">嵌入页面的滚动选择器</view>
-  <view class="page-section">
-    <view class="page-section-demo">
-      <picker-view value="{{value}}" onChange="onChange" class="my-picker">
-        <picker-view-column>
-          <view>2011</view>
-          <view>2012</view>
-          <view>2013</view>
-          <view>2014</view>
-          <view>2015</view>
-          <view>2016</view>
-          <view>2017</view>
-          <view>2018</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view>春</view>
-          <view>夏</view>
-          <view>秋</view>
-          <view>冬</view>
-        </picker-view-column>
-      </picker-view>
-    </view>
-  </view>
-</view>
-```
-
-### .js 示例代码
-```javascript
-// API-DEMO page/component/picker-view/picker-view.js
-Page({
-  data: {},
-  onChange(e) {
-    console.log(e.detail.value);
-    this.setData({
-      value: e.detail.value,
-    });
-  },
-});
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/component/picker-view/picker-view.acss */
-.my-picker {
-  background: #EFEFF4;
-}
-```
 
 ## picker-view-column 滚动选择器子项
 滚动选择器子项。仅可放置于 picker-view 中，其孩子节点的高度会自动设置成与 picker-view 的选中框的高度一致。<br />**说明：** 该组件内部请勿放入 hidden 或 display none 的节点，需要隐藏请用 `a:if` 切换，即： <br /><br />推荐示例：<br />
