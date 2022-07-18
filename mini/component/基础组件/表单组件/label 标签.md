@@ -10,7 +10,7 @@ label 标签不支持 onTap、catchTap 等点击事件。
 
 # 使用
 
-## 示例
+## 在线示例
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/label/index&defaultOpenedFiles=pages/label/index&theme=light)
 
