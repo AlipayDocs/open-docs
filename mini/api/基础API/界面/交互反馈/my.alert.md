@@ -13,9 +13,9 @@
 
 # 接口调用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/caeb252f-f08f-4569-8489-338e707969dc) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/alert?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .axml 示例代码
 ```html
