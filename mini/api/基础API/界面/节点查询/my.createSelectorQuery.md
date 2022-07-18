@@ -16,7 +16,7 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/examples/dcbbb814-f215-426d-9e11-d59d71e92c35) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/create-selector-query?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .axml 示例代码
 
