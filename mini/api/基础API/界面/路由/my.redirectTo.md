@@ -16,6 +16,8 @@
 
 ## 示例
 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/navigator?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
+
 ### .js 示例代码
 ```javascript
 my.redirectTo({
