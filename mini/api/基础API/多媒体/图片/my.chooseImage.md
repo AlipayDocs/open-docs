@@ -4,7 +4,7 @@
 ## 使用限制
 
 - 图片的路径数组在 IDE 上以 .png 为后缀，在真机预览上以 .image 为后缀。请以真机效果为准。
-- 出于数据安全考虑，IoT 小程序禁止调用摄像头；请勿在 IoT 小程序上调用此 API，否则会造成小程序异常。
+- 出于数据安全考虑， [IoT](https://opendocs.alipay.com/iot/multi-platform/iottenmin) 路径小程序禁止调用摄像头；请勿在 [IoT](https://opendocs.alipay.com/iot/multi-platform/iottenmin) 小程序上调用此 API，否则会造成小程序异常。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -17,20 +17,40 @@
 
 ## 示例代码
 
+
+### .axml 示例代码
+```html
+<!-- API-DEMO page/API/choose-image/choose-image.axml-->
+<view class="page">
+  <view class="page-section-btns">
+     <button type="primary" onTap="selectImage" hover-class="defaultTap">选择图片</button>
+  </view>
+</view>
+```
+
 ### .js 示例代码
 ```javascript
-my.chooseImage({
-  sourceType: ['camera','album'],
-  count: 2,
-  success: (res) => {
-    console.log(res);
-    my.previewImage({
-      current: 2,
-      // res.tempFilePaths本地临时文件列表
-      urls: res.tempFilePaths,
-    });
-  }
-})
+selectImage(){
+  my.chooseImage({
+    sourceType: ['camera','album'],
+    count: 2,
+    success: (res) => {
+      console.log(res);
+      my.previewImage({
+        current: 2,
+        // res.tempFilePaths本地临时文件列表
+        urls: res.tempFilePaths,
+      });
+    },
+    fail:()=>{
+        my.showToast({type:'fail',content:'操作取消',duration:1000})
+    },
+    complete:()=>{
+        // 进行一些调用结束后的操作
+        console.log('调用结束，无论成功和失败都会运行')
+    }
+  })
+}
 ```
 
 ## 入参
