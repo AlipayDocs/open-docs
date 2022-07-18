@@ -12,9 +12,9 @@
 
 # 接口调用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/4ea987bd-989d-4ed4-ba22-20fa34ea7615) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/toast?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .json 示例代码
 ```json
