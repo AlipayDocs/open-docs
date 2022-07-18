@@ -8,9 +8,9 @@
 
 # 接口调用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/e8797275-4ed8-48ce-8d15-da107782c8ae) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-title-color?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .json 示例代码
 ```json
