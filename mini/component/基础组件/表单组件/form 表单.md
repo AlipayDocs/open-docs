@@ -12,7 +12,7 @@
 
 # 使用
 
-## 示例
+## 在线示例
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/form/index&defaultOpenedFiles=pages/form/index&theme=light)
 
