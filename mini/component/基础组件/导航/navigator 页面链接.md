@@ -10,44 +10,9 @@ navigator 组件不支持 onTap 事件。
 
 # 使用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/181df30d-dcd0-4c09-9516-2d6f9f282d96)
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/component/navigator/navigator.axml -->
-<view class="page">
-  <view class="page-description">导航栏</view>
-  <navigator open-type="navigate" url="./navigate" hover-class="navigator-hover">跳转到新页面</navigator>
-  <navigator open-type="redirect" url="./redirect" hover-class="navigator-hover">在当前页打开</navigator>
-  <navigator open-type="switchTab" url="/page/API/index/index" hover-class="navigator-hover">跳转到另外一个 Tab - API</navigator>
-  <navigator open-type="reLaunch" url="/page/component/index" hover-class="navigator-hover">重新打开</navigator>
-  <navigator open-type="navigateBack" hover-class="navigator-hover">返回上一页面</navigator>
-</view>
-```
-
-### .js 示例代码
-```javascript
-// API-DEMO page/component/navigator/navigator.js
-Page({});
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/component/navigator/navigator.acss */
-navigator {
-  background-color: lightcoral;
-  color: #fff;
-  margin-bottom: 10rpx;
-  padding: 20rpx;
-  text-align: center;
-}
-.navigator-hover {
-  background-color: lightskyblue;
-  color: #fff;
-}
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/navigator/index&defaultOpenedFiles=pages/navigator/index&theme=light)
 
 ## 属性说明
 | **属性** | **类型** | **描述** |
