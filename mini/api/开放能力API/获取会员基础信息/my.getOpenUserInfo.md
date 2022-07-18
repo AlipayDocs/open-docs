@@ -10,7 +10,7 @@
 # 接口调用
 
 ## 示例
-[小程序在线](https://opendocs.alipay.com/examples/c3ef65d4-5186-4eb6-aab9-95d6e59c800d) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-user-info?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .js 示例代码
 唤起授权框，推荐兼容方案如下：
