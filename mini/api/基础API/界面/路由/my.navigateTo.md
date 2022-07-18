@@ -19,6 +19,8 @@
 
 ## 示例
 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/navigator?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
+
 ### .axml 示例代码
 ```html
 <!-- navigateTo.axml-->
