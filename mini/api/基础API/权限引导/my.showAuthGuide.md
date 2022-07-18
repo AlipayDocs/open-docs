@@ -12,7 +12,7 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/examples/cc634a7b-94dd-4f82-afd5-89fd88bcfd00)
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/show-auth-guide?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .json 示例代码
 
