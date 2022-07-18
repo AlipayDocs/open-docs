@@ -6,50 +6,10 @@
 
 # 使用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/3c2e6c3c-d97b-4f7d-9033-3ce08713bbd9)
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/slider/index&defaultOpenedFiles=pages/slider/index&theme=light)
 
-### .axml 示例代码
-```html
-// API-DEMO page/component/slider/slider.axml 
-<view class="page">
-  <view class="page-description">滑块</view>
-  <view class="page-section">
-    <view class="page-section-title">设置step</view>
-    <view class="page-section-demo">
-      <slider value="5" onChange="slider2change" step="5"/>
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">设置最小/最大值范围</view>
-    <view class="page-section-demo">
-      <slider value="33" onChange="slider4change" min="25" max="50" show-value/>
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">自定义样式</view>
-    <view class="page-section-demo">
-      <slider value="33" onChange="slider4change" min="25" max="50" show-value
-      backgroundColor="#FFAA00" activeColor="#00aaee" trackSize="2" handleSize="6" handleColor="blue" />
-    </view>
-  </view>
-</view>
-```
-
-### .js 示例代码
-```javascript
-// API-DEMO page/component/slider/slider.js
-const pageData = {};
-for (let i = 1; i < 5; ++i) {
-  (function (index) {
-    pageData['slider' + index + 'change'] = function (e) {
-      console.log('slider' + index + '发生 change 事件，携带值为', e.detail.value);
-    };
-  })(i);
-}
-Page(pageData);
-```
 
 ## 属性说明
 | **属性** | **类型** | **描述** |
