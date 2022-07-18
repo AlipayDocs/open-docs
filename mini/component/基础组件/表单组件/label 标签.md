@@ -6,77 +6,14 @@ label标签不支持onTap、catchTap等点击事件。
 目前可以绑定的组件有：[checkbox](https://opendocs.alipay.com/mini/component/checkbox)、[radio](https://opendocs.alipay.com/mini/component/radio)、[input](https://opendocs.alipay.com/mini/component/input)、[textarea](https://opendocs.alipay.com/mini/component/textarea)。
 
 ## 扫码体验
-![|127x157](https://gw.alipayobjects.com/zos/skylark/80846e43-3df4-4711-aa73-04f4af3e70a5/2018/jpeg/a9c328e5-d510-4a26-8595-0cd380313c7c.jpeg#align=left&display=inline&height=1906&margin=%5Bobject%20Object%5D&originHeight=1906&originWidth=1540&status=done&style=none&width=128)
+![](https://cdn.nlark.com/yuque/0/2022/jpeg/179989/1658114324014-567c0368-16c4-4dda-a286-c2e3fd12ddbc.jpeg)
 
 # 使用
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/examples/0b19b0be-923b-43d5-a021-d27ee544cc88)
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/label/index&defaultOpenedFiles=pages/label/index&theme=light)
 
-### .axml 示例代码
-```html
-<!-- API-DEMO page/component/label/label.axml -->
-<view class="page">
-  <view class="page-section">
-    <view class="page-section-title">Checkbox</view>
-    <view class="page-section-demo">
-      <checkbox-group>
-        <view>
-          <label>
-            <checkbox value="AngularJS" />
-            <text> AngularJS</text>
-          </label>
-        </view>
-        <view>
-          <label>
-            <checkbox value="React" />
-            <text> React</text>
-          </label>
-        </view>
-      </checkbox-group>
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">Radio</view>
-    <view class="page-section-demo">
-      <radio-group>
-        <view>
-          <radio id="AngularJS" value="AngularJS" />
-          <label for="AngularJS">AngularJS</label>
-        </view>
-        <view>
-          <radio id="React" value="React" />
-          <label for="React">React</label>
-        </view>
-      </radio-group>
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">label中有多个 Checkbox 时，点击 label 关联的元素选择第一个，例如点击的“Click Me”</view>
-    <view class="page-section-demo">
-      <label>
-        <checkbox>选中我</checkbox>
-        <checkbox>选不中</checkbox>
-        <checkbox>选不中</checkbox>
-        <checkbox>选不中</checkbox>
-        <view>
-          <text>Click Me</text>
-        </view>
-      </label>
-    </view>
-  </view>
-</view>
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/component/label/label.acss */
-checkbox-group > view,
-radio-group > view {
-  margin-bottom: 12rpx;
-}
-```
 
 ## 属性说明
 | **属性** | **类型** | **描述** |
