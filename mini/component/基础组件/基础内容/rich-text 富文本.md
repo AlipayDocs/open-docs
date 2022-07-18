@@ -13,48 +13,9 @@
 
 # 使用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/11ebce78-4d32-4742-92af-e1fc3575267a)
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/component/rich-text.axml -->
-<view>
-  <rich-text nodes="{{nodes}}" onTap="tap"></rich-text>
-</view>
-```
-
-### .js 示例代码
-```javascript
-// API-DEMO page/component/rich-text.js
-Page({
-  data: {
-    nodes: [{
-      name: 'div',
-      attrs: {
-        class: 'wrapper',
-        style: 'color: orange;',
-      },
-      children: [{
-        type: 'text',
-        text: 'Hello&nbsp;World!',
-      }],
-    }],
-  },
-  tap() {
-    console.log('tap');
-  },
-});
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/component/rich-text.acss */
-.wrapper {
-  padding: 20rpx;
-}
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/rich-text/index&defaultOpenedFiles=pages/rich-text/index&theme=light)
 
 ## 属性说明
 | **属性** | **类型** | **描述** |
