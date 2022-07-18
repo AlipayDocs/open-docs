@@ -81,4 +81,4 @@ Object 类型，参数如下：
 | --- | --- | --- |
 | index | Number | 需要飘红的选项的索引，从 0 开始。 |
 | type | String | 飘红类型。<br />可选值：<ul><li>none：无红点。</li><li>point：纯红点。</li><li>num：数字红点。</li><li>text：文案红点。</li><li>more：显示 `...`。</li></ul> |
-| text | String | 自定义飘红文案。<ul><li>type 为 `none`、`point`、`more` 时，`text` 可不填。</li><li>type 为 num 时，`text` 为小数或 ≤ 0均不显示, ≥ 100 显示"..."。</li></ul> |
+| text | String | 自定义飘红文案。<ul><li>type 为 `none`、`point`、`more` 时，`text` 可不填。</li><li>type 为 num 时，`text` 为小数或 ≤ 0 均不显示, ≥ 100 显示"..."。</li></ul> |
