@@ -13,7 +13,7 @@ my.getServerTime 是获取当前服务器时间（从 1970 年 1 月 1 日 0 时
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/examples/a0582ce9-e2e1-40de-b2dd-cd810d433afe) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-server-time?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .axml 示例代码
 
