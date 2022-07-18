@@ -14,83 +14,8 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/examples/6c777243-6720-4b68-b22e-9137b933c75a)
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/form/index&defaultOpenedFiles=pages/form/index&theme=light)
 
-### .axml 示例代码
-```html
-<!-- API-DEMO page/component/form/form.axml -->
-<view class="page">
-  <view class="page-description">表单</view>
-  <form onSubmit="onSubmit" onReset="onReset">
-    <view class="page-section">
-      <view class="page-section-title">Slider</view>
-      <view class="page-section-demo">
-        <slider value="80" name="slider" show-value />
-      </view>
-    </view>
-    <view class="page-section">
-      <view class="form-row">
-        <view class="form-row-label">Switch</view>
-        <view class="form-row-content" style="text-align: right">
-          <switch name="switch" />
-        </view>
-      </view>
-      <view class="form-line" />
-      <view class="form-row">
-        <view class="form-row-label">Input</view>
-        <view class="form-row-content">
-          <input name="input" class="input" placeholder="input something" />
-        </view>
-      </view>
-    </view>
-    <view class="page-section">
-      <view class="page-section-title">Radio</view>
-      <view class="page-section-demo">
-        <radio-group name="radio-group">
-          <label><radio value="radio1" />radio1</label>
-          <label><radio value="radio2" />radio2</label>
-        </radio-group>
-      </view>
-    </view>
-    <view class="page-section">
-      <view class="page-section-title">Checkbox</view>
-      <view class="page-section-demo">
-        <checkbox-group name="checkbox">
-          <label><checkbox value="checkbox1" />checkbox1</label>
-          <label><checkbox value="checkbox2" />checkbox2</label>
-        </checkbox-group>
-      </view>
-      <view class="page-section-btns">
-        <view><button type="ghost" size="mini" formType="reset">Reset</button></view>
-        <view><button type="primary" size="mini" data-id="121" formType="submit">Submit</button></view>
-      </view>
-    </view>
-  </form>
-</view>
-```
-
-### .js 示例代码
-```javascript
-// API-DEMO page/component/form/form.js
-Page({
-  data: {},
-  onSubmit(e) {
-    my.alert({
-      content: `数据：${JSON.stringify(e.detail.value)}`,
-    });
-  },
-  onReset() {
-  },
-});
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/component/form/form.acss */
-button + button {
-  margin-top: 32rpx;
-}
-```
 
 ## 属性说明
 | **属性** | **类型** | **描述** |
@@ -105,7 +30,7 @@ button + button {
 formId 返回值不支持自定义，设置完成对应属性 report-submit 后支付宝返回。
 
 ### 支付宝小程序消息推送获取的 formId 有效期是多久？用一次会失效一次吗？
-formId 有效期是 7 天，可在 7 天内向用户推送消息。一个 formId 可发送三次
+formId 有效期是 7 天，可在 7 天内向用户推送消息。一个 formId 可发送三次。
 
 ### 为何小程序接入，付款后调用消息下发返回 formId 显示不合法？
 商户的模板是表单类型，表单类的模板消息只允许使用表单组件生成的 formId 发送。
