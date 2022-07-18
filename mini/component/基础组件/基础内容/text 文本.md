@@ -7,54 +7,9 @@
 
 # 使用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/4ba7cd59-c4b5-4877-ba85-299e460ee87d) 
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/component/text.axml -->
-<view class="page">
-  <view class="page-description">
-    <view class="text-demo-title">
-      <text class="text-demo-text">这是一段文本。\n<text>\</text><text>n</text> 可以换行。</text>
-    </view>  
-  </view>
-  <view class="page-section">
-    <view class="page-section-demo">
-      <text>{{text}}</text>
-    </view>
-  </view>
-</view>
-```
-
-### .js 示例代码
-```js
-// API-DEMO page/component/text.js
-Page({
-  data: {
-    text: `支付宝是一个大型生活服务类的平台，用户群非常广泛，上至五六十岁，下至十几岁。
-      这里不仅有官方自营应用，还有第三方接入应用，用户的选择很多。
-      只有你的产品做得足够简单，才能让更多的用户使用。而更多人的使用，也意味着你更大的收益。\n\n:)
-    `,
-  },
-});
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/component/text.acss */
-.page {
-  padding: 0;
-}
-.text-demo-title {
-  margin-left: 30rpx;
-  margin-top: 30rpx;
-}
-.text-demo-text {
-  font-size: 36rpx;
-}
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/text/index&defaultOpenedFiles=pages/text/index&theme=light) 
 
 ## 属性说明
 | **属性** | **类型** | **描述** |
