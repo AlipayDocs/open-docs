@@ -70,7 +70,7 @@ Page({
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### selector 语法
-当传入 selector 参数，框架会执行 document.querySelector(selector) 以选取目标节点，支持符合[W3C标准](https://www.w3school.com.cn/cssref/css_selectors.asp)的 CSS 选择器语法。
+当传入 selector 参数，框架会执行 document.querySelector(selector) 以选取目标节点，支持符合标准的 CSS 选择器语法，以[W3C标准](https://www.w3.org/TR/2022/WD-selectors-4-20220507/)为参考。
 
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
@@ -80,9 +80,9 @@ Page({
 # 常见问题 FAQ
 
 ## Q：为什么调用 my.pageScrollTo 页面没有滚动？
-A：目前可能有两个原因导致： 
+A：可以从以下两个方面进行排查： 
    + 请确认下滚动行为是否是 scroll-view 等组件内发生的，my.pageScrollTo 是页面滚动的 API；
-   + 如果最外层容器同时设置了 { height: 100vh; overflow-y: auto } 这两个样式，会导致 my.pageScrollTo 滚动失效。
+   + 请确认下最外层容器是否同时设置了 { height: 100vh; overflow-y: auto } 这两个样式，此样式会导致 my.pageScrollTo 滚动失效。
 
 ## Q：my.pageScrollTo 支持跨自定义组件的后代选择器吗？
 A：目前 my.pageScrollTo 只支持标准的 CSS 选择器。
