@@ -10,7 +10,7 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/examples/e6c96e43-42d1-4fcb-8b6f-bbcdfc67f0b1) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/map?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .axml 示例代码
 ```html
