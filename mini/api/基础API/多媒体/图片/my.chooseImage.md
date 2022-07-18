@@ -4,7 +4,7 @@
 ## 使用限制
 
 - 图片的路径数组在 IDE 上以 .png 为后缀，在真机预览上以 .image 为后缀。请以真机效果为准。
-- 出于数据安全考虑， [IoT](https://opendocs.alipay.com/iot/multi-platform/iottenmin) 路径小程序禁止调用摄像头；请勿在 [IoT](https://opendocs.alipay.com/iot/multi-platform/iottenmin) 小程序上调用此 API，否则会造成小程序异常。
+- 出于数据安全考虑， [IoT](https://opendocs.alipay.com/iot/multi-platform/iottenmin) 小程序禁止调用摄像头；请勿在 IoT小程序上调用此 API，否则会造成小程序异常。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
