@@ -13,9 +13,9 @@
 
 # 接口调用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/cfe6dcd3-d001-41f4-9727-e4d446bafb73) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-title-color?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .json 示例代码
 
