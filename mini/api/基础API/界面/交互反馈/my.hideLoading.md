@@ -8,9 +8,9 @@
 
 # 接口调用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/f82160bc-7215-4979-b377-0d8c2b32d5cf) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/loading?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .js 示例代码
 ```javascript
