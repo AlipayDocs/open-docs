@@ -8,97 +8,7 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/examples/6c777243-6720-4b68-b22e-9137b933c75a) 
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/component/button/button.axml -->
-<view class="page">
-  <view class="page-description">按钮</view>
-  <view class="page-section">
-    <view class="page-section-title">type-primary/ghost</view>
-    <view class="page-section-demo">
-      <button type="primary">主要操作 Normal</button>
-      <button type="primary" loading>操作</button>
-      <button type="primary" disabled>主要操作 Disable</button>
-      <button type="ghost">ghost操作</button>
-      <button type="ghost" loading>ghost操作</button>
-      <button type="ghost" disabled>ghost操作 Disable</button>
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">type-default</view>
-    <view class="page-section-demo">
-      <button data-aspm-click="xxx">辅助操作 Normal</button>
-      <button disabled>辅助操作 Disable</button>
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">type-warn</view>
-    <view class="page-section-demo">
-      <button type="warn">警告类操作 Normal</button>
-      <button type="warn" disabled>警告类操作 Disable</button>
-      <button type="warn" hover-class="red">hover-red</button>
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">Size</view>
-    <view class="page-section-demo">
-      <button size="mini" loading>提交</button>
-      <button style="margin-left: 10px;" type="primary" size="mini">选项</button>
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">open</view>
-    <view class="page-section-demo">
-      <button open-type="share">share</button>
-      <button open-type="lifestyle" public-id='{{your_lifestyle_id}}' onFollowLifestyle="onFollowLifestyle">lifestyle</button>
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">Form</view>
-    <view class="page-section-demo">
-      <form onSubmit="onSubmit" onReset="onReset">
-        <button form-type="submit" type="primary">submit</button>
-        <button form-type="reset">reset</button>
-      </form>
-    </view>
-  </view>
-</view>
-```
-
-### .js 示例代码
-```javascript
-// API-DEMO page/component/button/button.js
-Page({
-  data: {},
-  onSubmit() {
-    my.alert({ title: 'You click submit' });
-  },
-  onReset() {
-    my.alert({ title: 'You click reset' });
-  },
-	onFollowLifestyle(e) {
-    my.alert({ 
-      title: e.detail.followStatus === 1 ? '关注成功' : '关注失败',
-      content: JSON.stringify(e.detail)
-    });
-  },
-});
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/component/button/button.acss */
-.red {
-  background-color: red;
-  border-color: red;
-  color: #fff;
-}
-button + button {
-  margin-top: 32rpx;
-}
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/button/index&defaultOpenedFiles=pages/button/index&theme=light) 
 
 ## 属性说明
 | **属性** | **类型** | **描述** |
@@ -142,7 +52,7 @@ button + button {
 # FAQ
 
 ### 使用 button 点击授权获取手机号，服务端要怎么解密？
-请查看文档 [内接口内容加密方试](https://opendocs.alipay.com/common/02mse3)。
+请查看文档 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
 
 ### button 如何去除默认边框？
 修改 class 属性为：border: 0; padding: 0;
