@@ -52,7 +52,7 @@ onGetAuthorize(res) {
 
 - 成功返回 res 报文格式示例如下：<br />
 ```json
-{"response": "{"response": {"code": "10000","msg": "Success","gender":"","countryCode":"","province":"","city":"","nickName": "XXX","avatar": "https://tfs.alipayobjects.com/images/partner/XXXXXXXX"}}"}
+{"response": "{"response": {"code": "10000","msg": "Success","nickName": "XXX","avatar": "https://tfs.alipayobjects.com/images/partner/XXXXXXXX"}}"}
 ```
 
 - 用户未授权获取会员基础信息，返回 res 报文格式示例如下：<br />
