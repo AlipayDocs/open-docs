@@ -14,15 +14,6 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/toast?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
-
-### .axml 示例代码
-```html
-<!-- toast.axml-->
-<view class="page">
- <view type="primary" onTap="showToastSuccess">显示 success 提示</view>
-</view>
-```
-
 ### .js 示例代码
 ```javascript
 // toast.js
