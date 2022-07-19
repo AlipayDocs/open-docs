@@ -15,40 +15,11 @@
 
 ## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-title-color?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
-
-### .json 示例代码
-
-```json
-{
-  "defaultTitle": "标题栏加载动画"
-}
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/API/navigation-bar-loading/navigation-bar-loading.acss */
-button + button {
-  margin-top: 20rpx;
-}
-```
-
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/API/navigation-bar-loading/navigation-bar-loading.axml-->
-<view class="page">
-  <view class="page-section">
-    <button type="primary" onTap="showNavigationBarLoading">显示加载动画</button>
-    <button onTap="hideNavigationBarLoading">隐藏加载动画</button>
-  </view>
-</view>
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/navigation-bar-loading?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .js 示例代码
 
 ```javascript
-// API-DEMO page/API/navigation-bar-loading/navigation-bar-loading.js
 Page({
   showNavigationBarLoading() {
     my.showNavigationBarLoading()
