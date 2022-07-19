@@ -43,15 +43,12 @@ selectImage(){
       });
     },
     fail:(res)=>{
-    // 错误处理的一些自定义操作：推荐以下2种处理方式，具体处理方法可根据业务场景自定义。
-    // 方式一：可以直接展示错误码
-        my.showToast({type:'fail',content:`错误码：${res.error}`,duration:1000})
-    // 方式二：还可以展示错误信息
-    //  my.showToast({type:'fail',content:`${JSON.stringify(res)}`,duration:1000})
+    // 可自行查看错误信息并进行相关处理
+      console.log(res);
     },
     complete:()=>{
-        // 进行一些调用结束后的操作
-        console.log('调用结束，无论成功和失败都会运行')
+    // 进行一些调用结束后的操作
+      console.log('调用结束，无论成功和失败都会运行')
     }
   })
 }
