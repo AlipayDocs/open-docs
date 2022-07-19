@@ -21,19 +21,6 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/navigator?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
-### .axml 示例代码
-```html
-<!-- navigateTo.axml-->
-<view class="page">
-  <view class="page-section">
-    <button type="primary" onTap="navigateTo">保留当前页面，跳转到新页面</button>
-    <button type="primary" onTap="redirectTo">关闭当前页面，跳转到新页面</button>
-    <button type="primary" onTap="reLaunch">关闭所有页面，跳转到新页面</button>
-    <button type="primary" onTap="switchTab">跳转到tabbar页面“我的”，并关闭其他所有非 tabBar 页面</button>
-  </view>
-</view>
-```
-
 ### .js 示例代码
 ```javascript
 // navigateTo.js
