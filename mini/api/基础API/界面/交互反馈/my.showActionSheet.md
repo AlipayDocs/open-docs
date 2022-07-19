@@ -16,33 +16,9 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/action-sheet?view=preview&defaultPage=pages%2Findex%2Findex&defaultOpenedFiles=pages%2Findex%2Findex&theme=light) 
 
-### .json 示例代码
-
-```json
-{
-    "defaultTitle": "Action Sheet"
-}
-```
-
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/API/action-sheet/action-sheet.axml-->
-<view class="page">
-  <view class="page-description">操作菜单 API</view>
-  <view class="page-section">
-    <view class="page-section-title">my.showActionSheet</view>
-    <view class="page-section-demo">
-      <button type="primary" onTap="showActionSheet">显示操作菜单</button>
-    </view>
-  </view>
-</view>
-```
-
 ### .js 示例代码
 
 ```javascript
-// API-DEMO page/API/action-sheet/action-sheet.js
 Page({
   showActionSheet() {
     my.showActionSheet({
