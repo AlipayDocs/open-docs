@@ -12,31 +12,8 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-title-color?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### .json 示例代码
-```json
-{
-  "defaultTitle": "获取导航栏背景颜色"
-}
-```
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/API/get-title-color/get-title-color.axml-->
-<view>
-  <view class="page-section-demo">
-    <text>目前导航栏的背景色:</text>
-    <input type="text" disabled="{{true}}" value="{{titleColor.color}}" />
-  </view>
-  <view class="page-section-btns">
-    <view onTap="getTitleColor">获取导航栏背景颜色
-    </view>
-  </view>
-</view>
-```
-
 ### .js 示例代码
 ```javascript
-// API-DEMO page/API/get-title-color/get-title-color.js
 Page({
   data: {
     titleColor: {},
