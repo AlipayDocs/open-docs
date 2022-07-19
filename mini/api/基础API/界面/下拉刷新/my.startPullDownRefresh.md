@@ -20,11 +20,48 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/pull-down-refresh?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
+### .json 示例代码
+
+```json
+{
+  "defaultTitle": "下拉刷新",
+  "pullRefresh": true
+}
+```
+
+### .axml 示例代码
+```html
+<!-- API-DEMO page/API/pull-down-refresh/pull-down-refresh.axml-->
+<view class="page">
+  <view class="page-section">
+    <view class="page-section-title">下滑页面即可刷新</view>
+    <view class="page-section-btns">
+      <view type="primary" onTap="stopPullDownRefresh">停止刷新</view>
+    </view>
+  </view>
+</view>
+```
+
 ### .js 示例代码
 
 ```javascript
-//.js
-my.startPullDownRefresh()
+// API-DEMO page/API/pull-down-refresh/pull-down-refresh.js
+Page({
+  //根据业务需要主动调用接口下拉刷新
+  pullDown() {
+    my.startPullDownRefresh();
+  },
+  onPullDownRefresh() {
+    console.log('onPullDownRefresh', new Date());
+  },
+  stopPullDownRefresh() {
+    my.stopPullDownRefresh({
+      complete(res) {
+        console.log(res, new Date())
+      }
+    })
+  }
+});
 ```
 
 ## 入参
