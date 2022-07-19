@@ -16,41 +16,8 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/toast?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### .json 示例代码
-```json
-{
-    "defaultTitle": "Toast"
-}
-```
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/API/toast/toast.axml-->
-<view class="page">
-  <view class="page-description">Toast API</view>
-  <view class="page-section">
-    <view class="page-section-title">my.showToast</view>
-    <view class="page-section-btns">
-      <view type="primary" onTap="showToastSuccess">显示 success 提示</view>
-      <view type="primary" onTap="showToastFail">显示 fail 提示</view>
-    </view>
-    <view class="page-section-btns">
-      <view type="primary" onTap="showToastException">显示 exception 提示</view>
-      <view type="primary" onTap="showToastNone">显示 none 弱提示</view>
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">my.hideToast</view>
-    <view class="page-section-btns">
-      <view onTap="hideToast">隐藏弱提示</view>
-    </view>
-  </view>
-</view>
-```
-
 ### .js 示例代码
 ```javascript
-// API-DEMO page/API/toast/toast.js
 Page({
   showToastSuccess() {
     my.showToast({
