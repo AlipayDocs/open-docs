@@ -38,22 +38,8 @@
 }
 ```
 
-### .axml 示例代码
-```html
-<!-- API-DEMO page/API/pull-down-refresh/pull-down-refresh.axml-->
-<view class="page">
-  <view class="page-section">
-    <view class="page-section-title">下滑页面即可刷新</view>
-    <view class="page-section-btns">
-      <view type="primary" onTap="stopPullDownRefresh">停止刷新</view>
-    </view>
-  </view>
-</view>
-```
-
 ### .js 示例代码
 ```javascript
-// API-DEMO page/API/pull-down-refresh/pull-down-refresh.js
 Page({
   onPullDownRefresh() {
     console.log('onPullDownRefresh', new Date());
