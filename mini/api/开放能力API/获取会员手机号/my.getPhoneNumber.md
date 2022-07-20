@@ -38,19 +38,21 @@
 data: {
   canIUseAuthButton: my.canIUse('button.open-type.getAuthorize')
 },
-my.getPhoneNumber({
-  success: (res) => {
-    let encryptedData = res.response;
-    my.request({
-      url: '你的后端服务端',
-      data: encryptedData,
-    });
-  },
-  fail: (res) => {
-    console.log(res);
-    console.log('getPhoneNumber_fail');
-  },
-});
+onGetAuthorize(res) {
+  my.getPhoneNumber({
+    success: (res) => {
+      let encryptedData = res.response;
+      my.request({
+        url: '你的后端服务端',
+        data: encryptedData,
+      });
+    },
+    fail: (res) => {
+      console.log(res);
+      console.log('getPhoneNumber_fail');
+    },
+  });
+},
 ```
 
 ## 返回示例
