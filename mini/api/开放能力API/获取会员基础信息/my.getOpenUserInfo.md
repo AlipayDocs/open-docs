@@ -4,8 +4,10 @@
 获取支付宝会员基础信息需要用户进行授权，授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发， `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `userInfo`。用户点击并同意之后，可以通过 `my.getOpenUserInfo` 接口获取到支付宝会员的基础信息。
 
 ## 使用限制
-- 基础库 [1.16.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.35 或更高版本。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。<br />
-- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。<br />
+- 基础库 [1.16.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.35 或更高版本。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 调用此 API 前需登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，选择绑定 **获取会员基础信息**。
+- 根据《中华人民共和国个人信息保护法》，为进一步规范开发者的用户个人信息处理行为，保障用户合法权益，支付宝小程序无论是通过调用支付宝官方提供的涉及用户个人信息的相关接口，还是开发者自行收集用户个人信息，均需补充相应的小程序隐私政策。详情可查看 [小程序隐私政策](https://opendocs.alipay.com/mini/03lwro)。
 
 # 接口调用
 
