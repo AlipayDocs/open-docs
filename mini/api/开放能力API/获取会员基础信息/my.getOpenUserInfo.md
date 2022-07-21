@@ -84,6 +84,10 @@ success 回调函数会携带一个 Object 类型的对象，属性被解析后�
 | --- | --- | --- |
 | avatar | String | 头像图片地址。 |
 | nickName | String | 昵称。 |
+| city | String | 市（接口调整后返回“”）。 |
+| countryCode | String | 国家码（接口调整后返回“”）。 |
+| province | String | 省（接口调整后返回“”）。 |
+| gender | String | 性别（接口调整后返回“”）。 |
 
 # 常见问题 FAQ
 ## Q：调用 my.getOpenUserInfo，报错“无效的授权关系”，如何处理？
