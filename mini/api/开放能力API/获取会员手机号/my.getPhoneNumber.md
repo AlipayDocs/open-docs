@@ -5,7 +5,7 @@
 
 目前该功能需要在开发者后台完成敏感信息申请后才可以使用，入口为 **开发管理** > **功能列表** > **添加功能** > **获取会员手机号** > **用户信息申请**，此功能需谨慎使用，若支付宝发现信息存在超出约定范围使用或者不合理使用等情况，支付宝有权永久回收该小程序的该接口权限。
 
-在开放平台控制台 > 开发设置中配置 **接口内容加密方式** 后，`my.getPhoneNumber` 返回用户加密的手机号。详见 [接口内容加密方式]((https://opendocs.alipay.com/common/02mse3))。
+在开放平台控制台 > 开发设置中配置 **接口内容加密方式** 后，`my.getPhoneNumber` 才能返回用户加密的手机号（否则将报错 40001，“缺少加密配置项”）。详见 [接口内容加密方式]((https://opendocs.alipay.com/common/02mse3))。
 
 获取支付宝会员手机号需要用户进行授权，授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发， `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `phoneNumber`。用户点击并同意之后，可以通过 `my.getPhoneNumber` 接口获取到支付宝会员加密后的手机号。最后在服务端结合签名算法和 AES 密钥进行解密获取手机号，方法可查看 [接口内容加解密方式](https://opendocs.alipay.com/common/02mse3)。
 
