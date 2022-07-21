@@ -25,7 +25,3 @@
 | onChange | EventHandle | value 改变时触发，`event.detail = {value: value}`。 |
 | disabled | Boolean | 是否禁用。<br />**默认值：** false |
 
-## 常见问题
-### Q：picker内如果有两个及以上的子元素，会导致模拟器出现：系统错误、正在排查的问题。
-A：该问题是由于基础库版本过低导致，升级2.0基础库即可解决。
-
