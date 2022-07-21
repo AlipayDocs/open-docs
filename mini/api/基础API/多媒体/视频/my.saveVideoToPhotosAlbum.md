@@ -14,7 +14,7 @@
 
 ### .js 示例代码
 ```javascript
-// 本地路径
+// 本地文件
 my.chooseVideo({
   sourceType: ['album','camera'],
   maxDuration: 60,
