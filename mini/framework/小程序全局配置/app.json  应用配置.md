@@ -175,6 +175,11 @@ icon 图标推荐大小为 81px * 81px，系统会对传入的非推荐尺寸的
 基础库 1.22.4 及以上，支付宝客户端 10.1.85 及以上开始支持。
 声明小程序需要使用 [动态插件](https://opendocs.alipay.com/mini/plugin/plugin-usage#%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD)。
 
+# usingComponents
+[开发工具](https://opendocs.alipay.com/mini/ide/download) 3.1.2 及以上开始支持。
+
+在 `app.json` 中声明的自定义组件将会认为成全局自定义组件，在小程序各页面或自定义组件中可以直接使用无需额外声明。
+
 # lazyCodeLoading
 小程序应用的启动过程中，除了下载阶段以外，默认会执行所有代码（包括当前页面未使用到的所有页面、自定义组件），会对启动耗时有一定影响。
 基础库 2.7.0 及以上 ，支持配置以下 lazyCodeLoading 参数，仅执行当前页面所必须的页面脚本和自定义组件脚本，其他脚本则不会被执行。
