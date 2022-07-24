@@ -82,23 +82,27 @@ Object 类型，属性如下：
 | apFilePath | String   | 文件临时存放的位置。 |
 
 
-## 错误码
+### 错误码
 
 | **错误码** | **说明**                 | **解决方案**                  |
 | ---------- | ------------------------ | ----------------------------- |
 | 12         | 下载失败。               | 建议检查网络和服务器。        |
 | 20         | 请求的 URL 不支持 HTTP。 | 建议将请求的 URL 改成 HTTPS。 |
 
-## FAQ
 
-### 1、my.downloadFile 接口下载的文件在哪里？
+## 常见问题 FAQ
 
-通过 my.downloadFile 接口下载的文件，其路径样式符合 `https://resource/xxx` 类型，属于[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。本地临时文件随时有可能会被回收，推荐使用 my.saveFile 接口将下载后的文件存储为[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)，代码示例详见[此处](https://opendocs.alipay.com/mini/03dt4s#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)。
+### Q: my.downloadFile 接口下载的文件在哪里？
 
-### 2、my.downloadFile 接口支持下载 PDF 文件吗？都支持哪些类型？为什么我下载的 PDF 文件通过 my.openDocument 接口预览时出现渲染异常？
+- 通过 my.downloadFile 接口下载的文件，其路径样式符合 `https://resource/xxx` 类型，属于[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。本地临时文件随时有可能会被回收，推荐使用 my.saveFile 接口将下载后的文件存储为[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)，代码示例详见[此处](https://opendocs.alipay.com/mini/03dt4s#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)。
 
-- my.downloadFile 接口支持下载 PDF 文件，详见 [my.openDocument](https://opendocs.alipay.com/mini/api/mwpprc) 接口的代码示例。
 
-- my.downloaFile 接口支持下载任何类型的文件。需要**注意**的是，如果未能根据文件头信息获取到正确的拓展名信息，则将以 `.other` 的后缀名进行存储。
+### Q: my.downloadFile 都支持哪些类型？支持下载 PDF 文件吗？
 
-- 在预览 PDF 时出现的问题，可能是由于 my.openDocument 接口的兼容性仍具有提升的空间，关于预览文件接口的文档可在[这里](https://opendocs.alipay.com/mini/api/mwpprc)阅读。
+- 支持下载任何类型的文件，包含 PDF 文件。需要**注意**的是，如果未能根据文件头信息获取到正确的拓展名信息，则将以 `.other` 的后缀名进行存储。
+- PDF 的下载及预览，可参考 [my.openDocument](https://opendocs.alipay.com/mini/api/mwpprc) 的代码示例。
+
+
+### Q: 为什么我下载的 PDF 文件通过 my.openDocument 接口预览时出现渲染异常？
+
+- 低版本支付宝客户端里 my.openDocument 接口在预览 PDF 时存在兼容性问题，10.2.80 及以上版本已解决。如果高版本仍有问题，请联系技术支持反馈。
