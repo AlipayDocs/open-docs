@@ -12,7 +12,7 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/multi-level-select?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### 示例代码
+### js 示例代码
 ```javascript
 my.multiLevelSelect({
   title: '多级联选择器',
