@@ -13,25 +13,6 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/page-scroll-to?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### .axml 示例代码
-```html
-<!-- API-DEMO page/API/page-scroll-to/page-scroll-to.axml-->
-<view class="page">
-  <view class="page-description">页面滚动 API</view>
-  <view class="page-section">
-    <view class="page-section-title">
-      my.pageScrollTo
-    </view>
-    <view class="page-section-demo">
-      <input type="text" placeholder="key" name="key" value="{{scrollTop}}" onInput="scrollTopChange"></input>
-    </view>
-    <view class="page-section-btns">
-      <view onTap="scrollTo">页面滚动</view>
-    </view>
-  </view>
-  <view style="height:1000px"/>
-</view>
-```
 
 ### .js 示例代码
 ```javascript
@@ -77,7 +58,7 @@ Page({
 | --- | --- | --- |
 | 1 | 缺少scrollTop或者selector参数，scrollTop与selector必须传入一个。 | 用户使用缺少参数，不需要做特殊处理。 |
 
-# 常见问题 FAQ
+# 常见问题
 
 ## Q：为什么调用 my.pageScrollTo 页面没有滚动？
 A：可以从以下两个方面进行排查： 
