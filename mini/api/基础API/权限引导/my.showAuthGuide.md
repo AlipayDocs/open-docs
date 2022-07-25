@@ -14,29 +14,6 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/show-auth-guide?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
-### .json 示例代码
-
-```json
-// API-DEMO page/API/show-auth-guide/show-auth-guide.json
-{
-  "defaultTitle": "权限引导"
-}
-```
-
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/API/show-auth-guide/show-auth-guide.axml-->
-<view class="page">
-  <view class="page-description">权限引导 API</view>
-  <view class="page-section">
-    <view class="page-section-title">my.showAuthGuide</view>
-    <view class="page-section-demo">
-      <button type="primary" onTap="showAuthGuide">权限引导</button>
-    </view>
-  </view>
-</view>
-```
 
 ### .js 示例代码
 
