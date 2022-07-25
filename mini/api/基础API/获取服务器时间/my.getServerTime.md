@@ -15,18 +15,6 @@ my.getServerTime 是获取当前服务器时间（从 1970 年 1 月 1 日 0 时
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-server-time?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/API/get-server-time/get-server-time.axml-->
-<view class="page">
-  <view class="page-section">
-    <view class="page-section-btns">
-      <view onTap="getServerTime">获取服务器时间</view>
-    </view>
-  </view>
-</view>
-```
 
 ### .js 示例代码
 
