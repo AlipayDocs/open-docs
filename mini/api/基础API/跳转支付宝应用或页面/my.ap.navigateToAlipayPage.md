@@ -269,8 +269,8 @@ function getRealTarget(url) {
         return fail('no url in scheme', params.url);
       }
       if (/^\d{16}$/.test(params.appId) && onlyHasKeys(params, ['appId', 'page', 'query'])) {
-        const { appId, page, query } = params;
-        trace.push({ appId, page, query: query && getParams('x:?' + query) });
+        const { appId, page: path, query } = params;
+        trace.push({ appId, path, query: query && getParams('x:?' + query) });
         return success();
       }
     }
@@ -321,8 +321,7 @@ function generateCode(target) {
     }
     prep = '';
     api = 'my.navigateToMiniProgram';
-    const { appId, page: path, query } = target;
-    params = { appId, path, query, fail: '${fail}' };
+    params = { ...target, fail: '${fail}' };
     fail = res => {
       if (res.error == 30) {
         my.alert({ content: '目标小程序设置了不允许跳转' });
