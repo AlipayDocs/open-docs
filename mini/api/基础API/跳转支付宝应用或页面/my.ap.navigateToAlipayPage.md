@@ -269,8 +269,12 @@ function getRealTarget(url) {
         return fail('no url in scheme', params.url);
       }
       if (/^\d{16}$/.test(params.appId) && onlyHasKeys(params, ['appId', 'page', 'query'])) {
-        const { appId, page: path, query } = params;
-        trace.push({ appId, path, query: query && getParams('x:?' + query) });
+        const { appId, page, query } = params;
+        trace.push(JSON.parse(JSON.stringify({
+          appId,
+          path: page || void(0),
+          query: query ? getParams('x:?' + query) : void(0)
+        })));
         return success();
       }
     }
