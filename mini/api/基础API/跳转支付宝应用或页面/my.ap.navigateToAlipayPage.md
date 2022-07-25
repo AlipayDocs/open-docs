@@ -270,7 +270,7 @@ function getRealTarget(url) {
       }
       if (/^\d{16}$/.test(params.appId) && onlyHasKeys(params, ['appId', 'page', 'query'])) {
         const { appId, page: path, query } = params;
-        trace.push({ appId, path, query });
+        trace.push({ appId, path, query: query && getParams('x:?' + query) });
         return success();
       }
     }
