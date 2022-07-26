@@ -27,7 +27,7 @@
 </tr>
 <tr>
   <td>域名为 ur.alipay.com 或 m.alipay.com 的短链接<br>或以 https&colon;//ds.alipay.com/?scheme= 开头的 URL</td>
-  <td>参考本文档 <b>附录 1</b>，转换为实际目标地址后再按本表判断</td>
+  <td>参考本文档 <b>附录 1</b>，先将 scheme 转换为实际目标地址</td>
 </tr>
 <tr>
   <td>其他情况</td>
@@ -40,7 +40,7 @@
 </td>
 <tr>
   <td>scheme 中的 appId 为 20000067</td>
-  <td>参考本文档 <b>附录 1</b>，转换为实际目标地址后再按本表判断</td>
+  <td>参考本文档 <b>附录 1</b>，先将 scheme 转换为实际目标地址</td>
 </td>
 <tr>
   <td>其他情况</td>
