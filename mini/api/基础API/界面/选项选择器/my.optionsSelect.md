@@ -16,31 +16,6 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/options-select?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### .json 示例代码
-
-```json
-{
-     "defaultTitle": "选项选择器"
-}
-```
-
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/API/options-select/options-select.axml-->
-<view class="page">
-  <view class="page-description">选项选择器 API</view>
-  <view class="page-section">
-    <view class="page-section-title">my.optionsSelect</view>
-    <view class="page-section-demo">
-      <button type="primary" onTap="openOne">单列选择器</button>
-    </view>
-    <view class="page-section-demo">
-      <button type="primary" onTap="openTwo">双列选择器</button>
-    </view>
-  </view>
-</view>
-```
 
 ### .js 示例代码
 
