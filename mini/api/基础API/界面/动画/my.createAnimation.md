@@ -17,43 +17,6 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/animation?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### .json 示例代码
-
-```json
-{
-    "defaultTitle": "Animation"
-}
-```
-
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/API/animation/animation.axml-->
-<view class="page">
-  <view class="page-description">动画 API</view>
-  <view class="page-section">
-    <view class="page-section-title">my.createAnimation</view>
-    <view class="page-section-demo">
-      <view class="animation-element" animation="{{animation}}"></view>
-    </view>
-    <view class="page-section-btns">
-      <view type="primary" onTap="rotate">旋转</view>
-      <view type="primary" onTap="scale"> 缩放</view>
-      <view type="primary" onTap="translate">移动</view>
-    </view>
-    <view class="page-section-btns">
-      <view type="primary" onTap="skew">倾斜</view>
-      <view type="primary" onTap="rotateAndScale">旋转并缩放</view>
-      <view type="primary" onTap="rotateThenScale">旋转后缩放</view>
-    </view>
-    <view class="page-section-btns">
-      <view type="primary" onTap="all">同时展示全部</view>
-      <view type="primary" onTap="allInQueue">顺序展示全部</view>
-      <view type="primary" onTap="reset">还原</view>
-    </view>
-  </view>
-</view>
-```
 
 ### .js 示例代码
 创建一个设置了动画持续时间、动画效果、动画延迟时间、transform-origin 的动画实例示例：
@@ -127,18 +90,6 @@ Page({
     this.setData({ animation: this.animation.export() })
   }
 })
-```
-
-### .acss 示例代码
-
-```css
-/* API-DEMO page/API/animation/animation.acss */
-.animation-element {
-  width: 200rpx;
-  height: 200rpx;
-  background-color: #108ee9;
-  transform: scaleX(1) scaleY(1);
-}
 ```
 
 ## 入参
