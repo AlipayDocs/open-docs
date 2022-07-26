@@ -1,7 +1,9 @@
 # 简介
-**my.getOpenUserInfo** 是获取支付宝会员的基础信息（头像图片地址、昵称）的 API。
+**my.getOpenUserInfo** 是获取支付宝会员的基础信息的 API。
 
-获取支付宝会员基础信息需要用户进行授权，授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发， `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `userInfo`。用户点击并同意之后，可以通过 `my.getOpenUserInfo` 接口获取到支付宝会员的基础信息。
+自 2022-06-13 [用户信息相关接口调整](https://forum.alipay.com/mini-app/post/73101020) 以后，此接口仅返回头像地址和昵称。
+
+获取支付宝会员，基础信息需要用户进行授权，授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发， `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `userInfo`。用户点击并同意之后，可以通过 `my.getOpenUserInfo` 接口获取到支付宝会员的基础信息。
 
 ## 使用限制
 - 基础库 [1.16.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.35 或更高版本。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
@@ -84,6 +86,10 @@ success 回调函数会携带一个 Object 类型的对象，属性被解析后�
 | --- | --- | --- |
 | avatar | String | 头像图片地址。 |
 | nickName | String | 昵称。 |
+| city | String | 历史遗留字段，恒为""。 |
+| countryCode | String | 历史遗留字段，恒为""。 |
+| province | String | 历史遗留字段，恒为""。 |
+| gender | String | 历史遗留字段，恒为""。 |
 
 # 常见问题 FAQ
 ## Q：调用 my.getOpenUserInfo，报错“无效的授权关系”，如何处理？
