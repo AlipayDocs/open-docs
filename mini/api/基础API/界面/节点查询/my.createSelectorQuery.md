@@ -18,23 +18,6 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/create-selector-query?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/API/create-selector-query/create-selector-query.axml-->
-<view class="page">
-  <view class="page-description">节点查询 API</view>
-  <view class="page-section">
-    <view className="all">节点 all1</view>
-    <view className="all">节点 all2</view>
-    <view id="one">节点 one</view>
-    <view id="scroll" style="height:200px;overflow: auto">
-      <view style="height:400px">独立滚动区域</view>
-    </view>
-    <button type="primary" onTap="createSelectorQuery">节点查询</button>
-  </view>
-</view>
-```
 
 ### .js 示例代码
 ```javascript
