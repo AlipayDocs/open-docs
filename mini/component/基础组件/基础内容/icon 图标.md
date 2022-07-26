@@ -12,97 +12,11 @@
 
 # 使用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/863388c7-ad35-40db-be75-c84d8ce70b07) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/icon/index&defaultOpenedFiles=pages/icon/index&theme=light) 
 
-### .axml 示例代码
-```html
-<!-- API-DEMO page/component/icon.axml -->
-<view class="page">
-  <view class="page-description">图标</view>
-  <view class="page-section">
-    <view class="page-section-title">Type</view>
-    <view class="page-section-demo icon-list">
-      <block a:for="{{iconType}}">
-        <view class="item">
-          <icon type="{{item}}" size="45"/>
-          <text>{{item}}</text>
-        </view>
-      </block>
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">Size</view>
-    <view class="page-section-demo icon-list">
-      <block a:for="{{iconSize}}">
-        <view class="item">
-          <icon type="success" size="{{item}}"/>
-          <text>{{item}}</text>
-        </view>
-      </block>
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">Color</view>
-    <view class="page-section-demo icon-list">
-      <block a:for="{{iconColor}}">
-        <view class="item">
-          <icon type="success" size="45" color="{{item}}"/>
-          <text style="color:{{item}}">{{item}}</text>
-        </view>
-      </block>
-    </view>
-  </view>
-</view>
-```
-
-### .js 示例代码
-```js
-// API-DEMO page/component/icon.js
-Page({
-  data: {
-    iconSize: [20, 30, 40, 50, 60],
-    iconColor: [
-      'red', 'yellow', 'blue', 'green',
-    ],
-    iconType: [
-      'success',
-      'info',
-      'warn',
-      'waiting',
-      'clear',
-      'success_no_circle',
-      'download',
-      'cancel',
-      'search',
-    ],
-  },
-});
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/component/icon.acss */
-.icon-list {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-.item {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-  -webkit-flex-direction: column;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  align-items: center;
-  -webkit-align-items: center;
-}
-```
-
-## 属性
+## 属性说明
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | type | String | icon 类型。有效值： info、warn、waiting、cancel、download、search、clear、success、success_no_circle、loading。<br />**版本要求：** loading 支持基础库 [1.7.2](/mini/framework/compatibility) 及以上 |

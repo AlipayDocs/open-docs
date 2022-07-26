@@ -1,12 +1,12 @@
 # 简介
-调起客户端小程序消息订阅界面，返回用户订阅消息的操作结果。详细介绍可查看 [商家消息产品介绍](https://opendocs.alipay.com/mini/introduce/message)。
+调起客户端小程序消息订阅界面，返回用户订阅消息的操作结果。详细介绍可查看 [消息产品介绍](https://opendocs.alipay.com/mini/introduce/message)。
 
 ## 使用限制
 
 - 一次性模板 id 和长期性模板 id 不可同时使用。
 - 开发者调用消息订阅接口，一次性最多传入三个模板 id。
 - 基础库 v1.x 从 [1.25.7](https://opendocs.alipay.com/mini/framework/lib) 开始支持，基础库 v2.x 从 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)，使用前可使用 [canIUse](https://opendocs.alipay.com/mini/api/can-i-use) 判断是否支持。
-- 基础库版本低于 [2.7.15](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)，不能和 web-view 组件共用，会被遮盖。
+- 基础库版本低于 2.7.15，不能和 web-view 组件共用，会被遮盖。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用

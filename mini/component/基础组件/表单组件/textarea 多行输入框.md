@@ -11,75 +11,9 @@
 
 # 使用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/da8ead71-359d-4c94-84d3-10f8953199e4) 
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/component/textarea/textarea.axml -->
-<view class="page">
-  <view class="page-description">文本框</view>
-  <view class="page-section">
-    <view class="page-section-title">受控聚焦</view>
-    <view class="page-section-demo">
-      <textarea focus="{{focus}}" onFocus="onFocus" onBlur="onBlur" placeholder="Please input something" />
-    </view>
-    <view class="page-section-btns">
-      <button type="default" size="mini" onTap="bindButtonTap">聚焦</button>
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">自适应高度</view>
-    <view class="page-section-demo">
-      <textarea onBlur="bindTextAreaBlur" auto-height placeholder="Please input something" />
-    </view>
-  </view>
-  <view class="page-section">
-    <view class="page-section-title">结合表单</view>
-    <form onSubmit="bindFormSubmit">
-      <view class="page-section-demo">
-        <textarea name="textarea" placeholder="Please input something"  />
-      </view>
-      <view class="page-section-btns">
-        <button form-type="submit" size="mini" type="primary">提交</button>
-      </view>  
-    </form>
-  </view>
-</view>
-```
-
-### .js 示例代码
-```javascript
-// API-DEMO page/component/textarea/textarea.js
-Page({
-  data: {
-    height: 20,
-    focus: false,
-  },
-  bindButtonTap() {
-    this.onFocus();
-  },
-  onFocus() {
-    this.setData({
-      focus: true,
-    });
-  },
-  onBlur() {
-    this.setData({
-      focus: false,
-    });
-  },
-  bindTextAreaBlur(e) {
-    console.log(e.detail.value);
-  },
-  bindFormSubmit(e) {
-    my.alert({
-      content: e.detail.value.textarea,
-    });
-  },
-});
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/textarea/index&defaultOpenedFiles=pages/textarea/index&theme=light) 
 
 ## 属性说明
 | **属性** | **类型** | **描述** |

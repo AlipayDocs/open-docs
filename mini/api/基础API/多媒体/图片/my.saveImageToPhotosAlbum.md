@@ -4,7 +4,7 @@
 ## 使用限制
 
 - 基础库 [1.15.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
-- 此 API 暂仅支持企业支付宝小程序使用。
+- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 - 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 
 # 接口调用
@@ -23,6 +23,7 @@ my.saveImageToPhotosAlbum({
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -41,7 +42,7 @@ Object 类型，属性如下：
 | 17 | 保存图片过程中的其他错误。一般情况下由于 filePath 的值不符合要求导致，请检查 filePath 值。 |
 
 ## 已知问题
-- 连续调用 my.saveImageToPhotosAlbum 时只会触发success一次回调，规避办法：请在 my.saveImageToPhotosAlbum 的 complete 触发后再接着调用 my.saveImageToPhotosAlbum。例如：
+连续调用 my.saveImageToPhotosAlbum 时只会触发 success一次回调，规避办法：请在 my.saveImageToPhotosAlbum 的 complete 触发后再接着调用 my.saveImageToPhotosAlbum。例如：
   ```
   Page({
     onReady() {

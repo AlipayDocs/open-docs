@@ -8,9 +8,9 @@
 
 # 使用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/14e91d68-3c09-43ce-8904-0fb8f04dbd7b) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/canvas/index&defaultOpenedFiles=pages/canvas/index&theme=light) 
 
 ### Canvas2D
 ```javascript

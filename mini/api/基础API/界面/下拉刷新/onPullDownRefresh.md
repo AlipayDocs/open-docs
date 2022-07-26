@@ -17,9 +17,9 @@
 
 # 接口调用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/0fe7dc2d-60c9-438c-a221-cf9b43274af1) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/pull-down-refresh?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .json 示例代码
 在页面对应的 .json 文件中添加如下配置：
@@ -38,22 +38,8 @@
 }
 ```
 
-### .axml 示例代码
-```html
-<!-- API-DEMO page/API/pull-down-refresh/pull-down-refresh.axml-->
-<view class="page">
-  <view class="page-section">
-    <view class="page-section-title">下滑页面即可刷新</view>
-    <view class="page-section-btns">
-      <view type="primary" onTap="stopPullDownRefresh">停止刷新</view>
-    </view>
-  </view>
-</view>
-```
-
 ### .js 示例代码
 ```javascript
-// API-DEMO page/API/pull-down-refresh/pull-down-refresh.js
 Page({
   onPullDownRefresh() {
     console.log('onPullDownRefresh', new Date());
@@ -75,7 +61,7 @@ Page({
 | pullRefresh | Boolean | 否 | 是否允许下拉刷新。<br />默认值是 false。<br />**说明**：下拉刷新生效的前提是 allowsBounceVertical 值为 `YES` 。 |
 | allowsBounceVertical | String | 否 | 页面是否支持纵向拽拉超出实际内容。默认 YES，支持 `YES`/`NO`。 |
 
-# 常见问题 FAQ
+# 常见问题
 
 ## Q：为什么 onPullDownRefresh 回调不触发？
 A：需要在用户主动下拉刷新或者调用 my.startPullDownRefresh 后才会触发 onPullDownRefresh 回调，如果是用户主动下拉刷新，需要在 app.json 中设置 allowsBounceVertical: 'YES', 在页面的 json 文件中设置 pullRefresh: true。

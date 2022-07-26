@@ -10,101 +10,11 @@
 
 # 使用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/13c42e67-f323-40c7-bab3-a2d592c81492)
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/image/index&defaultOpenedFiles=pages/image/index&theme=light)
 
-### .axml 示例代码
-```html
-<!-- API-DEMO page/component/image/image.axml -->
-<view class="page">
-  <view class="page-description">图片</view>
-  <view class="page-section" a:for="{{array}}" a:for-item="item">
-    <view class="page-section-title">{{item.text}}</view>
-    <view class="page-section-demo" onTap="onTap">
-      <image class="image"
-        data-name="{{item.mode}}"
-        onTap="onTap"
-        mode="{{item.mode}}" src="{{src}}" onError="imageError" onLoad="imageLoad" />
-    </view>
-  </view>
-</view>
-```
-
-### .js 示例代码
-```javascript
-// API-DEMO page/component/image/image.js
-Page({
-  data: {
-    array: [{
-      mode: 'scaleToFill',
-      text: 'scaleToFill：不保持纵横比缩放图片，使图片完全适应',
-    }, {
-      mode: 'aspectFit',
-      text: 'aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来',
-    }, {
-      mode: 'aspectFill',
-      text: 'aspectFill：保持纵横比缩放图片，只保证图片的短边能完全显示出来',
-    }, {
-      mode: 'widthFix',
-      text: 'widthFix：宽度不变，高度自动变化，保持原图宽高比不变',
-    }, {
-      mode: 'top',
-      text: 'top：不缩放图片，只显示图片的顶部区域',
-    }, {
-      mode: 'bottom',
-      text: 'bottom：不缩放图片，只显示图片的底部区域',
-    }, {
-      mode: 'center',
-      text: 'center：不缩放图片，只显示图片的中间区域',
-    }, {
-      mode: 'left',
-      text: 'left：不缩放图片，只显示图片的左边区域',
-    }, {
-      mode: 'right',
-      text: 'right：不缩放图片，只显示图片的右边边区域',
-    }, {
-      mode: 'top left',
-      text: 'top left：不缩放图片，只显示图片的左上边区域',
-    }, {
-      mode: 'top right',
-      text: 'top right：不缩放图片，只显示图片的右上边区域',
-    }, {
-      mode: 'bottom left',
-      text: 'bottom left：不缩放图片，只显示图片的左下边区域',
-    }, {
-      mode: 'bottom right',
-      text: 'bottom right：不缩放图片，只显示图片的右下边区域',
-    }],
-    src: '/image/ant.png',
-  },
-  imageError(e) {
-    console.log('image 发生 error 事件，携带值为', e.detail.errMsg);
-  },
-  onTap(e) {
-    console.log('image 发生 tap 事件', e);
-  },
-  imageLoad(e) {
-    console.log('image 加载成功', e);
-  },
-});
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/component/image/image.acss */
-.page-section-demo {
-  display: flex;
-  justify-content: space-around;
-}
-.image {
-  background-color: red;
-  width: 100px;
-  height: 100px;
-}
-```
-
-## 属性
+## 属性说明
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | src | String | 图片地址。 |

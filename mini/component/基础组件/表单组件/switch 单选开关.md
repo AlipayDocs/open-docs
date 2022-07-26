@@ -10,57 +10,10 @@
 
 # 使用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/c3f91603-7089-46fc-a6f8-6c55fc0d5adb)
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/switch/index&defaultOpenedFiles=pages/switch/index&theme=light)
 
-### .axml 示例代码
-```html
-// API-DEMO page/component/switch/switch.axml 
-<view class="page">
-  <view class="page-description">开关</view>
-  <view class="page-section">
-    <view class="page-section-demo switch-list">
-      <view class="switch-item">
-        <switch checked onChange="switch1Change" aria-label="{{switch1 ? 'switch opened' : 'switch closed'}}" />
-      </view>
-      <view class="switch-item">
-        <switch onChange="switch2Change"/>
-      </view>
-      <view class="switch-item">
-        <switch color="red" checked />
-      </view>
-    </view>
-  </view>
-</view>
-```
-
-### .js 示例代码
-```javascript
-// API-DEMO page/component/switch/switch.js
-Page({
-  data: {
-    switch1: true,
-  },
-  switch1Change(e) {
-    console.log('switch1 发生 change 事件，携带值为', e.detail.value);
-    this.setData({
-      switch1: e.detail.value,
-    });
-  },
-  switch2Change(e){
-    console.log('switch2 发生 change 事件，携带值为', e.detail.value);
-  },
-});
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/component/switch/switch.acss */
-.switch-item + .switch-item {
-  margin-top: 20rpx;
-}
-```
 
 ## 属性说明
 | **属性** | **类型** | **描述** |

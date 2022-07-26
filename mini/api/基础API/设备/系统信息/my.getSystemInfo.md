@@ -16,7 +16,7 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/examples/e8058a45-89da-4dcb-8a7d-48f3d0640b95) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-system-info?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .json 示例代码
 

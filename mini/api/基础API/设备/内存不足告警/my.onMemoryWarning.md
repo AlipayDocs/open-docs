@@ -13,7 +13,7 @@
 # 接口调用
 
 ## 示例
-[小程序在线](https://opendocs.alipay.com/examples/ba555f10-143c-4b5d-892f-0940520dbef3) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/memory-warning?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .json 示例代码
 ```json

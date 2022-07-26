@@ -10,18 +10,9 @@
 
 # 接口调用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/863c53fd-fd81-4ca0-baed-45cc8f8190e8)
-
-
-### .axml 示例代码
-```html
-<!-- toast.axml-->
-<view class="page">
- <view type="primary" onTap="showToastSuccess">显示 success 提示</view>
-</view>
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/toast?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
 ```javascript

@@ -12,35 +12,11 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/examples/8b343417-331b-4356-b736-effa9ccc38b2) 
-
-### .json 示例代码
-
-```json
-{
-  "defaultTitle": "Confirm"
-}
-```
-
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/API/confirm/confirm.axml-->
-<view class="page">
-  <view class="page-description">确认框 API</view>
-  <view class="page-section">
-    <view class="page-section-title">my.confirm</view>
-    <view class="page-section-demo">
-      <button type="primary" onTap="comfirm">显示确认框</button>
-    </view>
-  </view>
-</view>
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/confirm?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .js 示例代码
 
 ```javascript
-// API-DEMO page/API/confirm/confirm.js
 Page({
   comfirm() {
     my.confirm({

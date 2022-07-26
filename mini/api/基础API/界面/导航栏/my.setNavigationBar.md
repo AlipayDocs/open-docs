@@ -15,59 +15,13 @@
 
 # 接口调用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/668b7663-4dcd-42e4-86c7-ccfbd0d52602) 
-
-### .json 示例代码
-
-```json
-{
-  "defaultTitle": "设置页面导航栏"
-}
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/API/set-navigation-bar/set-navigation-bar.acss */
-.page-section-btns {
-  padding: 26rpx;
-}
-```
-
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/API/set-navigation-bar/set-navigation-bar.axml-->
-<view class="page">
-  <view class="page-description">设置导航栏 API</view>
-  <form onSubmit="setNavigationBar" style="align-self:stretch">
-    <view class="page-section">
-      <view class="page-section-demo">
-        <input class="page-body-form-value" type="text" placeholder="标题" name="title"></input>
-        <input class="page-body-form-value" type="text" placeholder="导航栏背景色" name="backgroundColor"></input>
-        <input class="page-body-form-value" type="text" placeholder="导航栏底部边框颜色" name="borderBottomColor"></input>
-        <input class="page-body-form-value" type="text" placeholder="导航栏图片地址" name="image"></input>
-      </view>
-      <view class="page-section-btns">
-        <button type="primary" size="mini" formType="submit">设置</button>
-        <button type="primary" size="mini" onTap="resetNavigationBar">重置</button>
-      </view>
-    </view>
-  </form>
-  <view class="tips">
-    tips:
-   <view class="item">1. image:图片链接地址，必须 https，请使用一张3x高清图。若设置了 image，则 title 参数失效</view>
-   <view class="item">2. backgroundColor: 导航栏背景色，支持 16 进制颜色值</view>
-   <view class="item">3. borderBottomColor: 导航栏底部边框颜色，支持16进制颜色值。若设置了 backgroundColor，borderBottomColor 会不生效，默认会和 backgroundColor 颜色一样。</view>
-  </view>
-</view>
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/set-navigation-bar?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .js 示例代码
 
 ```javascript
-// API-DEMO page/API/set-navigation-bar/set-navigation-bar.js
 Page({
   setNavigationBar(e) {
     var title = e.detail.value.title;

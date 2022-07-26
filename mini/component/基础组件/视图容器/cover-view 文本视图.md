@@ -11,85 +11,9 @@
 
 # 使用
 
-## 示例
+## 在线示例
 
-
-[小程序在线](https://opendocs.alipay.com/examples/57e4f937-2eb8-4d48-8f9e-7d8027e32149) 
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/component/cover-view.axml -->
-<view class="page">
-  <view class="page-description">cover-view</view>
-  <view class="page-section">
-    <view class="page-section-demo" style="position: relative;">
-      <map
-        longitude="{{longitude}}"
-        latitude="{{latitude}}"
-        scale="{{scale}}"
-        style="width: 100%; height: 200px;"
-        include-points="{{includePoints}}"
-      />
-      <cover-view class="cover-view">
-        <cover-view class="cover-view-item cover-view-item-1"></cover-view>
-        <cover-view class="cover-view-item cover-view-item-2"></cover-view>
-        <cover-view class="cover-view-item cover-view-item-3"></cover-view>
-      </cover-view>
-      <cover-image style="" src="/image/ant.png" />
-    </view>
-  </view>
-</view>
-```
-
-### .js 示例代码
-```javascript
-// API-DEMO page/component/cover-view.js
-Page({
-  data: {
-    scale: 14,
-    longitude: 120.10675,
-    latitude: 30.266786,
-    includePoints: [{
-      latitude: 30.266786,
-      longitude: 120.10675,
-    }],
-  }
-});
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/component/cover-view.acss */
-cover-image {
-  position: absolute;
-  left: 20px;
-  top: 100px;
-  height: 50px;
-  width: 50px;
-}
-.cover-view {
-  position: absolute;
-  top: calc(50% - 75rpx);
-  left: calc(50% - 150rpx);
-  display:flex;
-  flex-direction:row;
-  background-color: rgba(0, 0, 0, 0);
-}
-.cover-view-item{
-  width: 100rpx;
-  height: 150rpx;
-  font-size: 26rpx;
-}
-.cover-view-item-1 {
-  background-color: rgba(26, 173, 25, 0.7);
-}
-.cover-view-item-2 {
-  background-color: rgba(39, 130, 215, 0.7);
-}
-.cover-view-item-3 {
-  background-color: rgba(255, 255, 255, 0.7);
-}
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/cover-view/index&defaultOpenedFiles=pages/cover-view/index&theme=light) 
 
 ## 属性说明
 | **属性** | **类型** | **描述** |

@@ -5,7 +5,7 @@
 ## 使用限制
 
 - 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
-- 此 API 暂仅支持企业支付宝小程序使用。
+- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 - 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 
 # 接口调用
@@ -14,7 +14,7 @@
 
 ### .js 示例代码
 ```javascript
-// 本地临时文件
+// 本地文件
 my.chooseVideo({
   sourceType: ['album','camera'],
   maxDuration: 60,
@@ -30,7 +30,7 @@ my.chooseVideo({
 })
 // 网络路径
 my.saveVideoToPhotosAlbum({
-  filePath:'http://flv.bn.netease.com/tvmrepo/2012/7/C/7/E868IGRC7-mobile.mp4',
+  filePath:'https://gw.alipayobjects.com/mdn/rms/afts/file/A*lj35SaIgk1sAAAAAAAAAAAAAARQnAQ',
   complete(res) {
     console.log(res);
   }
@@ -49,6 +49,7 @@ Object 类型，属性如下：
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### 错误码
+
 | **错误码** | **描述** |
 | --- | --- |
 | 2 | 参数无效，没有传 filePath 参数。 |

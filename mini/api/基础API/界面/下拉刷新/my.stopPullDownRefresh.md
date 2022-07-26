@@ -14,35 +14,12 @@
 
 # 接口调用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/0fe7dc2d-60c9-438c-a221-cf9b43274af1) 
-
-### .json 示例代码
-
-```json
-{
-  "defaultTitle": "下拉刷新",
-  "pullRefresh": true
-}
-```
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/API/pull-down-refresh/pull-down-refresh.axml-->
-<view class="page">
-  <view class="page-section">
-    <view class="page-section-title">下滑页面即可刷新</view>
-    <view class="page-section-btns">
-      <view type="primary" onTap="stopPullDownRefresh">停止刷新</view>
-    </view>
-  </view>
-</view>
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/pull-down-refresh?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .js 示例代码
 ```javascript
-// API-DEMO page/API/pull-down-refresh/pull-down-refresh.js
 Page({
   onPullDownRefresh() {
     console.log('onPullDownRefresh', new Date());

@@ -13,7 +13,7 @@
 # 接口调用
 
 ## 示例
-[小程序在线](https://opendocs.alipay.com/examples/14e91d68-3c09-43ce-8904-0fb8f04dbd7b) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/canvas?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ## 入参
 **string canvasId**<br />定义在 `<canvas/>` 上的 ID。

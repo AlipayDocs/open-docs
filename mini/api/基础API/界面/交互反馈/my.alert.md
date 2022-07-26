@@ -13,23 +13,9 @@
 
 # 接口调用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/caeb252f-f08f-4569-8489-338e707969dc) 
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/API/alert/alert.axml-->
-<view class="page">
-  <view class="page-description">警告框 API</view>
-  <view class="page-section">
-    <view class="page-section-title">my.alert</view>
-    <view class="page-section-demo">
-      <button type="primary" onTap="alert">显示警告框</button>
-    </view>
-  </view>
-</view>
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/alert?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .js 示例代码
 ```javascript

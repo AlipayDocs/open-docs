@@ -6,39 +6,9 @@
 
 # 使用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/d87d102f-8943-42e5-acb3-515308b6f4ae) 
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/component/progress.axml -->
-<view class="page">
-  <view class="page-description">进度条</view>
-  <view class="page-section">
-    <view class="page-section-demo">
-      <progress percent="20" show-info/>
-      <progress percent="40" active/>
-      <progress percent="60" stroke-width="10"/>
-      <progress percent="80" active-Color="#6abf47" backgroundColor="#f4333c" />
-    </view>
-  </view>
-</view>
-```
-
-### .js 示例代码
-```javascript
-// API-DEMO page/component/progress.js
-Page({});
-```
-
-### .acss 示例代码
-```css
-/* API-DEMO page/component/progress.acss */
-progress{
-  margin-bottom: 60rpx;
-}
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/progress/index&defaultOpenedFiles=pages/progress/index&theme=light) 
 
 ## 属性说明
 | **属性** | **类型** | **描述** |

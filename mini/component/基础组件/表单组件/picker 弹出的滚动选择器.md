@@ -11,110 +11,9 @@
 
 # 使用
 
-## 示例
+## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/examples/0fd1591a-cd48-4cb3-85dc-18e68ca30223) 
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/component/picker/picker.axml -->
-<view class="page">
-  <view class="page-description">选择器</view>
-  <view class="page-section">
-    <picker onChange="bindPickerChange" value="{{index}}" range="{{array}}">
-      <view class="row">
-        <view class="row-title">地区选择器</view>
-        <view class="row-extra">当前选择：{{array[index]}}</view>
-        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
-      </view>
-    </picker>
-  </view>
-  <view class="page-section">
-    <picker onChange="bindObjPickerChange" value="{{arrIndex}}" range="{{objectArray}}" range-key="name">
-      <view class="row">
-        <view class="row-title">ObjectArray</view>
-        <view class="row-extra">当前选择：{{objectArray[arrIndex].name}}</view>
-        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
-      </view>
-    </picker>
-  </view>
-</view>
-```
-
-### .js 示例代码
-```javascript
-// API-DEMO page/component/picker/picker.js
-Page({
-  data: {
-    array: ['中国', '美国', '巴西', '日本'],
-    objectArray: [
-      {
-        id: 0,
-        name: '美国',
-      },
-      {
-        id: 1,
-        name: '中国',
-      },
-      {
-        id: 2,
-        name: '巴西',
-      },
-      {
-        id: 3,
-        name: '日本',
-      },
-    ],
-    arrIndex: 0,
-    index: 0
-  },
-  bindPickerChange(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value);
-    this.setData({
-      index: e.detail.value,
-    });
-  },
-  bindObjPickerChange(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value);
-    this.setData({
-      arrIndex: e.detail.value,
-    });
-  },
-});
-```
-
-### .acss 示例代码
-```javascript
-/* API-DEMO page/component/picker/picker.acss */
-.date-radio {
-  padding: 26rpx;
-}
-.date-radio label + label {
-  margin-left: 20rpx;
-}
-.row {
-  display: flex;
-  align-items: center;
-  padding: 0 30rpx;
-}
-.row-title {
-  flex: 1;
-  padding-top: 28rpx;
-  padding-bottom: 28rpx;
-  font-size: 34rpx;
-  color: #000;
-}
-.row-extra {
-  flex-basis: initial;
-  font-size: 32rpx;
-  color: #888;
-}
-.row-arrow {
-  width: 32rpx;
-  height: 32rpx;
-  margin-left: 16rpx;
-}
-```
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/picker/index&defaultOpenedFiles=pages/picker/index&theme=light) 
 
 ## 属性说明
 | **属性** | **类型** | **描述** |
@@ -125,8 +24,4 @@ Page({
 | value | Number | 表示选择了 `range` 中的第几个（下标从 0 开始）。 |
 | onChange | EventHandle | value 改变时触发，`event.detail = {value: value}`。 |
 | disabled | Boolean | 是否禁用。<br />**默认值：** false |
-
-## 常见问题
-##### Q：picker内如果有两个及以上的子元素，会导致模拟器出现：系统错误、正在排查的问题。
-##### A：该问题是由于基础库版本过低导致，升级2.0基础库即可解决。
 

@@ -35,7 +35,7 @@ if (accountInfo.plugin) {
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | miniProgram | Object | 小程序版本信息。 |
-| plugin | void | Object | 插件版本信息（仅在插件中调用时包含这一项）。 |
+| plugin | Object | 插件版本信息（仅在插件中调用时包含这一项）。 |
 
 ### Object miniProgram
 | **属性** | **类型** | **描述** |
