@@ -1,6 +1,6 @@
 # 简介
 
-**my.getAuthCode** 是获取授权码（authCode）的 API。通过授权码可换取支付宝用户信息、给用户发会员卡，快速建立小程序内的用户体系。
+**my.getAuthCode** 是获取授权码（authCode）的 API，通过授权码可换取支付宝用户信息、给用户发会员卡，快速建立小程序内的用户体系。
 
 为了创造更良好的支付宝小程序用户体验，不允许在小程序的首屏引导用户授权。需要在用户充分了解小程序的业务内容后再引导用户授权。
 
@@ -62,11 +62,10 @@ Object 类型，参数如下：
 
 scopes 可传入单个 scope 名称（如 "auth_base"），也可传入包含多个 scope 名称的数组（如 ["auth_user", "auth_zhima"]）。
 
-| **scopes** | **描述** | **包含的服务端 API 接口** |
+| **scopes** | **功能用法** | **包含的服务端 API 接口** |
 | --- | --- | --- |
-| auth_base | 授权获取用户唯一标识和授权访问令牌。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4)（换取授权访问令牌接口）获取支付宝会员标识（user_id）。此参数不会弹出授权浮窗。 | alipay.system.oauth.token |
-| auth_user | 授权获取支付宝会员信息。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4) 换取授权访问令牌，然后调用  [alipay.user.info.share](https://opendocs.alipay.com/open/02dvf6) （支付宝会员授权信息查询接口）获取用户已授权的信息。| alipay.system.oauth.token、alipay.user.info.share |
-
+| auth_base | 授权获取用户唯一标识和授权访问令牌。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4)（换取授权访问令牌接口）获取支付宝会员标识（user_id）。此方式不会弹出授权浮窗。 | alipay.system.oauth.token |
+| auth_user | 授权获取支付宝会员信息。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4)（换取授权访问令牌接口）换取授权访问令牌，然后调用  [alipay.user.info.share](https://opendocs.alipay.com/open/02dvf6) （支付宝会员授权信息查询接口）获取用户已授权的信息。| alipay.system.oauth.token、alipay.user.info.share |
 ### Function success
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
@@ -82,7 +81,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 4 | 无权限调（N22104）。 | <br /><ol><li>确认小程序应用是否授权给了三方应用，三方应用是否添加了 <b>JSAPI 基础包</b> 功能包。<br /><b>说明</b>：小程序应用授权给三方应用后，小程序在真机上的运行使用的是三方应用的功能包，不再是使用小程序自身的功能包。</li><li>若是小程序应用 <b>JSAPI 基础包</b> 功能包没有或者不全，建议删除小程序应用，重新创建一个新的小程序应用来调试。</li></ol>|
-| 10 | Empty Data | <ol><li>因为 scopes 入参错误导致数据获取不到（参数错误会先弹出 <b>服务正忙，请稍后再试</b>），检查 scopes 入参是否正确。</li><li>用户关闭弹窗导致数据获取不到，可在 fail 回调中做引导授权，重新调用 my.getAuthCode 授权。</li></ol> |
+| 3 | 未找到授权结果 | <ol><li>因为 scopes 入参错误导致数据获取不到（参数错误会先弹出 <b>服务正忙，请稍后再试</b>），检查 scopes 入参是否正确。</li><li>用户关闭弹窗导致数据获取不到，可在 fail 回调中做引导授权，重新调用 my.getAuthCode 授权。</li></ol> |
 | 11 | 用户点击拒绝授权 | <ol><li>建议在需要获取用户信息前，增加获取权限的用途和引导提示，引导用户接受小程序授权，增加用户体验。</li><li>可在 fail 回调中做引导授权，重新调用 my.getAuthCode 授权。</li></ol> |
 
 # 常见问题
@@ -93,10 +92,7 @@ A：web-view 中不支持调用 my.getAuthCode 接口。如果要在 web-view �
 ## Q：如何同时进行用户基础信息、手机号、证件等授权（聚合授权）？
 A：alipay.user.info.share 接口的每个用户信息字段（如：用户姓名，手机号码，生日等）需要单独申请开通，开通权限的字段会聚合展示在授权浮窗，可查看 [用户信息申请流程](https://opendocs.alipay.com/support/01rayg)。
 
-## Q：如何静默获取用户信息？
-A：scopes 参数传 auth_base 不会弹出授权浮窗，可以直接获取 auth_code。服务端将 auth_code 作为入参调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4)（换取授权访问令牌接口）可以获取支付宝会员标识（user_id）。
-
 ## Q：调用 my.getAuthCode 获取到的 authCode 值是否每个用户是唯一的呢？
-A：调用 my.getAuthCode 获取到的 authCode 值是不一样的，但是在同一个支付宝账号登录的情况下，根据此值获取到的 user_id 是唯一的。
+A：每次调用 my.getAuthCode 获取到的 authCode 值是不一样的，但是在同一个支付宝账号登录的情况下，根据此值获取到的 user_id 是唯一的。
 
 更多常见问题可查看 [用户授权 FAQ](https://opendocs.alipay.com/mini/api/bpubha) 。
