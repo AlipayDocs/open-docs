@@ -34,6 +34,6 @@
 | onFocus | EventHandle | 输入框聚焦时触发 `event.detail = {value: value}`。 |
 | onBlur | EventHandle | 输入框失去焦点时触发，`event.detail = {value: value}`。 |
 | onConfirm | EventHandle | 点击完成时触发，`event.detail = {value: value}`。 |
-| confirm-type | String | 设置键盘右下角按钮的文字，有效值：done（显示“完成”）、go（显示“前往”）、next（显示“下一个”）、search（显示“搜索”）、send（显示“发送”），平台不同显示的文字略有差异。<br />**注意：** 仅支持 Android。<br />**默认值：** done。 |
+| confirm-type | String | 设置键盘右下角按钮的文字，有效值：done（显示“完成”）、go（显示“前往”）、next（显示“下一个”）、search（显示“搜索”）、send（显示“发送”），平台不同显示的文字略有差异。<br />**注意：** 仅支持 Android。<br />**默认值：** done。<br />**版本要求：** 支付宝客户端 10.2.80 及以上 |
 
 
