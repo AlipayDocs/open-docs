@@ -16,28 +16,6 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/choose-city?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/API/choose-city/choose-city.axml-->
-<view class="page">
-  <view class="page-description">选择城市 API</view>
-  <view class="page-section">
-    <view class="page-section-title">my.chooseCity</view>
-    <view class="page-section-demo">
-      <button type="primary" onTap="chooseCity">选择城市</button>
-    </view>
-  </view>
-  <view class="page-description">修改当前定位城市的名称 API</view>
-  <view class="page-section">
-    <view class="page-section-title">my.setLocatedCity</view>
-    <view class="page-section-demo">
-      <button type="primary" onTap="setLocatedCity">修改当前定位城市的名称</button>
-    </view>
-  </view>
-</view>
-```
-
 ### .js 示例代码
 调用时未传入 cities：
 ```javascript
