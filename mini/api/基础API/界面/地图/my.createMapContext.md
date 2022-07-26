@@ -12,32 +12,6 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/map?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### .axml 示例代码
-```html
-//.axml 
-<view class="page-section">
-      <map
-        id="map"
-        customMapStyle="light"
-        longitude="{{longitude}}"
-        latitude="{{latitude}}"
-        scale="{{scale}}"
-        controls="{{controls}}"
-        onControlTap="controltap"
-        markers="{{markers}}"
-        onMarkerTap="markertap"
-        polyline="{{polyline}}"
-        polygon="{{polygon}}"
-        circles="{{circles}}"
-        onRegionChange="regionchange"
-        onTap="tap"
-        onCalloutTap="callouttap"
-        show-location style="width: 100%; height: 200px;"
-        include-points="{{includePoints}}"
-        ground-overlays="{{ground-overlays}}">
-      </map>
-  </view>
-```
 
 ### .js 示例代码
 ```javascript
