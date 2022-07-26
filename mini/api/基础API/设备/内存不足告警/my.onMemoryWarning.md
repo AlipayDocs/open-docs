@@ -15,22 +15,6 @@
 ## 示例
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/memory-warning?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### .json 示例代码
-```json
-{
-   "defaultTitle": "OnMemoryWarning"
-}
-```
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/API/memory-warning/memory-warning.axml-->
-<view class="page">
-  <button type="primary" onTap="onMemoryWarning">
-    开始监听内存不足告警
-  </button>
-</view>
-```
 
 ### .js 示例代码
 ```javascript
