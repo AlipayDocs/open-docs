@@ -18,39 +18,6 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-system-info?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### .json 示例代码
-
-```json
-// API-DEMO page/API/get-system-info/get-system-info.json
-{
-    "defaultTitle": "获取手机系统信息"
-}
-```
-
-### .axml 示例代码
-```html
-<!-- get-system-info.axml-->
-<view class="page">
-  <view class="page-section">
-    <view class="page-section-demo">
-      <text>语言</text>
-      <input type="text" disabled="{{true}}" value="{{systemInfo.language}}"></input>
-    </view>
-    <view class="page-section-demo">
-      <text>版本</text>
-      <input type="text" disabled="{{true}}" value="{{systemInfo.version}}"></input>
-    </view>
-    <view class="page-section-demo">
-      <text>window宽度</text>
-      <input type="text" disabled="{{true}}" value="{{systemInfo.windowWidth}}"></input>
-    </view>
-    <view class="page-section-btns">
-      <view onTap="getSystemInfo">获取手机系统信息</view>
-      <view onTap="getSystemInfoSync">同步获取手机系统信息</view>
-    </view>
-  </view>
-</view>
-```
 
 ### .js 示例代码
 
