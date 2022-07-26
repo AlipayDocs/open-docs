@@ -14,30 +14,6 @@
 ## 示例
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/date-picker?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### .json 示例代码
-
-```json
-{
-    "defaultTitle": "Date Picker"
-}
-```
-
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/API/date-picker/date-picker.axml -->
-<view class="page">
-  <view class="page-description">选择日期 API</view>
-  <view class="page-section">
-    <view class="page-section-title">my.datePicker</view>
-    <view class="page-section-demo">
-      <button class="page-body-button" type="primary" onTap="datePicker">选择日期-1</button>
-      <button class="page-body-button" type="primary" onTap="datePickerHMS">选择日期-2</button>
-      <button class="page-body-button" type="primary" onTap="datePickerYMDHMS">选择日期-3</button>
-    </view>
-  </view>
-</view>
-```
 
 ### .js 示例代码
 
@@ -83,15 +59,6 @@ Page({
     });
   },
 });
-```
-
-### .acss 示例代码
-
-```css
-/* API-DEMO page/API/date-picker/date-picker.acss */
-button + button {
-  margin-top: 20rpx;
-}
 ```
 
 ## 入参
