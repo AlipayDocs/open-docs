@@ -13,36 +13,6 @@
 ## 示例
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-network-type?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
-### .json 示例代码
-```json
-// API-DEMO page/API/get-network-type/get-network-type.json
-{
-    "defaultTitle": "获取手机网络状态"
-}
-```
-
-### .axml 示例代码
-```html
-<!-- API-DEMO page/API/get-network-type/get-network-type.axml-->
-<view class="page">
-  <view class="page-section">
-    <view class="page-section-demo">
-      <view class="page-body-title">网络状态</view>
-      <block a:if="{{hasNetworkType === false}}">
-        <text class="page-body-text">未获取</text>
-        <text class="page-body-text">点击按钮可获取网络状态</text>
-      </block>
-      <block a:if="{{hasNetworkType === true}}">
-        <text class="page-body-text-network-type">{{networkType}}</text>
-      </block>
-    </view>
-    <view class="page-section-btns">
-      <view onTap="getNetworkType">获取手机网络状态</view>
-      <view onTap="clear">清空</view>
-    </view>
-  </view>
-</view>
-```
 
 ### .js 示例代码
 
@@ -71,19 +41,6 @@ Page({
     })
   },
 });
-```
-
-### .acss 示例代码
-
-```
-/* API-DEMO page/API/get-network-type/get-network-type.acss */
-.page-body-info {
-  height: 200rpx;
-}
-.page-body-text-network-type {
-  font-size: 80rpx;
-  font-family: Helvetica;
-}
 ```
 
 ## 入参
