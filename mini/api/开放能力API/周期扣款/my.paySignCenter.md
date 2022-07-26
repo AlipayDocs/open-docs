@@ -104,7 +104,7 @@ Page({
 
 # 常见问题
 
-## Q：如何获取开通字符串？
+## Q：如何获取签约字符串？
 A：调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/open/02fkan?scene=35)（支付宝个人协议页面签约接口）传入周期扣款约定等相关信息创建签约协议内容。
 
 将 SDK 的返回值中的 body 字段进行一次 urlencode 处理，将其结果做为 signStr 的值传入 my.paySignCenter。
@@ -113,7 +113,7 @@ A：调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/open/02
 
 **注意**：示例代码中提到的 `alipayClient.pageExecute(request, 'get');` 这种方式会返回一个 URL 地址，需要使用 `alipayClient.sdkExecute(request);` 的方式来获取正确的 signStr。
 
-## Q：唤起的开通界面显示 无效签名，如何处理？
+## Q：唤起的开通界面显示“无效签名”，如何处理？
 
 A：请检查传入的 signStr 是否正确。请对照以下内容进行自查：
 
@@ -128,7 +128,7 @@ String signStr = URLEncoder.encode(response.getBody(), "UTF-8");
 
 ## Q：用户开通成功后回调显示报错 6001，如何处理？
 
-A：如果要在小程序中使用，发起的开通请求中不能带 return_url 字段。
+A：如果要在小程序中使用，发起的签约请求中不能带 return_url 字段。
 
 因为传了 return_url 导致开通完成后会跳到该 url，这样就跳出了小程序，再回来小程序的时候，小程序的接口认为没有完成业务，所以会返回 6001 结果码。
 
@@ -138,6 +138,6 @@ A：如果要在小程序中使用，发起的开通请求中不能带 return_ur
 
 A:
 1. 请检查小程序是否添加了对应的能力，可查看 [添加能力](https://opendocs.alipay.com/mini/012kfm#%E6%B7%BB%E5%8A%A0%E8%83%BD%E5%8A%9B)。
-2. 请检查调用 alipay.user.agreement.page.sign（支付宝个人协议页面签约接口）时的参数是否正确。我们提供了一些典型错误供排查：
+2. 请检查调用 [alipay.user.agreement.page.sign](https://opendocs.alipay.com/mini/02fkb3?scene=35)（支付宝个人协议页面签约接口）时的参数是否正确。我们提供了一些典型错误供排查：
    a. `product_code` 和 `personal_product_code` 这两个参数是否传了正确的值，请检查是否传反，请检查传值是否符合文档要求。详细传值请参考[文档的请求参数](https://opendocs.alipay.com/open/02fkan&scene=35#%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0_2)。
    b. 请检查 `period_rule_params.single_amount` 单次扣款最大金额是否符合额度限制，请参考：[周期扣款额度限制](https://opendocs.alipay.com/support/01rg2v)
