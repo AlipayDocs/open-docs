@@ -51,7 +51,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| scopes | String/Array | 否 | 授权类型，默认 auth_base。支持 auth_base（静默授权）/ auth_user（主动授权）/ auth_zhima （获取用户芝麻信息）。 |
+| scopes | String/Array | 否 | 授权类型，默认 auth_base。支持 auth_base（静默授权）/ auth_user（主动授权）。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -59,8 +59,6 @@ Object 类型，参数如下：
 ### String/Array scopes
 
 一个 scope 表示开发者需要请求用户授权的权限范围，一个 scope 包含至少一个 OpenAPI 接口或者 JSAPI 接口。
-
-scopes 可传入单个 scope 名称（如 "auth_base"），也可传入包含多个 scope 名称的数组（如 ["auth_user", "auth_zhima"]）。
 
 | **scopes** | **功能用法** | **包含的服务端 API 接口** |
 | --- | --- | --- |
