@@ -94,7 +94,7 @@ my.ap.navigateToAlipayPage({
     market: 'N',
   },
   success:(res) => {
-    console.log('navigateToAlipayPage success'，JSON.stringify(res));
+    console.log('navigateToAlipayPage success', JSON.stringify(res));
   },
   fail:(res) => {
     my.alert({ title: 'navigateToAlipayPage fail', content: JSON.stringify(res) });
