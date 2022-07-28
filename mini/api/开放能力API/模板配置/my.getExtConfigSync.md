@@ -2,7 +2,7 @@
 **my.getExtConfigSync** 是获取 [模板小程序](https://opendocs.alipay.com/mini/isv/creatminiapp#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 自定义数据字段的同步接口。
 
 ## 使用限制
-此 API 暂仅支持企业支付宝小程序使用。
+此 API 暂仅支持企业支付宝小程序使用。本接口支持使用 [my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use) 接口判断是否支持。
 
 # 接口调用
 
