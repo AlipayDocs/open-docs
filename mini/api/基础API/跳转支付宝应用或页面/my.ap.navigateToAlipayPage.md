@@ -119,7 +119,7 @@ my.ap.navigateToAlipayPage({
 my.ap.navigateToAlipayPage({
   path: 'alipays://platformapi/startapp?appId=00000000', // 注意 scheme 需要申请添加白名单
   success:(res) => {
-    console.log('navigateToAlipayPage success'，JSON.stringify(res));
+    console.log('navigateToAlipayPage success', JSON.stringify(res));
   },
   fail:(res) => {
     my.alert({ title: 'navigateToAlipayPage fail', content: JSON.stringify(res) });
