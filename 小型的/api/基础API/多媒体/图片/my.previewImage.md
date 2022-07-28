@@ -18,22 +18,22 @@
 
 ### .js 示例代码
 ```javascript
-        my.previewImage({
-            current: 2,  // 默认显示第三张图片
-            urls: [
-                'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
-                'https://img.alicdn.com/tps/TB1pfG4IFXXXXc6XXXXXXXXXXXX.jpg',
-                'https://img.alicdn.com/tps/TB1h9xxIFXXXXbKXXXXXXXXXXXX.jpg'
-            ],
-            enablesavephoto: true,   // 长按下载
-            enableShowPhotoDownload: true,   // 右下角显示下载入口
-            success: (res) => {
-                console.log({ content: 'success回调' + JSON.stringify(res) });
-            },
-            fail: (error) => {
-                my.alert({ content: 'fail回调' + JSON.stringify(error) });
-            },
-        });
+my.previewImage({
+  current: 2,  // 默认显示第三张图片
+  urls: [
+     'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
+     'https://img.alicdn.com/tps/TB1pfG4IFXXXXc6XXXXXXXXXXXX.jpg',
+     'https://img.alicdn.com/tps/TB1h9xxIFXXXXbKXXXXXXXXXXXX.jpg'
+  ],       
+  enablesavephoto: true,   // 长按下载
+  enableShowPhotoDownload: true,   // 右下角显示下载入口
+  success: (res) => {
+    console.log({ content: 'success回调' + JSON.stringify(res) });
+  },
+  fail: (error) => {
+    my.alert({ content: 'fail回调' + JSON.stringify(error) });
+  },
+  });                     
 ```
 
 ## 入参
@@ -54,4 +54,4 @@ Object 类型，属性如下：
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
-| 2 | 无效参数:只支持http图片链接 | 修改图片链接为http或https |
+| 2 | 无效参数:只支持 http 图片链接 | 修改图片链接为 http 或 https |
