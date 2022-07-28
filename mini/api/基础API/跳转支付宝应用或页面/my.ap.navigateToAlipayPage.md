@@ -108,7 +108,7 @@ my.ap.navigateToAlipayPage({
 my.ap.navigateToAlipayPage({
   path: encodeURIComponent('https://render.alipay.com/p/404'), // 注意只支持特定前缀的 URL，且需要整体冗余编码
   success:(res) => {
-    console.log('navigateToAlipayPage success'，JSON.stringify(res));
+    console.log('navigateToAlipayPage success',JSON.stringify(res));
   },
   fail:(res) => {
     my.alert({ title: 'navigateToAlipayPage fail', content: JSON.stringify(res) });
