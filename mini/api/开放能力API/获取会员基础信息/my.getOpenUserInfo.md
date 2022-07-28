@@ -3,13 +3,15 @@
 
 自 2022-06-13 [用户信息相关接口调整](https://forum.alipay.com/mini-app/post/73101020) 以后，此接口仅返回头像地址和昵称。
 
-获取支付宝会员，基础信息需要用户进行授权，授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发， `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `userInfo`。用户点击并同意之后，可以通过 `my.getOpenUserInfo` 接口获取到支付宝会员的基础信息。
+根据《中华人民共和国个人信息保护法》，为进一步规范开发者的用户个人信息处理行为，保障用户合法权益，支付宝小程序无论是通过调用支付宝官方提供的涉及用户个人信息的相关接口，还是开发者自行收集用户个人信息，均需补充相应的小程序隐私政策。详情可查看 [小程序隐私政策](https://opendocs.alipay.com/mini/03lwro)。
+
+调用此 API 前需登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，选择绑定 **获取会员基础信息**。
+
+获取支付宝会员基础信息需要用户进行授权，授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发， `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `userInfo`。用户点击并同意之后，可以通过 `my.getOpenUserInfo` 接口获取到支付宝会员的基础信息。
 
 ## 使用限制
 - 基础库 [1.16.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.35 或更高版本。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 调用此 API 前需登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，选择绑定 **获取会员基础信息**。
-- 根据《中华人民共和国个人信息保护法》，为进一步规范开发者的用户个人信息处理行为，保障用户合法权益，支付宝小程序无论是通过调用支付宝官方提供的涉及用户个人信息的相关接口，还是开发者自行收集用户个人信息，均需补充相应的小程序隐私政策。详情可查看 [小程序隐私政策](https://opendocs.alipay.com/mini/03lwro)。
 
 # 接口调用
 
@@ -95,16 +97,8 @@ success 回调函数会携带一个 Object 类型的对象，属性被解析后�
 ## Q：调用 my.getOpenUserInfo，报错“无效的授权关系”，如何处理？
 A：用户 **主动授权** 后调用`my.getOpenUserInfo` 才能获取用户支付宝会员的基础信息。授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发操作，需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `userinfo`。
 
-## Q：调用 my.getOpenUserInfo，报错 "ISV权限不足"，如何处理？
-A：“获取会员信息”功能包已下架，若之前创建的应用已添加了“获取会员信息”的功能包则能正常调用接口，未添加的则无法再添加此功能。 
-
-1. 在小程序开发管理后台的 **功能列表** 中，点击 **添加功能**。
-
-![|712x101](https://gw.alipayobjects.com/zos/skylark-tools/public/files/9219534cf0b476cb9654aa6dfcafcaff.png#align=left&display=inline&height=105&margin=%5Bobject%20Object%5D&originHeight=212&originWidth=1500&status=done&style=stroke&width=746)
-
-2. 添加 **获取会员基础信息** 功能包。
-
-![|712x369](https://gw.alipayobjects.com/zos/skylark-tools/public/files/f213001ed91e03d6fdd36a713f554f8e.png#align=left&display=inline&height=387&margin=%5Bobject%20Object%5D&originHeight=570&originWidth=1099&status=done&style=stroke&width=746)
+## Q：调用 my.getOpenUserInfo，报错 "ISV 权限不足"，如何处理？
+A：调用此 API 需要绑定 **获取会员基础信息** 产品。登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，选择绑定 **获取会员基础信息**。
 
 ## Q：“获取会员基础信息” 可以获取支付宝用户的 user_id 吗？
 A：不可以。获取支付宝用户的 user_id 需要在服务端调用 alipay.system.oauth.token（换取授权访问令牌接口）。
