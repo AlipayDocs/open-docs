@@ -4,7 +4,7 @@
 
 ## 使用限制
 
-- 仅可下载 HTTPS 协议的文件，文件下载后保存为[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。
+- 仅可下载 HTTPS 协议或 base64 格式的文件，文件下载后保存为[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。
 - 如果文件格式不能被识别，则会以 `.other` 类型的文件进行存储。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
