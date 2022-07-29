@@ -98,7 +98,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | country | String | 国家（type > 0 生效）。 |
 | countryCode | String | 国家编号 （type>0生效）。|
 | province | String | 省份（type > 0生效）。|
-| provinceAdCode | String | 省份级别的地区代码（type > 0 生效）。|
+| provinceAdcode | String | 省份级别的地区代码（type > 0 生效）。|
 | city | String | 城市（type > 0 生效）。|
 | cityAdcode | String | 城市级别的地区代码（type>0 生效）。 |
 | district | String | 区县（type > 0 生效）。 |
