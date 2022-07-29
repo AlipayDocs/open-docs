@@ -65,3 +65,10 @@ Object 类型，属性如下：
 | 11 | 消息发送失败。 | 稍后重试。 |
 | 12 | 无法申请更多内存来读取网络数据。 | 请检查内存。 |
 
+
+# 常见问题 FAQ
+
+## Q：my.connectSocket 进入 success 回调，却没有进入 my.onSocketOpen，反而进入了 my.onSocketError，报错 503，是什么原因？
+A：一般为服务端 refuse handshake，请检查配置。
+
+
