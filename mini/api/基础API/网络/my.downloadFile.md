@@ -22,42 +22,27 @@
 
 **注意**：案例仅供参考，建议使用自己的地址进行测试。
 
-pages/index/index.json
-
-```json
-{
-    "defaultTitle": "下载文件"
-}
-```
-
-pages/index/index.axml
-
-```html
-<view class="container">
-  <button onTap="download">下载图片并显示</button>
-</view>
-```
-
-pages/index/index.js
-
 ```javascript
-Page({
-  download() {
-    my.downloadFile({
-      url: 'https://img.alicdn.com/tfs/TB1x669SXXXXXbdaFXXXXXXXXXX-520-280.jpg',
-      success({ apFilePath }) {
-        my.previewImage({
-          urls: [apFilePath],
-        });
-      },
-      fail(res) {
-        my.alert({
-          content: res.errorMessage || res.error,
-        });
-      },
+my.downloadFile({
+  url: 'https://img.alicdn.com/tfs/TB1x669SXXXXXbdaFXXXXXXXXXX-520-280.jpg',
+  success(res) {
+    // 基础库 2.7.23 开始支持返回 tempFilePath
+    if (my.canIUse('downloadFile.return.tempFilePath')) {
+      my.previewImage({
+        urls: [res.tempFilePath],
+      });
+    } else {
+      my.previewImage({
+        urls: [res.apFilePath],
+      });
+    }
+  },
+  fail(res) {
+    my.alert({
+      content: res.errorMessage || res.error,
     });
   },
-})
+});
 ```
 
 ## 入参
@@ -79,7 +64,8 @@ Object 类型，属性如下：
 
 | **属性**   | **类型** | **描述**             |
 | ---------- | -------- | -------------------- |
-| apFilePath | String   | 文件临时存放的位置。 |
+| apFilePath | String   | 文件临时存放的位置（[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)）。 |
+| tempFilePath | String   | 文件临时存放的位置（本地临时文件）<br/>**版本要求：** 基础库 [2.7.23](https://opendocs.alipay.com/mini/ide/framework-changelog-v2) 开始支持。 |
 
 
 ### 错误码
