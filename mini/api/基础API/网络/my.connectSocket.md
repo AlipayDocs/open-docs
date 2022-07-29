@@ -68,7 +68,7 @@ Object 类型，属性如下：
 
 # 常见问题 FAQ
 
-## Q：my.connectSocket是成功的，进入success，却没有进入my.onSocketOpen，反而直接进入了my.onSocketError，报错503，是什么原因？
-A：检查服务端是否有拒绝与客户端握手。
+## Q：my.connectSocket 进入 success 回调，却没有进入 my.onSocketOpen，反而进入了 my.onSocketError，报错 503，是什么原因？
+A：一般为服务端 refuse handshake，请检查配置。
 
 
