@@ -1,5 +1,5 @@
 # 简介
-my.getServerTime 是获取当前服务器时间（从 1970 年 1 月 1 日 0 时 0 分 0 秒（UTC）距离当前时间的毫秒数）的 API。
+my.getServerTime 是获取当前支付宝服务器时间（从 1970 年 1 月 1 日 0 时 0 分 0 秒（UTC）距离当前时间的毫秒数）的 API。
 
 ## 使用限制
 
@@ -49,5 +49,9 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| time | Number | 获取当前服务器时间，返回一个数值，代表从 1970 年 1 月 1 日 0 时 0 分 0 秒（UTC）距离当前时间的毫秒数。 |
+| time | Number | 获取当前支付宝服务器时间，返回一个数值，代表从 1970 年 1 月 1 日 0 时 0 分 0 秒（UTC）距离当前时间的毫秒数。 |
 
+# 常见问题 FAQ
+
+## Q：my.getAddress 怎么格式化日期时间？
+A：可以使用 Day.js 插件格式化日期时间。文档链接：[https://dayjs.fenxianglu.cn/category/#node-js](https://dayjs.fenxianglu.cn/category/#node-js)
