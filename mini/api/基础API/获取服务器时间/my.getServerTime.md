@@ -1,5 +1,5 @@
 # 简介
-my.getServerTime 是获取当前服务器时间（从 1970 年 1 月 1 日 0 时 0 分 0 秒（UTC）距离当前时间的毫秒数）的 API。
+my.getServerTime 是获取当前支付宝服务器时间（从 1970 年 1 月 1 日 0 时 0 分 0 秒（UTC）距离当前时间的毫秒数）的 API。
 
 ## 使用限制
 
@@ -49,5 +49,70 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| time | Number | 获取当前服务器时间，返回一个数值，代表从 1970 年 1 月 1 日 0 时 0 分 0 秒（UTC）距离当前时间的毫秒数。 |
+| time | Number | 获取当前支付宝服务器时间，返回一个数值，代表从 1970 年 1 月 1 日 0 时 0 分 0 秒（UTC）距离当前时间的毫秒数。 |
 
+# 常见问题 FAQ
+
+## Q：通过 my.getServerTime 获取到的时间戳怎么转化为日期时间？
+A：
+- 可以使用Day.js插件进行格式化。文档链接：[https://dayjs.fenxianglu.cn/](https://dayjs.fenxianglu.cn/)
+- 也可以通过如下方法进行转化：
+```javascript
+const timeFormat = (T, fmt) => {
+  const dte = new Date(T);
+  function getYearWeek(date) {
+    var date1 = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    var date2 = new Date(date.getFullYear(), 0, 1);
+
+    //获取1月1号星期（以周一为第一天，0周一~6周日）
+    var dateWeekNum = date2.getDay() - 1;
+    if (dateWeekNum < 0) {
+      dateWeekNum = 6;
+    }
+    if (dateWeekNum < 4) {
+      //前移日期
+      date2.setDate(date2.getDate() - dateWeekNum);
+    } else {
+      //后移日期
+      date2.setDate(date2.getDate() + 7 - dateWeekNum);
+    }
+    var d = Math.round((date1.valueOf() - date2.valueOf()) / 86400000);
+    if (d < 0) {
+      var date3 = new Date(date1.getFullYear() - 1, 11, 31);
+      return getYearWeek(date3);
+    } else {
+      //得到年数周数
+      var year = date1.getFullYear();
+      var week = Math.ceil((d + 1) / 7);
+      return week;
+    }
+  }
+
+  var o = {
+    "M+": dte.getMonth() + 1, //月份
+    "D+": dte.getDate(), //日
+    "h+": dte.getHours(), //小时
+    "m+": dte.getMinutes(), //分
+    "s+": dte.getSeconds(), //秒
+    "q+": Math.floor((dte.getMonth() + 3) / 3), //季度
+    S: dte.getMilliseconds(), //毫秒
+    "W+": getYearWeek(dte), //周数
+  };
+  if (/(Y+)/.test(fmt))
+    fmt = fmt.replace(
+      RegExp.$1,
+      (dte.getFullYear() + "").substr(4 - RegExp.$1.length)
+    );
+  for (var k in o)
+    if (new RegExp("(" + k + ")").test(fmt)) {
+      fmt = fmt.replace(
+        RegExp.$1,
+        RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length)
+      );
+    }
+  return fmt;
+}
+//在使用的地方直接调用即可, time为某个时间节点的时间戳(毫秒单位)
+timeFormat(time, "YYYY-MM-DD hh:mm:ss") //1970-01-01 00:00:00
+timeFormat(time, "YYYY-M-D h:m:s")   // 1970-1-1 0:0:0
+```
