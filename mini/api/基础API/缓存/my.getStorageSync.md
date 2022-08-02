@@ -1,5 +1,5 @@
 # 简介
-**my.getStorageSync** 是获取缓存数据的同步接口。   
+**my.getStorageSync** 是获取本地缓存数据的同步接口。   
 同步方法会阻塞当前任务，直到同步方法处理返回。异步方法 [my.getStorage](https://opendocs.alipay.com/mini/api/azfobl) 不会阻塞当前任务。
 
 小程序缓存默认具有支付宝账号和小程序 ID 两级隔离。   
@@ -49,7 +49,7 @@ Object 类型，参数如下：
 
 | **error** | **errorMessage** | **解决方案** |
 | --- | --- | --- |
-| 11 | 查无此key | 不存在指定 key 的缓存数据| 
+| 2 | 必填参数为空 | key不得为空| 
 
 
 
