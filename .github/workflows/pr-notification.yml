@@ -16,7 +16,8 @@ jobs:
       - name: Say Hello
         shell: bash
         env:
-          dingtalk_url: ${{ secrets.DINGTALK_URL_TGF }}
+          DINGTALK_URL: ${{ secrets.DINGTALK_URL_TGF }}
         run: |
-          curl -sS "$dingtalk_url" -H 'Content-Type: application/json' -d '{"msgtype":"text","text":{"content":"Hello from GitHub"}}'
+          local PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
+          curl -sS "$DINGTALK_URL" -H 'Content-Type: application/json' -d '{"msgtype":"text","text":{"content":"Hello from github #'"$PR_NUMBER"'"}}'
           echo
