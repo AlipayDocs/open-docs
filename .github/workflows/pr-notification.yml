@@ -22,7 +22,7 @@ jobs:
         run: |
           PR_AUTHOR="${{ github.event.pull_request.user.login }}"
           PR_AUTHOR_NAME=$(echo "$SWORD_USERS" | jq -r ".$PR_AUTHOR|.name")
-          [[ PR_AUTHOR_NAME == null ]] || PR_AUTHOR_NAME=$PR_AUTHOR
+          [[ PR_AUTHOR_NAME == null ]] && PR_AUTHOR_NAME=$PR_AUTHOR
           PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
           TEXT="{\"content\":\"英明神武的${PR_AUTHOR_NAME}提交了文档 PR https://github.com/AlipayDocs/open-docs/pull/$PR_NUMBER/files @$DINGTALK_ID\"}"
           AT="{\"atDingtalkIds\":[\"$DINGTALK_ID\"]}"
