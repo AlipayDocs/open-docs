@@ -1,3 +1,4 @@
+[openvideo-应用配置](https://gw.alipayobjects.com/mdn/rms_aefee5/afts/file/A*rfoRSI3JCrMAAAAAAAAAAAAAARQnAQ)
 `app.json` 用于对小程序进行全局配置，设置页面文件的路径、窗口表现、多 tab、分包、插件等。
 
 以下是一个基本配置示例：
