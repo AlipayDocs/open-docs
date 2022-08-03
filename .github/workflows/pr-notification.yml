@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: PR Notification
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say Hello
+        shell: bash
+        env:
+          dingtalk_url: ${{ secrets.DINGTALK_URL_TGF }}
+        run: |
+          curl -sS "$dingtalk_url" -H 'Content-Type: application/json' -d '{"msgtype":"text","text":{"content":"Hello from GitHub"}}'
+          echo
