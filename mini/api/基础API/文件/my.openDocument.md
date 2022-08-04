@@ -46,7 +46,7 @@ my.downloadFile({
             console.log('open document success')
           },
           fail:(res) => {
-            console.log('fail:'+JSON.stringify(res))
+            console.log('openDocument fail:'+JSON.stringify(res))
           },
         })
       },
