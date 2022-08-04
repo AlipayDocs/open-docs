@@ -8,8 +8,9 @@
 
 如果需要验证支付宝返回加密内容的真实性，请确保已完成接口加签方式配置。[开放平台控制台](https://openhome.alipay.com/develop/manage) > 开发设置 > **接口加签方式**。详见 [接口加签方式](https://opendocs.alipay.com/common/02mriz) 设置。未设置接口加签方式直接调用此接口将不会返回 sign 字段。
 
-使用此 API 需绑定 **获取会员手机号** 产品并登录主账号进行用户信息申请。操作步骤如下。登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，选择绑定 **获取会员手机号**。如果不可申请用户信息，请对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
+使用此 API 需绑定 **获取会员手机号** 产品并登录主账号进行用户信息申请。操作步骤如下。登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，选择绑定 **获取会员手机号**。
 ![712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ)
+如果不可申请用户信息，请检查小程序是否设置主营行业，并且对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
 未绑定 **获取会员手机号** 产品或未进行用户信息申请直接调用此 API 返回内容解密后如下：
 ```json
 {"code": "40006","msg": "Insufficient Permissions","subCode": "isv.insufficient-isv-permissions","subMsg": "ISV权限不足，建议在开发者中心检查对应功能是否已经添加，解决办法详见：https:\/\/docs.open.alipay.com\/common\/isverror"}
@@ -159,7 +160,7 @@ A：请检查小程序是否已绑定 **获取会员手机号** 并申请了用�
 
 ## Q：申请用户信息不可点击并提示 “所有用户信息字段都不满足申请条件”，如何处理？
 ![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*RJn7TbMxO-wAAAAAAAAAAAAAARQnAQ)
-A：请对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
+A：请检查小程序是否设置主营行业，并对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
 
 ## Q：为什么调用 my.getPhoneNumber 没有获取到手机号？
 A：一般情况下都是当前用户的支付宝账号没有绑定手机号所致，需要当前用户登录 [账号管理](https://custweb.alipay.com/account/index.htm)，绑定手机号。
