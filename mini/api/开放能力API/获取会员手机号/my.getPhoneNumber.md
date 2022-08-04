@@ -1,20 +1,33 @@
 # 简介
 **my.getPhoneNumber** 是获取支付宝用户绑定的手机号的 API。
 
-此 API 涉及获取用户隐私信息，使用此 API 前请对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
+此接口会返回加密后的用户手机号，请确保已完成接口内容加密方式配置。[开放平台控制台](https://openhome.alipay.com/develop/manage) > 开发设置 > **接口内容加密方式**。详见 [接口内容加密方式]((https://opendocs.alipay.com/common/02mse3))。未设置接口加密方式直接调用此接口会返回
+```json
+{"code": "40001","msg": "Missing Required Arguments", "subCode": "isv.missing-encrypt-key", "subMsg": "缺少加密配置"}
+```
 
-目前该功能需要在开发者后台完成敏感信息申请后才可以使用，入口为 **开发管理** > **功能列表** > **添加功能** > **获取会员手机号** > **用户信息申请**，此功能需谨慎使用，若支付宝发现信息存在超出约定范围使用或者不合理使用等情况，支付宝有权永久回收该小程序的该接口权限。
+如果需要验证支付宝返回加密内容的真实性，请确保已完成接口加签方式配置。[开放平台控制台](https://openhome.alipay.com/develop/manage) > 开发设置 > **接口加签方式**。详见 [接口加签方式](https://opendocs.alipay.com/common/02mriz) 设置。未设置接口加签方式直接调用此接口将不会返回 sign 字段。
 
-在开放平台控制台 > 开发设置中配置 **接口内容加密方式** 后，`my.getPhoneNumber` 才能返回用户加密的手机号（否则将报错 40001，“缺少加密配置项”）。详见 [接口内容加密方式]((https://opendocs.alipay.com/common/02mse3))。
+使用此 API 需绑定 **获取会员手机号** 产品并登录主账号进行用户信息申请。操作步骤如下。登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，选择绑定 **获取会员手机号**。如果不可申请用户信息，请对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
+![712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ)
+未绑定 **获取会员手机号** 产品或未进行用户信息申请直接调用此 API 返回内容解密后如下：
+```json
+{"code": "40006","msg": "Insufficient Permissions","subCode": "isv.insufficient-isv-permissions","subMsg": "ISV权限不足，建议在开发者中心检查对应功能是否已经添加，解决办法详见：https:\/\/docs.open.alipay.com\/common\/isverror"}
+```
 
-获取支付宝会员手机号需要用户进行授权，授权行为通过 [<button> 组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发， `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `phoneNumber`。用户点击并同意之后，可以通过 `my.getPhoneNumber` 接口获取到支付宝会员加密后的手机号。最后在服务端结合签名算法和 AES 密钥进行解密获取手机号，方法可查看 [接口内容加解密方式](https://opendocs.alipay.com/common/02mse3)。
+获取支付宝会员手机号需要用户进行授权，授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发， `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `phoneNumber`。用户点击并同意之后，可以通过 `my.getPhoneNumber` 接口获取到支付宝会员加密后的手机号。最后在服务端 [解密返回的密文获取手机号](https://opendocs.alipay.com/common/02mse3) 和 [验证加密内容的真实性](https://opendocs.alipay.com/common/02mriz)。未经过 Button 授权直接调用此 API 会解密后会返回
+```json
+{"code":"40003","msg":"Insufficient Conditions","subCode":"isv.invalid-auth-relations","subMsg":"无效的授权关系"}
+```
+
+根据《中华人民共和国个人信息保护法》，为进一步规范开发者的用户个人信息处理行为，保障用户合法权益，支付宝小程序无论是通过调用支付宝官方提供的涉及用户个人信息的相关接口，还是开发者自行收集用户个人信息，均需补充相应的小程序隐私政策。详情可查看 [小程序隐私政策](https://opendocs.alipay.com/mini/03lwro)。
+
+此功能需谨慎使用，若支付宝发现信息存在超出约定范围使用或者不合理使用等情况，支付宝有权永久回收该小程序的该接口权限。
 
 ## 使用限制
 
 - 基础库 [1.16.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.35 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
-- 调用此 API 前需登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，选择绑定 **获取会员手机号**。
-- 根据《中华人民共和国个人信息保护法》，为进一步规范开发者的用户个人信息处理行为，保障用户合法权益，支付宝小程序无论是通过调用支付宝官方提供的涉及用户个人信息的相关接口，还是开发者自行收集用户个人信息，均需补充相应的小程序隐私政策。详情可查看 [小程序隐私政策](https://opendocs.alipay.com/mini/03lwro)。
 
 # 接口调用
 
@@ -87,10 +100,10 @@ res.response 为完整的报文数据，前端需要将该报文发送到开发�
 {
   "code": "40001",
   "msg": "Missing Required Arguments",
-  "subCode": "isv.missing-default-signature-type",
-  "subMsg": "应用未设置默认签名类型"
+  "subCode": "isv.missing-encrypt-key",
+  "subMsg": "缺少加密配置"
 }
-// 解决方案：重新保存下开发者的密钥，或者设置下小程序的应用网关地址
+// 解决方案：开放平台开发设置配置接口内容加密方式
 {
   "code": "40002",
   "msg": "Invalid Arguments",
@@ -98,6 +111,13 @@ res.response 为完整的报文数据，前端需要将该报文发送到开发�
   "subMsg": "加密异常"
 }
 // 解决方案：按文档重新设置AES密钥
+{
+  "code": "40006",
+  "msg": "Insufficient Permissions",
+  "subCode": "isv.insufficient-isv-permissions",
+  "subMsg": "ISV权限不足，建议在开发者中心检查对应功能是否已经添加，解决办法详见：https:\/\/docs.open.alipay.com\/common\/isverror"
+}
+// 解决方案：开放平台控制台绑定获取会员手机号产品
 ```
 
 ## Button 属性说明
@@ -128,16 +148,18 @@ success 回调会携带一个 Object 类型的对象，其参数如下：
 
 # 常见问题 FAQ
 
-## Q：调用 my.getPhoneNumber，报错“无效的授权关系”，如何处理？
+## Q：调用 my.getPhoneNumber，报错 “无效的授权关系”，如何处理？
 A：用户 **主动授权** 后调用`my.getPhoneNumber` 才能获取用户支付宝会员的手机号。授权行为通过 `<button>` 组件的 **点击** 动作来触发操作，需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `phoneNumber`。
 
 ## Q：调用 my.getPhoneNumber，报错 “缺少加密配置”，如何处理？
 A：请先在开放平台控制台 > 开发设置中配置 **接口内容加密方式**。详见 [接口内容加密方式]((https://opendocs.alipay.com/common/02mse3))。
 
-## Q：调用 my.getPhoneNumber 获取手机号报错，该如何处理？
-A：
-- 请检查小程序已添加 **获取会员手机号** 功能包，并已在 **隐私内容申请** 中 **申请手机号**（若在小程序详情页看不到敏感信息申请的入口，请使用主账号登录）。申请路径为：[开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置的应用，点击进入应用详情页 > **管理** > **能力管理**，添加 **获取会员手机号** 能力 > **用户信息申请**。
-- 请确保已在小程序详情页完成 [接口加签方式](https://opendocs.alipay.com/common/02mriz) 、[接口内容加密方式](https://opendocs.alipay.com/common/02mse3)、[应用网关](https://opendocs.alipay.com/common/02qibh) 设置，若缺失这三个设置，在调用 my.getPhoneNumber 时可能只返回 response 不会返回 sign。<br />应用网关用于接收支付宝异步通知，例如口碑开店中，需要配置此网关来接收开发者门店被动通知。且一个 APPID 只能配置一个对应的应用网关，应用网关以 https:// 或 http:// 开头。<br />
+## Q：调用 my.getPhoneNumber 报错 “ISV权限不足”，如何处理？
+A：请检查小程序是否已绑定 **获取会员手机号** 并申请了用户信息。若在产品绑定页面看不到用户信息申请的入口，请使用主账号登录。申请路径为：[开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置的应用，点击进入应用详情页 > **开发** > **产品绑定**，绑定 **获取会员手机号** 产品 > 点击 **用户信息申请**。
+
+## Q：申请用户信息不可点击并提示 “所有用户信息字段都不满足申请条件”，如何处理？
+![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*RJn7TbMxO-wAAAAAAAAAAAAAARQnAQ)
+A：请对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
 
 ## Q：为什么调用 my.getPhoneNumber 没有获取到手机号？
 A：一般情况下都是当前用户的支付宝账号没有绑定手机号所致，需要当前用户登录 [账号管理](https://custweb.alipay.com/account/index.htm)，绑定手机号。
