@@ -25,6 +25,8 @@
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-user-info?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
 
 ### .js 示例代码
+授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发。
+
 唤起授权框，推荐兼容方案如下：
 ```html
 <!-- .axml -->
@@ -77,14 +79,6 @@ onGetAuthorize(res) {
 {response: '{"response":{"code":"40003","msg":"Insufficient Co…"isv.invalid-auth-relations","subMsg":"无效的授权关系"}}'}
 ```
 
-## Button 属性说明
-| **属性** | **说明** |
-| --- | --- |
-| open-type | getAuthorize 为授权组件（固定值）。 |
-| scope | userInfo（固定值）。 |
-| onGetAuthorize | 授权成功回调（在回调里可以调用获取信息的接口）。 |
-| onError | 授权失败回调（包括用户拒绝和系统异常）。 |
-
 ## 入参
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
@@ -105,11 +99,10 @@ success 回调函数会携带一个 Object 类型的对象，属性被解析后�
 | gender | String | 历史遗留字段，恒为""。 |
 
 # 常见问题 FAQ
-## Q：如何判断用户是否授权过会员基础信息？
-A：可以通过 [my.getSetting](https://opendocs.alipay.com/mini/api/xmk3ml) 接口返回的 userInfo 字段判断用户是否授权过会员基础信息。userInfo 为 true 即已授权，可以通过 `my.getOpenUserInfo` 接口获取用户基础信息。
-
 ## Q：调用 my.getOpenUserInfo，报错“无效的授权关系”，如何处理？
-A：用户 **主动授权** 后调用`my.getOpenUserInfo` 才能获取用户支付宝会员的基础信息。授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发操作，需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `userinfo`。
+A：
+- 用户 **主动授权** 后调用`my.getOpenUserInfo` 才能获取用户支付宝会员的基础信息。授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发操作，需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `userinfo`。
+- 可以通过 [my.getSetting](https://opendocs.alipay.com/mini/api/xmk3ml) 接口返回的 userInfo 字段判断用户是否授权过会员基础信息，userInfo 为 true 即已授权。
 
 ## Q：调用 my.getOpenUserInfo，报错 "ISV权限不足"，如何处理？
 A：“获取会员信息”功能包已下架，若之前创建的应用已添加了“获取会员信息”的功能包则能正常调用接口，未添加的则无法再添加此功能。 
@@ -123,7 +116,7 @@ A：“获取会员信息”功能包已下架，若之前创建的应用已添�
 ![|712x369](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*WaCESJQ8cBwAAAAAAAAAAAAAARQnAQ)
 
 ## Q：如何获取除用户头像、昵称信息以外的用户信息？
-A：**获取会员基础信息** 只支持获取用户头像、昵称信息。如果需要获取其他用户信息，参阅 [用户信息申请流程](https://opendocs.alipay.com/support/01rayg)
+A：**获取会员基础信息** 只支持获取用户头像、昵称信息。如果需要获取其他用户信息，参阅 [用户信息申请流程](https://opendocs.alipay.com/common/02kkuu)
 
-
-更多问题请参阅 [获取会员基础信息 FAQ](https://opendocs.alipay.com/mini/api/qcn29g)
+## Q：为什么调用 my.getOpenUserInfo 返回的用户的昵称为空？
+A：部分支付宝用户没有设置昵称，故获取不到用户昵称。
