@@ -1,7 +1,7 @@
 # 简介
 > 建议：在使用这个接口之前，建议熟读[文件系统](https://opendocs.alipay.com/mini/03dt4s)这篇文档。
 
-**FileSystemManager.saveFile** 用于保存临时文件到本地。如果指定存储的文件路径(filePath)，则保存为[本地用户文件](https://opendocs.alipay.com/mini/03dt4s)，否则保存为[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s)。\
+**FileSystemManager.saveFile** 用于保存临时文件到支付宝本地。如果指定存储的文件路径(filePath)，则保存为[本地用户文件](https://opendocs.alipay.com/mini/03dt4s)，否则保存为[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s)。\
 注意：此接口会移动临时文件存储路径，因此调用成功后，此次生成的本地临时文件不能再被使用。 
 
 
