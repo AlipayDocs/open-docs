@@ -49,7 +49,10 @@ my.downloadFile({
             console.log('fail:'+JSON.stringify(res))
           },
         })
-      }
+      },
+      fail:(res) => {
+        console.log('writeFile fail:'+JSON.stringify(res))
+      },
     });
   },
 ```
