@@ -88,5 +88,5 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 # 常见问题 FAQ
 
-## Q: 调用 FileSystemManager.saveFile 保存成功之后，文件保存在哪里了？
-A: 不论传入不传入 filePath，FileSystemManager.saveFile 保存之后返回的路径地址都是虚拟的，如果想保存到手机本地的话，可以使用[my.saveFile](https://opendocs.alipay.com/mini/api/xbll1q)。
+## Q: 调用 FileSystemManager.saveFile 保存成功之后，文件保存在哪里了，怎么可以找到？
+A: 不论传入不传入 filePath，FileSystemManager.saveFile 保存之后返回的路径都是虚拟路径，需要通过小程序内的 API 才能访问。如果想要保存到手机本地的话，可以使用[my.saveFile](https://opendocs.alipay.com/mini/api/xbll1q)。
