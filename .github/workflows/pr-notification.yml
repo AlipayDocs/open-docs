@@ -9,6 +9,7 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
+    secrets: inherit
 
     steps:
       - name: Say Hello
