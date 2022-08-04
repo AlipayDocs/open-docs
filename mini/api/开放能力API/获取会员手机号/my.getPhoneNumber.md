@@ -149,6 +149,9 @@ success 回调会携带一个 Object 类型的对象，其参数如下：
 
 # 常见问题 FAQ
 
+## Q：如何判断用户是否授权过会员手机号？
+A：可以通过 [my.getSetting](https://opendocs.alipay.com/mini/api/xmk3ml) 接口返回的 phoneNumber 为 true 即已授权，可以通过 `my.getPhoneNumber` 接口获取用户手机号。
+
 ## Q：调用 my.getPhoneNumber，报错 “无效的授权关系”，如何处理？
 A：用户 **主动授权** 后调用`my.getPhoneNumber` 才能获取用户支付宝会员的手机号。授权行为通过 `<button>` 组件的 **点击** 动作来触发操作，需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `phoneNumber`。
 
