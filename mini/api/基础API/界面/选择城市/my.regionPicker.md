@@ -107,7 +107,7 @@ Object 类型，参数如下：
 #### Array add
 | **参数** | **类型** | **描述** |
 | --- | --- | --- |
-| pid | String | 增加对象的父对象的 ID，新增省份对象时无需此参数。可通过 my.regionPicker 回调参数里 code 字段获得。(注意，支付宝客户端IOS系统10.2.60版本之后才支持向已有的省添加城市) |
+| pid | String | 增加对象的父对象的 ID，新增省份对象时无需此参数。可通过 my.regionPicker 回调参数里 code 字段获得。<br> **注意** ：支付宝 iOS 客户端 10.2.60 之前的版本不支持此参数。 |
 | id | String | 增加对象的 ID。 |
 | name | String | 增加对象的名称。 |
 | nextId | String | 增加对象之后的对象 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
