@@ -1,8 +1,10 @@
 # 简介
-> 建议：在使用这个接口之前，建议熟读[文件系统](https://opendocs.alipay.com/mini/03dt4s)这篇文档。
 
-**FileSystemManager.saveFile** 用于保存临时文件到支付宝本地。如果指定存储的文件路径(filePath)，则保存为[本地用户文件](https://opendocs.alipay.com/mini/03dt4s)，否则保存为[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s)。\
-注意：此接口会移动临时文件存储路径，因此调用成功后，此次生成的本地临时文件不能再被使用。 
+**FileSystemManager.saveFile** 用于将临时文件保存为本地用户文件或本地缓存文件。
+
+如果指定存储的文件路径（filePath），则保存为[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)，否则保存为[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)。
+
+注意：此接口实质是移动文件，调用成功后，原临时文件将不复存在。
 
 
 ## 使用限制
@@ -89,4 +91,5 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 # 常见问题 FAQ
 
 ## Q: 调用 FileSystemManager.saveFile 保存成功之后，文件保存在哪里了，怎么可以找到？
-A: 不论传入不传入 filePath，FileSystemManager.saveFile 保存之后返回的路径都是虚拟路径，需要通过小程序内的 API 才能访问。如果想要保存到手机本地的话，可以使用[my.saveFile](https://opendocs.alipay.com/mini/api/xbll1q)。
+A: 不论传入不传入 filePath，FileSystemManager.saveFile 保存之后返回的路径都是虚拟路径，需要通过小程序内的 API 才能访问。如果是图片文件，可通过
+ [my.saveImageToPhotosAlbum](https://opendocs.alipay.com/mini/api/media/image/my.saveImagetophotosalbum) 保存到系统相册，到相册中找到。
