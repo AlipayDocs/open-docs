@@ -4,7 +4,7 @@
 
 ## 使用限制
 
-- 仅可下载 HTTPS 协议的文件，文件下载后保存为[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。
+- 仅可下载 HTTPS 资源或 [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)，文件下载后保存为[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。
 - 如果文件格式不能被识别，则会以 `.other` 类型的文件进行存储。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
@@ -60,20 +60,20 @@ Object 类型，属性如下：
 
 ### success 回调函数
 
-入参为 Object 类型，属性如下：
+success 回调会收到一个 Object 类型的参数，属性如下：
 
 | **属性**   | **类型** | **描述**             |
 | ---------- | -------- | -------------------- |
 | apFilePath | String   | 文件临时存放的位置（[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)）。 |
-| tempFilePath | String   | 文件临时存放的位置（本地临时文件）<br/>**版本要求：** 基础库 [2.7.23](https://opendocs.alipay.com/mini/ide/framework-changelog-v2) 开始支持。 |
+| tempFilePath | String   | 文件临时存放的位置（本地临时文件）<br/> 实际与 apFilePath 相同，基础库 [2.7.23](https://opendocs.alipay.com/mini/ide/framework-changelog-v2) 开始支持。 |
 
 
 ### 错误码
 
 | **错误码** | **说明**                 | **解决方案**                  |
 | ---------- | ------------------------ | ----------------------------- |
-| 12         | 下载失败。               | 建议检查网络和服务器。        |
-| 20         | 请求的 URL 不支持 HTTP。 | 建议将请求的 URL 改成 HTTPS。 |
+| 12         | 下载失败。               | 检查 URL 是否有误、服务器状态是否正常；也可能为网络问题，可请用户稍后重试。 |
+| 20         | 请求的 URL 不支持 HTTP。 | 使用 HTTPS 协议的 URL。 |
 
 
 ## 常见问题 FAQ

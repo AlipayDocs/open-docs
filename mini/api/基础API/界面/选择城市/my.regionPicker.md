@@ -44,9 +44,9 @@ Page({
               id: '110101'
             }]
           }]
-        }],
-        selectedItem: ['广东', '深圳', '福田区'],
+        }]
       },
+      selectedItem: ['广东', '深圳', '福田区'],
       success: (res) => {
         my.alert({
           title: 'regionPicker response: ' + JSON.stringify(res),
@@ -107,7 +107,7 @@ Object 类型，参数如下：
 #### Array add
 | **参数** | **类型** | **描述** |
 | --- | --- | --- |
-| pid | String | 增加对象的父对象的 ID，新增省份对象时无需此参数。可通过 my.regionPicker 回调参数里 code 字段获得 |
+| pid | String | 增加对象的父对象的 ID，新增省份对象时无需此参数。可通过 my.regionPicker 回调参数里 code 字段获得。<br> **注意** ：支付宝 iOS 客户端 10.2.60 之前的版本不支持此参数。 |
 | id | String | 增加对象的 ID。 |
 | name | String | 增加对象的名称。 |
 | nextId | String | 增加对象之后的对象 ID。可通过 my.regionPicker 回调参数里 code 字段获得 |
@@ -149,7 +149,7 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 # 常见问题 FAQ
 
-## Q：可以获取 my,regionPicker 中的省市区数据吗？
+## Q：可以获取 my.regionPicker 中的省市区数据吗？
 A：不能直接通过 my.regionPicker 获取省市区数据，只能作为选择器使用。可以通过 [高德 Web API](https://lbs.amap.com/api/webservice/guide/api/district/) 获取最新行政区信息。
 
 ## Q：my.regionPicker 不包含最新的行政区信息怎么办？

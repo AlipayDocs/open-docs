@@ -1,6 +1,6 @@
 # 简介
 
-**my.hideLoading** 是隐藏加载提示的过渡效果的 API，可与 [my.showLoading](https://opendocs.alipay.com/mini/api/bm69kb) 配合使用。
+**my.hideLoading** 用于隐藏 loading 提示框的 API，可与 [my.showLoading](https://opendocs.alipay.com/mini/api/bm69kb) 配合使用。
 
 ## 使用限制
 
