@@ -58,5 +58,10 @@ Page({
 | 照片权限 | PHOTO | iOS | - |
 | push 通知栏权限 | NOTIFICATION | Android | - |
 | 自启动权限 | SELFSTARTING | Android | - |
-| lbs 开关 | LBS | iOS / Android | - |
+| 位置权限 | LBS | iOS / Android | - |
 | 蓝牙 | BLUETOOTH | iOS / Android | 客户端 10.2.33、基础库 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。<br />可通过 `my.canIUse('showAuthGuide.object.authType.BLUETOOTH')` 进行检测。 |
+
+## 错误码
+| **错误码** | **描述** | **解决方案** |
+| --- | --- | --- |
+| 2 | 参数错误。 | 请使用文档中提供的 authType 选项。 |
