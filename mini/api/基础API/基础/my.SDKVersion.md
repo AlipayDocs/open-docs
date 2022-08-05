@@ -4,7 +4,7 @@
 
 基础库是小程序的运行时框架，不同版本支付宝客户端、不同的时间点，基础库版本可能不同。可通过 my.SDKVersion 获取当前运行环境（IDE 或真机）中的基础库版本号。
 
-要了解基础库，请查看更多[基础库](https://opendocs.alipay.com/mini/framework/lib)内容。
+关于基础库的更多知识，可通过 [此文档](https://opendocs.alipay.com/mini/framework/lib) 了解。
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
