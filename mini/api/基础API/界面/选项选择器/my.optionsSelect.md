@@ -1,5 +1,5 @@
 # 简介
-**my.optionsSelect** 是用于生成 select 组件，支持单列选择和二级数据选择
+**my.optionsSelect** 用于显示 select 选择器，支持单列选择和二级数据选择。
 
 ## 使用限制
 
@@ -20,7 +20,6 @@
 ### .js 示例代码
 
 ```javascript
-// API-DEMO page/API/options-select/options-select.js
 Page({
   openOne() {
     my.optionsSelect({
