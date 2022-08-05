@@ -19,33 +19,8 @@
 # 接口调用
 
 ## 示例代码
-
-```json
-// API-DEMO page/API/make-phone-call/make-phone-call.json
-{
-  "defaultTitle": "打电话"
-}
-```
-
-```html
-<!-- API-DEMO page/API/make-phone-call/make-phone-call.axml-->
-<view class="page">
-  <view class="page-section">
-    <view class="page-section-title">my.makePhoneCall</view>
-    <view class="page-section-btns">
-      <view onTap="makePhoneCall">打电话</view>
-    </view>
-  </view>
-</view>
-```
-
 ```javascript
-// API-DEMO page/API/make-phone-call/make-phone-call.js
-Page({
-  makePhoneCall() {
-    my.makePhoneCall({ number: '95188' });
-  },
-});
+my.makePhoneCall({ number: '95188' });
 ```
 
 ## 入参
@@ -61,16 +36,13 @@ Object 类型，属性如下：
 
 
 ## 错误码
-| **错误码** | **描述** | **解决方案** ｜
+| **错误码** | **错误消息** | **解决方案** ｜
 | --- | --- |
-| 2 | 安卓：invalid parameter；iOS：接口参数无效 | number不得为空
+| 2 | 安卓：invalid parameter；iOS：接口参数无效 | number 参数不得为空
 
 # 常见问题 FAQ
 
 ## Q: 小程序 web-view 中如何拨号？
 
-建议使用 web-view 与小程序交互，然后在小程序中调用 `my.makePhoneCall` 来唤起电话。
+在小程序的 web-view 中不支持使用 `<a href="tel:xx">` 唤起拨号。建议从 web-view 中 [postMessage](https://forum.alipay.com/college/post/11901043) 给与小程序，然后在小程序中调用 `my.makePhoneCall`。
 
-可参考：[web-view 与小程序通信详解](https://forum.alipay.com/college/post/11901043)
-
-> 在小程序的 web-view 中目前是不支持 `<a href="tel:xx"` 这样的 a 标签来唤起拨号的，这个方法在支付宝 iOS 上暂不支持。所以实际在小程序的规范中，是不建议使用这个功能的。
