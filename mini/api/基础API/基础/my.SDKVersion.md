@@ -19,7 +19,6 @@
 
 ## 示例代码
 
-### .js 示例代码
 ```javascript
 Page({
   getSDKVersion() {
