@@ -1,9 +1,9 @@
 # 简介
-**my.optionsSelect** 是类似于 safari 原生 select 的组件，但是功能更加强大，一般用来替代 select，或者 2 级数据的选择。
+**my.optionsSelect** 用于显示 select 选择器，支持单列选择和二级数据选择。
 
 ## 使用限制
 
-- 不支持 2 级数据之间的联动。
+- 不支持二级数据间的联动（如有此类需求请使用 my.multiLevelSelect）。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -20,7 +20,6 @@
 ### .js 示例代码
 
 ```javascript
-// API-DEMO page/API/options-select/options-select.js
 Page({
   openOne() {
     my.optionsSelect({
