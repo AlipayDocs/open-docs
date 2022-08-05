@@ -149,7 +149,7 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 # 常见问题 FAQ
 
-## Q：可以获取 my,regionPicker 中的省市区数据吗？
+## Q：可以获取 my.regionPicker 中的省市区数据吗？
 A：不能直接通过 my.regionPicker 获取省市区数据，只能作为选择器使用。可以通过 [高德 Web API](https://lbs.amap.com/api/webservice/guide/api/district/) 获取最新行政区信息。
 
 ## Q：my.regionPicker 不包含最新的行政区信息怎么办？
