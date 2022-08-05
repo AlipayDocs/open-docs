@@ -1,5 +1,5 @@
 # 简介
-my.getServerTime 可以获取当前支付宝服务器（不是客户端，也不是自己程序的服务器，而是指支付宝服务器）的时间（从 1970 年 1 月 1 日 0 时 0 分 0 秒（UTC）距离当前时间的毫秒数）。
+my.getServerTime 用于获取支付宝服务器的当前时间（距 1970-01-01 00:00:00（UTC）的毫秒数）。
 
 ## 使用限制
 
@@ -19,18 +19,13 @@ my.getServerTime 可以获取当前支付宝服务器（不是客户端，也不
 ### .js 示例代码
 
 ```javascript
-// API-DEMO page/API/get-server-time/get-server-time.js
-Page({
-  getServerTime(){
-    my.getServerTime({
-      success: (res) => {
-        my.alert({
-          content: res.time,
-        });
-      },
+my.getServerTime({
+  success: (res) => {
+    my.alert({
+      content: res.time,
     });
   }
-})
+});
 ```
 
 ## 入参
@@ -49,17 +44,17 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| time | Number | 获取当前支付宝服务器时间，返回一个数值，代表从 1970 年 1 月 1 日 0 时 0 分 0 秒（UTC）距离当前时间的毫秒数。 |
+| time | Number | 支付宝服务器当前时间（距 1970-01-01 00:00:00（UTC）的毫秒数）。 |
 
 # 常见问题 FAQ
 
 ## Q：通过 my.getServerTime 获取到的时间戳怎么转化为日期时间？
 A：
-- 可以使用Day.js插件进行格式化。文档链接：[https://dayjs.fenxianglu.cn/](https://dayjs.fenxianglu.cn/)
-- 也可以通过如下方法进行转化：
+- 可使用 new Date(time) 得到 [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#instance_methods) 对象，调用其方法获取相应字段
+- 可使用如下方法进行格式化
 ```javascript
-const timeFormat = (T, fmt) => {
-  const dte = new Date(T);
+const timeFormat = (time, fmt = "YYYY-MM-DD hh:mm:ss") => {
+  const dte = new Date(time);
   function getYearWeek(date) {
     var date1 = new Date(date.getFullYear(), date.getMonth(), date.getDate());
     var date2 = new Date(date.getFullYear(), 0, 1);
@@ -70,10 +65,10 @@ const timeFormat = (T, fmt) => {
       dateWeekNum = 6;
     }
     if (dateWeekNum < 4) {
-      //前移日期
+      // 前移日期
       date2.setDate(date2.getDate() - dateWeekNum);
     } else {
-      //后移日期
+      // 后移日期
       date2.setDate(date2.getDate() + 7 - dateWeekNum);
     }
     var d = Math.round((date1.valueOf() - date2.valueOf()) / 86400000);
@@ -81,7 +76,7 @@ const timeFormat = (T, fmt) => {
       var date3 = new Date(date1.getFullYear() - 1, 11, 31);
       return getYearWeek(date3);
     } else {
-      //得到年数周数
+      // 得到年数周数
       var year = date1.getFullYear();
       var week = Math.ceil((d + 1) / 7);
       return week;
@@ -89,14 +84,14 @@ const timeFormat = (T, fmt) => {
   }
 
   var o = {
-    "M+": dte.getMonth() + 1, //月份
-    "D+": dte.getDate(), //日
-    "h+": dte.getHours(), //小时
-    "m+": dte.getMinutes(), //分
-    "s+": dte.getSeconds(), //秒
-    "q+": Math.floor((dte.getMonth() + 3) / 3), //季度
-    S: dte.getMilliseconds(), //毫秒
-    "W+": getYearWeek(dte), //周数
+    "M+": dte.getMonth() + 1, // 月份
+    "D+": dte.getDate(), // 日
+    "h+": dte.getHours(), // 小时
+    "m+": dte.getMinutes(), // 分
+    "s+": dte.getSeconds(), // 秒
+    "q+": Math.floor((dte.getMonth() + 3) / 3), // 季度
+    S: dte.getMilliseconds(), // 毫秒
+    "W+": getYearWeek(dte), // 周数
   };
   if (/(Y+)/.test(fmt))
     fmt = fmt.replace(
@@ -112,7 +107,9 @@ const timeFormat = (T, fmt) => {
     }
   return fmt;
 }
-//在使用的地方直接调用即可, time为某个时间节点的时间戳(毫秒单位)
-timeFormat(time, "YYYY-MM-DD hh:mm:ss") //1970-01-01 00:00:00
+
+timeFormat(time, "YYYY-MM-DD hh:mm:ss") // 1970-01-01 00:00:00
 timeFormat(time, "YYYY-M-D h:m:s")   // 1970-1-1 0:0:0
+
 ```
+- 也可使用 Day.js 等社区方案实现时间格式化
