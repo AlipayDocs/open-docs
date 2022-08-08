@@ -37,7 +37,7 @@ Page({
     my.optionsSelect({
       title: "出生年月选择",
       optionsOne: ["2014年", "2013年", "2012年", "2011年", "2010年", "2009年", "2008年"],
-      optionsTwo: ["一月", '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+      optionsTwo: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
       selectedOneIndex: 3,
       selectedTwoIndex: 5,
       success(res) {
@@ -74,4 +74,39 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | selectedOneOption | String | 选项一选择的内容。<br />若选择取消，则返回空字符串。 |
 | selectedTwoIndex | Number | 选项二选择的值。<br />若选择取消，则返回空字符串。 |
 | selectedTwoOption | String | 选项二选择的内容。<br />若选择取消，则返回空字符串。 |
+
+# 常见问题 FAQ
+## Q：如何引用 json 文件作为选项列表参数数据？
+A：可以先通过 [FileSystemManager.readFile](https://opendocs.alipay.com/mini/api/0226oj) 读取 json 文件内容，然后再调用 my.optionsSelect。
+
+### .js 示例代码
+```javascript
+let fs =my.getFileSystemManager();
+fs.readFile({
+  filePath:'/pages/test.json',
+  encoding:'utf-8',
+  success(res){
+    my.alert({
+      content:JSON.stringify(JSON.stringify(res.data))
+    });
+    var json =JSON.parse(res.data);
+    console.log(json)
+    
+    my.optionsSelect({
+      title:"还款日选择",
+      optionsOne: json.year,
+      selectedOneIndex:2,
+      success(res) {
+        my.alert({
+          content:JSON.stringify(res, null, 2),
+        });
+      }
+    });
+  },
+  fail(res){
+    my.alert({
+      content:JSON.stringify(res)
+    });
+  },
+})
 
