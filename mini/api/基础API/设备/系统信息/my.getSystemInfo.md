@@ -73,8 +73,8 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | titleBarHeight | Number | 标题栏高度。 |
 | statusBarHeight | Number | 状态栏高度。单位：px |
 | screen | Object | 屏幕宽度和高度。结构为： { width: Number, height: Number } 单位：px。|
-| screenWidth | Number | 屏幕宽度。单位：px。screenWidth 数值在 Android系统下不准确，请用 screenWidth/pixelRatio 计算出正确的数值。亦或使用 screen 中的 height |
-| screenHeight | Number | 屏幕高度。 单位：px。screenHeight 数值在 Android系统下不准确，请用 screenHeight/pixelRatio 计算出正确的数值。亦或使用 screen 中的 width |
+| screenWidth | Number | 屏幕宽度。单位：px。screenWidth 数值在 Android系统下不准确，请用 screenWidth/pixelRatio 计算出正确的数值。亦或使用 screen 中的 width |
+| screenHeight | Number | 屏幕高度。 单位：px。screenHeight 数值在 Android系统下不准确，请用 screenHeight/pixelRatio 计算出正确的数值。亦或使用 screen 中的 height |
 | brand | String | 手机品牌。 |
 | fontSizeSetting | Number | 用户设置字体大小。单位：px |
 | app | String | 当前运行的客户端。若当前为支付宝，则有效值为 "alipay"。不同的客户端，对应的有效值如下：<ul><li>alipay：支付宝。</li><li>UC：UC浏览器。</li><li>QUARK：夸克浏览器。</li><li>AK：阿里健康。</li><li>amap：高德。</li><li>YK：优酷。</li><li>DINGTALK：钉钉。</li></ul> |
