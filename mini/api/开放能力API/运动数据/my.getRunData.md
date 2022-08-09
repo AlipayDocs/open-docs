@@ -130,7 +130,7 @@ A：未配置应用接口内容加密方式导致的报错。
 ## Q：服务端解密 my.getRunData 获取的运动数据为何报错 ISV权限不足？
 A：
 1. 登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置应用，点击进入应用详情页 > **产品绑定** > **绑定产品** > 添加 **运动数据**。
-2. 在产品绑定页面点击 **用户信息申请** > 申请 my.queryStepDailyCount 权限，详情可查看 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) > **运动数据**。
+2. 绑定运动数据产品后，在产品绑定页面找到 **运动数据**，点击 **用户信息申请** > 申请 my.queryStepDailyCount 权限，详情可查看 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) > **运动数据**。
 
 ![运动数据](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*9BfURadvtPUAAAAAAAAAAAAAARQnAQ)
 ![用户信息申请](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*-PA8QLoNqPQAAAAAAAAAAAAAARQnAQ)
