@@ -122,7 +122,7 @@ Object 类型，参数如下：
 ## Q：调用 my.getRunData 为何报错缺少加密配置？
 A：未配置应用接口内容加密方式导致的报错。
 
-- 登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置应用，点击进入应用详情页 > **开发** > **开发设置**，配置接口内容加密方式。
+- 登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置的应用，点击进入应用详情页 > **开发** > **开发设置**，配置接口内容加密方式。
 - 还可在开放平台控制台 **账户中心** > **密钥管理** > **开放平台密钥** > [接口内容加密方式](https://openhome.alipay.com/dev/workspace/key-manage) 找到需配置的应用，点击 **接口内容加密方式** 对应的 **设置**，配置接口内容加密方式。
 
 两个入口选择其一即可完成配置，详细说明请 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
