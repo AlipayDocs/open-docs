@@ -22,7 +22,7 @@ my.getServerTime 用于获取支付宝服务器的当前时间（距 1970-01-01 
 my.getServerTime({
   success: (res) => {
     my.alert({
-      content: res.time,
+      content: `${res.time}`,
     });
   }
 });
