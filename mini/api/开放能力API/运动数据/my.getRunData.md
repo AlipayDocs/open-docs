@@ -120,15 +120,17 @@ Object 类型，参数如下：
 # 常见问题 FAQ
 
 ## Q：调用 my.getRunData 为何报错缺少加密配置？
-A：未配置开放平台 AES 密钥导致的报错。
+A：未配置应用接口内容加密方式导致的报错。
 
-- 登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置 AES 密钥的应用，点击进入应用详情页 > **设置** > **开发设置** 页面配置 AES 密钥。
-- 还可在开放平台控制台 **账户中心** > **密钥管理** > **开放平台密钥** > [接口内容加密方式](https://openhome.alipay.com/dev/workspace/key-manage) 找到需配置 AES 加密方式的应用，点击 **设置** 进行配置。
+- 登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置应用，点击进入应用详情页 > **开发** > **开发设置**，配置接口内容加密方式。
+- 还可在开放平台控制台 **账户中心** > **密钥管理** > **开放平台密钥** > [接口内容加密方式](https://openhome.alipay.com/dev/workspace/key-manage) 找到需配置的应用，点击 **接口内容加密方式** 对应的 **设置**，配置接口内容加密方式。
 
 两个入口选择其一即可完成配置，详细说明请 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
 
 ## Q：服务端解密 my.getRunData 获取的运动数据为何报错 ISV权限不足？
-A：登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > 能力管理 > 搜索运动数据 > 点击 **用户信息申请** > 申请 my.queryStepDailyCount 权限。
+A：
+1. 登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置应用，点击进入应用详情页 > **产品绑定** > **绑定产品** > 添加 **运动数据**。
+2. 在产品绑定页面点击 **用户信息申请** > 申请 my.queryStepDailyCount 权限，详情可查看 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) > **运动数据**。
 
 ![运动数据](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*9BfURadvtPUAAAAAAAAAAAAAARQnAQ)
 ![用户信息申请](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*-PA8QLoNqPQAAAAAAAAAAAAAARQnAQ)
