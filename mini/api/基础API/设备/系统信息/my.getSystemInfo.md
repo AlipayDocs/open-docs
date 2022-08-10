@@ -2,7 +2,7 @@
 
 **my.getSystemInfo** 是获取手机系统信息的 API。
 
-如果只需获取 **clientName**、**clientVersion**、**language**、**platform** 字段，推荐使用更加轻量化的 [my.env](https://opendocs.alipay.com/mini/api/env) API。
+如果只需获取 **clientName**、**clientVersion**、**language**、**platform** 字段，推荐使用更加轻量化的 [my.env](https://opendocs.alipay.com/mini/api/env)。
 
 ## 使用限制
 
@@ -63,7 +63,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | model | String | 手机型号。 |
 | pixelRatio | Number | 设备像素比。 |
 | windowWidth | Number | 可使用窗口宽度。单位：px <br> |
-| windowHeight | Number | 可使用窗口高度。 单位：px <br> **注** ：可使用即指除去 statusBar 和 titleBar 之外，其他可以自定义内容的区域。 |
+| windowHeight | Number | 可使用窗口高度。 单位：px <br> **注** ：“可使用”是指除去 statusBar 和 titleBar 后可以自定义内容的区域。 |
 | language | String | 支付宝设置的语言。<br />分别有以下值：zh-Hans（简体中文）、en（English）、zh-Hant（繁体中文（台湾））、zh-HK（繁体中文（香港））。 |
 | version | String | 支付宝版本号。 |
 | storage | String | 设备磁盘容量。 |
@@ -119,7 +119,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 # 常见问题 FAQ
 ## Q：my.getSystemInfo 中 screenWidth 和 screenHeight 在安卓端取值不对怎么办？
-A：已知缺陷，iOS 上取值正确，Android 上不对（少除了 pixelRatio）。推荐使用 screen.width 和 screen.height 代替，iOS 和 Android 一致。
+A：已知问题，Android 少除了 pixelRatio。推荐使用 screen.width 和 screen.height 代替，iOS 和 Android 一致。
 
 ## Q：my.getSystemInfo 中 windowHeight 和 screenHeight 有什么区别？
 A：screenHeight 是指屏幕高度。windowHeight 是指可使用窗口高度。不设置导航栏透明时，screenHeight = windowHeight + statusBarHeight + titleBarHeight ；设置导航栏透明时，screenHeight = windowHeight 。
