@@ -69,12 +69,12 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | storage | String | 设备磁盘容量。 |
 | currentBattery | String | 当前电量百分比。 |
 | system | String | 系统版本。 |
-| platform | String | 系统名：Android，iOS / iPhone OS 。|
+| platform | String | 系统名：Android，iOS / iPhone OS。|
 | titleBarHeight | Number | 标题栏高度。 |
 | statusBarHeight | Number | 状态栏高度。单位：px |
 | screen | Object | 屏幕宽度和高度。结构为： { width: Number, height: Number } 单位：px。|
-| screenWidth | Number | 屏幕宽度。单位：px。screenWidth 数值在 Android系统下不准确，请用 screenWidth/pixelRatio 计算出正确的数值。亦或使用 screen 中的 width |
-| screenHeight | Number | 屏幕高度。 单位：px。screenHeight 数值在 Android系统下不准确，请用 screenHeight/pixelRatio 计算出正确的数值。亦或使用 screen 中的 height |
+| screenWidth | Number | 屏幕宽度。单位：px。此属性在 Android 上数值不正确（少除了 pixelRatio）。建议统一使用 screen.width 替代。 |
+| screenHeight | Number | 屏幕高度。位置：px。此属性在 Android 上数值不正确（少除了 pixelRatio）。建议统一使用 screen.height 替代。 |
 | brand | String | 手机品牌。 |
 | fontSizeSetting | Number | 用户设置字体大小。单位：px |
 | app | String | 当前运行的客户端。若当前为支付宝，则有效值为 "alipay"。不同的客户端，对应的有效值如下：<ul><li>alipay：支付宝。</li><li>UC：UC浏览器。</li><li>QUARK：夸克浏览器。</li><li>AK：阿里健康。</li><li>amap：高德。</li><li>YK：优酷。</li><li>DINGTALK：钉钉。</li></ul> |
@@ -119,9 +119,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 # 常见问题 FAQ
 ## Q：my.getSystemInfo 中 screenWidth 和 screenHeight 在安卓端取值不对怎么办？
-A：已在优化之中，可先使用以下方法替代。
-- 可使用 screen 属性中的宽高。
-- 安卓端可使用 screenWidth/pixelRatio ，screenHeight/pixelRatio 。
+A：已知缺陷，iOS 上取值正确，Android 上不对（少除了 pixelRatio）。推荐使用 screen.width 和 screen.height 代替，iOS 和 Android 一致。
 
 ## Q：my.getSystemInfo 中 windowHeight 和 screenHeight 有什么区别？
 A：screenHeight 是指屏幕高度。windowHeight 是指可使用窗口高度。不设置导航栏透明时，screenHeight = windowHeight + statusBarHeight + titleBarHeight ；设置导航栏透明时，screenHeight = windowHeight 。
