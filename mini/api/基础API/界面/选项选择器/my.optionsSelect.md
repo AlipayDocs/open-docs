@@ -81,13 +81,13 @@ A：可以先通过 [FileSystemManager.readFile](https://opendocs.alipay.com/min
 
 ### .js 示例代码
 ```javascript
-let fs = my.getFileSystemManager();
+const fs = my.getFileSystemManager();
 fs.readFile({
   filePath: '/pages/test.json',
   encoding: 'utf-8',
   success(res) {
     my.alert({
-      content: JSON.stringify(JSON.stringify(res.data))
+      content: JSON.stringify(JSON.stringify(res.data)),
     });
     
     const json = JSON.parse(res.data);
@@ -106,7 +106,7 @@ fs.readFile({
   },
   fail(res) {
     my.alert({
-      content: JSON.stringify(res)
+      content: JSON.stringify(res),
     });
   },
 })
