@@ -81,31 +81,31 @@ A：可以先通过 [FileSystemManager.readFile](https://opendocs.alipay.com/min
 
 ### .js 示例代码
 ```javascript
-let fs =my.getFileSystemManager();
+let fs = my.getFileSystemManager();
 fs.readFile({
-  filePath:'/pages/test.json',
-  encoding:'utf-8',
-  success(res){
+  filePath: '/pages/test.json',
+  encoding: 'utf-8',
+  success(res) {
     my.alert({
-      content:JSON.stringify(JSON.stringify(res.data))
+      content: JSON.stringify(JSON.stringify(res.data))
     });
-    var json =JSON.parse(res.data);
+    var json = JSON.parse(res.data);
     console.log(json)
     
     my.optionsSelect({
-      title:"还款日选择",
+      title: "还款日选择",
       optionsOne: json.year,
-      selectedOneIndex:2,
+      selectedOneIndex: 2,
       success(res) {
         my.alert({
-          content:JSON.stringify(res, null, 2),
+          content: JSON.stringify(res, null, 2),
         });
       }
     });
   },
   fail(res){
     my.alert({
-      content:JSON.stringify(res)
+      content: JSON.stringify(res)
     });
   },
 })
