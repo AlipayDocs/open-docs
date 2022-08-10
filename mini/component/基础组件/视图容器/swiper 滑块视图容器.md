@@ -1,7 +1,7 @@
 
 # 简介
 滑块视图容器。其中，只可放置 swiper-item，否则会导致未定义的行为。
-swiper 高度可以通过设置 swiper item 元素高度来控制，也可以通过设置 swiper 的整体高度来控制（通过 adjust-height 属性来具体实现）。
+swiper 高度可以通过设置 swiper-item 元素高度来控制，也可以通过设置 swiper 的整体高度来控制（通过组件的 adjust-height 属性来具体实现）。
 
 ## 使用限制
 
