@@ -62,7 +62,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- |
 | model | String | 手机型号。 |
 | pixelRatio | Number | 设备像素比。 |
-| windowWidth | Number | 可使用窗口宽度。单位：px <br> |
+| windowWidth | Number | 可使用窗口宽度。单位：px |
 | windowHeight | Number | 可使用窗口高度。 单位：px <br> **注** ：“可使用”是指除去 statusBar 和 titleBar 后可以自定义内容的区域。 |
 | language | String | 支付宝设置的语言。<br />分别有以下值：zh-Hans（简体中文）、en（English）、zh-Hant（繁体中文（台湾））、zh-HK（繁体中文（香港））。 |
 | version | String | 支付宝版本号。 |
@@ -73,8 +73,8 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | titleBarHeight | Number | 标题栏高度。 |
 | statusBarHeight | Number | 状态栏高度。单位：px |
 | screen | Object | 屏幕宽度和高度。结构为： { width: Number, height: Number } 单位：px。|
-| screenWidth | Number | 屏幕宽度。单位：px。此属性在 Android 上数值不正确（少除了 pixelRatio）。建议统一使用 screen.width 替代。 |
-| screenHeight | Number | 屏幕高度。位置：px。此属性在 Android 上数值不正确（少除了 pixelRatio）。建议统一使用 screen.height 替代。 |
+| screenWidth | Number | 屏幕宽度。单位：px。此属性在 Android 上取值有误，**建议使用 screen.width 替代。** |
+| screenHeight | Number | 屏幕高度。单位：px。此属性在 Android 上取值有误，**建议使用 screen.height 替代。** |
 | brand | String | 手机品牌。 |
 | fontSizeSetting | Number | 用户设置字体大小。单位：px |
 | app | String | 当前运行的客户端。若当前为支付宝，则有效值为 "alipay"。不同的客户端，对应的有效值如下：<ul><li>alipay：支付宝。</li><li>UC：UC浏览器。</li><li>QUARK：夸克浏览器。</li><li>AK：阿里健康。</li><li>amap：高德。</li><li>YK：优酷。</li><li>DINGTALK：钉钉。</li></ul> |
