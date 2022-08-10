@@ -47,7 +47,7 @@ Page({
 ```
 
 # 自定义组件选择方法
-自定义组件可以通过 this.selectOwnerComponent、this.selectComposedParentComponent 等方法获取其创建者自定义组件、事件路径父自定义组件时，返回相关父组件的实例结果与 ref 回调相同。
+自定义组件可以通过 [this.selectOwnerComponent](https://opendocs.alipay.com/mini/framework/component_object#%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95)、[this.selectComposedParentComponent](https://opendocs.alipay.com/mini/framework/component_object#%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95) 等方法获取其创建者自定义组件、事件路径父自定义组件时，返回相关父组件的实例结果与 ref 回调相同。
 
 假设某页面结构如下：
 
