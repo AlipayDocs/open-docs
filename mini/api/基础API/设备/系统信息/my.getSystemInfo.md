@@ -80,7 +80,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | app | String | 当前运行的客户端。若当前为支付宝，则有效值为 "alipay"。不同的客户端，对应的有效值如下：<ul><li>alipay：支付宝。</li><li>UC：UC浏览器。</li><li>QUARK：夸克浏览器。</li><li>AK：阿里健康。</li><li>amap：高德。</li><li>YK：优酷。</li><li>DINGTALK：钉钉。</li></ul> |
 
 #### model 参数
-对于 iPhone，model 参数将返回 iPhone 内部代码（Internal Name），安卓手机因型号过多，未做比对，请开发者自行百度。iPhone 手机型号与对应的 model 返回值如下表所示：
+对于 iPhone，model 参数将返回 iPhone 内部代码（Internal Name）。iPhone 手机型号与对应的 model 返回值如下表所示：
 
 | **手机型号** | **model 返回值** |
 | --- | --- |
@@ -116,6 +116,8 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | iPhone 13 | iPhone14,5 |
 | iPhone 13 Pro | iPhone14,2 |
 | iPhone 13 Pro Max | iPhone14,3 |
+
+对于 Android 手机，因机型众多不予穷举。如有必要请按 model 的具体取值自行搜索。
 
 # 常见问题 FAQ
 ## Q：my.getSystemInfo 中 screenWidth 和 screenHeight 在安卓端取值不对怎么办？
