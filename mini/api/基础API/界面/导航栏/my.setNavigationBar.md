@@ -53,7 +53,7 @@ Object 类型，参数如下：
 | --- | --- | --- | --- |
 | title | String | 否 | 导航栏标题。 |
 | image | String | 否 | 图片链接地址（支持 GIF 格式图片），必须是 HTTPS，请使用 iOS @3x 分辨率标准的高清图片。<br />若设置了 image 则 title 参数失效。 |
-| frontColor | String | 否 | 导航栏前景色，包括返回键、标题、收藏、右上角胶囊按钮的颜色，仅支持 #ffffff 和 #000000。 |
+| frontColor | String | 否 | 导航栏前景色，包括返回键、标题、收藏、右上角胶囊按钮的颜色，仅支持 #ffffff 和 #000000。 <br /> <strong>基础库 2.7.24 开始支持</strong>|
 | backgroundColor | String | 否 | 导航栏背景色，支持十六进制颜色值。 |
 | borderBottomColor | String | 否 | 导航栏底部边框颜色，支持十六进制颜色值。<br />若设置了 backgroundColor，则 borderBottomColor 不会生效，默认会和 backgroundColor 颜色一样。 |
 | reset | Boolean | 否 | 是否重置导航栏为支付宝默认配色，默认为 false。 |
