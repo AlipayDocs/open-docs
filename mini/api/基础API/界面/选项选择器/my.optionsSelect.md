@@ -89,7 +89,8 @@ fs.readFile({
     my.alert({
       content: JSON.stringify(JSON.stringify(res.data))
     });
-    var json = JSON.parse(res.data);
+    
+    const json = JSON.parse(res.data);
     console.log(json)
     
     my.optionsSelect({
@@ -103,7 +104,7 @@ fs.readFile({
       }
     });
   },
-  fail(res){
+  fail(res) {
     my.alert({
       content: JSON.stringify(res)
     });
