@@ -62,7 +62,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- |
 | model | String | 手机型号。 |
 | pixelRatio | Number | 设备像素比。 |
-| windowWidth | Number | 可使用窗口宽度。单位：px <br> **注** ：可使用即指除去 statusBar 和 titleBar 之外，其他可以自定义内容的区域。 |
+| windowWidth | Number | 可使用窗口宽度。单位：px <br> |
 | windowHeight | Number | 可使用窗口高度。 单位：px <br> **注** ：可使用即指除去 statusBar 和 titleBar 之外，其他可以自定义内容的区域。 |
 | language | String | 支付宝设置的语言。<br />分别有以下值：zh-Hans（简体中文）、en（English）、zh-Hant（繁体中文（台湾））、zh-HK（繁体中文（香港））。 |
 | version | String | 支付宝版本号。 |
