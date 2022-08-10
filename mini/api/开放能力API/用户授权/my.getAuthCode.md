@@ -27,7 +27,7 @@
 // .js
 // 示例一
 my.getAuthCode({
-  scopes: 'auth_user',
+  scopes: 'auth_base',
   success: (res) => {
     my.alert({
       content: res.authCode,
@@ -84,13 +84,65 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 # 常见问题
 
+## Q：如何在一个弹窗里同时进行用户信息、手机号、身份证等授权？
+A：
+1. 登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，确认绑定 **获取会员信息** 产品。
+2. 点击用户信息申请，进入用户信息申请页面，申请对应用户信息的权限。
+![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*XjlFSJPaySYAAAAAAAAAAAAAARQnAQ)
+![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*LqsXR45_a4IAAAAAAAAAAAAAARQnAQ)
+3. 调用 my.getAuthCode 接口，`scope` 参数传 `auth_user`，请求用户信息授权弹窗会展示已申请过的用户信息字段。
+
+部分用户敏感信息有行业属性限制，可能无法申请。可查看 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) 中的 **主营行业对应可申请的会员能力范围与字段说明**。
+
+## Q：授权码（auth_code）无效应该如何处理（isv.code-invalid）？
+A：授权码无效可能是以下几种情况，请对照排查。
+- appId 选择错误
+
+  请确认是否使用正确的 appId。授权码必须是获取用户信息的商户进行调用。
+    1. 如果是自调用模式，拼接授权链接的 appId 或者绑定小程序的 appId 必须与调用接口的 appId 一致。
+    2. 如果是三方代调用模式（服务商代商户获取用户信息），在用户信息授权链接中 appId必须设置为授权商户的 appId，而不是服务商的 appId。
+
+- 授权码已被使用
+
+  授权码一次有效，不可重复使用，请确定传入的授权码是否已经被使用过。
+
+- 授权码过期
+
+  授权码有效期不会低于3 分钟，同时也不会超过24 小时），超过有效期的  授权码 即使未使用也将自动失效。请确定传入的授权码是否因为长时间未使用已经过期。
+
 ## Q：web-view 中如何进行用户授权？
-A：web-view 中不支持调用 my.getAuthCode 接口。如果要在 web-view 中获取用户信息，请在小程序上下文中获取后传递到 web-view 中，可查看 [小程序与web-view内嵌H5相互通信](https://opendocs.alipay.com/support/01rb22)
+A：web-view 中不支持调用 my.getAuthCode 接口。如果要在 web-view 中获取用户信息，请在小程序上下文中获取后传递到 web-view 中，可查看 [小程序与web-view内嵌H5相互通信](https://opendocs.alipay.com/support/01rb22)。示例代码如下
 
-## Q：如何同时进行用户基础信息、手机号、证件等授权（聚合授权）？
-A：alipay.user.info.share 接口的每个用户信息字段（如：用户姓名，手机号码，生日等）需要单独申请开通，开通权限的字段会聚合展示在授权浮窗，可查看 [用户信息申请流程](https://opendocs.alipay.com/support/01rayg)。
+```javascript
+// 小程序示例代码
+const webviewContext = my.createWebViewContext('web-view-1');
+my.getAuthCode({
+  scopes: 'auth_user',
+  success: (res) => {
+    const authCode = res.authCode;
+    // 在服务端获取用户信息
+    my.request({
+      // 你的服务器地址
+      url: 'https://yourserveraddress',
+      data: {
+        authCode,
+      },
+      success(res) {
+        // 获取需要的用户信息
+        webviewContext.postMessage({
+          data: res.data,
+        });
+      }
+    })
+  },
+});
 
-## Q：调用 my.getAuthCode 获取到的 authCode 值是否每个用户是唯一的呢？
-A：每次调用 my.getAuthCode 获取到的 authCode 值是不一样的，但是在同一个支付宝账号登录的情况下，根据此值获取到的 user_id 是唯一的。
+// web-view H5 示例代码
+my.onMessage = function(message) {
+  // 接受小程序发过来的用户信息
+  console.log(message);
+}
+```
 
-更多常见问题可查看 [用户授权 FAQ](https://opendocs.alipay.com/mini/api/bpubha) 。
+## Q：报错 “isv权限不足” 如何处理？
+A：登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，确认绑定 **获取会员信息** 产品。
