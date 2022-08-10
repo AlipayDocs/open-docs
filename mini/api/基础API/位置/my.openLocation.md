@@ -25,6 +25,12 @@ my.openLocation({
   latitude: 30.274653,
   name: '黄龙万科中心',
   address: '学院路77号',
+  success: (res) => {
+    console.log(res);
+  },
+  fail: (res) => {
+    console.log(res);
+  },
 });
 ```
 
@@ -33,8 +39,8 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| longitude | String | 是 | 经度，范围为 -180~180，负数表示西经。|
-| latitude | String | 是 | 纬度，范围为 -90~90，负数表示南纬。 |
+| longitude | Number | 是 | 经度，范围为 -180~180，负数表示西经。|
+| latitude | Number | 是 | 纬度，范围为 -90~90，负数表示南纬。 |
 | name | String | 是 | 位置名称 |
 | address | String | 是 | 位置描述 |
 | scale | Number | 否 | 地图缩放比例，范围 3 ~ 19，默认为 15。 |
