@@ -55,7 +55,7 @@
 请查看文档 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
 
 ### button 如何去除默认边框？
-修改 class 属性为：border: 0; padding: 0;
+修改 style 属性为：border: 0; padding: 0;
 
 ### 如何实现自定义分享中的 button: 页面分享按钮触发？
 通过给 button 组件设置属性 open-type="share"，可以在用户点击按钮后触发。
