@@ -23,7 +23,7 @@
 ```
 错误示例：
 ```html
-<view hidden><picker-view/></view>
+<view hidden="{{xx}}"><picker-view/></view>
 ```
 
 ##  picker-view属性
