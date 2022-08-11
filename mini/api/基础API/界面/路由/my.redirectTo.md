@@ -2,7 +2,7 @@
 
 **my.redirectTo** 关闭当前页面，打开指定页面。
 
-当前页面会的“历史记录”会被抹除，即不能使用 my.navigateBack() 返回，类比浏览器中的 location.replace()。
+当前页面的“历史记录”会被抹除，即不能使用 my.navigateBack() 返回，类比浏览器中的 location.replace()。
 
 **注意：** 请勿使用 my.redirectTo() 跳转 app.json 里 tarBar.items 中列举的页面（后文称 **tabBar 页面**），否则会有非预期的表现（底部 tab bar 不显示、左上角 返回首页 按钮不显示）。如需跳转 tabBar 页面，请使用 [my.switchTab()](https://opendocs.alipay.com/mini/api/ui-tabbar)。
 
