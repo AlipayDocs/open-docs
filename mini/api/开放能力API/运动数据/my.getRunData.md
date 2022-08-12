@@ -81,37 +81,27 @@ Object 类型，参数如下：
     "code": "10000"
 }
 ```
-#### 服务端异常响应错误码，无法获取加密数据
+#### 常用服务端异常响应错误码，无法获取加密数据
+
+要以业务级错误码为准，示例如下：
+
 ```json
-// 解决方案：用户重新授权即可
 {
     "code": "40003",
     "msg": "Insufficient Conditions",
     "subCode": "isv.invalid-auth-relations",
     "subMsg": "无效的授权关系"
 },
-// 解决方案：稍后再试
-{
-    "code": "20000",
-    "msg": "Service Currently Unavailable",
-    "subCode": "aop.unknow-error",
-    "subMsg": "系统繁忙"
-},
-// 解决方案：重新保存下开发者的密钥，或者设置下小程序的应用网关地址 
-{
-    "code": "40001",
-    "msg": "Missing Required Arguments",
-    "subCode": "isv.missing-default-signature-type",
-    "subMsg": "应用未设置默认签名类型"
-},
-// 解决方案：按文档重新设置AES密钥
-{
-    "code": "40002",
-    "msg": "Invalid Arguments",
-    "subCode": "isv.invalid-encrypt",
-    "subMsg": "加密异常"
-}
 ```
+错误码穷举类型：
+| **系统级错误码**| **系统级错误描述** | **业务级错误码**（）  | **业务级错误描述** | **解决方案** |
+| ---- | --- | --- | --- | --- |
+| 20000 | Service Currently Unavailable | aop.unknow-error | 系统繁忙。 | 稍后再试。 |
+| 40001 | Missing Required Arguments | isv.missing-default-signature-type | 应用未设置默认签名类型。 | 重新保存下开发者的密钥，或者设置下小程序的应用网关地址。 |
+| 40001 | Missing Required Arguments  | isv.missing-encrypt-key | 缺少加密配置。 | 按照简介说明配置 **接口内容加密方式**。 |
+| 40002 | Invalid Arguments  | isv.invalid-encrypt | 加密异常。 | 按文档重新设置AES密钥。 |
+| 40003 | Insufficient Conditions | isv.invalid-auth-relations | 无效的授权关系。 | 重新授权即可。 |
+
 
 ## fail 回调返回值错误码
 | **错误码** | **描述** | **解决方案** |
