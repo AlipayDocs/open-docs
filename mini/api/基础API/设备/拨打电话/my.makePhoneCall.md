@@ -38,7 +38,7 @@ Object 类型，属性如下：
 ## 错误码
 | **错误码** | **错误消息** | **解决方案** |
 | -------- | -------- | -------- |
-| 2 | 安卓：invalid parameter；iOS：接口参数无效 | number 参数不得为空 |
+| 2 | 安卓：invalid parameter；iOS：接口参数无效 | 传入有效 number |
 
 # 常见问题 FAQ
 
