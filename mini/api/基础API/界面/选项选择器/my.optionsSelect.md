@@ -1,9 +1,9 @@
 # 简介
-**my.optionsSelect** 用于显示 select 选择器，支持单列选择和二级数据选择。
+**my.optionsSelect** 用于唤起 select 选择器，支持单列选择和二级数据选择。
 
 ## 使用限制
 
-- 不支持二级数据间的联动（如有此类需求请使用 my.multiLevelSelect）。
+- 不支持二级联动（如有此类需求请使用 [my.multiLevelSelect](https://opendocs.alipay.com/mini/api/multi-level-select)）。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -87,7 +87,7 @@ fs.readFile({
   encoding: 'utf-8',
   success(res) {
     my.alert({
-      content: JSON.stringify(JSON.stringify(res.data)),
+      content: JSON.stringify(JSON.stringify(res.data))
     });
     
     const json = JSON.parse(res.data);
@@ -99,14 +99,14 @@ fs.readFile({
       selectedOneIndex: 2,
       success(res) {
         my.alert({
-          content: JSON.stringify(res, null, 2),
+          content: JSON.stringify(res, null, 2)
         });
       }
     });
   },
   fail(res) {
     my.alert({
-      content: JSON.stringify(res),
+      content: JSON.stringify(res)
     });
   },
 })
