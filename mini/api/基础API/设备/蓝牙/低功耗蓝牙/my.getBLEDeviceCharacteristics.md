@@ -97,7 +97,6 @@ Page({
   data: {
     devid: '0D9C82AD-1CC0-414D-9526-119E08D28124',
     serid: 'FEE7',
-    notifyId: '36F6',
     writeId: '36F5',
     charid: '',
     alldev: [{ deviceId: '' }],
@@ -302,7 +301,7 @@ Page({
         my.readBLECharacteristicValue({
           deviceId: this.data.devid,
           serviceId: this.data.serid,
-          characteristicId: this.data.notifyId,
+          characteristicId: this.data.charid,
           //1、安卓读取服务
           // serviceId:'0000180d-0000-1000-8000-00805f9b34fb',
           // characteristicId:'00002a38-0000-1000-8000-00805f9b34fb',
@@ -358,7 +357,7 @@ Page({
           state: true,
           deviceId: this.data.devid,
           serviceId: this.data.serid,
-          characteristicId: this.data.notifyId,
+          characteristicId: this.data.charid,
           success: () => {
             //监听特征值变化的事件
             my.onBLECharacteristicValueChange((res) => {
