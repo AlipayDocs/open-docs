@@ -44,5 +44,5 @@ Object 类型，属性如下：
 
 ## Q: 小程序 web-view 中如何拨号？
 
-在小程序的 web-view 中不支持使用 `<a href="tel:xx">` 唤起拨号。建议从 web-view 中 [postMessage](https://forum.alipay.com/college/post/11901043) 给与小程序，然后在小程序中调用 `my.makePhoneCall`。
+在小程序的 web-view 中不支持使用 `<a href="tel:xx">` 唤起拨号。建议从 web-view 中 [postMessage](https://forum.alipay.com/college/post/11901043) 给小程序，然后在小程序中调用 `my.makePhoneCall`。
 
