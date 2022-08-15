@@ -36,7 +36,7 @@ my.multiLevelSelect({
     subList: [
       { name: "东城区" },
       { name: "西城区" }
-    }]
+    ]
   }],
   success: (res) => {
     my.alert({
