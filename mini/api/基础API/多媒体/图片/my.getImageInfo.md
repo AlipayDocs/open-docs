@@ -20,27 +20,27 @@
 ```javascript
 // 网络图片路径
 my.getImageInfo({
-  src:'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
-  success:(res)=>{
-    console.log(JSON.stringify(res))
+  src: 'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
+  success: (res) => {
+    console.log(JSON.stringify(res));
   }
 })
 // 本地临时文件
 my.chooseImage({
   success: (res) => {
     my.getImageInfo({
-      src:res.apFilePaths[0],
-      success:(res)=>{
-        console.log(JSON.stringify(res))
+      src: res.apFilePaths[0],
+      success: (res) => {
+        console.log(JSON.stringify(res));
       }
     })
   },
 })
 // 包文件路径
 my.getImageInfo({
-  src:'image/api.png',
-  success:(res)=>{
-    console.log(JSON.stringify(res))
+  src: '/image/api.png', // 注意：包文件路径与当前页面路径无关。/image/api.png 也可写作 image/api.png，含义相同，都是从项目根目录算起
+  success: (res) => {
+    console.log(JSON.stringify(res));
   }
 })
 ```
