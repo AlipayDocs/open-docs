@@ -51,7 +51,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述**                                       |
 | -------- | -------- | -------- | ---------------------------------------------- |
-| url      | String   | 是       | 下载文件地址。                                 |
+| url      | String   | 是       | 下载文件地址。除在线 URL 以外，也接受包含图片 base64 数据的 [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) |
 | header   | Object   | 否       | HTTP 请求 Header。                             |
 | success  | Function | 否       | 调用成功的回调函数。                           |
 | fail     | Function | 否       | 调用失败的回调函数。                           |
