@@ -38,7 +38,7 @@ my.chooseImage({
 })
 // 包文件路径
 my.getImageInfo({
-  src:'image/api.png',
+  src:'/image/api.png', // 注意：包文件路径以项目目录为根目录，与当前页面路径无关。/image/api.png 也可写作 image/api.png，含义相同
   success:(res)=>{
     console.log(JSON.stringify(res))
   }
