@@ -67,7 +67,7 @@ Object 类型，参数如下：
 | prov | String | 省。如 "浙江省" | 
 | city | String | 市。如 "杭州市" | 
 | area | String | 区。如 "西湖区" | 
-| street | String | 街道。如 "古荡街道"。<br> **注意** ：因为历史遗留问题，目前此参数真机上返回为空。 | 
+| street | String | 街道。历史遗留字段，绝大多数情况下值为空 | 
 | fullname | String | 名称。如 "张三" | 
 | mobilePhone | String | 手机号。如 "18100000000" |
 
