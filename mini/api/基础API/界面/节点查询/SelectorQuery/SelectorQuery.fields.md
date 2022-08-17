@@ -86,3 +86,6 @@ Page({
 
 ##### Object res
 节点的相关信息。
+
+# Bug & Tip
+基础库 2.7.24 修复了 iOS 15 系统获取 computedStyle 异常的问题，点此查看 [详情](https://forum.alipay.com/mini-app/post/88401025)。
