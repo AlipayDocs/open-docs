@@ -1,18 +1,22 @@
 # 简介
+
+> 建议：[接入运动数据能力指引](https://opendocs.alipay.com/b/03al9a#%E6%8E%A5%E5%85%A5%E6%8C%87%E5%BC%95)可参考这篇文档。
+
 **my.getRunData** 是获取用户一个自然天内的运动步数信息的 API。目前只支持查询最近 30 天内的运动数据，若超过 30 天，则返回的步数信息为 0。
 
-接入能力之前需要先配置应用 **接口内容加密方式**，加密之后用 my.getRunData 可获取到加密后的运动数据。开通 [运动数据](https://opendocs.alipay.com/mini/introduce/rundata) 能力并申请用户信息后，前端需要通过[my.request](https://opendocs.alipay.com/mini/api/owycmh)将加密报文发送到开发者服务端，服务端结合签名算法以及 AES 密钥对加密后的运动数据进行解密，详细的服务端处理流程可查看 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
+调用接口之前需要一些前置条件：
+- 第一步：开通 [运动数据](https://opendocs.alipay.com/mini/introduce/rundata) 能力并 [申请用户信息](https://opendocs.alipay.com/common/02kkuu)；
+- 第二步：配置应用 **接口内容加密方式**，配置加密方式有以下两个入口：
+  - 登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > **账户中心** > **密钥管理** > **开放平台密钥** > [接口内容加密方式](https://openhome.alipay.com/dev/workspace/key-manage) > 找到需配置的应用 > 点击 **接口内容加密方式** 对应的 **设置**，配置接口内容加密方式；
+  - 登录支付宝 开放平台控制台 > 选择需要配置的应用，点击进入应用详情页 > **开发** > **开发设置**，配置 **接口内容加密方式**。
 
-配置应用**接口加密方式**有以下两个入口：
-  - 登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置的应用，点击进入应用详情页 > **开发** > **开发设置**，配置 **接口内容加密方式**；
-  - 登录支付宝 [开放平台控制台](https://open.alipay.com/dev/workspace) > **账户中心** > **密钥管理** > **开放平台密钥** > [接口内容加密方式](https://openhome.alipay.com/dev/workspace/key-manage) 找到需配置的应用，点击 **接口内容加密方式** 对应的 **设置**，配置接口内容加密方式。
-
-IDE 模拟器暂不支持调试，请以真机调试结果为准。
+  在获取加密数据的过程中支付宝服务端会有一些校验（比如加密配置、用户授权等等），所以前面两步均完成之后用 my.getRunData 才可以获取到加密后的运动数据。前端通过 [my.request](https://opendocs.alipay.com/mini/api/owycmh) 将加密数据发送到开发者服务端，开发者服务端结合签名算法以及 AES 密钥对加密后的运动数据进行解密，详细的服务端处理流程可查看 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
 
 ## 使用限制
 
 - 基础库 [1.17.1](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
+- IDE 模拟器暂不支持调试，请以真机调试结果为准。
 
 # 接口调用
 
@@ -70,10 +74,10 @@ Object 类型，参数如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| response | String / Object | 如果返回值为String类型，则服务端正常响应，查询到的是**经过加密的指定日期的步数数据**，需要通过 [my.request](https://opendocs.alipay.com/mini/api/owycmh) 请求解密数据。如果为Object类型，抛出异常信息，则为服务端异常响应。 |
+| response | String / Object | 如果返回值为String类型，则服务端正常响应，查询到的是**经过加密的指定日期的步数数据**，需要通过 [my.request](https://opendocs.alipay.com/mini/api/owycmh) 请求解密数据。如果为Object类型且返回异常报错信息，则为服务端异常响应。 |
 
 ### 服务端响应明文
-#### 服务端正常响应，返回加密数据，通过 my.request 解密之后的运动步数数据
+#### 服务端正常响应，返回加密数据，通过 my.request 请求解密之后的运动步数数据
 ```json
 {
     "count": "16880",
@@ -83,7 +87,7 @@ Object 类型，参数如下：
 ```
 #### 常用服务端异常响应错误码，无法获取加密数据
 
-要以业务级错误码为准，示例如下：
+示例如下：
 
 ```json
 {
@@ -94,13 +98,13 @@ Object 类型，参数如下：
 },
 ```
 错误码穷举类型：
-| **系统级错误码**| **系统级错误描述** | **业务级错误码**（）  | **业务级错误描述** | **解决方案** |
+| **系统级错误码（code）**| **系统级错误描述（msg）** | **业务级错误码（subCode）**  | **业务级错误描述（subMsg）** | **解决方案** |
 | ---- | --- | --- | --- | --- |
 | 20000 | Service Currently Unavailable | aop.unknow-error | 系统繁忙。 | 稍后再试。 |
 | 40001 | Missing Required Arguments | isv.missing-default-signature-type | 应用未设置默认签名类型。 | 重新保存下开发者的密钥，或者设置下小程序的应用网关地址。 |
 | 40001 | Missing Required Arguments  | isv.missing-encrypt-key | 缺少加密配置。 | 按照简介说明配置 **接口内容加密方式**。 |
 | 40002 | Invalid Arguments  | isv.invalid-encrypt | 加密异常。 | 按文档重新设置AES密钥。 |
-| 40003 | Insufficient Conditions | isv.invalid-auth-relations | 无效的授权关系。 | 重新授权即可。 |
+| 40003 | Insufficient Conditions | isv.invalid-auth-relations | 无效的授权关系。 | 用户重新授权即可。 |
 
 
 ## fail 回调返回值错误码
