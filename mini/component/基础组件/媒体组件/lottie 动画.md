@@ -28,14 +28,16 @@ Lottie 是一个用于 Web 和 iOS、Android 的移动库，可使用 Bodymovin 
 // .js 
 Page({
 	data: {
-        id : 'lottie-1',
-        desc : 'Django自动播放,低端设备降级',
-        autoplay : true,
-        djangoId：'https://gw.alipayobjects.com/os/basement_prod/1af0a9dc-110a-4a59-9084-a03d45686c8c.zip'
-        placeholder:'https://gw.alipayobjects.com/mdn/rms_e345fe/afts/img/A*nu3GTaHqJ9AAAAAAAAAAAAAAARQnAQ524560995883_icon_S.png',
-        optimize : 'true',
-        repeatCount : -1    
-    },
+		item: {
+			id: 'lottie-1',
+			desc: 'Django自动播放,低端设备降级',
+			autoplay: true,
+			djangoId:'https://gw.alipayobjects.com/os/basement_prod/1af0a9dc-110a-4a59-9084-a03d45686c8c.zip',
+			placeholder:'https://gw.alipayobjects.com/mdn/rms_e345fe/afts/img/A*nu3GTaHqJ9AAAAAAAAAAAAAAARQnAQ524560995883_icon_S.png',
+			optimize: 'true',
+			repeatCount: -1   
+		} 
+	},
   	onReady() {
     	var lottieContext = my.createLottieContext(elementId);
 		lottieContext.play()
