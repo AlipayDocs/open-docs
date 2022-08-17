@@ -40,6 +40,7 @@
 ```
 
 #### 获取用户基础信息
+
 用户点击同意后，即可通过 `my.getOpenUserInfo()` 获取用户基础信息：
 ```javascript
 // .js 
@@ -56,7 +57,6 @@ onGetAuthorize(res) {
   });
 },
 ```
-可以通过以下方式获取用户信息中的某个参数。<br />以获取用户信息中的昵称为例：`console.log(JSON.parse(res.response).response.nickName)`
 
 ## 返回示例
 
@@ -65,16 +65,6 @@ onGetAuthorize(res) {
 - 成功返回 res 报文格式示例如下：<br />
 ```js
 {response: '{"response": {"code": "10000","msg": "Success","gender":"","countryCode":"","province":"","city":"","nickName": "XXX","avatar": "https://tfs.alipayobjects.com/images/partner/XXXXXXXX"}}'}
-```
-
-- 未绑定获取会员基础信息产品，返回 res 报文格式示例如下：<br />
-```js
-{response: '{"response":{"code":"40006","msg":"Insufficient Pe…tps:\\/\\/docs.open.alipay.com\\/common\\/isverror"}}'}
-```
-
-- 用户未授权获取会员基础信息，返回 res 报文格式示例如下：<br />
-```js
-{response: '{"response":{"code":"40003","msg":"Insufficient Co…"isv.invalid-auth-relations","subMsg":"无效的授权关系"}}'}
 ```
 
 ## 入参
