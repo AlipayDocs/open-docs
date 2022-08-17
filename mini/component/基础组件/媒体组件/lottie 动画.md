@@ -63,9 +63,9 @@ Page({
 | auto-reverse | Boolean | false | 是否自动回播。<br />**默认值：** false |
 | assets-path | String | false | 资源地址。"/" 表明是小程序根目录。<br />**版本要求：** 支付宝客户端 10.1.50 及以上 |
 | placeholder | String | true | 兜底图或者降级图地址。<br /><ul><li>1. 支持本地资源，案例：'/image/lottie/lottie2_default.png'。</li><li>支持 http 的 cdn 地址、近端地址。</li><li>小程序场景不支持 djangoId。</li></ul> **版本要求：** 支付宝客户端 10.1.52 及以上 |
-| django-id | String | false | Lottie 在线资源。远端的 Zip 文件地址。Lottie 组件会执行 MD5 校验、解压、获取等过程，在过程中显示 placeHolder 图片。<br />与 path 二选一<br />**版本要求：** 支付宝客户端 10.1.52 及以上 |
+| django-id | String | false | Lottie 在线资源。远端的 Zip 文件地址。Lottie 组件会执行 MD5 校验、解压、获取等过程，在过程中显示 placeholder 图片。<br />与 path 二选一<br />**版本要求：** 支付宝客户端 10.1.52 及以上 |
 | md5 | String | false | 在线资源的 md5 校验。<br />djangoId=`https://b.zip`。<br />可以使用 b.zip 加密 获取 md5 值<br />md5="77c6c86fc89ba94cc0a9271b77ae77d2"<br />**版本要求：** 支付宝客户端 10.1.52 及以上 |
-| optimize | Boolean | false | 降级。降级是指如遇低端设备，Lottie 会降级展示为 placeHolder。<br />当 optimize 为 true ，并且传入了 placeHolder 时，在低端设备上只会展示 placeHolder，不展示 Lottie。<br />低端设备如下所示：<br /><ul><li>iOS ：小于等于 iPhone6P</li><li>Android：内存容量小于 3G</li></ul> **默认值：** false<br />**版本要求：** 支付宝客户端 10.1.52 及以上 |
+| optimize | Boolean | false | 降级。降级是指如遇低端设备，Lottie 会降级展示为 placeholder。<br />当 optimize 为 true ，并且传入了 placeholder 时，在低端设备上只会展示 placeholder，不展示 Lottie。<br />低端设备如下所示：<br /><ul><li>iOS ：小于等于 iPhone6P</li><li>Android：内存容量小于 3G</li></ul> **默认值：** false<br />**版本要求：** 支付宝客户端 10.1.52 及以上 |
 | onDataReady | EventHandle | - | 当数据下载+视图创建完成时触发。 |
 | onDataFailed | EventHandle | - | 数据加载失败时触发。 |
 | onAnimationStart | EventHandle | - | 动画开始时触发。 |
