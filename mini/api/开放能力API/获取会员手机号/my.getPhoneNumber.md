@@ -167,5 +167,5 @@ A：请检查小程序是否已绑定 **获取会员手机号** 并申请了用�
 ![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*RJn7TbMxO-wAAAAAAAAAAAAAARQnAQ)
 A：请检查小程序是否设置主营行业，并对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
 
-## Q：为什么调用 my.getPhoneNumber 没有获取到手机号？
+## Q：为什么调用 my.getPhoneNumber 返回的手机号为空？
 A：一般情况下都是当前用户的支付宝账号没有绑定手机号所致，需要当前用户登录 [账号管理](https://custweb.alipay.com/account/index.htm)，绑定手机号。
