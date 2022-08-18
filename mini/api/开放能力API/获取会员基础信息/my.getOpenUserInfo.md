@@ -66,6 +66,15 @@ onGetAuthorize(res) {
 ```js
 {response: '{"response": {"code": "10000","msg": "Success","gender":"","countryCode":"","province":"","city":"","nickName": "XXX","avatar": "https://tfs.alipayobjects.com/images/partner/XXXXXXXX"}}'}
 ```
+- 未绑定获取会员基础信息产品，返回 res 报文格式示例如下：<br />
+```js
+{response: '{"response":{"code":"40006","msg":"Insufficient Pe…tps:\\/\\/docs.open.alipay.com\\/common\\/isverror"}}'}
+```
+
+- 用户未授权获取会员基础信息，返回 res 报文格式示例如下：<br />
+```js
+{response: '{"response":{"code":"40003","msg":"Insufficient Co…"isv.invalid-auth-relations","subMsg":"无效的授权关系"}}'}
+```
 
 ## 入参
 | **参数** | **类型** | **必填** | **描述** |
