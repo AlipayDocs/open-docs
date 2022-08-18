@@ -5,7 +5,7 @@
 ## 使用限制
 
 - 暂无境外地图数据，在中国内地（不含港澳台）以外的地区可能无法正常调用此 API。
-- 仅支持高德地图 style 与火星坐标系。
+- 仅支持高德地图风格与火星坐标系。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -118,8 +118,16 @@ Object 类型，属性如下：
 | --- | --- | --- |
 | name | String | 位置名称。 |
 | address | String | 详细地址。 |
+| provinceName | String | 省名称。 |
+| cityName | String | 市名称。 |
+| adName | String | 区名称。 |
+| adCode | Number | 区code。|
 | latitude | Number | 纬度，浮点数，范围为-90~90，负数表示南纬。 |
 | longitude | Number | 经度，浮点数，范围为-180~180，负数表示西经。 |
-| provinceName | String | 省份名称。 |
-| cityName | String | 城市名称。 |
+
+### fail 回调函数 错误码
+| **错误码** | **描述** | **解决方案** |
+| --- | --- | --- |
+| 11 | 用户取消操作 | 为用户取消操作，无需做特殊处理。 |
+
 
