@@ -17,7 +17,7 @@
 - 使用此 API 需绑定 **获取会员手机号** 产品并登录主账号进行用户信息申请。操作步骤如下。登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，选择绑定 **获取会员手机号**。
 ![712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ)
 - 如果不可申请用户信息，请检查小程序是否设置主营行业，并且对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
-- 未绑定 **获取会员手机号** 产品或未进行用户信息申请直接调用此 API 返回内容解密后如下：
+- 未绑定 **获取会员手机号** 产品或未进行 **用户信息申请** 直接调用此 API 返回内容解密后如下：
 ```json
 {"code": "40006","msg": "Insufficient Permissions","subCode": "isv.insufficient-isv-permissions","subMsg": "ISV权限不足，建议在开发者中心检查对应功能是否已经添加，解决办法详见：https:\/\/docs.open.alipay.com\/common\/isverror"}
 ```
