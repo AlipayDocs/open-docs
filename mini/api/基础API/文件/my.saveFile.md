@@ -1,11 +1,13 @@
 
 # 简介
-**my.saveFile** 是保存文件到本地（本地文件大小总容量限制：50 MB）的 API。
+**my.saveFile** 是保存文件到本地（本地文件大小总容量限制：50 MB）的 API。   
+使用该API保存的文件，除非用户主动删除小程序或者是通过调用 [my.removeSavedFile](https://opendocs.alipay.com/mini/api/dgi1fr) API 删除文件，否则文件不会被删除。
 
 ## 使用限制
 
 - 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib)  或更高版本，支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 此 API 单次上传文件存储大小限制为10 MB。
 
 ## 扫码体验
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/3a76443909a425c37fec24b43b6bcd85.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
@@ -26,6 +28,12 @@ my.chooseImage({
       apFilePath: res.apFilePaths[0],
       success: (res) => {
         console.log(JSON.stringify(res))
+      },
+      fail: (error) => {
+        console.log(JSON.stringify(error))
+      },
+      complete: () => {
+        console.log('调用完成，无论调用成功、失败都会执行')
       },
     });
   },
@@ -48,3 +56,15 @@ Object 类型，属性如下：
 | --- | --- | --- |
 | apFilePath | String | 保存后的文件路径([本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6))。 |
 
+## 错误码
+| **错误码** | **描述** | **解决方案** |
+| --- | --- | --- |
+| 2 | apFilePath 参数为空。 | 填写有效的 apFilePath 路径。|
+| 12 | 文件不存在。 | 填写正确的[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)或[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)的路径。  |
+| 13 | 文件保存失败。 | 请重试。|
+| 19 | 传入文件超过了最大限制。 | 传入存储大小小于10M的文件。 |
+
+## 常见问题 FAQ
+
+### Q: 通过 my.saveFile 保存的文件在哪里？   
+- 安卓系统可在 手机存储/alipay/pictures/文件位置 查看保存的文件；iOS 系统无法查看被隐藏的目录路径。如果想要保存图片的话可以使用[my.saveImagetophotosalbum](https://opendocs.alipay.com/mini/api/media/image/my.saveImagetophotosalbum) API 进行保存
