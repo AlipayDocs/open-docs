@@ -1,13 +1,13 @@
 # 简介
-调用my.requestSubscribeMessage后唤起客户端小程序消息订阅界面，回调参数为用户订阅消息的操作结果。调用前需要在开放平台“产品绑定”中先配置功能包，可查看此[文档](https://opendocs.alipay.com/mini/01rqd3)了解。
+调用 my.requestSubscribeMessage 后唤起客户端小程序消息订阅界面，回调参数为用户订阅消息的操作结果。调用前需要在开放平台“产品绑定”中先配置功能包，可查看此 [文档](https://opendocs.alipay.com/mini/01rqd3) 了解。
 
-订阅界面是根据当前小程序在 [商家平台](https://mrchportalweb.alipay.com/operation/console/apps)（运营中心 -> 选择小程序 -> 消息 ->  消息接入）订阅消息列表中的消息模版id来展示对应消息的订阅选项。
+订阅界面是根据当前小程序在 [商家平台](https://mrchportalweb.alipay.com/operation/console/apps)（运营中心 -> 选择小程序 -> 消息 -> 消息接入）订阅消息列表中的消息模版id来展示对应消息的订阅选项。
 
 其中模版分为一次性订阅模版和长期订阅模版：  
 **一次性订阅模版**：每次向用户发送消息都需要用户订阅成功后才可以发送。用户可以通过勾选“总是保持以上选，不再询问”来默认同意订阅，未勾选消息会默认拒绝，之后不再弹出订阅面板。  
 **长期订阅模版**：用户同意订阅后，可以多次向订阅用户发送消息。用户可点击“拒绝，不再同意”，来默认拒绝订阅面板所有消息。
 
-用户同意订阅消息成功后，可以在[服务端](https://opendocs.alipay.com/mini/02cth2)向支付宝发送对应模版的消息，用户可在支付宝首页、消息盒子、APP PUSH 等位置收到消息提醒。也可以在首次用户授权完成（开发接入完成）之后通过[商家平台](https://mrchportalweb.alipay.com/operation/console/apps)（运营中心 -> 选择小程序 -> 消息 ->  消息接入）订阅消息列表中的“配置发送”发送消息。
+用户同意订阅消息成功后，可以在 [服务端](https://opendocs.alipay.com/mini/02cth2) 向支付宝发送对应模版的消息，用户可在支付宝首页、消息盒子、APP PUSH 等位置收到消息提醒。也可以在首次用户授权完成（开发接入完成）之后通过 [商家平台](https://mrchportalweb.alipay.com/operation/console/apps)（运营中心 -> 选择小程序 -> 消息 ->  消息接入）订阅消息列表中的“配置发送”发送消息。
 
 关于消息产品的更多介绍，可通从 [此文档](https://opendocs.alipay.com/mini/introduce/message) 开始查看。
 
@@ -86,7 +86,7 @@ Object 类型，属性如下：
 # 常见问题
 
 ## Q：小程序消息订阅状态如何获取？
-A：1、通过的my.requestSubscribeMessage回调获取；2、通过服务端调用[alipay.open.app.messagetemplate.subscribe.query](https://opendocs.alipay.com/mini/02cth2)获取。
+A：1、通过的 my.requestSubscribeMessage 回调获取；2、通过服务端调用 [alipay.open.app.messagetemplate.subscribe.query](https://opendocs.alipay.com/mini/02cth2) 获取。
 
 ## Q：单次订阅的消息，勾选总是“保持以上选择，不再询问”后如何恢复订阅申请？
 A：可以通过小程序胶囊按钮中点击“设置” -> “消息管理” ，对应的消息选择“不接收”，再次订阅该消息后可以弹出订阅面板。
