@@ -4,7 +4,7 @@
 
 ## 使用限制
 
-- 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
@@ -38,7 +38,7 @@ updateManager.onUpdateFailed(function () {
 
 ## 返回值
 
-返回值为 [UpdateManager](api/ngwgfi)。
+返回值为 [UpdateManager](https://opendocs.alipay.com/mni/api/ngwgfi)。
 
 # 常见问题 FAQ
 ## Q：如何测试更新管理功能？
