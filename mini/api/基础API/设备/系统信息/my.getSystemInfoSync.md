@@ -1,6 +1,6 @@
 
 # 简介
-**my.getSystemInfoSync** 是获取手机系统信息的同步接口，返回值与 [my.getSystemInfo](api/system-info) 的 success 回调的参数相同。
+**my.getSystemInfoSync** 是获取手机系统信息的同步接口，返回值与 [my.getSystemInfo](https://opendocs.alipay.com/mini/api/system-info) 的 success 回调的参数相同。
 
 如果只需获取 **clientName**、**clientVersion**、**language**、**platform** 字段，推荐使用更加轻量化的 [my.env](https://opendocs.alipay.com/mini/api/env) API。
 
