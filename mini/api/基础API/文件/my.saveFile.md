@@ -1,11 +1,14 @@
 
 # 简介
-**my.saveFile** 是保存文件到本地（本地文件大小总容量限制：50 MB）的 API。
+**my.saveFile** 将临时文件保存为本地缓存文件。
+
+此 API 不再维护，推荐使用 [FileSystemManager.save](https://opendocs.alipay.com/mini/api/022b6n) 替代。
 
 ## 使用限制
 
 - 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib)  或更高版本，支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 本地文件大小总容量限制 50 MB。
 
 ## 扫码体验
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/3a76443909a425c37fec24b43b6bcd85.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
