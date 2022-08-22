@@ -42,6 +42,7 @@ Object 类型，属性如下：
 | 17 | 保存图片过程中的其他错误。一般情况下由于 filePath 的值不符合要求导致，请检查 filePath 值。 |
 
 ## 已知问题
+
 连续调用 my.saveImageToPhotosAlbum 时只会触发 success一次回调，规避办法：请在 my.saveImageToPhotosAlbum 的 complete 触发后再接着调用 my.saveImageToPhotosAlbum。例如：
   ```
   Page({
