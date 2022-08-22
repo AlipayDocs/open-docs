@@ -69,7 +69,7 @@ Object 类型，属性如下：
   });
   ```
 
-# 常见问题 FAQ
+# 常见问题
 
 ## Q：如何保存 base64 格式的图片到相册？
 A：可以先通过 [my.downloadFile](https://opendocs.alipay.com/mini/api/xr054r) 接口下载 base64 图片到本地，再通过 my.saveImageToPhotosAlbum 接口保存到相册。
