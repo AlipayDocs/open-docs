@@ -70,7 +70,7 @@ Object 类型，参数如下：
 
 | **error** | **errorMessage** | **解决方案** |
 | --- | --- | --- |
-| 2 | 必填参数为空  |  传入不为空的key。 | 
+| 2 | 必填参数为空  |  请检查必填参数是否填写。 | 
 | 11 | invalid params | 无效的传参，请检查传参是否规范。| 
 | 12 | 存储总大小达到上限 | 单个小程序数据存储上限为 10MB。可以通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 或 [my.removeStorageSync](https://opendocs.alipay.com/mini/api/ytfrk4) 及时移除不必要的存储。| 
 | 14 | data长度超限 | 单个 key 允许存储的最大数据大小为 200KB，可以减少 data 长度或拆分成多个 key 进行存储。| 
