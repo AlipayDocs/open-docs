@@ -5,10 +5,6 @@
 #### 加密
 缓存本地数据时会**自动加密存储**，通过 API 读取时会自动解密返回。
 
-#### 缓存有效期
-除非**主动清除**或**卸载支付宝客户端**，否则缓存数据会永久保存在本地。\
-**注意**：**覆盖安装支付宝（不是先删除再安装）、支付宝设置中心清除缓存、关闭小程序**，这三种操作不会导致小程序缓存失效。
-
 #### 隔离策略
 + 小程序缓存是以支付宝账号和小程序 ID 两个维度隔离。同一设备上，A用户无法读取到B用户的数据；不同小程序之间也无法互相读取数据；
 + 内嵌 webview 的存储与小程序存储相互隔离，即内嵌 webview 中指定 key 存储数据不会覆盖小程序自身相同 key 对应的数据；
@@ -16,9 +12,11 @@
 
 #### 清理策略
 + 卸载支付宝客户端会清除缓存数据；
-+ 长期未使用或在应用中心删除的小程序的缓存数据也会被系统清理；
-+ 主动清除缓存可以通过 [my.clearStorage](https://opendocs.alipay.com/mini/api/storage) 或 [my.clearStorageSync](https://opendocs.alipay.com/mini/api/ulv85u) 清除当前小程序下的本地数据缓存， 通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 或 [my.removeStorageSync](https://opendocs.alipay.com/mini/api/ytfrk4) 移除指定 key 的本地缓存。
-+ 
++ 长期未使用或在我的小程序中删除该小程序的缓存数据也会被系统清理；
++ 主动清除缓存可以通过 [my.clearStorage](https://opendocs.alipay.com/mini/api/storage) 或 [my.clearStorageSync](https://opendocs.alipay.com/mini/api/ulv85u) 清除当前小程序下的本地数据缓存， 或者通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 或 [my.removeStorageSync](https://opendocs.alipay.com/mini/api/ytfrk4) 移除指定 key 的本地缓存。
+
+**注意**：**覆盖安装支付宝（不是先删除再安装）、支付宝设置中心清除缓存、关闭小程序**，这三种操作均不会清理缓存数据。
+
 
 ## 使用限制
 - 单个 key 允许存储的最大数据大小为 200KB，单个小程序数据存储上限为 10MB。
