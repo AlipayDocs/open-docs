@@ -1,3 +1,5 @@
+此 API 已停止维护，推荐使用 [FileSystemManager.getSavedFileList](https://opendocs.alipay.com/mini/api/0228qj)，历史接入此 API 的开发者不受影响。
+
 # 简介
 **my.getSavedFileList** 是获取保存的所有文件信息的 API。
 
