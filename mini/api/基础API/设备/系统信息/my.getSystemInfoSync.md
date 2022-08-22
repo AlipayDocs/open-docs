@@ -71,7 +71,6 @@ Page({
   data: {
     systemInfo: {}
   },
-  // 异步获取系统信息
   getSystemInfo() {
     my.getSystemInfo({
       success: (res) => {
@@ -81,7 +80,7 @@ Page({
       }
     })
   },
-  // 同步获取系统信息
+  // 对等的同步接口
   getSystemInfoSync() {
     this.setData({
       systemInfo: my.getSystemInfoSync(),
