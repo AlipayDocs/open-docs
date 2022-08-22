@@ -51,13 +51,12 @@ Page({
 | **权限名称** | **权限码** | **支持平台** | **描述** |
 | --- | --- | --- | --- |
 | 后台保活权限 | BACKGROUNDER | Android | - |
-| 桌面快捷权限 | SHORTCUT | Android | - |
+| 桌面快捷权限 | SHORTCUT | Android | 若手机设置的权限管理中没有“创建桌面快捷方式”这个选项，则默认可以创建桌面快捷方式。 |
 | 麦克风权限 | MICROPHONE | iOS | - |
 | 通讯录权限 | ADDRESSBOOK | iOS | - |
 | 相机权限 | CAMERA | iOS / Android | - |
 | 照片权限 | PHOTO | iOS | - |
 | push 通知栏权限 | NOTIFICATION | Android | - |
-| 自启动权限 | SELFSTARTING | Android | - |
 | 位置权限 | LBS | iOS / Android | - |
 | 蓝牙 | BLUETOOTH | iOS / Android | 客户端 10.2.33、基础库 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。<br />可通过 `my.canIUse('showAuthGuide.object.authType.BLUETOOTH')` 进行检测。 |
 
