@@ -1,3 +1,5 @@
+此 API 已停止维护，推荐使用 [FileSystemManager.getFileInfo](https://opendocs.alipay.com/mini/api/0226og)，历史接入此 API 的开发者不受影响。
+
 # 简介
 **my.getFileInfo** 是获取文件信息的 API。
 
