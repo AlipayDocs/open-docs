@@ -1,3 +1,4 @@
+此 API 已停止维护，推荐使用 [FileSystemManager.saveFile](https://opendocs.alipay.com/mini/api/022b6n)，历史接入此 API 的开发者不受影响。
 
 # 简介
 **my.saveFile** 是保存文件到本地（本地文件大小总容量限制：50 MB）的 API。
