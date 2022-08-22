@@ -80,6 +80,7 @@ Page({
       }
     })
   },
+  // 对等的同步接口
   getSystemInfoSync() {
     this.setData({
       systemInfo: my.getSystemInfoSync(),
