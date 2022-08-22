@@ -31,7 +31,6 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **描述** |
 | --- | --- | --- |
-| from | String | api：通过 tabBar 的点击触发；user：通过 my.switchTab 跳转触发 |
-| index | Number | 页面在 app.json 中设置的 tabbar items 数组下标。 |
+| index | Number | 页面在 app.json 中设置的 tabbar items 的数组下标。 |
 | pagePath | String | 页面路径。 |
 | text | String | 页面名称。 |
