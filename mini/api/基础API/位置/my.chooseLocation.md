@@ -5,7 +5,7 @@
 ## 使用限制
 
 - 暂无境外地图数据，在中国内地（不含港澳台）以外的地区可能无法正常调用此 API。
-- 仅支持高德地图风格与火星坐标系。
+- 仅支持高德地图风格与 GCJ-02（火星坐标系）。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -66,10 +66,10 @@ Page({
     address: '学院路77号',
   },
   chooseLocation() {
-    var that = this
+    var that = this;
     my.chooseLocation({
          success:(res)=>{
-          console.log(JSON.stringify(res))
+          console.log(JSON.stringify(res));
           that.setData({
             longitude:res.longitude,
             latitude:res.latitude,
@@ -119,9 +119,13 @@ Object 类型，属性如下：
 | name | String | 位置名称。 |
 | address | String | 详细地址。 |
 | provinceName | String | 省名称。 |
+| provinceCode | Number | 省code（搜索选择位置才会返回）。 |
 | cityName | String | 市名称。 |
+| cityCode | Number | 市code（从附近列表选择位置才会返回）。|
 | adName | String | 区名称。 |
 | adCode | Number | 区code。|
+| typeName | String | 位置类型名称（搜索选择位置才会返回）。|
+| typeCode | Number | 位置类型名称code（搜索选择位置才会返回）。|
 | latitude | Number | 纬度，浮点数，范围为-90~90，负数表示南纬。 |
 | longitude | Number | 经度，浮点数，范围为-180~180，负数表示西经。 |
 
