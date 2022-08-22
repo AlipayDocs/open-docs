@@ -1,3 +1,5 @@
+此 API 已停止维护，推荐使用 [FileSystemManager.removeSavedFile
+](https://opendocs.alipay.com/mini/api/0229pv)，历史接入此 API 的开发者不受影响。
 
 # 简介
 **my.removeSavedFile** 是删除某个[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)的API。
