@@ -1,5 +1,5 @@
 # 简介
-**my.hideShareMenu** 是隐藏分享按钮的 API。
+**my.hideShareMenu** 是隐藏当前页面分享按钮的 API。
 
 ## 使用限制
 
