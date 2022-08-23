@@ -1,6 +1,6 @@
 # 简介
 
-**my.setStorageSync** 是将数据存储在指定的 key 的本地缓存中的同步接口，会覆盖掉原来该 key 对应的数据。
+**my.setStorageSync** 是将数据存储在指定的 key 的本地缓存中的同步接口，会覆盖掉原来该 key 对应的数据，存储成功时返回值与 my.setStorage 的 success 回调参数相同，失败时返回值与 my.setStorage 的 fail 回调参数相同。
 
 
 缓存本地数据时会自动加密存储，通过 API 读取时会自动解密返回。   
@@ -10,7 +10,6 @@
 ## 使用限制
 - 单个 key 允许存储的最大数据大小为 200KB，单个小程序数据存储上限为 10MB。
 - iOS 客户端支持 iTunes 备份。
-- 同步方法 my.setStorageSync 会阻塞当前任务，直到同步方法处理返回。异步方法 [my.setStorage](https://opendocs.alipay.com/mini/api/eocm6v) 不会阻塞当前任务。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -49,7 +48,7 @@ Object 类型，参数如下：
 
 | **error** | **errorMessage** | **解决方案** |
 | --- | --- | --- |
-| 11 | invalid params | 无效的传参，请检查传参是否规范。| 
+| 2 | 必填参数为空 | 请检查必填参数是否填写。| 
 | 12 | 存储总大小达到上限 | 单个小程序数据存储上限为 10MB。可以通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 或 [my.removeStorageSync](https://opendocs.alipay.com/mini/api/ytfrk4) 及时移除不必要的存储。| 
 | 14 | data长度超限 | 单个 key 允许存储的最大数据大小为 200KB，可以减少 data 长度或拆分成多个 key 进行存储。| 
 
