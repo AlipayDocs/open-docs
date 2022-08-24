@@ -44,21 +44,19 @@ Object 类型，属性如下：
 | --- | --- | --- | --- |
 | entityIds | Array<String> | 是 | 需要订阅的消息模板的id的集合。 |
 | thirdTypeAppId | String | 否 | 模板小程序标识，仅在 ISV 场景下需要传入。 |
-| success | Function | 否 | 调用成功的回调函数。 |
-| fail | Function | 否 | 调用失败的回调函数。 |
-| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+| success | Function | 否 | 订阅成功的回调函数。 |
+| fail | Function | 否 | 用户取消订阅，或订阅失败的回调函数。 |
+| complete | Function | 否 | 订阅结束的回调函数（调用成功、失败都会执行）。 |
 
 ## 回调参数
 | **属性** | **类型** | **可选值** | **描述** |
 | --- | --- | --- | --- |
 | behavior | String | '','subscribe','cancel' | 订阅行为。<br /><ul><li>'subscribe'：表示订阅成功。</li><li>'cancel'：表示取消订阅。</li><li>''：表示订阅失败</li></ul> |
-| success | Boolean | true, false | 订阅是否成功，已废弃，建议通过 behavior 字段获取订阅状态。 |
-| stat | String | 'ok', 'failed' | 订阅状态，已废弃，建议通过 behavior 字段获取订阅状态。 |
-| show | Boolean | true, false | 本次订阅过程是否弹出订阅弹层。 |
-| result | Object |  | 订阅数据，<br />{<br />//仅在订阅成功场景下存在，表示订阅成功的模板列表<br />subscribeEntityIds?: [ ],<br />// 最终订阅成功的模板列表<br />subscribedEntityIds: [ ],<br />// 未订阅的模板列表<br />unsubscribedEntityIds: [ ],<br />// 本次新增订阅成功的模板列表<br />currentSubscribedEntityIds: [ ],<br />//仅在取消订阅场景下存在，是传入的模板id集合<br />entityList?: [],<br />}; |
-| keep | Boolean | true, false | 单次订阅模板，用户同意订阅并勾选 **不再询问** 时为 true。 |
+| keep | Boolean | true, false | 单次订阅模板，用户勾选 **总是保持以上选择，不再询问** 时为 true。 |
 | refuse | Boolean | true, false | 长期订阅模板，用户点击 **拒绝，不再询问** 时为 true。 |
-| errorCode | Number | String | 见错误码 | 错误码，仅在订阅取消/失败时返回。 |
+| result | Object |  | 订阅数据，<br />{<br />//仅在订阅成功场景下存在，表示订阅成功的模板列表<br />subscribeEntityIds?: [ ],<br />// 最终订阅成功的模板列表<br />subscribedEntityIds: [ ],<br />// 未订阅的模板列表<br />unsubscribedEntityIds: [ ],<br />// 本次新增订阅成功的模板列表<br />currentSubscribedEntityIds: [ ],<br />//仅在取消订阅场景下存在，是传入的模板id集合<br />entityList?: [],<br />}; |
+| show | Boolean | true, false | 本次订阅过程是否弹出订阅弹层。 |
+| errorCode | Number | 见错误码 | 错误码，仅在订阅取消/失败时返回。 |
 | errorMessage | String | 见错误码 | 错误信息，仅在订阅取消/失败时返回。 |
 | [模板id] | String | 'reject', 'accept' | 动态键,表示该模板是否被订阅。仅在订阅成功( behavior == 'subscribe' )场景下数据可靠，其他场景下建议通过result字段获取订阅数据。静默订阅（ show 为 false ）时，返回状态为上一次的订阅结果。 |
 
