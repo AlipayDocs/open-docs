@@ -18,12 +18,15 @@
 - 基础库版本低于 2.7.15，不能和 web-view 组件共用，会被遮盖。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
+
+# 效果示例
+<image src="https://img.alicdn.com/imgextra/i4/O1CN01apwFaG1lHhVy1z0bc_!!6000000004794-2-tps-762-1530.png" width="300px" height="601px"/><br/>
 # 接口调用
 ## 示例代码
 ### .js 示例代码
 ```javascript
 my.requestSubscribeMessage({
-  entityIds: ['ac768fca1ce245ccae9404bb5243c49b', '9aa357acb7c6434aba294aded1cdfb7c'],
+  entityIds: ['ac768fca1ce245ccae9404bb5243c49b', '9aa357acb7c6434aba294aded1cdfb7c','940037f0c7dc491e801027b15d9f3f34'],
   success: (res) => {
     // res.behavior == 'subscribe'
     console.log("接口调用成功的回调", res);
@@ -58,7 +61,7 @@ Object 类型，属性如下：
 | refuse | Boolean | true, false | 长期订阅模板，用户点击 **拒绝，不再询问** 时为 true。 |
 | result | Object |  | 订阅数据，<br />{<br />//仅在订阅成功场景下存在，表示订阅成功的模板列表<br />subscribeEntityIds?: [ ],<br />// 最终订阅成功的模板列表<br />subscribedEntityIds: [ ],<br />// 未订阅的模板列表<br />unsubscribedEntityIds: [ ],<br />// 本次新增订阅成功的模板列表<br />currentSubscribedEntityIds: [ ],<br />//仅在取消订阅场景下存在，是传入的模板id集合<br />entityList?: [],<br />}; |
 | show | Boolean | true, false | 本次订阅过程是否弹出了订阅面板。 |
-| [模板id] | String | 'reject', 'accept' | 动态键，表示该模板是否被勾选。具体订阅数据建议通过result字段获取。<br/>静默订阅（ show 为 false ）时，返回状态为上一次的订阅结果。 |
+| [模板id] | String | 'reject', 'accept' | 动态键，已勾选消息为 ‘accept’，未勾选的消息为 ‘reject’。具体订阅数据建议通过result字段获取。<br/>静默订阅（ show 为 false ）时，返回状态为上一次的订阅结果。 |
 | errorCode | Number | 见错误码 | 错误码，仅在订阅取消 / 失败时返回。 |
 | errorMessage | String | 见错误码 | 错误信息，仅在订阅取消 / 失败时返回。 |
 
