@@ -56,7 +56,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **可选值** | **描述** |
 | --- | --- | --- | --- |
-| behavior | String | 'subscribe', 'cancel', '' | 订阅成功，触发success回调：<br /><ul><li>'subscribe'：表示订阅成功。</ul> 订阅失败或取消订阅，触发fail回调：<ul></li><li>'cancel'：表示取消订阅。</li><li>''：表示订阅失败</li></ul> |
+| behavior | String | 'subscribe', 'cancel', '' | 订阅成功，触发success回调：<br /><ul><li>'subscribe'：表示订阅成功。</ul> 取消订阅或订阅失败，触发fail回调：<ul></li><li>'cancel'：表示取消订阅。</li><li>''：表示订阅失败</li></ul> |
 | keep | Boolean | true, false | 一次订阅模板，用户勾选 **总是保持以上选择，不再询问** 时为 true。 |
 | refuse | Boolean | true, false | 长期订阅模板，用户点击 **拒绝，不再询问** 时为 true。 |
 | result | Object |  | 订阅数据，<br />{<br />//仅在订阅成功场景下存在，表示订阅成功的模板列表<br />subscribeEntityIds?: [ ],<br />// 最终订阅成功的模板列表<br />subscribedEntityIds: [ ],<br />// 未订阅的模板列表<br />unsubscribedEntityIds: [ ],<br />// 本次新增订阅成功的模板列表<br />currentSubscribedEntityIds: [ ],<br />//仅在取消订阅场景下存在，是传入的模板id集合<br />entityList?: [],<br />}; |
