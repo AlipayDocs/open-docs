@@ -108,3 +108,6 @@ A：支付宝小程序不支持 woff2 字体。相对其他格式字体，woff2 
 
 ## Q：my.loadfontface 下载的字体只在当前页面生效吗？
 A：my.loadfontface 只会在当前页面加载对应字体文件，如果需要在多个页面加载字体，请分别在进入页面时加载字体文件。
+
+## Q：my.loadfontface 在IDE不生效？
+A：my.loadfontface 只会在真机环境有作用，在IDE环境会报错。
