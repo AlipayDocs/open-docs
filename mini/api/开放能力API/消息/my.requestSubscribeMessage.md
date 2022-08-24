@@ -42,25 +42,28 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| entityIds | Array<String> | 是 | 需要订阅的消息模板的id的集合。 |
+| entityIds | Array<String> | 是 | 需要订阅的消息模板id的集合。 |
 | thirdTypeAppId | String | 否 | 模板小程序标识，仅在 ISV 场景下需要传入。 |
 | success | Function | 否 | 订阅成功的回调函数。 |
-| fail | Function | 否 | 取消订阅，或订阅失败的回调函数。 |
-| complete | Function | 否 | 订阅结束的回调函数（调用成功、失败都会执行）。 |
+| fail | Function | 否 | 订阅失败，或用户取消订阅的回调函数。 |
+| complete | Function | 否 | 订阅结束的回调函数（订阅成功、失败、取消都会执行）。 |
 
 ## 回调参数
 Object 类型，属性如下：
 
 | **属性** | **类型** | **可选值** | **描述** |
 | --- | --- | --- | --- |
-| behavior | String | '','subscribe','cancel' | 订阅行为。<br /><ul><li>'subscribe'：表示订阅成功。</li><li>'cancel'：表示取消订阅。</li><li>''：表示订阅失败</li></ul> |
-| keep | Boolean | true, false | 单次订阅模板，用户勾选 **总是保持以上选择，不再询问** 时为 true。 |
+| behavior | String | 'subscribe', 'cancel', '' | 订阅成功，触发success回调：<br /><ul><li>'subscribe'：表示订阅成功。</ul> 订阅失败或取消订阅，触发fail回调：<ul></li><li>'cancel'：表示取消订阅。</li><li>''：表示订阅失败</li></ul> |
+| keep | Boolean | true, false | 一次订阅模板，用户勾选 **总是保持以上选择，不再询问** 时为 true。 |
 | refuse | Boolean | true, false | 长期订阅模板，用户点击 **拒绝，不再询问** 时为 true。 |
 | result | Object |  | 订阅数据，<br />{<br />//仅在订阅成功场景下存在，表示订阅成功的模板列表<br />subscribeEntityIds?: [ ],<br />// 最终订阅成功的模板列表<br />subscribedEntityIds: [ ],<br />// 未订阅的模板列表<br />unsubscribedEntityIds: [ ],<br />// 本次新增订阅成功的模板列表<br />currentSubscribedEntityIds: [ ],<br />//仅在取消订阅场景下存在，是传入的模板id集合<br />entityList?: [],<br />}; |
-| show | Boolean | true, false | 本次订阅过程是否弹出订阅弹层。 |
-| errorCode | Number | 见错误码 | 错误码，仅在订阅取消/失败时返回。 |
-| errorMessage | String | 见错误码 | 错误信息，仅在订阅取消/失败时返回。 |
-| [模板id] | String | 'reject', 'accept' | 动态键,表示该模板是否被订阅。仅在订阅成功( behavior == 'subscribe' )场景下数据可靠，其他场景下建议通过result字段获取订阅数据。静默订阅（ show 为 false ）时，返回状态为上一次的订阅结果。 |
+| show | Boolean | true, false | 本次订阅过程是否弹出了订阅面板。 |
+| [模板id] | String | 'reject', 'accept' | 动态键，表示该模板是否被勾选。具体订阅数据建议通过result字段获取。<br/>静默订阅（ show 为 false ）时，返回状态为上一次的订阅结果。 |
+| errorCode | Number | 见错误码 | 错误码，仅在订阅取消 / 失败时返回。 |
+| errorMessage | String | 见错误码 | 错误信息，仅在订阅取消 / 失败时返回。 |
+
+
+实际回调参数中error、success、stat已废弃，请使用errorCode、behavior。
 
 ## 错误码
 | **errorCode** | **errorMessage** | **说明** |
