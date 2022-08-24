@@ -86,7 +86,7 @@ Object 类型，属性如下：
 # 常见问题
 
 ## Q：调用 my.requestSubscribeMessage 报 “my.requestSubscribeMessage is not afunction”，或 my.canIUse 检测为 false ？
-A：首先确认小程序是否绑定[消息权限](https://opendocs.alipay.com/mini/01rqd3)，若已绑定消息权限，查看自己的ide版本是否满足本文档中的使用限制。
+A：先在 IDE 中通过模拟器上方的“展开面板”按钮 -> “设置”查看支持的基础库版本，若不满足此 API 的基础库版本使用限制，可通过升级 IDE 版本来支持更多版本基础库。
 
 ## Q：用户对于消息面板的操作，如何实时获取操作结果？
 A：1、通过的 my.requestSubscribeMessage 回调实时获取；2、用户操作之后，可以通过服务端调用 [alipay.open.app.messagetemplate.subscribe.query](https://opendocs.alipay.com/mini/02cth2) 获取。
