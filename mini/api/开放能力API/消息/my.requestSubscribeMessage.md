@@ -11,8 +11,7 @@
 
 关于消息产品的更多介绍，可通从 [此文档](https://opendocs.alipay.com/mini/introduce/message) 开始查看。
 
-## 使用限制
-
+# 使用限制
 - 一次性模板 id 和长期性模板 id 不可同时使用。
 - 开发者调用消息订阅接口，一次性最多传入三个模板 id。
 - 基础库 v1.x 从 [1.25.7](https://opendocs.alipay.com/mini/framework/lib) 开始支持，基础库 v2.x 从 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)，使用前可使用 [canIUse](https://opendocs.alipay.com/mini/api/can-i-use) 判断是否支持。
@@ -20,9 +19,7 @@
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
-
 ## 示例代码
-
 ### .js 示例代码
 ```javascript
 my.requestSubscribeMessage({
@@ -51,7 +48,6 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ## 回调参数
 | **属性** | **类型** | **可选值** | **描述** |
 | --- | --- | --- | --- |
@@ -65,10 +61,6 @@ Object 类型，属性如下：
 | errorCode | Number | String | 见错误码 | 错误码，仅在订阅取消/失败时返回。 |
 | errorMessage | String | 见错误码 | 错误信息，仅在订阅取消/失败时返回。 |
 | [模板id] | String | 'reject', 'accept' | 动态键,表示该模板是否被订阅。仅在订阅成功( behavior == 'subscribe' )场景下数据可靠，其他场景下建议通过result字段获取订阅数据。静默订阅（ show 为 false ）时，返回状态为上一次的订阅结果。 |
-
-
-### 回调参数示例
-![消息订阅.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/179989/1640677925411-8f0cdc4a-9a92-4898-977b-b85fe33e4a89.jpeg#align=left&display=inline&height=2446&margin=%5Bobject%20Object%5D&name=%E6%B6%88%E6%81%AF%E8%AE%A2%E9%98%85.jpg&originHeight=2446&originWidth=3506&size=1158370&status=done&style=none&width=3506)
 
 ## 错误码
 | **errorCode** | **errorMessage** | **说明** |
@@ -84,7 +76,6 @@ Object 类型，属性如下：
 | -1 | 订阅失败/校验模板列表失败 | 默认错误信息。 |
 
 # 常见问题
-
 ## Q：调用 my.requestSubscribeMessage 报 “my.requestSubscribeMessage is not afunction”，或 my.canIUse 检测为 false ？
 A：先在 IDE 中通过模拟器上方的“展开面板”按钮 -> “设置”查看支持的基础库版本，若不满足此 API 的基础库版本使用限制，可通过升级 IDE 版本来支持更多版本基础库。
 
