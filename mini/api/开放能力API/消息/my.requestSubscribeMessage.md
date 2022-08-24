@@ -45,10 +45,12 @@ Object 类型，属性如下：
 | entityIds | Array<String> | 是 | 需要订阅的消息模板的id的集合。 |
 | thirdTypeAppId | String | 否 | 模板小程序标识，仅在 ISV 场景下需要传入。 |
 | success | Function | 否 | 订阅成功的回调函数。 |
-| fail | Function | 否 | 用户取消订阅，或订阅失败的回调函数。 |
+| fail | Function | 否 | 取消订阅，或订阅失败的回调函数。 |
 | complete | Function | 否 | 订阅结束的回调函数（调用成功、失败都会执行）。 |
 
 ## 回调参数
+Object 类型，属性如下：
+
 | **属性** | **类型** | **可选值** | **描述** |
 | --- | --- | --- | --- |
 | behavior | String | '','subscribe','cancel' | 订阅行为。<br /><ul><li>'subscribe'：表示订阅成功。</li><li>'cancel'：表示取消订阅。</li><li>''：表示订阅失败</li></ul> |
