@@ -93,7 +93,7 @@ A：
 - 可能是链接过长导致，建议参数放在 data 中处理。
 - 建议检查请求时传递的数据是否正常，格式是否正确，可以在请求前打印入参数据日志。
 
-## Q：my.request 请求报错 {"data":"请求超时异常", "error":14, "headers": "{…}", "status":13, "errorMessage": "JSON parse data error"} ，如何处理?
+## Q：my.request 请求报错 {"data":"请求超时异常", "error":14, "headers": "{……}", "status":13, "errorMessage": "JSON parse data error"} ，如何处理?
 A：因返回数据格式 text 与入参 dataType 值 JSON 不一致而导致接口报错，请修改后台返回数据格式为 JSON。
 
 ## Q：my.request 请求超时？

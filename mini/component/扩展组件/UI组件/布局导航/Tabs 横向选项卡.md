@@ -407,7 +407,7 @@ tabs 横向选项卡主要是由 `<tabs>` 和 `<tab-content>` 两个标签组成
 | activeCls | String | - | 自定义激活 tabbar 的 class（设置字体样式和宽度）。 |
 | tabs | Array | true | tab 数据，其中包括选项标题 title、副标题（描述）文案 subTitle、胶囊形式 tab 中的数字 number，如需要以 badge 方式展示数字，添加 showBadge 并设置为 true 即可。<br />**版本要求：** mini-ali-ui [1.0.9](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上支持 showBadge |
 | activeTab | Number | true | 当前激活的 Tab 索引。<br />**默认值：** 0 |
-| tabBarCls | String | - | tabbar的自定义样式 class。 |
+| tabBarCls | String | - | tabbar 的自定义样式 class。 |
 | tabBarUnderlineColor | String | - | 选中选项卡下划线颜色。<br />**默认值：** #1677FF |
 | tabBarActiveTextColor | String | - | 选中选项卡字体颜色。<br />**默认值：** #1677FF |
 | capsuleTabBarActiveTextColor | String | - | 胶囊选中选项卡字体颜色。<br />**默认值：** #ffffff |

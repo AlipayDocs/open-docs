@@ -34,7 +34,7 @@ Anymock 功能使用依赖于项目 Token（**注意请勿泄露给他人**）�
 ![](https://cdn.nlark.com/yuque/0/2022/gif/179989/1651027018113-46dba4d8-9177-40af-88e7-c40be563fa02.gif)
 
 ### 3. 使用 mock 数据
-在使用 IDE 开发小程序过程中，代码层面不需要做任何感知就可以使用 Anymock，可以在 DevTool 里看到打印的 Anymock 日志。Anymock 平台中的数据支持函数编程、MockJs等特性，方便开发者使用，详情请查看 [官方文档](https://www.yuque.com/anymock/docs/mockdata)。
+在使用 IDE 开发小程序过程中，代码层面不需要做任何感知就可以使用 Anymock，可以在 DevTool 里看到打印的 Anymock 日志。Anymock 平台中的数据支持函数编程、MockJs 等特性，方便开发者使用，详情请查看 [官方文档](https://www.yuque.com/anymock/docs/mockdata)。
 
 **注意**：没有命中 mock 数据的接口，会自动走原生链路返回。
 
@@ -69,7 +69,7 @@ my.request({
 在 Anymock 里修改这个返回值，请求的响应就会修改。
 
 ## 其它
-Anymock 的初衷是让开发者无感知地使用 Mock 数据，所以为[ 小程序开发者工具](https://www.yuque.com/anymock/docs/ide)、[Google Chrome](https://www.yuque.com/anymock/docs/chrome) 等提供了官方插件，开发者在这些研发环境下无需做任何代码改动，就可以轻松使用 Anymock 提供的服务。
+Anymock 的初衷是让开发者无感知地使用 Mock 数据，所以为[小程序开发者工具](https://www.yuque.com/anymock/docs/ide)、[Google Chrome](https://www.yuque.com/anymock/docs/chrome) 等提供了官方插件，开发者在这些研发环境下无需做任何代码改动，就可以轻松使用 Anymock 提供的服务。
 
 ## 反馈
 - [Anymock 官方网站](https://anymock.alipay.com/)

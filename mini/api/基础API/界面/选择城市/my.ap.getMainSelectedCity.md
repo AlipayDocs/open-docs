@@ -69,7 +69,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | isManualSelected | Boolean | 是否是手动选择。 |
 | settingTime | Number | 设置时间。 |
 | districtName | String | 区县名（支付宝客户端 10.1.99 版本及以上）。 |
-| districtCode | String | 区县编码(客户端10.1.99版本新增)。 |
+| districtCode | String | 区县编码(客户端 10.1.99 版本新增)。 |
 
 
 ## 错误码

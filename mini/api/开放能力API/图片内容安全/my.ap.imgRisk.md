@@ -60,7 +60,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **最大长度** | **描述** | **示例值** |
 | --- | --- | --- | --- | --- |
-| riskResult      | String | 128 | 图片风险识别的任务的任务ID。 | \"apply_id\":\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\ |
+| riskResult      | String | 128 | 图片风险识别的任务的任务 ID。 | \"apply_id\":\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\ |
 | riskResultDesc | String | 1024 | 风险识别结果描述。 | 返回结果会默认为空，忽略即可 |
 | success | Boolean | - | 是否调用成功。 | true |
 | uniqueId | String | 1024 | 业务唯一识别码。 | xxxxxxxxxxxxxxxxx |

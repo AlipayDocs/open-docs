@@ -84,7 +84,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | **属性** | **类型** | **描述** | **示例值** |
 | --- | --- | --- | --- |
 | riskResult | String | 风险识别结果。<br />>riskinfo_nsf_common 风险评级结果：<ul><li>rank0：提供信息不足，提供参数信息有误，或提供的支付宝账号不存在。</li><li>rank1：表示用户拒付风险为低。</li><li>rank2：表示用户拒付风险为中。</li><li>rank3：表示用户拒付风险为高。</li></ul>riskinfo_anticheat_common_infocode 风险评级说明：171：作弊风险 | {\"riskinfo_anticheat_common\":\"rank3\",\"riskinfo_anticheat_common_infocode\":\"171\"} |
-| riskResultDesc | String | 风险信息描述。 | {\"rank0\":\"等级0\"} |
+| riskResultDesc | String | 风险信息描述。 | {\"rank0\":\"等级 0\"} |
 | uniqueId   | String | 业务唯一识别码，用户标识请求信息。 | 0b92uueie87636222 |
 
 ### Function fail

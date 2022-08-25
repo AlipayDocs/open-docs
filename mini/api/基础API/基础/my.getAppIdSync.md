@@ -1,5 +1,5 @@
 # 简介
-**my.getAppIdSync** 是同步获取小程序 APPID 的API。
+**my.getAppIdSync** 是同步获取小程序 APPID 的 API。
 
 基础库 [2.7.17](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始提供 [my.getAccountInfoSync](https://opendocs.alipay.com/mini/api/my.getAccountInfoSync)，可一并获取小程序的版本号。
 

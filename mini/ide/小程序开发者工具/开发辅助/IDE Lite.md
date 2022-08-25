@@ -2,7 +2,7 @@
 # 简介
 IDE Lite 提供了一种功能集中的简约高性能的使用方法，开发者可以与任意喜欢的代码编辑器结合使用。
 
-如果开发者是 VS Code 用户，也可以与 [VS Code扩展](https://opendocs.alipay.com/mini/ide/vscode) 配合达到更好的编码体验。
+如果开发者是 VS Code 用户，也可以与 [VS Code 扩展](https://opendocs.alipay.com/mini/ide/vscode) 配合达到更好的编码体验。
 
 以下为使用 VS Code 与 IDE Lite 协同开发示意图。
 

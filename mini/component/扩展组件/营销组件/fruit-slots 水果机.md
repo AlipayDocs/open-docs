@@ -111,7 +111,7 @@ Page({
 | --- | --- | --- | --- |
 | width | Number | false | 组件宽度，单位 rpx。<br />**默认值：** 700 |
 | margin | Number | false | 格子间的边距，单位 rpx。<br />**默认值：** 20 |
-| prizeList | Array | true | 奖项列表，长度必须为 8，须包含 name 和 icon字段。 |
+| prizeList | Array | true | 奖项列表，长度必须为 8，须包含 name 和 icon 字段。 |
 | prizeName | String | true | 抽奖结果的奖品 name，其值必须位于 prizeList 中。 |
 | rollTimes | Number | false | 转动圈数。<br />**默认值：** 3 |
 | currentIndex | Number | false | 转动开始的格子下标。<br />**默认值：** 0 |

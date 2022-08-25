@@ -8,7 +8,7 @@
 
 - 支付宝客户端版本 10.1.90，**基础库** [1.25.4](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 由于历史原因，需要使用IDE [2.7.0](https://opendocs.alipay.com/mini/ide/download) 以上版本才可正常调用。
+- 由于历史原因，需要使用 IDE [2.7.0](https://opendocs.alipay.com/mini/ide/download) 以上版本才可正常调用。
 
 # 接口调用
 

@@ -101,7 +101,7 @@ A：
 - 用户 **主动授权** 后调用`my.getOpenUserInfo` 才能获取用户支付宝会员的基础信息。授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发操作，需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `userInfo`。
 - 可以通过 [my.getSetting](https://opendocs.alipay.com/mini/api/xmk3ml) 接口返回的 userInfo 字段判断用户是否授权过会员基础信息，userInfo 为 true 即已授权。
 
-## Q：调用 my.getOpenUserInfo，报错 "ISV权限不足"，如何处理？
+## Q：调用 my.getOpenUserInfo，报错 "ISV 权限不足"，如何处理？
 A：“获取会员信息”功能包已下架，若之前创建的应用已添加了“获取会员信息”的功能包则能正常调用接口，未添加的则无法再添加此功能。 
 
 1. 在小程序开发管理后台的 **产品绑定** 中，点击 **绑定产品**。

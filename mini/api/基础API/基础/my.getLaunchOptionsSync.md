@@ -47,7 +47,7 @@ console.log(options);
 
 ## 在 IDE 上如何测试启动参数？
 
-请参考：[IDE配置/获取全局参数和页面参数（启动参数）](https://opendocs.alipay.com/support/01rb7b)
+请参考：[IDE 配置/获取全局参数和页面参数（启动参数）](https://opendocs.alipay.com/support/01rb7b)
 
 ## 如何从浏览器或外部 APP 携带参数跳转到小程序？
 

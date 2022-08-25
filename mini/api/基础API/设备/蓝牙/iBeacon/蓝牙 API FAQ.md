@@ -4,7 +4,7 @@ A：不是，调用此 API 返回的是写入成功的值。
 ### Q：调用 my.onBLECharacteristicValueChange 为何监听不到？一定要先写入才能监听到吗？
 A：是的，调用此 API 需要先写入才能监听到。为防止多次注册事件监听导致一次事件多次回调，建议每次调用 on 方法监听事件之前，先调用 off 方法，关闭之前的事件监听。
 
-### Q：调用 my.writeBLECharacteristicValue 为何报错10014？
+### Q：调用 my.writeBLECharacteristicValue 为何报错 10014？
 A：10014 错误是由于发送的数据为空或者格式错误导致，建议检查写入的数据或 HEX 转化是否有错误。
 
 ### Q：调用 my.writeBLECharacteristicValue 写入特征值，使用 16 进制的数组可以吗？

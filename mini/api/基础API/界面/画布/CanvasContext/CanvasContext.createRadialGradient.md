@@ -2,7 +2,7 @@
 
 
 # 简介
-**CanvasContext.createRadialGradient** 用于创建一个放射性的渐变色。需要使用 [addColorStop() ](https://opendocs.alipay.com/mini/api/addColorStop)来指定渐变点，至少需要两个渐变点。
+**CanvasContext.createRadialGradient** 用于创建一个放射性的渐变色。需要使用 [addColorStop()](https://opendocs.alipay.com/mini/api/addColorStop)来指定渐变点，至少需要两个渐变点。
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。

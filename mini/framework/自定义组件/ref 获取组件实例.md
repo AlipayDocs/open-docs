@@ -24,7 +24,7 @@ Component({
 如未定义此方法，尝试引用该自定义组件的对外实例时，同属于一个小程序宿主或者小程序插件的其他自定义组件或页面会获得该自定义组件的 `this`，否则获得 `null`。
 
 # 创建后 ref 回调
-如果小程序项目开启了 component2，就可以在 AXML 中给自定义组件定义 ref 回调。当被引用的自定义组件创建后，将自动触发该回调。对于未开启 component2 的场景请使用 [my.canIUse('component2') ](https://opendocs.alipay.com/mini/api/can-i-use) 做兼容。 
+如果小程序项目开启了 component2，就可以在 AXML 中给自定义组件定义 ref 回调。当被引用的自定义组件创建后，将自动触发该回调。对于未开启 component2 的场景请使用 [my.canIUse('component2')](https://opendocs.alipay.com/mini/api/can-i-use) 做兼容。 
 
 ```javascript
 // /pages/index/index.js

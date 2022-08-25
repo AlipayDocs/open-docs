@@ -16,7 +16,7 @@
 ## 示例代码
 
 ### .acss 示例代码
-```
+```plain
 /* .acss */
 .help-info {
   padding:10px;

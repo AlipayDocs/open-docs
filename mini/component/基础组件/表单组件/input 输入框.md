@@ -23,7 +23,7 @@
 | --- | --- | --- |
 | value | String | 初始内容。 |
 | name | String | 组件名字，用于表单提交获取数据。 |
-| type | String | input 的类型，有效值：`text`、 `number`、 `idcard`、 `digit`(可以唤起带有小数点的数字键盘)、`numberpad`、`digitpad`、 `idcardpad`。<br />**默认值：** text<br />**版本要求：**`numberpad`、`digitpad`、 `idcardpad` 支持基础库 [1.13.0](/mini/framework/compatibility) 客户端 10.1.50 及以上，可通过 <br />[my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)("input.type.numberpad") 来检测。<br />**注意：** 当启用数字键盘时，在Android 客户端上，脱离文档流（如设置了 `float` 或 `position: fixed` 等样式）并指定了 `bottom` 属性的元素会被影响（该元素会被键盘顶起）。可以采用如下方法来暂且避免这个问题：当 input 框聚焦后隐藏被影响的元素。 |
+| type | String | input 的类型，有效值：`text`、 `number`、 `idcard`、 `digit`(可以唤起带有小数点的数字键盘)、`numberpad`、`digitpad`、 `idcardpad`。<br />**默认值：** text<br />**版本要求：**`numberpad`、`digitpad`、 `idcardpad` 支持基础库 [1.13.0](/mini/framework/compatibility) 客户端 10.1.50 及以上，可通过 <br />[my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)("input.type.numberpad") 来检测。<br />**注意：** 当启用数字键盘时，在 Android 客户端上，脱离文档流（如设置了 `float` 或 `position: fixed` 等样式）并指定了 `bottom` 属性的元素会被影响（该元素会被键盘顶起）。可以采用如下方法来暂且避免这个问题：当 input 框聚焦后隐藏被影响的元素。 |
 | password | Boolean | 是否是密码类型。<br />**默认值：** false |
 | placeholder | String | 占位符。 |
 | placeholder-style | String | 指定 placeholder 的样式，可设置间距。<br />**版本要求：** 基础库 [1.6.0](/mini/framework/compatibility) 及以上 |

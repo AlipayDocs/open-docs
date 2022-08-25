@@ -74,7 +74,7 @@ Page({
 | nextYearDisable | Boolean | 后一个年份箭头禁用。<br />**默认值：** false |
 | tagData | Array | [{ date: '日期', tag: '标签', tagColor: 1, disable: true,},]，可设置多个不同日期的标签内容，颜色以及是否禁用。 |
 | onSelect | EventHandle | 选择区间时的回调。<br />**默认值：** ([startDate, endDate]) => void |
-| onMonthChange | EventHandle | 点击切换月份时回调，带两个参数currentMonth切换后月份和prevMonth切换前月份。<br />**默认值：** (currentMonth, prevMonth) => void |
+| onMonthChange | EventHandle | 点击切换月份时回调，带两个参数 currentMonth 切换后月份和 prevMonth 切换前月份。<br />**默认值：** (currentMonth, prevMonth) => void |
 | onChange | EventHandle | 年/月变化时回调，带两个对象，每个均携带 year 和 month 信息。<br />**默认值：** (current, prev) => void<br />**版本要求：** mini-ali-ui [1.1.5](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | onSelectHasDisableDate | EventHandle | 选择区间包含不可用日期。<br />**默认值：** (currentMonth, prevMonth) => void |
 | onYearChange | EventHandle | 点击切换年份时回调，带两个参数 currentYear 切换后年份和 prevYear 切换前年份。<br />**默认值：** (currentYear, prevYear) => void |

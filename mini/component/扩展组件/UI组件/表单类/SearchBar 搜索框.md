@@ -83,7 +83,7 @@ Page({
 | value | String | 搜索框的当前值。 |
 | placeholder | String | placeholder。 |
 | focus | Boolean | 自动获取光标。<br />**可选值：** true、false。<br />**默认值：** false |
-| showVoice | Boolean | 是否展示voice图标。<br />**可选值：** true、false。<br />**默认值：** false |
+| showVoice | Boolean | 是否展示 voice 图标。<br />**可选值：** true、false。<br />**默认值：** false |
 | onInput | (value: String) => void | 键盘输入时触发。 |
 | onClear | (val: String) => void | 点击 clear 图标触发。 |
 | onFocus | () => void | 获取焦点时触发。 |

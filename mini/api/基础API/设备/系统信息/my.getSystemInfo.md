@@ -77,7 +77,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | screenHeight | Number | 屏幕高度。单位：px。此属性在 Android 上取值有误，**建议使用 screen.height 替代。** |
 | brand | String | 手机品牌。 |
 | fontSizeSetting | Number | 用户设置字体大小。单位：px |
-| app | String | 当前运行的客户端。若当前为支付宝，则有效值为 "alipay"。不同的客户端，对应的有效值如下：<ul><li>alipay：支付宝。</li><li>UC：UC浏览器。</li><li>QUARK：夸克浏览器。</li><li>AK：阿里健康。</li><li>amap：高德。</li><li>YK：优酷。</li><li>DINGTALK：钉钉。</li></ul> |
+| app | String | 当前运行的客户端。若当前为支付宝，则有效值为 "alipay"。不同的客户端，对应的有效值如下：<ul><li>alipay：支付宝。</li><li>UC：UC 浏览器。</li><li>QUARK：夸克浏览器。</li><li>AK：阿里健康。</li><li>amap：高德。</li><li>YK：优酷。</li><li>DINGTALK：钉钉。</li></ul> |
 
 #### model 参数
 对于 iPhone，model 参数将返回 iPhone 内部代码（Internal Name）。iPhone 手机型号与对应的 model 返回值如下表所示：

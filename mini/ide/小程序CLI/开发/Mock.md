@@ -1,10 +1,10 @@
-推荐使用本地mock方案，使用更简单更直观，本地mock功能集成在Monitor面板中，详细查看：[Monitor介绍文档](https://opendocs.alipay.com/mini/miniu/monitor#%E6%9C%AC%E5%9C%B0Mock%E9%9D%A2%E6%9D%BF)
+推荐使用本地 mock 方案，使用更简单更直观，本地 mock 功能集成在 Monitor 面板中，详细查看：[Monitor 介绍文档](https://opendocs.alipay.com/mini/miniu/monitor#%E6%9C%AC%E5%9C%B0Mock%E9%9D%A2%E6%9D%BF)
 
 ---
 
 
 # Mock 面板
-Mock面板支持使用 Anymock 能力 [https://anymock.alipay.com/](https://anymock.alipay.com/) 进行小程序 mock，包括 [my.request](https://opendocs.alipay.com/mini/api/owycmh) 及 [其他小程序 API](https://opendocs.alipay.com/mini/api) 。
+Mock 面板支持使用 Anymock 能力 [https://anymock.alipay.com/](https://anymock.alipay.com/) 进行小程序 mock，包括 [my.request](https://opendocs.alipay.com/mini/api/owycmh) 及 [其他小程序 API](https://opendocs.alipay.com/mini/api) 。
 
 在配置中填入 Anymock 项目 token 即可使用 Anymock 能力，Anymock 使用流程详情请参见：[https://www.yuque.com/anymock/docs/intro](https://www.yuque.com/anymock/docs/intro)。
 

@@ -38,9 +38,9 @@
 | onAnimationIteration | EventHandle | 每开启一次新的动画过程时触发。（第一次不触发）<br />**版本要求：** 基础库 [1.8.0](/mini/framework/compatibility) 及以上 |
 | onAnimationStart | EventHandle | 动画开始时触发。<br />**版本要求：** 基础库 [1.8.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | onAnimationEnd | EventHandle | 动画结束时触发。<br />**版本要求：** 基础库 [1.8.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| onAppear | EventHandle | 当前元素可见面积超过50%时触发。<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| onDisappear | EventHandle | 当前元素不可见面积超过50%时触发。<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| onFirstAppear | EventHandle | 当前元素首次可见面积达到50%时触发。<br />**版本要求：** 基础库 [1.9.4](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| onAppear | EventHandle | 当前元素可见面积超过 50%时触发。<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| onDisappear | EventHandle | 当前元素不可见面积超过 50%时触发。<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| onFirstAppear | EventHandle | 当前元素首次可见面积达到 50%时触发。<br />**版本要求：** 基础库 [1.9.4](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | role | - | 表示组件的语义角色。设置为 img 时，组件聚焦后读屏软件会朗读出 **图像** ；设置为 button 时，聚焦后读屏软件会朗读出 **按钮** 。详情请参见 [aria-component](https://opendocs.alipay.com/mini/component/accessibility)。 |
 
 

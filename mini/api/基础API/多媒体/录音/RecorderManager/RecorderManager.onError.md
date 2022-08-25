@@ -23,7 +23,7 @@ recorderManager.onError(res => {
 ### Function callback
 录音错误事件的回调函数。
 
-#### callback参数
+#### callback 参数
 **Object res**
 
 | **属性** | **类型** | **说明** |
@@ -42,5 +42,5 @@ recorderManager.onError(res => {
 | -4 | 已有录制在进行 |
 | -5 | 录制被打断 |
 | -6 | 系统队列开始失败 |
-| -7 | 时间不足1s |
+| -7 | 时间不足 1s |
 | -8 | 系统队列创建失败 |

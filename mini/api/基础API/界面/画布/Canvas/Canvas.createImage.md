@@ -1,6 +1,6 @@
 
 # 简介
-**Canvas.createImage** 用于创建一个图片对象。支持 2D Canvas 和 WebGL Canvas下使用。
+**Canvas.createImage** 用于创建一个图片对象。支持 2D Canvas 和 WebGL Canvas 下使用。
 
 ## 使用限制
 

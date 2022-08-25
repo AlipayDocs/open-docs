@@ -1,7 +1,7 @@
 ### Q：小程序如何实现用户授权？
 A：小程序不支持使用拼接授权链接进行授权，建议使用 [my.getAuthCode](https://opendocs.alipay.com/mini/api/openapi-authorize) 实现用户授权、用户登录等。
 
-### Q：先调用my.getAuthCode，再调用my.getOpenUserInfo会出现两次授权窗口，是否有方法可以实现只出现一个授权弹框？
+### Q：先调用 my.getAuthCode，再调用 my.getOpenUserInfo 会出现两次授权窗口，是否有方法可以实现只出现一个授权弹框？
 A：正常获取会员基础信息是需要弹窗两次进行授权确认的，一次是 my.getAuthCode 获取用户授权码的授权框， 一次是 my.getOpenUserInfo 中获取用户基础信息的授权框。
 
 my.getAuthCode 使用静默授权方法（令 scopes 为 auth_base）即可实现只出现一个授权弹框。示例代码如下：

@@ -1,4 +1,4 @@
-[openvideo-axml介绍](https://gw.alipayobjects.com/v/portal_cjapev/afts/video/A*jrdoTagCX1sAAAAAAAAAAAAAAQAAAQ)
+[openvideo-axml 介绍](https://gw.alipayobjects.com/v/portal_cjapev/afts/video/A*jrdoTagCX1sAAAAAAAAAAAAAAQAAAQ)
 
 AXML 是小程序框架设计的一套标签语言，结合基础组件、事件系统，可以构建出小程序页面的结构。AXML 语法可分为五个部分：[数据绑定](https://opendocs.alipay.com/mini/framework/data-binding)、[条件渲染](https://opendocs.alipay.com/mini/framework/conditional-render)、[列表渲染](https://opendocs.alipay.com/mini/framework/list-render)、[模板](https://opendocs.alipay.com/mini/framework/axml-template)、[引用](https://opendocs.alipay.com/mini/framework/import)。
 

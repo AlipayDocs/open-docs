@@ -10,7 +10,7 @@
 
 ## 示例代码
 
-### .js示例代码
+### .js 示例代码
 ```javascript
 if (my.env.platform === 'iOS') {
   my.unregisterSSID({

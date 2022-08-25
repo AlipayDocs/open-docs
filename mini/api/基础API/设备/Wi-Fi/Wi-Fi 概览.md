@@ -5,7 +5,7 @@
 
 1. [my.startWifi](https://opendocs.alipay.com/mini/api/startwifi)：初始化 Wi-Fi 模块。
 1. [my.onWifiConnected](https://opendocs.alipay.com/mini/api/onwificonnected)：监听连接上 Wi-Fi 事件。
-1. [my.connectWifi](https://opendocs.alipay.com/mini/api/connectwifi)：连接 Wi-Fi。（仅 iOS 11及以上版本支持）
+1. [my.connectWifi](https://opendocs.alipay.com/mini/api/connectwifi)：连接 Wi-Fi。（仅 iOS 11 及以上版本支持）
 
 # 连周边 Wi-Fi 接口调用时序
 小程序可以通过扫描附近的 Wi-Fi 设备，让用户选择某个设备进行连接。
@@ -19,7 +19,7 @@
 1. [my.connectWifi](/mini/api/connectwifi)：连接 Wi-Fi。
 
 ## iOS
-iOS 11.0及11.1版本因系统原因暂不支持。
+iOS 11.0 及 11.1 版本因系统原因暂不支持。
 
 1. [my.startWifi](https://opendocs.alipay.com/mini/api/startwifi)：初始化 Wi-Fi 模块。
 1. [my.onGetWifiList](https://opendocs.alipay.com/mini/api/ongetwifilist)：监听获取到 Wi-Fi 列表数据事件。
@@ -89,8 +89,8 @@ my.onWifiConnected(res => {
 | [my.onGetWifiList](https://opendocs.alipay.com/mini/api/ongetwifilist) | 监听在获取到 Wi-Fi 列表数据时的事件，在回调中将返回 wifiList。 |
 | [my.offGetWifiList](https://opendocs.alipay.com/mini/api/offgetwifilist) | 取消监听在获取到 Wi-Fi 列表数据时的事件。 |
 | [my.getConnectedWifi](https://opendocs.alipay.com/mini/api/getconnectedwifi) | 获取已连接中的 Wi-Fi 信息。 |
-| [my.registerSSID](https://opendocs.alipay.com/mini/api/register) | 信任该SSID，对于需要 Portal 认证的 Wi-Fi，不会弹出 portal 认证页面。 |
-| [my.unregisterSSID](https://opendocs.alipay.com/mini/api/unregister) | 不再信任该SSID，对于需要 Portal 认证的 Wi-Fi，继续弹出 portal 认证页面。 |
+| [my.registerSSID](https://opendocs.alipay.com/mini/api/register) | 信任该 SSID，对于需要 Portal 认证的 Wi-Fi，不会弹出 portal 认证页面。 |
+| [my.unregisterSSID](https://opendocs.alipay.com/mini/api/unregister) | 不再信任该 SSID，对于需要 Portal 认证的 Wi-Fi，继续弹出 portal 认证页面。 |
 
 
 # 错误码列表

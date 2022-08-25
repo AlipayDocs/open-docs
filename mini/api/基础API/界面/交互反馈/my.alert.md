@@ -58,11 +58,11 @@ my.alert({
 })
 ```
 
-## Q：content 属性支持设置样式吗？content 属性支持html解析吗？
+## Q：content 属性支持设置样式吗？content 属性支持 html 解析吗？
 A：content 不支持设置样式和 html 解析。如有相关需求，可使用 [Modal](https://opendocs.alipay.com/mini/component-ext/modal) 组件实现一个自定义弹窗。
 
 ## Q：content 属性文字对齐方式？
-A：在安卓系统下，content属性文字是左对齐的；在 iOS 系统下，content 属性文字是居中对齐的。
+A：在安卓系统下，content 属性文字是左对齐的；在 iOS 系统下，content 属性文字是居中对齐的。
 
 ## Q：在 my.alert 唤起警告框后进行页面跳转，警告框是否消失？
 A：如果在 my.alert 唤起警告框后进行跳转页面，在安卓系统下页面跳转后 my.alert 警告框依然存在，在 iOS 系统下跳转页面后 my.alert 警告框消失。 

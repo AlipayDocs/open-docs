@@ -9,7 +9,7 @@ aria 属性是 [WAI-ARIA](https://www.w3.org/TR/wai-aria/) 标准提供无障碍
 ## 常用 aria 属性
 
 ### role
-aria 属性的核心是 role 属性，该属性表示组件的语义角色。 例如当 role 属性设置为 img 时，组件聚焦后读屏软件会朗读出 **图像** ；设置为 button 时，聚焦后读屏软件会朗读出 **按钮 **。
+aria 属性的核心是 role 属性，该属性表示组件的语义角色。 例如当 role 属性设置为 img 时，组件聚焦后读屏软件会朗读出 **图像** ；设置为 button 时，聚焦后读屏软件会朗读出 **按钮**。
 ```html
 <view class="button" onTap="defaultTap" role="button" aria-label="确定按钮">确定按钮</view>
 ```
@@ -29,14 +29,14 @@ aria 属性的核心是 role 属性，该属性表示组件的语义角色。 �
   <view>第一段落。。。</view>
 </view>
 ```
-当读屏软件聚焦到 **文章标题** 的 view 组件时候，会朗读 **文字标题 标题1** ；当聚焦到 **第一章** 的 view 组件时候，会朗读 **第一章 标题2**。**标题2** 中的 **标题** 就是 role 提供的语义信息，而** 2**  是由 aria-level 属性设置的。 aria-level 属性属于 aria 属性，它提供额外信息，示例中 aria-level 表达标题级别。<br />部分 role 属性的值需要 aria 属性配合使用才能生效。如 role="img" 时，必须配置 aria-label 属性，否则读屏软件会忽略 role 属性。
+当读屏软件聚焦到 **文章标题** 的 view 组件时候，会朗读 **文字标题 标题 1** ；当聚焦到 **第一章** 的 view 组件时候，会朗读 **第一章 标题 2**。**标题 2** 中的 **标题** 就是 role 提供的语义信息，而**2**  是由 aria-level 属性设置的。 aria-level 属性属于 aria 属性，它提供额外信息，示例中 aria-level 表达标题级别。<br />部分 role 属性的值需要 aria 属性配合使用才能生效。如 role="img" 时，必须配置 aria-label 属性，否则读屏软件会忽略 role 属性。
 
 ### aria-label
 aria-label 可以代替组件内的文本内容，例如：
 ```html
 <view aria-label="aria-label内容">组件文本内容</view>
 ```
-当聚焦到此处时，读屏软件会朗读出 **aria-label内容** ，而组件内原有的文本内容会被忽略。<br />aria-label 还可以配合不带文本内容的组件使用，表示该组件附带的文本信息，聚焦后系统会自动朗读出来。例如 image 组件，可以使用 aria-label 增添图片的描述信息。
+当聚焦到此处时，读屏软件会朗读出 **aria-label 内容** ，而组件内原有的文本内容会被忽略。<br />aria-label 还可以配合不带文本内容的组件使用，表示该组件附带的文本信息，聚焦后系统会自动朗读出来。例如 image 组件，可以使用 aria-label 增添图片的描述信息。
 ```html
 <image src={{src}} role="img" aria-label="风景画" />
 ```
@@ -86,7 +86,7 @@ aria-expanded 表示可折叠的组件的展开信息，适合对有折叠功能
 无障碍一词来自英文 Accessibility ，是指任何人（无论是健全人、残疾人，还是老年人、孩子）可在任何时候、任何场景使用或者访问。标准化组织（如[W3C](https://www.w3.org/)、[WAI](https://www.w3.org/WAI/)）制定了 WEB 领域无障碍的标准，支付宝小程序依据现有标准，提供了支付宝小程序无障碍访问功能。
 
 ## 无障碍标准
-[Web 内容无障碍指南 (WCAG)](https://www.w3.org/Translations/WCAG21-zh/) 是由研究无障碍的专家制定的一组指导原则和最佳实践，目的在于有条理地向大家阐释无障碍性的含义和最佳实践。<br />[可访问富互联网应用（WAI-ARIA）](https://www.w3.org/TR/wai-aria/) 是一个为残疾人士等提供无障碍访问动态、可交互 Web 内容的技术规范，为浏览器、媒体播放器、辅助技术的开发人员以及Web内容开发者定义了可以获得更广泛跨平台可访问性的方法。<br />小程序的无障碍功能支持 [WAI-ARIA](https://www.w3.org/TR/wai-aria/) 部分属性，开发者可以配合 [WCAG](https://www.w3.org/Translations/WCAG21-zh/) 中总结的最佳实践，开发出更易为广大有无障碍需求人士使用的小程序。
+[Web 内容无障碍指南 (WCAG)](https://www.w3.org/Translations/WCAG21-zh/) 是由研究无障碍的专家制定的一组指导原则和最佳实践，目的在于有条理地向大家阐释无障碍性的含义和最佳实践。<br />[可访问富互联网应用（WAI-ARIA）](https://www.w3.org/TR/wai-aria/) 是一个为残疾人士等提供无障碍访问动态、可交互 Web 内容的技术规范，为浏览器、媒体播放器、辅助技术的开发人员以及 Web 内容开发者定义了可以获得更广泛跨平台可访问性的方法。<br />小程序的无障碍功能支持 [WAI-ARIA](https://www.w3.org/TR/wai-aria/) 部分属性，开发者可以配合 [WCAG](https://www.w3.org/Translations/WCAG21-zh/) 中总结的最佳实践，开发出更易为广大有无障碍需求人士使用的小程序。
 
 ## 启动视觉无障碍功能
 iOS 系统和 Android 系统提供了视觉无障碍特性，为盲人或视力不好的用户提供读屏功能，能够朗读出用户所触摸、选择、激活的内容。

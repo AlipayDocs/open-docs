@@ -107,7 +107,7 @@ page {
 ```
 
 ### .js 示例代码
-```
+```plain
 const cfg = {
  c1: {
    related: false,

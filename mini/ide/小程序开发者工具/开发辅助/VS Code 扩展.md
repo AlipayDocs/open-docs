@@ -21,7 +21,7 @@
 
 ## 使用
 
-### axml 组件和snippets的自动补全
+### axml 组件和 snippets 的自动补全
 ![|723x543](https://gw.alipayobjects.com/mdn/rms_b84a32/afts/img/A*iGQ4QqJA1iQAAAAAAAAAAAAAARQnAQ#align=left&display=inline&height=1532&margin=%5Bobject%20Object%5D&originHeight=1532&originWidth=2040&status=done&style=none&width=2040)
 
 ### API 补全和 hover 提示

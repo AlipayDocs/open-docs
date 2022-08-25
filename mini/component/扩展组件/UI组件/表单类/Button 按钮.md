@@ -13,7 +13,7 @@
 ## 示例代码
 
 ### .json 示例代码
-```
+```plain
 {
  "defaultTitle": "Button",
  "usingComponents": {

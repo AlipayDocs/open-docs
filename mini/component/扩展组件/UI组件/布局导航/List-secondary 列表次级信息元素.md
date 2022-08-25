@@ -67,6 +67,6 @@ Page({
 
 
 ### slot
-list-item 共有6个插槽，位置和名称如下图所示。
+list-item 共有 6 个插槽，位置和名称如下图所示。
 
 ![|723x230](https://mdn.alipayobjects.com/afts/img/A*iw6UQKNO-MDUx4BCh_j_VQBkAa8wAA/original?bz=openpt_doc&t=6gdZcQ4n912nP8uw3AK8uwAAAABkMK8AAAAA#align=left&display=inline&height=283&margin=%5Bobject%20Object%5D&originHeight=283&originWidth=888&status=done&style=none&width=888)

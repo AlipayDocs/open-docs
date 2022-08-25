@@ -3,7 +3,7 @@
 
 ## 使用说明
 - picker 组件在 iOS 系统中从底部弹出，在 Android 系统中从中间弹出。
-- 支持通过 [my.multiLevelSelect ](https://opendocs.alipay.com/mini/api/multi-level-select)调用级联选择。
+- 支持通过 [my.multiLevelSelect](https://opendocs.alipay.com/mini/api/multi-level-select)调用级联选择。
 - 支持通过 [my.datePicker](https://opendocs.alipay.com/mini/api/ui-date) 打开日期选择列表。
 
 ## 扫码体验

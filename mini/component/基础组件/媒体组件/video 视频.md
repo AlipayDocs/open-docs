@@ -97,7 +97,7 @@ Page({
 | duration | Number | 为无法读取时长的视频设置时长，单位 s。 |
 | controls | Boolean | 是否显示默认播放控件（底部工具条，包括播放/暂停按钮、播放进度、时间）。<br />**默认值：** true |
 | autoplay | Boolean | 是否自动播放。<br />**默认值：** false |
-| direction | Number | 设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针90度）, -90（屏幕顺时针90度）<br />**版本要求：** 基础库 [1.12.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| direction | Number | 设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针 90 度）, -90（屏幕顺时针 90 度）<br />**版本要求：** 基础库 [1.12.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | loop | Boolean | 是否循环播放。<br />**默认值：** false<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | muted | Boolean | 是否静音播放。<br />**默认值：** false<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | show-fullscreen-btn | Boolean | 是否显示全屏按钮。<br />**默认值：** true<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
@@ -162,9 +162,9 @@ iOS、Android 支持以下编码格式： H.264、H.265、AAC。
 虽然再次播放拉取的是缓存中的视频，但是还是会校验视频资源的。
 
 ### 出现异常问题自查步骤
-* 原始AXML中是否包含三要素【id="main-map"】【class="nbcomponentanimation-main-map"】【<param name="id" value="main-map">】
-* id不能为【drawing area root】【content root】【RenderView】【TileGrid container】【Page TiledBacking containment】【ancestor clipping】等保留关键字
-* id不能包含一些特殊字符，如【 * 】【 / 】，保证为大小写字母【 - 】【 _ 】组成
-* id长度最好保持适中，不要以当前小程序id、当前unix时间戳作为部分内容，导致id过长
-* 保证id关键字在AXML的唯一性，若id为【main-map】，请尽量不要出现【main-map-wapper】类似的id值，可能会生成WKCompositingView导致同层组件添加位置出错
-* 可以尝试 `raw-controls`属性，可解决h5的video组件在支付宝容器内出现层级过高的问题
+* 原始 AXML 中是否包含三要素【id="main-map"】【class="nbcomponentanimation-main-map"】【<param name="id" value="main-map">】
+* id 不能为【drawing area root】【content root】【RenderView】【TileGrid container】【Page TiledBacking containment】【ancestor clipping】等保留关键字
+* id 不能包含一些特殊字符，如【 * 】【 / 】，保证为大小写字母【 - 】【 _ 】组成
+* id 长度最好保持适中，不要以当前小程序 id、当前 unix 时间戳作为部分内容，导致 id 过长
+* 保证 id 关键字在 AXML 的唯一性，若 id 为【main-map】，请尽量不要出现【main-map-wapper】类似的 id 值，可能会生成 WKCompositingView 导致同层组件添加位置出错
+* 可以尝试 `raw-controls`属性，可解决 h5 的 video 组件在支付宝容器内出现层级过高的问题

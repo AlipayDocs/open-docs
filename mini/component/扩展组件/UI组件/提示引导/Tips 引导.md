@@ -172,5 +172,5 @@ Page({
 | className | String | false | 自定义 class。 |
 | time | Number | false | 自动关闭时间（单位：毫秒）。<br />**默认值：** 5000 ms |
 | onClose | () => void | false | 回调并关闭提示框。 |
-| onTimeOut | () => void | false | 倒计时结束时关闭回调.<br />**版本要求：** mini-ali-ui[ 1.0.11](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
+| onTimeOut | () => void | false | 倒计时结束时关闭回调.<br />**版本要求：** mini-ali-ui[1.0.11](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 

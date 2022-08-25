@@ -17,7 +17,7 @@
 ## 小程序订单中心
 | **接口英文名** | **接口中文名** | **接口描述** |
 | --- | --- | --- |
-| [alipay.open.auth.token.app](https://docs.open.alipay.com/api_9/alipay.open.auth.token.app) | 换取应用授权令牌 | 在应用授权的场景下，商户把名下应用授权给 ISV 后，支付宝会给 ISV 颁发应用授权码app_auth_code，ISV 可通过获取到的 app_auth_code 换取 app_auth_token。 <br />后续 ISV 需传入 app_auth_token 代商家调用接口。 |
+| [alipay.open.auth.token.app](https://docs.open.alipay.com/api_9/alipay.open.auth.token.app) | 换取应用授权令牌 | 在应用授权的场景下，商户把名下应用授权给 ISV 后，支付宝会给 ISV 颁发应用授权码 app_auth_code，ISV 可通过获取到的 app_auth_code 换取 app_auth_token。 <br />后续 ISV 需传入 app_auth_token 代商家调用接口。 |
 | [alipay.merchant.item.file.upload](https://docs.open.alipay.com/api_4/alipay.merchant.item.file.upload) | 商品图片上传接口 | 商户把商品对应的图片文件上传到支付宝，后续通过该接口返回的素材 ID 及素材 key 创建商品或展示商品图片。 |
 | [alipay.merchant.order.sync](https://docs.open.alipay.com/api_4/alipay.merchant.order.sync) | 订单数据同步接口 | 商户可以调用此接口同步对应订单数据至小程序订单中心。 |
 | [ant.merchant.expand.item.open.create](https://docs.open.alipay.com/api_4/ant.merchant.expand.item.open.create/) | 创建商品接口 | 用于 ISV 或商户创建商品。 |
@@ -230,7 +230,7 @@
 | [alipay.marketing.voucher.templatedetail.query](https://docs.open.alipay.com/api_5/alipay.marketing.voucher.templatedetail.query) | 查询模板详情 | 查询模板的详细信息，包含准实时的汇总信息。 |
 | [alipay.marketing.voucher.templatelist.query](https://docs.open.alipay.com/api_5/alipay.marketing.voucher.templatelist.query) | 查询券模板列表 | 分页查询当前 PID 下的所有模板。 |
 | [alipay.marketing.voucher.query](https://docs.open.alipay.com/api_5/alipay.marketing.voucher.query) | 券查询 | 商户券信息查询。 |
-| [alipay.marketing.userule.pid.query](https://docs.open.alipay.com/api_5/alipay.marketing.userule.pid.query) | 商户使用场景规则PID查询 | 查询商户可用于使用场景规则的 PID。 |
+| [alipay.marketing.userule.pid.query](https://docs.open.alipay.com/api_5/alipay.marketing.userule.pid.query) | 商户使用场景规则 PID 查询 | 查询商户可用于使用场景规则的 PID。 |
 | [ant.merchant.expand.merchant.storelist.query](https://docs.open.alipay.com/api_3/ant.merchant.expand.merchant.storelist.query) | 商户外部门店查询接口 | 查询商户外部门店。 |
 | [alipay.marketing.material.image.upload](https://opendocs.alipay.com/pre-apis/00a8ae) | 营销图片上传接口 | 开发者可调用本接口上传单品优惠券模板中使用的商品图片，获取图片 id。 |
 | [alipay.marketing.cashlessitemvoucher.template.create](https://opendocs.alipay.com/pre-apis/00a8ip) | 无资金单品券创建接口 | 开发者可调用本接口创建无资金单品优惠券模板。 |
@@ -244,7 +244,7 @@
 
 # 安全能力
 
-## e签宝电子合同
+## e 签宝电子合同
 **合同模板相关接口**
 
 | **接口英文名** | **接口中文名** | **接口描述** |
@@ -261,7 +261,7 @@
 | [alipay.eco.signflows.url.query](https://opendocs.alipay.com/apis/00pvbe) | 获取流程签署地址 | 创建签署流程后，可通过此接口获取指定签署人的签署链接。 |
 | [alipay.eco.signflows.detail.query](https://opendocs.alipay.com/apis/api_50/alipay.eco.signflows.detail.query) | 流程文档下载 | 可通过此接口获取签署流程合同与附件的下载地址。 |
 | [alipay.eco.file.path.query](https://opendocs.alipay.com/apis/api_50/alipay.eco.file.path.query) | 获取文件直传地址 | 通过获取到的 uploadUrl 进行文件流上传合同的附件，如订单截图等，可作为电子合同的辅助证明材料。上传文件具体注意事项参见 [文件流上传方法](https://opendocs.alipay.com/mini/00kr2w)。 |
-| [alipay.eco.sign.flow.cancel](https://opendocs.alipay.com/apis/api_50/alipay.eco.sign.flow.cancel) | 签署流程撤销 | 可通过此接口撤销合同签署流程。场景举例：用户取消订单后，需通过流程ID（flow_id）撤销对应的电子合同签署流程。 |
+| [alipay.eco.sign.flow.cancel](https://opendocs.alipay.com/apis/api_50/alipay.eco.sign.flow.cancel) | 签署流程撤销 | 可通过此接口撤销合同签署流程。场景举例：用户取消订单后，需通过流程 ID（flow_id）撤销对应的电子合同签署流程。 |
 
 
 ## 文本风险识别

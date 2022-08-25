@@ -52,5 +52,5 @@ Canvas 2D API 描述绘制文本时，当前文本基线的属性。即文字垂
 | hanging | 文本基线是悬挂基线 |
 | middle | 文本基线在文本块的中间 |
 | alphabetic | 文本基线是标准的字母基线 |
-| ideographic | 文字基线是表意字基线；如果字符本身超出了alphabetic 基线，那么ideograhpic基线位置在字符本身的底部。 |
+| ideographic | 文字基线是表意字基线；如果字符本身超出了 alphabetic 基线，那么 ideograhpic 基线位置在字符本身的底部。 |
 | bottom | 本基线在文本块的底部 |

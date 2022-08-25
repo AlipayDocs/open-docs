@@ -69,7 +69,7 @@ Page({
 
 | **属性** | **类型** | **默认值** | **必填** | **描述** |
 | --- | --- | --- | --- | --- |
-| id | Boolean | false | 否 | 节点id，基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，可通过 `my.canIUse('createSelectorQuery.return.fields.object.id')` 检测。 |
+| id | Boolean | false | 否 | 节点 id，基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，可通过 `my.canIUse('createSelectorQuery.return.fields.object.id')` 检测。 |
 | dataset | Boolean | false | 否 | 是否返回节点 dataset。 |
 | rect | Boolean | false | 否 | 是否返回节点布局位置（`left` `right` `top` `bottom`）。 |
 | size | Boolean | false | 否 | 是否返回节点尺寸（`width` `height`）。 |

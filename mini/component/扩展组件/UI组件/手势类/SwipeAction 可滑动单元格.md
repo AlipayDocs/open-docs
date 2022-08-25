@@ -133,6 +133,6 @@ Page({
    - delete：#FF3B30
    - other：#1677FF
 - SwipeAction 是与 list 组件组合使用的。
-- `borderRadius `是为了结合带圆角的 list-item 而存在的，如果为 true 时，将会把右侧 item 显示为圆角模式。
+- `borderRadius`是为了结合带圆角的 list-item 而存在的，如果为 true 时，将会把右侧 item 显示为圆角模式。
 - `swipeWidth` 可设置 swipe-action 组件的整体宽度，默认为 `my.getSystemInfoSync()` 所得的 `windowWidth`，传入的宽度值不接受百分比单位，建议使用 `px` 或者 `rpx`。
 - 如列表数据过多有卡顿情况，建议将 enableNew 设置为 false。

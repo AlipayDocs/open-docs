@@ -23,7 +23,7 @@ recorderManager.onStop(res => {
 ### Function callback
 录音结束事件的回调函数。
 
-#### callback参数
+#### callback 参数
 **Object res**
 
 | **属性** | **类型** | **说明** |

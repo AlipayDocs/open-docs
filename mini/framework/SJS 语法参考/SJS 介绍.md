@@ -87,7 +87,7 @@ export const y = 4;
 <view>{{z}}</view>
 ```
 页面输出：
-```
+```plain
 foo
 hello alipay
 3
@@ -108,9 +108,9 @@ hello alipay
 
 # FAQ
 
-## sjs中是否可以引用npm包？
+## sjs 中是否可以引用 npm 包？
 
-可以引用，但只能引用npm包中的sjs文件。
+可以引用，但只能引用 npm 包中的 sjs 文件。
 
 # 相关文档
 - [运算符](https://opendocs.alipay.com/mini/framework/operator)

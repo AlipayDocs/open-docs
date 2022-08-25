@@ -7,7 +7,7 @@
 
 - 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
-- 在调用 my.openBluetoothAdapter API之前，调用小程序其它蓝牙模块相关 API，API 会返回错误。
+- 在调用 my.openBluetoothAdapter API 之前，调用小程序其它蓝牙模块相关 API，API 会返回错误。
    - 错误码：10000。
    - 错误描述：未初始化蓝牙适配器。
    - 解决方案：请调用 my.openBluetoothAdapter。

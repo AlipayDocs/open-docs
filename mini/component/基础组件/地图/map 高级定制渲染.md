@@ -4,7 +4,7 @@
 
 ## 使用限制
 
-- 支付宝版本 10.1.92 及以上，基础库版本[ 1.23.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上。
+- 支付宝版本 10.1.92 及以上，基础库版本[1.23.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上。
 - IDE 模拟器暂不支持调试，请在真机进行相关调试。
 - 定制渲染的 XML 布局文件支持编写模板参数，标准是“${参数名称}”，在设置 layout 时可以通过传递 params 参数，地图渲染时会根据传递的模板参数动态渲染。
 - 引用的 XML 文件要放在小程序根目录下，不能放在 pages 目录下，否则显示不出来。

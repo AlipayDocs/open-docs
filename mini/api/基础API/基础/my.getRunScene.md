@@ -44,7 +44,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| envVersion | String | 小程序当前运行的版本。<br /><ul><li>develop：开发版。</li><li>trial：体验版。</li><li>release：发布版（小程序审核阶段也是返回release）。</li><li>gray：灰度版。</li></ul> |
+| envVersion | String | 小程序当前运行的版本。<br /><ul><li>develop：开发版。</li><li>trial：体验版。</li><li>release：发布版（小程序审核阶段也是返回 release）。</li><li>gray：灰度版。</li></ul> |
 
 
 ### Function fail

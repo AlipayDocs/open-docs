@@ -31,7 +31,7 @@
 ```html
 <contact-button tnt-inst-id="企业编码" scene="聊天窗编码" alipay-card-no="2088用户ID" ext-info="扩展信息"/>
 ```
-提醒一：打开支付宝，中间位置显示提示，点击即进入对话窗。（按一定的频率进行消息提醒，默认30分钟提醒一次）
+提醒一：打开支付宝，中间位置显示提示，点击即进入对话窗。（按一定的频率进行消息提醒，默认 30 分钟提醒一次）
 
 ![|168x247](https://cdn.nlark.com/lark/0/2018/png/14456/1540984972757-72ccf597-9c89-4c49-be2e-9082cf3d504d.png#align=left&display=inline&height=631&margin=%5Bobject%20Object%5D&originHeight=631&originWidth=429&status=done&style=none&width=168)
 
@@ -51,11 +51,11 @@
 | --- | --- | --- |
 | tnt-inst-id | String | 必填。企业唯一编码，一个企业支付宝账号对应一个编码。 |
 | scene | String | 必填。聊天窗编码，每个聊天窗的唯一编码。 |
-| size | Number/String | 选填。咨询按钮大小，正方形设置边长（如25*25 px）。<br />**默认值：** 25<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上、支付宝客户端 [1.12.0](https://opendocs.alipay.com/mini/framework/compatibility) 以及上支持 rpx 单位 |
+| size | Number/String | 选填。咨询按钮大小，正方形设置边长（如 25*25 px）。<br />**默认值：** 25<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上、支付宝客户端 [1.12.0](https://opendocs.alipay.com/mini/framework/compatibility) 以及上支持 rpx 单位 |
 | color | String | 选填。咨询按钮颜色，默认白底蓝色。<br />**默认值：** #00A3FF<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | icon | ImgUrl | 选填。咨询按钮头像。<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
-| alipay-card-no | String | 选填。支付宝访客用户ID（2088开头）。<br />**说明：** 客服回答问题时，如客户已离开咨询窗口，则通过推送消息到支付宝 card 中提醒客户。 |
-| ext-info | String | 选填。该属性主要用于传递一些扩展信息给组件，以实现一些高级功能。该属性值的生成方式为：encodeURIComponent({"字段名":"字段值"})， 其中，字段名和字段值要根据实际使用的功能进行替换。<br />目前通过传入扩展信息可支持的 3 个功能：<br />1.访客名片。需传 cinfo 和 key 两个扩展字段，代码形如在云客服中进入 **设置** > **服务窗配置** > **聊天窗 URL**。点击操作栏中的 **聊天窗 URL** ，获取 `tntInstId`（企业编码）和 `scene`（聊天窗编码）。`encodeURIComponent({"cinfo":"生成的 cinfo","key":"生成的key"})`，cinfo 和 key 的值说明 支付宝小程序接入访客名片；<br />2.聊天窗默认带出用户的小程序订单数据。需传 appId 字段，代码形如`encodeURIComponent({"appId":"商户小程序appid"}) `<br />3.未读客服消息同步至"我的小程序-我的"。同样需传 appId 字段，代码形如 `encodeURIComponent({"appId":"商户小程序appid"})`。 |
+| alipay-card-no | String | 选填。支付宝访客用户 ID（2088 开头）。<br />**说明：** 客服回答问题时，如客户已离开咨询窗口，则通过推送消息到支付宝 card 中提醒客户。 |
+| ext-info | String | 选填。该属性主要用于传递一些扩展信息给组件，以实现一些高级功能。该属性值的生成方式为：encodeURIComponent({"字段名":"字段值"})， 其中，字段名和字段值要根据实际使用的功能进行替换。<br />目前通过传入扩展信息可支持的 3 个功能：<br />1.访客名片。需传 cinfo 和 key 两个扩展字段，代码形如在云客服中进入 **设置** > **服务窗配置** > **聊天窗 URL**。点击操作栏中的 **聊天窗 URL** ，获取 `tntInstId`（企业编码）和 `scene`（聊天窗编码）。`encodeURIComponent({"cinfo":"生成的 cinfo","key":"生成的key"})`，cinfo 和 key 的值说明 支付宝小程序接入访客名片；<br />2.聊天窗默认带出用户的小程序订单数据。需传 appId 字段，代码形如`encodeURIComponent({"appId":"商户小程序appid"})`<br />3.未读客服消息同步至"我的小程序-我的"。同样需传 appId 字段，代码形如 `encodeURIComponent({"appId":"商户小程序appid"})`。 |
 
 # 常见问题
 

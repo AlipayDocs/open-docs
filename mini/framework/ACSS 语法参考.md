@@ -84,7 +84,7 @@ background-image: url('./images/ant.png');
 
 # 常见问题
 ## Q：一个 axml 引用多个自定义组件或 template 模板、include 等，造成样式之间相互影响、样式污染怎么办？
-A：对于基础库小于2.7.2的小程序，可使用 class 命名空间处理样式隔离。从基础库版本 2.7.2 开始，可以在自定义组件的 JSON 文件中配置 styleIsolation，避免页面的样式影响到外部。例如：
+A：对于基础库小于 2.7.2 的小程序，可使用 class 命名空间处理样式隔离。从基础库版本 2.7.2 开始，可以在自定义组件的 JSON 文件中配置 styleIsolation，避免页面的样式影响到外部。例如：
 ```json
 {
   "styleIsolation": "apply-shared"

@@ -90,7 +90,7 @@ Page({
 | onClear | () => void | 点击 clear 图标触发。 |
 | onButtonClick | () => void | 点击右下角按钮时触发。 |
 | maxLength | Number | 最多允许输入的字符个数。 |
-| controlled | Boolean | 是否为受控组件。为 true时，value 内容会完全受 setData 控制。<br />**可选值：** true、false。<br />**默认值：** false |
+| controlled | Boolean | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。<br />**可选值：** true、false。<br />**默认值：** false |
 | showClear | Boolean | 是否一直显示清除 icon。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.1.3](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | focusAfterClear | Boolean | 清除 icon 触发后，输入框是否获得焦点。<br />**默认值：** true<br />**版本要求：** mini-ali-ui [1.1.3](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 

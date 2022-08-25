@@ -62,7 +62,7 @@ my.onMessage = function(message) {
 my.postMessage({'sendToMiniProgram': '0'});
 ```
 
-**请注意**，代码示例中的 `my.onMessage = ` 是一个赋值操作，当 H5 收到来自小程序的消息时，会尝试执行 my.onMessage 函数，也就会调用您所定义的函数。
+**请注意**，代码示例中的 `my.onMessage =` 是一个赋值操作，当 H5 收到来自小程序的消息时，会尝试执行 my.onMessage 函数，也就会调用您所定义的函数。
 
 ## 入参
 

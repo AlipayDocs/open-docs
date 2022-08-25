@@ -147,7 +147,7 @@ my.chooseVideo({
 
 ## FAQ
 
-### 1、怎么知道 videoContext 中方法是否调用成功？例如：我调用了videoContext.play(), 怎么知道成功失败？
+### 1、怎么知道 videoContext 中方法是否调用成功？例如：我调用了 videoContext.play(), 怎么知道成功失败？
 
 可以在 axml 文件中，通过 video 组件的 onError 属性监听视频播放是否出现了错误。
 

@@ -9,12 +9,12 @@
 禁用沙箱环境，然后完全重启 IDE。
 
 ### IDE 右下角提示 **未找到 Node 可执行文件**，如何处理？
-确认本地是否已经安装Node.js，否则请前往 [https://nodejs.org/en/](https://nodejs.org/en/) 进行下载安装，之后继续完成 NPM 配置下载。
+确认本地是否已经安装 Node.js，否则请前往 [https://nodejs.org/en/](https://nodejs.org/en/) 进行下载安装，之后继续完成 NPM 配置下载。
 
 ### 账号因密码错误登录失败第一次锁定多次时间？
 一次三小时。
 
-### Windows下安装 IDE，提示“安装程序并未成功地运行完成”？
+### Windows 下安装 IDE，提示“安装程序并未成功地运行完成”？
 ![|499x360](https://cdn.nlark.com/yuque/0/2021/png/201640/1624956701378-e9c647bd-a139-4eee-81d3-b8f331dea6dd.png)
 
 此问题是由于之前 IDE 没有被正确卸载，下载 [IDE 注册表清理脚本](https://gw.alipayobjects.com/os/volans-demo/d73f4ce3-149c-4b5b-a698-7d1a88e10552/cleanRegForAlipayIDE.reg) 后双击运行进行清理，之后重新尝试安装即可。
@@ -65,5 +65,5 @@
 ### 上传版本如何过滤掉 node_modules 文件夹？
 不支持自动过滤，上传时会打包所有文件。可手动将 node_modules 文件夹过滤后，再打包上传。
 
-### 为何 IDE 登录界面扫码之后支付宝APP提示：系统正忙，稍后再试 ？
+### 为何 IDE 登录界面扫码之后支付宝 APP 提示：系统正忙，稍后再试 ？
 沙箱问题导致，执行 rm ~/.ant-devtool.json。

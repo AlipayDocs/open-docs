@@ -118,13 +118,13 @@ Page({
 | width | Number | true | 转盘容器宽度，默认单位 px。<br />**默认值：** 300 |
 | initDeg | Number | false | 转盘初始化角度旋转偏移，单位 reg。<br />**默认值：** 0 |
 | rotTimes | Number | false | 抽奖机会次数，当抽奖次数大于该值时不可再抽奖。<br />**默认值：** 1 |
-| prizeList | Array | true | 奖品列表，长度为6，每一项必须包含img（奖品图片） 和 name（奖品名字）。 |
+| prizeList | Array | true | 奖品列表，长度为 6，每一项必须包含 img（奖品图片） 和 name（奖品名字）。 |
 | prizeName | String | true | 中奖的奖品名字，值需要存在于 prizeList 的 name 字段中。 |
 | prizeWidth | Number | false | 奖品图片宽度，默认单位 px，插件会根据 width 选项值自动计算，建议不填。<br />**默认值：** 80 |
 | prizePaddingTop | Number | false | 奖品图片距圆弧的内边距，默认单位 px，插件会根据 width 选项值自动计算，建议不填。<br />**默认值：** 20 |
 | bgImg | String | false | 转盘扇面背景图地址。 |
 | btnImg | String | false | 转盘按钮背景图地址。 |
-| onStart | Function | false | 旋转开始回调，name：中奖项name，times：当前是第几次旋转。<br />**默认值：** (name, times) => {} |
-| onFinish | Function | false | 旋转结束回调，name：中奖项name，times：当前是第几次旋转。<br />**默认值：** (name, times) => {} |
+| onStart | Function | false | 旋转开始回调，name：中奖项 name，times：当前是第几次旋转。<br />**默认值：** (name, times) => {} |
+| onFinish | Function | false | 旋转结束回调，name：中奖项 name，times：当前是第几次旋转。<br />**默认值：** (name, times) => {} |
 | onTimesUp | Function | false | 抽奖次数用尽后，再次点击抽奖按钮会触发该回调。<br />**默认值：** () => {} |
 

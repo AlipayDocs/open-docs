@@ -27,7 +27,7 @@
 要在小程序内使用小程序 OCR-车牌号识别插件，首先请完成 [平台入驻](https://opendocs.alipay.com/common/02asmu) 并 [创建小程序](https://opendocs.alipay.com/mini/introduce/create)。 
 
 ## 第二步：订购插件
-完成创建小程序后，使用小程序所属的主体支付宝账号，在插件中心订购并获取 [小程序OCR车牌号识别插件](https://open.alipay.com/plugin/order-page?serviceCode=MP2020121900100072)，详情可查看 [插件获取](https://opendocs.alipay.com/mini/plugin/plugin-order)。
+完成创建小程序后，使用小程序所属的主体支付宝账号，在插件中心订购并获取 [小程序 OCR 车牌号识别插件](https://open.alipay.com/plugin/order-page?serviceCode=MP2020121900100072)，详情可查看 [插件获取](https://opendocs.alipay.com/mini/plugin/plugin-order)。
 
 ## 第三步：修改小程序参数
 示例插件 APPID：2021001130699293

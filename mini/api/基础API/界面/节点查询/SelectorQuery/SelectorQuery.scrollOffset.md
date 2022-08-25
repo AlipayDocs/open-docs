@@ -4,7 +4,7 @@
 
 ## 使用限制
 
-- [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)开始支持callback参数，可通过 `my.canIUse('createSelectorQuery.return.scrollOffset.callback')` 检测。
+- [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)开始支持 callback 参数，可通过 `my.canIUse('createSelectorQuery.return.scrollOffset.callback')` 检测。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 # 接口调用
 

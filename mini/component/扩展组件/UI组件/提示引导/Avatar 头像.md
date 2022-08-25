@@ -35,7 +35,7 @@
 ## 属性说明
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| className | String | 自定义class。 |
+| className | String | 自定义 class。 |
 | src | String | 头像图片资源地址。<br />**默认值：** 默认蓝底头像 |
 | size | String | 头像尺寸大小。<br />**可选值：** lg、md、sm、xs。<br />**默认值：** md<br />**版本要求**：mini-ali-ui [1.2.0](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | shape | String | 头像形状。可选值：standard、circle、square。<br />**默认值：** circle<br />**版本要求**：mini-ali-ui [1.2.0](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |

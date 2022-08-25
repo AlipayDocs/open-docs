@@ -79,7 +79,7 @@ ctx.draw()
 
 **number sAngle**
 
-起始弧度，单位弧度（在3点钟方向）。
+起始弧度，单位弧度（在 3 点钟方向）。
 
 **number eAngle**
 

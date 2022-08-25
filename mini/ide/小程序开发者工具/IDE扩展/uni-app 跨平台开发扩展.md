@@ -17,9 +17,9 @@ uni-app 跨平台开发扩展支持在支付宝小程序开发者工具（IDE）
 ![|697x130](https://cdn.nlark.com/yuque/0/2021/png/179989/1625552782936-3cd6ee5f-1a30-44a3-adb6-19a1a58ea623.png#align=left&display=inline&height=306&margin=%5Bobject%20Object%5D&name=1581329759305-14dc7c2f-81b9-4b4a-930f-36c0f03fd26f.png&originHeight=306&originWidth=1638&size=260892&status=done&style=none&width=1638)
 1. 在微信开发者工具路径文本框中输入微信开发者工具的安装路径，单击 **保存**。 微信开发者工具的默认安装路径如下，请根据实际情况输入。
    - MacOS：/Applications/wechatwebdevtools.app
-   - Windows：C:/Program Files (x86)/Tencent/微信web开发者工具。**说明：**
+   - Windows：C:/Program Files (x86)/Tencent/微信 web 开发者工具。**说明：**
       - 只有首次使用时需要配置 IDE 安装路径
-      - 微信开发者工具必须打开服务端口，否则无法唤醒IDE。详细信息可查看 微信开发文档 - 工具 - 安全设置。![|641x187](https://cdn.nlark.com/yuque/0/2021/png/179989/1625552800860-2f96437a-1734-4970-9192-b1c647217ac2.png#align=left&display=inline&height=556&margin=%5Bobject%20Object%5D&name=1581329863986-f629796e-b5fd-4baa-b1cc-b402f51ecf7f.png&originHeight=556&originWidth=1908&size=220332&status=done&style=none&width=1908)
+      - 微信开发者工具必须打开服务端口，否则无法唤醒 IDE。详细信息可查看 微信开发文档 - 工具 - 安全设置。![|641x187](https://cdn.nlark.com/yuque/0/2021/png/179989/1625552800860-2f96437a-1734-4970-9192-b1c647217ac2.png#align=left&display=inline&height=556&margin=%5Bobject%20Object%5D&name=1581329863986-f629796e-b5fd-4baa-b1cc-b402f51ecf7f.png&originHeight=556&originWidth=1908&size=220332&status=done&style=none&width=1908)
 3. 点击 **开始编译**。编译后，若 IDE 路径配置正确，并自动打开微信小程序 IDE，并加载编译后的微信小程序产物。
 
 # 第三步 开启字节跳动编译

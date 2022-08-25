@@ -49,7 +49,7 @@
 
 ### .js 示例代码
 
-```
+```plain
 // API-DEMO page/API/clipboard/clipboard.js
 Page({
   data: {

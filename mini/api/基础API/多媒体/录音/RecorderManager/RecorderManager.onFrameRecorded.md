@@ -27,7 +27,7 @@ recorderManager.start({
 ### Function callback
 已录制完指定帧大小的文件事件的回调函数。
 
-#### callback参数
+#### callback 参数
 **Object res**
 
 | **属性** | **类型** | **说明** |

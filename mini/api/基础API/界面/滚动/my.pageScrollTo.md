@@ -51,12 +51,12 @@ Page({
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### selector 语法
-当传入 selector 参数，框架会执行 document.querySelector(selector) 以选取目标节点，支持符合标准的 CSS 选择器语法，以[W3C标准](https://www.w3.org/TR/2022/WD-selectors-4-20220507/)为参考。
+当传入 selector 参数，框架会执行 document.querySelector(selector) 以选取目标节点，支持符合标准的 CSS 选择器语法，以[W3C 标准](https://www.w3.org/TR/2022/WD-selectors-4-20220507/)为参考。
 
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
-| 1 | 缺少scrollTop或者selector参数，scrollTop与selector必须传入一个。 | 用户使用缺少参数，不需要做特殊处理。 |
+| 1 | 缺少 scrollTop 或者 selector 参数，scrollTop 与 selector 必须传入一个。 | 用户使用缺少参数，不需要做特殊处理。 |
 
 # 常见问题
 

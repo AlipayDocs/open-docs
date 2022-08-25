@@ -70,7 +70,7 @@ export default {
 接受两个参数：
 | **参数** | **描述** |
 | --- | --- |
-| event | [事件对象](https://opendocs.alipay.com/mini/framework/event-object)，额外地还提供了如下属性：<br /><ol><li>instance： event.currentTarget 基础组件的 Descriptor 描述对象。</li><li>preventDefault()：允许阻止原生事件的默认行为。</li></ol>stopPropagation()：行为等同于使用 catch* 事件回调。<br />composedPath()：获取事件路径，基础库 [2.7.3 ](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 |
+| event | [事件对象](https://opendocs.alipay.com/mini/framework/event-object)，额外地还提供了如下属性：<br /><ol><li>instance： event.currentTarget 基础组件的 Descriptor 描述对象。</li><li>preventDefault()：允许阻止原生事件的默认行为。</li></ol>stopPropagation()：行为等同于使用 catch* 事件回调。<br />composedPath()：获取事件路径，基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 |
 | ownerComponent | 基础组件所在自定义组件/页面的 Descriptor 描述对象。 |
 
 #### 1. event.preventDefault()

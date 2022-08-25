@@ -41,7 +41,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | uuid | String | iBeacon 设备广播的 UUID。 |
 | major | String | iBeacon 设备的主 ID。 |
 | minor | String | iBeacon 设备的次 ID。 |
-| proximity | Number | 表示设备距离的枚举值（0-3分别代表：未知、极近、近、远）。 |
+| proximity | Number | 表示设备距离的枚举值（0-3 分别代表：未知、极近、近、远）。 |
 | accuracy | Number | iBeacon 设备的距离。 |
 | rssi | Number | iBeacon 信号强度。 |
 

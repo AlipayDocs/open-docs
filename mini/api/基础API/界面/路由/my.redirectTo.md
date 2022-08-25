@@ -76,4 +76,4 @@ A：三者区别在于页面层级关系的保留。
 A，**返回上一页按钮** 的显示与否，由小程序框架根据页面栈深度决定，不提供直接隐藏的接口。如需要达到隐藏的效果，可使用 [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 进行跳转，然后使用 [my.hideBackHome](https://opendocs.alipay.com/mini/api/ui-navigate) 隐藏左上角的返回首页按钮。
 
 
-更多相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/api/fu8l65) 。
+更多相关问题可查看 [路由 FAQ](https://opendocs.alipay.com/mini/api/fu8l65) 。

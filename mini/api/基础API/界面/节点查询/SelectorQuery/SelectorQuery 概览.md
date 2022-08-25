@@ -5,7 +5,7 @@
 | --- | --- |
 | [SelectorQuery.boundingClientRect](https://opendocs.alipay.com/mini/api/na4yun) | 将当前选择节点的位置信息放入查询结果。 |
 | [SelectorQuery.exec](https://opendocs.alipay.com/mini/api/baz2hg) | 将查询结果放入 Callback 回调中。 |
-| [SelectorQuery.scrollOffset](https://opendocs.alipay.com/mini/api/euyxnr) | 将当前选择节点的滚动信息放入查询结果。基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持传入callback参数。可通过 `my.canIUse('createSelectorQuery.return.scrollOffset.callback')` 检测。 |
+| [SelectorQuery.scrollOffset](https://opendocs.alipay.com/mini/api/euyxnr) | 将当前选择节点的滚动信息放入查询结果。基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持传入 callback 参数。可通过 `my.canIUse('createSelectorQuery.return.scrollOffset.callback')` 检测。 |
 | [SelectorQuery.select](https://opendocs.alipay.com/mini/api/mwo97h) | 选择当前第一个匹配选择器的节点。 |
 | [SelectorQuery.selectAll](https://opendocs.alipay.com/mini/api/aygfvh) | 选择所有匹配选择器的节点。 |
 | [SelectorQuery.selectViewport](https://opendocs.alipay.com/mini/api/kwbegi) | 选择窗口对象。 |

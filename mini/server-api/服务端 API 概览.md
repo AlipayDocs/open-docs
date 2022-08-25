@@ -24,9 +24,9 @@
 ## 小程序订单中心
 | 接口英文名 | 接口中文名 | 接口描述 |
 | --- | --- | --- |
-| [alipay.merchant.item.file.upload](https://opendocs.alipay.com/mini/02ctgk) | 商品文件上传 | 商户把商品对应的图片文件、普通文件信息上传到支付宝，后续通过该接口返回的素材ID来和支付宝交互。 |
+| [alipay.merchant.item.file.upload](https://opendocs.alipay.com/mini/02ctgk) | 商品文件上传 | 商户把商品对应的图片文件、普通文件信息上传到支付宝，后续通过该接口返回的素材 ID 来和支付宝交互。 |
 | [alipay.merchant.order.sync](https://opendocs.alipay.com/mini/02qflw) | 订单数据同步 | 商户可以调用此接口同步对应订单数据至小程序订单中心。 |
-| [spi.alipay.merchant.order.realtimeinfo.query](https://opendocs.alipay.com/mini/02qh1d) | 商户订单实时信息查询 | 商户同步小程序订单到订单中心，在C端场景需要透传订单相关的实时信息时，商户可通过接口返回订单实时信息，如司机距离、配送员位置等信息。 |
+| [spi.alipay.merchant.order.realtimeinfo.query](https://opendocs.alipay.com/mini/02qh1d) | 商户订单实时信息查询 | 商户同步小程序订单到订单中心，在 C 端场景需要透传订单相关的实时信息时，商户可通过接口返回订单实时信息，如司机距离、配送员位置等信息。 |
 
 
 ## 小程序内容同步
@@ -214,7 +214,7 @@
 | [alipay.marketing.voucher.templatedetail.query](https://opendocs.alipay.com/mini/02dt9k) | 查询模板详情 | 查询模板的详细信息，包含准实时的汇总信息。 |
 | [alipay.marketing.voucher.templatelist.query](https://opendocs.alipay.com/mini/02drvs) | 查询券模板列表 | 分页查询当前 PID 下的所有模板。 |
 | [alipay.marketing.voucher.query](https://opendocs.alipay.com/mini/02dt9l) | 券查询 | 商户券信息查询。 |
-| [alipay.marketing.userule.pid.query](https://opendocs.alipay.com/mini/02drvt) | 商户使用场景规则PID查询 | 查询商户可用于使用场景规则的 PID。 |
+| [alipay.marketing.userule.pid.query](https://opendocs.alipay.com/mini/02drvt) | 商户使用场景规则 PID 查询 | 查询商户可用于使用场景规则的 PID。 |
 | [ant.merchant.expand.merchant.storelist.query](https://opendocs.alipay.com/mini/02drvu) | 商户外部门店查询接口 | 查询商户外部门店。 |
 | [alipay.marketing.material.image.upload](https://opendocs.alipay.com/mini/02dt9m) | 营销图片上传接口 | 开发者可调用本接口上传单品优惠券模板中使用的商品图片，获取图片 id。 |
 | [alipay.marketing.cashlessitemvoucher.template.create](https://opendocs.alipay.com/mini/02dt9n) | 无资金单品券创建接口 | 开发者可调用本接口创建无资金单品优惠券模板。 |
@@ -228,7 +228,7 @@
 
 # 安全能力
 
-## e签宝电子合同
+## e 签宝电子合同
 
 ### 合同模板相关接口
 | 接口英文名 | 接口中文名 | 接口描述 |
@@ -245,7 +245,7 @@
 | [alipay.eco.signflows.url.query](https://opendocs.alipay.com/mini/02plho) | 获取流程签署地址 | 创建签署流程后，可通过此接口获取指定签署人的签署链接。 |
 | [alipay.eco.signflows.detail.query](https://opendocs.alipay.com/mini/02pmit) | 流程文档下载 | 可通过此接口获取签署流程合同与附件的下载地址。 |
 | [alipay.eco.file.path.query](https://opendocs.alipay.com/mini/02pmiv) | 获取文件直传地址 | 通过获取到的 uploadUrl 进行文件流上传合同的附件，如订单截图等，可作为电子合同的辅助证明材料。上传文件具体注意事项参见 [文件流上传方法](https://opendocs.alipay.com/mini/00kr2w)。 |
-| [alipay.eco.sign.flow.cancel](https://opendocs.alipay.com/mini/02pmiw) | 签署流程撤销 | 可通过此接口撤销合同签署流程。场景举例：用户取消订单后，需通过流程ID（flow_id）撤销对应的电子合同签署流程。 |
+| [alipay.eco.sign.flow.cancel](https://opendocs.alipay.com/mini/02pmiw) | 签署流程撤销 | 可通过此接口撤销合同签署流程。场景举例：用户取消订单后，需通过流程 ID（flow_id）撤销对应的电子合同签署流程。 |
 
 
 ## 文本风险识别

@@ -18,7 +18,7 @@
 ## 示例代码
 
 ### .js 示例代码
-```
+```plain
 //.js
 const ctx = my.createCanvasContext('canvas');
 ctx.save();

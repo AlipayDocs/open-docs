@@ -97,4 +97,4 @@ A：暂不提供 API 层面的支持。开发者可以自行实现间接传值�
 ## Q：能否使用 my.navigateBack 退出小程序？
 A：my.navigateBack 不能退出小程序，在最后一个页面调用会触发 fail 回调。退出小程序请使用 [my.exitMiniProgram](https://opendocs.alipay.com/mini/api/my.exitMiniProgram)（请注意该 API 的调用要由用户主动触发才能成功）。
 
-更多相关问题可查看 [路由FAQ](https://opendocs.alipay.com/mini/api/fu8l65) 。
+更多相关问题可查看 [路由 FAQ](https://opendocs.alipay.com/mini/api/fu8l65) 。

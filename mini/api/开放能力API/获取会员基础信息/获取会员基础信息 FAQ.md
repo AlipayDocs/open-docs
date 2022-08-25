@@ -17,9 +17,9 @@ A：为提高小程序开发效率，“获取会员信息”功能包已升级�
 已添加“获取会员信息”功能包的小程序，在使用“获取会员基础信息”功能之前，仍需添加“获取会员基础信息”功能包。
 
 ### Q：调用 alipay.user.info.share 报错“ISV 权限不足”如何处理？
-A：alipay.user.info.share 是 **获取会员信息** 功能包中使用的 API。“获取会员信息”功能包已于2019 年5月25日升级，在此日期之前未签约 **获取会员信息** 功能包的小程序无法再调用 alipay.user.info.share，请使用 [获取会员基础信息](https://opendocs.alipay.com/mini/introduce/twn8vq) 功能包。
+A：alipay.user.info.share 是 **获取会员信息** 功能包中使用的 API。“获取会员信息”功能包已于 2019 年 5 月 25 日升级，在此日期之前未签约 **获取会员信息** 功能包的小程序无法再调用 alipay.user.info.share，请使用 [获取会员基础信息](https://opendocs.alipay.com/mini/introduce/twn8vq) 功能包。
 
-### Q：调用 my.getOpenUserInfo 报错 "ISV权限不足"如何处理？
+### Q：调用 my.getOpenUserInfo 报错 "ISV 权限不足"如何处理？
 A：“获取会员信息”功能包已下架，若之前创建的应用已添加了“获取会员信息”的功能包则能正常调用接口，未添加的则无法再添加此功能。 新创建的应用请使用 [获取会员基础信息](https://opendocs.alipay.com/mini/introduce/twn8vq) my.getOpenUserInfo 接口。
 
 1. 在小程序开发管理后台的 **功能列表** 中，点击 **添加功能**。

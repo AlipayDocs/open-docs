@@ -10,7 +10,7 @@ A：
 </button>
 ```
 
-- 当用户点击并同意之后，可以通过 `my.getPhoneNumber()` 接口获取到支付宝服务器返回的加密数据， 然后在第三方服务端结合签名算法和AES密钥进行解密获取手机号，方法可查看 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)，若用户未授权，直接调用 `my.getPhoneNumber()` 接口，则无法返回正确信息。
+- 当用户点击并同意之后，可以通过 `my.getPhoneNumber()` 接口获取到支付宝服务器返回的加密数据， 然后在第三方服务端结合签名算法和 AES 密钥进行解密获取手机号，方法可查看 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)，若用户未授权，直接调用 `my.getPhoneNumber()` 接口，则无法返回正确信息。
 
 #### 操作流程：
 
@@ -34,7 +34,7 @@ Button 属性说明：
 | onGetAuthorize | 授权成功回调（在回调里可以调用获取信息的接口）。 |
 | onError | 授权失败回调（包括用户拒绝和系统异常）。 |
 
-2. 用户点击并同意授权后，可以通过 my.getPhoneNumber 获取到支付宝服务器返回的加密数据， 然后在第三方服务端结合签名算法和AES密钥进行解密获取手机号，方法可查看 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
+2. 用户点击并同意授权后，可以通过 my.getPhoneNumber 获取到支付宝服务器返回的加密数据， 然后在第三方服务端结合签名算法和 AES 密钥进行解密获取手机号，方法可查看 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
 
 ```javascript
 my.getPhoneNumber({
@@ -52,8 +52,8 @@ my.getPhoneNumber({
 });
 ```
 
-### Q：如何处理调用 my.getPhoneNumber，报错“ISV权限不足”？
-A：报错“ISV权限不足”是由于未添加获取会员手机号功能包。请至小程序管理后台添加功能包。
+### Q：如何处理调用 my.getPhoneNumber，报错“ISV 权限不足”？
+A：报错“ISV 权限不足”是由于未添加获取会员手机号功能包。请至小程序管理后台添加功能包。
 
 1. 在 [开放平台控制台](https://openhome.alipay.com/dev/workspace) 的 **功能列表** 中，点击 **添加功能**。
 

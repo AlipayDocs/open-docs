@@ -159,7 +159,7 @@ A：
 ## Q：调用 my.getPhoneNumber，报错 “缺少加密配置”，如何处理？
 A：请先在开放平台控制台 > 开发设置中配置 **接口加密方式**。详见 [接口内容加密方式]((https://opendocs.alipay.com/common/02mse3))。
 
-## Q：调用 my.getPhoneNumber 报错 “ISV权限不足”，如何处理？
+## Q：调用 my.getPhoneNumber 报错 “ISV 权限不足”，如何处理？
 A：请检查小程序是否已绑定 **获取会员手机号** 并申请了用户信息。若在产品绑定页面看不到用户信息申请的入口，请使用主账号登录。申请路径为：[开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置的应用，点击进入应用详情页 > **开发** > **产品绑定**，绑定 **获取会员手机号** 产品 > 点击 **用户信息申请**。
 ![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ)
 

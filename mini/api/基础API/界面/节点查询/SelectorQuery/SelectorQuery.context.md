@@ -1,5 +1,5 @@
 # 简介
-SelectorQuery.context 是获取节点Context实例查询请求。目前支持 [VideoContext](https://opendocs.alipay.com/mini/api/media/video/my.createvideocontext) 和 [MapContext](https://opendocs.alipay.com/mini/api/mapcontext) 的获取。
+SelectorQuery.context 是获取节点 Context 实例查询请求。目前支持 [VideoContext](https://opendocs.alipay.com/mini/api/media/video/my.createvideocontext) 和 [MapContext](https://opendocs.alipay.com/mini/api/mapcontext) 的获取。
 
 ## 使用限制
 

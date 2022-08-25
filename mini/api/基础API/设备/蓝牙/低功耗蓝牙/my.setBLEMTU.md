@@ -4,7 +4,7 @@
 
 # 使用限制
 
-- 安卓5.1以上有效，iOS 因系统限制不支持。
+- 安卓 5.1 以上有效，iOS 因系统限制不支持。
 - 基础库 [1.24.6](https://opendocs.alipay.com/mini/framework/lib) 或更高版本。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 

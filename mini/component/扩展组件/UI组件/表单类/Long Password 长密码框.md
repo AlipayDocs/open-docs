@@ -16,7 +16,7 @@
 ## 示例代码
 
 ### .json 示例代码
-```
+```plain
 {
   "defaultTitle": "verify-code",
   "usingComponents":{
@@ -26,7 +26,7 @@
 ```
 
 ### .axml 示例代码
-```
+```plain
 <view>
   <view style="margin-top: 10px;" />
   <view style="padding: 0 10px;">长密码框</view>
@@ -41,7 +41,7 @@
 ```
 
 ### .js 示例代码
-```
+```plain
 Page({
   data: {
     longPassword: '',
@@ -74,7 +74,7 @@ Page({
 | maxlength | Number | 最大长度。<br />**默认值：** 140 |
 | focus | Boolean | 获取焦点。<br />**默认值：** false |
 | clear | Boolean     | 是否带清除功能，仅 disabled 为 false 才生效。<br />**默认值：** true |
-| onInput | (e: Object) => void | 键盘输入时触发input事件。 |
+| onInput | (e: Object) => void | 键盘输入时触发 input 事件。 |
 | onConfirm | (e: Object) => void | 点击键盘完成时触发。 |
 | onFocus | (e: Object) => void | 聚焦时触发。 |
 | onBlur | (e: Object) => void | 失去焦点时触发。 |

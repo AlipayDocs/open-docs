@@ -1,7 +1,7 @@
 # 简介
 可通过 web-view 组件在小程序中嵌入 H5 页面。小程序不直接支持外跳 H5，web-view 部分地满足跳转 H5 的需求。关于小程序跳转的内容可查看 [小程序跳转问题 FAQ](https://opendocs.alipay.com/mini/0090ty)。
 
-web-view 可以打开的 H5 页面的域名限于开发者维护的 H5 域名白名单（开放平台控制台 > 小程序详情页 > 设置 > 开发设置 > H5域名配置），仅支持添加开发者可控制的域名。若 web-view 提示访问受限，可参考 [页面访问受限解决方案](https://opendocs.alipay.com/mini/component/access)。
+web-view 可以打开的 H5 页面的域名限于开发者维护的 H5 域名白名单（开放平台控制台 > 小程序详情页 > 设置 > 开发设置 > H5 域名配置），仅支持添加开发者可控制的域名。若 web-view 提示访问受限，可参考 [页面访问受限解决方案](https://opendocs.alipay.com/mini/component/access)。
 
 开发过程中遇到问题可查看 [web-view 常见问题](https://opendocs.alipay.com/mini/component/mg7rvg)。
 
@@ -18,7 +18,7 @@ web-view 可以打开的 H5 页面的域名限于开发者维护的 H5 域名白
 - 包含中文等特殊字符的 URL，请先使用 encodeURL() 编码。
 - 主文档 URL、iframe 里的主文档 URL，以及后续跳转的主文档 URL，其域名均需要加入 H5 域名白名单，否则无法访问。<br>
 - H5 域名白名单维护方法请查看 [配置 H5 域名](https://opendocs.alipay.com/mini/component/idfvg6) 。不支持添加阿里（天猫、淘宝等）域名，且域名总数量不超过 20 个。<br>
-- ** H5 域名白名单变更后需要小程序发版，新的白名单仅对新版小程序生效。**
+- **H5 域名白名单变更后需要小程序发版，新的白名单仅对新版小程序生效。**
 
 
 ## 扫码体验
@@ -64,7 +64,7 @@ Page({
 ## 属性说明
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| src | String | web-view 要渲染的 H5 网页 URL ，需要在如下路径中 **支付宝小程序管理中心 **>** 设置 **>** 开发设置 **> **H5域名配置** 进行 H5 域名白名单配置。 |
+| src | String | web-view 要渲染的 H5 网页 URL ，需要在如下路径中 **支付宝小程序管理中心**>**设置**>**开发设置**> **H5 域名配置** 进行 H5 域名白名单配置。 |
 | onMessage | EventHandle | 网页向小程序 postMessage 消息。`e.detail = { data }` |
 | onLoad | EventHandle | 网页加载成功时触发此事件。`e.detail = { src }`<br />**版本要求**：基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
 | onError | EventHandle | 网页加载失败时触发此事件。`e.detail = { src }`<br />**版本要求**：基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
@@ -96,10 +96,10 @@ web-view 载入的 H5 页面可以使用手动引入 https://appx/web-view.min.j
 | 缓存 | [my.clearStorage](https://opendocs.alipay.com/mini/api/storage) | 清除本地数据缓存。 |
 | 缓存 | [my.getStorageInfo](https://opendocs.alipay.com/mini/api/zvmanq) | 异步获取当前缓存的相关信息。 |
 | 网络状态 | [my.getNetworkType](https://opendocs.alipay.com/mini/api/network-status) | 获取当前网络状态。 |
-| 分享 | my.startShare | 分享当前页面,当执行my.startShare() 时会唤起当前小程序页面的分享功能。 |
+| 分享 | my.startShare | 分享当前页面,当执行 my.startShare() 时会唤起当前小程序页面的分享功能。 |
 | 唤起支付 | [my.tradePay](https://opendocs.alipay.com/mini/api/openapi-pay) | 唤起支付（仅支持使用该 API 唤起支付，不支持使用 H5 进行支付） |
 | 向小程序发送消息 | my.postMessage | 向小程序发送消息，自定义一组或多组 key 、 value 数据，格式为 JSON ，如：`my.postMessage({name:"测试web-view"})`。 |
-| 监听小程序发过来的消息 | my.onMessage | 监听小程序发过来的消息， [webview组件控制](https://opendocs.alipay.com/mini/api/webview-context)。 |
+| 监听小程序发过来的消息 | my.onMessage | 监听小程序发过来的消息， [webview 组件控制](https://opendocs.alipay.com/mini/api/webview-context)。 |
 | 获取当前环境 | my.getEnv | 获取当前环境。 |
 
 
