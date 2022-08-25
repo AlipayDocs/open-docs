@@ -1,15 +1,27 @@
 # 简介
 
-**my.setStorage** 是将数据存储在指定的 key 的本地缓存中的异步接口，会覆盖掉原来该 key 对应的数据。
+**my.setStorage** 是在本地存储数据的 API。
 
-缓存本地数据时会自动加密存储，通过 API 读取时会自动解密返回。  
-小程序缓存默认具有支付宝账号和小程序 ID 两级隔离。  
-内嵌 webview 的存储与小程序存储相互隔离，即内嵌 webview 中指定 key 存储数据不会覆盖小程序自身相同 key 对应的数据。
+数据按 key 存储。单个 key 允许存储的数据最大为 200KB，单个小程序本地数据存储上限为 10MB。
+数据存储时会被自动加密，相应的接口读取时也会自动解密，开发者通常无需另行加解密。
+
+#### 数据隔离
++ 小程序本地数据按支付宝账号和小程序 ID 两个维度隔离：同一设备上，不同用户使用同一小程序数据不互通，同一用户使用的不同小程序在数据也不互通；
++ web-view 组件内页面用 my.setStorage/my.getStorage 存取的数据与包含它的小程序隔离；
++ 插件本地存储数据与宿主小程序隔离。
+
+#### 数据清除
++ 用户卸载支付宝客户端，所有小程序本地数据会被一并清除；
++ 用户在我“我的小程序“中删除小程序，被删除的小程序本地数据会被清除；
++ 开发者可通过 [my.clearStorage](https://opendocs.alipay.com/mini/api/storage) 清除当前小程序的所有本地数据，或通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 删除指定数据项。
+
+**退出小程序或支付宝、在支付宝的设置界面清除缓存、覆盖安装（不是先删除再安装）支付宝**，这几种操作都不会清除小程序在本地存储的数据。
 
 ## 使用限制
 
 - 单个 key 允许存储的最大数据大小为 200KB，单个小程序数据存储上限为 10MB。
 - iOS 客户端支持 iTunes 备份。
+
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -30,11 +42,19 @@ my.setStorage({
   data: {
     cityName: '杭州',
     adCode: '330100',
-    spell: ' hangzhou',
+    spell: 'hangzhou',
   },
-  success: function () {
-    my.alert({ content: '写入成功' });
+  success: res => {
+    console.log("存储数据 success callback:", res);
+    my.alert({ content: "写入成功" });
   },
+  fail: err => {
+    console.log("存储数据 fail callback:", err);
+    my.alert({ content: "写入失败" });
+  },
+  complete: res => {
+    console.log("存储数据 complete callback:", res);
+  }
 });
 ```
 
@@ -44,8 +64,8 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| key | String | 是 | 缓存数据的 key。 |
-| data | Object/String | 是 | 要缓存的数据。 |
+| key | String | 是 | 存储数据的 key。不允许为空字符串。 |
+| data | Object/String | 是 | 要存储的数据。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -54,36 +74,17 @@ Object 类型，参数如下：
 
 | **error** | **errorMessage** | **解决方案** |
 | --- | --- | --- |
-| 11 | invalid params | 无效的传参，请检查传参是否规范。 |
-| 12 | 存储总大小达到上限 | 单个小程序数据存储上限为 10MB。可以通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 或 [my.removeStorageSync](https://opendocs.alipay.com/mini/api/ytfrk4) 及时移除不必要的存储。 |
-| 14 | data 长度超限 | 单个 key 允许存储的最大数据大小为 200KB，可以减少 data 长度或拆分成多个 key 进行存储。 |
+| 2 | 必填参数为空  |  请检查必填参数是否填写。 | 
+| 12 | 存储总大小达到上限 | 单个小程序数据存储上限为 10MB。可以通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 及时移除不再需要的数据。| 
+| 14 | data长度超限 | 单个 key 允许存储的最大数据大小为 200KB，可以减少 data 长度或拆分成多个 key 进行存储。| 
 
 # 常见问题
 
-## Q：缓存 API 存储的缓存什么情况下会被清除？
+## Q：如何更新存储的数据？
+A：[my.setStorage](https://opendocs.alipay.com/mini/api/eocm6v) 传入相同的 key 即可覆盖已有数据。
 
-A：卸载支付宝客户端会清除缓存数据；长期未使用或在应用中心删除的小程序的缓存数据也会被系统清理。覆盖安装支付宝（不是先删除再安装）、支付宝设置中心清除缓存、关闭小程序，这三种操作不会导致小程序缓存失效。
+## Q：小程序本地存储 setStorage 和 H5 本地存储 localStorage 有何差异？
+A：H5 的 localStorage 只能存储 String，小程的 setStorage 支持 String，也支持 Object（内部会自动进行 JSON 序列化）。
 
-## Q：如何主动清除缓存？
-
-A：可以通过 [my.clearStorage](https://opendocs.alipay.com/mini/api/storage) 或 [my.clearStorageSync](https://opendocs.alipay.com/mini/api/ulv85u) 清除当前小程序下的本地数据缓存， 通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 或 [my.removeStorageSync](https://opendocs.alipay.com/mini/api/ytfrk4) 移除指定 key 的本地缓存。
-
-## Q：my.setStorage 接口存储的缓存有效期？
-
-A：除非主动清除 或 卸载支付宝客户端，缓存数据会永久保存在本地。
-
-## Q：如何更新小程序缓存？
-
-A：可以使用 [my.setStorage](https://opendocs.alipay.com/mini/api/eocm6v) 或 [my.setStorageSync](https://opendocs.alipay.com/mini/api/cog0du) 存入相同的 key 即可覆盖之前的缓存。
-
-## Q：小程序本地存储 setStorage 和 h5 本地存储 localStorage 的区别。
-
-A：h5 本地存储 localStorage 在做数据存储的时候，只能存储 String 类型的值。当存储的值需要为 Object 类型时，需要在读和写的时候都做一步特殊处理。 小程序本地存储支持 String 和 Object 两种数据类型的存储。
-
-## Q：插件和小程序的存储是否互通?
-
-A：插件和小程序的缓存存储不通用，独立隔离。
-
-## Q：小程序缓存到达 10MB 后会清除之前的数据再写入还是写入报错?
-
-A：当超过 10MB 会无法继续写入，并提示：error 12，data 长度超限。可以通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 或 [my.removeStorageSync](https://opendocs.alipay.com/mini/api/ytfrk4) 及时移除不必要的存储。
+## Q：小程序数据到达 10MB 后会继续写入数据会怎样?
+A：超过 10MB 后无法继续写入，会触发 fail 回调（errorCode 12）。建议通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 及时移除不再需要的数据。
