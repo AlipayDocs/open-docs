@@ -1,4 +1,4 @@
-name: Lint Markdown By Lint Markdown
+name: Lint Markdown
 
 on: [pull_request]
 
