@@ -68,6 +68,9 @@ Object 类型，属性如下：
 
 实际回调参数中error、success、stat已废弃，请使用errorCode、behavior。
 
+## 回调参数示例
+![消息订阅.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/179989/1640677925411-8f0cdc4a-9a92-4898-977b-b85fe33e4a89.jpeg#align=left&display=inline&height=2446&margin=%5Bobject%20Object%5D&name=%E6%B6%88%E6%81%AF%E8%AE%A2%E9%98%85.jpg&originHeight=2446&originWidth=3506&size=1158370&status=done&style=none&width=3506)
+
 ## 错误码
 | **errorCode** | **errorMessage** | **说明** |
 | --- | --- | --- |
