@@ -68,7 +68,7 @@ Object 类型，参数如下：
 | **error** | **errorMessage** | **解决方案** |
 | --- | --- | --- |
 | 2 | 必填参数为空  |  请检查必填参数是否填写。 | 
-| 12 | 存储总大小达到上限 | 单个小程序数据存储上限为 10MB。可以通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 及时移除不必要的存储。| 
+| 12 | 存储总大小达到上限 | 单个小程序数据存储上限为 10MB。可以通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 及时移除不再需要的数据。| 
 | 14 | data长度超限 | 单个 key 允许存储的最大数据大小为 200KB，可以减少 data 长度或拆分成多个 key 进行存储。| 
 
 # 常见问题
@@ -80,5 +80,5 @@ A：[my.setStorage](https://opendocs.alipay.com/mini/api/eocm6v) 传入相同的
 A：H5 的 localStorage 只能存储 String，小程的 setStorage 支持 String，也支持 Object（内部会自动进行 JSON 序列化）。
 
 ## Q：小程序数据到达 10MB 后会继续写入数据会怎样?
-A：超过 10MB 后无法继续写入，会提示 error 12，data 长度超限。可以通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 及时移除不必要的存储。
+A：超过 10MB 后无法继续写入，会触发 fail 回调（errorCode 12）。建议通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 及时移除不再需要的数据。
 
