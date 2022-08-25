@@ -1,9 +1,8 @@
-
 # Compiler 面板
+
 通过 Compiler 面板，用户可以快速的新增、修改、切换、删除启动参数，修改编译参数。
 
 ![|723x416](https://gw.alipayobjects.com/mdn/rms_dfc0fe/afts/img/A*6oocR7JEQ-EAAAAAAAAAAAAAARQnAQ#align=left&display=inline&height=675&margin=%5Bobject%20Object%5D&originHeight=1032&originWidth=1793&status=done&style=none&width=1172)
-
 
 新增启动页面可快速选择小程序当前已注册的路由。
 

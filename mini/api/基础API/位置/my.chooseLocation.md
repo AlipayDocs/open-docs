@@ -1,5 +1,5 @@
-
 # 简介
+
 **my.chooseLocation** 是使用支付宝内置地图选择地理位置的 API。
 
 ## 使用限制
@@ -9,25 +9,28 @@
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/fbe458f7103f4acf4ca46843964175e5.png#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
 
 ## 效果示例
-![|300x540](https://gw.alipayobjects.com/zos/skylark-tools/public/files/746fa254e55ffbf7f45a0efb0e0df1e6.gif#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&originHeight=540&originWidth=300&status=done&style=stroke&width=300)
 
+![|300x540](https://gw.alipayobjects.com/zos/skylark-tools/public/files/746fa254e55ffbf7f45a0efb0e0df1e6.gif#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&originHeight=540&originWidth=300&status=done&style=stroke&width=300)
 
 # 接口调用
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 // API-DEMO page/API/choose-location/choose-location.json
 {
-    "defaultTitle": "选择位置"
+  "defaultTitle": "选择位置"
 }
 ```
 
 ### .axml 示例代码
+
 ```html
 <!-- API-DEMO page/API/choose-location/choose-location.axml-->
 <view class="page">
@@ -47,7 +50,7 @@
     <view class="page-section-demo">
       <text>详细位置:</text>
       <input value="{{address}}"></input>
-    </view>    
+    </view>
     <view class="page-section-btns">
       <view onTap="chooseLocation">选择位置</view>
     </view>
@@ -56,6 +59,7 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 // API-DEMO page/API/choose-location/choose-location.js
 Page({
@@ -66,26 +70,27 @@ Page({
     address: '学院路77号',
   },
   chooseLocation() {
-    var that = this
+    var that = this;
     my.chooseLocation({
-         success:(res)=>{
-          console.log(JSON.stringify(res))
-          that.setData({
-            longitude:res.longitude,
-            latitude:res.latitude,
-            name:res.name,
-            address:res.address
-          })
-        },
-        fail:(error)=>{
-          my.alert({content: '调用失败：'+JSON.stringify(error), });
-        },
+      success: res => {
+        console.log(JSON.stringify(res));
+        that.setData({
+          longitude: res.longitude,
+          latitude: res.latitude,
+          name: res.name,
+          address: res.address,
+        });
+      },
+      fail: error => {
+        my.alert({ content: '调用失败：' + JSON.stringify(error) });
+      },
     });
-    },
-})
+  },
+});
 ```
 
 ### .acss 示例代码
+
 ```css
 /* API-DEMO page/API/choose-location/choose-location.acss */
 .page-body-info {
@@ -98,12 +103,13 @@ Page({
 .page-body-text-location text {
   margin: 10rpx;
 }
-.page-section-location-text{
-    color: #49a9ee;
+.page-section-location-text {
+  color: #49a9ee;
 }
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -112,14 +118,13 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ### success 回调函数
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| name | String | 位置名称。 |
-| address | String | 详细地址。 |
-| latitude | Number | 纬度，浮点数，范围为-90~90，负数表示南纬。 |
-| longitude | Number | 经度，浮点数，范围为-180~180，负数表示西经。 |
-| provinceName | String | 省份名称。 |
-| cityName | String | 城市名称。 |
 
+| **属性**     | **类型** | **描述**                                     |
+| ------------ | -------- | -------------------------------------------- |
+| name         | String   | 位置名称。                                   |
+| address      | String   | 详细地址。                                   |
+| latitude     | Number   | 纬度，浮点数，范围为-90~90，负数表示南纬。   |
+| longitude    | Number   | 经度，浮点数，范围为-180~180，负数表示西经。 |
+| provinceName | String   | 省份名称。                                   |
+| cityName     | String   | 城市名称。                                   |

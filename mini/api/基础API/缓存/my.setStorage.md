@@ -18,17 +18,24 @@
 **退出小程序或支付宝、在支付宝的设置界面清除缓存、覆盖安装（不是先删除再安装）支付宝**，这几种操作都不会清除小程序在本地存储的数据。
 
 ## 使用限制
+
+- 单个 key 允许存储的最大数据大小为 200KB，单个小程序数据存储上限为 10MB。
+- iOS 客户端支持 iTunes 备份。
+
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/2903725b254087040533640ca9de06a1.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
 
 # 接口调用
 
 ## 示例
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/storage?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
+
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/storage?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
+
 ```javascript
 my.setStorage({
   key: 'currentCity',
@@ -52,6 +59,7 @@ my.setStorage({
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -61,7 +69,6 @@ Object 类型，参数如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-
 
 ## 错误码
 
@@ -81,4 +88,3 @@ A：H5 的 localStorage 只能存储 String，小程的 setStorage 支持 String
 
 ## Q：小程序数据到达 10MB 后会继续写入数据会怎样?
 A：超过 10MB 后无法继续写入，会触发 fail 回调（errorCode 12）。建议通过 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 及时移除不再需要的数据。
-

@@ -18,11 +18,11 @@
 // .js
 this.mapCtx = my.createMapContext('map');
 this.mapCtx.mapToScreen({
-  latitude:30.202041,
-  longitude:120.108257,
+  latitude: 30.202041,
+  longitude: 120.108257,
   success: res => {
     console.log(res);
-  }
+  },
 });
 ```
 
@@ -30,17 +30,17 @@ this.mapCtx.mapToScreen({
 
 Object 类型，参数如下：
 
-| **参数** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| latitude | Number | 是 | 纬度。 |
-| longitude | Number | 是 | 经度。 |
-| success | Function | 否 | 调用成功的回调函数。 |
+| **参数**  | **类型** | **必填** | **描述**             |
+| --------- | -------- | -------- | -------------------- |
+| latitude  | Number   | 是       | 纬度。               |
+| longitude | Number   | 是       | 经度。               |
+| success   | Function | 否       | 调用成功的回调函数。 |
 
 ### Function success
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| x | Number | 横坐标。 |
-| y | Number | 纵坐标。 |
+| -------- | -------- | -------- |
+| x        | Number   | 横坐标。 |
+| y        | Number   | 纵坐标。 |

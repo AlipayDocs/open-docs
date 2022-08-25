@@ -12,17 +12,19 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 let fs = my.getFileSystemManager();
-// 
+//
 fs.readFile({
   filePath: `${my.env.USER_DATA_PATH}/test.txt`,
-  encoding: "utf8",
-  success: (res) => {
+  encoding: 'utf8',
+  success: res => {
     console.log(res);
-  }
+  },
 });
 ```
 
 ## 返回值
+
 [FileSystemManager](https://opendocs.alipay.com/mini/api/0226od) 文件管理器。

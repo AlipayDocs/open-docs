@@ -1,4 +1,5 @@
 # 简介
+
 **my.stopPullDownRefresh** 是停止当前页面的下拉刷新的 API。
 
 调用 [my.startPullDownRefresh](https://opendocs.alipay.com/mini/api/ui-pulldown) 后触发下拉刷新动画，效果与用户手动下拉刷新一致（会触发 [onPullDownRefresh](https://opendocs.alipay.com/mini/api/wo21qk) 监听方法）。
@@ -6,6 +7,7 @@
 当处理完数据刷新后，my.stopPullDownRefresh 可停止当前页面的下拉刷新。
 
 ## 使用限制
+
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -16,9 +18,10 @@
 
 ## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/pull-down-refresh?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/pull-down-refresh?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
+
 ```javascript
 Page({
   onPullDownRefresh() {
@@ -27,14 +30,15 @@ Page({
   stopPullDownRefresh() {
     my.stopPullDownRefresh({
       complete(res) {
-        console.log(res, new Date())
-      }
-    })
-  }
+        console.log(res, new Date());
+      },
+    });
+  },
 });
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |

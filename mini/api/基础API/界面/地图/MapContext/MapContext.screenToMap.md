@@ -1,4 +1,5 @@
 # 简介
+
 **MapContext.screenToMap** 用于将屏幕坐标系转换成地图经纬度坐标系。
 
 ## 使用限制
@@ -17,11 +18,11 @@
 // .js
 this.mapCtx = my.createMapContext('map');
 this.mapCtx.screenToMap({
-  x:0,
-  y:0,
+  x: 0,
+  y: 0,
   success: res => {
     console.log(res);
-  }
+  },
 });
 ```
 
@@ -29,17 +30,17 @@ this.mapCtx.screenToMap({
 
 Object 类型，参数如下：
 
-| **参数** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| x | Number | 是 | 横坐标。 |
-| y | Number | 是 | 纵坐标。 |
-| success | Function | 否 | 调用成功的回调函数。 |
+| **参数** | **类型** | **必填** | **描述**             |
+| -------- | -------- | -------- | -------------------- |
+| x        | Number   | 是       | 横坐标。             |
+| y        | Number   | 是       | 纵坐标。             |
+| success  | Function | 否       | 调用成功的回调函数。 |
 
 ### Function success
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| latitude | Number | 纬度。 |
-| longitude | Number | 经度。 |
+| **属性**  | **类型** | **描述** |
+| --------- | -------- | -------- |
+| latitude  | Number   | 纬度。   |
+| longitude | Number   | 经度。   |

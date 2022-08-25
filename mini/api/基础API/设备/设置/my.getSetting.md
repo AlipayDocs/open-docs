@@ -1,9 +1,10 @@
 # 简介
+
 **my.getSetting** 是获取用户的当前设置的 API，返回值中只会出现小程序已经向用户请求过的权限。
 
 ## 使用限制
 
-- 基础库 [1.8.0](https://opendocs.alipay.com/mini/framework/lib)  或更高版本；支付宝客户端  10.1.10 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。 
+- 基础库 [1.8.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.10 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
@@ -13,7 +14,7 @@
 ```javascript
 // .js
 my.getSetting({
-  success: (res) => {
+  success: res => {
     /*
      * res.authSetting = {
      *   "location": true,
@@ -21,8 +22,8 @@ my.getSetting({
      *   ...
      * }
      */
-  }
-})
+  },
+});
 ```
 
 ## 返回示例
@@ -33,15 +34,15 @@ my.getSetting({
 
 ```json
 {
-    "authSetting": {
-        "camera": true,
-        "location": true,
-        "alipaysports": true,
-        "aliaddress": true,
-        "album": true,
-        "userInfo": true,
-        "phoneNumber": true
-    }
+  "authSetting": {
+    "camera": true,
+    "location": true,
+    "alipaysports": true,
+    "aliaddress": true,
+    "album": true,
+    "userInfo": true,
+    "phoneNumber": true
+  }
 }
 ```
 
@@ -64,6 +65,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | authSetting | Object | 用户授权结果，其中 key 为 scope 值，value 为 Boolean 值，表示用户是否允许授权，可查看 **scope 列表**。 |
 
 ### scope 列表
+
 | **scope** | **对应接口** | **描述** |
 | --- | --- | --- |
 | location | [my.getLocation](https://opendocs.alipay.com/mini/api/mkxuqd) | 地理位置。 |
@@ -77,4 +79,5 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 # 常见问题 FAQ
 
 ## Q：my.getAuthCode 也可以经过用户授权后通过 openapi 获取支付宝会员信息，授权关系可以通过 my.getSetting 接口查询吗？
+
 A：通过 my.getAuthCode 进行的授权无法通过 my.getSetting 查询。用户确认授权后，my.getAuthCode 不会再次唤起授权弹窗，可以不用查询授权关系直接调用。

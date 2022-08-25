@@ -1,9 +1,10 @@
 # 简介
+
 停止录音。
 
 ## 使用限制
 
-- 支付宝客户端 10.1.60，基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
+- 支付宝客户端 10.1.60，基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
@@ -11,18 +12,20 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 let recorderManager = my.getRecorderManager();
 recorderManager.onStop(res => {
- console.log(res.tempFilePath);
-})
+  console.log(res.tempFilePath);
+});
 recorderManager.start();
 setTimeout(() => {
- recorderManager.stop()
+  recorderManager.stop();
 }, 600000);
 ```
 
 # 常见问题 FAQ
 
 ## Q：如果系统权限未开启，接口调用报错，如何引导开启系统权限？
+
 A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-auth-guide) 引导用户开启相关系统权限。

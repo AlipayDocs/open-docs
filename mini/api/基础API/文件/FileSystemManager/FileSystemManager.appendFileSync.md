@@ -1,4 +1,5 @@
 # 简介
+
 [FileSystemManager.appendFile](https://opendocs.alipay.com/mini/api/0228qi) 的同步版本。
 
 ## 使用限制
@@ -12,6 +13,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 const fs = my.getFileSystemManager();
 let result = fs.appendFileSync(
@@ -25,29 +27,33 @@ console.log(result);
 ## 入参
 
 #### string filePath
+
 文件地址
 
 #### string/ArrayBuffer data
+
 数据
 
 #### string encoding
+
 编码
 
 ### encoding 合法值
-| **值** | **说明** |
-| --- | --- |
-| ascii | - |
-| base64 | - |
-| hex | - |
-| binary | - |
-| ucs2/ucs-2/utf16le/utf-16le | - |
-| utf-8/utf8 | - |
-| latin1 | - |
 
+| **值**                      | **说明** |
+| --------------------------- | -------- |
+| ascii                       | -        |
+| base64                      | -        |
+| hex                         | -        |
+| binary                      | -        |
+| ucs2/ucs-2/utf16le/utf-16le | -        |
+| utf-8/utf8                  | -        |
+| latin1                      | -        |
 
 ## 错误码
-| **错误码** | **说明** |
-| --- | --- |
-| 10022 | 指定文件不存在。 |
-| 10024 | 指定的路径没有写的权限。 |
-| 10025 | 指定路径是一个已经存在的目录。 |
+
+| **错误码** | **说明**                       |
+| ---------- | ------------------------------ |
+| 10022      | 指定文件不存在。               |
+| 10024      | 指定的路径没有写的权限。       |
+| 10025      | 指定路径是一个已经存在的目录。 |

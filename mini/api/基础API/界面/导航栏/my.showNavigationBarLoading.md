@@ -1,4 +1,3 @@
-
 # 简介
 
 **my.showNavigationBarLoading** 是在当前页面显示导航条的加载动画的 API。
@@ -15,17 +14,17 @@
 
 ## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/navigation-bar-loading?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/navigation-bar-loading?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
 
 ```javascript
 Page({
   showNavigationBarLoading() {
-    my.showNavigationBarLoading()
+    my.showNavigationBarLoading();
   },
   hideNavigationBarLoading() {
-    my.hideNavigationBarLoading()
-  }
-})
+    my.hideNavigationBarLoading();
+  },
+});
 ```

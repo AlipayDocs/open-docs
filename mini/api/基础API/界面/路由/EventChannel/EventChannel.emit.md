@@ -18,7 +18,7 @@
 在 `success` 回调函数中可以使用 EventChannel `emit` 方法向在页面 `./opened-page` 中监听的事件传输数据。
 
 ```JavaScript
-my.navigateTo({ 
+my.navigateTo({
   url: './opened-page',
   events: {
     openedToOpener(data) {
@@ -56,7 +56,7 @@ Page({
 
 入参结构为：`(String eventName, Any[] ...args)`。
 
-| **参数** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| eventName | String | 是 | 需要触发的事件的名称。 |
-| args | Any[] | 否 | 事件的参数。 |
+| **参数**  | **类型** | **必填** | **描述**               |
+| --------- | -------- | -------- | ---------------------- |
+| eventName | String   | 是       | 需要触发的事件的名称。 |
+| args      | Any[]    | 否       | 事件的参数。           |
