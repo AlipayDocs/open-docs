@@ -116,13 +116,13 @@ Page({
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| width | Number | false | 组件宽度，单位  rpx。<br />**默认值：** 700 |
-| margin | Number | false | 格子间的边距，单位  rpx。<br />**默认值：** 20 |
-| prizeList | Array | true | 奖项列表，长度必须为 8，须包含  name  和  icon 字段。 |
-| prizeName | String | true | 抽奖结果的奖品  name，其值必须位于  prizeList  中。 |
+| width | Number | false | 组件宽度，单位 rpx。<br />**默认值：** 700 |
+| margin | Number | false | 格子间的边距，单位 rpx。<br />**默认值：** 20 |
+| prizeList | Array | true | 奖项列表，长度必须为 8，须包含 name 和 icon 字段。 |
+| prizeName | String | true | 抽奖结果的奖品 name，其值必须位于 prizeList 中。 |
 | rollTimes | Number | false | 转动圈数。<br />**默认值：** 3 |
 | currentIndex | Number | false | 转动开始的格子下标。<br />**默认值：** 0 |
-| speed | Number | false | 转动速度，单位  ms。<br />**默认值：** 100 |
+| speed | Number | false | 转动速度，单位 ms。<br />**默认值：** 100 |
 | class | String | false | 自定义类名。 |
 | disabled | Boolean | false | 抽奖按钮是否可点击。<br />**默认值：** false |
 | onStart | Function | false | 转动开始的回调。<br />**默认值：** () => {} |
@@ -210,6 +210,6 @@ Page({
 
 ### 关于格子下标说明
 
-组件中格子自左上角顺时针开始标号，围绕中间按钮，下标从 0 开始递增到 7。当需要组件从左下角的格子为初始位置开始转动，只需要设置  `currentIndex = 6` 即可。
+组件中格子自左上角顺时针开始标号，围绕中间按钮，下标从 0 开始递增到 7。当需要组件从左下角的格子为初始位置开始转动，只需要设置 `currentIndex = 6` 即可。
 
 ![|723x407](https://gw.alipayobjects.com/zos/skylark-tools/public/files/6b024a982c9fd681d2549561d01e3d48.png#align=left&display=inline&height=420&margin=%5Bobject%20Object%5D&originHeight=720&originWidth=1280&status=done&style=none&width=746)

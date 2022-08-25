@@ -116,7 +116,7 @@ Page({
 | onPlay | EventHandle | 当开始/继续播放时触发 play 事件。 |
 | onPause | EventHandle | 当暂停播放时触发 pause 事件。 |
 | onEnded | EventHandle | 当播放到末尾时触发 ended 事件。 |
-| onTimeUpdate | EventHandle | 播放进度变化时触发，`event.detail = {currentTime: '当前播放时间',userPlayDuration:'用户实际观看时长',videoDuration:'视频总时长'}` 。<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| onTimeUpdate | EventHandle | 播放进度变化时触发，`event.detail = {currentTime: '当前播放时间',userPlayDuration:'用户实际观看时长',videoDuration:'视频总时长'}`。<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | onLoading | EventHandle | 视频出现缓冲时触发。 |
 | onError | EventHandle | 视频播放出错时触发（errorCode 见下面错误码表）。 |
 | onFullScreenChange | EventHandle | 视频进入和退出全屏时触发，`event.detail = {fullScreen, direction}`，direction 取为 vertical 或 horizontal。<br />**版本要求：** 基础库 [1.12.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |

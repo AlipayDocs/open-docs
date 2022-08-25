@@ -1,4 +1,4 @@
-**UpdateManager** 对象，用来管理更新，可通过  my.getUpdateManager API 获取实例。
+**UpdateManager** 对象，用来管理更新，可通过 my.getUpdateManager API 获取实例。
 
 # 使用场景
 

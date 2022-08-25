@@ -1,6 +1,6 @@
 # 简介
 
-**my.showLoading** 是显示加载提示的过渡效果的 API，可与  [my.hideLoading](https://opendocs.alipay.com/mini/api/nzf540) 配合使用。
+**my.showLoading** 是显示加载提示的过渡效果的 API，可与 [my.hideLoading](https://opendocs.alipay.com/mini/api/nzf540) 配合使用。
 
 ## 使用限制
 

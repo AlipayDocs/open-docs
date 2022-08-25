@@ -1,4 +1,4 @@
-MiniU 可被加到到 CI/CD 流程中，方便判断 commit 是否影响小程序的构建。在 ci 中 添加 `miniu mini build`  用于构建小程序。示例如下：
+MiniU 可被加到到 CI/CD 流程中，方便判断 commit 是否影响小程序的构建。在 ci 中 添加 `miniu mini build` 用于构建小程序。示例如下：
 
 1、在 `package.json` 中添加 ci：
 

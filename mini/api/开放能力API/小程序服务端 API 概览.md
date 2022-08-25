@@ -68,7 +68,7 @@
 | **接口英文名** | **接口中文名** | **接口描述** |
 | --- | --- | --- |
 | ﻿[alipay.user.agreement.page.sign](https://docs.open.alipay.com/api_2/alipay.user.agreement.page.sign)﻿ | 支付宝个人协议页面签约接口 | 开发者可通过该接口传入周期扣款协议相关限制内容，生成签约参数用于小程序唤起签约页面。<br />目前支持支付宝钱包 H5 页面签约、扫码签约等方式。 |
-| ﻿[alipay.user.agreement.query](https://docs.open.alipay.com/api_2/alipay.user.agreement.query)﻿ | 支付宝个人代扣协议查询接口 | 支付宝个人代扣协议查询接口，通过该接口可查询用户协议信息。  |
+| ﻿[alipay.user.agreement.query](https://docs.open.alipay.com/api_2/alipay.user.agreement.query)﻿ | 支付宝个人代扣协议查询接口 | 支付宝个人代扣协议查询接口，通过该接口可查询用户协议信息。 |
 | ﻿[alipay.user.agreement.unsign](https://docs.open.alipay.com/api_2/alipay.user.agreement.unsign)﻿ | 支付宝个人代扣协议解约接口 | 支付宝个人代扣协议解约接口，通过该接口可解除用户在约协议。 |
 | ﻿[alipay.user.agreement.executionplan.modify](https://docs.open.alipay.com/api_2/alipay.user.agreement.executionplan.modify)﻿ | 周期性扣款协议执行计划修改接口 | 通过该接口，商户可以实现延期扣款。 |
 | ﻿[alipay.user.agreement.transfer](https://docs.open.alipay.com/api_2/alipay.user.agreement.transfer)﻿ | 协议由普通通用代扣协议产品转移到周期扣协议产品 | 商户通过接口将普通通用的代扣协议转移成周期扣款协议。 |
@@ -127,7 +127,7 @@
 | --- | --- | --- |
 | [alipay.fund.auth.order.app.freeze](https://docs.open.alipay.com/api_28/alipay.fund.auth.order.app.freeze) | 线上资金授权冻结接口 | 创建支付宝授权订单并完成资金冻结。适用于线上场景完成资金授权，例如从商户 APP 端拉起支付宝收银台完成冻结。 |
 | [alipay.fund.auth.order.unfreeze](https://docs.open.alipay.com/api_28/alipay.fund.auth.order.unfreeze) | 资金授权解冻接口 | 商家可将需要解冻的授权资金通过该接口进行解冻。支付宝在收到解冻请求并验证成功后，依循解冻规则将冻结资金按原路解冻。 |
-| [alipay.fund.auth.operation.cancel](https://docs.open.alipay.com/api_28/alipay.fund.auth.operation.cancel) | 资金授权撤销接口 | 只有商户由于业务系统处理超时需要终止后续业务处理或者授权结果未知时可调用撤销，其他正常授权冻结的操作如需实现相同功能请调用  **资金授权解冻接口**。<br />提交资金授权后调用  **资金授权操作查询**，没有明确的授权结果再调用 **资金授权撤销**。 |
+| [alipay.fund.auth.operation.cancel](https://docs.open.alipay.com/api_28/alipay.fund.auth.operation.cancel) | 资金授权撤销接口 | 只有商户由于业务系统处理超时需要终止后续业务处理或者授权结果未知时可调用撤销，其他正常授权冻结的操作如需实现相同功能请调用 **资金授权解冻接口**。<br />提交资金授权后调用 **资金授权操作查询**，没有明确的授权结果再调用 **资金授权撤销**。 |
 | [alipay.fund.auth.operation.detail.query](https://docs.open.alipay.com/api_28/alipay.fund.auth.operation.detail.query) | 资金授权操作查询接口 | 通过该接口可以查询单笔明细的详细信息。 |
 | [alipay.trade.pay](https://docs.open.alipay.com/api_1/alipay.trade.pay/) | 统一收单交易支付接口 | 用户在完成协议签约后，商户将用户签约协议号通过本接口送至支付宝完成代扣支付。 |
 | [alipay.trade.query](https://docs.open.alipay.com/api_1/alipay.trade.query/) | 统一收单线下交易查询 | 该接口提供所有支付宝支付订单的查询，商户可以通过该接口主动查询订单状态，完成下一步的业务逻辑。 |
@@ -245,7 +245,7 @@
 | [alipay.eco.sign.flow.query](https://opendocs.alipay.com/apis/api_50/alipay.eco.sign.flow.query) | 签署流程查询 | 可通过此接口查询流程、签署人的签署状态。 |
 | [alipay.eco.signflows.url.query](https://opendocs.alipay.com/apis/00pvbe) | 获取流程签署地址 | 创建签署流程后，可通过此接口获取指定签署人的签署链接。 |
 | [alipay.eco.signflows.detail.query](https://opendocs.alipay.com/apis/api_50/alipay.eco.signflows.detail.query) | 流程文档下载 | 可通过此接口获取签署流程合同与附件的下载地址。 |
-| [alipay.eco.file.path.query](https://opendocs.alipay.com/apis/api_50/alipay.eco.file.path.query) | 获取文件直传地址 | 通过获取到的 uploadUrl 进行文件流上传合同的附件，如订单截图等，可作为电子合同的辅助证明材料。上传文件具体注意事项参见  [文件流上传方法](https://opendocs.alipay.com/mini/00kr2w)。 |
+| [alipay.eco.file.path.query](https://opendocs.alipay.com/apis/api_50/alipay.eco.file.path.query) | 获取文件直传地址 | 通过获取到的 uploadUrl 进行文件流上传合同的附件，如订单截图等，可作为电子合同的辅助证明材料。上传文件具体注意事项参见 [文件流上传方法](https://opendocs.alipay.com/mini/00kr2w)。 |
 | [alipay.eco.sign.flow.cancel](https://opendocs.alipay.com/apis/api_50/alipay.eco.sign.flow.cancel) | 签署流程撤销 | 可通过此接口撤销合同签署流程。场景举例：用户取消订单后，需通过流程 ID（flow_id）撤销对应的电子合同签署流程。 |
 
 ## 文本风险识别

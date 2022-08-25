@@ -4,11 +4,11 @@
 
 ## 使用限制
 
-- 支付宝客户端  10.0.18  或更高版本，若版本较低，建议采取  [兼容处理](/mini/framework/compatibility)。
+- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 调用该方法将断开所有已建立的蓝牙连接并释放系统资源。
-- 建议在结束小程序蓝牙流程时调用，与  [my.openBluetoothAdapter](https://opendocs.alipay.com/mini/api/kunuy4)  成对调用。
-- 调用  my.closeBluetoothAdapter  释放资源为异步操作，不建议使用  my.closeBluetoothAdapter  和  [my.openBluetoothAdapter](https://opendocs.alipay.com/mini/api/kunuy4)  作为异常处理流程（相当于先关闭再开启，重新初始化，效率低，易发生线程同步问题）。
+- 建议在结束小程序蓝牙流程时调用，与 [my.openBluetoothAdapter](https://opendocs.alipay.com/mini/api/kunuy4) 成对调用。
+- 调用 my.closeBluetoothAdapter 释放资源为异步操作，不建议使用 my.closeBluetoothAdapter 和 [my.openBluetoothAdapter](https://opendocs.alipay.com/mini/api/kunuy4) 作为异常处理流程（相当于先关闭再开启，重新初始化，效率低，易发生线程同步问题）。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 ## 扫码体验

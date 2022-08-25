@@ -6,7 +6,7 @@
 
 ## 使用限制
 
-- 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取  [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 仅支持播放优酷视频，开发者需要在优酷 **上传视频** 以获取视频码。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
@@ -35,11 +35,11 @@ iOS、Android 支持以下编码格式： H.264、AAC。
 
 # 上传视频
 
-1. 访问  [优酷视频上传](https://mp.youku.com/new/upload_home)  页面，并使用开发小程序的  **支付宝主账号** 扫码登录，否则视频无法上传，则无法获取到视频编码及定向支付宝小程序播放的设置。 ![1.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1655905047219-3eaa58fc-ce22-44c5-887a-89f8a7a582f5.png#align=left&display=inline&height=937&margin=%5Bobject%20Object%5D&name=1.png&originHeight=937&originWidth=1920&size=546709&status=done&style=none&width=1920)
+1. 访问 [优酷视频上传](https://mp.youku.com/new/upload_home) 页面，并使用开发小程序的 **支付宝主账号** 扫码登录，否则视频无法上传，则无法获取到视频编码及定向支付宝小程序播放的设置。 ![1.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1655905047219-3eaa58fc-ce22-44c5-887a-89f8a7a582f5.png#align=left&display=inline&height=937&margin=%5Bobject%20Object%5D&name=1.png&originHeight=937&originWidth=1920&size=546709&status=done&style=none&width=1920)
 2. 登录成功后，上传视频文件。 ![2.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1655905058699-82942894-c24e-41e2-9da8-b7386a526e31.png#align=left&display=inline&height=732&margin=%5Bobject%20Object%5D&name=2.png&originHeight=732&originWidth=1500&size=185998&status=done&style=none&width=1500)
-3. 配置 **隐私设置** 为  **仅小程序可播**（不对优酷用户开放此视频），开发者根据所传视频如实填写视频简介等其它信息（建议填写完整，避免出现审核不通过的情况），点击  **保存发布**。 ![3.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1655905072410-92740442-13d4-46a6-a36a-950dcca90367.png#align=left&display=inline&height=732&margin=%5Bobject%20Object%5D&name=3.png&originHeight=732&originWidth=1500&size=232376&status=done&style=none&width=1500)
+3. 配置 **隐私设置** 为 **仅小程序可播**（不对优酷用户开放此视频），开发者根据所传视频如实填写视频简介等其它信息（建议填写完整，避免出现审核不通过的情况），点击 **保存发布**。 ![3.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1655905072410-92740442-13d4-46a6-a36a-950dcca90367.png#align=left&display=inline&height=732&margin=%5Bobject%20Object%5D&name=3.png&originHeight=732&originWidth=1500&size=232376&status=done&style=none&width=1500)
 4. 提交上传视频后耐心等待视频审，开发者上传的视频需要符合优酷审核标准。审核时间约为一个工作日，开发者如对审核进度和审核结果有疑问可以拨打优酷客服电话 400-810-3568 咨询。 ![4.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1655905086801-15768829-9302-4ae0-b303-4cb2f90a55b4.png#align=left&display=inline&height=732&margin=%5Bobject%20Object%5D&name=4.png&originHeight=732&originWidth=1500&size=185956&status=done&style=none&width=1500)
-5. 上传视频通过审核后，开发者进入  **视频管理**  页面，点击播放后在浏览器地址栏找到播放地址，其中  `v_show/id_`  之后的部分则为视频码。例如：`https://v.youku.com/v_show/id_XNDU0MTM4NjQxLl==.html`  中，`XNDU0MTM4NjQxLl==`即为视频码。
+5. 上传视频通过审核后，开发者进入 **视频管理** 页面，点击播放后在浏览器地址栏找到播放地址，其中 `v_show/id_` 之后的部分则为视频码。例如：`https://v.youku.com/v_show/id_XNDU0MTM4NjQxLl==.html` 中，`XNDU0MTM4NjQxLl==`即为视频码。
 
 # 接口调用
 

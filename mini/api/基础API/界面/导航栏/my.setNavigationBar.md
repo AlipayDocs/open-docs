@@ -5,7 +5,7 @@
 ## 使用限制
 
 - 导航栏左上角 LOGO 图片支持 GIF 格式，必须使用 HTTPS 图片链接。
-- 若设置了导航栏背景色 backgroundColor，则导航栏底部边框颜色 borderBottomColor  不会生效，默认会和 backgroundColor 颜色一样。
+- 若设置了导航栏背景色 backgroundColor，则导航栏底部边框颜色 borderBottomColor 不会生效，默认会和 backgroundColor 颜色一样。
 - 导航栏背景色不支持渐变色。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 

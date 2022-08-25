@@ -1,6 +1,6 @@
 # 简介
 
-单项选择器组，内部由多个 [radio](/mini/component/radio)  组成。
+单项选择器组，内部由多个 [radio](/mini/component/radio) 组成。
 
 ## 扫码体验
 

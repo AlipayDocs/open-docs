@@ -10,7 +10,7 @@
 
 # 使用
 
-## Herbox 
+## Herbox
 
 [小程序在线](https://herbox-embed.alipay.com/s/doc-scratch-card?theme=light&previewZoom=75&chInfo=openhome-doc)
 
@@ -100,7 +100,7 @@ Page({
 | lineWidth | Number | 擦除线宽度，单位 px。<br />**默认值：** 25 |
 | activePercent | Number | 当被擦除比例达到该值时刮奖结束，取值范围 0-1。<br />**默认值：** 0.4 |
 | autoFadeOut | Boolean | 当值为 true 且被擦除比例达到 `activePercent` 选项值时刮奖图层自动消失。<br />**默认值：** true |
-| ctxLogoUrl | String | 刮奖区图片背景，小程序接口限制目前只支持线上 cdn 地址或离线包地址，cdn 需返回头  `Access-Control-Allow-Origin: *`。 |
+| ctxLogoUrl | String | 刮奖区图片背景，小程序接口限制目前只支持线上 cdn 地址或离线包地址，cdn 需返回头 `Access-Control-Allow-Origin: *`。 |
 | coverColor | String | 刮奖区背景色，当背景图片透明度为 0 时无效。<br />**默认值：** #dbdbdb |
 | resultText | String | 刮奖结果。<br />**默认值：** 谢谢参与 |
 | onFinish | Function | 刮奖结束回调，当被擦除比例达到 `activePercen`t 选项值时触发。<br />**默认值：** ()=>{} |

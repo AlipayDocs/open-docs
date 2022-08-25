@@ -1,18 +1,18 @@
 # App(object: Object)
 
-`App()` 用于注册小程序，接受一个 `Object` 作为属性，用来配置小程序的生命周期等。`App()`  必须在 `app.js` 中调用，必须调用且只能调用一次。
+`App()` 用于注册小程序，接受一个 `Object` 作为属性，用来配置小程序的生命周期等。`App()` 必须在 `app.js` 中调用，必须调用且只能调用一次。
 
 # object 属性说明
 
 | **属性** | **类型** | **描述** | **触发时机** | **基础库最低版本** |
 | --- | --- | --- | --- | --- |
-| onLaunch | Function | 生命周期回调：监听小程序初始化 | 当小程序初始化完成时触发，全局只触发一次。<br /> 参数也可以使用  [my.getLaunchOptionsSync](https://opendocs.alipay.com/mini/api/getLaunchOptionsSync)  获取。 | - |
+| onLaunch | Function | 生命周期回调：监听小程序初始化 | 当小程序初始化完成时触发，全局只触发一次。<br /> 参数也可以使用 [my.getLaunchOptionsSync](https://opendocs.alipay.com/mini/api/getLaunchOptionsSync) 获取。 | - |
 | onShow | Function | 生命周期回调：监听小程序显示 | 当小程序启动，或从后台进入前台显示时触发。<br /> 也可以使用 [my.onAppShow](https://opendocs.alipay.com/mini/api/nn7do1)绑定监听。 | - |
 | onHide | Function | 生命周期回调：监听小程序隐藏 | 当当前页面被隐藏时触发，例如跳转、按下设备 Home 键离开。<br />也可以使用 [my.onAppHide](https://opendocs.alipay.com/mini/api/tv6qvi) 绑定监听。 | - |
 | onError | Function | 监听小程序错误 | 当小程序发生 js 错误时触发。<br /> 也可以使用 [my.onError](https://opendocs.alipay.com/mini/00nnsx) 绑定监听。 | - |
 | onShareAppMessage | Function | 全局分享配置 | 调用分享时触发，如：点击页面菜单右上角的 **分享** 按钮时。 | - |
-| onUnhandledRejection | Function | 监听 unhandledrejection 事件 | 当 Promise 被 reject 且没有 reject 处理器时，会触发 onUnhandledRejection 事件。<br />也可以使用 [my.onUnhandledRejection](https://opendocs.alipay.com/mini/00nd0f)  绑定监听。 | [1.24.1](https://opendocs.alipay.com/mini/framework/lib) |
-| onPageNotFound | Function | 监听页面不存在 | 小程序要打开的页面不存在时触发。<br />也可以使用  [my.onPageNotFound](https://opendocs.alipay.com/mini/01zdng)  绑定监听。<br /> 不支持处理  [路由 API](https://opendocs.alipay.com/mini/api/fu8l65)  失败场景。 | [2.7.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) |
+| onUnhandledRejection | Function | 监听 unhandledrejection 事件 | 当 Promise 被 reject 且没有 reject 处理器时，会触发 onUnhandledRejection 事件。<br />也可以使用 [my.onUnhandledRejection](https://opendocs.alipay.com/mini/00nd0f) 绑定监听。 | [1.24.1](https://opendocs.alipay.com/mini/framework/lib) |
+| onPageNotFound | Function | 监听页面不存在 | 小程序要打开的页面不存在时触发。<br />也可以使用 [my.onPageNotFound](https://opendocs.alipay.com/mini/01zdng) 绑定监听。<br /> 不支持处理 [路由 API](https://opendocs.alipay.com/mini/api/fu8l65) 失败场景。 | [2.7.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) |
 
 **前台/后台定义：**
 
@@ -71,7 +71,7 @@ App({
 **注意**：
 
 - 不要在 `onShow()` 中进行 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 或 [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx) 等操作页面栈的行为。
-- 不要在  `onLaunch()` 里调用 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 方法，因为此时 `page` 还未生成。
+- 不要在 `onLaunch()` 里调用 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 方法，因为此时 `page` 还未生成。
 - app.json 应用配置 `behaivor` 支持配置项 `decodeQuery`，当设置为 `disable` 后，不会再对键值额外再做 `decodeComponent`，可查看 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。
 
 ## onHide()
@@ -94,7 +94,7 @@ App({
 | **属性** | **类型** | **说明** |
 | --- | --- | --- |
 | error | String | 异常描述，一般为 `Error` 对象的 `message` 字段。 |
-| stack | String | 异常堆栈，一般为 `Error` 对象的 `stack` 字段。<br /> 基础库  [2.6.6](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  及以上支持。 |
+| stack | String | 异常堆栈，一般为 `Error` 对象的 `stack` 字段。<br /> 基础库 [2.6.6](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上支持。 |
 
 示例代码：
 
@@ -143,7 +143,7 @@ App({
 
 # globalData 全局数据
 
-`App()`  中可以设置全局数据 `globalData`。示例代码：
+`App()` 中可以设置全局数据 `globalData`。示例代码：
 
 ```javascript
 // app.js

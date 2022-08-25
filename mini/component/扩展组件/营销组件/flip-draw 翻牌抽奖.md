@@ -133,8 +133,8 @@ undefined;
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| prizeList | Array | true | 奖项列表，须包含  name  和  icon  字段。 |
-| prizeName | String | true | 抽奖结果的奖品  name，其值必须位于  prizeList  中。 |
+| prizeList | Array | true | 奖项列表，须包含 name 和 icon 字段。 |
+| prizeName | String | true | 抽奖结果的奖品 name，其值必须位于 prizeList 中。 |
 | cardNum | Number | true | 展示多少张卡片，推荐 3/6/9。<br />**默认值：** 9 |
 | cardHeight | Number | true | 宽度固定 210，高度需要等比换算设置。<br />**默认值：** 210 |
 | cardBgImg | String | true | 卡片图片。 |

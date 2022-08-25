@@ -25,4 +25,4 @@ my.onCompassChange(function (res) {
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | direction | Number | 面对的方向与正北方向的度数 [0,360)。 |
-| timestamp | Number | 时间戳。<br />基础库  [2.7.5](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)、支付宝客户端 10.2.30 及以上支持。 |
+| timestamp | Number | 时间戳。<br />基础库 [2.7.5](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)、支付宝客户端 10.2.30 及以上支持。 |

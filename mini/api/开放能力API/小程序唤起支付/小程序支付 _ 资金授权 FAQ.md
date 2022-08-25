@@ -14,7 +14,7 @@ A：**可能原因**：
 **解决方案**：
 
 1. 可查看 [支付宝预授权](https://opendocs.alipay.com/mini/introduce/pre-authorization) 文档 **接入指引 > 第五步：调用接口 > 线上资金预授权冻结**，获取用于小程序支付的 orderStr 参数。
-2. 将获得的 orderStr 参数传入  my.tradePay 中（设置为固定值），并在真机上进行测试。
+2. 将获得的 orderStr 参数传入 my.tradePay 中（设置为固定值），并在真机上进行测试。
 
 ### Q：支付宝预授权时，支付宝预授权报错”订单异常 ALIN42683”，如何处理？
 
@@ -24,14 +24,14 @@ OutOrderNo 和 OutRequestNo 重复请求。（OutOrderNo 和 OutRequestNo 参数
 
 **解决方案**：
 
-1. 确保 OutOrderNo 和 OutRequestNo 入参在商家系统中唯一 （只传入 OutOrderNo 或只传入  OutRequestNo）。
+1. 确保 OutOrderNo 和 OutRequestNo 入参在商家系统中唯一 （只传入 OutOrderNo 或只传入 OutRequestNo）。
 2. 检查参数是否按照 [线上资金冻结场景](https://opendocs.alipay.com/mini/013ok0#%E7%BA%BF%E4%B8%8A%E8%B5%84%E9%87%91%E5%86%BB%E7%BB%93%E5%9C%BA%E6%99%AF) 要求设置，建议只传必传参数测试，避免其它参数干扰。
 
 ### Q：小程序支付无法调起支付，如何处理？
 
 A：**可能原因**：
 
-- 传入 my.tradePay 的   tradeNO  参数错误，导致服务端回传的 tradeNO 出错。
+- 传入 my.tradePay 的 tradeNO 参数错误，导致服务端回传的 tradeNO 出错。
 - 小程序支付无法在 IDE 模拟器中进行测试。
 
 **解决方案**：
@@ -61,7 +61,7 @@ try {
 }
 ```
 
-2. 将获得的 tradeNO 参数传入  my.tradePay 中（设置为固定值），并在真机上进行测试。
+2. 将获得的 tradeNO 参数传入 my.tradePay 中（设置为固定值），并在真机上进行测试。
 
 ### Q：小程序唤起支付可以支付其它 APPID 或者 PID 的订单吗？
 

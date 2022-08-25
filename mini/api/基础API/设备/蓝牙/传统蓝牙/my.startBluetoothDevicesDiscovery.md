@@ -1,10 +1,10 @@
 # 简介
 
-**my.startBluetoothDevicesDiscovery** 是开始搜寻附近的蓝牙外围设备的 API。搜索结果将在  [my.onBluetoothDeviceFound](https://opendocs.alipay.com/mini/api/mhzls9)  事件中返回。
+**my.startBluetoothDevicesDiscovery** 是开始搜寻附近的蓝牙外围设备的 API。搜索结果将在 [my.onBluetoothDeviceFound](https://opendocs.alipay.com/mini/api/mhzls9) 事件中返回。
 
 ## 使用限制
 
-- 支付宝客户端  10.0.18  或更高版本，若版本较低，建议采取  [兼容处理](/mini/framework/compatibility)。
+- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - allowDuplicatesKey 和 interval 参数，从支付宝客户端 10.0.20 版本开始支持。
 - 该操作比较耗费系统资源，请在搜索并连接到设备后调用 stop 方法停止搜索。

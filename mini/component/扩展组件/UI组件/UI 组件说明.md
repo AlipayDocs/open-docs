@@ -1,6 +1,6 @@
 # 简介
 
-小程序扩展组件库 mini-ali-ui， 由原 mini-antui   组件库升级而来，是 [基础组件库](https://opendocs.alipay.com/mini/component) 的重要补充。mini-ali-ui 是基于 [小程序自定义组件规范](https://opendocs.alipay.com/mini/framework/custom-component-overview) 开发的一套开源 UI 组件库，供小程序开发者快速复用。**mini-antui 目前已停止维护，如需使用原 mini-antui   组件库，请参见**[**GitHub**](https://github.com/ant-mini-program/mini-antui)**、**[**获取文档**](https://gw.alipayobjects.com/os/bmw-prod/7b918fd1-f610-44a0-9cca-dcb6b513b792.pdf)**，建议使用 mini-ali-ui。**
+小程序扩展组件库 mini-ali-ui， 由原 mini-antui 组件库升级而来，是 [基础组件库](https://opendocs.alipay.com/mini/component) 的重要补充。mini-ali-ui 是基于 [小程序自定义组件规范](https://opendocs.alipay.com/mini/framework/custom-component-overview) 开发的一套开源 UI 组件库，供小程序开发者快速复用。**mini-antui 目前已停止维护，如需使用原 mini-antui 组件库，请参见**[**GitHub**](https://github.com/ant-mini-program/mini-antui)**、**[**获取文档**](https://gw.alipayobjects.com/os/bmw-prod/7b918fd1-f610-44a0-9cca-dcb6b513b792.pdf)**，建议使用 mini-ali-ui。**
 
 ## 特性
 

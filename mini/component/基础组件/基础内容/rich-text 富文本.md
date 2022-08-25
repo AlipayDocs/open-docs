@@ -50,18 +50,18 @@
 | --- | --- | --- |
 | a | - | - |
 | abbr | - | - |
-| address | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| article | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| aside | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
+| address | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| article | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| aside | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
 | b | - | - |
-| bdr | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| bdo | dir | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| big | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
+| bdr | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| bdo | dir | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| big | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
 | blockquote | - | - |
 | br | - | - |
-| caption | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| center | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| cite | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
+| caption | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| center | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| cite | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
 | code | - | - |
 | col | span, width | - |
 | colgroup | span, width | - |
@@ -72,15 +72,15 @@
 | dt | - | - |
 | em | - | - |
 | fieldset | - | - |
-| font | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| footer | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
+| font | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| footer | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
 | h1 | - | - |
 | h2 | - | - |
 | h3 | - | - |
 | h4 | - | - |
 | h5 | - | - |
 | h6 | - | - |
-| header | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
+| header | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
 | hr | - | - |
 | i | - | - |
 | img | alt, src, height, width | - |
@@ -88,18 +88,18 @@
 | label | - | - |
 | legend | - | - |
 | li | - | - |
-| mark | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| nav | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
+| mark | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| nav | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
 | ol | start, type | - |
 | p | - | - |
-| pre | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
+| pre | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
 | q | - | - |
-| rt | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| ruby | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| s | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| section | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| small | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| span | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
+| rt | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| ruby | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| s | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| section | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| small | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| span | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
 | strong | - | - |
 | sub | - | - |
 | sup | - | - |
@@ -110,15 +110,15 @@
 | th | colspan, height, rowspan, width | - |
 | thead | - | - |
 | tr | - | - |
-| tt | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
-| u | - | 基础库  [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  起支持 |
+| tt | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
+| u | - | 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持 |
 | ul | - | - |
 
-仅支持如下字符实体，其他字符实体会导致组件无法渲染。基础库  [2.7.5](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持任意实体节点。
+仅支持如下字符实体，其他字符实体会导致组件无法渲染。基础库 [2.7.5](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持任意实体节点。
 
 | **显示结果** | **描述** | **实体名称** |
 | ------------ | -------- | ------------ |
-|              | 空格。   | &nbsp;       |
+|              | 空格。   | &nbsp;       |
 | <            | 小于号。 | &lt;         |
 | >            | 大于号。 | &gt;         |
 | &            | 和号。   | &amp;        |

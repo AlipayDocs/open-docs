@@ -89,5 +89,5 @@ Page({
 | className | String | 自定义 class。 |
 | hasLine | Boolean | 是否有下划线。<br />**默认值：** false |
 | iconURL | String | 标题旁边的 icon URL。默认以背景图的方式展示在一个正方形的元素中。 |
-| type | String | 标题可操作区域类型，默认为空（如 type 为空，`onActionTap` 无效）。<li>arrow：箭头</li><li>close：关闭</li><li>more：更多</li><li>custom：自定义内容，需要传递名为 operation 的具名插槽；默认为空。</li>**版本要求：** custom mini-ali-ui [1.1.3](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
+| type | String | 标题可操作区域类型，默认为空（如 type 为空，`onActionTap` 无效）。<li>arrow：箭头</li><li>close：关闭</li><li>more：更多</li><li>custom：自定义内容，需要传递名为 operation 的具名插槽；默认为空。</li>**版本要求：** custommini-ali-ui [1.1.3](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | onActionTap | EventHandle | type 属性有具体值时可点击事件。<br />**默认值：** () => {} |

@@ -39,7 +39,7 @@
 | acceleration | Boolean | 当开启时，会根据滑动速度，连续滑动多屏。<br />**默认值：** false<br />**版本要求：** 基础库 [1.13.7](/mini/framework/compatibility) 及以上 |
 | disable-programmatic-animation | Boolean | 是否禁用代码变动触发 swiper 切换时使用动画。<br />**默认值：** false<br />**版本要求：** 基础库 [1.13.7](/mini/framework/compatibility) 及以上 |
 | onChange | EventHandle | current 改变时会触发，`event.detail = {current, isChanging}`，其中 `isChanging` 需 `acceleration` 设置为 `{{true}}` 时才有值，当连续滑动多屏时，中间若干屏触发 `onChange` 事件时 `isChanging` 为 `true`，最后一屏返回 `false`。<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
-| onTransition | EventHandle | swiper 中 swiper-item 的位置发生改变时会触发 transition 事件。<br />其中{dx,dy} = event.detail  基础库 [2.6.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
+| onTransition | EventHandle | swiper 中 swiper-item 的位置发生改变时会触发 transition 事件。<br />其中{dx,dy} = event.detail 基础库 [2.6.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
 | onAnimationEnd | EventHandle | 动画结束时会触发 animationEnd 事件，`event.detail = {current, source}`，其中 `source` 的值有 `autoplay` 和 `touch`。<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
 | disable-touch | Boolean | 是否禁止用户 touch 操作。<br />**默认值：** false<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
 | swipe-ratio | Number | 滑动距离阈值，当滑动距离超过阈值时进行 swiper-item 切换。<br />**默认值**：0.2<br />**版本要求**：基础库 [1.24.11](/mini/framework/compatibility) 及以上 |

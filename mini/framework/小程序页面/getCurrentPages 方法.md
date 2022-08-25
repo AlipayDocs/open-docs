@@ -16,7 +16,7 @@
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| getAllPages | Boolean | 获取到当前页面栈的所有实例。<br /> 如果是在宿主内调用，获取到的插件页面实例只是一个代理，只能获取到基本的 `route` 信息，无法调用页面内的方法，反之亦然。<br /> **默认值**：false。<br />**版本要求**：基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  及以上。 |
+| getAllPages | Boolean | 获取到当前页面栈的所有实例。<br /> 如果是在宿主内调用，获取到的插件页面实例只是一个代理，只能获取到基本的 `route` 信息，无法调用页面内的方法，反之亦然。<br /> **默认值**：false。<br />**版本要求**：基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上。 |
 
 # 示例代码
 

@@ -168,7 +168,7 @@ Page({
 | --- | --- | --- |
 | type | String | 容器排版类型。<br />**可选值：** line（一行）、onewithtwo（一行两列）。type 为 line 时会等分所有子元素。<br />**默认值：** line |
 | className | String | 自定义样式名。 |
-| title | String | 当不为空时可展示  [title](https://opendocs.alipay.com/mini/component-ext/title)  组件。<br />**版本要求**：mini-ali-ui [1.2.0](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
+| title | String | 当不为空时可展示 [title](https://opendocs.alipay.com/mini/component-ext/title) 组件。<br />**版本要求**：mini-ali-ui [1.2.0](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | thumb | String | 标题区域的 icon URL。<br />**版本要求**：mini-ali-ui [1.2.0](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | icon | String | 标题区域右侧的 icon 图标。<br />**可选值**：arrow、close、more。<br />**版本要求**：mini-ali-ui [1.2.0](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | onActionTap | EventHandle | 标题区域右侧可点击事件。<br />**默认值**：() => {} <br />**版本要求**：mini-ali-ui [1.2.0](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |

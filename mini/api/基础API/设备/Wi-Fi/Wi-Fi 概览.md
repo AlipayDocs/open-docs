@@ -90,7 +90,7 @@ my.onWifiConnected(res => {
 | [my.stopWifi](https://opendocs.alipay.com/mini/api/stopwifi) | 关闭 Wi-Fi 模块。 |
 | [my.connectWifi](https://opendocs.alipay.com/mini/api/connectwifi) | 连接 Wi-Fi。若已知 Wi-Fi 信息，可以直接利用该接口连接。 |
 | [my.getWifiList](https://opendocs.alipay.com/mini/api/getwifilist) | 请求获取 Wi-Fi 列表，在 onGetWifiList 注册的回调中返回 wifiList 数据。iOS 将跳转到系统的 Wi-Fi 界面，Android 不会跳转。 |
-| [my.setWifiList](https://opendocs.alipay.com/mini/api/setwifilist) | 在  `my.onGetWifiList`  回调触发后，利用接口设置 wifiList 中 AP 的相关信息。 |
+| [my.setWifiList](https://opendocs.alipay.com/mini/api/setwifilist) | 在 `my.onGetWifiList` 回调触发后，利用接口设置 wifiList 中 AP 的相关信息。 |
 | [my.onWifiConnected](https://opendocs.alipay.com/mini/api/onwificonnected) | 监听连接上 Wi-Fi 的事件。 |
 | [my.offWifiConnected](https://opendocs.alipay.com/mini/api/offwificonnected) | 取消监听连接上 Wi-Fi 的事件。 |
 | [my.onGetWifiList](https://opendocs.alipay.com/mini/api/ongetwifilist) | 监听在获取到 Wi-Fi 列表数据时的事件，在回调中将返回 wifiList。 |

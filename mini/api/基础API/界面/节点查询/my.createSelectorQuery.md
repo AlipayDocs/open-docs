@@ -4,7 +4,7 @@
 
 ## 使用限制
 
-- 基础库 [1.4.0](https://opendocs.alipay.com/mini/framework/lib)  或更高版本；支付宝客户端 10.1.8 或更高版本，若版本较低，建议采取  [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.4.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - `my.createSelectorQuery()` 检测渲染层上的所有节点。要限定检测范围，推荐使用 `this.createSelectorQuery()`。详情可查看 [页面运行机制](https://opendocs.alipay.com/mini/framework/page-detail#Page.prototype.createSelectorQuery)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 

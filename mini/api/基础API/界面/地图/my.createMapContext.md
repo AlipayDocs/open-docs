@@ -31,7 +31,7 @@ Page({
 
 初始化或重置地图数据，参数可选。
 
-**基础库** [1.10.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本开始支持；**支付宝客户端** 10.1.32 或更高版本开始支持，若版本较低，建议采取  [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+**基础库** [1.10.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本开始支持；**支付宝客户端** 10.1.32 或更高版本开始支持，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 
 ```javascript
 //  .js

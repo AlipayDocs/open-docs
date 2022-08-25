@@ -174,8 +174,8 @@ Page({
 | onTouchEnd | EventHandle | 触摸动作结束。 |
 | onTouchCancel | EventHandle | 触摸动作被打断，如来电提醒，弹窗。 |
 | onLongTap | EventHandle | 长按 500ms 之后触发，触发了长按事件后进行移动将不会触发屏幕的滚动。 |
-| type | String | 类型。设置 type 属性后，会渲染成 native canvas。<br />**可选值**：2d、webgl<br />**版本要求**：基础库  [2.7.0](https://opendocs.alipay.com/mini/framework/compatibility)  及以上 |
-| onReady | EventHandle | canvas 组件初始化成功触发。<br />**版本要求**：基础库  [2.7.0](https://opendocs.alipay.com/mini/framework/compatibility)  及以上 |
+| type | String | 类型。设置 type 属性后，会渲染成 native canvas。<br />**可选值**：2d、webgl<br />**版本要求**：基础库 [2.7.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| onReady | EventHandle | canvas 组件初始化成功触发。<br />**版本要求**：基础库 [2.7.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 
 **注意：** 如果需要在高 DPR（devicePixelRatio）下取得更细腻的显示，需要先将 [canvas](https://opendocs.alipay.com/mini/component/canvas#%E5%8E%9F%E7%94%9F%20Canvas%20%E7%BB%84%E4%BB%B6%E9%80%82%E9%85%8D) 用属性设置放大，用样式缩小，例如：
 

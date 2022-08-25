@@ -6,7 +6,7 @@
 
 ## 使用限制
 
-- 基础库 [1.21.0](https://opendocs.alipay.com/mini/framework/lib)   或更高版本；支付宝客户端 10.1.75 或更高版本，若版本较低，建议采取  [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.21.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.75 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 目前步行最多支持 100 公里的规划路线。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
@@ -51,7 +51,7 @@ Object 类型，参数如下：
 | endLng | Number | 是 | 终点经度。 |
 | throughPoints | Array | 否 | 途径点，仅驾车规划有效，即 searchType=“drive” 时有效。 |
 | mode | Number | 否 | 仅在驾车模式和公交模式支持，具体值见 **Number mode**。 |
-| city | String | 是 | 公交模式下必填。传参可填写城市中文名称或城市名称拼音。例如：`city:'hangzhou'`  或   `city:'杭州'`。 |
+| city | String | 是 | 公交模式下必填。传参可填写城市中文名称或城市名称拼音。例如：`city:'hangzhou'` 或 `city:'杭州'`。 |
 | destinationCity | String | 是 | 公交跨城模式下必填。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 

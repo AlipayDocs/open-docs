@@ -9,7 +9,7 @@
 ## 使用限制
 
 - 单个 key 允许存储的最大数据大小为 200KB，单个小程序数据存储上限为 10MB。
-- iOS 客户端支持  iTunes 备份。
+- iOS 客户端支持 iTunes 备份。
 - 同步方法 my.setStorageSync 会阻塞当前任务，直到同步方法处理返回。异步方法 [my.setStorage](https://opendocs.alipay.com/mini/api/eocm6v) 不会阻塞当前任务。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 

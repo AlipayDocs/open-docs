@@ -14,7 +14,7 @@ A：不支持 SVG 格式，只支持 PNG/JPEG/JPG 图片格式。
 
 ## Q：如何设置 tab 的样式？
 
-A：可以在 JSON 文件中直接设置样式（示例代码如下所示），或者调用  [my.setTabBarStyle](https://opendocs.alipay.com/mini/api/wcf0sv) API 进行设置。
+A：可以在 JSON 文件中直接设置样式（示例代码如下所示），或者调用 [my.setTabBarStyle](https://opendocs.alipay.com/mini/api/wcf0sv) API 进行设置。
 
 ```json
 "tabBar": {

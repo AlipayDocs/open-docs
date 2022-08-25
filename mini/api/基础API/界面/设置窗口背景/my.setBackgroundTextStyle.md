@@ -1,6 +1,6 @@
 # 简介
 
-**my.setBackgroundTextStyle** 是动态设置下拉  loading  页面的文字颜色的 API。
+**my.setBackgroundTextStyle** 是动态设置下拉 loading 页面的文字颜色的 API。
 
 ## 使用限制
 

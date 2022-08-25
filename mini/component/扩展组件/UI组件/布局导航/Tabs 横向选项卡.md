@@ -410,7 +410,7 @@ tabs 横向选项卡主要是由 `<tabs>` 和 `<tab-content>` 两个标签组成
 | --- | --- | --- | --- |
 | className | String | - | 自定义 class。 |
 | activeCls | String | - | 自定义激活 tabbar 的 class（设置字体样式和宽度）。 |
-| tabs | Array | true | tab 数据，其中包括选项标题  title、副标题（描述）文案  subTitle、胶囊形式 tab 中的数字  number，如需要以 badge 方式展示数字，添加  showBadge  并设置为 true 即可。<br />**版本要求：** mini-ali-ui [1.0.9](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions)  及以上支持  showBadge |
+| tabs | Array | true | tab 数据，其中包括选项标题 title、副标题（描述）文案 subTitle、胶囊形式 tab 中的数字 number，如需要以 badge 方式展示数字，添加 showBadge 并设置为 true 即可。<br />**版本要求：** mini-ali-ui [1.0.9](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上支持 showBadge |
 | activeTab | Number | true | 当前激活的 Tab 索引。<br />**默认值：** 0 |
 | tabBarCls | String | - | tabbar 的自定义样式 class。 |
 | tabBarUnderlineColor | String | - | 选中选项卡下划线颜色。<br />**默认值：** #1677FF |
@@ -437,14 +437,14 @@ tabs 横向选项卡主要是由 `<tabs>` 和 `<tab-content>` 两个标签组成
 | tabBarUnderlineWidth | String | - | 设置 tab 选项卡选中态的下划线宽度。<br />**默认值：** 100%<br />**版本要求：** mini-ali-ui [1.0.10](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | tabBarUnderlineHeight | String | - | 设置 tab 选项卡选中态的下划线高度。<br />**默认值：** 2px<br />版本要求：mini-ali-ui [1.0.10](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | onTabFirstShow | EventHandle | - | tab 选项卡首次出现时的回调。<br />**默认值：** (index: Number, tabsName: String) => {}<br />**版本要求：** mini-ali-ui [1.0.12](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
-| tabContentHeight | String | - | 当  swipeable  为  true  时，可通过该属性值重设高度强制让 swiper 组件支持“自适应”高度的行为。<br />**版本要求：** mini-ali-ui [1.0.12](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
-| plusIcon | String | - | icon 类型可参考  [am-icon 类型](https://opendocs.alipay.com/mini/component-ext/am-icon#type%20%E6%9C%89%E6%95%88%E5%80%BC)。<br />**默认值：** add<br />**版本要求：** mini-ali-ui [1.1.4](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
+| tabContentHeight | String | - | 当 swipeable 为 true 时，可通过该属性值重设高度强制让 swiper 组件支持“自适应”高度的行为。<br />**版本要求：** mini-ali-ui [1.0.12](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
+| plusIcon | String | - | icon 类型可参考 [am-icon 类型](https://opendocs.alipay.com/mini/component-ext/am-icon#type%20%E6%9C%89%E6%95%88%E5%80%BC)。<br />**默认值：** add<br />**版本要求：** mini-ali-ui [1.1.4](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | plusIconSize | Number | - | 改变 icon 大小。<br />**默认值：** 16<br />**版本要求：** mini-ali-ui [1.1.4](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | plusIconColor | String | - | 改变 icon 颜色。<br />**版本要求：** mini-ali-ui [1.1.4](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | plusImg | String | - | 使用图片替换 icon。<br />**版本要求：** mini-ali-ui [1.1.4](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | plusImgWidth | String | - | 设置替换 icon 后的图片宽度。<br />**版本要求：** mini-ali-ui [1.1.4](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | plusImgHeight | String | - | 设置替换 icon 后的图片高度。<br />**版本要求：** mini-ali-ui [1.1.4](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
-| stickyBar | Boolean | false | tabBar 是否在页面滚动的时候定位在顶部的某个位置，可结合  elevatorTop  设置距离顶部的位置。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.1.5](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
+| stickyBar | Boolean | false | tabBar 是否在页面滚动的时候定位在顶部的某个位置，可结合 elevatorTop 设置距离顶部的位置。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.1.5](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 
 ### tab-content
 
@@ -464,11 +464,11 @@ tabs 横向选项卡主要是由 `<tabs>` 和 `<tab-content>` 两个标签组成
   - 在 `elevator` 模式中，`this.data.floorNumber` 将会根据所有 **tab-content** 的高度计算所得，无需修改；
   - 电梯组件需要考虑页面滚动时判断每个 **tab-content** 的位置，因此需要在页面级别中加入 `onPageScroll({ scrollTop }) {}`，具体可参考代码示例中的代码；
 - `tabsName` 是为了能更好获取到当前 tab 选项卡的名称进行识别，值需要与 `activeTab` 的 key 值相同，如：`activeTab="{{activeTab2}}"`，那么 `tabsName="activeTab2"`。
-- tabs  中的  `showBadge`  为  true  时，`number`  中的值会以 `badge` 形式展示，并且不受 tab 类型影响，否则  `number`  中的值仅在胶囊 tab 中有效。
-  - 可同时添加  `badge: { arrow: true, stroke: true, }`  控制 badge 的样式。
-  - `arrow`  可展示有箭头的 badge，箭头仅有左方向。
-  - `stroke`  可展示有描边的 badge。
-- 当  `elevatorTop`  的值为 px 单位时，`elevatorContentTop`  距离顶部的高度则是  `elevatorTop` + tab 选项卡的高度。
+- tabs 中的 `showBadge` 为 true 时，`number` 中的值会以 `badge` 形式展示，并且不受 tab 类型影响，否则 `number` 中的值仅在胶囊 tab 中有效。
+  - 可同时添加 `badge: { arrow: true, stroke: true, }` 控制 badge 的样式。
+  - `arrow` 可展示有箭头的 badge，箭头仅有左方向。
+  - `stroke` 可展示有描边的 badge。
+- 当 `elevatorTop` 的值为 px 单位时，`elevatorContentTop` 距离顶部的高度则是 `elevatorTop`+ tab 选项卡的高度。
 - 当 `plusImg` 的值为空时才可以使用 `plusIcon`、 `plusIconSize` 以及 `plusIconColor` 这三个值。
 - 当 `plusImg` 的值为空时， `plusImgWidth` 和 `plusImgHeight` 设置将无效。
 - 如果 `plusIcon` 为空， `plusIconSize` 和 `plusIconColor` 修改的是默认的 icon 大小以及颜色。

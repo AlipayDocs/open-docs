@@ -57,8 +57,8 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| tradeNO | String | 否（调用  [小程序支付](https://opendocs.alipay.com/mini/introduce/pay)  时必填） | 接入小程序支付时传入此参数。此参数为支付宝交易号，注意参数有大小写区分。 |
-| orderStr | String | 否（调用  [支付宝预授权](https://opendocs.alipay.com/mini/introduce/pre-authorization)  时必填） | 完整的支付参数拼接成的字符串，从服务端获取。 |
+| tradeNO | String | 否（调用 [小程序支付](https://opendocs.alipay.com/mini/introduce/pay) 时必填） | 接入小程序支付时传入此参数。此参数为支付宝交易号，注意参数有大小写区分。 |
+| orderStr | String | 否（调用 [支付宝预授权](https://opendocs.alipay.com/mini/introduce/pre-authorization) 时必填） | 完整的支付参数拼接成的字符串，从服务端获取。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |

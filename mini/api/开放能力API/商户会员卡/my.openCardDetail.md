@@ -4,7 +4,7 @@
 
 有关支付宝卡包详细功能，可查看 [支付宝卡包产品介绍](https://opendocs.alipay.com/open/199/105225)。
 
-支付宝特色   API，支持 my.ap.openCardDetail 调用。
+支付宝特色 API，支持 my.ap.openCardDetail 调用。
 
 ## 使用限制
 

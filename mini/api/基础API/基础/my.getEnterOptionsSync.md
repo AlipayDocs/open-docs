@@ -22,7 +22,7 @@ console.log(options);
 
 ## 返回值
 
-返回一个 Object 类型的对象，其属性如下： | **属性** | **类型** | **描述** | | --- | --- | --- | | query | Object | 当前小程序的 query，从启动参数的 query 字段解析而来。<br />注意：若没有启动参数，则不会返回 query 参数。 | | scene | String | 启动小程序的  [场景值](https://opendocs.alipay.com/mini/framework/scene)。 | | path | String | 当前小程序的页面地址，从启动参数 page 字段解析而来，page 忽略时默认为首页。 | | referrerInfo | Object | 来源消息。 |
+返回一个 Object 类型的对象，其属性如下： | **属性** | **类型** | **描述** | | --- | --- | --- | | query | Object | 当前小程序的 query，从启动参数的 query 字段解析而来。<br />注意：若没有启动参数，则不会返回 query 参数。 | | scene | String | 启动小程序的 [场景值](https://opendocs.alipay.com/mini/framework/scene)。 | | path | String | 当前小程序的页面地址，从启动参数 page 字段解析而来，page 忽略时默认为首页。 | | referrerInfo | Object | 来源消息。 |
 
 ### Object referrerInfo
 

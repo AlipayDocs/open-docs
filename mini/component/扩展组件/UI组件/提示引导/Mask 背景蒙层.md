@@ -67,4 +67,4 @@ Page({
 | maskZindex | Number | 自定义蒙层的 z-index 层级。 |
 | show | Boolean | 是否显示蒙层。 |
 | onMaskTap | EventHandle | 蒙层点击事件。<br />**默认值：** () => { } |
-| fixMaskFull | Boolean | 用以解决遮罩层受到  transform 影响而显示不全的问题。<br />**默认值：** false<br />**版本要求：** mini-ali-ui ﻿[1.0.11](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
+| fixMaskFull | Boolean | 用以解决遮罩层受到 transform 影响而显示不全的问题。<br />**默认值：** false<br />**版本要求：** mini-ali-ui ﻿[1.0.11](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |

@@ -1,4 +1,4 @@
-SJS（safe/subset javascript）是小程序一套自定义脚本语言，可以在  AXML  中使用其构建页面结构。 SJS 是 JavaScript 语言的子集，与 JavaScript 是不同的语言，其语法并不与 JavaScript 一致，请勿将其等同于 JavaScript。
+SJS（safe/subset javascript）是小程序一套自定义脚本语言，可以在 AXML 中使用其构建页面结构。 SJS 是 JavaScript 语言的子集，与 JavaScript 是不同的语言，其语法并不与 JavaScript 一致，请勿将其等同于 JavaScript。
 
 # 使用方式
 
@@ -40,7 +40,7 @@ hello taobao
 **注意**：
 
 - **sjs 中只支持使用 import、export 管理模块依赖。**
-- sjs 只能定义在  `.sjs`  文件中。然后在 axml 中使用  `<import-sjs>`  标签引入。
+- sjs 只能定义在 `.sjs` 文件中。然后在 axml 中使用 `<import-sjs>` 标签引入。
 - sjs 可以调用其它 sjs 文件中定义的函数。
 - sjs 是 JavaScript 语言的子集，请勿将其等同于 JavaScript。
 - sjs 的运行环境和其它 JavaScript 代码是隔离的， sjs 中不能调用其它 JavaScript 文件中定义的函数，也不能调用小程序提供的 API。
@@ -109,8 +109,8 @@ hello alipay
 
 **说明**：
 
-- `name` 属性指定当前 `<import-sjs>` 标签的模块名。在单个 AXML 文件内，建议将 name 值设为唯一。若有重复模块名则按照先后顺序覆盖（后者覆盖前者）。不同  AXML  文件之间的 `<import-sjs>` 模块名不会相互覆盖。
-- `name` 属性可使用一个字符串表示默认模块名，也可使用  `{x}`  表示命名模块的导出。
+- `name` 属性指定当前 `<import-sjs>` 标签的模块名。在单个 AXML 文件内，建议将 name 值设为唯一。若有重复模块名则按照先后顺序覆盖（后者覆盖前者）。不同 AXML 文件之间的 `<import-sjs>` 模块名不会相互覆盖。
+- `name` 属性可使用一个字符串表示默认模块名，也可使用 `{x}` 表示命名模块的导出。
 
 **注意**：
 

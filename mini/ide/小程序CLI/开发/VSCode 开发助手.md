@@ -2,7 +2,7 @@
 
 ## 插件安装
 
-打开 VSCode, 点击左侧边栏 ![|24x25](https://cdn.nlark.com/yuque/0/2021/png/179989/1619666924529-9e340e26-4605-40a0-bbdb-1513202462d1.png#align=left&display=inline&height=25&margin=%5Bobject%20Object%5D&name=image.png&originHeight=46&originWidth=45&size=1952&status=done&style=none&width=24) 图标, 进入 VSCode 插件搜索页，输入 [`Alipay Mini Program Support`](https://marketplace.visualstudio.com/items?itemName=alipay.minicode)  关键字进行搜索, 搜索出结果后，点击 `Install`  安装即可。
+打开 VSCode, 点击左侧边栏 ![|24x25](https://cdn.nlark.com/yuque/0/2021/png/179989/1619666924529-9e340e26-4605-40a0-bbdb-1513202462d1.png#align=left&display=inline&height=25&margin=%5Bobject%20Object%5D&name=image.png&originHeight=46&originWidth=45&size=1952&status=done&style=none&width=24) 图标, 进入 VSCode 插件搜索页，输入 [`Alipay Mini Program Support`](https://marketplace.visualstudio.com/items?itemName=alipay.minicode) 关键字进行搜索, 搜索出结果后，点击 `Install` 安装即可。
 
 ![|723x441](https://cdn.nlark.com/yuque/0/2021/png/179989/1619666750082-821184db-1959-4378-a1b9-26cd916902c8.png#align=left&display=inline&height=1022&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1022&originWidth=1675&size=638879&status=done&style=none&width=1675)
 

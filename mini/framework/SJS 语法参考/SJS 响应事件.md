@@ -100,11 +100,11 @@ SJS 函数的第二个参数 ownerComponent 指向该事件 event.currentTarget 
 | **方法** | **参数** | **描述** |
 | --- | --- | --- |
 | selectComponent | selector | 选择该自定义组件/页面/基础组件的匹配指定选择器的后代基础组件的 Descriptor 描述对象。selector 选择器字符串。插槽能被提供者选中，而不能被使用者选中。 |
-| selectAllComponents | selector | 选择该自定义组件/页面/基础组件的匹配指定选择器的所有后代基础组件的  Descriptor 描述对象。selector 选择器字符串。插槽能被提供者选中，而不能被使用者选中。 |
+| selectAllComponents | selector | 选择该自定义组件/页面/基础组件的匹配指定选择器的所有后代基础组件的 Descriptor 描述对象。selector 选择器字符串。插槽能被提供者选中，而不能被使用者选中。 |
 | getState | - | 获取其状态对象。当有局部变量需要存储起来后续使用的时候使用此方法。 |
 | callMethod | (method, arg) | 调用 worker 侧所在自定义组件/页面的自定义方法。<br /><ol><li>method 方法名称。</li><li>arg 方法传参。</li></ol> |
 | requestAnimationFrame | fn | 同浏览器平台，仅能被同 Descriptor 对象的 cancelAnimationFrame 取消。返回该请求对应的标识符（可用于取消）。fn 回调函数。 |
-| cancelAnimationFrame | id | 取消指定的  `requestAnimationFrame`。仅能取消由该 Descriptor 自己发起的。id 标识符（`requestAnimationFrame` 返回值）。 |
+| cancelAnimationFrame | id | 取消指定的 `requestAnimationFrame`。仅能取消由该 Descriptor 自己发起的。id 标识符（`requestAnimationFrame` 返回值）。 |
 | selectOwnerComponent | - | 获取父自定义组件的 Descriptor 描述对象。使用插件时，宿主小程序内的对象会跳过选择属于插件的父自定义组件，插件内的对象也会跳过选择属于宿主小程序的父自定义组件。<br />基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。 |
 | setTimeout | (fn, timeout) | 同浏览器平台，仅能被同 Descriptor 对象的 clearTimeout 取消，返回该请求对应的标识符（可用于取消）。<br /><ol><li>fn 回调函数。</li><li>timeout 超时时间。</li></ol> |
 | clearTimeout | id | 取消指定的 `setTimeout`。仅能取消由该 Descriptor 自己发起的。id 标识符（`setTimeout` 返回值）。 |
@@ -115,7 +115,7 @@ SJS 函数的第二个参数 ownerComponent 指向该事件 event.currentTarget 
 
 | **方法** | **参数** | **描述** |
 | --- | --- | --- |
-| getComputedStyle | props | 获得相应计算样式值的键值对象。props  指定样式属性名的字符串数组。 |
+| getComputedStyle | props | 获得相应计算样式值的键值对象。props 指定样式属性名的字符串数组。 |
 | getBoundingClientRect | - | 同浏览器平台。 |
 | getDataset | - | 获取基础组件的 dataset。与 `event.currentTarget.dataset` 一致。 |
 | hasClass | className | 判定是否具有指定样式名。不允许探测 a-\* 开头的样式名。className 样式名字符串。 |
@@ -131,7 +131,7 @@ SJS 函数的第二个参数 ownerComponent 指向该事件 event.currentTarget 
 
 ### 返回值
 
-当 SJS 函数返回布尔值 false  时，等同于同时调用：
+当 SJS 函数返回布尔值 false 时，等同于同时调用：
 
 - event.preventDefault()
 - event.stopPropagation()

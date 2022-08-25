@@ -19,7 +19,7 @@
 
 ## 示例代码
 
-使用 [my.saveFile](https://opendocs.alipay.com/mini/api/xbll1q) 保存的地址才能够使用  my.getSavedFileInfo。
+使用 [my.saveFile](https://opendocs.alipay.com/mini/api/xbll1q) 保存的地址才能够使用 my.getSavedFileInfo。
 
 ### .js 示例代码
 

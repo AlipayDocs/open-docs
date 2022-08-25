@@ -21,7 +21,7 @@ A：
 
 #### 操作流程：
 
-1. 将  button  组件  open-type  的值设置为  getAuthorize。
+1. 将 button 组件 open-type 的值设置为 getAuthorize。
 
 示例代码：
 
@@ -41,8 +41,8 @@ Button 属性说明：
 
 | **属性**       | **说明**                                         |
 | -------------- | ------------------------------------------------ |
-| open-type      | 此处设置为 `getAuthorize` ，用于授权。           |
-| scope          | 此处设置为 `phoneNumber` ，手机号码。            |
+| open-type      | 此处设置为 `getAuthorize`，用于授权。            |
+| scope          | 此处设置为 `phoneNumber`，手机号码。             |
 | onGetAuthorize | 授权成功回调（在回调里可以调用获取信息的接口）。 |
 | onError        | 授权失败回调（包括用户拒绝和系统异常）。         |
 
@@ -72,7 +72,7 @@ A：报错“ISV 权限不足”是由于未添加获取会员手机号功能包
 
 ![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/9219534cf0b476cb9654aa6dfcafcaff.png#align=left&display=inline&height=105&margin=%5Bobject%20Object%5D&originHeight=212&originWidth=1500&status=done&style=stroke&width=746)
 
-2. 添加  **获取会员手机号**  功能包。
+2. 添加 **获取会员手机号** 功能包。
 
 ![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/b543a501c7989411375fa111cfed2ca3.png#align=left&display=inline&height=331&margin=%5Bobject%20Object%5D&originHeight=456&originWidth=723&status=done&style=stroke&width=525)
 
@@ -95,7 +95,7 @@ A：
 | **错误码** | **错误详情** | **解决方案** |
 | --- | --- | --- |
 | 20000 | 系统繁忙 | 稍后再试。 |
-| 40001 | 应用未设置默认签名类型 | 在  [开放平台控制台](https://openhome.alipay.com/dev/workspace) > **设置** > **开发设置**  中，设置  **支付宝公钥** 和  **应用网关**。 |
+| 40001 | 应用未设置默认签名类型 | 在 [开放平台控制台](https://openhome.alipay.com/dev/workspace) > **设置** > **开发设置** 中，设置 **支付宝公钥** 和 **应用网关**。 |
 | 40002 | 加密异常 | 在 [开放平台控制台](https://openhome.alipay.com/dev/workspace) > **设置** > **开发设置** 中，设置 **aes 密钥**，aes 相关信息可查看 **接口内容加密方式**。 |
 | 40003 | 无效的授权关系 | 用户未同意授权，或授权已失效，可稍后再试。 |
 
@@ -115,6 +115,6 @@ A：my.getPhoneNumber 获取的是支付宝服务器返回的加密数据。
 }
 ```
 
-### Q：获取用户手机号为何没有返回  sign？
+### Q：获取用户手机号为何没有返回 sign？
 
 A：请确保已设置支付宝公钥，aes 密钥、应用网关。若缺失这三个设置任一，在调用 my.getPhoneNumber 时可能只返回 response。

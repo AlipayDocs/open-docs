@@ -123,7 +123,7 @@ Start() {
   - 2：2 个通道。
 - format：音频格式，可选。默认 aac，支持 aac、mp3（需支付宝客户端 10.1.80 及以上版本） 格式，参数值需小写。
 - frameSize：指定帧大小，可选。单位 KB，支付宝客户端 10.1.80 及以上版本支持。传入 frameSize 后，每录制指定帧大小的内容后，会回调录制的文件内容，不指定则不会回调。暂仅支持 mp3 格式设置。
-- audioSource：指定录音的音频输入源，可选。可通过 my.getAvailableAudioSources()   获取当前可用的音频源。
+- audioSource：指定录音的音频输入源，可选。可通过 my.getAvailableAudioSources() 获取当前可用的音频源。
 - sampleRate：采样率，可选。默认值 8000。
   - 8000：8000 采样率。
   - 11025：11025 采样率。

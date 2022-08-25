@@ -188,7 +188,7 @@ Page({
 | onBlur | (e: Object) => void | 失去焦点时触发。 |
 | onClear | () => void | 点击清除 icon 时触发。 |
 | layer | String | 文本输入框是否为垂直排列，vertical 时为垂直排列，空值为横向排列。<br />**可选值：** vertical<br />**版本要求：** mini-ali-ui [1.0.4](https://opendocs.alipay.com/mini/component-ext/ui-overview) 及以上 |
-| controlled | Boolean | 是否为受控组件。详情请参见  [input 组件](https://opendocs.alipay.com/mini/component/input)。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.0.9](https://opendocs.alipay.com/mini/component-ext/ui-overview) 及以上 |
+| controlled | Boolean | 是否为受控组件。详情请参见 [input 组件](https://opendocs.alipay.com/mini/component/input)。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.0.9](https://opendocs.alipay.com/mini/component-ext/ui-overview) 及以上 |
 
 ### Bug & tips
 

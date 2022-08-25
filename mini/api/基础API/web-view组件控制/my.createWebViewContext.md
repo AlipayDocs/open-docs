@@ -70,7 +70,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| webviewId | String | 是 | 要创建的  `web-view` 所对应的 id 属性。在上面的代码示例中，webviewId 为 `web-view-1`。 |
+| webviewId | String | 是 | 要创建的 `web-view` 所对应的 id 属性。在上面的代码示例中，webviewId 为 `web-view-1`。 |
 
 ## 返回值
 

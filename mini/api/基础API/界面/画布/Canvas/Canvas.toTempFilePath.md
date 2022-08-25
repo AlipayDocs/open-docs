@@ -58,7 +58,7 @@ Object 类型，属性如下：
 | destWidth | Number | 否 | 输出的图片的宽度。 |
 | destHeight | Number | 否 | 输出的图片的高度。 |
 | fileType | String | 否 | 目标文件的类型。<br />可选值：<ul><li>jpg：.jpg 图片。</li><li>png：.png 图片。</li></ul>默认值 `png`。 |
-| quality | Number | 否 | 图片的质量，目前仅对 `jpg`  有效。取值范围为 `(0, 1]`，不在范围内时当作 `1`  处理。 |
+| quality | Number | 否 | 图片的质量，目前仅对 `jpg` 有效。取值范围为 `(0, 1]`，不在范围内时当作 `1` 处理。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |

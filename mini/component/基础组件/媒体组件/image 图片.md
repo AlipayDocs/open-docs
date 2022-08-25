@@ -24,8 +24,8 @@
 | mode | String | 图片模式。<br />**默认值：** scaleToFill |
 | class | String | 外部样式。 |
 | style | String | 内联样式。 |
-| lazy-load | Boolean | 支持图片懒加载，不支持通过 css 来控制 image 展示隐藏的场景。<br />**默认值：** false<br />**版本要求：** 基础库  [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility)  及以上 |
-| default-source | String | 默认图片地址，若设置默认图片地址，会先显示默认图片，等 src 对应的图片加载成功后，再渲染对应的图片。<br />**版本要求：** 基础库  [1.19.0](https://opendocs.alipay.com/mini/framework/compatibility)  及以上 |
+| lazy-load | Boolean | 支持图片懒加载，不支持通过 css 来控制 image 展示隐藏的场景。<br />**默认值：** false<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| default-source | String | 默认图片地址，若设置默认图片地址，会先显示默认图片，等 src 对应的图片加载成功后，再渲染对应的图片。<br />**版本要求：** 基础库 [1.19.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | onLoad | EventHandle | 图片载入完毕时触发，事件对象 `event.detail = {height: '图片高度px', width: '图片宽度px'}`。 |
 | onError | EventHandle | 当图片加载错误时触发，事件对象 `event.detail = {errMsg: 'something wrong'`。 |
 | onTap | EventHandle | 点击图片时触发。 |
@@ -45,7 +45,7 @@ mode 有 14 种模式，其中 5 种是缩放模式，9 种是裁剪模式。
 | aspectFit | 保持纵横比缩放，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。 |
 | aspectFill | 保持纵横比缩放，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。 |
 | widthFix | 宽度不变，高度自动变化，保持原图宽高比不变。 |
-| heightFix | 高度不变，宽度自动变化，保持原图宽高比不变。<br />**版本要求**：基础库  [2.7.0 ](https://opendocs.alipay.com/mini/framework/compatibility)及以上 |
+| heightFix | 高度不变，宽度自动变化，保持原图宽高比不变。<br />**版本要求**：基础库 [2.7.0](https://opendocs.alipay.com/mini/framework/compatibility)及以上 |
 
 #### 裁剪模式
 

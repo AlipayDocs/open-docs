@@ -1,13 +1,13 @@
 # 简介
 
-接口设置 wifiList 中 AP 的相关信息。一般需在  [my.onGetWifiList](https://opendocs.alipay.com/mini/api/ongetwifilist) 回调内调用，为 iOS 特有接口。
+接口设置 wifiList 中 AP 的相关信息。一般需在 [my.onGetWifiList](https://opendocs.alipay.com/mini/api/ongetwifilist) 回调内调用，为 iOS 特有接口。
 
 # 使用限制
 
 - 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/compatibility) 开始支持。若版本较低，建议采取[兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 - 注意：
-  - 该接口只能在  my.onGetWifiList 回调触发之后才能调用。
+  - 该接口只能在 my.onGetWifiList 回调触发之后才能调用。
   - 请务必尽快调用该接口，若无数据请传入一个空数组。
   - 有可能随着周边 Wi-Fi 列表的刷新，单个流程内收到多次带有存在重复的 Wi-Fi 列表的回调。
 

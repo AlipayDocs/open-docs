@@ -8,7 +8,7 @@ IDE 模拟器暂不支持调试，请以真机调试结果为准。
 
 ## 使用限制
 
-- 基础库 [1.17.1](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议采取  [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.17.1](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
@@ -102,7 +102,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| countDate | String | 是 | 要查询的步数日期（yyyy-mm-dd）的字符串例如：`countDate: '2018-12-19'` 。 |
+| countDate | String | 是 | 要查询的步数日期（yyyy-mm-dd）的字符串例如：`countDate: '2018-12-19'`。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -119,7 +119,7 @@ Object 类型，参数如下：
 | --- | --- | --- |
 | MISSING_PARAMETER | 缺少入参信息。 | 检查步数日期是否传入。 |
 | INVALID_DATE | 传入的查询日期非法。 | countDate 格式为 yyyy-MM-dd 的字符串，请按照描述修正传入的参数。 |
-| INVALID_USER_STATUS | 此用户未开通支付宝运动业务。 | 此支付宝用户未开通支付宝运动业务。<br />需用户在支付宝首页 > **教育公益** > **运动** > **设置** 页面（或直接在支付宝搜索 **运动**）开通支付宝运动业务后才能使用此接口查询用户步数信息。 |
+| INVALID_USER_STATUS | 此用户未开通支付宝运动业务。 | 此支付宝用户未开通支付宝运动业务。<br />需用户在支付宝首页 > **教育公益** >**运动** > **设置** 页面（或直接在支付宝搜索 **运动**）开通支付宝运动业务后才能使用此接口查询用户步数信息。 |
 | INVALID_USERID | userid 非法。 | 入参的 userid 格式错误。<br />**注意**: userid 必须是以 2088 开头的 16 位数字字符串，请修正此参数。 |
 | INVALID_APP_ID | appId 为空。 | 请检查 appid 是否正确 |
 

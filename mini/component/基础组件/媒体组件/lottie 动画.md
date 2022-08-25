@@ -73,7 +73,7 @@ Page({
 | repeat-count | Number | false | 循环次数。 <br /><ul><li>如果是负数表示无限次。</li><li>如果是 0 表示不循环，播放一次。</li><li>如果是 1 表示循环一次，播放两次。</li></ul> **默认值：** 0<br />**版本要求：** 支付宝客户端 10.1.80 及以上 |
 | auto-reverse | Boolean | false | 是否自动回播。<br />**默认值：** false |
 | assets-path | String | false | 资源地址。"/" 表明是小程序根目录。<br />**版本要求：** 支付宝客户端 10.1.50 及以上 |
-| placeholder | String | true | 兜底图或者降级图地址。<br /><ul><li>1. 支持本地资源，案例：'/image/lottie/lottie2_default.png'。</li><li>支持 http 的  cdn 地址、近端地址。</li><li>小程序场景不支持 djangoId。</li></ul> **版本要求：** 支付宝客户端 10.1.52 及以上 |
+| placeholder | String | true | 兜底图或者降级图地址。<br /><ul><li>1. 支持本地资源，案例：'/image/lottie/lottie2_default.png'。</li><li>支持 http 的 cdn 地址、近端地址。</li><li>小程序场景不支持 djangoId。</li></ul> **版本要求：** 支付宝客户端 10.1.52 及以上 |
 | django-id | String | false | Lottie 在线资源。远端的 Zip 文件地址。Lottie 组件会执行 MD5 校验、解压、获取等过程，在过程中显示 placeholder 图片。<br />与 path 二选一<br />**版本要求：** 支付宝客户端 10.1.52 及以上 |
 | md5 | String | false | 在线资源的 md5 校验。<br />djangoId=`https://b.zip`。<br />可以使用 b.zip 加密 获取 md5 值<br />md5="77c6c86fc89ba94cc0a9271b77ae77d2"<br />**版本要求：** 支付宝客户端 10.1.52 及以上 |
 | optimize | Boolean | false | 降级。降级是指如遇低端设备，Lottie 会降级展示为 placeholder。<br />当 optimize 为 true ，并且传入了 placeholder 时，在低端设备上只会展示 placeholder，不展示 Lottie。<br />低端设备如下所示：<br /><ul><li>iOS ：小于等于 iPhone6P</li><li>Android：内存容量小于 3G</li></ul> **默认值：** false<br />**版本要求：** 支付宝客户端 10.1.52 及以上 |
@@ -100,7 +100,7 @@ UI 设计师提供的 Lottie 动画可能会带有目录 `images/`，里面保�
 
 1. 整体压缩为 Zip 文件，将 Zip 的路径放在 djangoId 参数里。
 1. 将图片资源转成 base64 内链在 JSON 文件里，这样 JSON 路径放在 path 参数里。
-1. 如果图片资源和 JSON 文件是分离的，那么需要以下处理：动画描述的  .json 文件里，对图片资源是这样定位的：
+1. 如果图片资源和 JSON 文件是分离的，那么需要以下处理：动画描述的 .json 文件里，对图片资源是这样定位的：
 
 ```json
 { "id": "image_0", "w": 66, "h": 89, "u": "images/", "p": "img_0.png" }

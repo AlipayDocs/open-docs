@@ -4,11 +4,11 @@
 
 ## 使用限制
 
-- 支付宝客户端  10.0.18  或更高版本，若版本较低，建议采取  [兼容处理](/mini/framework/compatibility)。
+- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 模拟器可能无法获取 advertisData 及 RSSI ，请使用真机调试。
 - 开发者工具（IDE）和 Android 上获取到的 deviceId 为设备 MAC 地址，iOS 上则为设备 UUID。因此 deviceId 不能硬编码到代码中，需要分平台处理。iOS 可根据设备属性（localName / advertisData / manufacturerData 等）进行动态匹配。
-- 若在  my.onBluetoothDeviceFound  回调中包含了某个蓝牙设备，则此设备会添加到  [my.getBluetoothDevices](https://opendocs.alipay.com/mini/api/pelizr)  接口获取到的数组中。
+- 若在 my.onBluetoothDeviceFound 回调中包含了某个蓝牙设备，则此设备会添加到 [my.getBluetoothDevices](https://opendocs.alipay.com/mini/api/pelizr) 接口获取到的数组中。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用

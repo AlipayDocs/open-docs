@@ -125,8 +125,8 @@ Page({
 | extra | String | 附属信息，会在 onRightItemClick 回调中获取。 |
 | restore | Boolean | 还原组件到初始状态。<br />**默认值：** false |
 | borderRadius | Boolean | 右侧 item 是否为圆角。<br />**默认值：** false |
-| enableNew | Boolean | 使用  [moveable-area ](https://opendocs.alipay.com/mini/component/movable-area)实现的 swipe-action。<br />**默认值：** true |
-| swipeWidth | String | 设置 swipe-action 组件的宽度。默认为  my.getSystemInfoSync()  所得的  windowWidth，传入的宽度值不接受百分比单位，建议使用  px  或者  rpx。<br />**版本要求：** mini-ali-ui [1.0.10](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
+| enableNew | Boolean | 使用 [moveable-area](https://opendocs.alipay.com/mini/component/movable-area)实现的 swipe-action。<br />**默认值：** true |
+| swipeWidth | String | 设置 swipe-action 组件的宽度。默认为 my.getSystemInfoSync() 所得的 windowWidth，传入的宽度值不接受百分比单位，建议使用 px 或者 rpx。<br />**版本要求：** mini-ali-ui [1.0.10](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 
 ## Bug & Tip
 
@@ -140,4 +140,4 @@ Page({
 - SwipeAction 是与 list 组件组合使用的。
 - `borderRadius`是为了结合带圆角的 list-item 而存在的，如果为 true 时，将会把右侧 item 显示为圆角模式。
 - `swipeWidth` 可设置 swipe-action 组件的整体宽度，默认为 `my.getSystemInfoSync()` 所得的 `windowWidth`，传入的宽度值不接受百分比单位，建议使用 `px` 或者 `rpx`。
-- 如列表数据过多有卡顿情况，建议将  enableNew  设置为  false。
+- 如列表数据过多有卡顿情况，建议将 enableNew 设置为 false。

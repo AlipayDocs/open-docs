@@ -6,7 +6,7 @@
 
 ## 使用限制
 
-- 基础库 [1.14.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议采取  [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.14.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此接口为异步请求接口，首先需要发起风险识别请求，获取任务 ID。等待 500 毫秒后，再通过 [my.ap.imgRiskCallback](https://opendocs.alipay.com/mini/api/ze6675) 接口传递任务 ID 请求结果。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
@@ -63,7 +63,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **最大长度** | **描述** | **示例值** |
 | --- | --- | --- | --- | --- |
-| riskResult      | String | 128 | 图片风险识别的任务的任务 ID。 | \"apply_id\":\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\  |
+| riskResult | String | 128 | 图片风险识别的任务的任务 ID。 | \"apply_id\":\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\  |
 | riskResultDesc | String | 1024 | 风险识别结果描述。 | 返回结果会默认为空，忽略即可 |
 | success | Boolean | - | 是否调用成功。 | true |
 | uniqueId | String | 1024 | 业务唯一识别码。 | xxxxxxxxxxxxxxxxx |

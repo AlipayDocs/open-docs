@@ -175,7 +175,7 @@ Page({
 | show | Boolean | true | 气泡是否展示。<br />**默认值：** false |
 | showMask | Boolean | false | 蒙层是否展示。<br />**默认值：** true |
 | position | String | false | 气泡位置。<br />**可选值：** top、topRight、topLeft、bottom、bottomLeft、bottomRight、right、rightTop、rightBottom、left、leftBottom、leftTop。<br />**默认值：** bottomRight |
-| fixMaskFull | Boolean | - | 用以解决遮罩层受到  transform 影响而显示不全的问题。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.0.11](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
+| fixMaskFull | Boolean | - | 用以解决遮罩层受到 transform 影响而显示不全的问题。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.0.11](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 
 ### popover-item
 

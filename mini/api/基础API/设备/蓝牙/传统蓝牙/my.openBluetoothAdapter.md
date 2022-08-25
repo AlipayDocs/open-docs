@@ -1,18 +1,18 @@
 # 简介
 
-**my.openBluetoothAdapter** 是初始化小程序蓝牙模块的 API，生效周期为调用  my.openBluetoothAdapter  至调用  [my.closeBluetoothAdapter](https://opendocs.alipay.com/mini/api/wvko0w)  或小程序被销毁为止。
+**my.openBluetoothAdapter** 是初始化小程序蓝牙模块的 API，生效周期为调用 my.openBluetoothAdapter 至调用 [my.closeBluetoothAdapter](https://opendocs.alipay.com/mini/api/wvko0w) 或小程序被销毁为止。
 
 在小程序蓝牙适配器模块生效期间，开发者可以正常调用下面的小程序 API，并会收到蓝牙模块相关的 on 事件回调。
 
 ## 使用限制
 
-- 支付宝客户端  10.0.18  或更高版本，若版本较低，建议采取  [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
-- 在调用  my.openBluetoothAdapter API 之前，调用小程序其它蓝牙模块相关 API，API 会返回错误。
+- 在调用 my.openBluetoothAdapterAPI 之前，调用小程序其它蓝牙模块相关 API，API 会返回错误。
   - 错误码：10000。
   - 错误描述：未初始化蓝牙适配器。
   - 解决方案：请调用 my.openBluetoothAdapter。
-- 在用户蓝牙开关未开启或者手机不支持蓝牙功能的情况下，调用  my.openBluetoothAdapter  会返回错误。错误码详情请参见 [蓝牙 API 错误码对照表](https://opendocs.alipay.com/mini/api/ucd2lh)；当小程序蓝牙模块已经初始化完成，可通过  [my.onBluetoothAdapterStateChange](https://opendocs.alipay.com/mini/api/eegfbk)  监听手机蓝牙状态的改变。
+- 在用户蓝牙开关未开启或者手机不支持蓝牙功能的情况下，调用 my.openBluetoothAdapter 会返回错误。错误码详情请参见 [蓝牙 API 错误码对照表](https://opendocs.alipay.com/mini/api/ucd2lh)；当小程序蓝牙模块已经初始化完成，可通过 [my.onBluetoothAdapterStateChange](https://opendocs.alipay.com/mini/api/eegfbk) 监听手机蓝牙状态的改变。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 ## 扫码体验

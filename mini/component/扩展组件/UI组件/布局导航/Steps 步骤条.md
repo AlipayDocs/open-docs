@@ -198,8 +198,8 @@ Page({
 | items | Array[{title, description, icon, activeIcon, size}] | true | 步骤详情。<br />**默认值：** [] |
 | showStepNumber | Boolean | false | 是否以数字序列展示步骤 icon。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.1.2](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | horizHighlight | Boolean | false | 用于控制水平方向是否启用高亮展示 title。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.1.3](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
-| iconFail | String | false | 设置失败步骤的 icon 类型。<br />**可选值：** 参考  [am-icon](https://opendocs.alipay.com/mini/component-ext/am-icon)  的  type  值<br />**默认值：** close<br />**版本要求：** mini-ali-ui [1.1.7](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
-| iconSuccess | String | false | 设置已激活步骤的 icon 类型。<br />**可选值：** 参考  [am-icon](https://opendocs.alipay.com/mini/component-ext/am-icon)  的  type  值<br />**默认值：** check<br />**版本要求：** mini-ali-ui [1.1.7](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
+| iconFail | String | false | 设置失败步骤的 icon 类型。<br />**可选值：** 参考 [am-icon](https://opendocs.alipay.com/mini/component-ext/am-icon) 的 type 值<br />**默认值：** close<br />**版本要求：** mini-ali-ui [1.1.7](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
+| iconSuccess | String | false | 设置已激活步骤的 icon 类型。<br />**可选值：** 参考 [am-icon](https://opendocs.alipay.com/mini/component-ext/am-icon) 的 type 值<br />**默认值：** check<br />**版本要求：** mini-ali-ui [1.1.7](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | iconSuccessBg | String | false | 当前激活步骤的 icon 背景色。<br />**可选值：** 参考 CSS 中的颜色值描述方式<br />**版本要求：** mini-ali-ui [1.1.7](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | iconSuccessColor | String | false | 当前激活步骤的 icon 文本颜色。<br />**可选值：** 参考 CSS 中的颜色值描述方式<br />**版本要求：** mini-ali-ui [1.1.7](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 

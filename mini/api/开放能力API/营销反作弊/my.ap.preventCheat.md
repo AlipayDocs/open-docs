@@ -6,7 +6,7 @@
 
 ## 使用限制
 
-- 基础库 [1.12.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.38 或更高版本，若版本较低，建议采取  [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.12.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.38 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 ## 风险识别结果
@@ -68,7 +68,7 @@ Object 类型，参数如下：
 | mobile_no | String | 是 | 128 | 用于输入用户注册的手机号码。如果没有获取用户手机号，传入 "null" 即可。 | 13810935692 |
 | pid | String | 是 | 128 | 申请业务合作伙伴 ID。 | 20881111222222 |
 | user_id | String | 否 | 128 | 支付宝用户 ID。 | 20881111222233 |
-| bank_card_no     | String | 否 | 128 | 银行卡号。 | 62223456765456 |
+| bank_card_no | String | 否 | 128 | 银行卡号。 | 62223456765456 |
 | cert_no | String | 否 | 128 | 用于输入用户的身份证号码。 | 230109199911110921 |
 | client_ip | String | 否 | 128 | 账号登录 IP。 | 192.168.0.1 |
 | email_address | String | 否 | 128 | 邮箱账号。 | `zhifubao@163.com` |
@@ -91,7 +91,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- | --- |
 | riskResult | String | 风险识别结果。<br />>riskinfo_nsf_common 风险评级结果：<ul><li>rank0：提供信息不足，提供参数信息有误，或提供的支付宝账号不存在。</li><li>rank1：表示用户拒付风险为低。</li><li>rank2：表示用户拒付风险为中。</li><li>rank3：表示用户拒付风险为高。</li></ul>riskinfo_anticheat_common_infocode 风险评级说明：171：作弊风险 | {\"riskinfo_anticheat_common\":\"rank3\",\"riskinfo_anticheat_common_infocode\":\"171\"} |
 | riskResultDesc | String | 风险信息描述。 | {\"rank0\":\"等级 0\"} |
-| uniqueId   | String | 业务唯一识别码，用户标识请求信息。 | 0b92uueie87636222 |
+| uniqueId | String | 业务唯一识别码，用户标识请求信息。 | 0b92uueie87636222 |
 
 ### Function fail
 

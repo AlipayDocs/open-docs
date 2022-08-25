@@ -39,7 +39,7 @@ my.getAuthCode({
 
 ![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/6154e61a1f0d1387f5ec0da08926a267.png?x-oss-process=image/resize,w_1500#align=left&display=inline&height=394&margin=%5Bobject%20Object%5D&originHeight=793&originWidth=1500&status=done&style=none&width=746)
 
-### Q：为什么要使用用户授权  my.getAuthCode API?
+### Q：为什么要使用用户授权 my.getAuthCode API?
 
 A：开发者在支付宝开放平台上读写用户信息，均需经过用户许可。支付宝开放平台的用户授权基于国际标准的 OAuth2.0 授权机制。基于此机制，使用 my.getAuthCode API 得到用户授权后，方可进行获取用户信息、给用户发放会员卡等操作。
 
