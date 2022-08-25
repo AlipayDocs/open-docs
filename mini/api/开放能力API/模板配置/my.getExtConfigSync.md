@@ -1,30 +1,23 @@
 # 简介
-**my.getExtConfigSync** 是获取 [模板小程序](https://opendocs.alipay.com/mini/isv/creatminiapp#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 自定义数据字段（即 `ext.json` 中的 [ext](https://opendocs.alipay.com/mini/isv/creatminiapp#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 字段）的同步接口。想要成功获取到数据要同时满足以下条件：
-- alipay.open.mini.version.upload 接口的 `ext` 入参为合法的 JSON 字符串。
-- JSON 内容符合模板 `ext` 配置规范。
-- JSON 内容中的 `extEnable` 字段是否设置为 `true`。   
+**my.getExtConfigSync** 是 [模板小程序](https://opendocs.alipay.com/mini/isv/creatminiapp#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 中用于获取自定义数据（即 [ext.json](https://opendocs.alipay.com/isv/03kqzl#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 中的 ext 字段）的同步接口。
 
-其中在模板小程序开发及其实例化的过程中，ext 信息的传递和使用的步骤如下：
+在模板小程序开发及实例化的过程中，ext 信息的传递路径如下：
 
-第一步：模板小程序开发：   
-- 1.1 服务商创建模板小程序，编码，通过 IDE 在本地调试，完成开发；
-- 1.2 服务商将模板小程序提交审核，支付宝通过审核。
+模板小程序开发：   
+- 1.1 服务商创建模板小程序，在本地编码、调试，调试过程中调用 getExtConfig 实质是读取模板项目中的 ext.json 文件中的 ext 字段；
+- 1.2 服务商完成开发，将模板小程序提交审核，支付宝通过审核。
 
-第二步：模板小程序实例化：   
+模板小程序实例化：   
+- 2.1 服务商调用 [alipay.open.mini.version.upload](https://opendocs.alipay.com/isv/03kqzl) 为特定商户创建模板小程序的实例，传入的 ext 参数包含该商户特有的信息；
+- 2.2 支付宝响应服务商请求，创建小程序新实例或新版本，将请求的 ext 参数保存为 ext.json 文件置入实例小程序的代码包（代码包中继承自模板的 ext.json 会被覆盖）；
+- 2.3 小程序实例在客户端被加载和运行，它包含与模板小程序一样的前端代码和个性化的 ext.json，运行时调用 getExtConfig 实质是读取此 ext.json 文件中的 ext 字段。
 
-- 2.1 服务商服务端调用 alipay.open.mini.version.upload，为特定商户创建模板小程序的实例，传入特定于该商户的 ext 字段；
-- 2.2 支付宝服务端响应 upload 请求，创建小程序新实例/新版本，将 ext 字段保存为 ext.json 文件，置入实例小程序的代码包里（如果模板里就有 ext.json，会被整个覆盖）；
-- 2.3 实例小程序在客户端被加载和运行，它包含与模板小程序一样的前端代码和个性化的 ext.json，前端代码中调用 getExtConfig 正是读取 ext.json 文件，进而实现小程序的个性化配置。   
-
-
-理论上，直到最后一步（即 2.3），小程序获取到最终的 ext 信息并且使用。为了尽量避免最后才知道出错，可以将 2.1 开发过程中的 ext 字段的值保存到一个 ext.json 文件，覆盖 1.1 的本地调试环境中的对应文件，测试 getExtConfig 是否能够正确读取，并调试跟它相关的后续前端代码。
-
-
+理论上，直到最后一步（即 2.3），小程序才能真正获取和使用到最终的 ext 信息。这个较晚的时间点会带来一些调试方面的困难，如果发现前端代码问题需要模板小程序重新发版。
+为了提升效率减少反复，建议在 1.1 中使用“假的” ext.json 尽可能地模拟真实情况并充分调试相关代码，在 2.1 构造真实 ext 参数时严格按照 1.1 中 ext.json 的内容格式。
 
 
 ## 使用限制
 - 此 API 暂仅支持企业支付宝小程序使用。
-- 模板小程序通过审核、并且实例化以后，才能在小程序实例中通过 getExtConfigSync 获取 ext 数据。目前暂未提供相关的调试工具可以在模板小程序实例化之前就获取到数据。
 
 # 接口调用
 
@@ -34,21 +27,22 @@
 ```javascript
 var res = my.getExtConfigSync();
 my.alert({
-  content: '模板ext 同步获取结果：'+JSON.stringify(res),
+  content: '模板ext 同步获取结果：' + JSON.stringify(res),
   buttonText: 'OK'
 });
 ```
 
 ## 返回值
-返回模板 `ext.json` 中的 [ext](https://opendocs.alipay.com/mini/isv/creatminiapp#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 字段的值。
+返回小程序的 `ext.json` 中的 [ext](https://opendocs.alipay.com/mini/isv/creatminiapp#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 字段的值。
 
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
-| 20 | 模板配置为空。 | 检查模板配置。 |
-| 21 | 已停用模板配置。 | 启用模板配置。 |
+| 20 | 模板配置为空。 | 确保 ext.json 存在且 ext 字段是不为空。 |
+| 21 | 已停用模板配置。 | 将 ext.json 的 extEnable 字段设置为 true。 |
 
-## Q：为什么获取不到数据
-A：参考 [模板小程序](https://opendocs.alipay.com/mini/isv/creatminiapp#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 文档
-- 检查接口 `ext` 入参是否是合法 `json` 字符串，且内容符合模板 `ext` 配置规范。
-- 检查 `extEnable` 的值是否设置为 `true`。
+## Q：为什么实例小程序调用 my.getExtConfig/my.getExtConfigSync 获取不到数据？
+A：一般都是因为 alipay.open.mini.version.upload 传入的 ext 参数有问题，请检查：
+- JSON 格式是否有效；
+- JSON 内容是否符合模板 `ext` 配置规范（参考 [模板小程序](https://opendocs.alipay.com/mini/isv/creatminiapp#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 文档）；
+- JSON 中的 `extEnable` 字段是否已设置为 `true`。
