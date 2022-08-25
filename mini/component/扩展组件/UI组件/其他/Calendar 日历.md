@@ -1,28 +1,32 @@
-
 # 简介
+
 单日历组件。不支持跨页选择日期范围。
 
 ## 扫码体验
+
 ![|154x191](https://mdn.alipayobjects.com/afts/img/A*QTU7SIUZWwkAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=p-804BKLyQGDJy97jUCirwAAAABkMK8AAAAA#align=left&display=inline&height=191&margin=%5Bobject%20Object%5D&originHeight=191&originWidth=154&status=done&style=none&width=154)
 
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-calendar?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-calendar?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
   "defaultTitle": "Calendar",
-  "usingComponents":{
+  "usingComponents": {
     "calendar": "mini-ali-ui/es/calendar/index"
   }
 }
 ```
 
 ### .axml 示例代码
+
 ```html
 <view>
   <calendar
@@ -32,12 +36,14 @@
     onSelect="handleSelect"
     onMonthChange="onMonthChange"
     onYearChange="onYearChange"
-		onChange="onChange"
-    onSelectHasDisableDate="onSelectHasDisableDate" />
+    onChange="onChange"
+    onSelectHasDisableDate="onSelectHasDisableDate"
+  />
 </view>
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
   data: {
@@ -63,6 +69,7 @@ Page({
 ```
 
 ## 属性说明
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | className | String | 自定义 class。 |
@@ -79,15 +86,14 @@ Page({
 | onSelectHasDisableDate | EventHandle | 选择区间包含不可用日期。<br />**默认值：** (currentMonth, prevMonth) => void |
 | onYearChange | EventHandle | 点击切换年份时回调，带两个参数 currentYear 切换后年份和 prevYear 切换前年份。<br />**默认值：** (currentYear, prevYear) => void |
 
-
 ## Bug & Tip
 
 - tagColor 共有 5 种颜色：
-   - 1: #ff6010
-   - 2: #00b578
-   - 3: #ff8f1f
-   - 4: #1677ff
-   - 5: #999
+  - 1: #ff6010
+  - 2: #00b578
+  - 3: #ff8f1f
+  - 4: #1677ff
+  - 5: #999
 - prevMonthDisable、prevYearDisable、nextvMonthDisable 以及 nextYearDisable 四个主要控制日历上的箭头是否可点击使用，可根据实际业务场景来使用。
 - tagData 中的 disable 是可选项，如某日期需要提示禁用不可点时才需要增加，当不可用时，tag 以及 tagColor 将不会展示。
 - 月份计数从 0 开始，即 0 代表 1 月份，以此类推，月份返回值 11 代表 12 月份。

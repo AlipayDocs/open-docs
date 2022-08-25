@@ -1,11 +1,12 @@
 # 简介
+
 **my.ap.imgRisk** 是图片风险任务提交接口，用于识别图片是否有色情、违禁违法等内容。
 
 有关图片内容安全的产品和接入介绍，可查看 [图片内容安全](https://opendocs.alipay.com/mini/introduce/img_risk)。
 
 ## 使用限制
 
-- 基础库 [1.14.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.14.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议采取  [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此接口为异步请求接口，首先需要发起风险识别请求，获取任务 ID。等待 500 毫秒后，再通过 [my.ap.imgRiskCallback](https://opendocs.alipay.com/mini/api/ze6675) 接口传递任务 ID 请求结果。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
@@ -14,17 +15,17 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // .js
 my.ap.imgRisk({
-  pid:'xxxxxxxxxxxxxxxx',  // 替换成您的 pid
+  pid: 'xxxxxxxxxxxxxxxx', // 替换成您的 pid
   bizContext: {
-    'risk_type': 'img_risk',
-    content: 'http://www.xxxxxx.com.cn//xxxxxx/xxxxxxx/images/xxxx/xx/xxx.png'
+    risk_type: 'img_risk',
+    content: 'http://www.xxxxxx.com.cn//xxxxxx/xxxxxxx/images/xxxx/xx/xxx.png',
   },
-  success(e) {
-  },
-})
+  success(e) {},
+});
 ```
 
 ### 1. 调用参数说明
@@ -50,39 +51,40 @@ Object 类型，参数如下：
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### Object bizContext
+
 | **属性** | **类型** | **必填** | **最大长度** | **描述** | **示例值** |
 | --- | --- | --- | --- | --- | --- |
 | risk_type | String | 是 | 1024 | 风险类型。 | 固定传 img_risk |
 | content | String | 是 | 128 | 需要验证的图片 URL。 | [https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3180559933,1841450308&fm=26&gp=0.jpg](https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3180559933,1841450308&fm=26&gp=0.jpg) |
 
 ### Function success
+
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **最大长度** | **描述** | **示例值** |
 | --- | --- | --- | --- | --- |
-| riskResult      | String | 128 | 图片风险识别的任务的任务 ID。 | \"apply_id\":\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\ |
+| riskResult      | String | 128 | 图片风险识别的任务的任务 ID。 | \"apply_id\":\"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\  |
 | riskResultDesc | String | 1024 | 风险识别结果描述。 | 返回结果会默认为空，忽略即可 |
 | success | Boolean | - | 是否调用成功。 | true |
 | uniqueId | String | 1024 | 业务唯一识别码。 | xxxxxxxxxxxxxxxxx |
 
 ### Function fail
+
 fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| errorCode | String | 错误码。 |
-| errorMessage | String | 错误信息。 |
+| **属性**     | **类型** | **描述**   |
+| ------------ | -------- | ---------- |
+| errorCode    | String   | 错误码。   |
+| errorMessage | String   | 错误信息。 |
 
 ## 错误码
 
-| 错误码 | 描述     | 解决方案                                                     |
-| ------ | -------- | ------------------------------------------------------------ |
-| 4      | 无权调用 | 请在开放平台中添加能力包，并进行签约。具体可查看图片内容安全的[接入准备](https://opendocs.alipay.com/mini/02ttpx)。 |
+| 错误码 | 描述 | 解决方案 |
+| --- | --- | --- |
+| 4 | 无权调用 | 请在开放平台中添加能力包，并进行签约。具体可查看图片内容安全的[接入准备](https://opendocs.alipay.com/mini/02ttpx)。 |
 
 ## FAQ
 
 ### 1、my.ap.imgRisk 接口无论上传什么返回 riskResultDesc 都为空？
 
 图片内容安全系列接口为异步接口，包含 my.ap.imgRisk 和 my.ap.imgRiskCallback 两个接口。需要先通过 my.ap.imgRisk 接口获取 apply_id，再通过 my.ap.imgRiskCallback 接口获取最终结果。
-
-

@@ -1,5 +1,5 @@
-
 # 简介
+
 可滚动视图区域。scroll-view 滚动条可以全局禁用滚动，但是无法禁用 scroll-view 中的滚动距离展示。
 
 ## 使用限制
@@ -13,6 +13,7 @@
 - scroll-view 组件在 iOS 下不支持自定义修改，在 Android 下允许通过 `::-webkit-scrollbar` 自定义滚动条样式。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark/63eda77f-c032-4ede-937a-5f644305b10e/2018/jpeg/53e0ded7-1d92-45c7-8b5e-f0197c949767.jpeg#align=left&display=inline&height=1906&margin=%5Bobject%20Object%5D&originHeight=1906&originWidth=1540&status=done&style=none&width=127)
 
 # 使用
@@ -22,6 +23,7 @@
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/scroll-view/index&defaultOpenedFiles=pages/scroll-view/index&theme=light)
 
 ## 属性说明
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | class | String | 外部样式名。 |
@@ -44,22 +46,25 @@
 | onTouchMove | EventHandle | 触摸后移动。<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
 | onTouchEnd | EventHandle | 触摸动作结束。<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
 | onTouchCancel | EventHandle | 触摸动作被打断，如来电提醒、弹窗。<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
-| disable-lower-scroll | String | 发生滚动前，对滚动方向进行判断，当方向是顶部/左边时，如果值为 `always` 将始终禁止滚动，如果值为 `out-of-bounds` 且当前已经滚动到顶部/左边，禁止滚动。<br />**版本要求**：基础库 [2.6.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
-| disable-upper-scroll | String | 发生滚动前，对滚动方向进行判断，当方向是底部/右边时，如果值为 `always` 将始终禁止滚动，如果值为 `out-of-bounds` 且当前已经滚动到底部/右边，禁止滚动。<br />**版本要求**：基础库 [2.6.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
-
+| disable-lower-scroll | String | 发生滚动前，对滚动方向进行判断，当方向是顶部/左边时，如果值为  `always`  将始终禁止滚动，如果值为  `out-of-bounds` 且当前已经滚动到顶部/左边，禁止滚动。<br />**版本要求**：基础库 [2.6.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
+| disable-upper-scroll | String | 发生滚动前，对滚动方向进行判断，当方向是底部/右边时，如果值为  `always`  将始终禁止滚动，如果值为  `out-of-bounds` 且当前已经滚动到底部/右边，禁止滚动。<br />**版本要求**：基础库 [2.6.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
 
 # FAQ
 
 ## 为何 scroll-view 在 popup 扩展组件中无法滑动？
-popup 组件上加上 disableScroll={{false}}  属性才能滑动。
+
+popup 组件上加上 disableScroll={{false}} 属性才能滑动。
 
 ## 为何使用 swiper 嵌套 scroll-view，scroll-view 无法滑动？
+
 swiper 和 scroll-view 均为滑动组件，如果必须使用，建议不做嵌套或者让 scroll-view 阻止 touch 事件冒泡即可：catchTouchStart、catchTouchMove。
 
 ## 如何监听 scroll-view 滚动到底部？
+
 可以直接在 onScroll 方法中进行处理，使用 onScrollToLower 监听 scroll-view 的滚动高度来进行判断是否滑动到了底部。  scrollHeight 是 scroll-view 里面所有 view 的高度和，scrollTop 是滚动的值；  scrollTop 的值等于 scrollHeight-scroll-view 视图的高度。
 
 ## 为何在页面有蒙层的情况下，外层滑动到底部，会导致蒙层也能滑动？
+
 在外层 scroll-view 添加属性 trap-scroll。
 
 # 相关文档

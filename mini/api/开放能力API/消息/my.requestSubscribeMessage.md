@@ -1,4 +1,5 @@
 # 简介
+
 调起客户端小程序消息订阅界面，返回用户订阅消息的操作结果。详细介绍可查看 [消息产品介绍](https://opendocs.alipay.com/mini/introduce/message)。
 
 ## 使用限制
@@ -14,23 +15,28 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 my.requestSubscribeMessage({
-  entityIds: ['ac768fca1ce245ccae9404bb5243c49b', '9aa357acb7c6434aba294aded1cdfb7c'],
-  success: (res) => {
+  entityIds: [
+    'ac768fca1ce245ccae9404bb5243c49b',
+    '9aa357acb7c6434aba294aded1cdfb7c',
+  ],
+  success: res => {
     // res.behavior == 'subscribe'
-    console.log("接口调用成功的回调", res);
+    console.log('接口调用成功的回调', res);
   },
-  fail: (res) => {
-    console.log("接口调用失败的回调", res);
+  fail: res => {
+    console.log('接口调用失败的回调', res);
   },
-  complete: (res) => {
-    console.log("接口调用结束的回调", res);
-  }
+  complete: res => {
+    console.log('接口调用结束的回调', res);
+  },
 });
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -41,10 +47,10 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ## 回调参数
+
 | **属性** | **类型** | **可选值** | **描述** |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | behavior | String | '','subscribe','cancel' | 订阅行为。<br /><ul><li>'subscribe'：表示订阅成功。</li><li>'cancel'：表示取消订阅。</li><li>''：表示订阅失败</li></ul> |
 | success | Boolean | true, false | 订阅是否成功，已废弃，建议通过 behavior 字段获取订阅状态。 |
 | stat | String | 'ok', 'failed' | 订阅状态，已废弃，建议通过 behavior 字段获取订阅状态。 |
@@ -56,11 +62,12 @@ Object 类型，属性如下：
 | errorMessage | String | 见错误码 | 错误信息，仅在订阅取消/失败时返回。 |
 | [模板 id] | String | 'reject', 'accept' | 动态键,表示该模板是否被订阅。仅在订阅成功( behavior == 'subscribe' )场景下数据可靠，其他场景下建议通过 result 字段获取订阅数据。静默订阅（ show 为 false ）时，返回状态为上一次的订阅结果。 |
 
-
 ### 回调参数示例
+
 ![消息订阅.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/179989/1640677925411-8f0cdc4a-9a92-4898-977b-b85fe33e4a89.jpeg#align=left&display=inline&height=2446&margin=%5Bobject%20Object%5D&name=%E6%B6%88%E6%81%AF%E8%AE%A2%E9%98%85.jpg&originHeight=2446&originWidth=3506&size=1158370&status=done&style=none&width=3506)
 
 ## 错误码
+
 | **errorCode** | **errorMessage** | **说明** |
 | --- | --- | --- |
 | 10 | 系统异常 | 系统异常。 |

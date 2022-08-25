@@ -1,11 +1,10 @@
-
 ### Auth 中有什么
+
 - 授权完成永久登录
 - 小程序列表查看、切换
 - 小程序版本上传
 - 真机预览、真机调试
 - AMPE 场景切换
-
 
 ### 什么时候需要 Auth
 
@@ -16,10 +15,9 @@
 - 进行小程序的真机预览和调试
 - AMPE 小程序开发者
 
-
 ### 授权登录
-> 小程序 CLI 在 1.14.0 后对登录进行了全新升级，可通过简单的扫码即可完成持久化地授权登录。
 
+> 小程序 CLI 在 1.14.0 后对登录进行了全新升级，可通过简单的扫码即可完成持久化地授权登录。
 
 #### 版本号大于等于 1.14.0
 
@@ -49,8 +47,8 @@
 
 ![|723x294](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/88085/1609318832388-47a80bb9-a1f9-4a9f-98e1-d66e726196e2.png#align=left&display=inline&height=322&margin=%5Bobject%20Object%5D&originHeight=365&originWidth=897&status=done&style=none&width=792)
 
-
 ### 小程序切换
+
 > 当插件加载失败或者左侧模拟器无法正常渲染，可在此处确认是否选中了正确的小程序应用。
 
 完成授权登录后，刷新页面，会在 Auth 面板中展示“我的小程序”，可在此切换当前小程序应用。
@@ -72,9 +70,8 @@
 - [真机预览](https://miniu.alipay.com/doc/preview-real-machine)
 - [真机调试](https://miniu.alipay.com/doc/debug-real-machine)
 
-
-
 ### AMPE 场景
+
 详细文档可参考：[https://opendocs.alipay.com/mini/01l9vi](https://opendocs.alipay.com/mini/01l9vi)。
 
 1. 勾选“切换至 AMPE 开发场景”

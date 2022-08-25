@@ -1,16 +1,17 @@
 # 简介
+
 **my.prompt** 是弹出一个对话框，让用户在对话框内输入文本的 API。
 
 ## 使用限制
 
-- 基础库 [1.7.2](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.10 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.7.2](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.10 或更高版本，若版本较低，建议采取  [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
 
 ## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/prompt?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/prompt?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
 
@@ -22,7 +23,7 @@ my.prompt({
   placeholder: '给朋友留言',
   okButtonText: '确定',
   cancelButtonText: '取消',
-  success: (result) => {
+  success: result => {
     my.alert({
       title: JSON.stringify(result),
     });
@@ -50,10 +51,10 @@ Object 类型，参数如下：
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| ok | Boolean | 点击 ok 返回 true，点击 cancel 返回 false。 |
-| inputValue | String | 当 ok 返回 true 时，返回用户输入的内容。 |
+| **属性**   | **类型** | **描述**                                    |
+| ---------- | -------- | ------------------------------------------- |
+| ok         | Boolean  | 点击 ok 返回 true，点击 cancel 返回 false。 |
+| inputValue | String   | 当 ok 返回 true 时，返回用户输入的内容。    |
 
 # 常见问题
 

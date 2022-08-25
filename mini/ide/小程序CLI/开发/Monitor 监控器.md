@@ -1,5 +1,5 @@
-
 # Monitor 面板
+
 很多情况下，开发者需要查看网络情况与 JSAPI 调用的时序情况，Monitor 将小程序的网络请求`my.request` 以及其他 [小程序前端 API](https://opendocs.alipay.com/mini/api) 比如 `my.getLocation` 都进行了监控。开发者可以很方便的在一个面板里查看其调用的时序、状态、请求值、返回值、大小及耗时。
 
 ![|723x484](https://cdn.nlark.com/yuque/0/2021/png/179989/1618215129592-42f11c37-5d35-43f9-8eee-eec0a10416f3.png#align=left&display=inline&height=894&margin=%5Bobject%20Object%5D&name=image.png&originHeight=894&originWidth=1336&size=476049&status=done&style=none&width=1336)
@@ -8,8 +8,8 @@
 
 如上图，被 mock 的 JSAPI 或 HTTP 请求，在 Monitor 面板中会展示 mock 标志，方便查看。
 
-
 ## Monitor 展示内容
+
 Monitor 会有三种类型的展示：
 
 - Request 调用`my.request`的请求；
@@ -17,13 +17,14 @@ Monitor 会有三种类型的展示：
 
 所有的类型都是按照发起的时间顺序排列，包括了 “Name”，“Status”， “Type”，“Time”，“Size” 几个维度。
 
-
 # 本地 Mock 面板
+
 点击勾选“Mock 面板”，打开本地 mock 功能的控制面板。如下图：
 
 ![|723x484](https://cdn.nlark.com/yuque/0/2021/png/179989/1618215230770-7ca79ccf-2ade-41ee-9067-da8eb049e47d.png#align=left&display=inline&height=1788&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1788&originWidth=2672&size=634696&status=done&style=none&width=2672)
 
 ## 创建 mock
+
 创建 mock 有三种方式， 如下图：
 
 ![|723x484](https://cdn.nlark.com/yuque/0/2021/png/179989/1618215251639-79c9076c-698a-441d-9067-8b7276dfc2b2.png#align=left&display=inline&height=1788&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1788&originWidth=2672&size=641531&status=done&style=none&width=2672)

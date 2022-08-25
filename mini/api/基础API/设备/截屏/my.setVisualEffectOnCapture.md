@@ -1,4 +1,5 @@
 # 简介
+
 设置截屏/录屏时的屏幕表现，仅支持在 Android 端调用。
 
 ## 使用限制
@@ -11,10 +12,11 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // 进行系统截屏/录屏时隐藏屏幕
 if (my.setVisualEffectOnCapture) {
- my.setVisualEffectOnCapture({
+  my.setVisualEffectOnCapture({
     visualEffect: 'hidden',
   });
 }
@@ -27,6 +29,7 @@ if (my.setVisualEffectOnCapture) {
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -37,7 +40,8 @@ Object 类型，属性如下：
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### visualEffect 合法值
-| **值** | **说明** |
-| --- | --- |
-| none | 正常使用系统截屏/录屏功能。 |
-| hidden |  进行系统截屏/录屏时隐藏屏幕。 |
+
+| **值** | **说明**                      |
+| ------ | ----------------------------- |
+| none   | 正常使用系统截屏/录屏功能。   |
+| hidden | 进行系统截屏/录屏时隐藏屏幕。 |

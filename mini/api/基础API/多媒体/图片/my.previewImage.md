@@ -1,5 +1,5 @@
-
 # 简介
+
 **my.previewImage** 是预览图片的 API。
 
 ## 使用限制
@@ -7,9 +7,11 @@
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![1.jpeg](https://cdn.nlark.com/yuque/0/2021/jpeg/179989/1625191726620-5e45ee53-b35c-4a2f-9088-24c5dce03300.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&name=1.jpeg&originHeight=157&originWidth=127&size=19820&status=done&style=stroke&width=127#alt=&width=127)
 
 ## 效果示例
+
 ![](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*QtdsQIBkcP8AAAAAAAAAAAAAARQnAQ#alt=&width=300)
 
 # 接口调用
@@ -17,26 +19,28 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 my.previewImage({
-  current: 2,  // 默认显示第三张图片
+  current: 2, // 默认显示第三张图片
   urls: [
     'https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg',
     'https://img.alicdn.com/tps/TB1pfG4IFXXXXc6XXXXXXXXXXXX.jpg',
-    'https://img.alicdn.com/tps/TB1h9xxIFXXXXbKXXXXXXXXXXXX.jpg'
+    'https://img.alicdn.com/tps/TB1h9xxIFXXXXbKXXXXXXXXXXXX.jpg',
   ],
-  enablesavephoto: true,   // 长按下载
-  enableShowPhotoDownload: true,   // 右下角显示下载入口
-  success: (res) => {
+  enablesavephoto: true, // 长按下载
+  enableShowPhotoDownload: true, // 右下角显示下载入口
+  success: res => {
     console.log({ content: 'success回调' + JSON.stringify(res) });
   },
-  fail: (error) => {
+  fail: error => {
     my.alert({ content: 'fail回调' + JSON.stringify(error) });
   },
 });
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -52,7 +56,7 @@ Object 类型，属性如下：
 | enableShowPhotoDownload | Boolean | 否 | 是否在右下角显示下载入口。<br />基础库 1.13.0 版本开始支持。 |
 
 ## 错误码
+
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 2 | 无效参数: 只支持 http 图片链接 | 图片 urls 有误，请更正。支持 http/https 地址 |
-

@@ -1,4 +1,3 @@
-
 # Storage 缓存面板
 
 Storage 缓存面板能够对[支付宝小程序本地缓存](https://opendocs.alipay.com/mini/api/qm3ggk)进行统一管理，包括缓存展示，添加，编辑，删除等功能。 主要功能使用如下：

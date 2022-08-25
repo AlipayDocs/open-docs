@@ -1,4 +1,5 @@
 # 简介
+
 **my.openDocument** 是在新页面打开文件预览的 API，暂时只支持预览 PDF 格式文件。
 
 ## 使用限制
@@ -12,6 +13,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 my.downloadFile({
   // 示例 url，并非真实存在
@@ -20,14 +22,16 @@ my.downloadFile({
     my.openDocument({
       filePath: apFilePath,
       fileType: 'pdf',
-      success: (res) => {
-        console.log('open document success')
-      }
-    })
-  }
-})
+      success: res => {
+        console.log('open document success');
+      },
+    });
+  },
+});
 ```
+
 预览一个已被转换为 base64 的 PDF 文件：
+
 ```JavaScript
   openDocument(){
     //第一步：将base64字符串的PDF文件写入本地用户文件
@@ -58,6 +62,7 @@ my.downloadFile({
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -68,14 +73,14 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ### fileType 合法值
-| **值** | **说明** |
-| --- | --- |
-| pdf | PDF 格式。 |
 
+| **值** | **说明**   |
+| ------ | ---------- |
+| pdf    | PDF 格式。 |
 
 ## 错误码
+
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 4011 | 无效的文件路径，或者传入路径没有权限访问。 | 检查传入的文件路径。 |
@@ -93,7 +98,7 @@ Object 类型，属性如下：
 const fs = my.getFileSystemManager();
 my.downloadFile({
   // 示例 url，并非真实存在
-  url: "http://documentExample.com/alipay.pdf",
+  url: 'http://documentExample.com/alipay.pdf',
   success(res) {
     fs.saveFile({
       tempFilePath: res.apFilePath,
@@ -102,9 +107,9 @@ my.downloadFile({
         my.openDocument({
           filePath: res1.savedFilePath,
           fileType: 'pdf',
-        })
-      }
-    })
-  }
+        });
+      },
+    });
+  },
 });
 ```

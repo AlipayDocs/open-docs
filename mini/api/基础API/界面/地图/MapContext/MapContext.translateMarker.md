@@ -18,16 +18,17 @@
 // .js
 this.mapCtx = my.createMapContext('map');
 this.mapCtx.translateMarker({
-    markerId:0, // 必填
-    destination:{
-        longitude:120.2,latitude:30.3 // 必填
-    },
-    autoRotate:true, // 选填，默认true
-    rotate:90,  // 选填，在autoRotate为false的情况下才有效，不填默认是0
-    duration:900,  // 选填，单位ms，默认1000 ms
-    animationEnd: () => {
-        console.log('animation end')
-    }   //function 动画结束回调    
+  markerId: 0, // 必填
+  destination: {
+    longitude: 120.2,
+    latitude: 30.3, // 必填
+  },
+  autoRotate: true, // 选填，默认true
+  rotate: 90, // 选填，在autoRotate为false的情况下才有效，不填默认是0
+  duration: 900, // 选填，单位ms，默认1000 ms
+  animationEnd: () => {
+    console.log('animation end');
+  }, //function 动画结束回调
 });
 ```
 
@@ -48,8 +49,8 @@ Object 类型，参数如下：
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### Object destination
-| **属性** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| longitude | Number | 是 | 经度。 |
-| latitude | Number | 是 | 纬度。 |
 
+| **属性**  | **类型** | **必填** | **描述** |
+| --------- | -------- | -------- | -------- |
+| longitude | Number   | 是       | 经度。   |
+| latitude  | Number   | 是       | 纬度。   |

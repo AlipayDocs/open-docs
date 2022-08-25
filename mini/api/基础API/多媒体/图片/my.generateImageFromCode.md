@@ -1,5 +1,5 @@
-
 # 简介
+
 生成二维码，由客户端生成，速度快且不耗流量。
 
 # 使用限制
@@ -12,14 +12,15 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // page.js
 Page({
   data: {
-   qrcode: '',
+    qrcode: '',
   },
   onReady() {
-   if (my.canIUse('generateImageFromCode')) {
+    if (my.canIUse('generateImageFromCode')) {
       my.generateImageFromCode({
         code: 'https://www.alipay.com',
         format: 'QRCODE',
@@ -28,34 +29,40 @@ Page({
         success: res => {
           console.log(res.image);
           this.setData({
-            qrcode: res.image
+            qrcode: res.image,
           });
         },
         fail(res) {
-     console.log(res.error);
+          console.log(res.error);
         },
         complete(res) {
-         if (res.image) {
-           console.log('success', res.image);
+          if (res.image) {
+            console.log('success', res.image);
           } else {
-           console.log('fail', res.error, res.errorMessage);
+            console.log('fail', res.error, res.errorMessage);
           }
-        }
+        },
       });
     }
-  }
-})
+  },
+});
 ```
 
 ### .axml 示例代码
+
 ```html
 // page.axml
 <view class="page">
-  <image src="{{qrcode}}" mode="widthFix" style="width:200rpx;height:200rpx;margin:60rpx"/>
+  <image
+    src="{{qrcode}}"
+    mode="widthFix"
+    style="width:200rpx;height:200rpx;margin:60rpx"
+  />
 </view>
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -68,16 +75,16 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ### success 返回值
-| **名称** | **类型** | **描述** |
-| --- | --- | --- |
-| image | String | 二维码图片，使用 base64 编码。 |
 
+| **名称** | **类型** | **描述**                       |
+| -------- | -------- | ------------------------------ |
+| image    | String   | 二维码图片，使用 base64 编码。 |
 
 ### error 错误码
-| **error** | **描述** |
-| --- | --- |
-| 102 | 参数错误。 |
-| 103 | SDK 生成图片失败。 |
-| 104 | 图片转成 base64 失败。 |
+
+| **error** | **描述**               |
+| --------- | ---------------------- |
+| 102       | 参数错误。             |
+| 103       | SDK 生成图片失败。     |
+| 104       | 图片转成 base64 失败。 |

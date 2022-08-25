@@ -1,4 +1,5 @@
 # 简介
+
 监听录音结束事件。
 
 ## 使用限制
@@ -11,21 +12,24 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 let recorderManager = my.getRecorderManager();
 recorderManager.onStop(res => {
- console.log(res.tempFilePath);
-})
+  console.log(res.tempFilePath);
+});
 ```
 
 ## 入参
 
 ### Function callback
+
 录音结束事件的回调函数。
 
 #### callback 参数
+
 **Object res**
 
-| **属性** | **类型** | **说明** |
-| --- | --- | --- |
-| tempFilePath | String | 录音文件的临时路径。 |
+| **属性**     | **类型** | **说明**             |
+| ------------ | -------- | -------------------- |
+| tempFilePath | String   | 录音文件的临时路径。 |

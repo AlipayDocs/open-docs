@@ -1,8 +1,9 @@
 # 简介
+
 **my.getLocation** 是获取用户当前的地理位置信息的 API。
 
-地图相关接口使用的坐标格式为 GCJ-02（火星坐标系）。   
-暂无境外地图数据，在中国内地（不含港澳台）以外的地区可能无法正常调用此 API。   
+地图相关接口使用的坐标格式为 GCJ-02（火星坐标系）。  
+暂无境外地图数据，在中国内地（不含港澳台）以外的地区可能无法正常调用此 API。
 
 ## 使用限制
 
@@ -28,7 +29,7 @@
 <view class="page">
   <view class="page-section">
     <view class="page-section-btns">
-        <button onTap="getLocation">获取位置</button>
+      <button onTap="getLocation">获取位置</button>
     </view>
     <view class="page-section-demo">
       <block a:if="{{hasLocation === true}}">
@@ -44,6 +45,7 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 // get-location.js
 Page({
@@ -55,22 +57,22 @@ Page({
   getLocation() {
     my.showLoading();
     my.getLocation({
-      success: (res) => {
+      success: res => {
         this.setData({
           hasLocation: true,
           longitude: res.longitude,
-          latitude: res.latitude
-        })
+          latitude: res.latitude,
+        });
       },
-      fail: (res) => {
+      fail: res => {
         my.alert({ title: '定位失败' });
       },
       complete: () => {
         my.hideLoading();
       },
-    })
-  }
-})
+    });
+  },
+});
 ```
 
 ## 入参
@@ -96,10 +98,10 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | accuracy | String | 精确度，单位米 (m)。 |
 | horizontalAccuracy | String | 水平精确度，单位为米 (m)。 |
 | country | String | 国家（type > 0 生效）。 |
-| countryCode | String | 国家编号 （type>0 生效）。|
-| province | String | 省份（type > 0 生效）。|
-| provinceAdcode | String | 省份级别的地区代码（type > 0 生效）。|
-| city | String | 城市（type > 0 生效）。|
+| countryCode | String | 国家编号 （type>0 生效）。 |
+| province | String | 省份（type > 0 生效）。 |
+| provinceAdcode | String | 省份级别的地区代码（type > 0 生效）。 |
+| city | String | 城市（type > 0 生效）。 |
 | cityAdcode | String | 城市级别的地区代码（type>0 生效）。 |
 | district | String | 区县（type > 0 生效）。 |
 | districtAdcode | String | 区县级别的地区代码（type > 0 生效）。 |
@@ -110,12 +112,13 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| error | Number | 错误码。 |
-| errorMessage | String | 错误信息。 |
+| **属性**     | **类型** | **描述**   |
+| ------------ | -------- | ---------- |
+| error        | Number   | 错误码。   |
+| errorMessage | String   | 错误信息。 |
 
-## 错误码 
+## 错误码
+
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 11 | 请确认定位相关权限已开启。 | 包含 “GPS 未开启” 和 “未打开允许支付宝使用定位的开关” 两种情况。参照 常见问题 Q1 |
@@ -128,10 +131,13 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 # 常见问题 FAQ
 
 ## Q：如果系统权限未开启，接口调用报错，如何引导开启系统权限？
+
 A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-auth-guide) 引导用户开启相关系统权限。
 
-## Q：my.getLocation 第一次允许授权后删除小程序应用，重新打开会需要重新授权吗？ 
+## Q：my.getLocation 第一次允许授权后删除小程序应用，重新打开会需要重新授权吗？
+
 A：需要重新授权，删除小程序应用后会将获取定位的授权关系一起删除。
 
 ## Q：如何在 IDE 模拟器调试 my.getLocation 接口？
+
 A：可以在模拟器工具栏中点击定位按钮，自定义当前位置的经纬度。

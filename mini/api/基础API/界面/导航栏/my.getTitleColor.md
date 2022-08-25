@@ -1,18 +1,20 @@
 # 简介
+
 **my.getTitleColor** 是获取导航栏背景色的 API。
 
 ## 使用限制
 
-- 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib)  或更高版本；支付宝客户端 10.1.50 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib)   或更高版本；支付宝客户端 10.1.50 或更高版本，若版本较低，建议采取  [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
 
 ## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-title-color?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-title-color?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
+
 ```javascript
 Page({
   data: {
@@ -20,13 +22,13 @@ Page({
   },
   getTitleColor() {
     my.getTitleColor({
-      success: (res) => {
+      success: res => {
         this.setData({
-          titleColor: res.color
-        })
-      }
-    })
-  }
+          titleColor: res.color,
+        });
+      },
+    });
+  },
 });
 ```
 
@@ -48,7 +50,6 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | --- | --- | --- |
 | color | HexColor | 返回当前导航栏背景色。<br />ARGB 格式的十六进制颜色值，如 #323239FF。 |
 
-
 # 常见问题
 
 ## Q：小程序右上角的 分享与收藏 可以设置颜色吗？
@@ -58,4 +59,3 @@ A：这是默认的，无法设置颜色。
 ## Q: 小程序标题栏文字颜色支持自定义吗？
 
 A: 不支持用户手动设置文字颜色，只能根据标题栏背景颜色做动态显示，例如：设置黑色背景则显示白色文字，设置白色背景则显示黑色文字。
-

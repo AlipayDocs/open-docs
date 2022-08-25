@@ -1,6 +1,6 @@
 # 简介
 
-**my.chooseDistrict**  是用于使用支付宝统一样式选择地区的 API。
+**my.chooseDistrict** 是用于使用支付宝统一样式选择地区的 API。
 
 数据层面支持：
 
@@ -11,7 +11,7 @@
 
 ## 使用限制
 
-- 基础库 [2.6.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 或更高版本；支付宝客户端 10.2.0 或更高版本，若版本较低，建议采取 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
+- 基础库 [2.6.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  或更高版本；支付宝客户端  10.2.0 或更高版本，若版本较低，建议采取  [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 ## 扫码体验
@@ -25,163 +25,163 @@
 ### .js 示例代码
 
 ```javascript
-my.chooseDistrict({        
-  mode:2,
+my.chooseDistrict({
+  mode: 2,
   // src模式优先级最高，指定src，只读取src内的数据
-  // src:"/json/chooseDistrict.json",  
+  // src:"/json/chooseDistrict.json",
   // 境内
-  mainTitle:'境内',
-  mainHeadList:[
-    { 
-      title:'定位模块',
-      type:1
+  mainTitle: '境内',
+  mainHeadList: [
+    {
+      title: '定位模块',
+      type: 1,
     },
     {
-      title:'热门城市',
-      list:[
+      title: '热门城市',
+      list: [
         {
-          name:'杭州',
-          adCode:'330100',
+          name: '杭州',
+          adCode: '330100',
         },
         {
-          name:'北京',
-          adCode:'110100',
+          name: '北京',
+          adCode: '110100',
         },
         {
-          name:'上海',
-          adCode:'310100',
+          name: '上海',
+          adCode: '310100',
         },
         {
-          name:'广州',
-          adCode:'440100',
+          name: '广州',
+          adCode: '440100',
         },
         {
-          name:'深圳',
-          adCode:'440300',
-        }
-      ]
-    }
+          name: '深圳',
+          adCode: '440300',
+        },
+      ],
+    },
   ],
-  mainNormalList:[
+  mainNormalList: [
     {
-      name:'北京市',
-      adCode:'110100',
-      appendName:'北京',
+      name: '北京市',
+      adCode: '110100',
+      appendName: '北京',
       subList: [
         {
-          name:'昌平区',
-          adCode:'110114',
+          name: '昌平区',
+          adCode: '110114',
         },
         {
-          name:'朝阳区',
-          adCode:'110105',
+          name: '朝阳区',
+          adCode: '110105',
         },
         {
-          name:'大兴区',
-          adCode:'110115',
+          name: '大兴区',
+          adCode: '110115',
         },
         {
-          name:'东城区',
-          adCode:'110101',
+          name: '东城区',
+          adCode: '110101',
         },
         {
-          name:'房山区',
-          adCode:'110111',
+          name: '房山区',
+          adCode: '110111',
         },
         {
-          name:'丰台区',
-          adCode:'110106',
+          name: '丰台区',
+          adCode: '110106',
         },
         {
-          name:'海淀区',
-          adCode:'110108',
+          name: '海淀区',
+          adCode: '110108',
         },
         {
-          name:'怀柔区',
-          adCode:'110116',
+          name: '怀柔区',
+          adCode: '110116',
         },
         {
-          name:'门头沟区',
-          adCode:'110109',
+          name: '门头沟区',
+          adCode: '110109',
         },
         {
-          name:'密云区',
-          adCode:'110118',
+          name: '密云区',
+          adCode: '110118',
         },
         {
-          name:'平谷区',
-          adCode:'110117',
+          name: '平谷区',
+          adCode: '110117',
         },
         {
-          name:'石景山区',
-          adCode:'110107',
+          name: '石景山区',
+          adCode: '110107',
         },
         {
-          name:'顺义区',
-          adCode:'110113',
+          name: '顺义区',
+          adCode: '110113',
         },
         {
-          name:'通州区',
-          adCode:'110112',
+          name: '通州区',
+          adCode: '110112',
         },
         {
-          name:'西城区',
-          adCode:'110102',
+          name: '西城区',
+          adCode: '110102',
         },
         {
-          name:'延庆区',
-          adCode:'110119',
+          name: '延庆区',
+          adCode: '110119',
         },
-      ]
-    }
+      ],
+    },
   ],
   // 境外
-  seniorTitle:'境外/港澳台',
-  seniorPageList:[
+  seniorTitle: '境外/港澳台',
+  seniorPageList: [
     {
-      title:"亚洲",
+      title: '亚洲',
       headList: [
         {
-          title:'热门城市列表',
-          list:[
+          title: '热门城市列表',
+          list: [
             {
-              name:'东京',
-              adCode:'39200037000000000000',
+              name: '东京',
+              adCode: '39200037000000000000',
             },
-          ]
-        }
+          ],
+        },
       ],
-      normalList:[
+      normalList: [
         {
-          name:'喀布尔',
-          adCode:'00400003000100000000'
+          name: '喀布尔',
+          adCode: '00400003000100000000',
         },
         {
-          name:'迪拜',
-          adCode:'78400003000300000000'
-        }
-      ]
+          name: '迪拜',
+          adCode: '78400003000300000000',
+        },
+      ],
     },
     {
-      title:"大洋洲",
-      normalList:[
+      title: '大洋洲',
+      normalList: [
         {
-          name:'堪培拉',
-          adCode:'03600001000100000000',
+          name: '堪培拉',
+          adCode: '03600001000100000000',
         },
         {
-          name:'斐济',
-          adCode:'24200001000100000000',
-        }
-      ]
-    }
+          name: '斐济',
+          adCode: '24200001000100000000',
+        },
+      ],
+    },
   ],
-  success: (res) => {
+  success: res => {
     my.alert({
-      content: res.name + ':' + res.adCode
+      content: res.name + ':' + res.adCode,
     });
-  }
-})
+  },
+});
 ```
 
 ### .json 示例代码
@@ -193,14 +193,20 @@ my.chooseDistrict({
 ```json
 // chooseDistrict.json 参数参见文档说明
 {
-  "mode":2,
-  "mainHeadList":[
-    { 
-      "title":"定位模块",
-      "type":1
+  "mode": 2,
+  "mainHeadList": [
+    {
+      "title": "定位模块",
+      "type": 1
     }
   ],
-  "mainMergeOptions":{"371200":"","542400":"","540600":"那曲","659010":"胡杨河市","123456":"测试"}
+  "mainMergeOptions": {
+    "371200": "",
+    "542400": "",
+    "540600": "那曲",
+    "659010": "胡杨河市",
+    "123456": "测试"
+  }
 }
 ```
 
@@ -285,14 +291,15 @@ my.chooseDistrict({
 </table>
 
 ### HeadModel
+
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | title | String | 是 | 区块名，如“热门城市”。 |
 | type | Int | 否 | 模块类型。枚举如下：<br /><ul><li>0：常规城市；</li><li>1：定位模块；</li><li>2：展示支付宝提供的热门城市模块。</li></ul> |
 | list | Array | 否 | 区块城市列表。不支持嵌套，对象值可查看 **ItemModel**。 |
 
-
 ### ItemModel
+
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | name | String | 是 | 城市名。 |
@@ -301,7 +308,6 @@ my.chooseDistrict({
 | appendName | String | 否 | 子标题。 |
 | ext | String | 否 | 额外信息。 |
 | subList | Array | 否 | 支持级联，自定义次级城市列表，列表内对象字段可查看 **ItemModel**。 |
-
 
 ### PageModel (境外样式下需要)
 
@@ -315,8 +321,8 @@ my.chooseDistrict({
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| name | String | 城市名称。 |
-| adCode | String | 城市编码。 |
-| ext | String | 自定义扩展字段透传。 |
+| **属性** | **类型** | **描述**             |
+| -------- | -------- | -------------------- |
+| name     | String   | 城市名称。           |
+| adCode   | String   | 城市编码。           |
+| ext      | String   | 自定义扩展字段透传。 |

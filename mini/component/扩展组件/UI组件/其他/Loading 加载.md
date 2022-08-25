@@ -1,18 +1,21 @@
-
 # 简介
+
 loading 加载动画。
 
 ## 扫码体验
+
 ![|154x191](https://mdn.alipayobjects.com/afts/img/A*8spKR7IFKE0AAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=4jH-vtQojHPwBwOHtiLKtwAAAABkMK8AAAAA#align=left&display=inline&height=191&margin=%5Bobject%20Object%5D&originHeight=191&originWidth=154&status=done&style=none&width=154)
 
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-loading?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-loading?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
   "defaultTitle": "Loading",
@@ -24,26 +27,28 @@ loading 加载动画。
 ```
 
 ### .axml 示例代码
+
 ```html
 加载中<loading size="80rpx" className="inlineBlock" />
-<container hasTitle='{{true}}' title='loading size="6rpx"'>
+<container hasTitle="{{true}}" title='loading size="6rpx"'>
   <loading size="6rpx" color="red" />
 </container>
-<container hasTitle='{{true}}' title='loading height="36rpx"'>
+<container hasTitle="{{true}}" title='loading height="36rpx"'>
   <loading height="36rpx" color="red" />
 </container>
-<container hasTitle='{{true}}' title='loading height="36rpx" size="6rpx"'>
+<container hasTitle="{{true}}" title='loading height="36rpx" size="6rpx"'>
   <loading height="36rpx" size="6rpx" color="red" />
 </container>
-<container hasTitle='{{true}}' title='loading size="100px"'>
+<container hasTitle="{{true}}" title='loading size="100px"'>
   <loading size="100px" color="red" />
 </container>
-<container hasTitle='{{true}}' title='loading'>
+<container hasTitle="{{true}}" title="loading">
   <loading color="blue" />
 </container>
 ```
 
 ### .acss 示例代码
+
 ```css
 .inlineBlock {
   display: inline-block;
@@ -52,12 +57,12 @@ loading 加载动画。
 ```
 
 ## 属性说明
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| className | String | 自定义 class。 |
-| size | String | 设置 loading 尺寸大小。<br />**默认值**：100px |
-| color | String | 设置 loading 的颜色。<br />**默认值**：#1677ff |
 
+| **属性**  | **类型** | **描述**                                       |
+| --------- | -------- | ---------------------------------------------- |
+| className | String   | 自定义 class。                                 |
+| size      | String   | 设置 loading 尺寸大小。<br />**默认值**：100px |
+| color     | String   | 设置 loading 的颜色。<br />**默认值**：#1677ff |
 
 ## Bug & Tip
 

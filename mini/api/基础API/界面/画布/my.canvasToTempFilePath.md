@@ -1,4 +1,5 @@
 # 简介
+
 **my.canvasToTempFilePath** 把当前画布指定区域的内容导出生成指定大小的图片，需在 `draw()` 回调里调用该方法才能保证图片导出成功。
 
 ## 使用限制
@@ -11,57 +12,63 @@
 ## 示例代码
 
 ### .axml 示例代码
+
 ```html
 // canvas 1.0
 <canvas id="canvas1" />
-// canvas 2.0 
-// 基础库2.7.15 开始支持传入canvas 参数
+// canvas 2.0 // 基础库2.7.15 开始支持传入canvas 参数
 <canvas type="2d" id="canvas2" onReady="onCanvasReady" />
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
   onReady() {
     const ctx = my.createCanvasContext('canvas1');
-    ctx.drawImage("/image/ant.png", 0, 0);
+    ctx.drawImage('/image/ant.png', 0, 0);
     ctx.draw(false, () => {
-    	my.canvasToTempFilePath({
-      	canvasId: 'canvas1',
-      	success: (res) => {
-        	console.log(res.tempFilePath);
-      	}
-    	})
-   })
+      my.canvasToTempFilePath({
+        canvasId: 'canvas1',
+        success: res => {
+          console.log(res.tempFilePath);
+        },
+      });
+    });
   },
   onCanvasReady() {
- 		const query = my.createSelectorQuery();
-    query.select('#canvas2').node().exec((res) => {
-      const canvas = res[0].node;
-      const ctx = canvas.getContext('2d');
-      const img = canvas.createImage();
-   		img.src = "https://img.alicdn.com/tfs/TB1GvVMj2BNTKJjy0FdXXcPpVXa-520-280.jpg";
-      img.onload = () => {
-      	ctx.drawImage(img, 10, 10, 100, 100);
-        my.canvasToTempFilePath({
-          canvas,
-          success(res) {
-            console.log(res.tempFilePath);
-          },
-          fail(res) {
-            console.log(res);
-          },
-          complete(res) {
-            console.log(res);
-          },
-        });
-      }
-    });
-  }
-})
+    const query = my.createSelectorQuery();
+    query
+      .select('#canvas2')
+      .node()
+      .exec(res => {
+        const canvas = res[0].node;
+        const ctx = canvas.getContext('2d');
+        const img = canvas.createImage();
+        img.src =
+          'https://img.alicdn.com/tfs/TB1GvVMj2BNTKJjy0FdXXcPpVXa-520-280.jpg';
+        img.onload = () => {
+          ctx.drawImage(img, 10, 10, 100, 100);
+          my.canvasToTempFilePath({
+            canvas,
+            success(res) {
+              console.log(res.tempFilePath);
+            },
+            fail(res) {
+              console.log(res);
+            },
+            complete(res) {
+              console.log(res);
+            },
+          });
+        };
+      });
+  },
+});
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -74,15 +81,16 @@ Object 类型，属性如下：
 | height | Number | 否 | 指定的画布区域的高度。 |
 | destWidth | Number | 否 | 输出的图片的宽度。 |
 | destHeight | Number | 否 | 输出的图片的高度。 |
-| fileType | String | 否 | 目标文件的类型。<br />可选值：<ul><li>jpg：.jpg 图片。</li><li>png：.png 图片。</li></ul><br /> 默认 `png`。 |
-| quality | Number | 否 | 图片的质量，目前仅对 `jpg` 有效。取值范围为 `(0, 1]`，不在范围内时当作 `1` 处理。 |
+| fileType | String | 否 | 目标文件的类型。<br />可选值：<ul><li>jpg：.jpg 图片。</li><li>png：.png 图片。</li></ul><br /> 默认  `png`。 |
+| quality | Number | 否 | 图片的质量，目前仅对 `jpg`  有效。取值范围为 `(0, 1]`，不在范围内时当作 `1`  处理。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### success 返回值
+
 值类型为 Object，其结构如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| tempFilePath | String | 生成文件的临时路径 (本地路径)。 |
+| **属性**     | **类型** | **描述**                        |
+| ------------ | -------- | ------------------------------- |
+| tempFilePath | String   | 生成文件的临时路径 (本地路径)。 |

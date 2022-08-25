@@ -1,42 +1,48 @@
-
 # 简介
-**my.connectSocket** 用于创建一个 [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket) 的连接。一个支付宝小程序在一段时间内只能保留一个 WebSocket 连接，如果当前已存在 WebSocket 连接，那么会自动关闭该连接，并重新创建一个新的 WebSocket 连接。 
+
+**my.connectSocket** 用于创建一个 [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket) 的连接。一个支付宝小程序在一段时间内只能保留一个 WebSocket 连接，如果当前已存在 WebSocket 连接，那么会自动关闭该连接，并重新创建一个新的 WebSocket 连接。
 
 ## 使用限制
+
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/adccc0ecd4072e1b0fccc2cacf01ec8d.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
 
 ## 效果示例
+
 ![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/fc3f122b0dbbcef4cb9d4b17f5bb0232.png#align=left&display=inline&height=420&margin=%5Bobject%20Object%5D&originHeight=720&originWidth=1280&status=done&style=stroke&width=746)
 
 # 接口调用
 
 ## 示例代码
+
 **注意**：案例仅供参考，建议使用自己的地址进行测试。
 
 ### .js 示例代码
+
 ```javascript
 // .js
 my.connectSocket({
   url: this.data.websocketServer, // 开发者服务器接口地址，必须是 wss 协议，且域名必须是后台配置的合法域名
   data: {},
-  header:{
-    'content-type': 'application/json'
+  header: {
+    'content-type': 'application/json',
   },
-  success: (res) => {
-     console.log('WebSocket 连接成功');
+  success: res => {
+    console.log('WebSocket 连接成功');
   },
   fail: () => {
-     my.showToast({
-        content: 'fail', // 文字内容
-     });
-  }
+    my.showToast({
+      content: 'fail', // 文字内容
+    });
+  },
 });
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -48,8 +54,8 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ## 错误码
+
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 1 | 未知错误。 | - |
@@ -65,10 +71,8 @@ Object 类型，属性如下：
 | 11 | 消息发送失败。 | 稍后重试。 |
 | 12 | 无法申请更多内存来读取网络数据。 | 请检查内存。 |
 
-
 # 常见问题 FAQ
 
 ## Q：my.connectSocket 进入 success 回调，却没有进入 my.onSocketOpen，反而进入了 my.onSocketError，报错 503，是什么原因？
+
 A：一般为服务端 refuse handshake，请检查配置。
-
-

@@ -1,4 +1,5 @@
 # 简介
+
 AntBuilder 简称 ab，是一款小程序快速搭建的脚手架，包含小程序装修和小程序版本管理功能。
 
 ## 目标用户
@@ -7,6 +8,7 @@ AntBuilder 简称 ab，是一款小程序快速搭建的脚手架，包含小程
 - 运营者：例如小程序的运营者，可快速进行小程序服务的上下架。
 
 ## 适用场景
+
 小程序应用，如果没有大量定制外观或交互，与 AB 官方提供的模板和功能有一定的重合度，均适合使用 AntBuilder 完成小程序的组装。
 
 以下是一些场景举例：
@@ -25,19 +27,17 @@ AntBuilder 简称 ab，是一款小程序快速搭建的脚手架，包含小程
 
 ❌ 从微信小程序转换成支付宝小程序
 
-移动端站点，欢迎关注支付宝小程序(合作伙伴能力库)和生活号(合作伙伴能力库)。
-![|205x213](https://cdn.nlark.com/yuque/0/2021/png/245098/1614579738821-92946442-9611-4009-9aac-a37fbc37c78a.png#align=left&display=inline&height=213&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1224&originWidth=1176&size=433888&status=done&style=none&width=205)![|130x208](https://cdn.nlark.com/yuque/0/2021/png/245098/1614579801129-4699aef6-6825-49a2-8c8d-bc9f0b1118fe.png#align=left&display=inline&height=208&margin=%5Bobject%20Object%5D&name=image.png&originHeight=726&originWidth=454&size=266102&status=done&style=none&width=130)
+移动端站点，欢迎关注支付宝小程序(合作伙伴能力库)和生活号(合作伙伴能力库)。 ![|205x213](https://cdn.nlark.com/yuque/0/2021/png/245098/1614579738821-92946442-9611-4009-9aac-a37fbc37c78a.png#align=left&display=inline&height=213&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1224&originWidth=1176&size=433888&status=done&style=none&width=205)![|130x208](https://cdn.nlark.com/yuque/0/2021/png/245098/1614579801129-4699aef6-6825-49a2-8c8d-bc9f0b1118fe.png#align=left&display=inline&height=208&margin=%5Bobject%20Object%5D&name=image.png&originHeight=726&originWidth=454&size=266102&status=done&style=none&width=130)
 
 因官方 WEB 站点正在建设中，请先人肉观看以下行业部分截图。
 
 ### 行业模板
-更多模板，敬请期待。
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/245098/1611734242966-ac6bde91-f209-42d5-a675-edeb1c4aaf5b.png#align=left&display=inline&height=442&margin=%5Bobject%20Object%5D&name=image.png&originHeight=884&originWidth=1994&size=1650103&status=done&style=none&width=997)
+
+更多模板，敬请期待。 ![image.png](https://cdn.nlark.com/yuque/0/2021/png/245098/1611734242966-ac6bde91-f209-42d5-a675-edeb1c4aaf5b.png#align=left&display=inline&height=442&margin=%5Bobject%20Object%5D&name=image.png&originHeight=884&originWidth=1994&size=1650103&status=done&style=none&width=997)
 
 ### 组件
-更多组件，敬请期待。
-![|292x267](https://cdn.nlark.com/yuque/0/2021/png/245098/1611739059412-6679b433-a129-4fe1-b0c4-10d42b355c79.png#align=left&display=inline&height=267&margin=%5Bobject%20Object%5D&name=image.png&originHeight=976&originWidth=1068&size=292113&status=done&style=none&width=292)![|331x228](https://cdn.nlark.com/yuque/0/2021/png/245098/1611739081959-1fd88a28-3f33-40d5-94d0-ace6c548f927.png#align=left&display=inline&height=228&margin=%5Bobject%20Object%5D&name=image.png&originHeight=688&originWidth=1000&size=183391&status=done&style=none&width=331)
 
+更多组件，敬请期待。 ![|292x267](https://cdn.nlark.com/yuque/0/2021/png/245098/1611739059412-6679b433-a129-4fe1-b0c4-10d42b355c79.png#align=left&display=inline&height=267&margin=%5Bobject%20Object%5D&name=image.png&originHeight=976&originWidth=1068&size=292113&status=done&style=none&width=292)![|331x228](https://cdn.nlark.com/yuque/0/2021/png/245098/1611739081959-1fd88a28-3f33-40d5-94d0-ace6c548f927.png#align=left&display=inline&height=228&margin=%5Bobject%20Object%5D&name=image.png&originHeight=688&originWidth=1000&size=183391&status=done&style=none&width=331)
 
 # 解决问题
 
@@ -48,13 +48,14 @@ AntBuilder 简称 ab，是一款小程序快速搭建的脚手架，包含小程
 # 产品特点
 
 - 可视化搭建页面，内置权威资产。
-   - 可视化搭建：可见即可得拖拽快速完成小程序页面搭建。
-   - 内置权威组件：通用功能内置集成，中心化持续提供前端组件。
-   - 自定义 UI 组件：快速将自定义组件纳入框架管理。
+  - 可视化搭建：可见即可得拖拽快速完成小程序页面搭建。
+  - 内置权威组件：通用功能内置集成，中心化持续提供前端组件。
+  - 自定义 UI 组件：快速将自定义组件纳入框架管理。
 - 业务接口，统一管理路由。
-   - 支持接口统一管理：接口统一代理路由，避免多接口公网曝。
+  - 支持接口统一管理：接口统一代理路由，避免多接口公网曝。
 
 ## 如何使用本文档
+
 在阅读完本文对 AntBuilder 有一个大体了解之后，可以继续查看个各个模板或组件的详细文档。
 
 - “简介”和“导读”部分能快速了解产品，并通过最小合集完成从 0-1 的学习。
@@ -65,4 +66,5 @@ AntBuilder 简称 ab，是一款小程序快速搭建的脚手架，包含小程
 我们推荐您在有基础的了解之后再进行高级集成，遇到相应的问题再查看相关教程或各模块。多使用文档搜索功能，能帮您更快找到答案。
 
 # 获取更多帮助
+
 如果查阅文档无法解决您的问题，您可搜索钉群 35809478，AT 相应的值班同学会快速跟进您遇到的问题。

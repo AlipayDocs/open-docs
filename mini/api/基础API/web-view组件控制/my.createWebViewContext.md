@@ -6,7 +6,7 @@
 
 ## 使用限制
 
-- 基础库 [1.8.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端  10.1.10 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 基础库 [1.8.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.10 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
@@ -44,9 +44,9 @@ Page({
     // e.detail 是 H5 发来的消息内容
     console.log(e.detail);
     // 向H5发送消息
-    this.webViewContext.postMessage({'sendToWebView': '1'});
-  }
-})
+    this.webViewContext.postMessage({ sendToWebView: '1' });
+  },
+});
 ```
 
 web-view 所加载的 H5 页面中的 js 代码：
@@ -54,12 +54,12 @@ web-view 所加载的 H5 页面中的 js 代码：
 ```javascript
 // H5 的 js 代码
 // 需要定义 my.onMessage 函数用于接收来自小程序的消息
-my.onMessage = function(message) {
+my.onMessage = function (message) {
   // 这里收到的 message 就是小程序原样发过来的
   console.log(message);
-}
+};
 // H5 向小程序发送消息
-my.postMessage({'sendToMiniProgram': '0'});
+my.postMessage({ sendToMiniProgram: '0' });
 ```
 
 **请注意**，代码示例中的 `my.onMessage =` 是一个赋值操作，当 H5 收到来自小程序的消息时，会尝试执行 my.onMessage 函数，也就会调用您所定义的函数。
@@ -70,7 +70,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| webviewId | String | 是 | 要创建的 `web-view` 所对应的 id 属性。在上面的代码示例中，webviewId 为 `web-view-1`。 |
+| webviewId | String | 是 | 要创建的  `web-view` 所对应的 id 属性。在上面的代码示例中，webviewId 为 `web-view-1`。 |
 
 ## 返回值
 

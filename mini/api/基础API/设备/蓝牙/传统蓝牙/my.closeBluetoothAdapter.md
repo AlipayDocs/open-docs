@@ -1,20 +1,22 @@
-
 # 简介
+
 **my.closeBluetoothAdapter** 是关闭本机蓝牙模块的 API。
 
 ## 使用限制
 
-- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 支付宝客户端  10.0.18  或更高版本，若版本较低，建议采取  [兼容处理](/mini/framework/compatibility)。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 调用该方法将断开所有已建立的蓝牙连接并释放系统资源。
-- 建议在结束小程序蓝牙流程时调用，与 [my.openBluetoothAdapter](https://opendocs.alipay.com/mini/api/kunuy4) 成对调用。
-- 调用 my.closeBluetoothAdapter 释放资源为异步操作，不建议使用 my.closeBluetoothAdapter 和 [my.openBluetoothAdapter](https://opendocs.alipay.com/mini/api/kunuy4) 作为异常处理流程（相当于先关闭再开启，重新初始化，效率低，易发生线程同步问题）。
+- 建议在结束小程序蓝牙流程时调用，与  [my.openBluetoothAdapter](https://opendocs.alipay.com/mini/api/kunuy4)  成对调用。
+- 调用  my.closeBluetoothAdapter  释放资源为异步操作，不建议使用  my.closeBluetoothAdapter  和  [my.openBluetoothAdapter](https://opendocs.alipay.com/mini/api/kunuy4)  作为异常处理流程（相当于先关闭再开启，重新初始化，效率低，易发生线程同步问题）。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/3fea28309fe03b8632b10fa052785eb3.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
 
 ## 效果示例
+
 ![|723x407](https://gw.alipayobjects.com/zos/skylark-tools/public/files/2da5ddc61e0622df25115720af3eaad7.png#align=left&display=inline&height=420&margin=%5Bobject%20Object%5D&originHeight=720&originWidth=1280&status=done&style=stroke&width=746)
 
 # 接口调用
@@ -22,26 +24,29 @@
 ## 示例代码
 
 ### .acss 示例代码
+
 ```css
 /* .acss */
 .help-info {
-  padding:10px;
-  color:#000000;
+  padding: 10px;
+  color: #000000;
 }
 .help-title {
-  padding:10px;
-  color:#FC0D1B;
+  padding: 10px;
+  color: #fc0d1b;
 }
 ```
 
 ### .json 示例代码
+
 ```json
 {
-    "defaultTitle": "Bluetooth"
+  "defaultTitle": "Bluetooth"
 }
 ```
 
 ### .axml 示例代码
+
 ```html
 <!-- .axml-->
 <view class="page">
@@ -87,6 +92,7 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 // .js
 Page({
@@ -142,7 +148,7 @@ Page({
     my.startBluetoothDevicesDiscovery({
       allowDuplicatesKey: false,
       success: () => {
-        my.onBluetoothDeviceFound((res) => {
+        my.onBluetoothDeviceFound(res => {
           var deviceArray = res.devices;
           for (var i = deviceArray.length - 1; i >= 0; i--) {
             var deviceObj = deviceArray[i];
@@ -357,7 +363,7 @@ Page({
           characteristicId: this.data.notifyId,
           success: () => {
             //监听特征值变化的事件
-            my.onBLECharacteristicValueChange((res) => {
+            my.onBLECharacteristicValueChange(res => {
               my.alert({ content: '得到响应数据 = ' + res.value });
             });
             my.alert({ content: '监听成功' });
@@ -374,7 +380,9 @@ Page({
   },
   //其他事件
   bluetoothAdapterStateChange() {
-    my.onBluetoothAdapterStateChange(this.getBind('onBluetoothAdapterStateChange'));
+    my.onBluetoothAdapterStateChange(
+      this.getBind('onBluetoothAdapterStateChange')
+    );
   },
   onBluetoothAdapterStateChange(res) {
     if (res.error) {
@@ -384,7 +392,9 @@ Page({
     }
   },
   offBluetoothAdapterStateChange() {
-    my.offBluetoothAdapterStateChange(this.getBind('onBluetoothAdapterStateChange'));
+    my.offBluetoothAdapterStateChange(
+      this.getBind('onBluetoothAdapterStateChange')
+    );
   },
   getBind(name) {
     if (!this[`bind${name}`]) {
@@ -403,7 +413,9 @@ Page({
     }
   },
   offBLEConnectionStateChanged() {
-    my.offBLEConnectionStateChanged(this.getBind('onBLEConnectionStateChanged'));
+    my.offBLEConnectionStateChanged(
+      this.getBind('onBLEConnectionStateChanged')
+    );
   },
   onUnload() {
     this.offBLEConnectionStateChanged();
@@ -415,6 +427,7 @@ Page({
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |

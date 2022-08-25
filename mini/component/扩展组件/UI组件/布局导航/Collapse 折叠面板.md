@@ -1,21 +1,24 @@
-
 # 简介
+
 可以折叠 / 展开的内容区域。
 
 - 对复杂区域进行分组和隐藏，保持页面的整洁；
 - **手风琴模式** 是一种特殊的折叠面板，只允许单个内容区域展开。
 
 ## 扫码体验
+
 ![|154x191](https://mdn.alipayobjects.com/afts/img/A*zPrfTYBFXaQAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=6VlOp_JCeXb8UFqBpZsovAAAAABkMK8AAAAA#align=left&display=inline&height=191&margin=%5Bobject%20Object%5D&originHeight=191&originWidth=154&status=done&style=none&width=154)
 
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-collapse?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-collapse?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
   "defaultTitle": "Collapse",
@@ -27,6 +30,7 @@
 ```
 
 ### .axml 示例代码
+
 ```html
 <view>
   <view class="demo-title">基础用法</view>
@@ -79,11 +83,12 @@
         <view>内容区域</view>
       </view>
     </collapse-item>
-  </collapse>  
+  </collapse>
 </view>
 ```
 
 ### .acss 示例代码
+
 ```css
 .item-content {
   padding: 14px 16px;
@@ -97,6 +102,7 @@
 ```
 
 ## 属性说明
+
 Collapse 折叠面板主要是有 `<collapse>` 和 `<collapse-item>` 两部分组成，所以，属性也有所不同。
 
 | **属性** | **类型** | **描述** |
@@ -107,8 +113,8 @@ Collapse 折叠面板主要是有 `<collapse>` 和 `<collapse-item>` 两部分�
 | accordion | Boolean | 是否为手风琴模式。<br />**默认值：** false |
 | collapseKey | String | 唯一标示 collapse 和对应的 collapse-item。 |
 
-
 ### collapse-item
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | className | String | 自定义 class。 |
@@ -122,9 +128,8 @@ Collapse 折叠面板主要是有 `<collapse>` 和 `<collapse-item>` 两部分�
 | disabled | Boolean | 当前面板是否可点击使用。<br />**默认值：** true |
 | am-collapse-item-title | Slot | 面板头内容。 |
 
-
-## Bug & Tip 
+## Bug & Tip
 
 - 当页面中存在多个 collapse 组件时，collapse 所对应的 collapse-item 的 `collapseKey` 属性为必选值并且必须相等。
 - 当页面中只有一个 collapse 组件时，`collapseKey` 不需要提供。
-- 如 `accordion` 为 true 时，`activeKey` 传值仅为字符串，如果传数组将导致取值错误，展示默认的第一个。 
+- 如 `accordion` 为 true 时，`activeKey` 传值仅为字符串，如果传数组将导致取值错误，展示默认的第一个。

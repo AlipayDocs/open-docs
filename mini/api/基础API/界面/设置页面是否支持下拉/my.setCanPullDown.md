@@ -1,5 +1,5 @@
-
 # 简介
+
 **my.setCanPullDown** 是设置页面是否支持下拉（小程序内页面默认支持下拉）的 API。
 
 ## 使用限制
@@ -12,17 +12,18 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // .js
 my.setCanPullDown({
-  canPullDown:true
-})
+  canPullDown: true,
+});
 ```
 
 ## 入参
+
 入参为 Object 类型，属性如下：
 
-| **属性** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| canPullDown | Boolean | 是 | 是否支持下拉。 |
-
+| **属性**    | **类型** | **必填** | **描述**       |
+| ----------- | -------- | -------- | -------------- |
+| canPullDown | Boolean  | 是       | 是否支持下拉。 |
