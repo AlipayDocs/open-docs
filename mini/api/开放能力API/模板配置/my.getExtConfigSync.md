@@ -38,11 +38,10 @@ my.alert({
 ## 错误码
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
-| 20 | 模板配置为空。 | 确保 ext.json 存在且 ext 字段是不为空。 |
+| 20 | 模板配置为空。 | 确保 ext.json 存在且 ext 字段不为空。 |
 | 21 | 已停用模板配置。 | 将 ext.json 的 extEnable 字段设置为 true。 |
 
 ## Q：为什么实例小程序调用 my.getExtConfig/my.getExtConfigSync 获取不到数据？
 A：一般都是因为 alipay.open.mini.version.upload 传入的 ext 参数有问题，请检查：
-- JSON 格式是否有效；
-- JSON 内容是否符合模板 `ext` 配置规范（参考 [模板小程序](https://opendocs.alipay.com/mini/isv/creatminiapp#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 文档）；
-- JSON 中的 `extEnable` 字段是否已设置为 `true`。
+- ext 参数内容是否符合模板配置规范（参考 [模板小程序](https://opendocs.alipay.com/mini/isv/creatminiapp#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 文档）；
+- ext JSON 内容中 `extEnable` 字段是否已设置为 `true`。
