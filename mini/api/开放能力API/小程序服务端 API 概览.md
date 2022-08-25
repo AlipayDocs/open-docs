@@ -31,11 +31,11 @@
 
 | **接口英文名** | **接口中文名** | **接口描述** |
 | --- | --- | --- |
-| [alipay.open.mini.content.sync](https://opendocs.alipay.com/apis/00wik8)﻿ | 小程序内容接入 | 支持小程序同步小程序服务、商品信息接入、门店绑定内容类型。 |
-| ﻿[alipay.open.app.appcontent.function.create](https://opendocs.alipay.com/apis/011agl)﻿ | ﻿[﻿](https://opendocs.alipay.com/apis/011agl)小程序服务创建 | 创建小程序服务，获取小程序服务 code。 |
-| ﻿[alipay.open.app.appcontent.function.query](https://opendocs.alipay.com/apis/0119at)﻿ | ﻿[﻿](https://opendocs.alipay.com/apis/0119at)﻿[﻿](https://opendocs.alipay.com/apis/011bkt)小程序服务查询 | 查询小程序服务的审核状态。 |
-| ﻿[alipay.open.app.appcontent.function.modify](https://opendocs.alipay.com/apis/011bks)﻿ | ﻿[﻿](https://opendocs.alipay.com/apis/011bks)小程序服务编辑 | 小程序服务被驳回需要重新提审或修改服务基础信息时，可以通过接口来编辑服务并提交审核。 |
-| ﻿[alipay.open.app.appcontent.function.offline](https://opendocs.alipay.com/apis/011bkt)﻿ | ﻿[﻿](https://opendocs.alipay.com/apis/011bkt)小程序服务失效 | 当小程序服务需要删除时，可以通过接口来删除服务。服务被删除后，该服务无法再在 C 端被曝光。 |
+| [alipay.open.mini.content.sync](https://opendocs.alipay.com/apis/00wik8) | 小程序内容接入 | 支持小程序同步小程序服务、商品信息接入、门店绑定内容类型。 |
+| [alipay.open.app.appcontent.function.create](https://opendocs.alipay.com/apis/011agl) | [﻿](https://opendocs.alipay.com/apis/011agl)小程序服务创建 | 创建小程序服务，获取小程序服务 code。 |
+| [alipay.open.app.appcontent.function.query](https://opendocs.alipay.com/apis/0119at) | [﻿](https://opendocs.alipay.com/apis/0119at)﻿[﻿](https://opendocs.alipay.com/apis/011bkt)小程序服务查询 | 查询小程序服务的审核状态。 |
+| [alipay.open.app.appcontent.function.modify](https://opendocs.alipay.com/apis/011bks) | [﻿](https://opendocs.alipay.com/apis/011bks)小程序服务编辑 | 小程序服务被驳回需要重新提审或修改服务基础信息时，可以通过接口来编辑服务并提交审核。 |
+| [alipay.open.app.appcontent.function.offline](https://opendocs.alipay.com/apis/011bkt) | [﻿](https://opendocs.alipay.com/apis/011bkt)小程序服务失效 | 当小程序服务需要删除时，可以通过接口来删除服务。服务被删除后，该服务无法再在 C 端被曝光。 |
 
 ## 蚂蚁门店管理
 
@@ -67,22 +67,22 @@
 
 | **接口英文名** | **接口中文名** | **接口描述** |
 | --- | --- | --- |
-| ﻿[alipay.user.agreement.page.sign](https://docs.open.alipay.com/api_2/alipay.user.agreement.page.sign)﻿ | 支付宝个人协议页面签约接口 | 开发者可通过该接口传入周期扣款协议相关限制内容，生成签约参数用于小程序唤起签约页面。<br />目前支持支付宝钱包 H5 页面签约、扫码签约等方式。 |
-| ﻿[alipay.user.agreement.query](https://docs.open.alipay.com/api_2/alipay.user.agreement.query)﻿ | 支付宝个人代扣协议查询接口 | 支付宝个人代扣协议查询接口，通过该接口可查询用户协议信息。 |
-| ﻿[alipay.user.agreement.unsign](https://docs.open.alipay.com/api_2/alipay.user.agreement.unsign)﻿ | 支付宝个人代扣协议解约接口 | 支付宝个人代扣协议解约接口，通过该接口可解除用户在约协议。 |
-| ﻿[alipay.user.agreement.executionplan.modify](https://docs.open.alipay.com/api_2/alipay.user.agreement.executionplan.modify)﻿ | 周期性扣款协议执行计划修改接口 | 通过该接口，商户可以实现延期扣款。 |
-| ﻿[alipay.user.agreement.transfer](https://docs.open.alipay.com/api_2/alipay.user.agreement.transfer)﻿ | 协议由普通通用代扣协议产品转移到周期扣协议产品 | 商户通过接口将普通通用的代扣协议转移成周期扣款协议。 |
+| [alipay.user.agreement.page.sign](https://docs.open.alipay.com/api_2/alipay.user.agreement.page.sign) | 支付宝个人协议页面签约接口 | 开发者可通过该接口传入周期扣款协议相关限制内容，生成签约参数用于小程序唤起签约页面。<br />目前支持支付宝钱包 H5 页面签约、扫码签约等方式。 |
+| [alipay.user.agreement.query](https://docs.open.alipay.com/api_2/alipay.user.agreement.query) | 支付宝个人代扣协议查询接口 | 支付宝个人代扣协议查询接口，通过该接口可查询用户协议信息。 |
+| [alipay.user.agreement.unsign](https://docs.open.alipay.com/api_2/alipay.user.agreement.unsign) | 支付宝个人代扣协议解约接口 | 支付宝个人代扣协议解约接口，通过该接口可解除用户在约协议。 |
+| [alipay.user.agreement.executionplan.modify](https://docs.open.alipay.com/api_2/alipay.user.agreement.executionplan.modify) | 周期性扣款协议执行计划修改接口 | 通过该接口，商户可以实现延期扣款。 |
+| [alipay.user.agreement.transfer](https://docs.open.alipay.com/api_2/alipay.user.agreement.transfer) | 协议由普通通用代扣协议产品转移到周期扣协议产品 | 商户通过接口将普通通用的代扣协议转移成周期扣款协议。 |
 
 **支付接口**
 
 | 接口英文名 | 接口中文名 | 接口描述 |
 | --- | --- | --- |
-| ﻿[alipay.trade.pay](https://docs.open.alipay.com/api_1/alipay.trade.pay/)﻿ | 统一收单交易支付接口 | 用户在完成协议签约后，商户可通过本接口完成协议规定的后续代扣。 |
-| ﻿[alipay.trade.app.pay](https://docs.open.alipay.com/api_1/alipay.trade.app.pay)﻿ | APP 支付 2.0 接口 | 外部商户 APP 唤起快捷 SDK 创建订单并支付。 |
-| ﻿[alipay.trade.refund](https://docs.open.alipay.com/api_1/alipay.trade.refund/)﻿ | ﻿[﻿](https://docs.open.alipay.com/api_1/alipay.trade.refund/)统一收单交易退款接口 | 当交易发生之后一段时间内，卖家可以通过退款接口将支付款退还给买家，支付宝按照退款规则将支付款按原路退到买家帐号上。 |
-| ﻿[alipay.trade.query](https://docs.open.alipay.com/api_1/alipay.trade.query/)﻿ | ﻿[﻿](https://docs.open.alipay.com/api_1/alipay.trade.query/)统一收单线下交易查询 | 该接口提供所有支付宝支付订单的查询，商户可以通过该接口主动查询支付订单状态，完成下一步的业务逻辑。 |
-| ﻿[alipay.trade.cancel](https://docs.open.alipay.com/api_1/alipay.trade.cancel/)﻿ | ﻿[﻿](https://docs.open.alipay.com/api_1/alipay.trade.cancel/)统一收单交易撤销接口 | 支付交易返回失败或支付系统超时，调用该接口撤销交易。 |
-| ﻿[alipay.trade.close](https://docs.open.alipay.com/api_1/alipay.trade.close/)﻿ | ﻿[﻿](https://docs.open.alipay.com/api_1/alipay.trade.close/)统一收单交易关闭接口 | 用于交易创建后，用户在一定时间内未进行支付，可调用该接口直接将未付款的交易进行关闭。 |
+| [alipay.trade.pay](https://docs.open.alipay.com/api_1/alipay.trade.pay/) | 统一收单交易支付接口 | 用户在完成协议签约后，商户可通过本接口完成协议规定的后续代扣。 |
+| [alipay.trade.app.pay](https://docs.open.alipay.com/api_1/alipay.trade.app.pay) | APP 支付 2.0 接口 | 外部商户 APP 唤起快捷 SDK 创建订单并支付。 |
+| [alipay.trade.refund](https://docs.open.alipay.com/api_1/alipay.trade.refund/) | [﻿](https://docs.open.alipay.com/api_1/alipay.trade.refund/)统一收单交易退款接口 | 当交易发生之后一段时间内，卖家可以通过退款接口将支付款退还给买家，支付宝按照退款规则将支付款按原路退到买家帐号上。 |
+| [alipay.trade.query](https://docs.open.alipay.com/api_1/alipay.trade.query/) | [﻿](https://docs.open.alipay.com/api_1/alipay.trade.query/)统一收单线下交易查询 | 该接口提供所有支付宝支付订单的查询，商户可以通过该接口主动查询支付订单状态，完成下一步的业务逻辑。 |
+| [alipay.trade.cancel](https://docs.open.alipay.com/api_1/alipay.trade.cancel/) | [﻿](https://docs.open.alipay.com/api_1/alipay.trade.cancel/)统一收单交易撤销接口 | 支付交易返回失败或支付系统超时，调用该接口撤销交易。 |
+| [alipay.trade.close](https://docs.open.alipay.com/api_1/alipay.trade.close/) | [﻿](https://docs.open.alipay.com/api_1/alipay.trade.close/)统一收单交易关闭接口 | 用于交易创建后，用户在一定时间内未进行支付，可调用该接口直接将未付款的交易进行关闭。 |
 
 ## 商家分账
 
@@ -262,7 +262,7 @@
 
 | **接口英文名** | **接口中文名** | **接口描述** |
 | --- | --- | --- |
-| ﻿[alipay.trade.create](https://docs.open.alipay.com/api_1/alipay.trade.create)﻿ | 统一收单交易创建接口 | 商户通过该接口创建交易订单，获取支付宝订单号。 |
+| [alipay.trade.create](https://docs.open.alipay.com/api_1/alipay.trade.create) | 统一收单交易创建接口 | 商户通过该接口创建交易订单，获取支付宝订单号。 |
 | [alipay.open.app.qrcode.create](https://opendocs.alipay.com/mini/api/openapi-qrcode) | 小程序二维码生成接口 | 生成小程序推广二维码。 |
 
 **扩展功能**

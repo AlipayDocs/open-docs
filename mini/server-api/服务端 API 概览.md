@@ -33,7 +33,7 @@
 
 | 接口英文名 | 接口中文名 | 接口描述 |
 | --- | --- | --- |
-| [alipay.open.mini.content.sync](https://opendocs.alipay.com/mini/02cur3)﻿ | 小程序内容接入 | 支持小程序同步小程序服务、商品信息接入、门店绑定内容类型。 |
+| [alipay.open.mini.content.sync](https://opendocs.alipay.com/mini/02cur3) | 小程序内容接入 | 支持小程序同步小程序服务、商品信息接入、门店绑定内容类型。 |
 | [alipay.open.app.appcontent.function.create](https://opendocs.alipay.com/mini/02ctgp) | 小程序服务创建 | 创建小程序服务，获取小程序服务 code。 |
 | [alipay.open.app.appcontent.function.query](https://opendocs.alipay.com/mini/02cur4) | 小程序服务查询 | 查询小程序服务的审核状态。 |
 | [alipay.open.app.appcontent.function.modify](https://opendocs.alipay.com/mini/02ctgq) | 小程序服务编辑 | 小程序服务被驳回需要重新提审或修改服务基础信息时，可以通过接口来编辑服务并提交审核。 |
