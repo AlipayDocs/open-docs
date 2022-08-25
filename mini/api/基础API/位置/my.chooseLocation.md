@@ -19,17 +19,36 @@
 
 ## 示例代码
 
-### .json 示例代码
-```json
-// API-DEMO page/API/choose-location/choose-location.json
-{
-    "defaultTitle": "选择位置"
-}
+### JavaScript
+```javascript
+Page({
+  data: {
+    longitude: '120.126293',
+    latitude: '30.274653',
+    name: '黄龙万科中心',
+    address: '学院路77号',
+  },
+  chooseLocation() {
+    my.chooseLocation({
+      success:(res) => {
+        console.log(JSON.stringify(res));
+        this.setData({
+          longitude:res.longitude,
+          latitude:res.latitude,
+          name:res.name,
+          address:res.address
+        })
+      },
+      fail:(error) => {
+        my.alert({ content: '调用失败：' + JSON.stringify(error) });
+      },
+    });
+  },
+})
 ```
 
-### .axml 示例代码
+### AXML
 ```html
-<!-- API-DEMO page/API/choose-location/choose-location.axml-->
 <view class="page">
   <view class="page-section">
     <view class="page-section-demo">
@@ -55,39 +74,8 @@
 </view>
 ```
 
-### .js 示例代码
-```javascript
-// API-DEMO page/API/choose-location/choose-location.js
-Page({
-  data: {
-    longitude: '120.126293',
-    latitude: '30.274653',
-    name: '黄龙万科中心',
-    address: '学院路77号',
-  },
-  chooseLocation() {
-    var that = this;
-    my.chooseLocation({
-         success:(res)=>{
-          console.log(JSON.stringify(res));
-          that.setData({
-            longitude:res.longitude,
-            latitude:res.latitude,
-            name:res.name,
-            address:res.address
-          })
-        },
-        fail:(error)=>{
-          my.alert({content: '调用失败：'+JSON.stringify(error), });
-        },
-    });
-    },
-})
-```
-
-### .acss 示例代码
+### ACSS
 ```css
-/* API-DEMO page/API/choose-location/choose-location.acss */
 .page-body-info {
   height: 250rpx;
 }
@@ -112,26 +100,27 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
-### success 回调函数
+## 出参
+success 回调函数收到 Object 类型的参数，包含以下字段
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | name | String | 位置名称。 |
 | address | String | 详细地址。 |
 | provinceName | String | 省名称。 |
-| provinceCode | Number | 省code（搜索选择位置才会返回）。 |
+| provinceCode | Number | 省代码（搜索选择位置才会返回）。 |
 | cityName | String | 市名称。 |
-| cityCode | Number | 市code（从附近列表选择位置才会返回）。|
+| cityCode | Number | 市代码（从附近列表选择位置才会返回）。|
 | adName | String | 区名称。 |
-| adCode | Number | 区code。|
+| adCode | Number | 区代码。|
 | typeName | String | 位置类型名称（搜索选择位置才会返回）。|
-| typeCode | Number | 位置类型名称code（搜索选择位置才会返回）。|
+| typeCode | Number | 位置类型代码（搜索选择位置才会返回）。|
 | latitude | Number | 纬度，浮点数，范围为-90~90，负数表示南纬。 |
 | longitude | Number | 经度，浮点数，范围为-180~180，负数表示西经。 |
 
-### fail 回调函数 错误码
-| **错误码** | **描述** | **解决方案** |
+## 错误码
+fail 回调函数收到 Object 类型的参数，其 errorCode 字段为错误码
+| ** 错误码 ** | **描述** | **解决方案** |
 | --- | --- | --- |
-| 11 | 用户取消操作 | 为用户取消操作，无需做特殊处理。 |
+| 11 | 用户取消操作 | 无需特殊处理。 |
 
 
