@@ -1,19 +1,22 @@
-
 # 简介
+
 按钮，用户只需单击一下即可执行操作并做出选择。常用于表单提交、界面跳转、模块引导点击。具体用法和小程序框架中 [button](https://opendocs.alipay.com/mini/component/button) 保持一致，在 button 基础上做了样式的封装。
 
 ## 扫码体验
+
 ![|154x191](https://mdn.alipayobjects.com/afts/img/A*-MwMSrAXKSAAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=mDIEfzP2RF0jHtlUvWJKjAAAAABkMK8AAAAA#align=left&display=inline&height=191&margin=%5Bobject%20Object%5D&originHeight=191&originWidth=154&status=done&style=none&width=154)
 
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-button?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-button?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### .json 示例代码
-```
+
+```plain
 {
  "defaultTitle": "Button",
  "usingComponents": {
@@ -25,46 +28,58 @@
 ```
 
 ### .axml 示例代码
+
 ```html
 <view class="container">
- <button onTap="onTest" showLoading="{{showLoading}}" dataName="{{dataName}}" type="{{type}}" subtitle="{{subtitle}}" disabled="{{disabled}}" shape="{{shape}}" capsuleSize="{{capsuleSize}}" capsuleMinWidth="{{capsuleMinWidth}}">
-   {{title}}
- </button>
- <view>主标题</view>
- <input value="{{title}}" onInput="titleChange"/>
- <view>副标题</view>
- <input value="{{subtitle}}" onInput="subtitleChange"/>
- <view>按钮类型</view>
- <radio-group class="radio-group" onChange="typeChange" name="type">
-   <label class="radio" a:for="{{types}}" key="label-{{index}}">
-     <radio value="{{item.name}}" checked="{{item.checked}}" />
-     <text class="radio-text">{{item.value}}</text>
-   </label>
- </radio-group>
- <view>形状</view>
- <radio-group class="radio-group" onChange="shapeChange" name="shape">
-   <label class="radio" a:for="{{shapes}}" key="label-{{index}}">
-     <radio value="{{item.name}}" checked="{{item.checked}}" />
-     <text class="radio-text">{{item.value}}</text>
-   </label>
- </radio-group>
- <view>胶囊按钮大小</view>
- <radio-group class="radio-group" onChange="sizeChange" name="size">
-   <label class="radio" a:for="{{capsuleSizes}}" key="label-{{index}}">
-     <radio value="{{item.name}}" checked="{{item.checked}}" />
-     <text class="radio-text">{{item.value}}</text>
-   </label>
- </radio-group>
- <view>是否禁用</view>
- <checkbox onChange='onDisableChange'/>
- <view>是否限制胶囊按钮最小宽度</view>
- <checkbox onChange='onMinWidthChange'/>
- <view>是否现实loading</view>
- <checkbox onChange='onLoadingChange'/>
+  <button
+    onTap="onTest"
+    showLoading="{{showLoading}}"
+    dataName="{{dataName}}"
+    type="{{type}}"
+    subtitle="{{subtitle}}"
+    disabled="{{disabled}}"
+    shape="{{shape}}"
+    capsuleSize="{{capsuleSize}}"
+    capsuleMinWidth="{{capsuleMinWidth}}"
+  >
+    {{title}}
+  </button>
+  <view>主标题</view>
+  <input value="{{title}}" onInput="titleChange" />
+  <view>副标题</view>
+  <input value="{{subtitle}}" onInput="subtitleChange" />
+  <view>按钮类型</view>
+  <radio-group class="radio-group" onChange="typeChange" name="type">
+    <label class="radio" a:for="{{types}}" key="label-{{index}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />
+      <text class="radio-text">{{item.value}}</text>
+    </label>
+  </radio-group>
+  <view>形状</view>
+  <radio-group class="radio-group" onChange="shapeChange" name="shape">
+    <label class="radio" a:for="{{shapes}}" key="label-{{index}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />
+      <text class="radio-text">{{item.value}}</text>
+    </label>
+  </radio-group>
+  <view>胶囊按钮大小</view>
+  <radio-group class="radio-group" onChange="sizeChange" name="size">
+    <label class="radio" a:for="{{capsuleSizes}}" key="label-{{index}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />
+      <text class="radio-text">{{item.value}}</text>
+    </label>
+  </radio-group>
+  <view>是否禁用</view>
+  <checkbox onChange="onDisableChange" />
+  <view>是否限制胶囊按钮最小宽度</view>
+  <checkbox onChange="onMinWidthChange" />
+  <view>是否现实loading</view>
+  <checkbox onChange="onLoadingChange" />
 </view>
 ```
 
 ### .acss 示例代码
+
 ```css
 .container {
   padding: 20rpx;
@@ -75,6 +90,7 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
   data: {
@@ -106,8 +122,7 @@ Page({
       { name: 'large', value: 'large' },
     ],
   },
-  onLoad() {
-  },
+  onLoad() {},
   typeChange(e) {
     this.setData({
       type: e.detail.value,
@@ -155,6 +170,7 @@ Page({
 ```
 
 ## 属性说明
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | type | String | 按钮样式。<br />**可选值：** default、primary、ghost、warn、warn-ghost、text、light<br />**默认值：** default |
@@ -173,4 +189,3 @@ Page({
 | scope | String | 当 open-type 为 getAuthorize 时有效。<br />**版本要求：** mini-ali-ui [1.11.0](https://docs.alipay.com/mini/framework/compatibility) 及以上 |
 | onTap | EventHandle | 点击。 |
 | public-id | String | 生活号 ID，必须是当前小程序同主体且已关联的生活号，open-type="lifestyle" 时有效。 |
-

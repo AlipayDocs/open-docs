@@ -1,28 +1,32 @@
-
 # 简介
+
 分页标识符。
 
 ## 扫码体验
+
 ![|154x191](https://mdn.alipayobjects.com/afts/img/A*vUeSRZiBv4EAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=WZGmMGHmAo6KgQF8JSYnnQAAAABkMK8AAAAA#align=left&display=inline&height=191&margin=%5Bobject%20Object%5D&originHeight=191&originWidth=154&status=done&style=none&width=154)
 
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-pagination?theme=light&previewZoom=75&chInfo=openhome-doc)  
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-pagination?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
- "defaultTitle": "Pagination",
- "usingComponents": {
-   "pagination": "mini-ali-ui/es/pagination/index"
- }
+  "defaultTitle": "Pagination",
+  "usingComponents": {
+    "pagination": "mini-ali-ui/es/pagination/index"
+  }
 }
 ```
 
 ### .js 示例代码
+
 ```html
 <pagination pagerName='test1' infinite="true">
   <view style="display: flex;height: 100%;">
@@ -49,6 +53,7 @@
 ```
 
 ## 属性说明
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | className | String | 自定义 class。 |
@@ -61,12 +66,11 @@
 | max | Number | 常规分页符最大显示数量。<br />**默认值：** 5 |
 | currentPage | Number | 常规分页符当前页。<br />**默认值：** 1 |
 
-
 ## Bug&Tip
 
 - 分页符组件共有两种模式：无限滚动模式和常规分页符：
-   - 无限滚动模式 `<pagination infinite="{{true}}"></pagination>`。
-   - 常规分页符：`<pagination />`。
+  - 无限滚动模式 `<pagination infinite="{{true}}"></pagination>`。
+  - 常规分页符：`<pagination />`。
 - 无限滚动模式可通过 `fillColor` 和 `frontColor` 设置颜色。
 - 常规分页符可通过 `frontColor` 改变当前页 icon 颜色。
 - 无限滚动模式是双标签形式包含内容，可通过 height 设置容器高度。

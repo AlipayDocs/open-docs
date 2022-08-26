@@ -24,11 +24,11 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 var res = my.getExtConfigSync();
 my.alert({
-  content: '模板ext 同步获取结果：' + JSON.stringify(res),
-  buttonText: 'OK'
+  content: JSON.stringify(res)
 });
 ```
 

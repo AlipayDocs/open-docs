@@ -15,11 +15,12 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // .js
 my.removeTabBarBadge({
-  index: 0
-})
+  index: 0,
+});
 ```
 
 ## 入参

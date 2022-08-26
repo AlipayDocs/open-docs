@@ -1,4 +1,5 @@
 # 简介
+
 **my.setLocatedCity** 是用于修改 [my.chooseCity](https://opendocs.alipay.com/mini/api/ui-city) 中的默认定位城市的名称的 API。
 
 ## 使用限制
@@ -11,12 +12,13 @@
 ![|127x157](https://mdn.alipayobjects.com/afts/img/A*uGCmRImDNksAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=4XIxqvsosH7EjPo-LvzPMgAAAABkMK8AAAAA#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
 
 # 接口调用
+
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/choose-city?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
-
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/choose-city?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
+
 ```javascript
 // .js
 Page({
@@ -27,28 +29,30 @@ Page({
     my.chooseCity({
       showLocatedCity: true,
       showHotCities: true,
-      success: (res) => {
-        my.alert({ title: `chooseAlipayContact response: ${JSON.stringify(res)}` })
+      success: res => {
+        my.alert({
+          title: `chooseAlipayContact response: ${JSON.stringify(res)}`,
+        });
       },
-      fail: (error) => {
-        my.alert({ content: `选择失败${JSON.stringify(error)}` })
+      fail: error => {
+        my.alert({ content: `选择失败${JSON.stringify(error)}` });
       },
       complete: () => {
-        my.showToast({ content: 'complete回调' })
+        my.showToast({ content: 'complete回调' });
       },
-    })
+    });
   },
   noChooseCity() {
     my.chooseCity({
       showLocatedCity: false,
       showHotCities: false,
-      success: (res) => {
-        my.alert({ title: `操作成功: ${JSON.stringify(res)}` })
+      success: res => {
+        my.alert({ title: `操作成功: ${JSON.stringify(res)}` });
       },
-      fail: (error) => {
-        my.alert({ content: `选择失败${JSON.stringify(error)}` })
+      fail: error => {
+        my.alert({ content: `选择失败${JSON.stringify(error)}` });
       },
-    })
+    });
   },
   selfChooseCity() {
     my.chooseCity({
@@ -98,13 +102,13 @@ Page({
           adCode: '110106',
         },
       ],
-      success: (res) => {
-        my.alert({ title: `操作成功: ${JSON.stringify(res)}` })
+      success: res => {
+        my.alert({ title: `操作成功: ${JSON.stringify(res)}` });
       },
-      fail: (error) => {
-        my.alert({ content: `选择失败${JSON.stringify(error)}` })
+      fail: error => {
+        my.alert({ content: `选择失败${JSON.stringify(error)}` });
       },
-    })
+    });
   },
   self_chooseCity() {
     my.chooseCity({
@@ -151,13 +155,13 @@ Page({
           adCode: '110106',
         },
       ],
-      success: (res) => {
-        my.alert({ title: `操作成功: ${JSON.stringify(res)}` })
+      success: res => {
+        my.alert({ title: `操作成功: ${JSON.stringify(res)}` });
       },
-      fail: (error) => {
-        my.alert({ content: `选择失败${JSON.stringify(error)}` })
+      fail: error => {
+        my.alert({ content: `选择失败${JSON.stringify(error)}` });
       },
-    })
+    });
   },
   multiLevelSelect() {
     my.multiLevelSelect({
@@ -197,41 +201,43 @@ Page({
           ], // 级联子数据列表
         },
       ],
-      success: (result) => {
-        console.log(result)
-        my.alert({ content: `级联${JSON.stringify(result)}` })
+      success: result => {
+        console.log(result);
+        my.alert({ content: `级联${JSON.stringify(result)}` });
       },
-      fail: (error) => {
-        my.alert({ content: `调用失败${JSON.stringify(error)}` })
+      fail: error => {
+        my.alert({ content: `调用失败${JSON.stringify(error)}` });
       },
-    })
+    });
   },
   setLocatedCity() {
     my.chooseCity({
       showLocatedCity: true,
       showHotCities: true,
       setLocatedCity: true,
-      success: (res) => {
+      success: res => {
         this.setData({
           localcity: res.city,
-        })
-        my.alert({ title: `chooseAlipayContact response: ${JSON.stringify(res)}` })
+        });
+        my.alert({
+          title: `chooseAlipayContact response: ${JSON.stringify(res)}`,
+        });
       },
-      fail: (error) => {
-        my.alert({ content: `选择失败${JSON.stringify(error)}` })
+      fail: error => {
+        my.alert({ content: `选择失败${JSON.stringify(error)}` });
       },
       complete: () => {
-        my.showToast({ content: 'complete回调' })
+        my.showToast({ content: 'complete回调' });
       },
-    })
-    my.onLocatedComplete((res) => {
+    });
+    my.onLocatedComplete(res => {
       my.setLocatedCity({
         locatedCityId: res.locatedCityId,
         locatedCityName: this.data.localcity,
-        success: (result) => {
+        success: result => {
           console.log(result);
         },
-        fail: (error) => {
+        fail: error => {
           my.alert({
             content: `修改当前定位城市失败${JSON.stringify(error)}`,
           });
@@ -239,7 +245,7 @@ Page({
       });
     });
   },
-})
+});
 ```
 
 ## 入参
@@ -260,22 +266,23 @@ Object 类型，参数如下：
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| locatedCityName | String | 当前定位城市的名称。 |
+| **属性**        | **类型** | **描述**             |
+| --------------- | -------- | -------------------- |
+| locatedCityName | String   | 当前定位城市的名称。 |
 
 ### Function fail
 
 fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| error | Number | 错误码。 |
-| errorMessage | String | 错误描述。 |
+| **属性**     | **类型** | **描述**   |
+| ------------ | -------- | ---------- |
+| error        | Number   | 错误码。   |
+| errorMessage | String   | 错误描述。 |
 
 ## 错误码
+
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 11 | 参数类型错误。 | 检查参数类型是否正确。 |
-| 12 | 必填参数为空。 | 请确认参数   locatedCityId、locatedCityName 是否已填写。 |
+| 12 | 必填参数为空。 | 请确认参数 locatedCityId、locatedCityName 是否已填写。 |
 | 13 | locatedCityId 不匹配。 | 请确保与 **my.chooseCity** 的 onLocatedComplete 的 locatedCityId 保持一致。 |
