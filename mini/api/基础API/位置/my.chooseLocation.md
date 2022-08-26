@@ -4,8 +4,7 @@
 
 ## 使用限制
 
-- 暂无境外地图数据，在中国内地（不含港澳台）以外的地区可能无法正常调用此 API。
-- 仅支持高德地图 style 与火星坐标系。
+- 暂无境外地图数据，在中国内地以外的地区（不港澳台）使用此 API，功能可能不正常。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -20,19 +19,37 @@
 
 ## 示例代码
 
-### .json 示例代码
-
-```json
-// API-DEMO page/API/choose-location/choose-location.json
-{
-  "defaultTitle": "选择位置"
-}
+### JavaScript
+```javascript
+Page({
+  data: {
+    longitude: '',
+    latitude: '',
+    name: '',
+    address: '',
+  },
+  chooseLocation() {
+    my.chooseLocation({
+      success:(res) => {
+        console.log(JSON.stringify(res));
+        this.setData({
+          longitude:res.longitude,
+          latitude:res.latitude,
+          name:res.name,
+          address:res.address
+        })
+      },
+      fail:(error) => {
+        my.alert({ content: '调用失败：' + JSON.stringify(error) });
+      },
+    });
+  },
+})
 ```
 
-### .axml 示例代码
 
+### AXML
 ```html
-<!-- API-DEMO page/API/choose-location/choose-location.axml-->
 <view class="page">
   <view class="page-section">
     <view class="page-section-demo">
@@ -58,41 +75,8 @@
 </view>
 ```
 
-### .js 示例代码
-
-```javascript
-// API-DEMO page/API/choose-location/choose-location.js
-Page({
-  data: {
-    longitude: '120.126293',
-    latitude: '30.274653',
-    name: '黄龙万科中心',
-    address: '学院路77号',
-  },
-  chooseLocation() {
-    var that = this;
-    my.chooseLocation({
-      success: res => {
-        console.log(JSON.stringify(res));
-        that.setData({
-          longitude: res.longitude,
-          latitude: res.latitude,
-          name: res.name,
-          address: res.address,
-        });
-      },
-      fail: error => {
-        my.alert({ content: '调用失败：' + JSON.stringify(error) });
-      },
-    });
-  },
-});
-```
-
-### .acss 示例代码
-
+### ACSS
 ```css
-/* API-DEMO page/API/choose-location/choose-location.acss */
 .page-body-info {
   height: 250rpx;
 }
@@ -118,13 +102,20 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-### success 回调函数
+## 出参
+success 回调函数携带 Object 类型的参数，包含以下字段：
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| latitude | Number | 纬度，浮点数，范围为-90~90，负数表示南纬 |
+| longitude | Number | 经度，浮点数，范围为-180~180，负数表示西经 |
+| name | String | 位置名称 |
+| provinceName | String | 位置所在省 |
+| cityName | String | 位置所在市 |
+| address | String | 详细地址 |
 
-| **属性**     | **类型** | **描述**                                     |
-| ------------ | -------- | -------------------------------------------- |
-| name         | String   | 位置名称。                                   |
-| address      | String   | 详细地址。                                   |
-| latitude     | Number   | 纬度，浮点数，范围为-90~90，负数表示南纬。   |
-| longitude    | Number   | 经度，浮点数，范围为-180~180，负数表示西经。 |
-| provinceName | String   | 省份名称。                                   |
-| cityName     | String   | 城市名称。                                   |
+
+## 错误码
+fail 回调函数收到 Object 类型的参数，其 errorCode 字段为错误码。
+| ** 错误码 ** | **描述** | **解决方案** |
+| --- | --- | --- |
+| 11 | 用户取消操作 | 无需特殊处理。 |
