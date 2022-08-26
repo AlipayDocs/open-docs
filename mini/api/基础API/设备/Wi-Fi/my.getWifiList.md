@@ -1,6 +1,6 @@
-
 # 简介
-请求获取 Wi-Fi 列表，会在 [my.onGetWifiList](https://opendocs.alipay.com/mini/api/ongetwifilist) 注册的回调中返回 wifiList 数据。iOS 将跳转到系统的 Wi-Fi 界面，Android 不会跳转。 
+
+请求获取 Wi-Fi 列表，会在 [my.onGetWifiList](https://opendocs.alipay.com/mini/api/ongetwifilist) 注册的回调中返回 wifiList 数据。iOS 将跳转到系统的 Wi-Fi 界面，Android 不会跳转。
 
 # 使用限制
 
@@ -13,11 +13,13 @@
 ## 代码示例
 
 ### .js 代码示例
+
 ```javascript
 my.getWifiList();
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -25,4 +27,3 @@ Object 类型，属性如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Funciton | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-

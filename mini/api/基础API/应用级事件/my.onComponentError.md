@@ -1,7 +1,6 @@
 # 简介
 
-**my.onComponentError** 是用于监听小程序自定义组件内部 JS 代码的 error 事件。
-当自定义组件内部 JS 代码运行抛出错误时，除了会执行 [my.onError](https://opendocs.alipay.com/mini/00nnsx) 回调外，同时会触发 my.onComponentError 回调。
+**my.onComponentError** 是用于监听小程序自定义组件内部 JS 代码的 error 事件。当自定义组件内部 JS 代码运行抛出错误时，除了会执行 [my.onError](https://opendocs.alipay.com/mini/00nnsx) 回调外，同时会触发 my.onComponentError 回调。
 
 ## 使用限制
 
@@ -22,20 +21,21 @@ const callback = (error, method, component) => {
 // 监听自定义组件生命周期方法和用户自定义的组件实例方法，执行抛错时都会触发 my.onComponentError 回调。
 my.onComponentError(callback);
 // 取消监听
-my.offComponentError(callback)
+my.offComponentError(callback);
 ```
 
 ## 入参
+
 入参为回调函数：
 
-| **参数** | **类型** | **描述** |
-| --- | --- | --- |
+| **参数** | **类型** | **描述**                                         |
+| -------- | -------- | ------------------------------------------------ |
 | 回调函数 | Function | 自定义组件内部 JS 代码运行抛出错误时的回调函数。 |
 
 ### 回调函数
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| error | Error | 标准 error 对象。 |
-| method | String | 抛出错误的具体方法。 |
-| component | Component | Component 实例。 |
 
+| **属性**  | **类型**  | **描述**             |
+| --------- | --------- | -------------------- |
+| error     | Error     | 标准 error 对象。    |
+| method    | String    | 抛出错误的具体方法。 |
+| component | Component | Component 实例。     |

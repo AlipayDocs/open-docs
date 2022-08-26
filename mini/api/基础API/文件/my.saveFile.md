@@ -1,18 +1,26 @@
+**此 API 已停止维护，推荐使用 [FileSystemManager.saveFile](https://opendocs.alipay.com/mini/api/022b6n)，历史接入此 API 的小程序不受影响。**
 
 # 简介
-**my.saveFile** 是保存文件到本地（本地文件大小总容量限制：50 MB）的 API。   
+
+**my.saveFile** 是将临时文件保存为本地缓存文件的 API。   
 使用该API保存的文件，除非用户主动删除小程序或者是通过调用 [my.removeSavedFile](https://opendocs.alipay.com/mini/api/dgi1fr) API 删除文件，否则文件不会被删除。
+此 API 不再维护，推荐使用 [FileSystemManager.save](https://opendocs.alipay.com/mini/api/022b6n) 替代。
+
 
 ## 使用限制
 
-- 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib)  或更高版本，支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本，支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 - 此 API 单次上传文件存储大小限制为10 MB。
+- 本地文件大小总容量限制 50 MB。
+
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/3a76443909a425c37fec24b43b6bcd85.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
 
 ## 效果示例
+
 ![|370x664](http://mdn.alipayobjects.com/afts/img/A*WbFmS5eMqjAAAAAAAAAAAAAAAa8wAA/original?bz=openpt_doc&t=dKNiQT8PMtRU65WBY5c6bAAAAABkMK8AAAAA#align=left&display=inline&height=664&margin=%5Bobject%20Object%5D&originHeight=664&originWidth=370&status=done&style=stroke&width=370)
 
 # 接口调用
@@ -20,14 +28,15 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // .js
 my.chooseImage({
-  success: (res) => {
+  success: res => {
     my.saveFile({
       apFilePath: res.apFilePaths[0],
-      success: (res) => {
-        console.log(JSON.stringify(res))
+      success: res => {
+        console.log(JSON.stringify(res));
       },
       fail: (error) => {
         console.log(JSON.stringify(error))
@@ -41,6 +50,7 @@ my.chooseImage({
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -50,8 +60,8 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ### success 回调函数
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | apFilePath | String | 保存后的文件路径([本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6))。 |
@@ -68,3 +78,4 @@ Object 类型，属性如下：
 
 ### Q: 通过 my.saveFile 保存的文件在哪里？   
 - 安卓系统可在 手机存储/alipay/pictures/文件位置 查看保存的文件；iOS 系统无法查看被隐藏的目录路径。如果想要保存图片的话可以使用[my.saveImagetophotosalbum](https://opendocs.alipay.com/mini/api/media/image/my.saveImagetophotosalbum) API 进行保存
+

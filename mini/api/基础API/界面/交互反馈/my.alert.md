@@ -1,4 +1,5 @@
 # 简介
+
 **my.alert** 方法用于弹出一个带有标题、内容以及确认按钮的警告框。
 
 ## 使用限制
@@ -15,9 +16,10 @@
 
 ## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/alert?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/alert?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
+
 ```javascript
 // API-DEMO page/API/alert/alert.js
 Page({
@@ -30,10 +32,10 @@ Page({
         my.alert({
           title: '用户点击了「我知道了」',
         });
-      }
+      },
     });
   },
-})
+});
 ```
 
 ## 入参
@@ -50,19 +52,25 @@ Object 类型，参数如下：
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 # 常见问题
+
 ## Q：警告框内容 content 文字如何进行换行？
-A：content 文字可通过 \n 或 \r\n 进行换行，代码示例： 
+
+A：content 文字可通过 \n 或 \r\n 进行换行，代码示例：
+
 ```javascript
 my.alert({
-  content: '第一行\n第二行\r\n第三行'
-})
+  content: '第一行\n第二行\r\n第三行',
+});
 ```
 
-## Q：content 属性支持设置样式吗？content 属性支持html解析吗？
+## Q：content 属性支持设置样式吗？content 属性支持 html 解析吗？
+
 A：content 不支持设置样式和 html 解析。如有相关需求，可使用 [Modal](https://opendocs.alipay.com/mini/component-ext/modal) 组件实现一个自定义弹窗。
 
 ## Q：content 属性文字对齐方式？
-A：在安卓系统下，content属性文字是左对齐的；在 iOS 系统下，content 属性文字是居中对齐的。
+
+A：在安卓系统下，content 属性文字是左对齐的；在 iOS 系统下，content 属性文字是居中对齐的。
 
 ## Q：在 my.alert 唤起警告框后进行页面跳转，警告框是否消失？
-A：如果在 my.alert 唤起警告框后进行跳转页面，在安卓系统下页面跳转后 my.alert 警告框依然存在，在 iOS 系统下跳转页面后 my.alert 警告框消失。 
+
+A：如果在 my.alert 唤起警告框后进行跳转页面，在安卓系统下页面跳转后 my.alert 警告框依然存在，在 iOS 系统下跳转页面后 my.alert 警告框消失。

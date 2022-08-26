@@ -1,5 +1,6 @@
 # 简介
-**my.onLocatedComplete** 是监听地理位置定位完成事件的 API，只针对 [my.chooseCity](https://opendocs.alipay.com/mini/api/ui-city) 中属性 setLocatedCity 为 true 的情况。
+
+**my.onLocatedComplete** 是监听地理位置定位完成事件的 API，只针对 [my.chooseCity](https://opendocs.alipay.com/mini/api/ui-city) 中属性 setLocatedCity 为 true 的情况。
 
 ## 使用限制
 
@@ -14,8 +15,7 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/choose-city?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
-
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/choose-city?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
 
@@ -26,7 +26,7 @@ Page({
     my.chooseCity({
       showLocatedCity: true,
       showHotCities: true,
-      success: (res) => {
+      success: res => {
         my.alert({
           title: 'chooseCity response: ' + JSON.stringify(res),
         });
@@ -34,23 +34,23 @@ Page({
     });
   },
   setLocatedCity() {
-    my.onLocatedComplete(function(result){
-        my.setLocatedCity({
-          locatedCityId:result.locatedCityId,
-          locatedCityName:'修改后的城市名', 
-          success: (res) => {
-            my.alert({ content: '修改当前定位城市成功' + JSON.stringify(res), });
-          },
-          fail: (error) => {
-            my.alert({ content: '修改当前定位城市失败' + JSON.stringify(error), });
-          },
-        });
+    my.onLocatedComplete(function (result) {
+      my.setLocatedCity({
+        locatedCityId: result.locatedCityId,
+        locatedCityName: '修改后的城市名',
+        success: res => {
+          my.alert({ content: '修改当前定位城市成功' + JSON.stringify(res) });
+        },
+        fail: error => {
+          my.alert({ content: '修改当前定位城市失败' + JSON.stringify(error) });
+        },
+      });
     });
     my.chooseCity({
       showLocatedCity: true,
       showHotCities: true,
       setLocatedCity: true,
-      success: (res) => {
+      success: res => {
         my.alert({
           title: 'chooseCity response: ' + JSON.stringify(res),
         });
@@ -65,6 +65,7 @@ Page({
 ### 回调函数返回示例
 
 地理位置定位完成时，触发回调函数，回调参数示例如下：
+
 ```javascript
 {
   longitude: 100.3,
@@ -77,16 +78,16 @@ Page({
 
 入参为回调函数：
 
-| **参数** | **类型** | **描述** |
-| --- | --- | --- |
+| **参数** | **类型** | **描述**                               |
+| -------- | -------- | -------------------------------------- |
 | 回调函数 | Function | 小程序地理位置定位完成事件的回调函数。 |
 
 ### 回调函数
 
 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| longitude | Number | 当前定位城市经度。 |
-| latitude | Number | 当前定位城市经度。 |
-| locatedCityId | String | 当前定位城市 id，setLocatedCity 的时候带上。 |
+| **属性**      | **类型** | **描述**                                     |
+| ------------- | -------- | -------------------------------------------- |
+| longitude     | Number   | 当前定位城市经度。                           |
+| latitude      | Number   | 当前定位城市经度。                           |
+| locatedCityId | String   | 当前定位城市 id，setLocatedCity 的时候带上。 |

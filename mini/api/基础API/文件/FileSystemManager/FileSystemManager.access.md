@@ -1,4 +1,5 @@
 # 简介
+
 **FileSystemManager.access** 判断文件/目录是否存在。
 
 ## 使用限制
@@ -16,11 +17,11 @@
 ```javascript
 let fs = my.getFileSystemManager();
 fs.access({
- path: `${my.env.USER_DATA_PATH}/test.txt`,
- success: (res) => {
- 	console.log("文件存在")
- }
-})
+  path: `${my.env.USER_DATA_PATH}/test.txt`,
+  success: res => {
+    console.log('文件存在');
+  },
+});
 ```
 
 ## 入参
@@ -36,7 +37,7 @@ Object 类型，参数如下：
 
 ## 错误码
 
-| **错误码** | **说明** |
-| --- | --- |
-| 10022 | 文件/目录不存在 |
-| 10024 | 传入的路径没有读的权限 |
+| **错误码** | **说明**               |
+| ---------- | ---------------------- |
+| 10022      | 文件/目录不存在        |
+| 10024      | 传入的路径没有读的权限 |

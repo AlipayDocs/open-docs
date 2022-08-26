@@ -1,4 +1,5 @@
 # 简介
+
 **onPullDownRefresh** 可以监听该页面的用户下拉刷新事件。
 
 需要在 app.json 的 window 选项中配置 `"allowsBounceVertical": "YES"`，并且在页面对应的 .json 文件中配置 `"pullRefresh": true`，当前页面才允许下拉刷新。
@@ -19,17 +20,21 @@
 
 ## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/pull-down-refresh?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/pull-down-refresh?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .json 示例代码
+
 在页面对应的 .json 文件中添加如下配置：
+
 ```json
 {
   "defaultTitle": "下拉刷新",
   "pullRefresh": true
 }
 ```
+
 在 app.json 文件中添加如下配置：
+
 ```json
 {
   "window": {
@@ -39,6 +44,7 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
   onPullDownRefresh() {
@@ -47,10 +53,10 @@ Page({
   stopPullDownRefresh() {
     my.stopPullDownRefresh({
       complete(res) {
-        console.log(res, new Date())
-      }
-    })
-  }
+        console.log(res, new Date());
+      },
+    });
+  },
 });
 ```
 
@@ -64,4 +70,5 @@ Page({
 # 常见问题
 
 ## Q：为什么 onPullDownRefresh 回调不触发？
+
 A：需要在用户主动下拉刷新或者调用 my.startPullDownRefresh 后才会触发 onPullDownRefresh 回调，如果是用户主动下拉刷新，需要在 app.json 中设置 allowsBounceVertical: 'YES', 在页面的 json 文件中设置 pullRefresh: true。

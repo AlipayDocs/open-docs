@@ -1,4 +1,5 @@
 # 简介
+
 **FileSystemManager.getSavedFileList** 获取该小程序下已保存的本地缓存文件列表。
 
 ## 使用限制
@@ -15,9 +16,9 @@
 ```javascript
 let fs = my.getFileSystemManager();
 fs.getSavedFileList({
-  success: (res) => {
-    console.log("从fileList文件数组中取值", res.fileList);
-  }
+  success: res => {
+    console.log('从fileList文件数组中取值', res.fileList);
+  },
 });
 ```
 
@@ -35,8 +36,8 @@ Object 类型，参数如下：
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **说明** |
-| --- | --- | --- |
+| **属性** | **类型**        | **说明**   |
+| -------- | --------------- | ---------- |
 | fileList | Array\<Object\> | 文件数组。 |
 
 #### Object fileList

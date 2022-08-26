@@ -1,4 +1,5 @@
 # 简介
+
 **my.reLaunch** 是关闭所有页面，跳转到应用内的某个页面。
 
 ## 使用限制
@@ -18,6 +19,7 @@
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/navigator?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
+
 ```javascript
 Page({
   my.reLaunch({
@@ -30,6 +32,7 @@ Page({
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -59,14 +62,18 @@ Object 类型，参数如下：
 </table>
 
 # 常见问题
+
 ## Q：my.navigateTo、my.redirectTo、my.reLaunch 的区别是什么？
-A：三者区别在于页面层级关系的保留。   
-my.navigateTo 是保留当前页面，跳转到新页面，小程序导航栏的左上角会出现 **返回上一页** 按钮。   
-[my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 是关闭当前页面，跳转到新页面。当页面栈深度为 1 时，小程序导航栏的左上角不会出现 **返回上一页** 按钮，当页面深度大于 1 时，会出现 **返回上一页** 按钮。   
+
+A：三者区别在于页面层级关系的保留。  
+my.navigateTo 是保留当前页面，跳转到新页面，小程序导航栏的左上角会出现 **返回上一页** 按钮。  
+[my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 是关闭当前页面，跳转到新页面。当页面栈深度为 1 时，小程序导航栏的左上角不会出现 **返回上一页** 按钮，当页面深度大于 1 时，会出现 **返回上一页** 按钮。  
 [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 是关闭所有页面，跳转到新页面，小程序导航栏的左上角会出现 **返回首页** 按钮。
 
 ## Q：如何监听小程序导航栏的左上角的 返回首页 按钮？
+
 A：暂不支持监听小程序导航栏的左上角的 **返回首页** 按钮。
 
 ## Q：如何隐藏小程序中的导航栏的 返回首页 按钮？
+
 A：[my.hideBackHome](https://opendocs.alipay.com/mini/api/ui-navigate) 接口可以隐藏导航栏 **返回首页** 按钮。

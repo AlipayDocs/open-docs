@@ -28,11 +28,12 @@ const CanvasContext = my.createCanvasContext('canvas');
 CanvasContext.toTempFilePath({
   success(res) {
     console.log(res.apFilePath);
-  }
-})
+  },
+});
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -61,13 +62,13 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| error | Number | 错误码。 |
-| errorMessage | String | 错误描述。 |
+| **属性**     | **类型** | **描述**   |
+| ------------ | -------- | ---------- |
+| error        | Number   | 错误码。   |
+| errorMessage | String   | 错误描述。 |
 
 ## 错误码
 
-| **错误码** | **描述** |
-| --- | --- |
-| 1 | canvas content or format wrong! |
+| **错误码** | **描述**                        |
+| ---------- | ------------------------------- |
+| 1          | canvas content or format wrong! |
