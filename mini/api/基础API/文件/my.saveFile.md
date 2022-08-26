@@ -1,3 +1,5 @@
+**此 API 已停止维护，推荐使用 [FileSystemManager.saveFile](https://opendocs.alipay.com/mini/api/022b6n)，历史接入此 API 的小程序不受影响。**
+
 # 简介
 
 **my.saveFile** 将临时文件保存为本地缓存文件。
