@@ -7,10 +7,10 @@ Canvas 实例，可以通过 [SelectorQuery](https://opendocs.alipay.com/mini/ap
 
 ## 属性
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| width | Number | 画布宽度。 |
-| height | Number | 画布高度。 |
+| **属性** | **类型** | **描述**   |
+| -------- | -------- | ---------- |
+| width    | Number   | 画布宽度。 |
+| height   | Number   | 画布高度。 |
 
 ## 方法
 

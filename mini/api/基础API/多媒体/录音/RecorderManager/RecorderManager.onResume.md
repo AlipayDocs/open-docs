@@ -1,4 +1,5 @@
 # 简介
+
 监听录音继续事件。
 
 ## 使用限制
@@ -11,14 +12,16 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 let recorderManager = my.getRecorderManager();
 recorderManager.onResume(res => {
- console.log('继续录音');
-})
+  console.log('继续录音');
+});
 ```
 
 ## 入参
 
 ### Function callback
+
 录音继续事件的回调函数。

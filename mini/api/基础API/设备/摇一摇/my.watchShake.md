@@ -23,7 +23,7 @@
 ```json
 // API-DEMO page/API/watch-shake/watch-shake.json
 {
-    "defaultTitle": "Shake"
+  "defaultTitle": "Shake"
 }
 ```
 
@@ -45,10 +45,10 @@
 Page({
   watchShake() {
     my.watchShake({
-      success: function() {
-        console.log('动起来了')
-        my.alert({ title:'动起来了 o.o'});
-      }
+      success: function () {
+        console.log('动起来了');
+        my.alert({ title: '动起来了 o.o' });
+      },
     });
   },
 });

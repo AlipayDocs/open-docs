@@ -1,4 +1,5 @@
 # 简介
+
 在页面间通信中持续监听一个事件。
 
 ## 使用限制
@@ -17,7 +18,7 @@
 在 `my.navigateTo` 调用中的 `events` 参数挂载需要持续监听的事件：
 
 ```JavaScript
-my.navigateTo({ 
+my.navigateTo({
   url: './opened-page',
   // 挂载监听事件
   events: {
@@ -57,7 +58,7 @@ Page({
 
 入参结构为：`(String eventName, Function callback)`。
 
-| **参数** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| eventName | String | 是 | 需要监听的事件的名称。 |
-| callback | Function | 是 | 事件监听函数。 |
+| **参数**  | **类型** | **必填** | **描述**               |
+| --------- | -------- | -------- | ---------------------- |
+| eventName | String   | 是       | 需要监听的事件的名称。 |
+| callback  | Function | 是       | 事件监听函数。         |
