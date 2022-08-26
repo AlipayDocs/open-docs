@@ -104,18 +104,13 @@ Object 类型，属性如下：
 success 回调函数携带 Object 类型的参数，包含以下字段：
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| name | String | 位置名称。 |
-| address | String | 详细地址。 |
-| provinceName | String | 省名称。 |
-| provinceCode | Number | 省代码（搜索选择位置才会返回）。 |
-| cityName | String | 市名称。 |
-| cityCode | Number | 市代码（从附近列表选择位置才会返回）。|
-| adName | String | 区名称。 |
-| adCode | Number | 区代码。|
-| typeName | String | 位置类型名称（搜索选择位置才会返回）。|
-| typeCode | Number | 位置类型代码（搜索选择位置才会返回）。|
-| latitude | Number | 纬度，浮点数，范围为-90~90，负数表示南纬。 |
-| longitude | Number | 经度，浮点数，范围为-180~180，负数表示西经。 |
+| latitude | Number | 纬度，浮点数，范围为-90~90，负数表示南纬 |
+| longitude | Number | 经度，浮点数，范围为-180~180，负数表示西经 |
+| name | String | 位置名称 |
+| provinceName | String | 位置所在省 |
+| cityName | String | 位置所在市 |
+| address | String | 详细地址 |
+
 
 ## 错误码
 fail 回调函数收到 Object 类型的参数，其 errorCode 字段为错误码。
