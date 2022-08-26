@@ -1,4 +1,4 @@
-每个端小程序所采用的框架和代码目录结构是一致的（点此查看 [小程序框架概述](https://opendocs.alipay.com/mini/framework/overview)）。另外基础组件和基础API 在各端也保持一致（在交互和视觉样式上需要对不同端进行适配）。
+每个端小程序所采用的框架和代码目录结构是一致的（点此查看 [小程序框架概述](https://opendocs.alipay.com/mini/framework/overview)）。另外基础组件和基础 API 在各端也保持一致（在交互和视觉样式上需要对不同端进行适配）。
 
 ## 基础组件
 

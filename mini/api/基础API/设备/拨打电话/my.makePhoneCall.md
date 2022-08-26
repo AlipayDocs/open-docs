@@ -19,6 +19,7 @@
 # 接口调用
 
 ## 示例代码
+
 ```javascript
 my.makePhoneCall({ number: '95188' });
 ```
@@ -27,22 +28,21 @@ my.makePhoneCall({ number: '95188' });
 
 Object 类型，属性如下：
 
-| **属性** | **类型** | **必填** | **描述**   |
-| -------- | -------- | -------- | ---------- |
-| number   | String   | 是       | 有效电话号码  |
+| **属性** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| number | String | 是 | 有效电话号码 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ## 错误码
-| **错误码** | **错误消息** | **解决方案** |
-| -------- | -------- | -------- |
-| 2 | 安卓：invalid parameter；iOS：接口参数无效 | 传入有效 number |
+
+| **错误码** | **错误消息**                               | **解决方案**    |
+| ---------- | ------------------------------------------ | --------------- |
+| 2          | 安卓：invalid parameter；iOS：接口参数无效 | 传入有效 number |
 
 # 常见问题 FAQ
 
 ## Q: 小程序 web-view 中如何拨号？
 
 在小程序的 web-view 中不支持使用 `<a href="tel:xx">` 唤起拨号。建议从 web-view 中 [postMessage](https://forum.alipay.com/college/post/11901043) 给小程序，然后在小程序中调用 `my.makePhoneCall`。
-

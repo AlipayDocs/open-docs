@@ -1,4 +1,5 @@
 # 简介
+
 **my.exitMiniProgram** 退出当前小程序。必须有点击行为才能调用成功。
 
 ## 使用限制
@@ -12,29 +13,32 @@
 ## 示例代码
 
 ### .axml 示例代码
+
 ```html
 <button size="default" onTap="exitMiniProgram">exitMiniProgram</button>
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
   onReady() {
-  	my.exitMiniProgram({
-    	fail(res) {
-      	// 没有点击my.exitMiniProgram不会调用成功
-      	console.log(res);
-      }
+    my.exitMiniProgram({
+      fail(res) {
+        // 没有点击my.exitMiniProgram不会调用成功
+        console.log(res);
+      },
     });
   },
   exitMiniProgram(e) {
     // 如果成功退出小程序，会直接杀掉小程序进程，一般情况已经来不及执行success/complete回调。
     my.exitMiniProgram();
-  }
-})
+  },
+});
 ```
 
 ## 参数
+
 Object 类型，属性如下：
 
 | **参数** | **类型** | **必填** | **说明** |

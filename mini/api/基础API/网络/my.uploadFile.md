@@ -5,6 +5,7 @@
 ## 使用限制
 
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+
 > 请登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTPS 请求（my.request）、上传文件（my.uploadFile）。
 >
 > ![|706x73](http://mdn.alipayobjects.com/afts/img/A*xM4NR6VRbfy_8SFDkgXUhQBkAa8wAA/original?bz=openpt_doc&t=JgMQtxsM9S7uH5pPEDbN9wAAAABkMK8AAAAA#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&originHeight=168&originWidth=1624&status=done&style=stroke&width=1624)
@@ -26,19 +27,24 @@
 ### .json 示例代码
 
 **注意**：案例仅供参考，建议使用自己的地址进行测试。
+
 ```json
 {
-    "defaultTitle": "Upload File"
+  "defaultTitle": "Upload File"
 }
 ```
+
 ### .axml 示例代码
+
 ```html
 <!-- API-DEMO page/upload-file/upload-file.axml -->
 <view class="page">
   <button type="primary" onTap="uploadFile">上传图片</button>
 </view>
 ```
+
 ### .js 示例代码
+
 ```javascript
 // API-DEMO page/API/upload-file/upload-file.js
 Page({
@@ -69,6 +75,7 @@ Page({
 ### .java 示例代码
 
 上传文件的服务端代码：
+
 ```java
 
 import java.io.IOException;
@@ -95,20 +102,20 @@ public class UploadServlet extends HttpServlet {
     {
         Part filePart = request.getPart("file");
         String fileSize = filePart == null ? "0" : filePart.getSize() + " bytes";
-        
+
         if (filePart != null) {
             String fileName = filePart.getSubmittedFileName();
             String filePath = "/tmp/upload" + fileName.substring(fileName.lastIndexOf("."));
             filePart.write(filePath);
         }
-        
+
         Part extraPart = request.getPart("extra");
         String extraValue = extraPart == null ? "" : new Scanner(extraPart.getInputStream(), "UTF-8").useDelimiter("\\A").next();
-        
+
         response.setCharacterEncoding("UTF-8");
         response.getWriter().print("file: " + fileSize + "; extra: " + extraValue);
     }
-    
+
 }
 ```
 
@@ -133,11 +140,11 @@ Object 类型，参数如下：
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| data | String | 服务器返回的数据。 |
-| statusCode | Number | HTTP 状态码。 |
-| header | Object | 服务器返回的 Header。 |
+| **属性**   | **类型** | **描述**              |
+| ---------- | -------- | --------------------- |
+| data       | String   | 服务器返回的数据。    |
+| statusCode | Number   | HTTP 状态码。         |
+| header     | Object   | 服务器返回的 Header。 |
 
 ## 错误码
 
@@ -211,17 +218,20 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 </table>
 
 ## UploadTask
+
 **版本要求：** 支付宝客户端 10.1.35 及以上版本，低版本需做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 
 监听上传进度变化，取消上传任务的对象。
 
 ### 方法
-| **方法** | **描述** |
-| --- | --- |
-| UploadTask.abort() | 中断上传任务 |
+
+| **方法**                                       | **描述**             |
+| ---------------------------------------------- | -------------------- |
+| UploadTask.abort()                             | 中断上传任务         |
 | UploadTask.onProgressUpdate(function callback) | 监听上传进度变化事件 |
 
 ### 示例代码
+
 ```javascript
 const task = my.uploadFile({
   url: '请使用自己服务器地址',
@@ -231,8 +241,8 @@ const task = my.uploadFile({
 });
 task.onProgressUpdate(payload => {
   const { progress, totalBytesWritten, totalBytesExpectedToWrite } = payload;
-})
-task.abort()
+});
+task.abort();
 ```
 
 其中，payload 参数的含义如下：
@@ -244,32 +254,41 @@ task.abort()
 # 常见问题 FAQ
 
 ## Q：小程序上传图片可以自动转成 Base64 (基于 64 个可打印字符来表示二进制数据的方法)吗？
+
 A：小程序暂不支持图片转成 Base64。
 
 ## Q：my.uploadFile 如何获取服务器返回的错误信息呢？
+
 A：解决方案：
 
 1. 可以通过 success 回调中的 data 参数获取。
 2. 可以在服务端增加一个日志获取接口。如果上传失败，就请求到日志获取接口获取详细的失败日志。
 
 ## Q：my.uploadFile 默认超时时间是多少？是否可以设置默认延长时间？
+
 A：my.uploadFile 默认超时时间是 30s，目前无法设置默认延长时间。
 
 ## Q：使用 my.uploadFile 上传文件，为何报错 error:12？
+
 A：上传失败导致报错 error:12 ，造成上传失败的可能原因有：
+
 1. 文件过大。
 2. 上传时间超过 30s。
 3. 没有权限。
 4. 文件未找到 / 文件不是一个正常的文件。
 
 ## Q：使用 my.uploadFile 上传图片至后台，接收的是二进制图片，再从后台发送小程序前台对应的二进制图片，小程序前台是如何解析呢？
+
 A：上传图片是服务端通过二进制流接受图片，之后服务端只需提供对应的图片在服务器上的位置地址就可以。
 
 ## Q：调用 my.uploadfile，为何报错: error: 4，无权限调用此接口？
+
 A：请求的 URL 没有配置白名单，建议添加 URL 的域名为白名单。
 
 ## Q：小程序是否支持上传 excel 文件？
+
 A：目前 my.uploadFile 上传文件类型支持图片、视频、音频，暂不支持其他类型的文件。
 
 ## Q：my.uploadFile 支持多张图片同时上传吗？
+
 A：my.uploadFile 暂不支持多张图片同时上传，一次只能上传一张图片。

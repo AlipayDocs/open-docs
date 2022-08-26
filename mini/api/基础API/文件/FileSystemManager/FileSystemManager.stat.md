@@ -1,4 +1,5 @@
 # 简介
+
 **FileSystemManager.stat** 用于获取文件 Stats 对象。
 
 ## 使用限制
@@ -14,13 +15,13 @@
 
 ```javascript
 // recursive 为 false 时
-const fs = my.getFileSystemManager()
+const fs = my.getFileSystemManager();
 fs.stat({
   path: `${my.env.USER_DATA_PATH}/testDir`,
   success: res => {
-    console.log(res.stats.isDirectory())
-  }
-})
+    console.log(res.stats.isDirectory());
+  },
+});
 
 // recursive 为 true 时
 fs.stat({
@@ -28,13 +29,13 @@ fs.stat({
   recursive: true,
   success: res => {
     if (res.stats) {
-    	for (const path of Object.keys(res.stats)) {
+      for (const path of Object.keys(res.stats)) {
         const statsObj = res.stats[path];
         console.log(path, statsObj.stats.isDirectory());
       }
     }
-  }
-})
+  },
+});
 ```
 
 ## 入参
@@ -59,9 +60,9 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 #### Stats/Object stats
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| mode | Long | 文件的类型和存取的权限. |
-| size | Long | 文件大小。 |
-| lastAccessedTime | Long | 上次访问时间。 |
-| lastModifiedTime | Long | 上次修改时间。 |
+| **属性**         | **类型** | **描述**                |
+| ---------------- | -------- | ----------------------- |
+| mode             | Long     | 文件的类型和存取的权限. |
+| size             | Long     | 文件大小。              |
+| lastAccessedTime | Long     | 上次访问时间。          |
+| lastModifiedTime | Long     | 上次修改时间。          |
