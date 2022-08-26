@@ -1,6 +1,6 @@
 # 简介
 
-**my.getLaunchOptionsSync** 是获取小程序启动时的参数的 API。与 [App.onLaunch](https://opendocs.alipay.com/mini/framework/app-detail#onLaunch(object%3A%20Object)%20%E5%8F%8A%20onShow(object%3A%20Object)) 的回调参数一致。
+**my.getLaunchOptionsSync** 是获取小程序启动时的参数的 API。与 [App.onLaunch](<https://opendocs.alipay.com/mini/framework/app-detail#onLaunch(object%3A%20Object)%20%E5%8F%8A%20onShow(object%3A%20Object)>) 的回调参数一致。
 
 该函数是获取 [冷启动](https://opendocs.alipay.com/mini/framework/operating-mechanism) 时的启动参数。针对 [热启动场景](https://opendocs.alipay.com/mini/framework/operating-mechanism)，可以使用 [my.getEnterOptionsSync](https://opendocs.alipay.com/mini/api/029i75)，该方法会获取最新进入小程序的参数。获取小程序启动时的参数的其他方法请参考：[如何在小程序启动后获取启动参数](https://opendocs.alipay.com/support/01rb2a)。
 
@@ -24,20 +24,14 @@ console.log(options);
 
 ## 返回值
 
-返回一个 Object 类型的对象，其属性如下：
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| query | Object | 当前小程序的 query，从启动参数的 query 字段解析而来。<br />**注意**：若没有启动参数，则不会返回 query 参数。 |
-| scene | String | 启动小程序的 [场景值](https://opendocs.alipay.com/mini/framework/scene)。 |
-| path | String | 当前小程序的页面地址，从启动参数 page 字段解析而来，page 忽略时默认为首页。 |
-| referrerInfo | Object | 来源消息。 |
+返回一个 Object 类型的对象，其属性如下： | **属性** | **类型** | **描述** | | --- | --- | --- | | query | Object | 当前小程序的 query，从启动参数的 query 字段解析而来。<br />**注意**：若没有启动参数，则不会返回 query 参数。 | | scene | String | 启动小程序的 [场景值](https://opendocs.alipay.com/mini/framework/scene)。 | | path | String | 当前小程序的页面地址，从启动参数 page 字段解析而来，page 忽略时默认为首页。 | | referrerInfo | Object | 来源消息。 |
 
 ### Object referrerInfo
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| appId | String | 来源小程序。 |
-| extraData | Object | 来源小程序传过来的数据。 |
+| **属性**  | **类型** | **描述**                 |
+| --------- | -------- | ------------------------ |
+| appId     | String   | 来源小程序。             |
+| extraData | Object   | 来源小程序传过来的数据。 |
 
 # 常见问题
 
@@ -47,7 +41,7 @@ console.log(options);
 
 ## 在 IDE 上如何测试启动参数？
 
-请参考：[IDE配置/获取全局参数和页面参数（启动参数）](https://opendocs.alipay.com/support/01rb7b)
+请参考：[IDE 配置/获取全局参数和页面参数（启动参数）](https://opendocs.alipay.com/support/01rb7b)
 
 ## 如何从浏览器或外部 APP 携带参数跳转到小程序？
 

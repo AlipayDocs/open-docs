@@ -37,4 +37,3 @@ MapContext 通过 ID 跟一个 map 组件绑定，操作对应的 [map 地图](h
 
 - [Andriod 地图错误码对照表](https://lbs.amap.com/api/android-sdk/guide/map-tools/error-code)
 - [iOS 地图错误码对照](https://lbs.amap.com/api/ios-sdk/guide/map-tool/errorcode/)
-

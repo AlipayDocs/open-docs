@@ -1,4 +1,5 @@
 # 简介
+
 获取已连接中的 Wi-Fi 信息。
 
 # 使用限制
@@ -14,13 +15,14 @@
 
 ```javascript
 my.getConnectedWifi({
-  success: function(res) {
-    console.log(res)
-  }
-})
+  success: function (res) {
+    console.log(res);
+  },
+});
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -33,16 +35,15 @@ Object 类型，参数如下：
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| wifi | WifiInfo | Wi-Fi 信息。 |
+| **属性** | **类型** | **描述**     |
+| -------- | -------- | ------------ |
+| wifi     | WifiInfo | Wi-Fi 信息。 |
 
 #### WifiInfo wifi
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| SSID | String | Wi-Fi 的 SSID。 |
-| BSSID | String | Wi-Fi 的 BSSID。 |
-| secure | Boolean | Wi-Fi 是否安全。 |
-| signalStrength | Number | Wi-Fi 信号强度。取值 0 ～ 100，值越大强度越大。 |
-
+| **属性**       | **类型** | **描述**                                        |
+| -------------- | -------- | ----------------------------------------------- |
+| SSID           | String   | Wi-Fi 的 SSID。                                 |
+| BSSID          | String   | Wi-Fi 的 BSSID。                                |
+| secure         | Boolean  | Wi-Fi 是否安全。                                |
+| signalStrength | Number   | Wi-Fi 信号强度。取值 0 ～ 100，值越大强度越大。 |

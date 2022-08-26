@@ -1,6 +1,5 @@
 > 从基础库 [2.7.9](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始，CanvasContext 相关接口已停止维护，请使用 [Canvas](https://opendocs.alipay.com/mini/01vzqv) 代替。
 
-
 ### 属性
 
 **string fillStyle**
@@ -29,7 +28,7 @@
 
 **number lineDashOffset**
 
-虚线偏移量，初始值为0。
+虚线偏移量，初始值为 0。
 
 **string textBaseline**
 
@@ -56,6 +55,7 @@
 在绘制新形状时应用的合成操作的类型。
 
 ### 方法
+
 | **名称** | **描述** |
 | --- | --- |
 | [CanvasContext.arc](https://opendocs.alipay.com/mini/api/lut4uo) | 画一条弧线。 |
@@ -101,8 +101,7 @@
 | [CanvasContext.stroke](https://opendocs.alipay.com/mini/api/pgahxv) | 画出当前路径的边框。默认 `black`。 |
 | [CanvasContext.strokeRect](https://opendocs.alipay.com/mini/api/vz04q8) | 画一个矩形（非填充）。 |
 | [CanvasContext.strokeText](https://opendocs.alipay.com/mini/api/stroketext) | 给定的 (x, y) 位置绘制文本描边的方法。 |
-| [CanvasContext.toDataURL](https://opendocs.alipay.com/mini/api/vemgc6) | 获取画布指定区域的 data URL数据。 |
+| [CanvasContext.toDataURL](https://opendocs.alipay.com/mini/api/vemgc6) | 获取画布指定区域的 data URL 数据。 |
 | [CanvasContext.toTempFilePath](https://opendocs.alipay.com/mini/api/rod3ti) | 把当前画布的内容导出生成图片，并返回文件路径。 |
 | [CanvasContext.transform](https://opendocs.alipay.com/mini/api/fv97do) | 使用矩阵多次叠加当前变换的方法，矩阵由方法的参数进行描述。可以缩放、旋转、移动和倾斜上下文。 |
 | [CanvasContext.translate](https://opendocs.alipay.com/mini/api/lgqkb2) | 对当前坐标系的原点(0, 0)进行变换，默认的坐标系原点为页面左上角。 |
-

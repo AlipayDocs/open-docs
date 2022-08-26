@@ -1,4 +1,5 @@
 # 简介
+
 **my.createOffscreenCanvas** 创建离屏 Canvas 实例。
 
 ## 使用限制
@@ -19,4 +20,5 @@ Object 类型，参数如下：
 | type | String | 否 | 创建离屏 canvas 类型（2d/webgl）。</br>可选值：</br><ul><li>2d：2d 类型上下文。</li><li>webgl：webgl 类型上下文。</li></ul> |
 
 ## 返回值
+
 可查看 [OffscreenCanvas](https://opendocs.alipay.com/mini/api/021yfb)。
