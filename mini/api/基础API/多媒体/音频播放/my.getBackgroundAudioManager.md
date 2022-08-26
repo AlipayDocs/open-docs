@@ -1,4 +1,5 @@
 # 简介
+
 **my.getBackgroundAudioManager** 是获取后台音频播放器的 API，与前景音频相对应，可以在用户离开当前小程序后继续播放音频。
 
 更多信息，可查看 [音频播放 API 使用说明](https://opendocs.alipay.com/mini/03l3fn)。
@@ -12,23 +13,27 @@
 # 接口调用
 
 ## 示例代码
+
 第一步：开发者可以在 .axml 文件中写入相关的组件来控制音乐的播放和暂停等，以下示例代码仅供参考：
+
 ```html
 <!--.axml-->
 <view>
-      <button type="primary" onTap="audioPlay">开始播放背景音频</button>
- </view>
-<view>
-      <button type="primary" onTap="audioPause">暂停播放背景音频</button>
+  <button type="primary" onTap="audioPlay">开始播放背景音频</button>
 </view>
 <view>
-      <button type="primary" onTap="audioStop">停止播放背景音频</button>
+  <button type="primary" onTap="audioPause">暂停播放背景音频</button>
 </view>
 <view>
-      <button type="primary" onTap="audioSeek">背景音频播放进度跳转</button>
+  <button type="primary" onTap="audioStop">停止播放背景音频</button>
+</view>
+<view>
+  <button type="primary" onTap="audioSeek">背景音频播放进度跳转</button>
 </view>
 ```
+
 第二步：获取背景音乐播放 backgroundAudioManager 后，添加属性并注册对应监听事件。
+
 ```javascript
 //.js
 onLoad(){
@@ -66,7 +71,9 @@ this.backgroundAudioManager.onError((res)=>{
 });
 },
 ```
+
 第三步：开发者在 .js 文件中写入以下方法，配合上一步的组件，播放音频，以下示例代码仅供参考：
+
 ```javascript
 //.js
 audioPlay(){
@@ -93,9 +100,11 @@ audioSeek(){
 ```
 
 ## 返回值
+
 返回值为 backgroundAudioManager。
 
 ### backgroundAudioManager 属性列表
+
 | **属性** | **类型** | **是否只读** | **描述** |
 | --- | --- | --- | --- |
 | duration | Number | 是 | 当前音频的长度，单位为秒（s），只有在当前有合法的 src 时返回。 |
@@ -112,6 +121,7 @@ audioSeek(){
 | playbackRate | Number | 否 | 播放速度。范围 0.5-2.0，默认为 1。<br />**注意**：Android 需要 6 及以上版本支持。 |
 
 ### backgroundAudioManager 方法列表
+
 | **方法** | **参数** | **描述** |
 | --- | --- | --- |
 | play | 无 | 播放。 |
@@ -132,17 +142,19 @@ audioSeek(){
 | onPrev | Function callback | 监听用户在系统音乐播放面板点击上一曲事件。 |
 
 ## 错误码
-| **错误码** | **描述** | **解决方案** |
-| --- | --- | --- |
-| 10001 | 系统错误。 | 请检查手机系统，并重试。 |
-| 10002 | 网络错误。 | 请检查网络设置，并重试。 |
-| 10003 | 文件错误。 | 请检查文件，并重试。 |
-| 10004 | 格式错误。 | 请检查格式问题，并重试。 |
-| -1 | 未知错误。 | - |
+
+| **错误码** | **描述**   | **解决方案**             |
+| ---------- | ---------- | ------------------------ |
+| 10001      | 系统错误。 | 请检查手机系统，并重试。 |
+| 10002      | 网络错误。 | 请检查网络设置，并重试。 |
+| 10003      | 文件错误。 | 请检查文件，并重试。     |
+| 10004      | 格式错误。 | 请检查格式问题，并重试。 |
+| -1         | 未知错误。 | -                        |
 
 # 常见问题 FAQ
 
 ## Q：进入页面播放音频，返回上一页后重新进入播放页面，为何 onTimeUpdate 等监听事件失效不执行？
+
 A：onTimeUpdate 等监听事件在再次进入页面时失效不执行，二次进入界面的时候消息没办法传递出去，导致页面出错没有更新页面数据。
 
 所以建议把之前的音频监听事件全部都 off 处理，然后再重新监听。

@@ -1,4 +1,5 @@
 # 简介
+
 **MapContext.setMapType** 用于设置地图主题类型。
 
 ## 使用限制
@@ -12,15 +13,17 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // .js
 this.mapCtx = my.createMapContext('map');
 this.mapCtx.setMapType({
-  mapType:1
+  mapType: 1,
 });
 ```
 
 ## 入参
+
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | mapType | Int | 是 | 地图主题类型。支持类型如下：<ul><li>0：标准地图；</li><li>1：卫星地图。</li></ul> |

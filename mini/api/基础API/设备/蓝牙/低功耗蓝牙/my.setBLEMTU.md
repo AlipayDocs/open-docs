@@ -1,10 +1,10 @@
-
 # 简介
+
 设置低功耗蓝牙设备的最大传输单元（Maximum Transmission Unit, MTU）。需在 [my.connectBLEDevice](https://opendocs.alipay.com/mini/api/tmew6e) 调用成功后调用，mtu 设置范围（22,512）。
 
 # 使用限制
 
-- 安卓5.1以上有效，iOS 因系统限制不支持。
+- 安卓 5.1 以上有效，iOS 因系统限制不支持。
 - 基础库 [1.24.6](https://opendocs.alipay.com/mini/framework/lib) 或更高版本。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
@@ -21,7 +21,6 @@ Object 类型，参数如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-
 
 ### Function success
 

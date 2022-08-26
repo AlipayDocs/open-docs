@@ -1,4 +1,5 @@
 # 简介
+
 my.getServerTime 用于获取支付宝服务器的当前时间（距 1970-01-01 00:00:00（UTC）的毫秒数）。
 
 ## 使用限制
@@ -13,18 +14,17 @@ my.getServerTime 用于获取支付宝服务器的当前时间（距 1970-01-01 
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-server-time?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
-
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-server-time?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
 
 ```javascript
 my.getServerTime({
-  success: (res) => {
+  success: res => {
     my.alert({
       content: `${res.time}`,
     });
-  }
+  },
 });
 ```
 
@@ -49,11 +49,14 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 # 常见问题 FAQ
 
 ## Q：通过 my.getServerTime 获取到的时间戳怎么转化为日期时间？
+
 A：
+
 - 可使用 new Date(time) 得到 [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#instance_methods) 对象，调用其方法获取相应字段
 - 可使用如下方法进行格式化
+
 ```javascript
-const timeFormat = (time, fmt = "YYYY-MM-DD hh:mm:ss") => {
+const timeFormat = (time, fmt = 'YYYY-MM-DD hh:mm:ss') => {
   const dte = new Date(time);
   function getYearWeek(date) {
     var date1 = new Date(date.getFullYear(), date.getMonth(), date.getDate());
@@ -84,32 +87,32 @@ const timeFormat = (time, fmt = "YYYY-MM-DD hh:mm:ss") => {
   }
 
   var o = {
-    "M+": dte.getMonth() + 1, // 月份
-    "D+": dte.getDate(), // 日
-    "h+": dte.getHours(), // 小时
-    "m+": dte.getMinutes(), // 分
-    "s+": dte.getSeconds(), // 秒
-    "q+": Math.floor((dte.getMonth() + 3) / 3), // 季度
+    'M+': dte.getMonth() + 1, // 月份
+    'D+': dte.getDate(), // 日
+    'h+': dte.getHours(), // 小时
+    'm+': dte.getMinutes(), // 分
+    's+': dte.getSeconds(), // 秒
+    'q+': Math.floor((dte.getMonth() + 3) / 3), // 季度
     S: dte.getMilliseconds(), // 毫秒
-    "W+": getYearWeek(dte), // 周数
+    'W+': getYearWeek(dte), // 周数
   };
   if (/(Y+)/.test(fmt))
     fmt = fmt.replace(
       RegExp.$1,
-      (dte.getFullYear() + "").substr(4 - RegExp.$1.length)
+      (dte.getFullYear() + '').substr(4 - RegExp.$1.length)
     );
   for (var k in o)
-    if (new RegExp("(" + k + ")").test(fmt)) {
+    if (new RegExp('(' + k + ')').test(fmt)) {
       fmt = fmt.replace(
         RegExp.$1,
-        RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length)
+        RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length)
       );
     }
   return fmt;
-}
+};
 
-timeFormat(time, "YYYY-MM-DD hh:mm:ss") // 1970-01-01 00:00:00
-timeFormat(time, "YYYY-M-D h:m:s")   // 1970-1-1 0:0:0
-
+timeFormat(time, 'YYYY-MM-DD hh:mm:ss'); // 1970-01-01 00:00:00
+timeFormat(time, 'YYYY-M-D h:m:s'); // 1970-1-1 0:0:0
 ```
+
 - 也可使用 Day.js 等社区方案实现时间格式化

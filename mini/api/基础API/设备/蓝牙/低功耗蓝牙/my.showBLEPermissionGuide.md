@@ -1,4 +1,5 @@
 # 简介
+
 **my.showBLEPermissionGuide** 是蓝牙统一授权/开关引导流程的 API。
 
 ## 使用限制
@@ -11,6 +12,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 my.showBLEPermissionGuide（{
  firstTipsTitle: "首次使用蓝牙业务提示弹窗标题", //仅ios有效，建议不配置
@@ -32,6 +34,7 @@ my.showBLEPermissionGuide（{
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -49,25 +52,25 @@ Object 类型，参数如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ### Function success
+
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| success | Boolean | true 表示蓝牙完全可用。 |
-
+| **属性** | **类型** | **描述**                |
+| -------- | -------- | ----------------------- |
+| success  | Boolean  | true 表示蓝牙完全可用。 |
 
 ## 错误码
-| **错误码** | **描述** |
-| --- | --- |
-| 60000 | auth or open status unknow! |
-| 60001 | auth ble status unknow! |
-| 60002 | open ble status unknow! |
-| 60003 | request authorize tips denied! |
-| 60004 | request authorize sys denied! |
-| 60005 | request open ble denied! |
-| 60006 | request auth ble denied! |
-| 60008 | internal error！ |
-| 60009 | lbs service forbidden! |
-| 60010 | do not support ble! |
+
+| **错误码** | **描述**                       |
+| ---------- | ------------------------------ |
+| 60000      | auth or open status unknow!    |
+| 60001      | auth ble status unknow!        |
+| 60002      | open ble status unknow!        |
+| 60003      | request authorize tips denied! |
+| 60004      | request authorize sys denied!  |
+| 60005      | request open ble denied!       |
+| 60006      | request auth ble denied!       |
+| 60008      | internal error！               |
+| 60009      | lbs service forbidden!         |
+| 60010      | do not support ble!            |

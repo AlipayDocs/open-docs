@@ -1,4 +1,5 @@
 # 简介
+
 **my.startPullDownRefresh** 是主动开启下拉刷新的 API。
 
 调用 my.startPullDownRefresh 后触发下拉刷新动画，效果与用户手动下拉刷新一致（会触发 [onPullDownRefresh](https://opendocs.alipay.com/mini/api/wo21qk) 监听方法）。
@@ -18,7 +19,7 @@
 
 ## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/pull-down-refresh?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/pull-down-refresh?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .json 示例代码
 
@@ -30,6 +31,7 @@
 ```
 
 ### .axml 示例代码
+
 ```html
 <!-- API-DEMO page/API/pull-down-refresh/pull-down-refresh.axml-->
 <view class="page">
@@ -57,14 +59,15 @@ Page({
   stopPullDownRefresh() {
     my.stopPullDownRefresh({
       complete(res) {
-        console.log(res, new Date())
-      }
-    })
-  }
+        console.log(res, new Date());
+      },
+    });
+  },
 });
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |

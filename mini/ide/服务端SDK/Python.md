@@ -1,13 +1,15 @@
-
 ## 简介
+
 Python 语言适用于 Python 2.7 及以上的开发环境且仅提供通用版 SDK。
 
 ## 下载地址
+
 [PyPI 项目依赖](https://pypi.org/project/alipay-sdk-python/3.3.398/)
 
 ## 示例代码
 
 ### 普通调用示例
+
 ```python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -59,6 +61,7 @@ if __name__ == '__main__':
 ```
 
 ### 图片上传接口调用示例
+
 ```python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -110,6 +113,7 @@ if __name__ == '__main__':
 ```
 
 ### 用户授权接口调用示例
+
 ```python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -163,4 +167,3 @@ if __name__ == '__main__':
 ```
 
 <br />
-
