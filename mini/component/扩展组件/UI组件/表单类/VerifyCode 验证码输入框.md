@@ -1,21 +1,25 @@
-
 # 简介
-验证码输入框。  
+
+验证码输入框。
 
 ## 使用限制
+
 受控模式，使用时需要用 onInput 事件来回设 value。
 
 ## 扫码体验
+
 ![|154x191](https://mdn.alipayobjects.com/afts/img/A*0FtBQ5-KZ58AAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=ptMqEchgrzRIQ4B5--IstQAAAABkMK8AAAAA#align=left&display=inline&height=191&margin=%5Bobject%20Object%5D&originHeight=191&originWidth=154&status=done&style=none&width=154)
 
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-verify-code?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-verify-code?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
   "defaultTitle": "Verify-code",
@@ -26,23 +30,26 @@
 ```
 
 ### .axml 示例代码
+
 ```html
 <view>
   <view style="margin-top: 10px;" />
   <view style="padding: 0 10px;">验证码框</view>
   <view style="margin-top: 10px;" />
   <verify-code
-    onInput="onInput" 
-    value="{{verifyCode}}" 
-    onClear="onClear" 
-    last="{{true}}" 
-    countDown="{{10}}" 
+    onInput="onInput"
+    value="{{verifyCode}}"
+    onClear="onClear"
+    last="{{true}}"
+    countDown="{{10}}"
     initActive="{{false}}"
-    onSend="onSend"></verify-code>
+    onSend="onSend"
+  ></verify-code>
 </view>
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
   data: {
@@ -62,6 +69,7 @@ Page({
 ```
 
 ## 属性说明
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | className | String | 自定义的 class。 |
@@ -88,6 +96,6 @@ Page({
 | txtCountDown | String | 按钮倒计时的默认文案（不包含倒计时）。<br />**默认值：** 秒后重试<br />**版本要求：** mini-ali-ui [1.1.2](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | initActive | Boolean | 是否主动触发发送按钮。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.1.3](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 
-
 ## Bug & Tip
+
 当 `initActive` 为 true 时，组件在初次加载后就会自动进入倒计时状态；如需要在该状态下有提示信息展示，需自行处理。

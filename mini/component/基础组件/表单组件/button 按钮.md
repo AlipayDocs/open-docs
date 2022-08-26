@@ -1,16 +1,19 @@
 # 简介
+
 需要重点强调该操作并且引导用户去点击的入口通过按钮表达。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/7e1b1df43443c8d65bbb3071d3e3211a.png#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
 
 # 使用
 
 ## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/button/index&defaultOpenedFiles=pages/button/index&theme=light) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/button/index&defaultOpenedFiles=pages/button/index&theme=light)
 
 ## 属性说明
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | size | String | 有效值 default, mini（小尺寸）。<br />**默认值：** default |
@@ -31,8 +34,8 @@
 | onFollowLifestyle | EventHandle | 当 open-type 为 lifestyle 时有效。<br />当点击按钮时触发。<br />`event.detail = { followStatus }`，`folllowStatus` 合法值有 `1`、`2`、`3`，其中 `1` 表示已关注。`2` 表示用户不允许关注。`3` 表示发生未知错误；<br />已知问题：基础库 1.0，当用户在点击按钮前已关注生活号，`event.detail.followStatus` 的值为 `true`。<br />**版本要求**：基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | onError | EventHandle | 当 open-type 为 getAuthorize 时有效。<br />当授权失败时触发。`event.detail = {type, errorMessage}`，此时 `type` 的值为 `getAuthorize`。<br />**版本要求**：基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 
+### open-type 有效值
 
-###  open-type 有效值
 | **属性** | **描述** |
 | --- | --- |
 | share | 触发 [自定义分享](https://opendocs.alipay.com/mini/framework/page-detail#%E9%A1%B5%E9%9D%A2%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0)，可使用 [my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)('button.open-type.share') 判断。<br />**版本要求**：基础库 [1.1.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
@@ -40,24 +43,25 @@
 | contactShare | 分享到通讯录好友，可使用 `my.canIUse('button.open-type.contactShare')` 判断。<br />**版本要求**：基础库 **1.11.0** 及以上 |
 | lifestyle | [关注生活号](https://opendocs.alipay.com/mini/introduce/bntnry)，可使用 `my.canIUse('button.open-type.lifestyle')` 判断。<br />**版本要求**：基础库 **1.11.0** 及以上 |
 
-###  scope 有效值
+### scope 有效值
+
 当 open-type 为 getAuthorize 时，可以设置 scope 为以下值：
 
 | **属性** | **描述** |
 | --- | --- |
-|  phoneNumber | 用户点击同意后，即可通过  [my.getPhoneNumber](https://opendocs.alipay.com/mini/api/getphonenumber) 授权小程序获取用户绑定的手机号。<br />**版本要求：** 基础库 [1.11.0](/mini/framework/compatibility) 及以上 |
-|  userInfo | 用户点击同意后，即可通过 [my.getOpenUserInfo](https://opendocs.alipay.com/mini/api/ch8chh) 授权小程序获取支付宝会员基础信息。<br />**版本要求：** 基础库 [1.11.0](/mini/framework/compatibility) 及以上 |
-
+| phoneNumber | 用户点击同意后，即可通过 [my.getPhoneNumber](https://opendocs.alipay.com/mini/api/getphonenumber) 授权小程序获取用户绑定的手机号。<br />**版本要求：** 基础库 [1.11.0](/mini/framework/compatibility) 及以上 |
+| userInfo | 用户点击同意后，即可通过 [my.getOpenUserInfo](https://opendocs.alipay.com/mini/api/ch8chh) 授权小程序获取支付宝会员基础信息。<br />**版本要求：** 基础库 [1.11.0](/mini/framework/compatibility) 及以上 |
 
 # FAQ
 
 ### 使用 button 点击授权获取手机号，服务端要怎么解密？
+
 请查看文档 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
 
 ### button 如何去除默认边框？
-修改 class 属性为：border: 0; padding: 0;
+
+修改 style 属性为：border: 0; padding: 0;
 
 ### 如何实现自定义分享中的 button: 页面分享按钮触发？
+
 通过给 button 组件设置属性 open-type="share"，可以在用户点击按钮后触发。
-
-

@@ -98,7 +98,6 @@ Page({
   data: {
     devid: '0D9C82AD-1CC0-414D-9526-119E08D28124',
     serid: 'FEE7',
-    notifyId: '36F6',
     writeId: '36F5',
     charid: '',
     alldev: [{ deviceId: '' }],
@@ -106,14 +105,14 @@ Page({
   //获取本机蓝牙开关状态
   openBluetoothAdapter() {
     my.openBluetoothAdapter({
-      success: (res) => {
+      success: res => {
         if (!res.isSupportBLE) {
           my.alert({ content: '抱歉，您的手机蓝牙暂不可用' });
           return;
         }
         my.alert({ content: '初始化成功！' });
       },
-      fail: (error) => {
+      fail: error => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -123,21 +122,21 @@ Page({
       success: () => {
         my.alert({ content: '关闭蓝牙成功！' });
       },
-      fail: (error) => {
+      fail: error => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
   },
   getBluetoothAdapterState() {
     my.getBluetoothAdapterState({
-      success: (res) => {
+      success: res => {
         if (!res.available) {
           my.alert({ content: '抱歉，您的手机蓝牙暂不可用' });
           return;
         }
         my.alert({ content: JSON.stringify(res) });
       },
-      fail: (error) => {
+      fail: error => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -147,7 +146,7 @@ Page({
     my.startBluetoothDevicesDiscovery({
       allowDuplicatesKey: false,
       success: () => {
-        my.onBluetoothDeviceFound((res) => {
+        my.onBluetoothDeviceFound(res => {
           var deviceArray = res.devices;
           for (var i = deviceArray.length - 1; i >= 0; i--) {
             var deviceObj = deviceArray[i];
@@ -163,7 +162,7 @@ Page({
           }
         });
       },
-      fail: (error) => {
+      fail: error => {
         my.alert({ content: '启动扫描失败' + JSON.stringify(error) });
       },
     });
@@ -171,11 +170,11 @@ Page({
   //停止扫描
   stopBluetoothDevicesDiscovery() {
     my.stopBluetoothDevicesDiscovery({
-      success: (res) => {
+      success: res => {
         my.offBluetoothDeviceFound();
         my.alert({ content: '操作成功！' });
       },
-      fail: (error) => {
+      fail: error => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -183,7 +182,7 @@ Page({
   //获取正在连接中的设备
   getConnectedBluetoothDevices() {
     my.getConnectedBluetoothDevices({
-      success: (res) => {
+      success: res => {
         if (res.devices.length === 0) {
           my.alert({ content: '没有在连接中的设备！' });
           return;
@@ -193,7 +192,7 @@ Page({
           devid: res.devices[0].deviceId,
         });
       },
-      fail: (error) => {
+      fail: error => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -201,10 +200,10 @@ Page({
   //获取所有搜索到的设备
   getBluetoothDevices() {
     my.getBluetoothDevices({
-      success: (res) => {
+      success: res => {
         my.alert({ content: JSON.stringify(res) });
       },
-      fail: (error) => {
+      fail: error => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -218,10 +217,10 @@ Page({
   connectBLEDevice() {
     my.connectBLEDevice({
       deviceId: this.data.devid,
-      success: (res) => {
+      success: res => {
         my.alert({ content: '连接成功' });
       },
-      fail: (error) => {
+      fail: error => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -233,7 +232,7 @@ Page({
       success: () => {
         my.alert({ content: '断开连接成功！' });
       },
-      fail: (error) => {
+      fail: error => {
         my.alert({ content: JSON.stringify(error) });
       },
     });
@@ -241,20 +240,20 @@ Page({
   //获取连接设备的server，必须要再连接状态状态之下才能获取
   getBLEDeviceServices() {
     my.getConnectedBluetoothDevices({
-      success: (res) => {
+      success: res => {
         if (res.devices.length === 0) {
           my.alert({ content: '没有已连接的设备' });
           return;
         }
         my.getBLEDeviceServices({
           deviceId: this.data.devid,
-          success: (res) => {
+          success: res => {
             my.alert({ content: JSON.stringify(res) });
             this.setData({
               serid: res.services[0].serviceId,
             });
           },
-          fail: (error) => {
+          fail: error => {
             my.alert({ content: JSON.stringify(error) });
           },
         });
@@ -264,7 +263,7 @@ Page({
   //获取连接设备的charid，必须要再连接状态状态之下才能获取（这里分别筛选出读写特征字）
   getBLEDeviceCharacteristics() {
     my.getConnectedBluetoothDevices({
-      success: (res) => {
+      success: res => {
         if (res.devices.length === 0) {
           my.alert({ content: '没有已连接的设备' });
           return;
@@ -275,14 +274,14 @@ Page({
         my.getBLEDeviceCharacteristics({
           deviceId: this.data.devid,
           serviceId: this.data.serid,
-          success: (res) => {
+          success: res => {
             my.alert({ content: JSON.stringify(res) });
             //特征字对象属性见文档，根据属性匹配读写特征字并记录，然后后面读写使用
             this.setData({
               charid: res.characteristics[0].characteristicId,
             });
           },
-          fail: (error) => {
+          fail: error => {
             my.alert({ content: JSON.stringify(error) });
           },
         });
@@ -292,7 +291,7 @@ Page({
   //读写数据
   readBLECharacteristicValue() {
     my.getConnectedBluetoothDevices({
-      success: (res) => {
+      success: res => {
         if (res.devices.length === 0) {
           my.alert({ content: '没有已连接的设备' });
           return;
@@ -303,14 +302,14 @@ Page({
         my.readBLECharacteristicValue({
           deviceId: this.data.devid,
           serviceId: this.data.serid,
-          characteristicId: this.data.notifyId,
+          characteristicId: this.data.charid,
           //1、安卓读取服务
           // serviceId:'0000180d-0000-1000-8000-00805f9b34fb',
           // characteristicId:'00002a38-0000-1000-8000-00805f9b34fb',
-          success: (res) => {
+          success: res => {
             my.alert({ content: JSON.stringify(res) });
           },
-          fail: (error) => {
+          fail: error => {
             my.alert({ content: '读取失败' + JSON.stringify(error) });
           },
         });
@@ -319,7 +318,7 @@ Page({
   },
   writeBLECharacteristicValue() {
     my.getConnectedBluetoothDevices({
-      success: (res) => {
+      success: res => {
         if (res.devices.length === 0) {
           my.alert({ content: '没有已连接的设备' });
           return;
@@ -335,10 +334,10 @@ Page({
           //serviceId:'0000180d-0000-1000-8000-00805f9b34fb',
           //characteristicId:'00002a39-0000-1000-8000-00805f9b34fb',
           value: 'ABCD',
-          success: (res) => {
+          success: res => {
             my.alert({ content: '写入数据成功！' });
           },
-          fail: (error) => {
+          fail: error => {
             my.alert({ content: JSON.stringify(error) });
           },
         });
@@ -347,7 +346,7 @@ Page({
   },
   notifyBLECharacteristicValueChange() {
     my.getConnectedBluetoothDevices({
-      success: (res) => {
+      success: res => {
         if (res.devices.length === 0) {
           my.alert({ content: '没有已连接的设备' });
           return;
@@ -359,15 +358,15 @@ Page({
           state: true,
           deviceId: this.data.devid,
           serviceId: this.data.serid,
-          characteristicId: this.data.notifyId,
+          characteristicId: this.data.charid,
           success: () => {
             //监听特征值变化的事件
-            my.onBLECharacteristicValueChange((res) => {
+            my.onBLECharacteristicValueChange(res => {
               my.alert({ content: '得到响应数据 = ' + res.value });
             });
             my.alert({ content: '监听成功' });
           },
-          fail: (error) => {
+          fail: error => {
             my.alert({ content: '监听失败' + JSON.stringify(error) });
           },
         });

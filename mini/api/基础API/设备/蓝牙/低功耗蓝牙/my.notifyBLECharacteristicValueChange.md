@@ -35,11 +35,11 @@ my.notifyBLECharacteristicValueChange({
   deviceId: deviceId,
   serviceId: serviceId,
   characteristicId: characteristicId,
-  success: (res) => {
+  success: res => {
     console.log(res);
   },
-  fail: (res) => {},
-  complete: (res) => {},
+  fail: res => {},
+  complete: res => {},
 });
 ```
 

@@ -1,4 +1,5 @@
 # 简介
+
 **FileSystemManager.writeFile** 用于写文件。
 
 ## 使用限制
@@ -17,10 +18,10 @@ let fs = my.getFileSystemManager();
 fs.writeFile({
   filePath: `${my.env.USER_DATA_PATH}/test.txt`,
   data: 'some text or arrayBuffer',
-  success: (res) => {
+  success: res => {
     console.log(res);
-  }
-})
+  },
+});
 ```
 
 ## 入参
@@ -37,8 +38,9 @@ Object 类型，参数如下：
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ## 错误码
-| **错误码** | **描述** |
-| --- | --- |
-| 10024 | 指定的路径没有写的权限。 |
-| 3 | 未知错误，文件写入失败。 |
-| 10028 | 写入文件单个超过 10M 或者写入文件夹超过 50M。 |
+
+| **错误码** | **描述**                                      |
+| ---------- | --------------------------------------------- |
+| 10024      | 指定的路径没有写的权限。                      |
+| 3          | 未知错误，文件写入失败。                      |
+| 10028      | 写入文件单个超过 10M 或者写入文件夹超过 50M。 |

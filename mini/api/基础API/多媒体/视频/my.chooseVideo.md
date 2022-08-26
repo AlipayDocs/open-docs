@@ -2,7 +2,7 @@
 
 拍摄视频或从手机相册中选视频。
 
-注意：支付宝会将选取的视频文件名重命名为 `.video` 后缀并存到一个临时路径下，没有改变视频源格式。
+注意：支付宝会将选取的视频文件名重命名为 `.video` 后缀并存到一个临时路径下，不改变视频实际格式。
 
 ## 使用限制
 
@@ -58,7 +58,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **说明** |
 | --- | --- | --- |
-| tempFilePath | String | 选定视频的临时文件路径。<br />基础库  [1.11.0](https://docs.alipay.com/mini/framework/compatibility) 及以上版本支持。 |
+| tempFilePath | String | 选定视频的临时文件路径。<br />基础库 [1.11.0](https://docs.alipay.com/mini/framework/compatibility) 及以上版本支持。 |
 | duration | Number | 选定视频的时间长度。 |
 | size | Number | 选定视频的数据量大小。 |
 | height | Number | 返回选定视频的高度。 |
@@ -82,7 +82,7 @@ Page({
       maxDuration: 60,
       camera: 'back',
       success(res) {
-        console.log("chooseVideo", res)
+        console.log('chooseVideo', res);
         const path = res.tempFilePath;
         console.log(path);
         my.uploadFile({
@@ -92,7 +92,7 @@ Page({
           filePath: path,
           formData: { extra: '其他信息' },
           success: res => {
-            console.log("success res", res)
+            console.log('success res', res);
             my.alert({ title: '上传成功' });
           },
           fail: err => {

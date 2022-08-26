@@ -1,4 +1,5 @@
 # 简介
+
 获取小程序版本信息。版本信息包含小程序 APPID、版本号、当前运行版本；如果是在插件内调用，还会返回当前插件 APPID、版本号。
 
 **运行版本**指前小程序版本是正式版（已发布至线上客户端）、灰度版、体验版还是开发版。
@@ -19,6 +20,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 const accountInfo = my.getAccountInfoSync();
 console.log(accountInfo.miniProgram.appId); // 小程序 appId
@@ -30,14 +32,16 @@ if (accountInfo.plugin) {
 ```
 
 ## 返回值
+
 返回一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| miniProgram | Object | 小程序版本信息。 |
-| plugin | Object | 插件版本信息（仅在插件中调用时包含这一项）。 |
+| **属性**    | **类型** | **描述**                                     |
+| ----------- | -------- | -------------------------------------------- |
+| miniProgram | Object   | 小程序版本信息。                             |
+| plugin      | Object   | 插件版本信息（仅在插件中调用时包含这一项）。 |
 
 ### Object miniProgram
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | appId | String | 小程序 appId。 |
@@ -45,7 +49,8 @@ if (accountInfo.plugin) {
 | version | String | 线上小程序版本号。 |
 
 ### Object plugin
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| appId | String | 插件 appId。 |
-| version | String | 插件版本号。 |
+
+| **属性** | **类型** | **描述**     |
+| -------- | -------- | ------------ |
+| appId    | String   | 插件 appId。 |
+| version  | String   | 插件版本号。 |

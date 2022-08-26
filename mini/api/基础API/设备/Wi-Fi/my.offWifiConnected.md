@@ -1,5 +1,5 @@
-
 # 简介
+
 关闭监听连接上 Wi-Fi 的事件。
 
 # 使用限制
@@ -12,14 +12,15 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
-my.offWifiConnected(this.callback)
+my.offWifiConnected(this.callback);
 ```
 
 ## 入参
+
 **function callback**
 
 连接上 Wi-Fi 的事件回调。
 
-**注意：**
-若 my.offWifiConnected 没有传入任何 callback 参数，则会取消监听所有的连接上 Wi-Fi 的事件回调函数。
+**注意：** 若 my.offWifiConnected 没有传入任何 callback 参数，则会取消监听所有的连接上 Wi-Fi 的事件回调函数。

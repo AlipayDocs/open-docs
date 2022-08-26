@@ -1,22 +1,25 @@
 # 简介
+
 **IntersectionObserver.observe** 用于指定目标节点并开始监听相交状态变化情况。
 
 ## 使用限制
+
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
 
 ## 入参
+
 入参结构为：(String targetSelector, Function callback)。
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| targetSelector | String | 选择器。 |
-| 回调函数 | Function callback | 监听相交状态变化的回调函数。 |
-
+| **属性**       | **类型**          | **描述**                     |
+| -------------- | ----------------- | ---------------------------- |
+| targetSelector | String            | 选择器。                     |
+| 回调函数       | Function callback | 监听相交状态变化的回调函数。 |
 
 ### callback 参数
-**Object res 属性**
+
+**Object res 属性**
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
@@ -30,29 +33,29 @@
 **res.intersectionRect 属性**
 
 | **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| left | Number | 左边界。 |
-| right | Number | 右边界。 |
-| top | Number | 上边界。 |
-| bottom | Number | 下边界。 |
+| -------- | -------- | -------- |
+| left     | Number   | 左边界。 |
+| right    | Number   | 右边界。 |
+| top      | Number   | 上边界。 |
+| bottom   | Number   | 下边界。 |
 
 **res.boundingClientRect 属性**
 
 | **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| left | Number | 左边界。 |
-| right | Number | 右边界。 |
-| top | Number | 上边界。 |
-| bottom | Number | 下边界。 |
+| -------- | -------- | -------- |
+| left     | Number   | 左边界。 |
+| right    | Number   | 右边界。 |
+| top      | Number   | 上边界。 |
+| bottom   | Number   | 下边界。 |
 
 **res.relativeRect 属性**
 
 | **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| left | Number | 左边界。 |
-| right | Number | 右边界。 |
-| top | Number | 上边界。 |
-| bottom | Number | 下边界。 |
+| -------- | -------- | -------- |
+| left     | Number   | 左边界。 |
+| right    | Number   | 右边界。 |
+| top      | Number   | 上边界。 |
+| bottom   | Number   | 下边界。 |
 
 **res.dataset 属性**
 
