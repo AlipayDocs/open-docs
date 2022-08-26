@@ -39,7 +39,7 @@ updateManager.onUpdateFailed(function () {
 
 ## 返回值
 
-返回值为 [UpdateManager](https://opendocs.alipay.com/mni/api/ngwgfi)。
+返回值为 [UpdateManager](https://opendocs.alipay.com/mini/api/ngwgfi)。
 
 # 常见问题 FAQ
 
