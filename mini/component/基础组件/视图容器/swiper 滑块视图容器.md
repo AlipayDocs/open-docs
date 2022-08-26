@@ -1,7 +1,6 @@
-
 # 简介
-滑块视图容器。其中仅可放置 swiper-item，否则会导致未定义的行为。
-swiper 的高度可以通过设置 swiper-item 元素高度来控制，也可以通过设置 swiper 的整体高度来控制（通过组件的 adjust-height 属性来具体实现）。
+
+滑块视图容器。其中仅可放置 swiper-item，否则会导致未定义的行为。 swiper 的高度可以通过设置 swiper-item 元素高度来控制，也可以通过设置 swiper 的整体高度来控制（通过组件的 adjust-height 属性来具体实现）。
 
 ## 使用限制
 
@@ -11,6 +10,7 @@ swiper 的高度可以通过设置 swiper-item 元素高度来控制，也可以
 - swiper 可以有多个 swiper-item，默认只会展示一个滑块数量，可以通过传入 `display-multiple-items` 属性来修改数量限制。
 
 ## 扫码体验
+
 ![|127x157](https://gw.alipayobjects.com/zos/skylark/b6227660-a40d-45a1-8b91-d76e5699d195/2018/jpeg/2b2fd77c-1145-4983-8f21-dd6a23e7d4ff.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=1906&originWidth=1540&status=done&style=none&width=127)
 
 # 使用
@@ -20,6 +20,7 @@ swiper 的高度可以通过设置 swiper-item 元素高度来控制，也可以
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/swiper/index&defaultOpenedFiles=pages/swiper/index&theme=light)
 
 ## 属性说明
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | indicator-dots | Boolean | 是否显示指示点。<br />**默认值：** false |
@@ -38,8 +39,8 @@ swiper 的高度可以通过设置 swiper-item 元素高度来控制，也可以
 | acceleration | Boolean | 当开启时，会根据滑动速度，连续滑动多屏。<br />**默认值：** false<br />**版本要求：** 基础库 [1.13.7](/mini/framework/compatibility) 及以上 |
 | disable-programmatic-animation | Boolean | 是否禁用代码变动触发 swiper 切换时使用动画。<br />**默认值：** false<br />**版本要求：** 基础库 [1.13.7](/mini/framework/compatibility) 及以上 |
 | onChange | EventHandle | current 改变时会触发，`event.detail = {current, isChanging}`，其中 `isChanging` 需 `acceleration` 设置为 `{{true}}` 时才有值，当连续滑动多屏时，中间若干屏触发 `onChange` 事件时 `isChanging` 为 `true`，最后一屏返回 `false`。<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
-| onTransition | EventHandle | swiper 中 swiper-item 的位置发生改变时会触发 transition 事件。<br />其中{dx,dy} = event.detail 基础库 [2.6.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
-| onAnimationEnd | EventHandle | 动画结束时会触发 animationEnd 事件，`event.detail = {current, source}`，其中 `source` 的值有 `autoplay` 和  `touch`。<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
+| onTransition | EventHandle | swiper 中 swiper-item 的位置发生改变时会触发 transition 事件。<br />其中{dx,dy} = event.detail 基础库 [2.6.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
+| onAnimationEnd | EventHandle | 动画结束时会触发 animationEnd 事件，`event.detail = {current, source}`，其中 `source` 的值有 `autoplay` 和 `touch`。<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
 | disable-touch | Boolean | 是否禁止用户 touch 操作。<br />**默认值：** false<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
 | swipe-ratio | Number | 滑动距离阈值，当滑动距离超过阈值时进行 swiper-item 切换。<br />**默认值**：0.2<br />**版本要求**：基础库 [1.24.11](/mini/framework/compatibility) 及以上 |
 | swipe-speed | Number | 滑动综合速度阈值，当超过阈值时进行 swiper-item 切换，数值越小越敏感。<br />**默认值**：0.05<br />**版本要求**：基础库 [1.24.11](/mini/framework/compatibility) 及以上 |
@@ -49,4 +50,3 @@ swiper 的高度可以通过设置 swiper-item 元素高度来控制，也可以
 | snap-to-edge | Boolean | 当 swiper-item 个数大于等于 2，关闭 circular 并且开启 previous-margin 或 next-margin 时，可以指定这个边距是否应用到第一个、最后一个元素。<br />**默认值**：false<br />**版本要求**：基础库 [2.6.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
 | adjust-height | String | 自动以指定滑块的高度为整个容器的高度。当 vertical 为 true 时，默认不调整。可选值为：<br /><ul><li>first：第一个滑块。</li><li>current：实时的当前滑块。</li><li>highest：高度最大的滑块。</li><li>none：不根据滑块调整高度，容器高度取决于自身样式。</li></ul> **默认值**：first<br />**版本要求**：基础库 [2.6.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
 | adjust-vertical-height | Boolean | vertical 为 true 时强制使 adjust-height 生效。<br />**默认值**：false<br />**版本要求**：基础库 [2.6.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
-

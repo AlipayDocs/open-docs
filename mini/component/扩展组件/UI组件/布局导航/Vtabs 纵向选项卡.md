@@ -1,5 +1,5 @@
-
 # 简介
+
 用于让用户在不同的视图中进行切换。
 
 ## 扫码体验
@@ -9,11 +9,13 @@
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-vtabs?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-vtabs?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
   "defaultTitle": "Vtabs",
@@ -25,6 +27,7 @@
 ```
 
 ### .axml 示例代码
+
 ```html
 <vtabs
   tabs="{{tabs}}"
@@ -36,7 +39,9 @@
 >
   <block a:for="{{tabs}}">
     <vtab-content anchor="{{item.anchor}}">
-      <view style="height: {{item.anchor === 'b'?'50vh':'100vh'}};background-color: {{item.anchor === 'b'?'#ccc':''}};">
+      <view
+        style="height: {{item.anchor === 'b'?'50vh':'100vh'}};background-color: {{item.anchor === 'b'?'#ccc':''}};"
+      >
         <text>content of {{item.title}}</text>
       </view>
     </vtab-content>
@@ -45,6 +50,7 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
   data: {
@@ -72,9 +78,11 @@ Page({
 ```
 
 ## 属性说明
+
 vtabs 纵向选项卡包含了 `<vtabs>` 和 `<vtab-content>` 两部分。
 
 ### vtabs
+
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | className | String | false | 自定义 class。 |
@@ -89,16 +97,15 @@ vtabs 纵向选项卡包含了 `<vtabs>` 和 `<vtab-content>` 两部分。
 | tabBarlineColor | String | false | tabBar 激活状态边线。<br />**默认值：** #1677FF |
 | onTabClick | EventHandle | false | tab 被点击的回调。<br />**默认值：** (index: Number) => void |
 | onChange | EventHandle | false | vtab-content 变化时触发。<br />**默认值：** (index: Number) => void |
-| sameFontSize | Boolean  | false | tab 选项卡的文字是否保持相同，如为 false，激活态的文字会大一点。<br />**默认值：** true<br />**版本要求：** mini-ali-ui [1.0.6](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
-| tabBarlineShow | Boolean  | false | tab 选项卡激活态侧边竖线是否显示。<br />**默认值：** true<br />**版本要求：** mini-ali-ui [1.0.6](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
+| sameFontSize | Boolean | false | tab 选项卡的文字是否保持相同，如为 false，激活态的文字会大一点。<br />**默认值：** true<br />**版本要求：** mini-ali-ui [1.0.6](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
+| tabBarlineShow | Boolean | false | tab 选项卡激活态侧边竖线是否显示。<br />**默认值：** true<br />**版本要求：** mini-ali-ui [1.0.6](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | onTabFirstShow | EventHandle | false | tab 选项卡首次出现时的回调。<br />**默认值：** (index: Number, anchor: String) => {}<br />**版本要求：** mini-ali-ui [1.0.12](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 
+### vtab-content
 
-###  vtab-content
-| **属性** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| anchor | String | true | 列表唯一锚点值。 |
-
+| **属性** | **类型** | **必填** | **描述**         |
+| -------- | -------- | -------- | ---------------- |
+| anchor   | String   | true     | 列表唯一锚点值。 |
 
 ## Bug & Tip
 

@@ -1,4 +1,5 @@
 # 简介
+
 在页面间通信中取消监听一个事件。给出第二个参数时，只取消给出的监听函数，否则取消所有监听函数。
 
 ## 使用限制
@@ -20,10 +21,10 @@ Page({
     const openerToOpened = (data) => {
       console.log(data);
     }
-    
+
     // 挂载监听事件
     eventChannel.on('openerToOpened', openerToOpened);
-    
+
     // 解除监听事件
     eventChannel.off('openerToOpened', openerToOpened);
   }
@@ -31,9 +32,10 @@ Page({
 ```
 
 ## 入参
+
 入参结构为：`(String eventName, Function callback)`。
 
-| **参数** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| eventName | String | 是 | 需要取消监听的事件的名称。 |
-| callback | Function | 否 | 事件监听函数。 |
+| **参数**  | **类型** | **必填** | **描述**                   |
+| --------- | -------- | -------- | -------------------------- |
+| eventName | String   | 是       | 需要取消监听的事件的名称。 |
+| callback  | Function | 否       | 事件监听函数。             |

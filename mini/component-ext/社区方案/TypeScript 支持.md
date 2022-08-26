@@ -14,9 +14,9 @@ npm install @mini-types/alipay --save
 
 ```json
 {
-   "compilerOptions": {
-      "types": ["@mini-types/alipay"]
-   }
+  "compilerOptions": {
+    "types": ["@mini-types/alipay"]
+  }
 }
 ```
 

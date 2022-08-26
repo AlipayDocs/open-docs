@@ -1,4 +1,5 @@
 # 简介
+
 不再信任该 SSID，对于需要 Portal 认证的 Wi-Fi，继续弹出 portal 认证页面。为 **iOS 特有接口**。
 
 # 使用限制
@@ -10,15 +11,16 @@
 
 ## 示例代码
 
-### .js示例代码
+### .js 示例代码
+
 ```javascript
 if (my.env.platform === 'iOS') {
   my.unregisterSSID({
     SSID: '',
-    success: function(res) {
-      console.log(res)
-    }
-  })
+    success: function (res) {
+      console.log(res);
+    },
+  });
 }
 ```
 

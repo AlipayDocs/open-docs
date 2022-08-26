@@ -1,0 +1,13 @@
+{
+  "singleQuote": true,
+  "tabWidth": 2,
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "proseWrap": "never"
+      }
+    }
+  ]
+}

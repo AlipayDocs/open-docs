@@ -1,4 +1,5 @@
 # 简介
+
 监听连接上 Wi-Fi 的事件。
 
 # 使用限制
@@ -13,9 +14,9 @@
 ### .js 示例代码
 
 ```javascript
-my.onWifiConnected(function(res) {
-  console.log(res)
-})
+my.onWifiConnected(function (res) {
+  console.log(res);
+});
 ```
 
 ## 入参
@@ -24,14 +25,15 @@ my.onWifiConnected(function(res) {
 
 连接上 Wi-Fi 的事件的回调函数，会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| wifi | WifiInfo | Wi-Fi 信息。 |
+| **属性** | **类型** | **描述**     |
+| -------- | -------- | ------------ |
+| wifi     | WifiInfo | Wi-Fi 信息。 |
 
 #### WifiInfo wifi
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| SSID | String | Wi-Fi 的 SSID。 |
-| BSSID | String | Wi-Fi 的 BSSID。 |
-| secure | Boolean | Wi-Fi 是否安全。 |
-| signalStrength | Number | Wi-Fi 信号强度。取值 0 ～ 100，值越大强度越大。 |
+
+| **属性**       | **类型** | **描述**                                        |
+| -------------- | -------- | ----------------------------------------------- |
+| SSID           | String   | Wi-Fi 的 SSID。                                 |
+| BSSID          | String   | Wi-Fi 的 BSSID。                                |
+| secure         | Boolean  | Wi-Fi 是否安全。                                |
+| signalStrength | Number   | Wi-Fi 信号强度。取值 0 ～ 100，值越大强度越大。 |

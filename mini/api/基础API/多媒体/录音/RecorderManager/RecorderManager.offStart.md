@@ -1,4 +1,5 @@
 # 简介
+
 取消监听录音开始事件。
 
 ## 使用限制
@@ -11,18 +12,20 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 let recorderManager = my.getRecorderManager();
 const recorderStartCallback = res => {
- console.log('开始录音');
+  console.log('开始录音');
 };
 recorderManager.onStart(recorderStartCallback);
 setTimeput(() => {
- recorderManager.offStart(recorderStartCallback);
+  recorderManager.offStart(recorderStartCallback);
 }, 5000);
 ```
 
 ## 入参
 
 ### Function callback
+
 录音开始事件的回调函数。

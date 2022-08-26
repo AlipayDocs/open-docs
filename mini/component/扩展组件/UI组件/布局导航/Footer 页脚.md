@@ -1,18 +1,21 @@
-
 # 简介
+
 显示页面页脚组件。
 
 ## 扫码体验
+
 ![|154x191](https://mdn.alipayobjects.com/afts/img/A*AyPsQZB5z00AAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=UKUT3bRKLb7aKVQRplABowAAAABkMK8AAAAA#align=left&display=inline&height=191&margin=%5Bobject%20Object%5D&originHeight=191&originWidth=154&status=done&style=none&width=154)
 
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-footer?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-footer?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
   "defaultTitle": "Footer",
@@ -23,47 +26,40 @@
 ```
 
 ### .axml 示例代码
+
 ```html
-<footer 
-  type="{{footerInfo1.type}}" 
-  content="{{footerInfo1.content}}"
-/>
-<footer 
-  type="{{footerInfo2.type}}" 
+<footer type="{{footerInfo1.type}}" content="{{footerInfo1.content}}" />
+<footer
+  type="{{footerInfo2.type}}"
   content="{{footerInfo2.content}}"
   extend="{{footerInfo2.extend}}"
 />
-<footer 
-  type="{{footerInfo3.type}}" 
-  content="{{footerInfo3.content}}"
-/>
-<footer 
-  type="{{footerInfo4.type}}" 
+<footer type="{{footerInfo3.type}}" content="{{footerInfo3.content}}" />
+<footer
+  type="{{footerInfo4.type}}"
   content="{{footerInfo4.content}}"
   extend="{{footerInfo4.extend}}"
   onBrandTap="brandClick"
 />
-<footer 
-  type="{{footerInfo5.type}}" 
+<footer
+  type="{{footerInfo5.type}}"
   content="{{footerInfo5.content}}"
   extend="{{footerInfo5.extend}}"
 />
-<footer 
-  type="{{footerInfo6.type}}" 
+<footer
+  type="{{footerInfo6.type}}"
   content="{{footerInfo6.content}}"
   extend="{{footerInfo6.extend}}"
-	onLinkTap="linkTap"
+  onLinkTap="linkTap"
 />
-<footer 
-  type="{{footerInfo7.type}}" 
+<footer
+  type="{{footerInfo7.type}}"
   content="{{footerInfo7.content}}"
   footerEndColor="{{footerInfo7.footerEndColor}}"
 />
-<footer 
+<footer type="{{footerInfo8.type}}" />
+<footer
   type="{{footerInfo8.type}}"
-/>
-<footer 
-  type="{{footerInfo8.type}}" 
   content="{{footerInfo8.content}}"
   showEndIcon="{{footerInfo8.showEndIcon}}"
   iconSize="{{footerInfo8.iconSize}}"
@@ -71,6 +67,7 @@
 ```
 
 ### .acss 示例代码
+
 ```css
 page {
   padding-top: 20px;
@@ -82,6 +79,7 @@ page {
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
   data: {
@@ -178,6 +176,7 @@ Page({
 ```
 
 ## 属性说明
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | className | String | 自定义 class。 |
@@ -192,16 +191,15 @@ Page({
 | iconSize | Number | 小于等于 22px 的值。<br />**默认值：** 18<br />**版本要求：** mini-ali-ui [1.0.4](https://opendocs.alipay.com/mini/component-ext/ui-overview) 及以上 |
 | footerEndColor | String | type="end" 时文本的颜色。<br />**版本要求：** mini-ali-ui [1.0.4](https://opendocs.alipay.com/mini/component-ext/ui-overview) 及以上 |
 
-
 ## Bug & Tip
 
 - 当选择不同的 type 时，extend 中的值也将会有所不同：
-   - normal：无 extend。
-   - guide：extend 的值为 `[{ link: '', text: '',},]`。
-   - copyright：无 extend。
-   - brand：extend 的值为 `[{ logo: '', width: '', height: '', link: '',},]`，如果无 link 的话，可选择触发 onBrandTap 事件。
-   - link：extend 的值为 `[{ link: '', text: '',},]`，但有多个值时，文本链接之间会有间隔线出现。
-   - end：显示为 **没有更多了** 字样的结尾，可更改为 am-icon 中的类型或者自定图片 url：
-      - end 类型 content 默认值为 **没有更多了**。
-      - showEndIcon 时，content 内容将不再显示。
-      - iconURL 有值时，am-icon 中的类型将不会展示，显示为 icon 的 url，请确保该 url 是可访问的。 
+  - normal：无 extend。
+  - guide：extend 的值为 `[{ link: '', text: '',},]`。
+  - copyright：无 extend。
+  - brand：extend 的值为 `[{ logo: '', width: '', height: '', link: '',},]`，如果无 link 的话，可选择触发 onBrandTap 事件。
+  - link：extend 的值为 `[{ link: '', text: '',},]`，但有多个值时，文本链接之间会有间隔线出现。
+  - end：显示为 **没有更多了** 字样的结尾，可更改为 am-icon 中的类型或者自定图片 url：
+    - end 类型 content 默认值为 **没有更多了**。
+    - showEndIcon 时，content 内容将不再显示。
+    - iconURL 有值时，am-icon 中的类型将不会展示，显示为 icon 的 url，请确保该 url 是可访问的。

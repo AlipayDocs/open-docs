@@ -1,4 +1,5 @@
 # 简介
+
 [FileSystemManager.copyFile](https://opendocs.alipay.com/mini/api/0226of) 的同步版本。
 
 ## 使用限制
@@ -12,6 +13,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 const fs = my.getFileSystemManager();
 const result = fs.copyFileSync(
@@ -24,14 +26,17 @@ console.log(result);
 ## 入参
 
 ### String srcPath
+
 源文件路径，只可以是普通文件。
 
 ### String destPath
+
 目标文件路径。
 
 ## 错误码
-| **错误码** | **描述** |
-| --- | --- |
-| 10022 | 源文件不存在。 |
-| 10023 | 指定路径是一个已存在的目录。 |
-| 10024 | 指定的路径没有读或者写的权限。 |
+
+| **错误码** | **描述**                       |
+| ---------- | ------------------------------ |
+| 10022      | 源文件不存在。                 |
+| 10023      | 指定路径是一个已存在的目录。   |
+| 10024      | 指定的路径没有读或者写的权限。 |
