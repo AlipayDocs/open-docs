@@ -14,7 +14,7 @@
 
 ## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/action-sheet?view=preview&defaultPage=pages%2Findex%2Findex&defaultOpenedFiles=pages%2Findex%2Findex&theme=light) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/action-sheet?view=preview&defaultPage=pages%2Findex%2Findex&defaultOpenedFiles=pages%2Findex%2Findex&theme=light)
 
 ### .js 示例代码
 
@@ -25,10 +25,10 @@ Page({
       title: '支付宝-ActionSheet',
       items: ['菜单一', '菜单二', '菜单三'],
       cancelButtonText: '取消好了',
-      success: (res) => {
+      success: res => {
         const btn = res.index === -1 ? '取消' : '第' + res.index + '个';
         my.alert({
-          title: `你点了${btn}按钮`
+          title: `你点了${btn}按钮`,
         });
       },
     });

@@ -1,4 +1,5 @@
 # 简介
+
 **my.cancelBluetoothPair** 是取消蓝牙配对的 API。
 
 ## 使用限制
@@ -10,21 +11,23 @@
 # 接口调用
 
 ## 示例代码
+
 ```javascript
 //.js
 
 my.cancelBluetoothPair({
   deviceId: '', // 蓝牙设备 id
-  success: (res) => {
-    my.alert({ content: "success:"+ JSON.stringify(res) });
+  success: res => {
+    my.alert({ content: 'success:' + JSON.stringify(res) });
   },
-  fail: (error) => {
-    my.alert({ content: "fail:"+ JSON.stringify(res) });
-  }
- });
+  fail: error => {
+    my.alert({ content: 'fail:' + JSON.stringify(res) });
+  },
+});
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |

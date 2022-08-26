@@ -1,12 +1,15 @@
 # 简介
+
 **FileSystemManager** 文件管理器，可通过 [my.getFileSystemManager](https://opendocs.alipay.com/mini/api/0226oc) 获取。
 
 小程序被用户添加到手机后，以用户维度隔离，有一块独立的文件存储区域。即同一台手机，仅支持每个手机用户访问自己登录账号下的文件，不支持访问其它登录用户的文件，同一个用户不同 APPID 之间的文件也不能互相访问。
 
 ## 使用限制
+
 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 
 # 概览
+
 | **名称** | **功能说明** |
 | --- | --- |
 | [FileSystemManager.access](https://opendocs.alipay.com/mini/api/0226oe) | 判断文件/目录是否存在。 |

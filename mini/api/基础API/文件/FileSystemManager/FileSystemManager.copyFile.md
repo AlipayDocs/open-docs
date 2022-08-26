@@ -1,4 +1,5 @@
 # 简介
+
 **FileSystemManager.copyFile** 复制文件（支持复制临时文件、缓存文件、用户文件到本地用户文件位置）。
 
 ## 使用限制
@@ -13,6 +14,7 @@
 ### .js 示例代码
 
 复制缓存文件：
+
 ```JavaScript
   let fs = my.getFileSystemManager();
   my.downloadFile({
@@ -49,15 +51,16 @@
 ```
 
 复制用户文件：
+
 ```javascript
-  let fs = my.getFileSystemManager();
-  fs.copyFile({
-    srcPath: `${my.env.USER_DATA_PATH}/test/copyFile/path/aa.txt`,
-    destPath: `${my.env.USER_DATA_PATH}test/copyFile/path/dest/bb.txt`,
-    success: (res) => {
- 	  console.log("成功");
-    }
-  });
+let fs = my.getFileSystemManager();
+fs.copyFile({
+  srcPath: `${my.env.USER_DATA_PATH}/test/copyFile/path/aa.txt`,
+  destPath: `${my.env.USER_DATA_PATH}test/copyFile/path/dest/bb.txt`,
+  success: res => {
+    console.log('成功');
+  },
+});
 ```
 
 ## 入参
@@ -72,10 +75,10 @@ Object 类型，参数如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ## 错误码
-| **错误码** | **描述** |
-| --- | --- |
-| 10022 | 源文件不存在。 |
-| 10023 | 指定路径是一个已存在的目录。 |
-| 10024 | 指定的路径没有读或者写的权限。 |
+
+| **错误码** | **描述**                       |
+| ---------- | ------------------------------ |
+| 10022      | 源文件不存在。                 |
+| 10023      | 指定路径是一个已存在的目录。   |
+| 10024      | 指定的路径没有读或者写的权限。 |

@@ -5,7 +5,9 @@
 其中，小程序前端 API 分为两大类：事件监听 API、功能 API。
 
 # 事件监听 API
+
 事件监听型 API 以 `my.on` 开头，用于监听某个系统事件是否触发。 事件监听型 API 接受一个 callback 回调函数作为参数。当具体事件触发时，会触发 callback 函数调用。该 callback 函数可以传给对应以 `my.off` 开头的同名 API 来解除监听关系，如果直接调用以 `my.off` 开头的同名 API 则解除所有监听关系。 以监听低功耗蓝牙设备的特征值变化的事件 API [my.onBLECharacteristicValueChange](https://opendocs.alipay.com/mini/api/cdu501) 为例：
+
 ```javascript
 Page({
   onLoad() {
@@ -25,9 +27,11 @@ Page({
 ```
 
 # 功能 API
+
 功能型 API 是不以 `my.on` 或 `my.off` 开头的 API，用于实现某个特定功能。功能型 API 可分为异步型 API 和同步型 API
 
 ## 异步型功能 API
+
 大部分 API 都是异步型功能 API，例如 [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx)、[my.request](https://opendocs.alipay.com/mini/api/owycmh)。异步型功能 API 的入参都为一个 Object 对象，并包含三个子属性：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -38,13 +42,14 @@ Page({
 
 回调结果若无特殊说明，一般为一个 Object 对象，包含以下子属性：
 
-| **属性** | **类型** | **说明** |
-| --- | --- | --- |
-| errCode | String | 错误码，接口调用成功，errorCode=0 。 |
-| errorMsg | String | 错误信息，接口调用成功返回 `ok` 。 |
-| 其他 | - | API 返回的其他数据。 |
+| **属性** | **类型** | **说明**                             |
+| -------- | -------- | ------------------------------------ |
+| errCode  | String   | 错误码，接口调用成功，errorCode=0 。 |
+| errorMsg | String   | 错误信息，接口调用成功返回 `ok` 。   |
+| 其他     | -        | API 返回的其他数据。                 |
 
 以发起网络请求的 my.request API 为例：
+
 ```javascript
 // dataType 为 json 示例
 my.request({
@@ -55,34 +60,37 @@ my.request({
     production: 'AlipayJSAPI',
   },
   dataType: 'json',
-  success: function(res) {
-    my.alert({content: 'success'});
+  success: function (res) {
+    my.alert({ content: 'success' });
   },
-  fail: function(res) {
-    my.alert({content: 'fail'});
+  fail: function (res) {
+    my.alert({ content: 'fail' });
   },
-  complete: function(res) {
-    my.alert({content: 'complete'});
-  }
+  complete: function (res) {
+    my.alert({ content: 'complete' });
+  },
 });
 ```
 
 ## 同步型功能 API
+
 以 `Sync` 结尾的 API 都是同步型功能 API，例如 [my.setStorageSync](https://opendocs.alipay.com/mini/api/cog0du)、[my.getBatteryInfoSync](https://opendocs.alipay.com/mini/api/vf7vn3) 等。
 
 同步型功能 API 的执行结果可以通过函数返回值直接获取，如果执行出错会抛出异常：
+
 ```javascript
 try {
-    my.setStorageSync({
-      key: 'currentCity',
-      data: {
-        cityName: '杭州',
-        adCode: '330100',
-        spell: ' hangzhou',
-      }
-    });
-  } catch (e) {
-    console.error(e)
-  }
+  my.setStorageSync({
+    key: 'currentCity',
+    data: {
+      cityName: '杭州',
+      adCode: '330100',
+      spell: ' hangzhou',
+    },
+  });
+} catch (e) {
+  console.error(e);
+}
 ```
+
 以上为通用说明，特定 API 的入参及返回值以详细 API 文档为准。

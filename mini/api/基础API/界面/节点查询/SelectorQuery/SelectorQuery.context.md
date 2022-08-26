@@ -1,5 +1,6 @@
 # 简介
-SelectorQuery.context 是获取节点Context实例查询请求。目前支持 [VideoContext](https://opendocs.alipay.com/mini/api/media/video/my.createvideocontext) 和 [MapContext](https://opendocs.alipay.com/mini/api/mapcontext) 的获取。
+
+SelectorQuery.context 是获取节点 Context 实例查询请求。目前支持 [VideoContext](https://opendocs.alipay.com/mini/api/media/video/my.createvideocontext) 和 [MapContext](https://opendocs.alipay.com/mini/api/mapcontext) 的获取。
 
 ## 使用限制
 
@@ -11,23 +12,24 @@ SelectorQuery.context 是获取节点Context实例查询请求。目前支持 [V
 ## 示例代码
 
 ### .axml 示例代码
+
 ```html
-//page.axml
-<map id="map" />
+//page.axml <map id="map" />
 ```
 
 ### .js 示例代码
+
 ```javascript
 //page.js
 Page({
   onReady() {
     my.createSelectorQuery()
-      .select("#map")
-      .context((res) => {
+      .select('#map')
+      .context(res => {
         if (res && res.context) {
           const mapContext = res.context;
           mapContext.getSkew({
-            success: (res) => {
+            success: res => {
               console.log(res.skew);
             },
           });
@@ -41,11 +43,13 @@ Page({
 ## 入参
 
 ### Function callback
+
 在执行 [SelectorQuery.exec](https://opendocs.alipay.com/mini/api/baz2hg) 方法后执行，返回节点信息。
 
 #### 回调参数
+
 Object
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| context | Object | 节点对应的 Context 实例。 |
+| **属性** | **类型** | **描述**                  |
+| -------- | -------- | ------------------------- |
+| context  | Object   | 节点对应的 Context 实例。 |

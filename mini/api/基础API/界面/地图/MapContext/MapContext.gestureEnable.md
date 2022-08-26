@@ -16,13 +16,13 @@
 
 ```javascript
 this.mapCtx = my.createMapContext('map');
-this.mapCtx.gestureEnable({isGestureEnable:1});
+this.mapCtx.gestureEnable({ isGestureEnable: 1 });
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
-| **参数** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| isGestureEnable | Int | 是 | 指定手势是否可用。 |
-
+| **参数**        | **类型** | **必填** | **描述**           |
+| --------------- | -------- | -------- | ------------------ |
+| isGestureEnable | Int      | 是       | 指定手势是否可用。 |
