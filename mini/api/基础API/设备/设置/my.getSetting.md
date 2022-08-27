@@ -2,9 +2,9 @@
 
 **my.getSetting** 获取用户对当前小程序的授权状态。
 
-小程序调用设备或者隐私信息相关的 API（如 my.getLocation、my.chooseImage）时，支付宝会弹出授权提示框，由用户决定是否授权给当前小程序。在 API 调用过以后，相关权限的授权状态，用户可在小程序设置界面板中查看和更改，开发者则可通过 my.getSetting 获取。
+小程序调用设备或者隐私信息相关的 API（如 my.getLocation、my.chooseImage）时，支付宝会弹出授权提示框，由用户决定是否授权给当前小程序。API 调用之后，相关权限的授权状态，用户可在小程序设置界面板中查看和更改，开发者则可通过 my.getSetting 获取。
 
-这些需要授权的 API 的成功调用，除了需要用户在支付宝内授权给小程序外，也需要用户在系统级别开启对应权限并授权给支付宝。两种授权状态相互独立，前者可通过 my.getSetting 获取，后者则需通过 [my.getSystemInfo](https://opendocs.alipay.com/mini/api/system-info) 获取。
+这些需要授权的 API 的成功调用，往往需要用户在两个层次上完成授权：1，在支付宝内授权给小程序；2，在系统级别开启对应功能并授权给支付宝。两层授权状态相互独立，前者可通过 my.getSetting 获取，后者则需通过 [my.getSystemInfo](https://opendocs.alipay.com/mini/api/system-info) 获取。
 
 **小程序授权相关的逻辑**
 
@@ -22,13 +22,13 @@
 
 **小程序设置中的其他项**
 
-my.getSetting 能够获取的授权状态的范围当前主要集中在设备权限和隐私相关（也包括部分用户信息授权，如收货地址、会员基顾信息、手机号等），参见后文 **scope 列表**。
+my.getSetting 能够获取的授权状态的范围与小程序设置界面中的大部分选项对应，包括各种设备权限，也包括部分用户信息（收货地址、会员基础信息、手机号等），详情参见后文 **scope 列表**。小程序设置界面中有展示、但暂不支持通过 my.getSetting 查询的项目包括：
 
-小程序设置界面中有展示但暂不支持通过 my.getSetting 查询的项目：
-* 消息管理：即消息订阅状态，请在服务端使用 alipay.open.app.messagetemplate.subscribe.query 查询；
-* 用户信息：
-  * 通过 my.getAuthCode 获取用户授权的部分（如支付宝账号、姓名等），不提供单独的查询接口，开发者在恰当的时机调用 my.getAuthCode 并在回调中进行相应处理即可，已授权状态下 my.getAuthCode 二次调用不会再有弹框；
-  * 其他项目（如刷脸认证等）授权状态，请参考相关的产品接入文档。
+1，消息管理：即消息订阅状态，请在服务端使用 alipay.open.app.messagetemplate.subscribe.query 查询；
+
+2，用户信息：
+* 通过 my.getAuthCode 获取用户授权（如支付宝账号、姓名等）的状态，不提供单独的查询接口，开发者在恰当的时机调用 my.getAuthCode 并在回调中进行相应处理即可，已授权状态下 my.getAuthCode 二次调用不会再有弹框；
+* 其他非常规项目（如刷脸认证等）的授权状态，请参考相关的产品接入文档。
 
 
 ## 使用限制
