@@ -1,8 +1,12 @@
 # 简介
 
-**my.showAuthGuide** 是通过权限引导模块以图文等形式向用户弹出 Dialog，引导用户打开相应的权限的 API。
+**my.showAuthGuide** 弹出图文提示对话框，引导用户打开并授予支付宝指定权限。
 
-权限引导的核心是引导而非权限判断，调用时机应该在业务方确认所需权限被限制的时候；此外权限引导弹框受弹框已弹出次数等因素控制。
+小程序中的部分 API（如 my.chooseImage、my.chooseLocation 等）或功能涉及手机上特定设备/隐私数据的使用，需要用户在系统设置里开启相关功能/授权给支付宝。如果相关权限缺失，而该权限对于小程序的使用又不可缺少，建议使用 my.showAuthGuide 给予用户引导。
+
+调用 my.showAuthGuide 时，如果指定的权限类型已被授予，在 iOS 上不会再次弹出引导，但在 Android 的某些版本/机型上针对部分权限每次都会弹出引导。因而，请先通过 [my.getSystemInfo](https://opendocs.alipay.com/mini/api/system-info) 判断权限开启/授予情况，或在目标 API 调用失败以后，再酌情调用 my.showAuthGuide。
+
+此外，my.chooseImage 等 API 的成功调用也依赖用户在支付宝里授权给当前小程序，相关内容可参考 [my.getSetting](https://opendocs.alipay.com/mini/api/xmk3ml) 文档简介部分的描述。
 
 ## 使用限制
 
@@ -14,21 +18,38 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/show-auth-guide?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
-### .js 示例代码
+### 示例代码
 
 ```javascript
-// API-DEMO page/API/show-auth-guide/show-auth-guide.js
 Page({
-  showAuthGuide() {
-    my.showAuthGuide({
-      authType: 'LBS',
-      success: res => {
-        // shown 为 true 时表示会显示权限引导弹窗，为 false 时表示用户已经授权
-        my.alert({ content: '调用成功：' + JSON.stringify(res) });
-      },
-      fail: error => {
-        my.alert({ content: '调用失败：' + JSON.stringify(error) });
-      },
+  // 示例一 先判断再调用
+  getLocationExample1() {
+    my.getSystemInfo({
+      success(res) {
+        if (res.locationEnabled && res.locationAuthorized) {
+          my.getLocation({
+            complete: (res) => my.alert({ title: "getLocation compete", content: JSON.stringify(res)}),
+          });
+        } else {
+          console.log(res.locationEnabled ？ "定位权限未授予支付宝" : "定位功能未开启");
+          my.showAuthGuide({ authType: "LBS" });
+        }
+      }
+    });
+  },
+  
+  // 示例二 失败后再引导
+  getLocationExample2() {
+    my.getLocation({
+      success: (res) => my.alert({ title: "getLocation success", content: JSON.stringify(res) }),
+      fail: (res) => {
+        if (res.error == 11) {
+          console.log("定位功能未开启或定位权限未授予支持宝");
+          my.showAuthGuide({ authType: "LBS" });
+        } else {
+          my.alert({ title: 'getLocation fail', content: JSON.stringify(res) });
+        }
+      }
     });
   },
 });
@@ -49,16 +70,23 @@ Page({
 
 | **权限名称** | **权限码** | **支持平台** | **描述** |
 | --- | --- | --- | --- |
-| 后台保活权限 | BACKGROUNDER | Android | - |
-| 桌面快捷权限 | SHORTCUT | Android | - |
-| 麦克风权限 | MICROPHONE | iOS | - |
-| 通讯录权限 | ADDRESSBOOK | iOS | - |
-| 相机权限 | CAMERA | iOS / Android | - |
-| 照片权限 | PHOTO | iOS | - |
+| 相机 | CAMERA | iOS / Android | - |
+| 照册 | PHOTO | iOS | - |
+| 地理位置 | LBS | iOS / Android | - |
+| 蓝牙 | BLUETOOTH | iOS / Android | 客户端 10.2.33、基础库 2.7.10 开始支持。<br />可通过 `my.canIUse('showAuthGuide.object.authType.BLUETOOTH')` 检测。 |
+| 麦克风 | MICROPHONE | iOS | - |
+| 通讯录 | ADDRESSBOOK | iOS | - |
 | push 通知栏权限 | NOTIFICATION | Android | - |
-| 自启动权限 | SELFSTARTING | Android | - |
-| 位置权限 | LBS | iOS / Android | - |
-| 蓝牙 | BLUETOOTH | iOS / Android | 客户端 10.2.33、基础库 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。<br />可通过 `my.canIUse('showAuthGuide.object.authType.BLUETOOTH')` 进行检测。 |
+| 后台保活 | BACKGROUNDER | Android | - |
+| 创建桌面快捷方式 | SHORTCUT | Android | 部分机型系统设置中没有“创建桌面快捷方式”选项，一般为默认有权限或者使用时询问用户。 |
+
+### success 回调
+
+success 回调会收到 Object 类型的参数，基属性如下：
+
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| shown | Boolean | 是否已显示引导授权弹框。<br>**注意**：当前 Android 上实现有缺陷，shown 始终为 true，并不能反映实际情况。 |
 
 ## 错误码
 
