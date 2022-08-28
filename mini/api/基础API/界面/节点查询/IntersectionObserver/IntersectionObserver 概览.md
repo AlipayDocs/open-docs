@@ -1,6 +1,7 @@
 **IntersectionObserver** 对象，用于推断某些节点是否可以被用户看见、有多大比例可以被用户看见。
 
-#  方法
+# 方法
+
 | **名称** | **描述** |
 | --- | --- |
 | [IntersectionObserver.disconnect](https://opendocs.alipay.com/mini/api/xacdmn) | 停止监听。 |

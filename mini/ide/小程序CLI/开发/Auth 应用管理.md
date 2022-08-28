@@ -1,29 +1,27 @@
+### Auth 中有什么
 
-### Auth中有什么
 - 授权完成永久登录
 - 小程序列表查看、切换
 - 小程序版本上传
 - 真机预览、真机调试
-- AMPE场景切换
+- AMPE 场景切换
 
-
-### 什么时候需要Auth
+### 什么时候需要 Auth
 
 - 小程序中使用了小程序插件
 - 小程序中使用了 `my.getAuthCode`
 - 切换当前的小程序
 - 上传代码至开放平台
 - 进行小程序的真机预览和调试
-- AMPE小程序开发者
-
+- AMPE 小程序开发者
 
 ### 授权登录
-> 小程序 CLI 在1.14.0后对登录进行了全新升级，可通过简单的扫码即可完成持久化地授权登录。
 
+> 小程序 CLI 在 1.14.0 后对登录进行了全新升级，可通过简单的扫码即可完成持久化地授权登录。
 
-#### 版本号大于等于1.14.0
+#### 版本号大于等于 1.14.0
 
-1. 切换至Auth面板
+1. 切换至 Auth 面板
 
 ![|723x443](https://cdn.nlark.com/yuque/0/2021/png/179989/1620630205839-dfb0a1da-00d2-44ed-a813-d56518055806.png#align=left&display=inline&height=1176&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1176&originWidth=1922&size=540990&status=done&style=none&width=1922)
 
@@ -31,7 +29,7 @@
 
 ![|723x344](https://cdn.nlark.com/yuque/0/2021/png/179989/1620630265451-84abb6e3-f43e-485a-99fc-59e40fb3a86a.png#align=left&display=inline&height=908&margin=%5Bobject%20Object%5D&name=image.png&originHeight=908&originWidth=1912&size=342300&status=done&style=none&width=1912)
 
-#### 版本号低于1.14.0
+#### 版本号低于 1.14.0
 
 1. 切换至 Auth 面板
 
@@ -41,7 +39,7 @@
 
 ![|723x201](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/88085/1609318614851-df4c4291-eaaa-4277-9d57-bc0bf2884b76.png#align=left&display=inline&height=220&margin=%5Bobject%20Object%5D&originHeight=408&originWidth=1467&status=done&style=none&width=792)
 
-3. 复制密钥并点击上述提示的2中链接到开放平台生成 toolId
+3. 复制密钥并点击上述提示的 2 中链接到开放平台生成 toolId
 
 ![|723x425](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/88085/1609318790106-cd283b8f-7e15-424b-9d8c-03f8a19b675c.png?x-oss-process=image%2Fresize%2Cw_1500#align=left&display=inline&height=465&margin=%5Bobject%20Object%5D&originHeight=881&originWidth=1500&status=done&style=none&width=792)
 
@@ -49,11 +47,11 @@
 
 ![|723x294](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/88085/1609318832388-47a80bb9-a1f9-4a9f-98e1-d66e726196e2.png#align=left&display=inline&height=322&margin=%5Bobject%20Object%5D&originHeight=365&originWidth=897&status=done&style=none&width=792)
 
-
 ### 小程序切换
+
 > 当插件加载失败或者左侧模拟器无法正常渲染，可在此处确认是否选中了正确的小程序应用。
 
-完成授权登录后，刷新页面，会在Auth面板中展示“我的小程序”，可在此切换当前小程序应用。
+完成授权登录后，刷新页面，会在 Auth 面板中展示“我的小程序”，可在此切换当前小程序应用。
 
 ![|723x424](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/88085/1614002094176-a609e7ac-6db1-4025-a608-81d57ad9ef18.png#align=left&display=inline&height=485&margin=%5Bobject%20Object%5D&name=image.png&originHeight=970&originWidth=1654&size=313391&status=done&style=none&width=827)
 
@@ -72,20 +70,19 @@
 - [真机预览](https://miniu.alipay.com/doc/preview-real-machine)
 - [真机调试](https://miniu.alipay.com/doc/debug-real-machine)
 
+### AMPE 场景
 
-
-### AMPE场景
 详细文档可参考：[https://opendocs.alipay.com/mini/01l9vi](https://opendocs.alipay.com/mini/01l9vi)。
 
-1. 勾选“切换至AMPE开发场景”
+1. 勾选“切换至 AMPE 开发场景”
 
 ![|723x439](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/88085/1614002481493-22a5051d-5f5c-4bbc-80f0-b01192d6a46b.png#align=left&display=inline&height=560&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1120&originWidth=1844&size=248461&status=done&style=none&width=922)
 
 2. 真机预览、真机调试
 
-与支付宝等手机APP的真机预览和调试不同，AMPE的真机预览和调试需要提供具体的设备和产品。所以，在预览和调试开始之前，需要填写一些设备和产品信息。
+与支付宝等手机 APP 的真机预览和调试不同，AMPE 的真机预览和调试需要提供具体的设备和产品。所以，在预览和调试开始之前，需要填写一些设备和产品信息。
 
-MiniU会将填写的移动应用ID、产品ID、设备ID存储下来，供下次直接使用。
+MiniU 会将填写的移动应用 ID、产品 ID、设备 ID 存储下来，供下次直接使用。
 
 ![|723x400](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/88085/1614002645197-70a281ae-0d8a-4c60-95ef-149f78afde7d.png#align=left&display=inline&height=514&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1028&originWidth=1860&size=194845&status=done&style=none&width=930)
 

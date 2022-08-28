@@ -11,4 +11,3 @@
 | 清除 | [my.clearStorageSync](/mini/api/ulv85u) | [my.clearStorage](/mini/api/storage) | 清除本地数据缓存的接口。 |
 | 删除 | [my.removeStorageSync](/mini/api/ytfrk4) | [my.removeStorage](/mini/api/of9hze) | 删除缓存数据的接口。 |
 | 获取相关信息 | [my.getStorageInfoSync](/mini/api/uw5rdl) | [my.getStorageInfo](/mini/api/zvmanq) | 获取当前 storage 的相关信息的接口。 |
-

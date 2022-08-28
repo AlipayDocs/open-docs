@@ -1,25 +1,29 @@
-
 # 简介
+
 红包在各个金蛋之间移动，用户需要快速反应，点击红包所在金蛋进行砸蛋抽奖。
 
 更多详细信息请参见 [代码市场](https://openhome.alipay.com/platform/mas.htm#/templateDetail/comps/5)。
 
 ## 扫码体验
+
 ![|157x194](https://gw.alipayobjects.com/zos/skylark-tools/public/files/795ce6a3ac5579eaecbf6300a999b549.png#align=left&display=inline&height=194&margin=%5Bobject%20Object%5D&originHeight=194&originWidth=157&status=done&style=none&width=157)
 
 # 使用
 
-## Herbox 
-[小程序在线](https://herbox-embed.alipay.com/s/doc-hit-eggs?theme=light&previewZoom=75&chInfo=openhome-doc) 
+## Herbox
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-hit-eggs?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### 安装
+
 ```shell
 npm i ant-mini-hit-eggs --save
 ```
 
 ### 注册
+
 ```json
 //.json
 {
@@ -32,6 +36,7 @@ npm i ant-mini-hit-eggs --save
 ### 调用
 
 #### .axml 示例代码
+
 ```html
 //.axml
 <view>
@@ -39,36 +44,38 @@ npm i ant-mini-hit-eggs --save
     onStart="onStart"
     onFinish="onFinish"
     disabled="{{disabled}}"
-  />
-</view>undefined
+  /> </view
+>undefined
 ```
 
 #### .js 示例代码
+
 ```javascript
 //.js
 Page({
   data: {
     disabled: false,
-    times: 0
+    times: 0,
   },
-  onStart () {
+  onStart() {
     console.log('开始砸金蛋');
     this.setData({
       times: ++this.data.times,
-    })
+    });
   },
-  onFinish () {
+  onFinish() {
     console.log('砸金蛋结束');
     if (this.data.times >= 3) {
       this.setData({
         disabled: true,
       });
     }
-  }
+  },
 });
 ```
 
 ## 属性说明
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | eggsCount | Number | 金蛋个数。<br />**默认值：** 9 |
@@ -89,4 +96,3 @@ Page({
 | jumpIcon | String | 金蛋跳动的图标。<br />**默认值：** [src](https://gw.alipayobjects.com/zos/rmsportal/XgogyVJXSBVXPxbTOFDK.png) |
 | redBagIcon | String | 金蛋被砸的图标。<br />**默认值：** [src](https://gw.alipayobjects.com/zos/rmsportal/XgogyVJXSBVXPxbTOFDK.png) |
 | smashedIcon | String | 金蛋砸碎的图标。<br />**默认值：** [src](https://gw.alipayobjects.com/zos/rmsportal/XgogyVJXSBVXPxbTOFDK.png) |
-

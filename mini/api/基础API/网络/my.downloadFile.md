@@ -49,32 +49,29 @@ my.downloadFile({
 
 Object 类型，属性如下：
 
-| **属性** | **类型** | **必填** | **描述**                                       |
-| -------- | -------- | -------- | ---------------------------------------------- |
-| url      | String   | 是       | 下载文件地址。除在线 URL 以外，也接受包含图片 base64 数据的 [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) |
-| header   | Object   | 否       | HTTP 请求 Header。                             |
-| success  | Function | 否       | 调用成功的回调函数。                           |
-| fail     | Function | 否       | 调用失败的回调函数。                           |
-| complete | Function | 否       | 调用结束的回调函数（调用成功、失败都会执行）。 |
-
+| **属性** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| url | String | 是 | 下载文件地址。除在线 URL 以外，也接受包含图片 base64 数据的 [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) |
+| header | Object | 否 | HTTP 请求 Header。 |
+| success | Function | 否 | 调用成功的回调函数。 |
+| fail | Function | 否 | 调用失败的回调函数。 |
+| complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### success 回调函数
 
 success 回调会收到一个 Object 类型的参数，属性如下：
 
-| **属性**   | **类型** | **描述**             |
-| ---------- | -------- | -------------------- |
-| apFilePath | String   | 文件临时存放的位置（[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)）。 |
-| tempFilePath | String   | 文件临时存放的位置（本地临时文件）<br/> 实际与 apFilePath 相同，基础库 [2.7.23](https://opendocs.alipay.com/mini/ide/framework-changelog-v2) 开始支持。 |
-
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| apFilePath | String | 文件临时存放的位置（[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)）。 |
+| tempFilePath | String | 文件临时存放的位置（本地临时文件）<br/> 实际与 apFilePath 相同，基础库 [2.7.23](https://opendocs.alipay.com/mini/ide/framework-changelog-v2) 开始支持。 |
 
 ### 错误码
 
-| **错误码** | **说明**                 | **解决方案**                  |
-| ---------- | ------------------------ | ----------------------------- |
-| 12         | 下载失败。               | 检查 URL 是否有误、服务器状态是否正常；也可能为网络问题，可请用户稍后重试。 |
-| 20         | 请求的 URL 不支持 HTTP。 | 使用 HTTPS 协议的 URL。 |
-
+| **错误码** | **说明** | **解决方案** |
+| --- | --- | --- |
+| 12 | 下载失败。 | 检查 URL 是否有误、服务器状态是否正常；也可能为网络问题，可请用户稍后重试。 |
+| 20 | 请求的 URL 不支持 HTTP。 | 使用 HTTPS 协议的 URL。 |
 
 ## 常见问题 FAQ
 
@@ -82,12 +79,10 @@ success 回调会收到一个 Object 类型的参数，属性如下：
 
 - 通过 my.downloadFile 接口下载的文件，其路径样式符合 `https://resource/xxx` 类型，属于[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。本地临时文件随时有可能会被回收，推荐使用 my.saveFile 接口将下载后的文件存储为[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)，代码示例详见[此处](https://opendocs.alipay.com/mini/03dt4s#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)。
 
-
 ### Q: my.downloadFile 都支持哪些类型？支持下载 PDF 文件吗？
 
 - 支持下载任何类型的文件，包含 PDF 文件。需要**注意**的是，如果未能根据文件头信息获取到正确的拓展名信息，则将以 `.other` 的后缀名进行存储。
 - PDF 的下载及预览，可参考 [my.openDocument](https://opendocs.alipay.com/mini/api/mwpprc) 的代码示例。
-
 
 ### Q: 为什么我下载的 PDF 文件通过 my.openDocument 接口预览时出现渲染异常？
 

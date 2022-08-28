@@ -1,4 +1,5 @@
 # 简介
+
 **my.offAudioInterruptionBegin** 是取消监听音频因为系统占用而被中断的开始事件。为异步接口。
 
 更多信息，可查看 [音频播放 API 使用说明](https://opendocs.alipay.com/mini/03l3fn)。
@@ -12,17 +13,25 @@
 # 接口调用
 
 ## 示例代码
+
 第一步：开发者可以在 .axml 文件中写入相关的组件（如 button 或者 view）来控制音乐的播放和暂停等，以下示例代码仅供参考：
+
 ```html
 <!--.axml-->
 <view class="operation-item" onTap="play">播放</view>
 <view class="operation-item" onTap="pause">暂停</view>
 <view class="operation-item" onTap="stop">停止</view>
 <view class="operation-item" onTap="seek">播放进度跳转</view>
-<view class="operation-item" onTap="offAudioInterruptionBegin">取消监听音频因为系统占用而被中断的开始事件</view>
-<view class="operation-item" onTap="offAudioInterruptionEnd">取消监听音频被中断的结束事件</view>
+<view class="operation-item" onTap="offAudioInterruptionBegin"
+  >取消监听音频因为系统占用而被中断的开始事件</view
+>
+<view class="operation-item" onTap="offAudioInterruptionEnd"
+  >取消监听音频被中断的结束事件</view
+>
 ```
+
 第二步：开发者获取前景音乐 innerAudioContext 对象后，添加属性并注册对应监听事件。
+
 ```javascript
 //.js
 onLoad(){
@@ -31,11 +40,11 @@ this.innerAudioContext = my.createInnerAudioContext();
 //来源于优酷的音频码，用于直接播放。支持音频格式：AAC，MP3。如果开发者不传入音频码，控制台不会报错，但无音频播放。
 this.innerAudioContext.src = '音频src';
 //是否自动开始播放，默认为 false
-this.innerAudioContext.autoplay = false; 
+this.innerAudioContext.autoplay = false;
 //是否循环播放，默认为 false
 this.innerAudioContext.loop = false;
 //是否遵循系统静音开关，当此参数为 false 时，即使用户打开了静音开关，也能继续发出声音，默认值 true(注意：此参数仅 iOS 支持)。
-this.innerAudioContext.obeyMuteSwitch = false; 
+this.innerAudioContext.obeyMuteSwitch = false;
 this.innerAudioContext.onPlay(() => {
    console.log("innerAudioContext onPlay 开始播放")
    my.alert({ content:'innerAudioContext 前景音频播放事件 onPlay' });
@@ -66,7 +75,9 @@ my.onAudioInterruptionEnd(() => {
 });
 },
 ```
+
 第三步：开发者在 .js 文件中写入以下方法，配合上一步的组件，播放音频，以下示例代码仅供参考：
+
 ```javascript
 //.js
 //播放音乐
@@ -109,6 +120,6 @@ offAudioInterruptionEnd(){
 
 Object 类型，属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
+| **属性** | **类型** | **描述**                                           |
+| -------- | -------- | -------------------------------------------------- |
 | callback | Function | 音频因为受到系统占用而被中断的开始事件的回调函数。 |

@@ -1,5 +1,5 @@
-
 # 简介
+
 **my.arrayBufferToBase64** 将 ArrayBuffer 对象转成 Base64 字符串。
 
 # 使用限制
@@ -12,13 +12,16 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
-const arrayBuffer = new Uint8Array([11, 22, 33])
-const base64 = my.arrayBufferToBase64(arrayBuffer)
+const arrayBuffer = new Uint8Array([11, 22, 33]);
+const base64 = my.arrayBufferToBase64(arrayBuffer);
 ```
 
 ## 入参
+
 类型为 `ArrayBuffer`，代表要转换成 `Base64` 字符串的 `ArrayBuffer` 对象。
 
 ### 返回值
+
 类型为 `String`。

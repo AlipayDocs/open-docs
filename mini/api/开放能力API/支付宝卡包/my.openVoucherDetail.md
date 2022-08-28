@@ -1,4 +1,5 @@
 # 简介
+
 **my.openVoucherDetail** 是打开当前用户的某张券的（非口碑）详情页的 API，打开支付宝券详情页。
 
 有关支付宝卡包详细功能，可查看 [支付宝卡包产品介绍](https://opendocs.alipay.com/open/199/105225)。
@@ -14,18 +15,20 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // .js
 //传入passId来打开
-my.openVoucherDetail({passId:"20170921"}); 
+my.openVoucherDetail({ passId: '20170921' });
 // 传入partnerId 和 serialNumber来打开
 my.openVoucherDetail({
-      partnerId:"2018xxxx",
-      serialNumber:"20170921"
-    });
+  partnerId: '2018xxxx',
+  serialNumber: '20170921',
+});
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |

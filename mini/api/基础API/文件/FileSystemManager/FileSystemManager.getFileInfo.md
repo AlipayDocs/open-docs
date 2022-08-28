@@ -1,4 +1,5 @@
 # 简介
+
 **FileSystemManager.getFileInfo** 获取该小程序下的本地临时文件或本地缓存文件信息。
 
 ## 使用限制
@@ -11,14 +12,15 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 let fs = my.getFileSystemManager();
 fs.getFileInfo({
   filePath: `${my.env.USER_DATA_PATH}/test.txt`,
-  success: (res) => {
+  success: res => {
     console.log(res);
-  }
-})
+  },
+});
 ```
 
 ## 入参
@@ -33,16 +35,16 @@ Object 类型，参数如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ### Function success
+
 success 回调会携带一个 Object 类型的对象，其参数如下：
 
-| **属性** | **类型** | **说明** |
-| --- | --- | --- |
-| size | Number | 文件大小，以字节为单位。 |
-
+| **属性** | **类型** | **说明**                 |
+| -------- | -------- | ------------------------ |
+| size     | Number   | 文件大小，以字节为单位。 |
 
 ## 错误码
-| **错误码** | **描述** |
-| --- | --- |
-| 10024 | 指定文件没有读的权限。 |
+
+| **错误码** | **描述**               |
+| ---------- | ---------------------- |
+| 10024      | 指定文件没有读的权限。 |

@@ -18,7 +18,6 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/show-auth-guide?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
-
 ### 示例代码
 
 ```javascript
@@ -90,6 +89,7 @@ success 回调会收到 Object 类型的参数，基属性如下：
 | shown | Boolean | 是否已显示引导授权弹框。<br>**注意**：当前 Android 上实现有缺陷，shown 始终为 true，并不能反映实际情况。 |
 
 ## 错误码
-| **错误码** | **描述** | **解决方案** |
-| --- | --- | --- |
-| 2 | 参数错误。 | 请使用文档中提供的 authType 选项。 |
+
+| **错误码** | **描述**   | **解决方案**                       |
+| ---------- | ---------- | ---------------------------------- |
+| 2          | 参数错误。 | 请使用文档中提供的 authType 选项。 |

@@ -1,11 +1,11 @@
 # 简介
 
-**my.setNavigationBar**  是设置导航栏样式（包括：导航栏标题、导航栏背景色、导航栏底部边框颜色、导航栏左上角 LOGO 图片）的 API。
+**my.setNavigationBar** 是设置导航栏样式（包括：导航栏标题、导航栏背景色、导航栏底部边框颜色、导航栏左上角 LOGO 图片）的 API。
 
 ## 使用限制
 
 - 导航栏左上角 LOGO 图片支持 GIF 格式，必须使用 HTTPS 图片链接。
-- 若设置了导航栏背景色 backgroundColor，则导航栏底部边框颜色 borderBottomColor  不会生效，默认会和 backgroundColor 颜色一样。
+- 若设置了导航栏背景色 backgroundColor，则导航栏底部边框颜色 borderBottomColor 不会生效，默认会和 backgroundColor 颜色一样。
 - 导航栏背景色不支持渐变色。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
@@ -17,7 +17,7 @@
 
 ## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/set-navigation-bar?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/set-navigation-bar?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
 
@@ -28,21 +28,21 @@ Page({
     var backgroundColor = e.detail.value.backgroundColor;
     var borderBottomColor = e.detail.value.borderBottomColor;
     var image = e.detail.value.image;
-    console.log(title)
+    console.log(title);
     my.setNavigationBar({
       title,
       backgroundColor,
       borderBottomColor,
       image,
-    })
+    });
   },
   resetNavigationBar() {
     my.setNavigationBar({
       reset: true,
       title: '重置导航栏样式',
     });
-  }
-})
+  },
+});
 ```
 
 ## 入参
@@ -53,7 +53,7 @@ Object 类型，参数如下：
 | --- | --- | --- | --- |
 | title | String | 否 | 导航栏标题。 |
 | image | String | 否 | 图片链接地址（支持 GIF 格式图片），必须是 HTTPS，请使用 iOS @3x 分辨率标准的高清图片。<br />若设置了 image 则 title 参数失效。 |
-| frontColor | String | 否 | 导航栏前景色，包括返回键、标题、收藏、右上角胶囊按钮的颜色，仅支持 #ffffff 和 #000000。 <br /> <strong>基础库 2.7.24 开始支持</strong>|
+| frontColor | String | 否 | 导航栏前景色，包括返回键、标题、收藏、右上角胶囊按钮的颜色，仅支持 #ffffff 和 #000000。 <br /> <strong>基础库 2.7.24 开始支持</strong> |
 | backgroundColor | String | 否 | 导航栏背景色，支持十六进制颜色值。 |
 | borderBottomColor | String | 否 | 导航栏底部边框颜色，支持十六进制颜色值。<br />若设置了 backgroundColor，则 borderBottomColor 不会生效，默认会和 backgroundColor 颜色一样。 |
 | reset | Boolean | 否 | 是否重置导航栏为支付宝默认配色，默认为 false。 |
@@ -64,7 +64,9 @@ Object 类型，参数如下：
 # 常见问题
 
 ## Q：小程序右上角的 分享与收藏 可以设置颜色吗？
+
 A：这是默认的，无法设置颜色。
 
 # 相关信息
+
 iOS @3x 分辨率标准的更多信息，可查看 [Image Size and Resolution](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/)。

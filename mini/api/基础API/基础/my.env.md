@@ -1,4 +1,5 @@
 # 简介
+
 **my.env** 是小程序环境变量对象 API。
 
 对比 [my.getSystemInfo](https://opendocs.alipay.com/mini/api/system-info) / [my.getSystemInfoSync](https://opendocs.alipay.com/mini/api/gawhvz)，my.env 在使用上更加轻量化。
@@ -9,8 +10,11 @@
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
+
 ## 示例代码
+
 ### .js 示例代码
+
 ```javascript
 if (my.canIUse('env')) {
   console.log(my.env.USER_DATA_PATH);
@@ -21,6 +25,7 @@ if (my.canIUse('env.clientName')) {
 ```
 
 ## 属性
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | USER_DATA_PATH | String | 文件系统中的用户目录路径（本地路径）。<br />基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持。 |

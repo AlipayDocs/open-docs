@@ -1,5 +1,5 @@
-
 # 简介
+
 **my.hideBackHome** 是隐藏标题栏上的 **返回首页** 按钮和右上角通用菜单中的返回首页功能的 API。
 
 当用户打开的小程序最底层页面是非首页且非 tabbar 页面时，默认展示 **返回首页** 按钮，可以通过调用 my.hideBackHome 进行隐藏。
@@ -18,6 +18,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 //.js
 Page({
@@ -36,7 +37,7 @@ Page({
     my.reLaunch({
       url:'../swiper/swiper' // 在页面中添加的非首页
     })
-  
+
     setTimeout(() => {
       //5秒后隐藏返回首页按钮
       my.hideBackHome()
@@ -47,5 +48,5 @@ Page({
 # 常见问题 FAQ
 
 ## Q：如何隐藏页面的回退按钮？
-A：暂无 API 可以直接隐藏页面的回退按钮。可以先通过 my.reLaunch 进行页面跳转，在被跳转的页面里调用 my.hideBackHome 隐藏返回首页按钮。
 
+A：暂无 API 可以直接隐藏页面的回退按钮。可以先通过 my.reLaunch 进行页面跳转，在被跳转的页面里调用 my.hideBackHome 隐藏返回首页按钮。
