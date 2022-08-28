@@ -6,7 +6,7 @@
 
 - 基础库 [1.15.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
+- 小程序开发者工具（IDE）暂不支持调试此 API，请使用真机预览或调试。
 
 # 接口调用
 
@@ -40,7 +40,7 @@ Object 类型，属性如下：
 
 | **错误码** | **描述** |
 | --- | --- |
-| 2 | 参数无效，没有传 filePath 参数。 |
+| 2 | filePath 为空 |
 | 15 | 没有开启相册权限（iOS only）。 |
 | 16 | 手机相册存储空间不足（iOS only）。 |
 | 17 | 保存图片过程中的其他错误。一般情况下由于 filePath 的值不符合要求导致，请检查 filePath 值。 |
