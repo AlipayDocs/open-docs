@@ -23,7 +23,7 @@
 
 ```javascript
 Page({
-  // 方式一 使用 getSystemInfo 预判
+  // 示例一 先判断再调用
   getLocationExample1() {
     my.getSystemInfo({
       success(res) {
@@ -39,7 +39,7 @@ Page({
     });
   },
   
-  // 方式二 权限问题失败后引导
+  // 示例二 失败后再引导
   getLocationExample2() {
     my.getLocation({
       success: (res) => my.alert({ title: "getLocation success", content: JSON.stringify(res) }),
