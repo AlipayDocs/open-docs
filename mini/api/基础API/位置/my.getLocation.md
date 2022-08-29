@@ -138,7 +138,8 @@ A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-au
 A：需要重新授权，删除小程序应用后会将获取定位的授权关系一起删除。
 
 ## Q：如何在 IDE 模拟器调试 my.getLocation 接口？
-A：可以在模拟器工具栏中点击定位按钮，自定义当前位置的经纬度。
+A：可以在模拟器工具栏中点击定位按钮，自定义当前位置的经纬度。<br />![](https://img.alicdn.com/imgextra/i1/O1CN01jQG0oE1ZOJqojXjqo_!!6000000003184-0-tps-456-266.jpg)
+
 
 ## Q：my.getLocation 在 IDE 模拟器中获取的地理位置信息不对？
 A：IDE 模拟器目前默认的地址是杭州，后期会优化。如果想要在 IDE 模拟器中调试 my.getLocation 接口，请参考 “如何在 IDE 模拟器调试 my.getLocation 接口？” FAQ。
