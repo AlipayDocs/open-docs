@@ -20,7 +20,7 @@
 </tr>
 <tr>
   <td>其他情况</td>
-  <td>联系合作的支付宝业务人员</td>
+  <td>不支持跳转</td>
 </tr>
 <tr>
   <td rowspan=3>支付宝 URL<br><i>https&colon;//*.alipay.com/*</i></td>
@@ -29,11 +29,11 @@
 </tr>
 <tr>
   <td>域名为 ur.alipay.com 或 m.alipay.com 的短链接<br>或以 https&colon;//ds.alipay.com/?scheme= 开头的 URL</td>
-  <td>参考本文档 <b>附录 1</b>，先将 scheme 转换为实际目标地址</td>
+  <td>参考本文档 <b>附录 1</b>，先将 scheme 转换为实际目标地址再判断</td>
 </tr>
 <tr>
   <td>其他情况</td>
-  <td><b>申请添加白名单</b>，然后使用 my.ap.navigateToAlipayPage()</td>
+  <td>不支持跳转</td>
 </tr>
 <tr>
   <td rowspan=3>支付宝 scheme<br><i>alipays://*</i></td>
@@ -42,11 +42,11 @@
 </td>
 <tr>
   <td>scheme 中的 appId 为 20000067</td>
-  <td>参考本文档 <b>附录 1</b>，先将 scheme 转换为实际目标地址</td>
+  <td>参考本文档 <b>附录 1</b>，先将 scheme 转换为实际目标地址再判断</td>
 </td>
 <tr>
   <td>其他情况</td>
-  <td><b>申请添加白名单</b>，然后使用 my.ap.navigateToAlipayPage()</td>
+  <td>不支持跳转</td>
 </tr>
 <tr>
   <td rowspan=2>非支付宝 URL</td>
@@ -55,11 +55,9 @@
 </tr>
 <tr>
   <td>第三方域名</td>
-  <td><b>申请添加白名单</b>，然后使用 my.ap.navigateToAlipayPage()</td>
+  <td>不支持跳转</td>
 </tr>
 </table>
-
-上表中需要 **申请添加白名单** 的情况，所涉及的 URL 或 scheme 均为支付宝业务人员出于特殊合作需要定向提供给小程序开发者，并通过内部流程添加白名单（否则无法跳转）。暂不提供申请添加白名单的线上流程，如有相关诉求，请联系合作的支付宝业务人员。
 
 本文档的 <b>附录</b> 部分提供了链接转换和代码生成的示例。在对上表内容有了解的基础上，开发者可直接使用附录代码作为工具，取代人工判断。
 
