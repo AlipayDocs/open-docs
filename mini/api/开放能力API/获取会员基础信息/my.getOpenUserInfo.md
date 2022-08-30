@@ -35,7 +35,7 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-user-info?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-user-info?view=preview&defaultPage=pages/base-info/base-info&defaultOpenedFiles=pages/base-info/base-info&theme=light&priority=js)
 
 ### .js 示例代码
 
