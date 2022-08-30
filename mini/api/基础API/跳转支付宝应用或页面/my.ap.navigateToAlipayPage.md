@@ -50,11 +50,11 @@
 </tr>
 <tr>
   <td rowspan=2>非支付宝 URL</td>
-  <td>开发者自有域名</td>
-  <td>使用 <a taget="_blank" href="https://opendocs.alipay.com/mini/component/web-view">web-view 组件</a></td>
+  <td>开发者自有页面</td>
+  <td>使用 <a taget="_blank" href="https://opendocs.alipay.com/mini/component/web-view">web-view 组件</a><br>需要在小程序后台添加域名并上传校验文件</td>
 </tr>
 <tr>
-  <td>第三方域名</td>
+  <td>第三方页面</td>
   <td>不支持跳转</td>
 </tr>
 </table>
