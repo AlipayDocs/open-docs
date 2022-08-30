@@ -22,13 +22,18 @@
 
 ```javascript
 Page({
-  my.reLaunch({
-    // 特殊字符（中文等）需要 encode 处理，否则无法正常跳转
-    url: `/page/index?id=12&name=${encodeURIComponent('小明')}&percentage=${encodeURIComponent('%')}`
-  }, success: () => {
-    console.log("跳转成功");
-  })
-})
+  onTap() {
+    my.reLaunch({
+      // 特殊字符（中文等）需要 encode 处理，否则无法正常跳转
+      url: `/page/index?id=12&name=${encodeURIComponent(
+        '小明'
+      )}&percentage=${encodeURIComponent('%')}`,
+      success: () => {
+        console.log('跳转成功');
+      },
+    });
+  },
+});
 ```
 
 ## 入参

@@ -15,14 +15,14 @@
 ### .js 示例代码
 
 ```javascript
-my.getBLEDeviceStatus（{
-  success: (res) => {
-    console.log(res)
+my.getBLEDeviceStatus({
+  success: res => {
+    console.log(res);
   },
-  fail: (err) => {
-    console.error("getBLEDeviceStatus:"+JSON.stringify(err))
-  }
-})
+  fail: err => {
+    console.error('getBLEDeviceStatus:' + JSON.stringify(err));
+  },
+});
 ```
 
 ## 入参
