@@ -28,8 +28,8 @@
 
 ![|723x217](https://mdn.alipayobjects.com/afts/img/A*VuOfTIdbZTYAAAAAAAAAAABkAa8wAA/1024w_1024h_1l.png?bz=openpt_doc&t=j8WXY5peVav6KjeolXgOogAAAABkMK8AAAAA#align=left&display=inline&height=308&margin=%5Bobject%20Object%5D&originHeight=308&originWidth=1024&status=done&style=none&width=1024)
 
-<!-- ## 4. 推送到远端仓库
+## 4. 推送到远端仓库
 
 添加远程仓库（`git remote add origin xxxxxx`）并推送至远程仓（`git push origin`）。
 
-![|434x861](https://mdn.alipayobjects.com/afts/img/A*o6m7RpN7rdgAAAAAAAAAAABkAa8wAA/1024w_1024h_1l.png?bz=openpt_doc&t=FZmkxAPN8RvBkmNLTdKySwAAAABkMK8AAAAA#align=left&display=inline&height=861&margin=%5Bobject%20Object%5D&originHeight=861&originWidth=434&status=done&style=none&width=434) -->
+<!-- ![|434x861](https://mdn.alipayobjects.com/afts/img/A*o6m7RpN7rdgAAAAAAAAAAABkAa8wAA/1024w_1024h_1l.png?bz=openpt_doc&t=FZmkxAPN8RvBkmNLTdKySwAAAABkMK8AAAAA#align=left&display=inline&height=861&margin=%5Bobject%20Object%5D&originHeight=861&originWidth=434&status=done&style=none&width=434) -->
