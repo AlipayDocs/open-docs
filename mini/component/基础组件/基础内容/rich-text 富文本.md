@@ -205,3 +205,4 @@ Page({
 ```
 
 即把跳转链接放到 node marks 属性中，通过 rich-text onTap 事件跳转。
+
