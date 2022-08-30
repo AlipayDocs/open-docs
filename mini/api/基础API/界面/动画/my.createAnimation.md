@@ -1,6 +1,6 @@
 # 简介
 
-**my.createAnimation** 是用于创建动画实例 [animation](https://opendocs.alipay.com/mini/api/ui-animation#animation) 的 API。调用实例的方法来描述动画，最后通过动画实例的 `export` 方法将动画数据导出并传递给组件的 `animation` 属性。
+**my.createAnimation** 是用于创建动画实例 [animation](#animation) 的 API。调用实例的方法来描述动画，最后通过动画实例的 `export` 方法将动画数据导出并传递给组件的 `animation` 属性。
 
 ## 使用限制
 
@@ -19,7 +19,7 @@
 
 ### .js 示例代码
 
-创建一个设置了动画持续时间、动画效果、动画延迟时间、transform-origin 的动画实例示例：
+创建一个设置了动画持续时间、动画效果、动画延迟时间、动画变形原点的动画实例的示例：
 
 ```javascript
 //.js
@@ -115,13 +115,15 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | duration | Integer | 否 | 动画的持续时间，单位 ms，默认值 400。 |
-| timeFunction | String | 否 | 定义动画的效果，默认值为 linear。<br />有效值：linear、ease、ease-in、ease-in-out、ease-out、step-start、step-end。 |
+| timeFunction | String | 否 | 定义动画的效果，默认值为 linear。<br />有效值：<ul><li>linear：动画是匀速的</li><li>ease：动画以低速开始，然后加快，在结束前变慢</li><li>lease-in：动画以低速开始</li><li>ease-in-out：动画以低速开始，以低速结束</li><li>ease-out：动画以低速结束</li><li>step-start：动画第一帧就跳至结束状态直到结束</li><li>step-end：动画一直保持开始状态，最后一帧跳到结束状态</li></ul> |
 | delay | Integer | 否 | 动画延迟时间，单位 ms，默认值 0。 |
-| transformOrigin | String | 否 | 设置 transform-origin，默认值为 `50% 50% 0`。 |
-
+| transformOrigin | String | 否 | 设置 transform-origin（动画变形原点），默认值为 `50% 50% 0`，表示坐标轴 xyz 三个方向的值，xy 方向可为 center、top、left、top、bottom 的组合，其他值参考 CSS 动画样式 `transform-origin`|
+ 
+若需要对单个动画设置，可在动画实例描述后调用动画队列 [step](#动画队列) 方法，并传入以上参数。
+ 
 ## animation
 
-动画实例可以调用以下方法来描述动画，调用结束后会返回实例本身，支持链式调用的写法。view 的 animation 属性初始化为 `{}` 时，在基础库 1.11.0（不包含 1.11.0）及以下版本会报错，建议初始化为 `null`。
+my.createAnimation 创建的实例，实例可以调用以下方法来描述动画，调用结束后会返回实例本身，支持链式调用的写法。view 的 animation 属性初始化为 `{}` 时，在基础库 1.11.0（不包含 1.11.0）及以下版本会报错，建议初始化为 `null`。
 
 ### 样式
 
