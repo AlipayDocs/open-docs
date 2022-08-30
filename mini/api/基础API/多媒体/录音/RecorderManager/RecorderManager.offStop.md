@@ -21,7 +21,7 @@ const recorderStopCallback = res => {
   console.log(res.tempFilePath);
 };
 recorderManager.onStop(recorderStopCallback);
-setTimeput(() => {
+setTimeout(() => {
   recorderManager.offStop(recorderStopCallback);
 }, 5000);
 ```

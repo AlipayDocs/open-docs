@@ -19,7 +19,7 @@ const recorderStartCallback = res => {
   console.log('开始录音');
 };
 recorderManager.onStart(recorderStartCallback);
-setTimeput(() => {
+setTimeout(() => {
   recorderManager.offStart(recorderStartCallback);
 }, 5000);
 ```

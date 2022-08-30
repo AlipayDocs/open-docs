@@ -19,7 +19,7 @@ const recorderErrorCallback = res => {
   console.log(res);
 };
 recorderManager.onError(recorderErrorCallback);
-setTimeput(() => {
+setTimeout(() => {
   recorderManager.offError(recorderErrorCallback);
 }, 5000);
 ```
