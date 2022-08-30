@@ -90,7 +90,10 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 A：
 
 1. 登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，确认绑定 **获取会员信息** 产品。
-2. 点击用户信息申请，进入用户信息申请页面，申请对应用户信息的权限。 ![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*XjlFSJPaySYAAAAAAAAAAAAAARQnAQ) ![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*LqsXR45_a4IAAAAAAAAAAAAAARQnAQ)
+
+2. 点击用户信息申请，进入用户信息申请页面，分别申请对应用户信息的权限。具体操作说明可可查看 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) 中的 **商家申请用户信息**。 ![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*XjlFSJPaySYAAAAAAAAAAAAAARQnAQ) ![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*LqsXR45_a4IAAAAAAAAAAAAAARQnAQ)
+**注：cert_type、cert_no、person_cert_expiry_date 目前线上无法申请，仅限政务类小程序联系 BD 进行线下申请。**
+
 3. 调用 my.getAuthCode 接口，`scope` 参数传 `auth_user`，请求用户信息授权弹窗会展示已申请过的用户信息字段。
 
 部分用户敏感信息有行业属性限制，可能无法申请。可查看 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) 中的 **主营行业对应可申请的会员能力范围与字段说明**。
