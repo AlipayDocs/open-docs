@@ -29,7 +29,7 @@
 </tr>
 <tr>
   <td>域名为 ur.alipay.com 或 m.alipay.com 的短链接<br>或以 https&colon;//ds.alipay.com/?scheme= 开头的 URL</td>
-  <td>参考本文档 <b>附录 1</b>，先将 scheme 转换为实际目标地址再判断</td>
+  <td>参考本文档 <b>附录 1</b>，将 URL 解析成实际目标地址，使用实际目标地址做跳转</td>
 </tr>
 <tr>
   <td>其他情况</td>
@@ -42,7 +42,7 @@
 </td>
 <tr>
   <td>scheme 中的 appId 为 20000067</td>
-  <td>参考本文档 <b>附录 1</b>，先将 scheme 转换为实际目标地址再判断</td>
+  <td>参考本文档 <b>附录 1</b>，将 URL 解析成实际目标地址，使用实际目标地址做跳转</td>
 </td>
 <tr>
   <td>其他情况</td>
@@ -113,7 +113,7 @@ my.ap.navigateToAlipayPage({
 ```javascript
 // 打开支付宝运营活动页
 my.ap.navigateToAlipayPage({
-  path: encodeURIComponent('https://render.alipay.com/p/404'), // 注意只支持特定前缀的 URL，且需要整体冗余编码
+  path: encodeURIComponent('https://render.alipay.com/p/404'), // 注意只支持特定前缀的 URL，且需要整体编码以后再传入
   success: res => {
     console.log('navigateToAlipayPage success', JSON.stringify(res));
   },
@@ -125,19 +125,6 @@ my.ap.navigateToAlipayPage({
   },
 });
 
-// 跳转支付宝 scheme
-my.ap.navigateToAlipayPage({
-  path: 'alipays://platformapi/startapp?appId=00000000', // 注意 scheme 需要申请添加白名单
-  success: res => {
-    console.log('navigateToAlipayPage success', JSON.stringify(res));
-  },
-  fail: res => {
-    my.alert({
-      title: 'navigateToAlipayPage fail',
-      content: JSON.stringify(res),
-    });
-  },
-});
 ```
 
 ## 入参
@@ -148,7 +135,7 @@ Object 类型，属性如下：
 | --- | --- | --- | --- |
 | appCode | String | 是（与 path 二选一） | 跳转目标业务标识，与 path 二选一。完整列表见下文 **appCode 列表**。<br>支付宝客户端自 10.1.62 版本开始支持此参数。 |
 | appParams | Object | 否 | 与 appCode 配套使用的跳转参数。使用方法参考代码示例 1，字段名称和取值见下文 **appCode 列表**。 |
-| path | String | 是（与 appCode 二选一） | 跳转目标链接地址，与 appCode 二选一。接受 encodeURIComponent(URL) 或 scheme。默认只支持以 `https://render.alipay.com/p/` 开头的支付宝页面 URL。跳转 scheme 或者不含指定前缀的 URL，均需支付宝业务人员为当前小程序添加白名单，请参考此文档 **简介** 部分。 |
+| path | String | 是（与 appCode 二选一） | 跳转目标页面地址，与 appCode 二选一。请传入 encodeURIComponent(url)，其中 url 为支付宝页面，必须以 `https://render.alipay.com/p/` 开头。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -168,17 +155,20 @@ Object 类型，属性如下：
 
 ## 错误码
 
-fail 回调的参数为一个 Object，其 error 属性为错误码 | **错误码** | **说明** | **解决方案** | | --- | --- | --- | | 2 | 参数错误，打开失败。<br><br>注：旧版本（10.2.70 以下）客户端界面上也会有相应 toast 提示。 | <ul><li>如使用 appCode，请检查拼写是否有误。</li><li>如使用 path，请确保传入的参数是以 'https://render.alipay.com/p/' 开头或已由支付宝业务人员为当前小程序添加白名单。</li></ul> |
+fail 回调的参数为一个 Object，其 error 属性为错误码
+| **错误码** | **说明** | **解决方案** |
+| --- | --- | --- |
+| 2 | 参数错误，打开失败。<br><br>注：旧版本（10.2.70 以下）客户端界面上也会有相应 toast 提示。 | <ul><li>如使用 appCode，请检查拼写是否有误。</li><li>如使用 path，请确保传入的参数为 encodeURIComponent('https://render.alipay.com/p/*') </li></ul> |
 
 # 常见问题
 
 ## Q：使用 my.ap.navigateToAlipayPage 打开 H5 页面为何提示“参数错误，打开失败”？
 
-A：一般都是因为 URL 不是以 'https://render.alipay.com/p/' 开头且未添加白名单，跳转失败（进于 fail 回调），低版本客户端伴有 toast 提示。处理办法请参考本文档 **简介** 部分的指引表格及关于添加白名单的说明。
+A：一般都是因为目标链接不在允许范围内（不是以 'https://render.alipay.com/p/' 开头）导致跳转失败（进于 fail 回调），低版本客户端伴有 toast 提示。
 
 ## Q：使用 my.ap.navigateToAlipayPage 打开 H5 页面为何发生 url 参数丢失？
 
-A：历史原因，此接口要求对 url 做二次编码再传入，即需要向 path 传入 encodeURIComponent(url），否则内部的 decode 过程可能造成 url 的参数被破坏。
+A：历史原因，此接口要求对 url 整体编码再传入，即需要向 path 传入 encodeURIComponent(url），否则内部的 decode 过程可能造成 url 的参数被破坏。
 
 ## Q：使用 my.ap.navigateToAlipayPage 跳转生活号文章有一个过渡空白过程，是否正常？
 
@@ -188,9 +178,6 @@ A：是正常的，属于生活号文章页本身特有的加载流程。
 
 A：暂不支持跳转基金页面。
 
-## Q：香港支付宝小程序支持 my.ap.navigateToAlipayPage 吗？
-
-A：针对国际业务的特殊性，支付宝有专门的团队支持，关于香港版小程序的咨询请点击以下链接：[https://global.alipay.com/open/faq.htm](https://global.alipay.com/open/faq.htm) 。
 
 # 附录
 
@@ -198,7 +185,7 @@ A：针对国际业务的特殊性，支付宝有专门的团队支持，关于�
 
 ```javascript
 /*
- * 以下代码主要用于演示如何将链接转换为实际目标地址（以便恰当地选择跳转方法/申请添加白名单），亦可用作开发辅助工具
+ * 以下代码主要用于演示如何将链接转换为实际目标地址（以便恰当地选择跳转方法），亦可用作开发辅助工具
  * 代码运行需要 Node.js 环境
  */
 
@@ -400,17 +387,9 @@ function generateCode(target) {
 var code = generateCode('https://render.alipay.com/p/404');
 console.log(code, '\n');
 
-// 示例：跳转非支付宝页面
-var code = generateCode('https://www.baidu.com/');
-console.log(code, '\n');
-
-// 示例：跳转支付宝 scheme
-var code = generateCode('alipays://platformapi/startapp?appId=20000042');
-console.log(code, '\n');
-
 // 示例：跳转小程序
 var code = generateCode({
-  appId: '2000000020000000',
+  appId: '1234567812345678',
   path: '/pages/index/index',
   query: { x: 100 },
 });
