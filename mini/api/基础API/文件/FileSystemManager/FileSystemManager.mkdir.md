@@ -1,4 +1,5 @@
 # 简介
+
 **FileSystemManager.mkdir** 创建目录。
 
 ## 使用限制
@@ -17,9 +18,9 @@ let fs = my.getFileSystemManager();
 fs.mkdir({
   dirPath: `${my.env.USER_DATA_PATH}/newDir`,
   recursive: false,
-  success: (res) => {
-    console.log(res)
-  }
+  success: res => {
+    console.log(res);
+  },
 });
 ```
 
@@ -37,9 +38,8 @@ Object 类型，参数如下：
 
 ## 错误码
 
-| **错误码** | **描述** |
-| --- | --- |
-| 10024 | 指定路径没有写的权限。 |
-| 10025 | 有同名文件或目录。 |
-| 10022 | 上级目录不存在。 |
-
+| **错误码** | **描述**               |
+| ---------- | ---------------------- |
+| 10024      | 指定路径没有写的权限。 |
+| 10025      | 有同名文件或目录。     |
+| 10022      | 上级目录不存在。       |

@@ -1,5 +1,5 @@
-
 # 简介
+
 异常组件，主要分为全局异常与局部异常。
 
 全局异常组件：提供了可爱的蚂蚁形象作为异常场景的反馈提示，包括网络问题和服务器问题，同时提供了对应的处理按钮。
@@ -7,85 +7,99 @@
 局部异常组件：用于页面某个区块出现异常时的反馈提示，同时提供了对应的处理按钮。
 
 ## 扫码体验
+
 ![|154x191](https://mdn.alipayobjects.com/afts/img/A*zYygR7epO_cAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=Odl4kKM5ksKxXaxUKwpCmAAAAABkMK8AAAAA#align=left&display=inline&height=191&margin=%5Bobject%20Object%5D&originHeight=191&originWidth=154&status=done&style=none&width=154)
 
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-page-result?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-page-result?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
- "defaultTitle": "Page-result",
- "usingComponents": {
-   "page-result": "mini-ali-ui/es/page-result/index"
- }
+  "defaultTitle": "Page-result",
+  "usingComponents": {
+    "page-result": "mini-ali-ui/es/page-result/index"
+  }
 }
 ```
 
 ### .axml 示例代码
+
 ```html
 <page-result
- type="network"
- title="网络不给力"
- brief="世界上最遥远的距离莫过于此"
- footer="{{footer}}"
- onTapLeft="onTapLeft"
- onTapRight="onTapRight"
+  type="network"
+  title="网络不给力"
+  brief="世界上最遥远的距离莫过于此"
+  footer="{{footer}}"
+  onTapLeft="onTapLeft"
+  onTapRight="onTapRight"
 />
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
- data: {
-   footer: [{
-     text: '修复',
-   }, {
-     text: '刷新',
-   }],
- },
- onTapLeft(e) {
-   console.log(e, 'onTapLeft');
- },
- onTapRight(e) {
-   console.log(e, 'onTapRight');
- },
+  data: {
+    footer: [
+      {
+        text: '修复',
+      },
+      {
+        text: '刷新',
+      },
+    ],
+  },
+  onTapLeft(e) {
+    console.log(e, 'onTapLeft');
+  },
+  onTapRight(e) {
+    console.log(e, 'onTapRight');
+  },
 });
 ```
 
 ## 倒计时模式
+
 10 秒后可点击按钮（与 native 规范一致）。
 
 ### .axml 示例代码
+
 ```html
 <!-- 倒计时模式 -->
 <page-result
- type="busy"
- footer="{{footer}}"
- isCountDown="{{true}}"
- onTapLeft="onTapLeft"
+  type="busy"
+  footer="{{footer}}"
+  isCountDown="{{true}}"
+  onTapLeft="onTapLeft"
 />
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
- data: {
-   footer: [{
-     text: '刷新',
-   }],
- },
- onTapLeft(e) {
-   console.log(e, 'onTapLeft');
- },
+  data: {
+    footer: [
+      {
+        text: '刷新',
+      },
+    ],
+  },
+  onTapLeft(e) {
+    console.log(e, 'onTapLeft');
+  },
 });
 ```
 
 ## 属性说明
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | type | String | 异常页面类型。<br />**可选值：**<br />网络异常 network<br />服务繁忙 busy<br />服务异常 error<br />空状态 empty<br />用户注销 logoff<br />付款失败 payment<br />红包领空 redpacket<br />**默认值：** network |
@@ -98,8 +112,7 @@ Page({
 | isCountDown | Boolean | 是否设置倒计时模式。<br />**默认值：** false |
 | countDownText | String | 倒计时提示的文案。<br />**默认值：** 重新刷新 |
 
-
-## Bug & Tip 
+## Bug & Tip
 
 - 异常组件新增五个非必选属性 footer、onTapLeft、onTapRight、isCountDown、countDownText。
 - 组件提供默认 slot 的处理按钮（最多两个按钮），开发者也可自定义 slot 覆盖默认内容。

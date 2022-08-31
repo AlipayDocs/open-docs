@@ -1,7 +1,9 @@
 # 简介
+
 **my.setClipboard** 是设置剪贴板内容的 API。设置剪贴板内容可能造成隐私泄露，请谨慎使用。
 
 ## 使用限制
+
 此 API 暂仅支持企业支付宝小程序使用。
 
 ## 扫码体验
@@ -34,14 +36,28 @@
     <view class="page-section-title">setClipboard</view>
     <view class="page-section-demo">
       <input onInput="handleInput" value="{{text}}" />
-      <button class="clipboard-button" type="primary" size="mini" onTap="handleCopy">复制</button>
+      <button
+        class="clipboard-button"
+        type="primary"
+        size="mini"
+        onTap="handleCopy"
+      >
+        复制
+      </button>
     </view>
   </view>
   <view class="page-section">
     <view class="page-section-title">getClipboard</view>
     <view class="page-section-demo">
       <input onInput="bindInput" value="{{copy}}" disabled />
-      <button class="clipboard-button" type="default" size="mini" onTap="handlePaste">粘贴</button>
+      <button
+        class="clipboard-button"
+        type="default"
+        size="mini"
+        onTap="handlePaste"
+      >
+        粘贴
+      </button>
     </view>
   </view>
 </view>
@@ -49,7 +65,7 @@
 
 ### .js 示例代码
 
-```
+```plain
 // API-DEMO page/API/clipboard/clipboard.js
 Page({
   data: {
@@ -77,6 +93,7 @@ Page({
 ```
 
 ### .acss 示例代码
+
 ```css
 /* API-DEMO page/API/clipboard/clipboard.acss */
 .clipboard-button {
@@ -85,6 +102,7 @@ Page({
 ```
 
 # 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -93,4 +111,3 @@ Object 类型，属性如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-

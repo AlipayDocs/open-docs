@@ -1,4 +1,5 @@
 # 简介
+
 调用 my.requestSubscribeMessage 后唤起客户端小程序消息订阅界面，回调参数为用户订阅消息的操作结果。调用前需要在开放平台 “产品绑定” 中先绑定小程序的消息权限，具体操作可查看此 [文档](https://opendocs.alipay.com/mini/01rqd3)。
 
 订阅界面是根据当前小程序在 [商家平台](https://mrchportalweb.alipay.com/operation/console/apps)（运营中心 -> 选择小程序 -> 消息 -> 消息接入）订阅消息列表中的消息模版 id 来展示对应消息的订阅选项。
@@ -24,23 +25,28 @@
 # 接口调用
 ## 示例代码
 ### .js 示例代码
+
 ```javascript
 my.requestSubscribeMessage({
-  entityIds: ['ac768fca1ce245ccae9404bb5243c49b', '9aa357acb7c6434aba294aded1cdfb7c','940037f0c7dc491e801027b15d9f3f34'],
-  success: (res) => {
+  entityIds: [
+    'ac768fca1ce245ccae9404bb5243c49b',
+    '9aa357acb7c6434aba294aded1cdfb7c',
+  ],
+  success: res => {
     // res.behavior == 'subscribe'
-    console.log("接口调用成功的回调", res);
+    console.log('接口调用成功的回调', res);
   },
-  fail: (res) => {
-    console.log("接口调用失败的回调", res);
+  fail: res => {
+    console.log('接口调用失败的回调', res);
   },
-  complete: (res) => {
-    console.log("接口调用结束的回调", res);
-  }
+  complete: res => {
+    console.log('接口调用结束的回调', res);
+  },
 });
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -51,7 +57,8 @@ Object 类型，属性如下：
 | fail | Function | 否 | 订阅失败，或用户取消订阅的回调函数。 |
 | complete | Function | 否 | 订阅结束的回调函数（订阅成功、失败、取消都会执行）。 |
 
-## 回调参数
+## 订阅结束的回调参数
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **可选值** | **描述** |
@@ -72,6 +79,7 @@ Object 类型，属性如下：
 ![消息订阅.jpg](https://cdn.nlark.com/yuque/0/2021/jpeg/179989/1640677925411-8f0cdc4a-9a92-4898-977b-b85fe33e4a89.jpeg#align=left&display=inline&height=2446&margin=%5Bobject%20Object%5D&name=%E6%B6%88%E6%81%AF%E8%AE%A2%E9%98%85.jpg&originHeight=2446&originWidth=3506&size=1158370&status=done&style=none&width=3506)
 
 ## 错误码
+
 | **errorCode** | **errorMessage** | **说明** |
 | --- | --- | --- |
 | 10 | 系统异常 | 系统异常。 |
@@ -81,7 +89,7 @@ Object 类型，属性如下：
 | 402 | 应用暂不能提供服务 | 传入错误的小程序 APPID。 |
 | 100201 | 调用次数超限 | 接口限流。 |
 | 106002 | 模板列表中同时存在一次性/长期订阅模板 | 模板列表中不能同时存在一次性/长期订阅模板。 |
-| 106008 | 模板列表中存在非法/无效的模板id | 模板 id 传入错误或传入小程序未订购的模板 id。 |
+| 106008 | 模板列表中存在非法/无效的模板 id | 模板 id 传入错误或传入小程序未订购的模板 id。 |
 | -1 | 订阅失败/校验模板列表失败 | 默认错误信息。 |
 
 # 常见问题

@@ -1,4 +1,5 @@
 # 简介
+
 初始化 Wi-Fi 模块。
 
 # 使用限制
@@ -11,15 +12,17 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 my.startWifi({
-  success: function(res) {
-    console.log(res)
-  }
-})
+  success: function (res) {
+    console.log(res);
+  },
+});
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |

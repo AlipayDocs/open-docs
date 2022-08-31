@@ -1,5 +1,5 @@
-
 # 简介
+
 金额输入框。
 
 ## 扫码体验
@@ -9,21 +9,24 @@
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-amount-input?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-amount-input?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
- "defaultTitle": "amount-input",
- "usingComponents": {
-   "amount-input": "mini-ali-ui/es/amount-input/index"
- }
+  "defaultTitle": "amount-input",
+  "usingComponents": {
+    "amount-input": "mini-ali-ui/es/amount-input/index"
+  }
 }
 ```
 
 ### .axml 示例代码
+
 ```html
 <view>
   <amount-input
@@ -37,43 +40,46 @@
     btnText="全部提现"
     onClear="onInputClear"
     onInput="onInput"
-    onConfirm="onInputConfirm" />
+    onConfirm="onInputConfirm"
+  />
 </view>
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
- data: {
-   value: 200,
- },
- onInputClear() {
-   this.setData({
-     value: '',
-   });
- },
- onInputConfirm() {
-   my.alert({
-     content: 'confirmed',
-   });
- },
- onInput(e) {
-   const { value } = e.detail;
-   this.setData({
-     value,
-   });
- },
- onButtonClick() {
-   my.alert({
-     content: 'button clicked',
-   });
- },
- onInputFocus() {},
- onInputBlur() {},
+  data: {
+    value: 200,
+  },
+  onInputClear() {
+    this.setData({
+      value: '',
+    });
+  },
+  onInputConfirm() {
+    my.alert({
+      content: 'confirmed',
+    });
+  },
+  onInput(e) {
+    const { value } = e.detail;
+    this.setData({
+      value,
+    });
+  },
+  onButtonClick() {
+    my.alert({
+      content: 'button clicked',
+    });
+  },
+  onInputFocus() {},
+  onInputBlur() {},
 });
 ```
 
 ## 属性说明
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | type | String | input 的类型。<br />**可选值：** digit、number。<br />**默认值：** number |
@@ -90,7 +96,6 @@ Page({
 | onClear | () => void | 点击 clear 图标触发。 |
 | onButtonClick | () => void | 点击右下角按钮时触发。 |
 | maxLength | Number | 最多允许输入的字符个数。 |
-| controlled | Boolean | 是否为受控组件。为 true时，value 内容会完全受 setData 控制。<br />**可选值：** true、false。<br />**默认值：** false |
+| controlled | Boolean | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。<br />**可选值：** true、false。<br />**默认值：** false |
 | showClear | Boolean | 是否一直显示清除 icon。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.1.3](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
 | focusAfterClear | Boolean | 清除 icon 触发后，输入框是否获得焦点。<br />**默认值：** true<br />**版本要求：** mini-ali-ui [1.1.3](https://www.npmjs.com/package/mini-ali-ui?activeTab=versions) 及以上 |
-
