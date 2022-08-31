@@ -31,9 +31,9 @@ my.setBackgroundColor({
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| backgroundColor | HexColor | 否 | 窗口的背景色。 |
-| backgroundColorTop | HexColor | 否 | 顶部窗口的背景色，仅 iOS 支持。 |
-| backgroundColorBottom | HexColor | 否 | 底部窗口的背景色，仅 iOS 支持。 |
+| backgroundColor | String（十六进制颜色码） | 否 | 窗口的背景色。 |
+| backgroundColorTop | String（十六进制颜色码） | 否 | 顶部窗口的背景色，仅 iOS 支持。 |
+| backgroundColorBottom | String（十六进制颜色码） | 否 | 底部窗口的背景色，仅 iOS 支持。 |
 | success | Function | 否 | 接口调用成功的回调函数。 |
 | fail | Function | 否 | 接口调用失败的回调函数。 |
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
