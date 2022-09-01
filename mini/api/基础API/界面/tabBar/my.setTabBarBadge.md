@@ -42,5 +42,4 @@ Object 类型，参数如下：
 # Bug & Tip
 
 * `Bug` app.json 里未对 tabItem 配置 icon 的情况下，调用此 API，iOS 系统不生效。
-* `Tip` 可通过在 app.json 中为 tabItem 配置 icon 进行解决。
 
