@@ -1,6 +1,9 @@
 # 简介
 
-**my.setBackgroundColor** 是动态设置窗口的背景色的 API，当页面进行下拉或上滑操作时出现的区域会呈现窗口的背景色。该设置会覆盖 app.json 中 window 配置中的 backgroundColor，和页面的 .json 文件中配置的 backgroundColor。
+**my.setBackgroundColor** 是动态设置窗口的背景色的 API。
+
+窗口背景色会在页面下拉或上滑操作时出现的区域呈现。  
+my.setSetBackgroundColor 会覆盖 app.json 中所设置 window 的 backgroundColor，以及页面的 .json 文件中配置的 backgroundColor。
 
 ## 使用限制
 
@@ -20,8 +23,8 @@
 // .js
 my.setBackgroundColor({
   backgroundColor: 'ffffff',
-  backgroundColorTop: '#00ff00', // ios生效
-  backgroundColorBottom: '#ff00ff', // ios生效
+  backgroundColorTop: '#00ff00', // iOS 生效
+  backgroundColorBottom: '#ff00ff', // iOS 生效
 });
 ```
 
