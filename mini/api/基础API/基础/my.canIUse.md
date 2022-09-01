@@ -13,17 +13,22 @@
 ### .js 示例代码
 
 ```javascript
-// getFileInfo 接口是否可用
+// 接口 getFileInfo 是否可用
 my.canIUse('getFileInfo');
-// closeSocket 接口的参数是否包含 code
+// 接口 closeSocket 是否有返回值
+my.canIUse('closeSocket.return');
+// 接口 closeSocket 的入参是否包含 code
 my.canIUse('closeSocket.object.code');
-// getLocation 接口的参数是否包含 type
-my.canIUse('getLocation.object.type');
-// getSystemInfo 接口的返回值是否包含 brand
-my.canIUse('getSystemInfo.return.brand');
+// 接口 getLocation 的返回值是否包含 type
+my.canIUse('getLocation.return.type');
+// 接口 getSystemInfo 的回调中是否包含 brand
+my.canIUse('getSystemInfo.callback.brand');
+
 // 组件 lifestyle（关注生活号）是否可用
 my.canIUse('lifestyle');
-// button 组件的 open-type 属性的值是否可以为 share
+// 组件 button 是否包含 open-type 属性
+my.canIUse('button.open-type');
+// 组件 button 的 open-type 属性的值是否可以为 share
 my.canIUse('button.open-type.share');
 ```
 
@@ -44,6 +49,6 @@ my.canIUse('button.open-type.share');
 
 ## 返回值
 
-| **属性** | **类型** | **描述**                          |
-| -------- | -------- | --------------------------------- |
-| 是否支持 | Boolean  | true 表示支持，false 表示不支持。 |
+| **类型** | **描述**                          |
+| -------- | --------------------------------- |
+| Boolean  | true 表示支持，false 表示不支持。 |
