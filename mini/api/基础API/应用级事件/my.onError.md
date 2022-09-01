@@ -1,6 +1,6 @@
 # 简介
 
-**my.onError** 是监听小程序错误事件的 API。目前仅指 JS 执行错误。触发时机和参数与 [App.onError](https://opendocs.alipay.com/mini/framework/app-detail#onError(error%2C%20stack)) 一致。
+**my.onError** 是监听小程序错误事件的 API。目前仅指 JS 执行错误。触发时机和参数与 [App.onError](<https://opendocs.alipay.com/mini/framework/app-detail#onError(error%2C%20stack)>) 一致。
 
 ## 使用限制
 
@@ -20,27 +20,27 @@
 App({
   onLaunch() {
     // 注意，error的类型为String
-    my.onError(function(error, stack) {
+    my.onError(function (error, stack) {
       // 小程序执行出错时
       console.error(error);
       // 基础库 2.7.4 开始支持返回stack
       console.error(stack);
     });
-  }
-})
+  },
+});
 ```
 
 ## 入参
 
 入参为回调函数：
 
-| **参数** | **类型** | **描述** |
-| --- | --- | --- |
+| **参数** | **类型** | **描述**                       |
+| -------- | -------- | ------------------------------ |
 | 回调函数 | Function | 小程序 JS 错误事件的回调函数。 |
 
 ### 回调函数
+
 | **属性** | **类型** | **说明** |
 | --- | --- | --- |
 | error | String | 异常描述，一般为 `Error` 对象的 `message` 字段。 |
 | stack | String | 异常堆栈，一般为 `Error` 对象的 `stack` 字段。<br />基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
-

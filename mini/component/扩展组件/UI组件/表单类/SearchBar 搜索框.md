@@ -1,8 +1,9 @@
-
 # 简介
+
 搜索提供了用户进行文本查询的功能，用户可以针对当前页面的内容通过精确搜索和模糊搜索进行内容筛选和定位，提高查询效率。搜索栏激活后出现取消按钮。
 
 ## 使用限制
+
 仅用于 UI 展示没有对应的业务逻辑功能。
 
 ## 扫码体验
@@ -12,21 +13,24 @@
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-search-bar?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-search-bar?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
- "defaultTitle": "Search-bar",
- "usingComponents": {
-   "search-bar": "mini-ali-ui/es/search-bar/index"
- }
+  "defaultTitle": "Search-bar",
+  "usingComponents": {
+    "search-bar": "mini-ali-ui/es/search-bar/index"
+  }
 }
 ```
 
 ### .axml 示例代码
+
 ```html
 <view>
   <search-bar
@@ -40,14 +44,17 @@
     onClear="handleClear"
     onCancel="handleCancel"
     onSubmit="handleSubmit"
-    showCancelButton="{{false}}" />
+    showCancelButton="{{false}}"
+  />
 </view>
-<view>是否展示Voice图标
-<checkbox onChange='onChange'/>
+<view
+  >是否展示Voice图标
+  <checkbox onChange="onChange" />
 </view>
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
   data: {
@@ -78,12 +85,13 @@ Page({
 ```
 
 ## 属性说明
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | value | String | 搜索框的当前值。 |
 | placeholder | String | placeholder。 |
 | focus | Boolean | 自动获取光标。<br />**可选值：** true、false。<br />**默认值：** false |
-| showVoice | Boolean | 是否展示voice图标。<br />**可选值：** true、false。<br />**默认值：** false |
+| showVoice | Boolean | 是否展示 voice 图标。<br />**可选值：** true、false。<br />**默认值：** false |
 | onInput | (value: String) => void | 键盘输入时触发。 |
 | onClear | (val: String) => void | 点击 clear 图标触发。 |
 | onFocus | () => void | 获取焦点时触发。 |
@@ -97,7 +105,6 @@ Page({
 | borderColor | String | 搜索输入框边框色。<br />**默认值：** #1677ff |
 | enableNative | Boolean | 如为 false 可处理 fixed 定位后输入框内容闪动的问题。<br />**默认值**：false |
 | controlled | Boolean | 组件是否受控。<br />**默认值**：true |
-
 
 ## Bug & Tip
 

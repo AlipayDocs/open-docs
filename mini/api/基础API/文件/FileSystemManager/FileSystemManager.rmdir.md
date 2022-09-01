@@ -1,4 +1,5 @@
 # 简介
+
 **FileSystemManager.rmdir** 用于删除目录。
 
 ## 使用限制
@@ -17,10 +18,10 @@ let fs = my.getFileSystemManager();
 fs.rmdir({
   dirPath: `${my.env.USER_DATA_PATH}/newDir`,
   recursive: false,
-  success: (res) => {
+  success: res => {
     console.log(res);
-  }
-})
+  },
+});
 ```
 
 ## 入参
@@ -36,8 +37,9 @@ Object 类型，参数如下：
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ## 错误码
-| **错误码** | **描述** |
-| --- | --- |
-| 10022 | 目录不存在。 |
-| 10024 | 指定的路径没有写权限。 |
-| 10027 | 目录不为空。 |
+
+| **错误码** | **描述**               |
+| ---------- | ---------------------- |
+| 10022      | 目录不存在。           |
+| 10024      | 指定的路径没有写权限。 |
+| 10027      | 目录不为空。           |

@@ -1,4 +1,5 @@
 # 简介
+
 **my.onAudioInterruptionBegin** 是监听音频因为系统占用而被中断的开始事件。为异步接口。
 
 更多信息，可查看 [音频播放 API 使用说明](https://opendocs.alipay.com/mini/03l3fn)。
@@ -12,17 +13,25 @@
 # 接口调用
 
 ## 示例代码
+
 第一步：开发者可以在 .axml 文件中写入相关的组件（如 button 或者 view）来控制音乐的播放和暂停等，以下示例代码仅供参考：
+
 ```html
 <!--.axml-->
 <view class="operation-item" onTap="play">播放</view>
 <view class="operation-item" onTap="pause">暂停</view>
 <view class="operation-item" onTap="stop">停止</view>
 <view class="operation-item" onTap="seek">播放进度跳转</view>
-<view class="operation-item" onTap="offAudioInterruptionBegin">取消监听音频因为系统占用而被中断的开始事件</view>
-<view class="operation-item" onTap="offAudioInterruptionEnd">取消监听音频被中断的结束事件</view>
+<view class="operation-item" onTap="offAudioInterruptionBegin"
+  >取消监听音频因为系统占用而被中断的开始事件</view
+>
+<view class="operation-item" onTap="offAudioInterruptionEnd"
+  >取消监听音频被中断的结束事件</view
+>
 ```
+
 第二步：开发者获取前景音乐 innerAudioContext 对象后，添加属性并注册对应监听事件。
+
 ```javascript
 //.js
 onLoad() {
@@ -66,7 +75,9 @@ onLoad() {
   });
 },
 ```
+
 第三步：开发者在 .js 文件中写入以下方法，配合上一步的组件，播放音频，以下示例代码仅供参考：
+
 ```js
 //.js
 //播放音乐
@@ -106,8 +117,9 @@ offAudioInterruptionEnd() {
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
-| **参数** | **类型** | **描述** |
-| --- | --- | --- |
+| **参数** | **类型** | **描述**                                           |
+| -------- | -------- | -------------------------------------------------- |
 | callback | Function | 音频因为受到系统占用而被中断的开始事件的回调函数。 |

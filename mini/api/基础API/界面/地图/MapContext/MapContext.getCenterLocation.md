@@ -1,5 +1,5 @@
-
 # 简介
+
 **MapContext.getCenterLocation** 用于获取当前地图中心位置。
 
 ## 使用限制
@@ -10,6 +10,7 @@
 # 接口调用
 
 ## 示例代码
+
 ```javascript
 // .js
 this.mapCtx = my.createMapContext('map');
@@ -20,11 +21,12 @@ this.mapCtx.getCenterLocation({
     });
     console.log(res.longitude);
     console.log(res.latitude);
-  }
+  },
 });
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -33,12 +35,11 @@ Object 类型，属性如下：
 | fail | Function | 否 | 接口调用失败的回调函数。 |
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ### success 返回值
+
 Object 类型，属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| longitude | Number | 经度。 |
-| latitude | Number | 纬度。 |
-
+| **属性**  | **类型** | **描述** |
+| --------- | -------- | -------- |
+| longitude | Number   | 经度。   |
+| latitude  | Number   | 纬度。   |

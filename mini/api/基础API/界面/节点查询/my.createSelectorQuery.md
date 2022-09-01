@@ -4,7 +4,7 @@
 
 ## 使用限制
 
-- 基础库 [1.4.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端  10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.4.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - `my.createSelectorQuery()` 检测渲染层上的所有节点。要限定检测范围，推荐使用 `this.createSelectorQuery()`。详情可查看 [页面运行机制](https://opendocs.alipay.com/mini/framework/page-detail#Page.prototype.createSelectorQuery)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
@@ -16,31 +16,39 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/create-selector-query?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
-
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/create-selector-query?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
+
 ```javascript
 // API-DEMO page/API/create-selector-query/create-selector-query.js
 Page({
   createSelectorQuery() {
     my.createSelectorQuery()
-      .select('#non-exists').boundingClientRect()
-      .select('#one').boundingClientRect()
-      .selectAll('.all').boundingClientRect()
-      .select('#scroll').scrollOffset()
-      .selectViewport().boundingClientRect()
-      .selectViewport().scrollOffset().exec((ret) => {
-      console.log(ret);
-      my.alert({
-        content: JSON.stringify(ret, null, 2),
+      .select('#non-exists')
+      .boundingClientRect()
+      .select('#one')
+      .boundingClientRect()
+      .selectAll('.all')
+      .boundingClientRect()
+      .select('#scroll')
+      .scrollOffset()
+      .selectViewport()
+      .boundingClientRect()
+      .selectViewport()
+      .scrollOffset()
+      .exec(ret => {
+        console.log(ret);
+        my.alert({
+          content: JSON.stringify(ret, null, 2),
+        });
       });
-    })
   },
 });
 ```
 
 ### ret 结构
+
 ```json
 [
   null,
@@ -92,4 +100,5 @@ Page({
 ```
 
 ## 返回值
+
 返回值为 [SelectorQuery](https://opendocs.alipay.com/mini/api/pc8s51)。

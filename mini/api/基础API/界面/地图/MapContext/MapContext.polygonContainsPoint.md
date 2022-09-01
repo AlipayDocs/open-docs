@@ -19,37 +19,41 @@
 this.mapCtx = my.createMapContext('map');
 this.mapCtx.polygonContainsPoint({
   polygon: [
-    { // 左上
+    {
+      // 左上
       latitude: 30.278467,
-      longitude: 120.048859
+      longitude: 120.048859,
     },
-    { // 右上
+    {
+      // 右上
       latitude: 30.280691,
-      longitude: 120.086796
+      longitude: 120.086796,
     },
-    { // 右下
+    {
+      // 右下
       latitude: 30.2629,
-      longitude: 120.091088
+      longitude: 120.091088,
     },
-    { // 左下
+    {
+      // 左下
       latitude: 30.247331,
-      longitude: 120.044911
-    }
+      longitude: 120.044911,
+    },
   ],
   point: {
     longitude: 120.061219,
-    latitude: 30.26972
+    latitude: 30.26972,
   },
   success(e) {
     my.alert({
-      content: "include result:" + e.success
+      content: 'include result:' + e.success,
     });
   },
   fail(e) {
     my.alert({
-      content: "failed:" + e.errorMessge + " error:" + e.error
+      content: 'failed:' + e.errorMessge + ' error:' + e.error,
     });
-  }
+  },
 });
 ```
 
@@ -57,17 +61,18 @@ this.mapCtx.polygonContainsPoint({
 
 Object 类型，参数如下：
 
-| **参数** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| polygon | Array\<Object\> | 是 | 矩形区域的经纬度范围。 |
-| point | Object | 是 | 经纬度度的值。 |
-| success | Function | 否 | 调用成功的回调函数。 |
+| **参数** | **类型**        | **必填** | **描述**               |
+| -------- | --------------- | -------- | ---------------------- |
+| polygon  | Array\<Object\> | 是       | 矩形区域的经纬度范围。 |
+| point    | Object          | 是       | 经纬度度的值。         |
+| success  | Function        | 否       | 调用成功的回调函数。   |
 
 ### Object polygon/point
-| **参数** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| latitude | Number | 是 | 纬度。 |
-| longitude | Number | 是 | 经度。 |
+
+| **参数**  | **类型** | **必填** | **描述** |
+| --------- | -------- | -------- | -------- |
+| latitude  | Number   | 是       | 纬度。   |
+| longitude | Number   | 是       | 经度。   |
 
 ### Function success
 
@@ -76,4 +81,3 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | success | Boolean | <ul><li>true：在矩形区域内。</li><li>false：不在矩形区域内。</li></ul> |
-

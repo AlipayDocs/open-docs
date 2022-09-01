@@ -1,4 +1,5 @@
 # 简介
+
 **FileSystemManager.rename** 用于重命名文件，可以把文件从 oldPath 移动到 newPath。
 
 ## 使用限制
@@ -11,15 +12,16 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 let fs = my.getFileSystemManager();
 fs.rename({
   oldPath: `${my.env.USER_DATA_PATH}/test.txt`,
   newPath: `${my.env.USER_DATA_PATH}/test_new.txt`,
-  success: (res) => {
-    consoloe.log(res);
-  }
-})
+  success: res => {
+    console.log(res);
+  },
+});
 ```
 
 ## 入参
@@ -36,7 +38,7 @@ Object 类型，参数如下：
 
 ## 错误码
 
-| **错误码** | **描述** |
-| --- | --- |
-| 10022 | 源文件不存在。 |
-| 10024 | 指定源文件或者目标文件没有写权限。 |
+| **错误码** | **描述**                           |
+| ---------- | ---------------------------------- |
+| 10022      | 源文件不存在。                     |
+| 10024      | 指定源文件或者目标文件没有写权限。 |

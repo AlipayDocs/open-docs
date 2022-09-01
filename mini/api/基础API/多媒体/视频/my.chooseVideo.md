@@ -20,9 +20,15 @@ my.chooseVideo({
   sourceType: ['album', 'camera'],
   maxDuration: 60,
   camera: 'back',
-  success(res) {
-    console.log(res.tempFilePath);
+  success: (res) => {
+    console.log(res);
   },
+  fail: (error) => {
+    console.log(error);
+  },
+  complete: () => {
+    console.log('调用完成，无论成功和失败都会运行');
+  }
 });
 ```
 
@@ -58,11 +64,20 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **说明** |
 | --- | --- | --- |
-| tempFilePath | String | 选定视频的临时文件路径。<br />基础库  [1.11.0](https://docs.alipay.com/mini/framework/compatibility) 及以上版本支持。 |
+| tempFilePath | String | 选定视频的临时文件路径。<br />基础库 [1.11.0](https://docs.alipay.com/mini/framework/compatibility) 及以上版本支持。 |
 | duration | Number | 选定视频的时间长度。 |
 | size | Number | 选定视频的数据量大小。 |
 | height | Number | 返回选定视频的高度。 |
 | width | Number | 返回选定视频的宽度。 |
+
+## 错误码
+
+| **错误码** | **描述** | **解决方案** | **支持平台** |
+| --- | --- | --- | --- |
+| 10 | 用户取消操作。 | 这是用户正常交互流程分支，不需要特殊处理。 | Android |
+| 11 | 用户取消操作。 | 这是用户正常交互流程分支，不需要特殊处理。 | iOS |
+| 21 | 视频压缩失败。 | 请重试。 | iOS |
+| 2001 | 在申请授权时用户拒绝授权。 | 这是用户正常交互流程分支，不需要特殊处理。 | iOS / Android |
 
 # 常见问题 FAQ
 
@@ -82,7 +97,7 @@ Page({
       maxDuration: 60,
       camera: 'back',
       success(res) {
-        console.log("chooseVideo", res)
+        console.log('chooseVideo', res);
         const path = res.tempFilePath;
         console.log(path);
         my.uploadFile({
@@ -92,7 +107,7 @@ Page({
           filePath: path,
           formData: { extra: '其他信息' },
           success: res => {
-            console.log("success res", res)
+            console.log('success res', res);
             my.alert({ title: '上传成功' });
           },
           fail: err => {
