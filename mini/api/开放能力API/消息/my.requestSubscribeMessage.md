@@ -1,6 +1,6 @@
 # 简介
 
-调用 my.requestSubscribeMessage 后唤起客户端小程序消息订阅界面，回调参数为用户订阅消息的操作结果。调用前需要在开放平台 “产品绑定” 中先绑定小程序的消息权限，具体操作可查看此 [文档](https://opendocs.alipay.com/mini/01rqd3)。
+调用 my.requestSubscribeMessage 后唤起客户端小程序消息订阅界面，回调参数为用户订阅消息的操作结果。订阅前需要在开放平台 “产品绑定” 中先绑定小程序的消息权限，具体操作可查看此 [文档](https://opendocs.alipay.com/mini/01rqd3)。
 
 订阅界面是根据当前小程序在 [商家平台](https://mrchportalweb.alipay.com/operation/console/apps)（运营中心 -> 选择小程序 -> 消息 -> 消息接入）订阅消息列表中的消息模版 id 来展示对应消息的订阅选项。
 
@@ -100,11 +100,11 @@ A：先在 IDE 中通过模拟器上方的“展开面板”按钮 -> “设置�
 A：1、通过的 my.requestSubscribeMessage 回调实时获取；2、用户操作之后，可以通过服务端调用 [alipay.open.app.messagetemplate.subscribe.query](https://opendocs.alipay.com/mini/02cth2) 获取。
 
 ## Q：一次性消息模版订阅的消息时选择‘保持以上选择，不再询问’，或长期消息模版确认同意后，订阅消息面板是否还可以再弹出？
-A：当用户有以上操作时，若未在小程序胶囊按钮（右上角三个点）中点击“设置” -> “消息管理”中切换消息状态，订阅面板将不再弹出，对应的一次性消息模版在切换消息状态后，意味着更改了保持的选择，在下次订阅时面板会再弹出；对应长期模版订阅的消息时，当切换到“不接收”时，意味着用户更改了所选消息长期接收的状态，下次订阅时面板会再弹出来。
+A：当用户有以上操作时，若未在小程序胶囊按钮（右上角三个点）中点击 “设置” -> “消息管理” 中切换消息状态，订阅面板将不再弹出，对应的一次性消息模版在切换消息状态后，意味着更改了保持的选择，在下次订阅时面板会再弹出；对应长期模版订阅的消息时，当切换到 “不接收” 时，意味着用户更改了所选消息长期接收的状态，下次订阅时面板会再弹出来。
 
 ## Q：如何订阅三个以上消息？
-A：1、目前小程序支持一次订阅消息最多三个，若超过三个，可分多次订阅，分别在不同的位子触发。
+A：目前小程序支持一次订阅消息最多三个，若超过三个，可分多次订阅，分别在不同的位子触发。
 
 ## Q：是否还可以使用旧组件 subscribe-msg 订阅消息？
-A：1、my.requestSubscribeMessage 已完全替代 subscribe-msg 订阅消息，建议使用 my.requestSubscribeMessage。
+A：my.requestSubscribeMessage 已完全替代 subscribe-msg 订阅消息，建议使用 my.requestSubscribeMessage。
 
