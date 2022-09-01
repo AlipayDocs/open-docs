@@ -63,6 +63,11 @@ mode 有 14 种模式，其中 5 种是缩放模式，9 种是裁剪模式。
 
 **说明**：图片高度不能设置为 auto，如果需要图片高度为 auto，直接设置 mode 为 widthFix。
 
+## Bug & Tip
+在 Android 系统中，如果给 image 设置缩放模式为 mode="widthFix" 的同时添加了 display: flex 样式，需要额外设置以下两种中的一种样式:
+- 同时指定 flex-direction: column。
+- 当 flex-direction: row (默认值) 时，同时指定交叉轴对齐方式 align-items ，并确保 align-items 不从 normal、stretch、inherit、initial、unset 中取值。
+
 # 常见问题
 
 ### image 标签支持读取流文件吗？
