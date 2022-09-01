@@ -1,9 +1,10 @@
 # 简介
+
 **my.setScreenBrightness** 是设置屏幕亮度的 API。
 
 ## 使用限制
 
-- 基础库 [1.4.0 ](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端  10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。 
+- 基础库 [1.4.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -27,13 +28,19 @@
   <view class="page-section">
     <view class="page-section-title">设置是否保持屏幕长亮状态</view>
     <view class="page-section-demo">
-      <switch checked="{{status}}" onChange="switchKeepScreenOn"/>
+      <switch checked="{{status}}" onChange="switchKeepScreenOn" />
     </view>
   </view>
   <view class="page-section">
     <view class="page-section-title">设置屏幕亮度</view>
     <view class="page-section-demo">
-      <slider value="{{brightness}}" max="1" min="0" onChange="sliderChange" step="0.02"/>
+      <slider
+        value="{{brightness}}"
+        max="1"
+        min="0"
+        onChange="sliderChange"
+        step="0.02"
+      />
     </view>
   </view>
   <view class="page-section">
@@ -58,40 +65,40 @@ Page({
     my.getScreenBrightness({
       success: res => {
         this.setData({
-          brightness: res.brightness
-        })
+          brightness: res.brightness,
+        });
       },
-    })
+    });
   },
   sliderChange(e) {
     my.setScreenBrightness({
       brightness: e.detail.value,
-      success: (res) => {
+      success: res => {
         this.setData({
           brightness: e.detail.value,
-        })
-      }
-    })
+        });
+      },
+    });
   },
   switchKeepScreenOn(e) {
     my.setKeepScreenOn({
       keepScreenOn: e.detail.value,
-      success: (res) => {
+      success: res => {
         this.setData({
           status: e.detail.value,
-        })
-      }
-    })
+        });
+      },
+    });
   },
   getBrightness() {
     my.getScreenBrightness({
       success: res => {
         my.alert({
-          content: `当前屏幕亮度：${res.brightness}`
+          content: `当前屏幕亮度：${res.brightness}`,
         });
-      }
-    })
-  }
+      },
+    });
+  },
 });
 ```
 

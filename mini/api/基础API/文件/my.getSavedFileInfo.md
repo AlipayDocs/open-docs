@@ -1,3 +1,5 @@
+此 API 已停止维护，推荐使用 [FileSystemManager.getFileInfo](https://opendocs.alipay.com/mini/api/0226og)，历史接入此 API 的开发者不受影响。
+
 # 简介
 
 **my.getSavedFileInfo** 是获取保存的文件信息的 API。
@@ -19,29 +21,30 @@
 
 ## 示例代码
 
-使用 [my.saveFile](https://opendocs.alipay.com/mini/api/xbll1q) 保存的地址才能够使用 my.getSavedFileInfo。
+使用 [my.saveFile](https://opendocs.alipay.com/mini/api/xbll1q) 保存的地址才能够使用 my.getSavedFileInfo。
 
 ### .js 示例代码
+
 ```javascript
 // .js
 var that = this;
-    my.chooseImage({
-    success: (res) => {
-      console.log(res.apFilePaths[0], 1212)
-      my.saveFile({
-        apFilePath: res.apFilePaths[0],
-        success: (result) => {
-          console.log(result, 1212)
-          my.getSavedFileInfo({
-            apFilePath: result.apFilePath,
-            success: (resu) => {
-              console.log(JSON.stringify(resu))
-              that.filePath = resu
-            }
-          })
-        },
-      });
-    },
+my.chooseImage({
+  success: res => {
+    console.log(res.apFilePaths[0], 1212);
+    my.saveFile({
+      apFilePath: res.apFilePaths[0],
+      success: result => {
+        console.log(result, 1212);
+        my.getSavedFileInfo({
+          apFilePath: result.apFilePath,
+          success: resu => {
+            console.log(JSON.stringify(resu));
+            that.filePath = resu;
+          },
+        });
+      },
+    });
+  },
 });
 ```
 
@@ -60,8 +63,7 @@ Object 类型，参数如下：
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| size | Number | 文件大小。 |
-| createTime | Number | 创建时间的时间戳。 |
-
+| **属性**   | **类型** | **描述**           |
+| ---------- | -------- | ------------------ |
+| size       | Number   | 文件大小。         |
+| createTime | Number   | 创建时间的时间戳。 |

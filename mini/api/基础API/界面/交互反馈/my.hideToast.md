@@ -14,9 +14,10 @@
 
 ## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/toast?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/toast?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
+
 ```javascript
 Page({
   showToastSuccess() {
@@ -68,9 +69,9 @@ Page({
     });
   },
   hideToast() {
-    my.hideToast()
+    my.hideToast();
   },
-})
+});
 ```
 
 ## 入参
@@ -82,4 +83,3 @@ Object 类型，参数如下：
 | success | Function | 否 | 接口调用成功的回调函数。 |
 | fail | Function | 否 | 接口调用失败的回调函数。 |
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
-

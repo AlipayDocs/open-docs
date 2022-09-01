@@ -1,4 +1,5 @@
 # 简介
+
 监听已录制完制定帧大小的文件事件。如果设置了 frameSize，则会回调此事件。
 
 ## 使用限制
@@ -12,25 +13,28 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 let recorderManager = my.getRecorderManager();
 recorderManager.onFrameRecorded(res => {
- console.log(res.frameBuffer, res.isLastFrame);
-})
+  console.log(res.frameBuffer, res.isLastFrame);
+});
 recorderManager.start({
   frameSize: 100,
-})
+});
 ```
 
 ## 入参
 
 ### Function callback
+
 已录制完指定帧大小的文件事件的回调函数。
 
-#### callback参数
+#### callback 参数
+
 **Object res**
 
-| **属性** | **类型** | **说明** |
-| --- | --- | --- |
-| frameBuffer | ArrayBuffer | 录音分片数据。 |
-| isLastFrame | Boolean | 当前帧是否正常录音结束前的最后一帧。 |
+| **属性**    | **类型**    | **说明**                             |
+| ----------- | ----------- | ------------------------------------ |
+| frameBuffer | ArrayBuffer | 录音分片数据。                       |
+| isLastFrame | Boolean     | 当前帧是否正常录音结束前的最后一帧。 |

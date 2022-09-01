@@ -16,8 +16,7 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-system-info?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
-
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-system-info?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
 
@@ -25,16 +24,16 @@
 // get-system-info.js
 Page({
   data: {
-    systemInfo: {}
+    systemInfo: {},
   },
   getSystemInfo() {
     my.getSystemInfo({
-      success: (res) => {
+      success: res => {
         this.setData({
-          systemInfo: res
-        })
-      }
-    })
+          systemInfo: res,
+        });
+      },
+    });
   },
   // 对等的同步接口
   getSystemInfoSync() {
@@ -42,10 +41,11 @@ Page({
       systemInfo: my.getSystemInfoSync(),
     });
   },
-})
+});
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -69,59 +69,63 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | storage | String | 设备磁盘容量。 |
 | currentBattery | String | 当前电量百分比。 |
 | system | String | 系统版本。 |
-| platform | String | 系统名：Android，iOS / iPhone OS。|
+| platform | String | 系统名：Android，iOS / iPhone OS。 |
 | titleBarHeight | Number | 标题栏高度。 |
 | statusBarHeight | Number | 状态栏高度。单位：px |
-| screen | Object | 屏幕宽度和高度。结构为： { width: Number, height: Number } 单位：px。|
+| screen | Object | 屏幕宽度和高度。结构为： { width: Number, height: Number } 单位：px。 |
 | screenWidth | Number | 屏幕宽度。单位：px。此属性在 Android 上取值有误，**建议使用 screen.width 替代。** |
 | screenHeight | Number | 屏幕高度。单位：px。此属性在 Android 上取值有误，**建议使用 screen.height 替代。** |
 | brand | String | 手机品牌。 |
 | fontSizeSetting | Number | 用户设置字体大小。单位：px |
-| app | String | 当前运行的客户端。若当前为支付宝，则有效值为 "alipay"。不同的客户端，对应的有效值如下：<ul><li>alipay：支付宝。</li><li>UC：UC浏览器。</li><li>QUARK：夸克浏览器。</li><li>AK：阿里健康。</li><li>amap：高德。</li><li>YK：优酷。</li><li>DINGTALK：钉钉。</li></ul> |
+| app | String | 当前运行的客户端。若当前为支付宝，则有效值为 "alipay"。不同的客户端，对应的有效值如下：<ul><li>alipay：支付宝。</li><li>UC：UC 浏览器。</li><li>QUARK：夸克浏览器。</li><li>AK：阿里健康。</li><li>amap：高德。</li><li>YK：优酷。</li><li>DINGTALK：钉钉。</li></ul> |
 
 #### model 参数
+
 对于 iPhone，model 参数将返回 iPhone 内部代码（Internal Name）。iPhone 手机型号与对应的 model 返回值如下表所示：
 
-| **手机型号** | **model 返回值** |
-| --- | --- |
-| iPhone | iPhone1,1 |
-| iPhone 3G | iPhone1,2 |
-| iPhone 3GS | iPhone2,1 |
-| iPhone 4 | iPhone3,1 / iPhone3,2 / iPhone3,3 |
-| iPhone 4S | iPhone4,1 |
-| iPhone 5 | iPhone5,1 / iPhone5,2 |
-| iPhone 5C | iPhone5,3 / iPhone5,4 |
-| iPhone 5S | iPhone6,1 / iPhone6,2 |
-| iPhone 6 | iPhone7,2 |
-| iPhone 6 Plus | iPhone7,1 |
-| iPhone 6S | iPhone8,1 |
-| iPhone 6S Plus | iPhone8,2 |
-| iPhone 7 | iPhone9,1 / iPhone9,3 |
-| iPhone 7 Plus | iPhone9,2 / iPhone9,4 |
-| iPhone 8 | iPhone10,1 / iPhone10,4 |
-| iPhone 8 Plus | iPhone10,2 / iPhone10,5 |
-| iPhone X | iPhone10,3 / iPhone10,6 |
-| iPhone XR | iPhone11,8 |
-| iPhone XS | iPhone11,2 |
-| iPhone 11 | iPhone12,1 |
-| iPhone 11 Pro | iPhone12,3 |
-| iPhone XS Max | iPhone11,6 / iPhone11,4 |
-| iPhone 11 Pro Max | iPhone12,5 |
-| iPhone 12 mini | iPhone13,1 |
-| iPhone 12 | iPhone13,2 |
-| iPhone 12 Pro | iPhone13,3 |
-| iPhone 12 Pro Max | iPhone13,4 |
-| iPhone SE | iPhone14,6 |
-| iPhone 13 mini | iPhone14,4 |
-| iPhone 13 | iPhone14,5 |
-| iPhone 13 Pro | iPhone14,2 |
-| iPhone 13 Pro Max | iPhone14,3 |
+| **手机型号**      | **model 返回值**                  |
+| ----------------- | --------------------------------- |
+| iPhone            | iPhone1,1                         |
+| iPhone 3G         | iPhone1,2                         |
+| iPhone 3GS        | iPhone2,1                         |
+| iPhone 4          | iPhone3,1 / iPhone3,2 / iPhone3,3 |
+| iPhone 4S         | iPhone4,1                         |
+| iPhone 5          | iPhone5,1 / iPhone5,2             |
+| iPhone 5C         | iPhone5,3 / iPhone5,4             |
+| iPhone 5S         | iPhone6,1 / iPhone6,2             |
+| iPhone 6          | iPhone7,2                         |
+| iPhone 6 Plus     | iPhone7,1                         |
+| iPhone 6S         | iPhone8,1                         |
+| iPhone 6S Plus    | iPhone8,2                         |
+| iPhone 7          | iPhone9,1 / iPhone9,3             |
+| iPhone 7 Plus     | iPhone9,2 / iPhone9,4             |
+| iPhone 8          | iPhone10,1 / iPhone10,4           |
+| iPhone 8 Plus     | iPhone10,2 / iPhone10,5           |
+| iPhone X          | iPhone10,3 / iPhone10,6           |
+| iPhone XR         | iPhone11,8                        |
+| iPhone XS         | iPhone11,2                        |
+| iPhone 11         | iPhone12,1                        |
+| iPhone 11 Pro     | iPhone12,3                        |
+| iPhone XS Max     | iPhone11,6 / iPhone11,4           |
+| iPhone 11 Pro Max | iPhone12,5                        |
+| iPhone 12 mini    | iPhone13,1                        |
+| iPhone 12         | iPhone13,2                        |
+| iPhone 12 Pro     | iPhone13,3                        |
+| iPhone 12 Pro Max | iPhone13,4                        |
+| iPhone SE         | iPhone14,6                        |
+| iPhone 13 mini    | iPhone14,4                        |
+| iPhone 13         | iPhone14,5                        |
+| iPhone 13 Pro     | iPhone14,2                        |
+| iPhone 13 Pro Max | iPhone14,3                        |
 
 对于 Android 手机，因机型众多不予穷举。如有必要请按 model 的具体取值自行搜索。
 
 # 常见问题 FAQ
+
 ## Q：my.getSystemInfo 中 screenWidth 和 screenHeight 在安卓端取值不对怎么办？
+
 A：已知问题，Android 少除了 pixelRatio。推荐使用 screen.width 和 screen.height 代替，iOS 和 Android 一致。
 
 ## Q：my.getSystemInfo 中 windowHeight 和 screenHeight 有什么区别？
+
 A：screenHeight 是指屏幕高度。windowHeight 是指可使用窗口高度。不设置导航栏透明时，screenHeight = windowHeight + statusBarHeight + titleBarHeight ；设置导航栏透明时，screenHeight = windowHeight 。

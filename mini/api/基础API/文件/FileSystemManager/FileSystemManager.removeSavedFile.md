@@ -1,4 +1,5 @@
 # 简介
+
 **FileSystemManager.removeSavedFile** 删除该小程序下已保存的本地缓存文件。
 
 ## 使用限制
@@ -16,9 +17,9 @@
 let fs = my.getFileSystemManager();
 fs.removeSavedFile({
   filePath: `${my.env.USER_DATA_PATH}/test.txt`,
-  success: (res) => {
-    console.log("删除成功");
-  }
+  success: res => {
+    console.log('删除成功');
+  },
 });
 ```
 
@@ -34,8 +35,9 @@ Object 类型，参数如下：
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ## 错误码
-| **错误码** | **描述** |
-| --- | --- |
-| 10022 | 文件/目录不存在。 |
-| 10024 | 指定路径没有写权限。 |
-| 15 | 删除文件失败。 |
+
+| **错误码** | **描述**             |
+| ---------- | -------------------- |
+| 10022      | 文件/目录不存在。    |
+| 10024      | 指定路径没有写权限。 |
+| 15         | 删除文件失败。       |

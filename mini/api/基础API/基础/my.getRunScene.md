@@ -1,4 +1,5 @@
 # 简介
+
 **my.getRunScene** 是用于获取当前小程序的运行时版本的 API。
 
 **注意**：这里说的运行时版本是指当前小程序版本是正式版、灰度版、体验版还是开发版，并不是小程序的版本号。
@@ -20,12 +21,12 @@
 // .js
 my.getRunScene({
   success(result) {
-     my.alert({
+    my.alert({
       title: '小程序版本',
-      content:`${result.envVersion}`
+      content: `${result.envVersion}`,
     });
   },
-})
+});
 ```
 
 ## 入参
@@ -44,20 +45,19 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| envVersion | String | 小程序当前运行的版本。<br /><ul><li>develop：开发版。</li><li>trial：体验版。</li><li>release：发布版（小程序审核阶段也是返回release）。</li><li>gray：灰度版。</li></ul> |
-
+| envVersion | String | 小程序当前运行的版本。<br /><ul><li>develop：开发版。</li><li>trial：体验版。</li><li>release：发布版（小程序审核阶段也是返回 release）。</li><li>gray：灰度版。</li></ul> |
 
 ### Function fail
 
 fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| error | String | 错误码。 |
-| errorMessage | String | 错误信息。 |
-
+| **属性**     | **类型** | **描述**   |
+| ------------ | -------- | ---------- |
+| error        | String   | 错误码。   |
+| errorMessage | String   | 错误信息。 |
 
 ## 错误码
-| **错误码** | **描述** |
-| --- | --- |
-| 3 | 发生未知错误。 |
+
+| **错误码** | **描述**       |
+| ---------- | -------------- |
+| 3          | 发生未知错误。 |

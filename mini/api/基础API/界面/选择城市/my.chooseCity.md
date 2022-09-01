@@ -14,10 +14,12 @@
 
 ## 示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/choose-city?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light) 
+[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/choose-city?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
+
 调用时未传入 cities：
+
 ```javascript
 // API-DEMO page/choose-city/choose-city.js
 Page({
@@ -25,7 +27,7 @@ Page({
     my.chooseCity({
       showLocatedCity: true,
       showHotCities: true,
-      success: (res) => {
+      success: res => {
         my.alert({
           title: 'chooseCity response: ' + JSON.stringify(res),
         });
@@ -33,16 +35,16 @@ Page({
     });
   },
   setLocatedCity() {
-    my.onLocatedComplete((res) => {
+    my.onLocatedComplete(res => {
       my.setLocatedCity({
         locatedCityId: res.locatedCityId, //res.locatedCityId
-        locatedCityName: "修改后的城市名",
-        success: (res) => {
-          my.alert({ content: "修改当前定位城市成功" + JSON.stringify(res) });
+        locatedCityName: '修改后的城市名',
+        success: res => {
+          my.alert({ content: '修改当前定位城市成功' + JSON.stringify(res) });
         },
-        fail: (error) => {
+        fail: error => {
           my.alert({
-            content: "修改当前定位城市失败" + JSON.stringify(error),
+            content: '修改当前定位城市失败' + JSON.stringify(error),
           });
         },
       });
@@ -51,7 +53,7 @@ Page({
       showLocatedCity: true,
       showHotCities: true,
       setLocatedCity: true,
-      success: (res) => {
+      success: res => {
         my.alert({
           title: 'chooseCity response: ' + JSON.stringify(res),
         });
@@ -60,7 +62,9 @@ Page({
   },
 });
 ```
+
 调用时传入 cities：
+
 ```javascript
 //.js
 my.chooseCity({
@@ -68,51 +72,51 @@ my.chooseCity({
     {
       city: '朝阳区',
       adCode: '110105',
-      spell: 'chaoyang'
+      spell: 'chaoyang',
     },
     {
       city: '海淀区',
       adCode: '110108',
-      spell: 'haidian'
+      spell: 'haidian',
     },
     {
       city: '丰台区',
       adCode: '110106',
-      spell: 'fengtai'
+      spell: 'fengtai',
     },
     {
       city: '东城区',
       adCode: '110101',
-      spell: 'dongcheng'
+      spell: 'dongcheng',
     },
     {
       city: '西城区',
       adCode: '110102',
-      spell: 'xicheng'
+      spell: 'xicheng',
     },
     {
       city: '房山区',
       adCode: '110111',
-      spell: 'fangshan'
-    }
+      spell: 'fangshan',
+    },
   ],
   hotCities: [
     {
       city: '朝阳区',
-      adCode: '110105'
+      adCode: '110105',
     },
     {
       city: '海淀区',
-      adCode: '110108'
+      adCode: '110108',
     },
     {
       city: '丰台区',
-      adCode: '110106'
-    }
+      adCode: '110106',
+    },
   ],
-  success: (res) => {
+  success: res => {
     my.alert({
-      content: res.city + ':' + res.adCode
+      content: res.city + ':' + res.adCode,
     });
   },
 });
@@ -157,9 +161,9 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 ## 错误码
 
-| **错误码** | **说明**                 |
-| ---------- | ------------------------ |
-| 11         | 用户取消操作。             |
+| **错误码** | **说明**       |
+| ---------- | -------------- |
+| 11         | 用户取消操作。 |
 
 ## Bug & Tip
 

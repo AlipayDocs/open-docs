@@ -29,10 +29,14 @@
     <view class="page-section-demo">
       <view>目前状态：{{ condition ? "已经开启监听" : '已经取消监听' }}</view>
       <view a:if="{{condition}}">
-        <button type="primary" onTap="offUserCaptureScreen">取消监听屏幕事件</button>
+        <button type="primary" onTap="offUserCaptureScreen">
+          取消监听屏幕事件
+        </button>
       </view>
       <view a:else>
-        <button type="primary" onTap="onUserCaptureScreen">开启监听屏幕事件</button>
+        <button type="primary" onTap="onUserCaptureScreen">
+          开启监听屏幕事件
+        </button>
       </view>
     </view>
   </view>
@@ -63,7 +67,7 @@ Page({
   onUserCaptureScreen() {
     my.onUserCaptureScreen(() => {
       my.alert({
-        content: '收到用户截图'
+        content: '收到用户截图',
       });
     });
     this.setData({
@@ -76,11 +80,13 @@ Page({
 ## 是否需要传 callback 值
 
 - 不传递 callback 值，则会移除监听所有的事件回调。示例代码如下：
+
 ```javascript
 my.offUserCaptureScreen();
 ```
 
 - 传递 callback 值，只移除对应的 callback 事件。示例代码如下：
+
 ```javascript
 my.offUserCaptureScreen(this.callback);
 ```

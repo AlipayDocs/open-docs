@@ -1,4 +1,5 @@
 # 简介
+
 **my.getBLEDeviceStatus** 是获取设备蓝牙授权和开关状态的 API。
 
 ## 使用限制
@@ -12,18 +13,20 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
-my.getBLEDeviceStatus（{
-  success: (res) => {
-    console.log(res)
+my.getBLEDeviceStatus({
+  success: res => {
+    console.log(res);
   },
-  fail: (err) => {
-    console.error("getBLEDeviceStatus:"+JSON.stringify(err))
-  }
-})
+  fail: err => {
+    console.error('getBLEDeviceStatus:' + JSON.stringify(err));
+  },
+});
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -33,6 +36,7 @@ Object 类型，参数如下：
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### success 返回值
+
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |

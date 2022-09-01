@@ -1,5 +1,5 @@
-
 # 简介
+
 开启小程序页面返回询问对话框。
 
 调用后，用户点击页面左上角返回按钮或使用手机返回键和返回手势尝试关闭小程序页面时，会出现如下对话框：
@@ -20,18 +20,19 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 Page({
   onReady() {
     my.enableAlertBeforeUnload({
-      message: '确认离开此页面?'
-    })
-  }
-})
-
+      message: '确认离开此页面?',
+    });
+  },
+});
 ```
 
 ## 参数
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -41,8 +42,8 @@ Object 类型，参数如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-
 ## 错误码
+
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 7 | has not found page when enableAlertBeforeUnload has been invoked | 执行接口时小程序还未创建出任何一个页面实例，建议在 Page.onReady 回调内执行 my.enableAlertBeforeUnload。 |

@@ -1,14 +1,14 @@
-
 # 简介
+
 **my.onBluetoothDeviceFound** 是搜索到新的蓝牙设备时触发的事件 API。
 
 ## 使用限制
 
-- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
+- 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
 - IDE 模拟器暂不支持调试，请以真机调试结果为准。
 - 模拟器可能无法获取 advertisData 及 RSSI ，请使用真机调试。
 - 开发者工具（IDE）和 Android 上获取到的 deviceId 为设备 MAC 地址，iOS 上则为设备 UUID。因此 deviceId 不能硬编码到代码中，需要分平台处理。iOS 可根据设备属性（localName / advertisData / manufacturerData 等）进行动态匹配。
-- 若在 my.onBluetoothDeviceFound 回调中包含了某个蓝牙设备，则此设备会添加到 [my.getBluetoothDevices](https://opendocs.alipay.com/mini/api/pelizr) 接口获取到的数组中。
+- 若在 my.onBluetoothDeviceFound 回调中包含了某个蓝牙设备，则此设备会添加到 [my.getBluetoothDevices](https://opendocs.alipay.com/mini/api/pelizr) 接口获取到的数组中。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
@@ -16,7 +16,8 @@
 ## 示例代码
 
 ### .acss 示例代码
-```
+
+```plain
 /* .acss */
 .help-info {
   padding:10px;
@@ -29,13 +30,15 @@
 ```
 
 ### .json 示例代码
+
 ```json
 {
-    "defaultTitle": "Bluetooth"
+  "defaultTitle": "Bluetooth"
 }
 ```
 
 ### .axml 示例代码
+
 ```html
 <!-- .axml-->
 <view class="page">
@@ -81,6 +84,7 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 // .js
 Page({
@@ -136,7 +140,7 @@ Page({
     my.startBluetoothDevicesDiscovery({
       allowDuplicatesKey: false,
       success: () => {
-        my.onBluetoothDeviceFound((res) => {
+        my.onBluetoothDeviceFound(res => {
           var deviceArray = res.devices;
           for (var i = deviceArray.length - 1; i >= 0; i--) {
             var deviceObj = deviceArray[i];
@@ -351,7 +355,7 @@ Page({
           characteristicId: this.data.notifyId,
           success: () => {
             //监听特征值变化的事件
-            my.onBLECharacteristicValueChange((res) => {
+            my.onBLECharacteristicValueChange(res => {
               my.alert({ content: '得到响应数据 = ' + res.value });
             });
             my.alert({ content: '监听成功' });
@@ -368,7 +372,9 @@ Page({
   },
   //其他事件
   bluetoothAdapterStateChange() {
-    my.onBluetoothAdapterStateChange(this.getBind('onBluetoothAdapterStateChange'));
+    my.onBluetoothAdapterStateChange(
+      this.getBind('onBluetoothAdapterStateChange')
+    );
   },
   onBluetoothAdapterStateChange(res) {
     if (res.error) {
@@ -378,7 +384,9 @@ Page({
     }
   },
   offBluetoothAdapterStateChange() {
-    my.offBluetoothAdapterStateChange(this.getBind('onBluetoothAdapterStateChange'));
+    my.offBluetoothAdapterStateChange(
+      this.getBind('onBluetoothAdapterStateChange')
+    );
   },
   getBind(name) {
     if (!this[`bind${name}`]) {
@@ -397,7 +405,9 @@ Page({
     }
   },
   offBLEConnectionStateChanged() {
-    my.offBLEConnectionStateChanged(this.getBind('onBLEConnectionStateChanged'));
+    my.offBLEConnectionStateChanged(
+      this.getBind('onBLEConnectionStateChanged')
+    );
   },
   onUnload() {
     this.offBLEConnectionStateChanged();
@@ -409,19 +419,20 @@ Page({
 ```
 
 ## 入参
+
 Function 类型。callback 回调函数的入参为 Object 类型，属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| devices | Array | 新搜索到的设备列表。 |
-
+| **属性** | **类型** | **描述**             |
+| -------- | -------- | -------------------- |
+| devices  | Array    | 新搜索到的设备列表。 |
 
 ### device 对象
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| name | String | 蓝牙设备名称，某些设备可能没有。 |
-| deviceName(兼容旧版本) | String | 值与 name 一致。 |
-| localName | String | 广播设备名称。 |
-| deviceId | String | 设备 ID。 |
-| RSSI | Number | 设备信号强度。 |
-| advertisData | Hex String | 设备的广播内容。 |
+
+| **属性**               | **类型**   | **描述**                         |
+| ---------------------- | ---------- | -------------------------------- |
+| name                   | String     | 蓝牙设备名称，某些设备可能没有。 |
+| deviceName(兼容旧版本) | String     | 值与 name 一致。                 |
+| localName              | String     | 广播设备名称。                   |
+| deviceId               | String     | 设备 ID。                        |
+| RSSI                   | Number     | 设备信号强度。                   |
+| advertisData           | Hex String | 设备的广播内容。                 |

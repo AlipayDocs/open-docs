@@ -1,14 +1,13 @@
-
 # Console 面板
 
 ## miniu Console 面板
-Console 能查看小程序中` console.log` `console.warn` `console.error` 等。
+
+Console 能查看小程序中`console.log` `console.warn` `console.error` 等。
 
 ![|723x427](https://gw.alipayobjects.com/mdn/rms_dfc0fe/afts/img/A*K-fiQK_wSTEAAAAAAAAAAAAAARQnAQ#align=left&display=inline&height=772&margin=%5Bobject%20Object%5D&originHeight=1544&originWidth=2616&status=done&style=none&width=1308)
 
+## Chrome Devtool console 面板
 
-
-## Chrome Devtool  console 面板
 除了使用 miniu 的 Console 面板，还支持打开 Chrome Devtool 查看 console。
 
 ![|723x427](https://gw.alipayobjects.com/mdn/rms_dfc0fe/afts/img/A*k6qRT5PLD_cAAAAAAAAAAAAAARQnAQ#align=left&display=inline&height=692&margin=%5Bobject%20Object%5D&originHeight=1544&originWidth=2616&status=done&style=none&width=1172)

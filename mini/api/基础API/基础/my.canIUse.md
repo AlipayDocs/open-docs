@@ -7,22 +7,24 @@
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
+
 ## 示例代码
+
 ### .js 示例代码
 
 ```javascript
 // getFileInfo 接口是否可用
-my.canIUse('getFileInfo')
+my.canIUse('getFileInfo');
 // closeSocket 接口的参数是否包含 code
-my.canIUse('closeSocket.object.code')
+my.canIUse('closeSocket.object.code');
 // getLocation 接口的参数是否包含 type
-my.canIUse('getLocation.object.type')
+my.canIUse('getLocation.object.type');
 // getSystemInfo 接口的返回值是否包含 brand
-my.canIUse('getSystemInfo.return.brand')
+my.canIUse('getSystemInfo.return.brand');
 // 组件 lifestyle（关注生活号）是否可用
-my.canIUse('lifestyle')
+my.canIUse('lifestyle');
 // button 组件的 open-type 属性的值是否可以为 share
-my.canIUse('button.open-type.share')
+my.canIUse('button.open-type.share');
 ```
 
 ## 入参
@@ -42,6 +44,6 @@ my.canIUse('button.open-type.share')
 
 ## 返回值
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| 是否支持 | Boolean | true 表示支持，false 表示不支持。 |
+| **属性** | **类型** | **描述**                          |
+| -------- | -------- | --------------------------------- |
+| 是否支持 | Boolean  | true 表示支持，false 表示不支持。 |

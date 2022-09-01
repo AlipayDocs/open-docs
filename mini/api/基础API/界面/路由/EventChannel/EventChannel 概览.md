@@ -7,6 +7,7 @@
 版本要求基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上，若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 
 # 方法
+
 | **名称** | **描述** |
 | --- | --- |
 | [EventChannel.emit](https://opendocs.alipay.com/mini/api/eventchannel.emit) | 触发一个事件。 |

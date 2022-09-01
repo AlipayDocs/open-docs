@@ -1,4 +1,5 @@
 # 简介
+
 取消监听录音结束事件。
 
 ## 使用限制
@@ -11,20 +12,22 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 let recorderManager = my.getRecorderManager();
 recorderManager.start();
 const recorderStopCallback = res => {
- console.log('结束录音');
+  console.log('结束录音');
   console.log(res.tempFilePath);
 };
 recorderManager.onStop(recorderStopCallback);
-setTimeput(() => {
- recorderManager.offStop(recorderStopCallback);
+setTimeout(() => {
+  recorderManager.offStop(recorderStopCallback);
 }, 5000);
 ```
 
 ## 入参
 
 ### Function callback
+
 录音结束事件的回调函数。
