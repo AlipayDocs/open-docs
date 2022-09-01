@@ -23,8 +23,8 @@ my.setSetBackgroundColor 会覆盖 app.json 中所设置 window 的 backgroundCo
 // .js
 my.setBackgroundColor({
   backgroundColor: 'ffffff',
-  backgroundColorTop: '#00ff00', // iOS 生效
-  backgroundColorBottom: '#ff00ff', // iOS 生效
+  backgroundColorTop: '#00ff00', // 仅对在 iOS 生效
+  backgroundColorBottom: '#ff00ff', // 仅对在 iOS 生效
 });
 ```
 
