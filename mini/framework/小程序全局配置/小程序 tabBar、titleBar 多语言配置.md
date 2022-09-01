@@ -24,30 +24,34 @@
 # tabBar 示例代码
 
 locale 目录中的 app.json 配置示例如下，`items` 中只需配置 `name` 属性的值即可。
+
 ```json
-// locale/en/app.json 
+// locale/en/app.json
 {
-"pages": {
-    "pages/index/index":{
-        "defaultTitle": "index"},
-    "pages/second/second":{
-        "defaultTitle": "second"},
-   "pages/third/third":{
-        "defaultTitle": "third"}
+  "pages": {
+    "pages/index/index": {
+      "defaultTitle": "index"
     },
+    "pages/second/second": {
+      "defaultTitle": "second"
+    },
+    "pages/third/third": {
+      "defaultTitle": "third"
+    }
+  },
   "window": {
     "defaultTitle": "Demo"
   },
   "tabBar": {
     "textColor": "#dddddd",
-    "selectedColor": "#49a9ee", 
+    "selectedColor": "#49a9ee",
     "backgroundColor": "#ffffff",
     "items": [
       {
         "name": "index"
       },
       {
-        "name": "second" 
+        "name": "second"
       },
       {
         "name": "third"
@@ -56,15 +60,13 @@ locale 目录中的 app.json 配置示例如下，`items` 中只需配置 `name`
   }
 }
 ```
+
 根目录下的 app.json 配置示例如下，`items` 中不配置 `name` 属性。
+
 ```json
-// app.json 
+// app.json
 {
-  "pages": [
-    "pages/index/index",
-    "pages/second/second",
-    "pages/third/third"
-  ],
+  "pages": ["pages/index/index", "pages/second/second", "pages/third/third"],
   "window": {
     "defaultTitle": "Demo"
   },
@@ -88,8 +90,9 @@ locale 目录中的 app.json 配置示例如下，`items` 中只需配置 `name`
 ```
 
 # 属性
-| **属性** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| window | Object | 否 | 设置默认 title。 |
-| tabBar | Object | 否 | 设置多语言下的 tabBarItem 名称。 |
-| pages | Object | 否 | 设置多语言下的每个页面对应的 title。 |
+
+| **属性** | **类型** | **必填** | **描述**                             |
+| -------- | -------- | -------- | ------------------------------------ |
+| window   | Object   | 否       | 设置默认 title。                     |
+| tabBar   | Object   | 否       | 设置多语言下的 tabBarItem 名称。     |
+| pages    | Object   | 否       | 设置多语言下的每个页面对应的 title。 |

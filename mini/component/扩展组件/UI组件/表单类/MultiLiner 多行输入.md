@@ -1,18 +1,21 @@
-
 # 简介
+
 多行输入框，可输入多行内容。
 
 ## 扫码体验
+
 ![|154x191](https://mdn.alipayobjects.com/afts/img/A*OqeGSr9t7GQAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=rfUxcdEKBHcjZxSKOvVjQAAAAABkMK8AAAAA#align=left&display=inline&height=191&margin=%5Bobject%20Object%5D&originHeight=191&originWidth=154&status=done&style=none&width=154)
 
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-multi-liner?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-multi-liner?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
   "defaultTitle": "Multi-liner",
@@ -23,22 +26,25 @@
 ```
 
 ### .axml 示例代码
+
 ```html
 <view>
   <view style="margin-top: 10px;" />
   <view class="title">多行输入</view>
   <multi-liner
-    placeholder="字数统计↘" 
-    value="{{value}}" 
-    onInput="onInput" 
-    last="{{true}}" 
-    auto-height="{{true}}" 
-    controlled="{{controlled}}"/>
+    placeholder="字数统计↘"
+    value="{{value}}"
+    onInput="onInput"
+    last="{{true}}"
+    auto-height="{{true}}"
+    controlled="{{controlled}}"
+  />
   <view style="margin: 10px;" />
 </view>
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
   data: {
@@ -54,6 +60,7 @@ Page({
 ```
 
 ## 属性说明
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | className | String | 自定义的 class。 |
@@ -75,6 +82,6 @@ Page({
 | onFocus | (e: Object) => void | 聚焦时触发。 |
 | onBlur | (e: Object) => void | 失去焦点时触发。 |
 
-
 ### Bug & tips
+
 multi-liner 组件的特性主要来源于 [textarea](https://opendocs.alipay.com/mini/component/textarea)，当有光标或者文字输入相关疑惑，详情请参见 [textarea 常见问题](https://opendocs.alipay.com/support/01rb8r#textarea%E7%BB%84%E4%BB%B6%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)。

@@ -1,9 +1,11 @@
 # 简介
+
 **my.switchTab** 跳转到指定标签页（[tabBar](https://opendocs.alipay.com/mini/framework/app-json#tabBar)）页面，并关闭其他所有非标签页页面。
 
 通过页面跳转（[my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx)）或者页面重定向（[my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky)）所到达的页面，即使是定义在标签页配置中的页面，也不会显示底部的标签栏。
 
 ## 使用限制
+
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -17,10 +19,11 @@
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/navigator?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .js 示例代码
+
 ```javascript
 my.switchTab({
-  url: '/page/logs/index'
-})
+  url: '/page/logs/index',
+});
 // 以下格式的 url 均支持(假如当前在 tab bar 页面 pages/index/index)：
 // {url : '/page/logs/index'} 切换到 tab bar 页面 pages/logs/index 页面；
 // {url : '../logs/index'} 切换到 tab bar 页面 pages/logs/index 页面；
@@ -28,6 +31,7 @@ my.switchTab({
 ```
 
 ### [tabBar 配置](https://opendocs.alipay.com/mini/framework/app-json#tabBar)示例：
+
 ```app.json
 {
   "pages": [
@@ -54,8 +58,8 @@ my.switchTab({
 }
 ```
 
-
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
@@ -64,7 +68,6 @@ Object 类型，参数如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-
 
 ## 错误码
 

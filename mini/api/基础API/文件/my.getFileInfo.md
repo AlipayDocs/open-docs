@@ -1,9 +1,12 @@
+此 API 已停止维护，推荐使用 [FileSystemManager.getFileInfo](https://opendocs.alipay.com/mini/api/0226og)，历史接入此 API 的开发者不受影响。
+
 # 简介
+
 **my.getFileInfo** 是获取文件信息的 API。
 
 ## 使用限制
 
-- 基础库 [1.4.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [1.4.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -23,12 +26,12 @@
 ```javascript
 // .js
 my.getFileInfo({
-  apFilePath:'https://resource/apml953bb093ebd2834530196f50a4413a87.video',
-  digestAlgorithm:'sha1',
-  success:(res)=>{
-    console.log(JSON.stringify(res))
-  }
-})
+  apFilePath: 'https://resource/apml953bb093ebd2834530196f50a4413a87.video',
+  digestAlgorithm: 'sha1',
+  success: res => {
+    console.log(JSON.stringify(res));
+  },
+});
 ```
 
 ## 入参
@@ -47,7 +50,7 @@ Object 类型，参数如下：
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| size | Number | 文件大小。单位：字节（B）。 |
-| digest | String | 摘要结果。 |
+| **属性** | **类型** | **描述**                    |
+| -------- | -------- | --------------------------- |
+| size     | Number   | 文件大小。单位：字节（B）。 |
+| digest   | String   | 摘要结果。                  |

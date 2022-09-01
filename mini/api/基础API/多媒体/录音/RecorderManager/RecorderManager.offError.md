@@ -12,18 +12,20 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 let recorderManager = my.getRecorderManager();
 const recorderErrorCallback = res => {
- console.log(res);
+  console.log(res);
 };
 recorderManager.onError(recorderErrorCallback);
-setTimeput(() => {
- recorderManager.offError(recorderErrorCallback);
+setTimeout(() => {
+  recorderManager.offError(recorderErrorCallback);
 }, 5000);
 ```
 
 ## 入参
 
 ### Function callback
+
 录音错误事件的回调函数。

@@ -1,13 +1,15 @@
 > 从基础库 [2.7.9](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始，CanvasContext 相关接口已停止维护，请使用 [Canvas](https://opendocs.alipay.com/mini/01vzqv) 代替。
 
-
 # 简介
+
 **CanvasContext.putImageData** 用于将像素数据绘制到画布。
 
 ## 使用限制
+
 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
 
 ## 使用限制
+
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
@@ -23,21 +25,23 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 // .js
-const data = new Uint8ClampedArray([255, 0, 0, 1])
-const ctx = my.createCanvasContext('canvas')
+const data = new Uint8ClampedArray([255, 0, 0, 1]);
+const ctx = my.createCanvasContext('canvas');
 ctx.putImageData({
-    x: 0,
-    y: 0,
-    width: 1,
-    height: 1,
-    data: data,
-    success(res) {}
-})
+  x: 0,
+  y: 0,
+  width: 1,
+  height: 1,
+  data: data,
+  success(res) {},
+});
 ```
 
 ## 入参
+
 Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
@@ -50,4 +54,3 @@ Object 类型，属性如下：
 | success | Function | 否 | 成功回调。 |
 | fail | Function | 否 | 失败回调。 |
 | complete | Function | 否 | 完成回调。 |
-

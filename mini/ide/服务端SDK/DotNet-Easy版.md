@@ -1,4 +1,5 @@
 ## 简介
+
 适用于 .Net Framework 4.6.1、.Net Core 2.0 及以上版本。
 
 ## 下载地址
@@ -9,6 +10,7 @@
 ## 示例代码
 
 ### 普通调用示例
+
 ```csharp
 using System;
 using Alipay.EasySDK.Factory;
@@ -70,6 +72,7 @@ namespace SDKDemo
 ```
 
 ### 第三方代理调用示例
+
 ```csharp
 Factory.Payment.FaceToFace()
     //调用Agent扩展方法，设置app_auth_token，完成ISV代调用
@@ -78,6 +81,7 @@ Factory.Payment.FaceToFace()
 ```
 
 ### 设置独立的异步通知地址示例
+
 ```csharp
 Factory.Payment.FaceToFace()
     // 调用AsyncNotify扩展方法，可以为每此API调用，设置独立的异步通知地址
@@ -87,6 +91,7 @@ Factory.Payment.FaceToFace()
 ```
 
 ### 支付类异步通知验签示例
+
 ```csharp
 Dictionary<string, string> parameters = new Dictionary<string, string>
 {
@@ -102,7 +107,9 @@ Factory.Payment.Common().VerifyNotify(parameters);
 ```
 
 ### 动态扩展 SDK 功能满足个性化需求
+
 当 SDK 的 API 声明中的参数不满足个性化需求时，可按如下方式追加可选业务参数：
+
 ```csharp
 Dictionary<string, object> goodsDetail = new Dictionary<string, object>
 {
@@ -129,7 +136,9 @@ Factory.Payment.FaceToFace()
     .BatchOptional(optionalArgs)
     .PreCreate("Apple iPhone11 128G", "2234567890", "5799.00");
 ```
+
 当想要调用的 OpenAPI 在 SDK 中没有对应的 API 与之对应时，可按如下方式调用 OpenAPI：<br />**注意**：文件上传类 OpenAPI、生成字符串类的 OpenAPI（老版 SDK 中需使用 sdkExecute）、生成 Form 表单类的 OpenAPI（老版 SDK 中需要使用 pageExecute）本调用方式暂不支持。
+
 ```csharp
 //设置系统参数（OpenAPI中非biz_content里的参数）
 Dictionary<string, string> textParams = new Dictionary<string, string>
@@ -154,4 +163,3 @@ Factory.Util.Generic().Execute("alipay.trade.create", textParams, bizParams);
 ```
 
 <br />
-

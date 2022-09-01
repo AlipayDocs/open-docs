@@ -1,4 +1,5 @@
 # 简介
+
 [FileSystemManager.unlink](https://opendocs.alipay.com/mini/api/022b6p) 的同步版本。
 
 ## 使用限制
@@ -14,7 +15,7 @@
 ### .js 示例代码
 
 ```javascript
-const fs = my.getFileSystemManager()
+const fs = my.getFileSystemManager();
 const result = fs.unlinkSync(`${my.env.USER_DATA_PATH}/test.txt`);
 console.log(result);
 ```
@@ -22,10 +23,12 @@ console.log(result);
 ## 入参
 
 ### String filePath
+
 文件路径。
 
 ## 错误码
-| **错误码** | **描述** |
-| --- | --- |
-| 10022 | 文件不存在。 |
-| 10023 | 传入的路径是一个目录。 |
+
+| **错误码** | **描述**               |
+| ---------- | ---------------------- |
+| 10022      | 文件不存在。           |
+| 10023      | 传入的路径是一个目录。 |

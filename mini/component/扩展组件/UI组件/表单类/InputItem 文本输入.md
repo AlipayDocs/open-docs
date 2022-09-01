@@ -1,4 +1,5 @@
 # 简介
+
 文本输入。
 
 ## 使用限制
@@ -14,15 +15,17 @@
 # 使用
 
 ## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-input-item?theme=light&previewZoom=75&chInfo=openhome-doc) 
+
+[小程序在线](https://herbox-embed.alipay.com/s/doc-aliui-input-item?theme=light&previewZoom=75&chInfo=openhome-doc)
 
 ## 示例代码
 
 ### .json 示例代码
+
 ```json
 {
   "defaultTitle": "input-item",
-  "usingComponents":{
+  "usingComponents": {
     "list": "mini-ali-ui/es/list/index",
     "input-item": "mini-ali-ui/es/input-item/index",
     "am-icon": "mini-ali-ui/es/am-icon/index"
@@ -31,63 +34,74 @@
 ```
 
 ### .axml 示例代码
+
 ```html
 <view>
   <view style="margin-top: 10px;"></view>
   <list>
-    <input-item data-field="cardNo" 
-      clear="{{false}}" 
-      value="{{cardNo}}" 
-      className="dadada" 
-      placeholder="银行卡号" 
-      onInput="onItemInput" 
-      onBlur="onItemBlur" 
-      onConfirm="onItemConfirm" 
-      onClear="onClear">
+    <input-item
+      data-field="cardNo"
+      clear="{{false}}"
+      value="{{cardNo}}"
+      className="dadada"
+      placeholder="银行卡号"
+      onInput="onItemInput"
+      onBlur="onItemBlur"
+      onConfirm="onItemConfirm"
+      onClear="onClear"
+    >
       卡号
       <view slot="extra" class="extra" onTap="onExtraTap"></view>
     </input-item>
-    <input-item data-field="name" 
-      placeholder="姓名" 
-      type="text" 
-      value="{{name}}" 
-      clear="{{true}}" 
-      onInput="onItemInput" 
-      onClear="onClear">姓名</input-item>
-    <input-item data-field="password" 
-      placeholder="密码">密码</input-item>
-    <input-item data-field="layerShow1" 
-      placeholder="layer 为 vertical 的排列" 
-      type="text" 
+    <input-item
+      data-field="name"
+      placeholder="姓名"
+      type="text"
+      value="{{name}}"
+      clear="{{true}}"
+      onInput="onItemInput"
+      onClear="onClear"
+      >姓名</input-item
+    >
+    <input-item data-field="password" placeholder="密码">密码</input-item>
+    <input-item
+      data-field="layerShow1"
+      placeholder="layer 为 vertical 的排列"
+      type="text"
       layer="vertical"
-      value="{{layerShow1}}" 
-      clear="{{true}}" 
-      onInput="onItemInput" 
-      onClear="onClear">
+      value="{{layerShow1}}"
+      clear="{{true}}"
+      onInput="onItemInput"
+      onClear="onClear"
+    >
       竖向表单
       <view onTap="onExtraTap" slot="extra">
         <am-icon type="phone-book_" size="24" color="#1677ef"></am-icon>
       </view>
     </input-item>
-    <input-item data-field="layerShow2"
-      placeholder="layer 为 vertical 的排列" 
-      type="text" 
+    <input-item
+      data-field="layerShow2"
+      placeholder="layer 为 vertical 的排列"
+      type="text"
       layer="vertical"
-      value="{{layerShow2}}" 
-      clear="{{true}}" 
-      onInput="onItemInput" 
-      onClear="onClear">
+      value="{{layerShow2}}"
+      clear="{{true}}"
+      onInput="onItemInput"
+      onClear="onClear"
+    >
       竖向表单
     </input-item>
-    <input-item data-field="layerShow3" 
-      placeholder="layer 为 vertical 的排列" 
-      type="text" 
+    <input-item
+      data-field="layerShow3"
+      placeholder="layer 为 vertical 的排列"
+      type="text"
       layer="vertical"
       disabled="{{true}}"
-      value="{{layerShow3}}" 
-      clear="{{true}}" 
-      onInput="onItemInput" 
-      onClear="onClear">
+      value="{{layerShow3}}"
+      clear="{{true}}"
+      onInput="onItemInput"
+      onClear="onClear"
+    >
       竖向表单
       <view onTap="onExtraTap" slot="extra">
         <am-icon type="phone-book_" size="24" color="#1677ef"></am-icon>
@@ -99,6 +113,7 @@
 ```
 
 ### .js 示例代码
+
 ```javascript
 Page({
   data: {
@@ -135,6 +150,7 @@ Page({
 ```
 
 ### .acss 示例代码
+
 ```css
 .extra {
   background-image: url('https://gw.alipayobjects.com/zos/rmsportal/dOfSJfWQvYdvsZiJStvg.svg');
@@ -148,6 +164,7 @@ Page({
 ```
 
 ## 属性
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | className | String | 自定义的 class。 |
@@ -171,18 +188,20 @@ Page({
 | onBlur | (e: Object) => void | 失去焦点时触发。 |
 | onClear | () => void | 点击清除 icon 时触发。 |
 | layer | String | 文本输入框是否为垂直排列，vertical 时为垂直排列，空值为横向排列。<br />**可选值：** vertical<br />**版本要求：** mini-ali-ui [1.0.4](https://opendocs.alipay.com/mini/component-ext/ui-overview) 及以上 |
-| controlled | Boolean | 是否为受控组件。详情请参见 [input 组件](https://opendocs.alipay.com/mini/component/input)。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.0.9](https://opendocs.alipay.com/mini/component-ext/ui-overview) 及以上 |
+| controlled | Boolean | 是否为受控组件。详情请参见 [input 组件](https://opendocs.alipay.com/mini/component/input)。<br />**默认值：** false<br />**版本要求：** mini-ali-ui [1.0.9](https://opendocs.alipay.com/mini/component-ext/ui-overview) 及以上 |
 
 ### Bug & tips
+
 input-item 组件的特性主要来源于 [input](https://opendocs.alipay.com/mini/component/input)，当有光标或者文字输入相关疑惑，详情请参见 [input 常见问题](https://opendocs.alipay.com/support/01rb8r)。
 
 ## slots
-| slotname | 必填 | **描述** |
-| --- | --- | --- |
-| extra | false | 用于渲染 input-item 项右边说明。 |
+
+| slotname | 必填  | **描述**                         |
+| -------- | ----- | -------------------------------- |
+| extra    | false | 用于渲染 input-item 项右边说明。 |
 
 # FAQ
 
 ### 为何 setData 数据为空时，断点 money 值已经置空，但是在输入框还是显示 0？
-this.setData 设置 data 为空时，不会渲染页面，建议使用组件的 clear。
 
+this.setData 设置 data 为空时，不会渲染页面，建议使用组件的 clear。

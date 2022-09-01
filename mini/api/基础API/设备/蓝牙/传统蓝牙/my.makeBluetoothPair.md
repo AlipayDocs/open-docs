@@ -1,4 +1,5 @@
 # 简介
+
 **my.makeBluetoothPair** 是蓝牙配对接口。连接蓝牙之前，部分设备需要先配对。
 
 ## 使用限制
@@ -12,20 +13,23 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 my.makeBluetoothPair({
-  deviceId:"",//蓝牙设备id。
-  pin:"", //pin 码。
-  timeout: 20,//超时时间，默认为 20s。
-  success: (res) => {
-    my.alert({ content: "success:"+ JSON.stringify(res) });
+  deviceId: '', //蓝牙设备id。
+  pin: '', //pin 码。
+  timeout: 20, //超时时间，默认为 20s。
+  success: res => {
+    my.alert({ content: 'success:' + JSON.stringify(res) });
   },
-  fail: (error) => {
-      my.alert({ content: "fail:"+ JSON.stringify(error) });
- })
+  fail: error => {
+    my.alert({ content: 'fail:' + JSON.stringify(error) });
+  },
+});
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |

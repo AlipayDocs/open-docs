@@ -14,16 +14,16 @@
 ### .js 示例代码
 
 ```javascript
-const fs = my.getFileSystemManager()
+const fs = my.getFileSystemManager();
 fs.unlink({
   filePath: `${my.env.USER_DATA_PATH}/test.txt`,
   success(res) {
-    console.log(res)
+    console.log(res);
   },
   fail(res) {
-    console.error(res)
-  }
-})
+    console.error(res);
+  },
+});
 ```
 
 ## 入参
@@ -38,7 +38,8 @@ Object 类型，参数如下：
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ## 错误码
-| **错误码** | **描述** |
-| --- | --- |
-| 10022 | 文件不存在。 |
-| 10023 | 传入的路径是一个目录。 |
+
+| **错误码** | **描述**               |
+| ---------- | ---------------------- |
+| 10022      | 文件不存在。           |
+| 10023      | 传入的路径是一个目录。 |

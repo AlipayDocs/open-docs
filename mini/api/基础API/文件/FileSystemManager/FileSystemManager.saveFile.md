@@ -6,7 +6,6 @@
 
 注意：此接口实质是移动文件，调用成功后，原临时文件将不复存在。
 
-
 ## 使用限制
 
 - 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
@@ -25,14 +24,14 @@ let fs = my.getFileSystemManager();
 my.chooseImage({
   count: 1,
   success(res) {
-  	fs.saveFile({
+    fs.saveFile({
       tempFilePath: res.apFilePaths[0],
       filePath: `${my.env.USER_DATA_PATH}/img.png`,
-      success: (res1) => {
+      success: res1 => {
         console.log(res1.savedFilePath);
-      }
-    })
-  }
+      },
+    });
+  },
 });
 ```
 
@@ -77,12 +76,13 @@ Object 类型，参数如下：
 
 success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
-| **名称** | **类型** | **描述** |
-| --- | --- | --- |
-| savedFilePath | String | 存储后的文件路径。 |
+| **名称**      | **类型** | **描述**           |
+| ------------- | -------- | ------------------ |
+| savedFilePath | String   | 存储后的文件路径。 |
 
 ## 错误码
-| **错误码** | **描述** |  **解决方案** |
+
+| **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 10022 | 指定文件不存在。 | 检查临时文件是否存在 |
 | 10024 | 指定的路径没有写的权限。 | 检查是否有权限写入 |
@@ -91,5 +91,5 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 # 常见问题 FAQ
 
 ## Q: 调用 FileSystemManager.saveFile 保存成功之后，文件保存在哪里了，怎么可以找到？
-A: 不论传入不传入 filePath，FileSystemManager.saveFile 保存之后返回的路径都是虚拟路径，需要通过小程序内的 API 才能访问。如果是图片文件，可通过
- [my.saveImageToPhotosAlbum](https://opendocs.alipay.com/mini/api/media/image/my.saveImagetophotosalbum) 保存到系统相册，到相册中找到。
+
+A: 不论传入不传入 filePath，FileSystemManager.saveFile 保存之后返回的路径都是虚拟路径，需要通过小程序内的 API 才能访问。如果是图片文件，可通过 [my.saveImageToPhotosAlbum](https://opendocs.alipay.com/mini/api/media/image/my.saveImagetophotosalbum) 保存到系统相册，到相册中找到。

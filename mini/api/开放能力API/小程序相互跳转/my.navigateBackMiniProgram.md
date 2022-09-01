@@ -1,9 +1,11 @@
 # 简介
+
 **my.navigateBackMiniProgram** 是用于跳转回上一个小程序的 API。只有当前小程序是由其他小程序跳转而来，调用此 API 才有效果。
 
 关于小程序互相跳转的更多知识，可查看 [小程序相互跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
 
 ## 使用限制
+
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
@@ -14,11 +16,11 @@
 // 接口调用示例
 my.navigateBackMiniProgram({
   extraData: {
-    'foo': 'bar'
+    foo: 'bar',
   },
-  success: (res) => {
-    console.log(JSON.stringify(res))
-  }
+  success: res => {
+    console.log(JSON.stringify(res));
+  },
 });
 
 // 目标小程序接收 extraData 示例
@@ -26,11 +28,12 @@ App({
   onShow(options) {
     const { referrerInfo = {}, appId } = options;
     console.log('extraData: ', referrerInfo.extraData);
-  }
+  },
 });
 ```
 
 ## 入参
+
 Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |

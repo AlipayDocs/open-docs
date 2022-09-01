@@ -1,4 +1,5 @@
 # 简介
+
 取消监听已录制完制定帧大小的文件事件。如果设置了 frameSize，则会回调此事件。
 
 ## 使用限制
@@ -12,21 +13,23 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 let recorderManager = my.getRecorderManager();
 const frameRecordedCallback = res => {
- console.log(res.frameBuffer, res.isLastFrame);
-}
-recorderManager.onFrameRecorded(frameRecordedCallback)
+  console.log(res.frameBuffer, res.isLastFrame);
+};
+recorderManager.onFrameRecorded(frameRecordedCallback);
 recorderManager.start({
   frameSize: 100,
-})
+});
 setTimeout(() => {
- recorderManager.offFrameRecorded(frameRecordedCallback)
-}, 50000)
+  recorderManager.offFrameRecorded(frameRecordedCallback);
+}, 50000);
 ```
 
 ## 入参
 
 ### Function callback
+
 已录制完指定帧大小的文件事件的回调函数。
