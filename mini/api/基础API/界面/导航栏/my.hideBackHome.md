@@ -35,13 +35,14 @@ Page({
 Page({
   onLoad() {
     my.reLaunch({
-      url:'../swiper/swiper' // 在页面中添加的非首页
-    })
+      url: '../swiper/swiper', // 在页面中添加的非首页
+    });
 
     setTimeout(() => {
       //5秒后隐藏返回首页按钮
-      my.hideBackHome()
-    }, 5000)
+      my.hideBackHome();
+    }, 5000);
+  },
 });
 ```
 

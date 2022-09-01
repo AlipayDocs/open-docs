@@ -19,7 +19,7 @@ fs.rename({
   oldPath: `${my.env.USER_DATA_PATH}/test.txt`,
   newPath: `${my.env.USER_DATA_PATH}/test_new.txt`,
   success: res => {
-    consoloe.log(res);
+    console.log(res);
   },
 });
 ```

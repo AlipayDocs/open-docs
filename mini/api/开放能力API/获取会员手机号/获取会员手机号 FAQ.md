@@ -66,27 +66,16 @@ my.getPhoneNumber({
 
 ### Q：如何处理调用 my.getPhoneNumber，报错“ISV 权限不足”？
 
-A：报错“ISV 权限不足”是由于未添加获取会员手机号功能包。请至小程序管理后台添加功能包。
+A：报错“ISV 权限不足”是由于未添加获取会员手机号产品。
 
-1. 在 [开放平台控制台](https://openhome.alipay.com/dev/workspace) 的 **功能列表** 中，点击 **添加功能**。
+1. 进入 [开放平台控制台](https://open.alipay.com/develop/manage) 的 对应小程序详情页 > **产品绑定** 绑定 **获取会员手机号**。
+![](https://cdn.nlark.com/yuque/0/2022/png/179989/1661931956108-d30527bc-ad74-4fc9-80ac-1b67c0a7e811.png)
 
-![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/9219534cf0b476cb9654aa6dfcafcaff.png#align=left&display=inline&height=105&margin=%5Bobject%20Object%5D&originHeight=212&originWidth=1500&status=done&style=stroke&width=746)
+2. 点击 **用户信息申请** 进入申请页面，点击 **申请权限** 申请用户手机号。
+![](https://cdn.nlark.com/yuque/0/2022/png/179989/1661932190662-fdbdbe98-1a22-4c10-9afe-57fe87ca7a61.png)
 
-2. 添加 **获取会员手机号** 功能包。
-
-![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/b543a501c7989411375fa111cfed2ca3.png#align=left&display=inline&height=331&margin=%5Bobject%20Object%5D&originHeight=456&originWidth=723&status=done&style=stroke&width=525)
-
-3. 点击 **用户信息申请**。
-
-![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/22e7a6060e673a4129487a1b06da79d9.png?x-oss-process=image/resize,w_1500#align=left&display=inline&height=36&margin=%5Bobject%20Object%5D&originHeight=72&originWidth=1500&status=done&style=stroke&width=746)
-
-4. 在 **申请权限** 中申请用户手机号。
-
-![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/fc511f9394f5519a596e5aba336c2622.png#align=left&display=inline&height=87&margin=%5Bobject%20Object%5D&originHeight=170&originWidth=1456&status=done&style=stroke&width=746)
-
-5. 填写申请原因、使用场景等信息，提交申请，等待审核。
-
-![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/0b2e295836fd49f1f63304ac802dcf90.png#align=left&display=inline&height=362&margin=%5Bobject%20Object%5D&originHeight=499&originWidth=752&status=done&style=none&width=546)
+3. 填写申请原因、使用场景等信息，提交申请，等待审核。
+![](https://cdn.nlark.com/yuque/0/2022/png/179989/1660273140099-5e0209d3-7ee4-427a-b3f0-62bc006e309b.png?x-oss-process=image%2Fresize%2Cw_998)
 
 ### Q：如何处理返回错误码 20000/40001/40002/40003？
 

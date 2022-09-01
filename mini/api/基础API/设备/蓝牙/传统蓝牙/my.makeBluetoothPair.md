@@ -16,15 +16,16 @@
 
 ```javascript
 my.makeBluetoothPair({
-  deviceId:"",//蓝牙设备id。
-  pin:"", //pin 码。
-  timeout: 20,//超时时间，默认为 20s。
-  success: (res) => {
-    my.alert({ content: "success:"+ JSON.stringify(res) });
+  deviceId: '', //蓝牙设备id。
+  pin: '', //pin 码。
+  timeout: 20, //超时时间，默认为 20s。
+  success: res => {
+    my.alert({ content: 'success:' + JSON.stringify(res) });
   },
-  fail: (error) => {
-      my.alert({ content: "fail:"+ JSON.stringify(error) });
- })
+  fail: error => {
+    my.alert({ content: 'fail:' + JSON.stringify(error) });
+  },
+});
 ```
 
 ## 入参

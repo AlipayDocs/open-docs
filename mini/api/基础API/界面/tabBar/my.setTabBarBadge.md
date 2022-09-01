@@ -53,3 +53,7 @@ fail 回调会收到一个 Object 类型的参数，其 error 属性为错误码
 | --- | --- | --- |
 | 2 | 无效参数: Error: Index 5 of TabBar do not exists!  | 入参 index 超出范围。如果在 app.json 中 tabBar.items 有 n 项，index 应为 0 ~ n-1 |
 
+# Bug & Tip
+
+* `Bug` app.json 里未对 tabItem 配置 icon 的情况下，调用此 API，iOS 系统不生效。
+

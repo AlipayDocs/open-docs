@@ -98,7 +98,7 @@
 | --- | --- | --- | --- | --- |
 | allowsBounceVertical | String | 否 | 是否允许向下拉拽。默认 `YES`, 支持 `YES` / `NO` | - |
 | backgroundColor | HexColor | 否 | 页面的背景色。例：白色 "#FFFFFF"。 | - |
-| backgroundImageColor | HexColor | 否 | 下拉露出显示背景图的底色。例：白色 "#FFFFFF"。**仅安卓下有效，iOS 下页面背景图底色会使用 backgroundImageColor 的值** | - |
+| backgroundImageColor | HexColor | 否 | 下拉露出显示背景图的底色。例：白色 "#FFFFFF"。**仅安卓下有效，iOS 下页面背景图底色会使用 backgroundColor 的值** | - |
 | backgroundImageUrl | String | 否 | 下拉露出显示背景图的链接。 | - |
 | defaultTitle | String | 否 | 页面默认标题。 | - |
 | enableScrollBar | String | 否 | 仅支持 Android，是否显示 `WebView` 滚动条。默认 `YES`，支持 `YES` / `NO`。 | - |

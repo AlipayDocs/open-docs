@@ -1,8 +1,8 @@
 # 简介
 
-**my.scan** 是调用扫一扫功能的 API。
+**my.scan** 调起客户端扫码界面进行扫码。
 
-my.scan 唤起扫一扫前后整个过程会先后执行 app 和 page 的 onHide 和 onShow 生命周期函数。即（唤起）app.onHide > page.onHide >（返回）app.onShow > page.onShow。
+my.scan 的作用是获取扫码结果供当前小程序使用。如果想要唤起支付宝的扫一扫功能（以便进行扫码支付等），请使用 [my.ap.navigateToAlipayPage](https://opendocs.alipay.com/mini/api/navigatetoalipaypage)。
 
 ## 使用限制
 
@@ -19,42 +19,11 @@ my.scan 唤起扫一扫前后整个过程会先后执行 app 和 page 的 onHide
 # 接口调用
 
 ## 示例代码
-
-### .json 示例代码
-
-```json
-{
-  "defaultTitle": "Scan"
-}
-```
-
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/API/scan-code/scan-code.axml-->
-<view class="page">
-  <view class="page-section">
-    <form onSubmit="scanCode">
-      <view>
-        <button type="primary" onTap="scan">扫码</button>
-      </view>
-    </form>
-  </view>
-</view>
-```
-
-### .js 示例代码
-
 ```javascript
-// API-DEMO page/API/scan-code/scan-code.js
-Page({
-  scan() {
-    my.scan({
-      scanType: ['qrCode', 'barCode'],
-      success: res => {
-        my.alert({ title: res.code });
-      },
-    });
+my.scan({
+  scanType: ['qrCode', 'barCode'],
+  success: res => {
+    my.alert({ title: res.code });
   },
 });
 ```
@@ -82,26 +51,20 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | barCode | String | 扫描条形码时返回条形码数据。请直接使用 `code` 字段。 |
 | scanType | String | 码类型。 |
 | result | String | 码内容。 |
-| imageChannel | String | 来源。 |
+| imageChannel | String | 码图像来源，`album` 或 `camera`。 |
 | rawData | String | Base64 字节流。 |
 
 ## 错误码
+| **错误码** | **说明**             | **解决方案**                                 |
+| ---------- | ------------------ | -------------------------------------------- |
+| 10         | 用户取消操作。        | 正常交互流程。一般无须特殊处理。 |
+| 2001       | 用户拒绝为当前小程序授权摄像头。        | 请在交互设计中考虑这种情况。  |
+| 2003       | 用户拒绝授权，并且此次勾选了总是保持拒绝。  | 如有必要，可提醒用户手动授权：小程序右上角胶囊按钮 -> 设置 -> 相机，或者调用 [my.openSetting](https://opendocs.alipay.com/mini/api/qflu8f) 帮用户打开该设置页面。</li></ul>  |
+| 2002       | 用户此前已经拒绝授权且勾选了总是保持拒绝，此次调用直接失败。 | 如有必要，可提醒用户手动授权：小程序右上角胶囊按钮 -> 设置 -> 相机，或者调用 [my.openSetting](https://opendocs.alipay.com/mini/api/qflu8f) 帮用户打开该设置页面。</li></ul> |
 
-| **错误码** | **说明** | **解决方案** |
-| --- | --- | --- |
-| 10 | 用户取消操作后返回。 | 为用户正常交互流程分支，不需要进行特殊处理。 |
-| 11 | 操作失败。 | 具体原因需要联系支付宝协助排查。 |
 
 # 常见问题 FAQ
 
-## Q：如果系统权限未开启，接口调用报错，如何引导开启系统权限？
+## Q：通过 my.scan 扫描小程序码，能否获得其中的小程序应用参数？
 
-A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-auth-guide) 引导用户开启相关系统权限。
-
-## Q：小程序体验码扫码后为什么页面一直在加载中呢？
-
-A：建议检查下后台配置的域名白名单，首页存在网络请求必须配置白名单。
-
-## Q: 我传递了错误的 scanType 参数，还能正常调用扫码功能吗？
-
-A: 如果您传递了错误的 scanType 参数，小程序仍会尝试识别，如果识别成功则会触发 success 回调。
+A：小程序码的码值中并不直接包含的小程序应用参数。建议调用支付宝的扫一扫功能扫描小程序码，在打开的小程序内部去正常获取参数。

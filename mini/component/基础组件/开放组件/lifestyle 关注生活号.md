@@ -43,3 +43,7 @@ lifestyle 组件，实现了在小程序里关注生活号的能力。
 # 相关文档
 
 [关注/跳转生活号](https://opendocs.alipay.com/mini/introduce/bntnry)
+
+# 常见问题
+Q：如何通过API查询用户是否已经关注了生活号？
+A：支付宝小程序有提供对应的接口[查询是否关注生活号](https://opendocs.alipay.com/apis/api_6/alipay.open.public.user.follow.query)
