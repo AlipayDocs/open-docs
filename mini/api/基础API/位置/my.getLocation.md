@@ -57,15 +57,17 @@ Page({
   getLocation() {
     my.showLoading();
     my.getLocation({
-      success: res => {
+      type: 1, //获取经纬度和省市区县数据
+      success: (res) => {
+        console.log(res);
         this.setData({
           hasLocation: true,
           longitude: res.longitude,
           latitude: res.latitude,
         });
       },
-      fail: res => {
-        my.alert({ title: '定位失败' });
+      fail: (res) => {
+        my.alert({ title: '定位失败', content: JSON.stringify(res) });
       },
       complete: () => {
         my.hideLoading();
@@ -82,7 +84,7 @@ Object 类型，属性如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | cacheTimeout | Number | 否 | 支付宝客户端经纬度定位缓存过期时间，单位为秒。默认 30 秒（s）。 <br>使用缓存会加快定位速度，缓存过期会重新定位。 |
-| type | Number | 否 | 获取经纬度数据的类型。默认值为 0。<ul><li>0：获取经纬度。</li><li>1：获取经纬度和详细到区县级别的逆地理编码数据。</li><li>2：获取经纬度和详细到街道级别的逆地理编码数据，不推荐使用。（不推荐使用的原因：精度过高，接口返回的速度会变慢。）</li><li>3：获取经纬度和详细到 POI 级别的逆地理编码数据，不推荐使用。不推荐使用的原因：精度过高，接口返回的速度会变慢。</li></ul> |
+| type | Number | 否 | 获取经纬度数据的类型。默认值为 0。<ul><li>0：获取经纬度。</li><li>1：获取经纬度和省市区县数据。</li><li>2：获取经纬度、省市区县和街道数据，通常不推荐使用（原因：精度过高，接口返回的速度会变慢）。</li><li>3：获取经纬度、省市区县、街道和详细到 POI 级别的数据，通常不推荐使用（原因：精度过高，接口返回的速度会变慢）。</li></ul> |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -127,17 +129,50 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 | 14 | 业务定位超时。 | 提示用户再次尝试。 |
 | 18 | 获取到的基站与 WIFI 为空，请您打开 WIFI 开关，如已打开，建议移动到有 WIFI 的区域在发起定位 | 提示用户确认 WIFI 开关是否打开。如已打开，提示用户移动到有 WIFI 的区域再发起定位。 |
 | 2001 | 用户拒绝给小程序授权。 | 提示用户接受小程序授权。 |
+| 2002 | 保持拒绝后再触发定位。 | 小程序右上角点击更多 "..." -> 设置 -> 地理位置关闭，可以更改保持状态。 |
+| 2003 | 勾选保持后再点选了拒绝。 | 小程序右上角点击更多 "..." -> 设置 -> 地理位置关闭，可以更改保持状态。 |
 
 # 常见问题 FAQ
 
 ## Q：如果系统权限未开启，接口调用报错，如何引导开启系统权限？
-
 A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-auth-guide) 引导用户开启相关系统权限。
 
 ## Q：my.getLocation 第一次允许授权后删除小程序应用，重新打开会需要重新授权吗？
-
 A：需要重新授权，删除小程序应用后会将获取定位的授权关系一起删除。
 
 ## Q：如何在 IDE 模拟器调试 my.getLocation 接口？
+A：可以在模拟器工具栏中点击定位按钮，自定义当前位置的经纬度。<br />![](https://img.alicdn.com/imgextra/i1/O1CN01jQG0oE1ZOJqojXjqo_!!6000000003184-0-tps-456-266.jpg)
 
-A：可以在模拟器工具栏中点击定位按钮，自定义当前位置的经纬度。
+## Q：my.getLocation 在 IDE 模拟器中获取的地理位置信息不对？
+A：IDE 模拟器目前默认的地址是杭州，后期会优化。如果想要在 IDE 模拟器中调试 my.getLocation 接口，请参考 “如何在 IDE 模拟器调试 my.getLocation 接口？” FAQ。
+
+## Q：my.getLocation 怎么获取省市区？
+A：type 入参为1、2、3都可以获取到省市区及其相对应的行政区划编码。不推荐使用2、3，使用2、3精度过高，接口返回的速度会变慢。
+```javascript
+my.getLocation({
+  type: 1,
+  success: (res) => {
+    console.log(res);
+  },
+  fail: (res) => {
+    my.alert({ title: '定位失败', content: JSON.stringify(res) });
+  },
+})
+```
+
+## Q：my.getLocation 报错 code 2003 、 2002 和 2001 的区别？
+A：
+| **错误码** | **描述** |
+| --- | --- |
+| 2003 | 当触发位置授权弹窗提示时，用户勾选了 “总是保持以上选择，不再询问”，然后再点击拒绝时就会报错2003。 |
+| 2002 | 当用户之前已经勾选过 “总是保持以上选择，不再询问”，用户再次触发 my.getLocation API时会报错2002。 |
+| 2001 | 当触发位置授权弹窗提示时，不勾选 “总是保持以上选择，不再询问”，直接拒绝就会报错2001。 |
+
+## Q：my.getLocation 永久拒绝获取定位权限之后，怎么再次唤起位置授权弹窗？
+A：
+**什么是永久拒绝？**
+当触发位置授权弹窗提示时，用户勾选 “总是保持以上选择，不再询问”，然后再点击拒绝，即为永久拒绝。<br />![](https://img.alicdn.com/imgextra/i4/O1CN01EPmlU01vsTTYYJK6v_!!6000000006228-0-tps-820-888.jpg)
+**永久拒绝后怎么再次唤起位置授权弹窗？**
+- 使用 my.openSetting 打开小程序设置界面，地理位置，再次触发 my.getLocation 方法就会唤起授权弹窗。
+- 或者小程序右上角点击更多 "..." -> 设置 -> 地理位置，再次触发 my.getLocation 方法也会唤起授权弹窗。
+
