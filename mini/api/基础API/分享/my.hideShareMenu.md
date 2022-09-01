@@ -1,7 +1,7 @@
 # 简介
 **my.hideShareMenu** 是隐藏当前页面分享按钮的 API。
 
-调用此 API 后，点击小程序右上角的三个点，页面底部弹框中的分享按钮被置灰，并显示 **当前页面不可分享**。<br />![hideshare XXX.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1650877509568-ef7560f7-caef-4a24-ad62-a9ed600a6141.png#align=left&display=inline&height=258&margin=%5Bobject%20Object%5D&name=hideshare%20XXX.png&originHeight=928&originWidth=1080&size=93199&status=done&style=stroke&width=300)
+调用此 API 后，点击小程序右上角的胶囊按钮，页面底部弹框中的分享按钮被置灰，并显示 **当前页面不可分享**。<br />![hideshare XXX.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1650877509568-ef7560f7-caef-4a24-ad62-a9ed600a6141.png#align=left&display=inline&height=258&margin=%5Bobject%20Object%5D&name=hideshare%20XXX.png&originHeight=928&originWidth=1080&size=93199&status=done&style=stroke&width=300)
 
 ## 使用限制
 
