@@ -1,6 +1,6 @@
 # 简介
 
-**onTabItemTap** 是切换标签（tab）时触发，可用于监听 tabBar 的点击事件。
+**onTabItemTap** 是切换标签（tab）时触发，可用于目标页面监听 tabBar 的点击事件。
 
 相关问题可查看 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
 
@@ -25,3 +25,12 @@ Page({
   },
 });
 ```
+
+## 返回结果
+Object 类型，参数如下：
+
+| **参数** | **类型** | **描述** |
+| --- | --- | --- |
+| index | Number | 被点击 tabItem 的序号，从0开始。 |
+| pagePath | String | 被点击 tabItem 的页面路径。 |
+| text | String | 被点击 tabItem 的页面名称。 |
