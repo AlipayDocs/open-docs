@@ -38,16 +38,16 @@ console.log('当前环境不支持调用my.getMenuButtonBoundingClientRect'); }
 | --- | --- | --- |
 | width | Number | 胶囊按钮宽度，单位 px。 |
 | height | Number | 胶囊按钮高度，单位 px。 |
-| top | Number | 胶囊按钮上边界坐标，单位 px。 |
-| bottom | Number | 胶囊按钮下边界坐标，单位 px。 |
-| left | Number | 胶囊按钮左边界坐标，单位 px。 |
-| right | Number | 胶囊按钮右边界坐标，单位 px。 |
+| top | Number | 胶囊按钮上边界坐标，单位 px，以屏幕左上角为原点。 |
+| bottom | Number | 胶囊按钮下边界坐标，单位 px，以屏幕左上角为原点。 |
+| left | Number | 胶囊按钮左边界坐标，单位 px，以屏幕左上角为原点。 |
+| right | Number | 胶囊按钮右边界坐标，单位 px，以屏幕左上角为原点。 |
 | optionMenuWidth | Number | 自定义按钮宽度，单位 px。<br />若无自定义按钮，则无相关字段。 |
 | optionMenuHeight | Number | 自定义按钮高度，单位 px。 |
-| optionMenuTop | Number | 自定义按钮上边界坐标，单位 px。 |
-| optionMenuButtom | Number | 自定义按钮下边界坐标，单位 px。 |
-| optionMenuLeft | Number | 自定义按钮左边界坐标，单位 px。 |
-| optionMenuRight | Number | 自定义按钮右边界坐标，单位 px。 |
+| optionMenuTop | Number | 自定义按钮上边界坐标，单位 px，以屏幕左上角为原点。 |
+| optionMenuButtom | Number | 自定义按钮下边界坐标，单位 px，以屏幕左上角为原点。 |
+| optionMenuLeft | Number | 自定义按钮左边界坐标，单位 px，以屏幕左上角为原点。 |
+| optionMenuRight | Number | 自定义按钮右边界坐标，单位 px，以屏幕左上角为原点。 |
 | optionMenuStatus | OptionMenuStatus | iOS 10.2.15、Android 10.2.30 以上支持。 |
 
 ### OptionMenuStatus 有效值
@@ -56,3 +56,13 @@ console.log('当前环境不支持调用my.getMenuButtonBoundingClientRect'); }
 | ---------- | -------- |
 | Favorite   | 已收藏   |
 | UnFavorite | 未收藏   |
+
+# 常见问题
+
+## Q：收藏按钮的位置如何获取？
+
+A：调用 my.getMenuButtonBoundingClientRect，拿到 optionMenuWidth，optionMenuTop 等相关位置信息。
+
+## Q：获取胶囊位置数据不准确，甚至是负数？
+
+A：有些用户用IDE模拟器调试时遇到类似问题。建议以真机为准，或升级IDE版本。
