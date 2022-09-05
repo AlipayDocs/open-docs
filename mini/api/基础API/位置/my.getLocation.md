@@ -4,6 +4,7 @@
 
 地图相关接口使用的坐标格式为 GCJ-02（火星坐标系）。  
 暂无境外地图数据，在中国内地（不含港澳台）以外的地区可能无法正常调用此 API。
+<br />获取到定位的前提，是有定位权限，定位权限有系统位置权限、支付宝定位权限以及小程序位置权限，缺少任何一种定位权限都无法定位。更多信息可查看[小程序定位原理及其报错解决方案](https://opendocs.alipay.com/mini/api/mkxuqd#Q：小程序定位原理及其报错解决方案?)
 
 ## 使用限制
 
@@ -129,8 +130,8 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 | 14 | 业务定位超时。 | 提示用户再次尝试。 |
 | 18 | 获取到的基站与 WIFI 为空，请您打开 WIFI 开关，如已打开，建议移动到有 WIFI 的区域在发起定位 | 提示用户确认 WIFI 开关是否打开。如已打开，提示用户移动到有 WIFI 的区域再发起定位。 |
 | 2001 | 用户拒绝给小程序授权。 | 提示用户接受小程序授权。 |
-| 2002 | 保持拒绝后再触发定位。 | 小程序右上角点击更多 "..." -> 设置 -> 地理位置关闭，可以更改保持状态。 |
-| 2003 | 勾选保持后再点选了拒绝。 | 小程序右上角点击更多 "..." -> 设置 -> 地理位置关闭，可以更改保持状态。 |
+| 2002 | 保持拒绝后再触发定位。 | 可以调用 [my.openSetting](https://opendocs.alipay.com/mini/api/qflu8f) 引导用户开启相关系统权限。 |
+| 2003 | 勾选保持后再点选了拒绝。 | 可以调用 [my.openSetting](https://opendocs.alipay.com/mini/api/qflu8f) 引导用户开启相关系统权限。 |
 
 # 常见问题 FAQ
 
@@ -160,19 +161,46 @@ my.getLocation({
 })
 ```
 
-## Q：my.getLocation 报错 code 2003 、 2002 和 2001 的区别？
-A：
-| **错误码** | **描述** |
-| --- | --- |
-| 2003 | 当触发位置授权弹窗提示时，用户勾选了 “总是保持以上选择，不再询问”，然后再点击拒绝时就会报错2003。 |
-| 2002 | 当用户之前已经勾选过 “总是保持以上选择，不再询问”，用户再次触发 my.getLocation API时会报错2002。 |
-| 2001 | 当触发位置授权弹窗提示时，不勾选 “总是保持以上选择，不再询问”，直接拒绝就会报错2001。 |
-
 ## Q：my.getLocation 永久拒绝获取定位权限之后，怎么再次唤起位置授权弹窗？
 A：
+
 **什么是永久拒绝？**
-当触发位置授权弹窗提示时，用户勾选 “总是保持以上选择，不再询问”，然后再点击拒绝，即为永久拒绝。<br />![](https://img.alicdn.com/imgextra/i4/O1CN01EPmlU01vsTTYYJK6v_!!6000000006228-0-tps-820-888.jpg)
+<br />当触发位置授权弹窗提示时，用户勾选 “总是保持以上选择，不再询问”，然后再点击拒绝，即为永久拒绝。<br /><img src="https://img.alicdn.com/imgextra/i4/O1CN01EPmlU01vsTTYYJK6v_!!6000000006228-0-tps-820-888.jpg" width="250px">
+
 **永久拒绝后怎么再次唤起位置授权弹窗？**
 - 使用 my.openSetting 打开小程序设置界面，地理位置，再次触发 my.getLocation 方法就会唤起授权弹窗。
 - 或者小程序右上角点击更多 "..." -> 设置 -> 地理位置，再次触发 my.getLocation 方法也会唤起授权弹窗。
 
+## Q：小程序定位原理及其报错解决方案?
+A：
+
+### 小程序定位原理
+获取到定位的前提，是有定位权限，如下图所示，定位权限有系统位置权限、支付宝定位权限以及小程序位置权限，缺少任何一种定位权限都无法定位。<br /><img src="https://img.alicdn.com/imgextra/i2/O1CN01dem1e81lgtIkL1ggP_!!6000000004849-2-tps-304-157.png" width="250px">
+
+**系统位置权限**
+<br />用户需要打开手机系统定位权限
+
+- ios图示 <br /><img src="https://img.alicdn.com/imgextra/i4/O1CN01e2Kj7J23ZFmNq6f4H_!!6000000007269-2-tps-398-437.png" width="250px">
+
+- 安卓图示 <br /><img src="https://img.alicdn.com/imgextra/i4/O1CN01e2Kj7J23ZFmNq6f4H_!!6000000007269-2-tps-398-437.png" width="250px">
+
+**支付宝定位权限**
+<br />打开系统位置权限后，需要授予支付宝定位权限
+
+- ios图示 <br /><img src="https://img.alicdn.com/imgextra/i4/O1CN01L2bsQw1gcFCf40Rvd_!!6000000004162-2-tps-398-471.png" width="250px">
+
+- 安卓图示 <br /><img src="https://img.alicdn.com/imgextra/i2/O1CN01UGE8KL22CWVesTWKV_!!6000000007084-2-tps-755-1081.png" width="250px">
+
+**小程序定位权限**
+<br />打开系统定位权限并授予支付宝定位权限后，需要用户授予小程序定位权限
+<br /><img src="https://img.alicdn.com/imgextra/i2/O1CN01UGE8KL22CWVesTWKV_!!6000000007084-2-tps-755-1081.png" width="250px">
+
+### 报错问题及解决方案
+**my.getLocation 报错 code 11、 2003 、 2002 和 2001的区别及其解决方案？**
+
+| **错误码** | **描述** | **解决方案** |
+| --- | --- | --- |
+| 11 | 包含用户未授权系统位置权限和支付宝定位权限两种情况。 | 接入定位权限引导，引导用户开启定位权限。参考开放平台 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-auth-guide) 文档。 |
+| 2003 | 当用户授权系统位置权限和支付宝定位权限两种情况后，用户触发位置授权弹窗并勾选了 “总是保持以上选择，不再询问”，然后再点击拒绝时就会报错2003。 | 即为永久拒绝，使用 [my.openSetting](https://opendocs.alipay.com/mini/api/qflu8f) 打开小程序设置界面，选择地理位置，再次触发 my.getLocation API即可。 |
+| 2002 | 当用户授权系统位置权限和支付宝定位权限两种情况后，用户之前已经勾选了 “总是保持以上选择，不再询问”，当用户再次触发 my.getLocation API时会就报错2002，并且不会弹出授权弹窗。 | 即为永久拒绝，使用 [my.openSetting](https://opendocs.alipay.com/mini/api/qflu8f) 打开小程序设置界面，选择地理位置，再次触发 my.getLocation API即可。 |
+| 2001 | 当用户授权系统位置权限和支付宝定位权限两种情况后，用户触发位置授权弹窗提示时不勾选 “总是保持以上选择，不再询问”，直接拒绝就会报错2001。 | 提示用户接受小程序授权并再次触发 my.getLocation API。 |
