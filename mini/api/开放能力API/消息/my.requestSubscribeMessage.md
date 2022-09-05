@@ -21,7 +21,8 @@
 
 
 # 效果示例
-<image src="https://img.alicdn.com/imgextra/i4/O1CN01apwFaG1lHhVy1z0bc_!!6000000004794-2-tps-762-1530.png" width="300px" height="601px"/><br/>
+<img src="https://img.alicdn.com/imgextra/i4/O1CN01apwFaG1lHhVy1z0bc_!!6000000004794-2-tps-762-1530.png" width="300px" height="601px"/>
+
 # 接口调用
 ## 示例代码
 ### .js 示例代码
