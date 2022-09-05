@@ -32,7 +32,7 @@
 
 ### web-view 内嵌的 H5 是否支持上传图片？
 
-不支持。
+支持。可将获取到的图片路径通过 [my.postMessage()](https://opendocs.alipay.com/mini/component/web-view#%E5%8F%AF%E7%94%A8%20API) 将相关数据传递给小程序后进行图片上传。
 
 ### 小程序 web-view 如何打开小程序包内本地 html 文件 ？
 
