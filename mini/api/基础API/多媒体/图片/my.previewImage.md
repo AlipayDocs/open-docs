@@ -60,3 +60,10 @@ Object 类型，属性如下：
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 2 | 无效参数: 只支持 http 图片链接 | 图片 urls 有误，请更正。支持 http/https 地址 |
+
+
+# 常见问题 FAQ
+
+## Q：预览图片不显示怎么办？
+
+A：可以先调用 [my.downloadFile](https://opendocs.alipay.com/mini/api/xr054r) 将图片地址转一下，再调用 my.previewImage。
