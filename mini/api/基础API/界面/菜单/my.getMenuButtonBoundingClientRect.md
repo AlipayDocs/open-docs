@@ -61,8 +61,8 @@ console.log('当前环境不支持调用my.getMenuButtonBoundingClientRect'); }
 
 ## Q：收藏按钮的位置如何获取？
 
-A：调用 my.getMenuButtonBoundingClientRect，拿到 optionMenuWidth，optionMenuTop 等相关位置信息。
+A：调用 my.getMenuButtonBoundingClientRect，拿到 optionMenuWidth、optionMenuTop 等相关信息。
 
-## Q：获取胶囊位置数据不准确，甚至是负数？
+## Q：为什么获取胶囊位置数据不准确，甚至是负数？
 
-A：有些用户用IDE模拟器调试时遇到类似问题。建议以真机为准，或升级IDE版本。
+A：部分开发者使用 IDE 模拟器调试时可能遇到类似问题。建议以真机为准，或升级 IDE 版本。
