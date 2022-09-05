@@ -1,6 +1,6 @@
 # 简介
 
-**UpdateManager.applyUpdate** 是 [my.getUpdateManager](https://opendocs.alipay.com/mini/api/zdblqg) 返回值中的方法，用于当小程序新版本下载完成后（即收到 [onUpdateReady](https://opendocs.alipay.com/mini/api/gfz316) 回调），强制小程序重启并使用新版本。
+**UpdateManager.applyUpdate** 用于小程序新版本下载完成（即收到 [onUpdateReady](https://opendocs.alipay.com/mini/api/gfz316) 回调）后提示用户重启小程序以使用新版本。
 
 ## 使用限制
 
