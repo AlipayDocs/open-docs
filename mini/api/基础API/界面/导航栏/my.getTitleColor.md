@@ -58,4 +58,5 @@ A：这是默认的，无法设置颜色。
 
 ## Q: 小程序标题栏文字颜色支持自定义吗？
 
-A: 不支持用户手动设置文字颜色，只能根据标题栏背景颜色做动态显示，例如：设置黑色背景则显示白色文字，设置白色背景则显示黑色文字。
+A: 可以通过 [my.setNavigationBar](https://opendocs.alipay.com/mini/api/xwq8e6) 设置导航栏前景色 frontColor。（注：frontColor 的颜色包括返回键、标题、收藏和右上角胶囊按钮，仅支持 #ffffff 和 #000000， 
+从基础库 [2.7.24](https://opendocs.alipay.com/mini/framework/lib) 开始支持。）
