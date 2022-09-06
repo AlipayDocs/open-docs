@@ -58,7 +58,7 @@ A：
 
 ## Q：小程序是否支持 cookie？
 
-A：小程序针对服务端回设的 cookie 不会禁用掉，会设置到小程序进程中，下次小程序进行请求会自动将已有的 cookie 带入到服务端请求中。前端获取不到 cookie，也不会对 cookie 做任何操作。
+A：小程序针对服务端回设的 cookie 不会禁用掉，会设置到小程序进程中，下次小程序进行请求会自动将已有的 cookie 带入到服务端请求中。前端获取不到 cookie，也不会对 cookie 做任何操作。10.2.33版本引入enableCookie，开启后可在headers中编辑cookie。
 
 ## Q：my.request 与 my.httpRequest 的区别是什么呢？
 
