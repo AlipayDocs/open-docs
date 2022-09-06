@@ -6,7 +6,7 @@
 
 1. 设置 **接口内容加密方式**
 
-- 此接口会返回加密后的用户手机号，请确保已完成接口内容加密方式配置。[开放平台控制台](https://openhome.alipay.com/develop/manage) > 开发设置 > **接口内容加密方式**。详见 [接口内容加密方式](<(https://opendocs.alipay.com/common/02mse3)>)。
+- 此接口会返回加密后的用户手机号，请确保已完成接口内容加密方式配置。[开放平台控制台](https://openhome.alipay.com/develop/manage) > 开发设置 > **接口内容加密方式**。详见 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
 - 未设置接口加密方式直接调用此接口会返回
 
 ```json
