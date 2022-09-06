@@ -43,7 +43,7 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | filePath | String | 是 | 文件路径。 |
-| encoding | String | 否 | 指定读取文件的字符编码，如果不传 encoding，则以 ArrayBuffer 格式读取文件的二进制内容。<br />可选值：<ul><li>ascii</li><li>base64</li><li>hex</li><li>binary</li><li>ucs2/ucs-2/utf16le/utf-16le</li><li>utf-8/utf8</li><li>latin1</li></ul> |
+| encoding | String | 否 | 指定读取文件的字符编码方式（**注**，binary 为二进制），如果不传 encoding，则以 ArrayBuffer 格式读取文件的二进制内容。<br />可选值：<ul><li>ascii</li><li>base64</li><li>hex</li><li>binary</li><li>ucs2/ucs-2/utf16le/utf-16le</li><li>utf-8/utf8</li><li>latin1</li></ul> |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
