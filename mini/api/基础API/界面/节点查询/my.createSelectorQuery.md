@@ -23,7 +23,7 @@
 ```javascript
 // API-DEMO page/API/create-selector-query/create-selector-query.js
 Page({
-  createSelectorQuery() {
+  onCreateSelectorQuery() {
     my.createSelectorQuery()
       .select('#non-exists')
       .boundingClientRect()
