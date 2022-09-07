@@ -6,6 +6,7 @@
 
 - 支付宝客户端 10.2.38 版本，基础库 [2.7.15](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- IDE 模拟器暂不支持调试，请以真机调试结果为准。
 
 # 接口调用
 
