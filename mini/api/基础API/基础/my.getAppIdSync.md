@@ -32,4 +32,4 @@ console.log(appIdRes.appId);
 
 ## Q：如何在 web-view 页面获取小程序 appId ？
 
-A：参考文档 [webview中如何获取小程序appId](https://opensupport.alipay.com/support/helpcenter/144/201602496135?ant_source=manual&recommend=603a5d6cb8684f30fb862702dfeca31a)。
+A：参考文档 [webview中如何获取小程序appId](https://opendocs.alipay.com/support/01rb3z)。
