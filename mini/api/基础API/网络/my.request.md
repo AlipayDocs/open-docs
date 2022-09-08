@@ -13,7 +13,7 @@
 - 小程序配置域名白名单：登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。<br /> ![|900x378](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*bvjBRIYPwaMAAAAAAAAAAAAAARQnAQ)
 - 第三方应用配置域名白名单：登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > **三方应用** > 点击要配置的第三方应用，进入第三方应用详情页 > **设置** > **开发设置** > **域名白名单** 中配置域名白名单。<br /> ![|900x252](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*sxVlQa-jxSgAAAAAAAAAAAAAARQnAQ)
 
-**注意**：域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。
+**注意**：网络请求必须配置域名白名单。白名单修改后需重新发布才会生效，且仅对新版本生效，老版本仍使用修改前的域名配置。
 
 ### 协议 / 方法
 
