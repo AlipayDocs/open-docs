@@ -178,7 +178,6 @@ success 回调会携带一个 Object 类型的对象，其参数如下：
 | response | String | 为完整的报文数据，前端需要将该报文发送到开发者服务端做验签和解密处理。 |
 
 # 常见问题 FAQ
-
 ## Q：调用 my.getPhoneNumber，报错 “无效的授权关系”，如何处理？
 
 A：
