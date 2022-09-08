@@ -107,9 +107,52 @@ onGetAuthorize(res) {
 },
 ```
 
+res.response 为完整的报文数据，前端需要将该报文发送到开发者服务端做验签和解密处理。更多语言的详细服务端处理流程可查看 [接口内容加解密方式](https://opendocs.alipay.com/common/02mse3)。
+
+### Java 解密示例代码
+
+```java
+String response = "小程序前端返回的加密信息";
+    //1. 获取验签和解密所需要的参数
+    Map<String, String> openapiResult = JSON.parseObject(response,new TypeReference<Map<String, String>>() {}, Feature.OrderedField);
+    String signType = "RSA2";
+    String charset = "UTF-8";
+    String encryptType = "AES";
+    String sign = openapiResult.get("sign");
+    String content = openapiResult.get("response");
+    //判断是否为加密内容
+    boolean isDataEncrypted = !content.startsWith("{");
+    boolean signCheckPass = false;
+    //2. 验签
+    String signContent = content;
+    String signVeriKey = "你的小程序对应的支付宝公钥（为扩展考虑建议用appId+signType做密钥存储隔离）";
+    String decryptKey = "你的小程序对应的加解密密钥（为扩展考虑建议用appId+encryptType做密钥存储隔离）";//如果是加密的报文则需要在密文的前后添加双引号
+    if (isDataEncrypted) {    
+   signContent = "\"" + signContent + "\"";
+    } try {    
+      signCheckPass = AlipaySignature.rsaCheck(signContent, sign, signVeriKey, charset, signType);
+    } catch (AlipayApiException e) {    
+    // 验签异常, 日志
+    } if (!signCheckPass) {   
+   //验签不通过（异常或者报文被篡改），终止流程（不需要做解密）    
+      throw new Exception("验签失败");
+    }
+    //3. 解密
+    String plainData = null;
+    if (isDataEncrypted) {    
+    try {        
+      plainData = AlipayEncrypt.decryptContent(content, encryptType, decryptKey, charset);    
+    } catch (AlipayApiException e) {       
+   //解密异常, 记录日志       
+      throw new Exception("解密异常");   
+   }} else {    
+     plainData = content;
+    }
+```    
+
 ## 返回示例
 
-res.response 为完整的报文数据，前端需要将该报文发送到开发者服务端做验签和解密处理，详细的服务端处理流程可查看 [接口内容加解密方式](https://opendocs.alipay.com/common/02mse3)，服务端解密后的明文示例如下：
+服务端解密后的明文示例如下：
 
 ### 正常响应
 
