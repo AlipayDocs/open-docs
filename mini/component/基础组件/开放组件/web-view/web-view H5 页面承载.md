@@ -72,7 +72,7 @@ Page({
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| src | String | web-view 要渲染的 H5 网页 URL ，需要在如下路径中 **支付宝小程序管理中心**>**设置**>**开发设置**> **H5 域名配置** 进行 H5 域名白名单配置。 |
+| src | String | web-view 要渲染的 H5 网页 URL ，默认允许打开所有 https://render.alipay.com/p/ 开头的 URL（支付宝客户端 10.2.63 版本开始支持），其他网页需要在 开放平台控制台 > 对应小程序详情页 > **开发设置** > **H5域名配置** 进行 H5 域名白名单配置。|
 | onMessage | EventHandle | 网页向小程序 postMessage 消息。`e.detail = { data }` |
 | onLoad | EventHandle | 网页加载成功时触发此事件。`e.detail = { src }`<br />**版本要求**：基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
 | onError | EventHandle | 网页加载失败时触发此事件。`e.detail = { src }`<br />**版本要求**：基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
