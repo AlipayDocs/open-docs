@@ -24,9 +24,9 @@ A：小程序只支持 HTTPS 域名配置。
 
 因此小程序强制使用 HTTPS，还在使用 HTTP 协议的开发者需要尽快对服务器进行升级。
 
-## Q：小程序支持 Promise 风格调用吗？
+## Q：my.request 支持 Promise 风格调用吗？
 
-A：支持。样例： my.request({url: ''}).then(res => console.log(res)).catch(err =>  console.log(err))
+A：支持。样例： my.request({url: ''}).then(res => console.log(res)).catch(err => console.log(err))
     
 ## Q：RequestTask.abort() 方法是在小程序前端进行请求打断还是直接中止了服务端请求？
 
