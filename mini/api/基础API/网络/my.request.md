@@ -201,8 +201,8 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| errorMessage | String | 错误信息。 |
 | error | Number | 错误码。 |
+| errorMessage | String | 错误信息。 |
 
 ## 错误码
 
