@@ -6,7 +6,7 @@
 
 1. 设置 **接口内容加密方式**
 
-- 此接口会返回加密后的用户手机号，请确保已完成接口内容加密方式配置。[开放平台控制台](https://openhome.alipay.com/develop/manage) > 开发设置 > **接口内容加密方式**。详见 [接口内容加密方式](<(https://opendocs.alipay.com/common/02mse3)>)。
+- 此接口会返回加密后的用户手机号，请确保已完成接口内容加密方式配置。[开放平台控制台](https://openhome.alipay.com/develop/manage) > 开发设置 > **接口内容加密方式**。详见 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
 - 未设置接口加密方式直接调用此接口会返回
 
 ```json
@@ -178,7 +178,6 @@ success 回调会携带一个 Object 类型的对象，其参数如下：
 | response | String | 为完整的报文数据，前端需要将该报文发送到开发者服务端做验签和解密处理。 |
 
 # 常见问题 FAQ
-
 ## Q：调用 my.getPhoneNumber，报错 “无效的授权关系”，如何处理？
 
 A：

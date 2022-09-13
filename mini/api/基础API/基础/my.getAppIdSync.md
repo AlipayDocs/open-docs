@@ -27,3 +27,9 @@ console.log(appIdRes.appId);
 | **属性** | **类型** | **描述**             |
 | -------- | -------- | -------------------- |
 | appId    | String   | 当前小程序的 APPID。 |
+
+# 常见问题
+
+## Q：如何在 web-view 页面获取小程序 appId ？
+
+A：参考文档 [webview中如何获取小程序appId](https://opendocs.alipay.com/support/01rb3z)。

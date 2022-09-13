@@ -61,8 +61,8 @@ Object 类型，参数如下：
 
 | **scopes** | **功能用法** | **包含的服务端 API 接口** |
 | --- | --- | --- |
-| auth_base | 授权获取用户唯一标识和授权访问令牌。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/apis/api_9/alipay.system.oauth.token)（换取授权访问令牌接口）获取支付宝会员标识（user_id）。此方式不会弹出授权浮窗。 | alipay.system.oauth.token |
-| auth_user | 授权获取支付宝会员信息。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/apis/api_9/alipay.system.oauth.token)（换取授权访问令牌接口）换取授权访问令牌，然后调用 [alipay.user.info.share](https://opendocs.alipay.com/apis/api_2/alipay.user.info.share) （支付宝会员授权信息查询接口）获取用户已授权的信息。 | alipay.system.oauth.token、alipay.user.info.share |
+| auth_base | 授权获取用户唯一标识和授权访问令牌。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/open/02xtla)（换取授权访问令牌接口）获取支付宝会员标识（user_id）。此方式不会弹出授权浮窗。 | alipay.system.oauth.token |
+| auth_user | 授权获取支付宝会员信息。在支付宝客户端获取 auth_code，传入服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/open/02xtla)（换取授权访问令牌接口）换取授权访问令牌，然后调用 [alipay.user.info.share](https://opendocs.alipay.com/open/02xtlb) （支付宝会员授权信息查询接口）获取用户已授权的信息。 | alipay.system.oauth.token、alipay.user.info.share |
 
 ### Function success
 

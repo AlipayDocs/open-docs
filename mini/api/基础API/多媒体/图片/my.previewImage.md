@@ -45,25 +45,24 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| urls | Array | 是 | 要预览的图片地址。<br />支持网络 url、[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)、[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)，暂不支持[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 <br /> 注: iOS 10.2.70 开始支持[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 |
+| urls | Array | 是 | 要预览的图片地址。<br />支持网络 url、[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)、[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)，[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 <br /> 注: iOS 10.2.70 开始支持[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 |
 | current | Number | 否 | 显示第几张图片，默认值为 0，即 urls 中的第一个。 |
-| enablesavephoto | Boolean | 否 | 照片是否支持长按下载。基础库 1.13.0 版本开始支持。 |
-| enableShowPhotoDownload | Boolean | 否 | 是否在右下角显示下载入口，需要配合 enablesavephoto 参数使用。基础库 1.13.0 版本开始支持。 |
+| enablesavephoto | Boolean | 否 | 照片支持长按下载。<br />基础库 1.13.0 版本开始支持。 |
+| enableShowPhotoDownload | Boolean | 否 | 是否在右下角显示下载入口。<br />基础库 1.13.0 版本开始支持。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
-| enablesavephoto | Boolean | 否 | 照片支持长按下载。<br />基础库 1.13.0 版本开始支持。 |
-| enableShowPhotoDownload | Boolean | 否 | 是否在右下角显示下载入口。<br />基础库 1.13.0 版本开始支持。 |
 
-## 错误码
+
+## Fail 回调 错误码
 
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
-| 2 | 无效参数: 只支持 http 图片链接 | 图片 urls 有误，请更正。支持 http/https 地址 |
+| 2 | 接口参数无效 | 检查入参是否正确 |
+| 2 | 只支持 http/https 图片链接 | 确保图片 urls 为 https/http 协议的图片地址。 |
 
 
 # 常见问题 FAQ
 
 ## Q：预览图片不显示怎么办？
-
 A：原因是传入的图片地址底层下载库不支持，可以通过先调用 [my.downloadFile](https://opendocs.alipay.com/mini/api/xr054r) 将图片地址转一下，再调用 my.previewImage。

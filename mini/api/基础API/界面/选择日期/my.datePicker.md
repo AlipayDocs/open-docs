@@ -69,9 +69,9 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | format | String | 否 | 返回的日期格式。<br /><ul><li>yyyy-MM-dd（默认）。</li><li>HH:mm 。</li><li>yyyy-MM-dd HH:mm 。</li><li>yyyy-MM（最低基础库版本：[1.1.1](https://opendocs.alipay.com/mini/framework/compatibility)，可通过 `canIUse('datePicker.object.format.yyyy-MM')` 判断）。</li><li>yyyy（最低基础库版本：<b>1.1.1</b>，可通过 `canIUse('datePicker.object.format.yyyy')` 判断）。</li></ul> |
-| currentDate | String | 否 | 初始选择的日期时间，默认当前时间。 |
-| startDate | String | 否 | 最小日期时间。 |
-| endDate | String | 否 | 最大日期时间。 |
+| currentDate | String | 否 | 初始选择的日期时间，默认当前时间。注：currentDate 值的格式要与所选择的 format 值的格式保持一致，否则默认以当前时间进行展示。|
+| startDate | String | 否 | 最小日期时间。注：startDate 值的格式要与所选择的 format 值的格式保持一致，否则默认以当前时间进行展示。 |
+| endDate | String | 否 | 最大日期时间。 注：endDate 值的格式要与所选择的 format 值的格式保持一致，否则默认以当前时间进行展示。|
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |

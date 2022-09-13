@@ -20,16 +20,36 @@
 
 ## 示例代码
 
-### .json 示例代码
+**.js 示例代码**
 
-```json
-// API-DEMO page/API/clipboard/clipboard.json
-{
-  "defaultTitle": "Clipboard"
-}
+```javascript
+// API-DEMO page/API/clipboard/clipboard.js
+Page({
+  data: {
+    text: '3.1415926',
+    copy: '',
+  },
+  handleInput(e) {
+    this.setData({
+      text: e.detail.value,
+    });
+  },
+  handleCopy() {
+    my.setClipboard({
+      text: this.data.text,
+    });
+  },
+  handlePaste() {
+    my.getClipboard({
+      success: ({ text }) => {
+        this.setData({ copy: text });
+      },
+    });
+  },
+});
 ```
 
-### .axml 示例代码
+**.axml 示例代码**
 
 ```html
 <!-- API-DEMO page/API/clipboard/clipboard.axml-->
@@ -65,45 +85,7 @@
 </view>
 ```
 
-### .js 示例代码
-
-```javascript
-// API-DEMO page/API/clipboard/clipboard.js
-Page({
-  data: {
-    text: '3.1415926',
-    copy: '',
-  },
-  handleInput(e) {
-    this.setData({
-      text: e.detail.value,
-    });
-  },
-  handleCopy() {
-    my.setClipboard({
-      text: this.data.text,
-    });
-  },
-  handlePaste() {
-    my.getClipboard({
-      success: ({ text }) => {
-        this.setData({ copy: text });
-      },
-    });
-  },
-});
-```
-
-### .acss 示例代码
-
-```css
-/* API-DEMO page/API/clipboard/clipboard.acss */
-.clipboard-button {
-  margin-left: 5px;
-}
-```
-
-# 入参
+## 入参
 
 Object 类型，属性如下：
 
@@ -113,10 +95,18 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-## success 回调函数
+## 出参
 
-入参为 Object 类型，属性如下：
+success 回调收到 Object 类型的参数，属性如下：
 
 | **属性** | **类型** | **描述**     |
 | -------- | -------- | ------------ |
 | text     | String   | 剪贴板数据。 |
+
+## 错误码
+
+fail 回调收到 Object 类型的参数，error 属性为错误码：
+
+| **error** | **errorMessage** | **说明** |
+| --- | --- | --- |
+| 2004 | 用户不允许授权 | iOS 16 版本，出于用户体验考虑，支付宝对小程序暂时禁用了读取剪贴板功能，调用此 API 会直接报这个错，并非一般意义上的“用户不允许授权”。请确保小程序对自动读取剪贴板能力没有强依赖。 |

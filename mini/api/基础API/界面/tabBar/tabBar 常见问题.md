@@ -23,6 +23,9 @@ A：可以在 JSON 文件中直接设置样式（示例代码如下所示），�
     "backgroundColor": "#F5F5F9"
   }
 ```
+## Q：是否能动态设置 tabBar 的项？
+A：当前不支持动态增加或删除 tabBar 的项，只能通过 [my.setTabBarItem](https://opendocs.alipay.com/mini/api/zu37bk) 动态设置已存在项内容，通过 [my.setTabBarStyle](https://opendocs.alipay.com/mini/api/wcf0sv) 动态设置对应项样式。
+
 
 # 请求异常类 FAQ
 

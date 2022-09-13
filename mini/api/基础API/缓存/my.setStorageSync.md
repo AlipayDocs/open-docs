@@ -26,7 +26,7 @@
 ### .js 示例代码
 
 ```javascript
-my.setStorageSync({
+let res = my.setStorageSync({
   key: 'currentCity',
   data: {
     cityName: '杭州',
@@ -34,6 +34,7 @@ my.setStorageSync({
     spell: ' hangzhou',
   },
 });
+console.log(res);
 ```
 
 ## 入参
