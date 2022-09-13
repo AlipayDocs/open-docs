@@ -195,6 +195,15 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | status | Number | 响应码。 |
 | headers | Object | 响应头。 |
 
+### Function fail
+
+fail 回调函数会携带一个 Object 类型的对象，其属性如下：
+
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| error | Number | 错误码。 |
+| errorMessage | String | 错误信息。 |
+
 ## 错误码
 
 | **错误码** | **说明** | **解决方案** |
