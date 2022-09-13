@@ -65,4 +65,4 @@ Object 类型，属性如下：
 # 常见问题 FAQ
 
 ## Q：部分图片预览不显示怎么办？
-A：my.previewImage 的图片下载能力有限，部分图片地址可能不支持。目前可通过调用 [my.downloadFile](https://opendocs.alipay.com/mini/api/xr054r) 将图片下载到本本地，将得到的文件路径传给 my.previewImage，即可正常预览。
+A：my.previewImage 的图片下载能力有限，部分图片地址可能不支持。目前可通过调用 [my.downloadFile](https://opendocs.alipay.com/mini/api/xr054r) 将图片下载到本地，将得到的文件路径传给 my.previewImage，即可正常预览。
