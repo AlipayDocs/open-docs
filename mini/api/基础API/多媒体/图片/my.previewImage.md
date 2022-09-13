@@ -64,5 +64,5 @@ Object 类型，属性如下：
 
 # 常见问题 FAQ
 
-## Q：预览图片不显示怎么办？
-A：原因是传入的图片地址底层下载库不支持，可以通过先调用 [my.downloadFile](https://opendocs.alipay.com/mini/api/xr054r) 将图片地址转一下，再调用 my.previewImage。
+## Q：部分图片预览不显示怎么办？
+A：原因是 my.previewImage 底层下载接口能力有欠缺，传入的图片地址底层下载库不支持，可以通过先调用 [my.downloadFile](https://opendocs.alipay.com/mini/api/xr054r) 将图片地址转一下，再调用 my.previewImage。
