@@ -21,9 +21,8 @@
 ### .js 示例代码
 
 ```javascript
-// API-DEMO page/API/create-selector-query/create-selector-query.js
 Page({
-  onCreateSelectorQuery() {
+  createSelectorQuery() {
     my.createSelectorQuery()
       .select('#non-exists')
       .boundingClientRect()
