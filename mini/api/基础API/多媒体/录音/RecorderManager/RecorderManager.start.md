@@ -28,11 +28,11 @@ recorderManager.start({
 | sampleRate | Number | 8000 | 否 | 采样率。 | - |
 | numberOfChannels | Number | 1 | 否 | 录音通道数。 | - |
 | encodeBitRate | Number | 48000 | 否 | 编码码率，有效值见下方 **采样率与编码码率限制 **表。 | - |
-| format | String | aac | 否 | 音频格式,支持格式：aac、mp3。 | mp3 从支付宝客户端版本 10.1.80 开始支持。 |
-| frameSize | Number | - | 否 | 指定帧大小，单位 KB。传入 frameSize 后，每录制指定帧大小的内容后，会回调录制的文件内容，不指定则不会回调。暂仅支持 MP3 格式。 | 支付宝客户端版本 10.1.80 开始支持。 |
+| format | String | aac | 否 | 音频格式,支持格式：aac、mp3。**参数值需小写**。 | mp3 从支付宝客户端版本 10.1.80 开始支持。 |
+| frameSize | Number | - | 否 | 指定帧大小，单位 KB。传入 frameSize 后，每录制指定帧大小的内容后，会回调录制的文件内容，不指定则不会回调。**暂仅支持 mp3 格式**。 | 支付宝客户端版本 10.1.80 开始支持。 |
 | audioSource | String | auto | 否 | 指定录音的音频输入源，可通过 [my.getAvailableAudioSources](https://opendocs.alipay.com/mini/00bg4t) 获取当前可用的音频源。 | - |
 
-### object.sampleRate 的合法值
+### sampleRate 的合法值
 
 | **值** | **说明**       |
 | ------ | -------------- |
@@ -46,7 +46,7 @@ recorderManager.start({
 | 44100  | 44100 采样率。 |
 | 48000  | 48000 采样率。 |
 
-### object.numberOfChannels 的合法值
+### numberOfChannels 的合法值
 
 | **值** | **说明**   |
 | ------ | ---------- |
@@ -55,7 +55,7 @@ recorderManager.start({
 
 ### 采样率与编码码率限制
 
-每种采样率有对应的编码码率范围有效值，设置不合法的采样率或编码码率会导致录音失败，具体对应关系如下表。
+每种采样率有对应的编码码率范围有效值，设置不合法的采样率或编码码率会导致录音失败，具体对应关系如下表：
 
 | **采样率** | **编码码率**     |
 | ---------- | ---------------- |
