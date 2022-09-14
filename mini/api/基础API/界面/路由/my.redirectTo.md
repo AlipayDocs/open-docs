@@ -31,7 +31,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| url | String | 是 | 需要跳转的目标非 tabBar 页面路径，路径后可以带参数（参数解析规则可参考[小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)）。<br>如果目标页面是 tarBar 页面（即 app.json 里 tarBar.items 中列举的页面），请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) 。 |
+| url | String | 是 | 需要跳转的目标非 tabBar 页面路径，路径后可以带参数（参数解析规则可查看 [如何获取各种场景的启动参数](https://opendocs.alipay.com/support/01rb2a)。<br>如果目标页面是 tarBar 页面（即 app.json 里 tarBar.items 中列举的页面），请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) 。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -57,9 +57,9 @@ Object 类型，参数如下：
   </tr>
 </table>
 
-# 常见问题 FAQ
+# 常见问题
 
-## Q：使用 my.redirectTo 跳转的页面不显示底部的 tab bar，怎么办？
+## Q：为何使用 my.redirectTo 跳转的页面不显示底部的 tab bar？
 
 A：若要跳转到 app.json 中 tabBar.items 中列举的页面 ，请使用 [my.switchTab](https://opendocs.alipay.com/mini/api/ui-tabbar) 跳转，可正常显示 tab bar。
 
@@ -73,7 +73,7 @@ A：三者区别在于页面层级关系的保留。
 
 当页面栈深度为 1 时，小程序导航栏上没有 **返回上一页按钮**，通常会有 **返回首页** 按钮（如果当前不在首页）；当页面栈深度大于 1 时，**返回上一页按钮** 出现，**返回首页按钮** 隐藏。
 
-## Q：如何隐藏小程序导航栏左侧的 返回上一页按钮 或 返回首页按钮？
+## Q：如何隐藏小程序导航栏左侧的返回上一页按钮或返回首页按钮？
 
 A，**返回上一页按钮** 的显示与否，由小程序框架根据页面栈深度决定，不提供直接隐藏的接口。如需要达到隐藏的效果，可使用 [my.reLaunch](https://opendocs.alipay.com/mini/api/hmn54z) 进行跳转，然后使用 [my.hideBackHome](https://opendocs.alipay.com/mini/api/ui-navigate) 隐藏左上角的返回首页按钮。
 
