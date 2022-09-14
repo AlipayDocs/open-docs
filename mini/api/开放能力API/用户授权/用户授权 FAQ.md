@@ -49,7 +49,7 @@ A：为了创造更良好的支付宝小程序用户体验，在小程序的首�
 
 ### Q：用户的 user_id 可以通过用户授权 API 获取吗？
 
-A：不可以，user_id 需要接入 [获取会员基础信息](https://opendocs.alipay.com/mini/introduce/twn8vq) 能力获取。
+A：不可以，user_id 需要绑定 **获取会员基础信息** 获取。
 
 ### Q：my.getAuthCode 可以在小程序 onload 的时候用吗？
 
@@ -62,10 +62,10 @@ A：
 - 报错描述：ISV 权限不足，建议在控制台检查对应功能是否已经添加。
 - 报错原因：此报错的含义就是没有对应接口权限。
 - 解决方案：
-  - 配置的账号是否有当前接口权限或代理的商家是否有当前接口权限。<br />可查看 [如何确认是否完成签约](https://opendocs.alipay.com/support/01raue)。若没有请先完成签约，签约相关问题可咨询商服服务热线 4007585858！
-  - 是否在对应 APPID 下面添加应用功能，可查看如何 [添加能力](https://opendocs.alipay.com/mini/introduce/setting#%E6%B7%BB%E5%8A%A0%E8%83%BD%E5%8A%9B)。
-  - 若是 ISV，检查授权令牌（app_auth_token）是否有对应的接口权限。
-  - 如在沙箱调试出现，请确认请求网关为沙箱 OpenAPI 网关：[https://openapi.alipaydev.com/gateway.do](https://openapi.alipaydev.com/gateway.do)，并且请求的 app_id 为沙箱的 app_id。
+  - 配置的账号是否有当前接口权限或代理的商家是否有当前接口权限。<br />可查看 [如何确认是否完成开通](https://opendocs.alipay.com/support/01raue)。若没有请先完成开通，开通相关问题可咨询商服服务热线 4007585858。
+  - 是否在对应 APPID 下面添加应用功能，可查看 [产品绑定](https://opendocs.alipay.com/mini/introduce/setting)。
+  - 若是服务商，检查授权令牌（app_auth_token）是否有对应的接口权限。
+  - 如在沙箱调试出现，请确认请求网关为沙箱 OpenAPI 网关 `https://openapi.alipaydev.com/gateway.do`，并且请求的 app_id 为沙箱的 app_id。
   - 检查此 APPID 是否已经上线，目前必须上线的应用才可以在正式环境调用接口。
 
 ### Q：调用 my.getAuthCode 获取到的 authCode 值是否每个用户是唯一的呢？
