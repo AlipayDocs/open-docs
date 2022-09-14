@@ -108,5 +108,5 @@ Page({
 ## Q: 这个 API 有什么适用场景吗？   
 
 A：my.cresateSelectQuery API 这个 API 会返回一个 SelectorQuery 实例。可以参考以下使用场景：   
-- 进入页面时获取节点对象实例，在 Page.onReady 中使用；   
-- 通过 setData 切换组件状态后获取节点实例，在 setData 回调中使用。
+- 需要进入页面时就获取节点对象实例时，可以使用该 API。使用时机为：在 Page.onReady 中使用；   
+- 需要通过 setData 切换组件状态后获取节点实例时，可以使用该 API。使用时机为：在 setData 回调中使用。
