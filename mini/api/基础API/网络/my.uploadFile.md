@@ -129,8 +129,9 @@ Object 类型，参数如下：
 | filePath | String | 是 | 要上传文件资源的本地路径。 |
 | fileName | String | 是 | 文件名，即对应的 key，开发者在服务器端通过这个 key 可以获取到文件二进制内容。 |
 | fileType | String | 是 | 文件类型支持图片、视频、音频，对应的值分别为 "image"、"video"、"audio"。 |
+| timeout | Number | 否 | 超时时间，默认值 60000，无最大值限制，单位 ms。 |
 | hideLoading | Bool | 否 | 是否隐藏 loading 图（默认值为 false）。 |
-| header | Object | 否 | HTTP 请求 Header。 |
+| header | Object | 否 | HTTP 请求 Header。其中 content-type 默认为 multipart/form-data |
 | formData | Object | 否 | HTTP 请求中其他额外的 form 数据。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
@@ -183,13 +184,17 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
         <td>上传文件中止文件，在上传文件未完成时调用了 UploadTask.abort()。</td>
     </tr>
     <tr>
-        <td rowspan="2">11</td>
+        <td rowspan="3">11</td>
         <td>not have permission to upload</td>
         <td>出于安全策略，不能使用 my.saveFile 保存文件后返回的 apFilePath 作为上传 filePath 的入参。</td>
     </tr>
     <tr>
         <td>文件不存在</td>
         <td>检查本地文件是否存在。</td>
+    </tr>
+    <tr>
+        <td>无效参数</td>
+        <td>检查是否有必传项没传；检查是否有字段传错类型。</td>
     </tr>
     <tr>
         <td rowspan="2">12</td>
@@ -201,7 +206,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
         <td>
             <ul>
                 <li>文件过大。</li>
-                <li>上传时间超过 30s。</li>
+                <li>上传时间超过 60s。</li>
             </ul>
         </td>
     </tr>
@@ -255,7 +260,8 @@ task.abort();
 
 ## Q：小程序上传图片可以自动转成 Base64 (基于 64 个可打印字符来表示二进制数据的方法)吗？
 
-A：小程序暂不支持图片转成 Base64。
+A：如果是手机本地图片可以通过my.chooseImage选择图片获取临时路径，再传入my.uploadFile来上传到服务端，服务端拿到文件流根据自身开发语言将图片转出base64，最后返回给小程序端。
+   您可以参考一下这两篇文章。 [小程序前端实现图片转换base64图片数据](https://opendocs.alipay.com/support/01rb15)，[小程序中 base64 数据解码/编码示例](https://opendocs.alipay.com/support/01rb0a)
 
 ## Q：my.uploadFile 如何获取服务器返回的错误信息呢？
 
@@ -266,14 +272,14 @@ A：解决方案：
 
 ## Q：my.uploadFile 默认超时时间是多少？是否可以设置默认延长时间？
 
-A：my.uploadFile 默认超时时间是 30s，目前无法设置默认延长时间。
+A：my.uploadFile 默认超时时间是 60s，可通过 timeout 设置超时时间，单位ms。
 
 ## Q：使用 my.uploadFile 上传文件，为何报错 error:12？
 
 A：上传失败导致报错 error:12 ，造成上传失败的可能原因有：
 
 1. 文件过大。
-2. 上传时间超过 30s。
+2. 上传时间超过 60s。
 3. 没有权限。
 4. 文件未找到 / 文件不是一个正常的文件。
 
@@ -287,8 +293,8 @@ A：请求的 URL 没有配置白名单，建议添加 URL 的域名为白名单
 
 ## Q：小程序是否支持上传 excel 文件？
 
-A：目前 my.uploadFile 上传文件类型支持图片、视频、音频，暂不支持其他类型的文件。
+A：小程序不再限制上传类型。可以支持上传 excel。目前 IDE 还是会对 fileType 做强校验，后期会修复，建议先用真机调试。
 
 ## Q：my.uploadFile 支持多张图片同时上传吗？
 
-A：my.uploadFile 暂不支持多张图片同时上传，一次只能上传一张图片。
+A：my.uploadFile 暂不支持多张图片同时上传，一次只能上传一张图片。可通过循环的方式实现上传多张图片的功能。
