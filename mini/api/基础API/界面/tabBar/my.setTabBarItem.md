@@ -1,6 +1,6 @@
 # 简介
 
-**my.setTabBarItem** 是动态设置 tabBar 某一项内容（文字、图标）的 API，调用后通过传入的回调参数修改 tabBar 的内容。
+**my.setTabBarItem** 是动态设置 tabBar 某一项内容（文字、图标）的 API。
 
 相关问题请参见 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
 
