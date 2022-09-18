@@ -166,14 +166,8 @@ var params = {
 console.log(paramsToScheme(params));
 ```
 
-## Q：如果目标小程序已经打开，再次调用 my.navigateToMiniProgram 会怎样？
-A：已打开的目标小程序将被切到前台，晚于目标小程序打开的小程序（包括当前小程序）会退出。例如，有 A B C 三个小程序，发生以下跳转序列：
-1、A 使用 my.navigateToMiniProgram 跳转 B，传入的 path 参数为 b1
-2、B 使用 my.navigateToMiniProgram 跳转 C
-3、C 使用 my.navigateToMiniProgram 跳转 B，传入的 path 参数为 b2
-此时 C 会退出，B 会被拉到前台：
-* 如果 b2 == b1，则 B 中仅触发 App 和 Page 的 onShow 事件
-* 如果 b2 != b1，则 B 发生 reLaunch，即关闭当前已经打开的所有页面然后打开页面 b2，App 和 Page 的 onShow 也会恰当地触发
+## Q：如果目标小程序已经打开，再次调用 my.navigateToMiniProgram 向它跳转会怎样？
+A：已打开的目标小程序将被切到前台，晚于目标小程序打开的小程序（包括当前小程序）会退出。例如，有 A B 两个小程序，发生以下跳转序列：1)、A 使用 my.navigateToMiniProgram 跳转 B；2)、B 使用 my.navigateToMiniProgram 跳转 A。则此 B 会退出，A 被切到到前台。如果 2) 中跳转时传入了 path 参数，则 A 中当前已经打开的所有页面被关闭、path 指向的页面被打开。
 
 
 有关小程序跳转的更多知识，可查看 [小程序相互跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
