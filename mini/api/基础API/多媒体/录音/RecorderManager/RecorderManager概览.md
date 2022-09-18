@@ -13,11 +13,9 @@
 | **名称** | **功能说明** |
 | --- | --- |
 | [RecorderManager.start](https://opendocs.alipay.com/mini/api/recordermanager/start) | 开始录音。 |
-| [RecorderManager.stop](https://opendocs.alipay.com/mini/api/recordermanager/stop) | 停止录音。 |
 | [RecorderManager.pause](https://opendocs.alipay.com/mini/api/recordermanager/pause) | 暂停录音。 |
 | [RecorderManager.resume](https://opendocs.alipay.com/mini/api/recordermanager/resume) | 继续录音，即恢复之前暂停的录音。 |
-| [RecorderManager.onError](https://opendocs.alipay.com/mini/api/recordermanager/onerror) | 监听录音错误事件。 |
-| [RecorderManager.offError](https://opendocs.alipay.com/mini/api/recordermanager/offerror) | 取消监听录音错误事件。 |
+| [RecorderManager.stop](https://opendocs.alipay.com/mini/api/recordermanager/stop) | 停止录音。 |
 | [RecorderManager.onStart](https://opendocs.alipay.com/mini/api/recordermanager/onstart) | 监听录音开始事件。 |
 | [RecorderManager.offStart](https://opendocs.alipay.com/mini/api/recordermanager/offstart) | 取消监听录音开始事件。 |
 | [RecorderManager.onPause](https://opendocs.alipay.com/mini/api/recordermanager/onpause) | 监听录音暂停事件。 |
@@ -26,16 +24,18 @@
 | [RecorderManager.offResume](https://opendocs.alipay.com/mini/api/recordermanager/offresume) | 取消监听录音继续事件。 |
 | [RecorderManager.onStop](https://opendocs.alipay.com/mini/api/recordermanager/onstop) | 监听录音结束事件。 |
 | [RecorderManager.offStop](https://opendocs.alipay.com/mini/api/recordermanager/offstop) | 取消监听录音结束事件。 |
+| [RecorderManager.onError](https://opendocs.alipay.com/mini/api/recordermanager/onerror) | 监听录音错误事件。 |
+| [RecorderManager.offError](https://opendocs.alipay.com/mini/api/recordermanager/offerror) | 取消监听录音错误事件。 |
 | [RecorderManager.onFrameRecorded](https://opendocs.alipay.com/mini/api/recordermanager/onframerecorded) | 监听已录制完制定帧大小的文件事件。如果设置了 frameSize，则会回调此事件。 |
 | [RecorderManager.offFrameRecorded](https://opendocs.alipay.com/mini/api/recordermanager/offframerecorded) | 取消监听已录制完制定帧大小的文件事件。 |
-| [RecorderManager.onDecibelChange](https://opendocs.alipay.com/mini/01acgm) | 监听声音的分贝变化回调事件。 |
+| [RecorderManager.onDecibelChange](https://opendocs.alipay.com/mini/01acgm) | 监听声音的分贝变化事件。 |
 | [RecorderManager.offDecibelChange](https://opendocs.alipay.com/mini/03hbnp) | 取消监听声音分贝变化事件。 |
 
 # 接口调用
 
 ## 获取 recorderManager
 
-**版本需求**：基础库 1.11.0 或更高版本；支付宝客户端 10.1.32 或更高版本。<br />可调用 [my.getRecorderManager](https://opendocs.alipay.com/mini/api/getrecordermanager) 获取全局唯一的录音管理器 recorderManager，注册监听录音开始、暂停、继续及停止事件。
+**版本需求**：基础库 1.11.0 或更高版本；支付宝客户端 10.1.60 或更高版本。<br />可调用 [my.getRecorderManager](https://opendocs.alipay.com/mini/api/getrecordermanager) 获取全局唯一的录音管理器 recorderManager，注册监听录音开始、暂停、继续及停止事件。
 
 ### 示例代码
 
@@ -96,49 +96,27 @@ recorderManager.onFrameRecorded(res => {
 
 ### 开始录音
 
-可调用 [RecorderManager.start](https://opendocs.alipay.com/mini/api/recordermanager/start) 开始录音。
+调用 [RecorderManager.start](https://opendocs.alipay.com/mini/api/recordermanager/start) 开始录音。
 
 ```javascript
 Start() {
    const options = {
-   duration: 60000,
-   sampleRate: 8000,
-   numberOfChannels: 1,
-   encodeBitRate: 16000,
-   format: "aac",
-   frameSize: null,
-   audioSource: "auto",
-   hideTips: false,
-	}
-  recorderManager.start(options)
+     duration: 60000,
+     sampleRate: 8000,
+     numberOfChannels: 1,
+     encodeBitRate: 16000,
+     format: "aac",
+     frameSize: null,
+     audioSource: "auto",
+     hideTips: false,
+  };
+  recorderManager.start(options);
 },
 ```
 
-#### 入参说明
-
-- duration：录音时长，可选。单位毫秒（ms），默认值 60000（1 分钟），最大值 600000 ms（10 分钟）。设置该参数则录音时长达到时将自动调用 stop 方法停止录音。
-- hideTips：隐藏录音图标，可选。默认 false 不隐藏。
-- numberOfChannels：录音通道数，可选。默认 1，支持如下通道数量：
-  - 1：1 个通道。
-  - 2：2 个通道。
-- format：音频格式，可选。默认 aac，支持 aac、mp3（需支付宝客户端 10.1.80 及以上版本） 格式，参数值需小写。
-- frameSize：指定帧大小，可选。单位 KB，支付宝客户端 10.1.80 及以上版本支持。传入 frameSize 后，每录制指定帧大小的内容后，会回调录制的文件内容，不指定则不会回调。暂仅支持 mp3 格式设置。
-- audioSource：指定录音的音频输入源，可选。可通过 my.getAvailableAudioSources() 获取当前可用的音频源。
-- sampleRate：采样率，可选。默认值 8000。
-  - 8000：8000 采样率。
-  - 11025：11025 采样率。
-  - 12000：12000 采样率。
-  - 16000：16000 采样率。
-  - 22050：22050 采样率。
-  - 24000：24000 采样率。
-  - 32000：32000 采样率。
-  - 44100：44100 采样率。
-  - 48000：48000 采样率。
-- encodeBitRate：编码码率，可选。默认 48000。每种采样率有对应的编码码率范围有效值，设置不合法的采样率或编码码率会导致录音失败，采样率与编码码率限制如下： | **采样率** | **编码码率** | | --- | --- | | 8000 | 16000 ~ 48000。 | | 11025 | 16000 ~ 48000。 | | 12000 | 24000 ~ 64000。 | | 16000 | 24000 ~ 96000。 | | 22050 | 32000 ~ 128000。 | | 24000 | 32000 ~ 128000。 | | 32000 | 48000 ~ 192000。 | | 44100 | 64000 ~ 320000。 | | 48000 | 64000 ~ 320000。 |
-
 ### 暂停录音
 
-**版本需求**：基础库版本 1.13.0 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。<br />可调用 [RecorderManager.pause](https://opendocs.alipay.com/mini/api/recordermanager/pause) 暂停录音。
+**版本需求**：基础库版本 1.11.0 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。<br />可调用 [RecorderManager.pause](https://opendocs.alipay.com/mini/api/recordermanager/pause) 暂停录音。
 
 ```javascript
 recorderManager.pause();
@@ -146,7 +124,7 @@ recorderManager.pause();
 
 ### 继续录音
 
-**版本需求**：基础库版本 1.13.0 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议做 **兼容处理**。<br />可调用 [RecorderManager.resume](https://opendocs.alipay.com/mini/api/recordermanager/resume) 继续录音，仅支持处于 pause 暂停状态录音继续。
+**版本需求**：基础库版本 1.11.0 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议做 **兼容处理**。<br />可调用 [RecorderManager.resume](https://opendocs.alipay.com/mini/api/recordermanager/resume) 继续录音，仅支持处于 pause 暂停状态录音继续。
 
 ```javascript
 recorderManager.resume();
@@ -154,7 +132,7 @@ recorderManager.resume();
 
 ### 停止录音
 
-**版本需求**：基础库版本 1.13.0 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议做 **兼容处理**。<br />可调用 [RecorderManager.stop](https://opendocs.alipay.com/mini/api/recordermanager/stop) 停止录音，停止录音后会触发 onStop 生成录音文件临时路径 tempFilePath。
+**版本需求**：基础库版本 1.11.0 或更高版本；支付宝客户端 10.1.60 或更高版本，若版本较低，建议做 **兼容处理**。<br />可调用 [RecorderManager.stop](https://opendocs.alipay.com/mini/api/recordermanager/stop) 停止录音，停止录音后会触发 onStop 生成录音文件临时路径 tempFilePath。
 
 ```javascript
 recorderManager.stop();
@@ -162,7 +140,7 @@ recorderManager.stop();
 
 ## 播放录音
 
-可使用 **音频播放 API**，将 onStop 返回值中 tempFilePath（文件临时路径）作为音频源 src 播放录制音频。以前景音频播放为例（录制音频等操作请查看前文完成）：
+可使用 **[音频播放 API](https://opendocs.alipay.com/mini/03l3fn)**，将 onStop 返回值中 tempFilePath（文件临时路径）作为音频源 src 播放录制音频。以前景音频播放为例（录制音频等操作请查看前文完成）：
 
 ```javascript
 const innerAudioContext = my.createInnerAudioContext();
