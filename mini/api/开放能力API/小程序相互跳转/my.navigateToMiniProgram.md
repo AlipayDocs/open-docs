@@ -84,7 +84,8 @@ Object 类型，参数如下：
 A：scheme 是用于从外部应用打开支付宝，在小程序内部一般不能直接使用。如果 scheme 中 appId 是 16 位，且只包含 page、query 参数，则应转换成 my.navigateMiniProgram 调用；其他情况（appId 为 8 位，或者有额外参数），需使用 [my.ap.navigateToAlipayPage](https://opendocs.alipay.com/mini/api/navigatetoalipaypage) 跳转，并联系合作的支付宝业务人员申请加入白名单。参考代码如下：
 
 ```javascript
-// 将 scheme 转换为
+// 将 scheme 转换为 my.navigateToMiniProgram 的参数
+// 如不能成功转换，则返回 null
 function schemeToParams(scheme) {
   if (!scheme.startsWith('alipays:')) {
   	console.log('! 非 alipays: 开头');
@@ -166,7 +167,7 @@ console.log(paramsToScheme(params));
 ```
 
 ## Q：如果目标小程序已经打开，再次调用 my.navigateToMiniProgram 会怎样？
-A：目标小程序将被切到前台，晚于目标小程序打开的小程序（包括当前小程序）都会退出。例如，有 A B C 三个小程序，发生以下跳转序列：
+A：已打开的目标小程序将被切到前台，晚于目标小程序打开的小程序（包括当前小程序）会退出。例如，有 A B C 三个小程序，发生以下跳转序列：
 1、A 使用 my.navigateToMiniProgram 跳转 B，传入的 path 参数为 b1
 2、B 使用 my.navigateToMiniProgram 跳转 C
 3、C 使用 my.navigateToMiniProgram 跳转 B，传入的 path 参数为 b2
