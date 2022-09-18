@@ -30,7 +30,7 @@
 
 # 网络请求
 
-- 默认超时时间为 30000 ms。
+- my.request 默认超时时间为 30000 ms，my.uploadFile 和 my.downloadFile 的默认超时时间为 60000 ms。
 - 小程序会自带 HTTP Referer，暂时不支持自定义设置 HTTP Referer。
 - 只要成功接收到服务器返回，无论 status 是多少，都会进入 success 回调函数。请开发者根据业务逻辑对返回值进行判断。
 
