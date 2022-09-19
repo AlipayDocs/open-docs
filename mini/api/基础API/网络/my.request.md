@@ -2,6 +2,13 @@
 
 **my.request** 是用于发起 HTTPS 网络请求的 API。
 
+小程序/第三方应用在以下 API 调用时只能与白名单中的域名进行通讯：HTTPS 请求（my.request）、上传文件（my.uploadFile）。
+
+- 小程序配置域名白名单：登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。<br /> ![|900x378](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*bvjBRIYPwaMAAAAAAAAAAAAAARQnAQ)
+- 第三方应用配置域名白名单：登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > **三方应用** > 点击要配置的第三方应用，进入第三方应用详情页 > **设置** > **开发设置** > **域名白名单** 中配置域名白名单。<br /> ![|900x252](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*sxVlQa-jxSgAAAAAAAAAAAAAARQnAQ)
+
+**注意**：网络请求必须配置域名白名单。白名单修改后需重新发布才会生效，且仅对新版本生效，老版本仍使用修改前的域名配置。
+
 更多问题可查看 [my.request 常见问题](https://opendocs.alipay.com/mini/00hxw8)。
 
 ## 使用限制
@@ -10,7 +17,7 @@
 
 [域名白名单配置及忽略校验方法](https://forum.alipay.com/mini-app/post/97201034)。
 
-**注意**：网络请求必须配置域名白名单。白名单修改后需上传新版本才会生效，且仅对新版本生效，老版本仍使用修改前的域名配置。
+**注意**：网络请求必须配置域名白名单。白名单修改后需发布新版本才会生效，且仅对新版本生效，老版本仍使用修改前的域名配置。
 
 ### 协议 / 方法
 
@@ -155,7 +162,7 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | url | String | 是 | 目标服务器 URL。 |
-| enableCookie | Boolean | 否 | 默认 false，开启后可在headers中修改cookie（10.2.33版本开始支持） |
+| enableCookie | Boolean | 否 | 默认 false，开启后服务端只会接收到前端定义的cookie值（10.2.33版本开始支持） |
 | headers | Object | 否 | 设置请求的 header。 content-type 默认为 application/json。header 中不能设置 Referer |
 | method | String | 否 | 默认 GET，目前支持 GET/POST/PUT/DELETE。 |
 | data | Object / ArrayBuffer | 否 | 可查看 **data 参数说明**（ArrayBuffer 在支付宝客户端 10.1.95 或更高版本支持）。 |
@@ -212,7 +219,7 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 | 13 | 超时。 | 建议检查网络环境是否正常，服务器是否正常响应，若请求需要时间长，可适当设置超时时间 timeout。 |
 | 14 | 解码失败。 | <ul><li>建议检查前后端请求和响应数据格式是否一致；如：返回数据格式 text 与入参 dataType 值 JSON 不一致而导致接口报错，请修改后台返回数据格式为 JSON。</li><li>如果后端是 PHP 或 .net，可检查响应的内容中是否携带了 bom，清除 UTF-8 bom 头 。</li><li>若服务端需要返回非 JSON 字符串，则需要把 my.request 的 dataType 参数设置成 text。</li><li>保证证书链完整且证书不过期。</li></ul> |
 | 15 | 传参失败。 | 小程序页面传参如果做 urlencode 需要把整体参数进行编码。 |
-| 19 | HTTP 错误。 | <ul><li>请确认请求 URL 地址在外网是否能正常请求，是否为HTTPS 协议，小程序真机上都是线上环境的正式请求，不能使用局域网本地请求。</li><li>一般如 HTTP 404、500、504 等异常错误，建议打开 **IDE 调试器 > Network** 可以查看具体的错误信息，然后根据对应 HTTP 错误码对症处理。</li><li>SSL 证书不正确导致的，建议更换网站 SSL 证书。</li></ul> |
+| 19 | HTTP 错误。 | <ul><li>请确认请求 URL 地址在外网是否能正常请求，是否为 HTTPS 协议，小程序真机上都是线上环境的正式请求，不能使用局域网本地请求。</li><li>一般如 HTTP 404、500、504 等异常错误，建议打开 **IDE 调试器 > Network** 可以查看具体的错误信息，然后根据对应 HTTP 错误码对症处理。</li><li>SSL 证书不正确导致的，建议更换网站 SSL 证书。</li></ul> |
 | 20 | 请求已被停止/服务端限流。 | 请确认请求服务器是否能正常请求和响应。 |
 |  | 请求 URL 不支持 HTTP，请使用 HTTPS。 | 小程序已经不支持 HTTP 请求，请使用 HTTPS。 |
 | 23 | 代理请求失败。 | 建议检查代理配置是否正确。 |
@@ -231,7 +238,7 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 ### RequestTask.abort()
 
-强制断掉前后端链接，中断请求任务。调用之后会返回`{"error":9,"errorMessage":"request:fail abort"}`。
+中断请求任务。调用之后会返回`{"error":9,"errorMessage":"request:fail abort"}`。
 
 ### 示例代码
 
