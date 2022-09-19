@@ -15,16 +15,9 @@
 ### .js 示例代码
 
 ```javascript
-// .js
 my.openVoucherList({
-  success: (res) => {
-    console.log('调用成功', res)
-  },
-  fail: (error) => {
-    console.log('调用失败', error)
-  },
   complete: () => {
-   console.log('调用完成，无论是否成功都会执行')
+    console.log('openVoucherList complete')
   }
 });
 ```
