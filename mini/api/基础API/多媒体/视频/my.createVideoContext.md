@@ -20,7 +20,7 @@ iOS、Android 支持以下视频封装格式： MP4、mov、m4v、3gp、m3u8、f
 
 iOS、Android 支持以下编码格式： H.264、AAC。
 
-### 视频上传限制
+### 上传视频限制
 
 - 上传的视频内容必须符合优酷相关规定。
 - 视频内容需健康文明，相关规定可查看 [小程序违规处理规则](https://opendocs.alipay.com/rules/rules_mini/nowgsa)。若发布后内容涉及违规，支付宝将根据小程序服务协议、本规则及相应细则对视频、开发者以及小程序采取相应管理措施。
@@ -33,9 +33,9 @@ iOS、Android 支持以下编码格式： H.264、AAC。
 
 ![|300x601](https://cdn.nlark.com/yuque/0/2021/png/179989/1625192989668-e8bee3e5-3c24-4ef3-8b29-505d5d510841.png#align=left&display=inline&height=601&margin=%5Bobject%20Object%5D&name=2.png&originHeight=601&originWidth=300&size=111477&status=done&style=stroke&width=300)
 
-# 上传视频
+# 上传视频获取视频码
 
-1. 访问 [优酷视频上传](https://mp.youku.com/new/upload_home) 页面，并使用开发小程序的 **支付宝主账号** 扫码登录，否则视频无法上传，则无法获取到视频编码及定向支付宝小程序播放的设置。 ![1.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1655905047219-3eaa58fc-ce22-44c5-887a-89f8a7a582f5.png#align=left&display=inline&height=937&margin=%5Bobject%20Object%5D&name=1.png&originHeight=937&originWidth=1920&size=546709&status=done&style=none&width=1920)
+1. 访问 [优酷视频上传](https://mp.youku.com/new/upload_home) 页面，并使用开发小程序的 **支付宝主账号** 扫码登录，**否则视频无法上传，则无法获取到视频编码及定向支付宝小程序播放的设置**。 ![1.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1655905047219-3eaa58fc-ce22-44c5-887a-89f8a7a582f5.png#align=left&display=inline&height=937&margin=%5Bobject%20Object%5D&name=1.png&originHeight=937&originWidth=1920&size=546709&status=done&style=none&width=1920)
 2. 登录成功后，上传视频文件。 ![2.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1655905058699-82942894-c24e-41e2-9da8-b7386a526e31.png#align=left&display=inline&height=732&margin=%5Bobject%20Object%5D&name=2.png&originHeight=732&originWidth=1500&size=185998&status=done&style=none&width=1500)
 3. 配置 **隐私设置** 为 **仅小程序可播**（不对优酷用户开放此视频），开发者根据所传视频如实填写视频简介等其它信息（建议填写完整，避免出现审核不通过的情况），点击 **保存发布**。 ![3.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1655905072410-92740442-13d4-46a6-a36a-950dcca90367.png#align=left&display=inline&height=732&margin=%5Bobject%20Object%5D&name=3.png&originHeight=732&originWidth=1500&size=232376&status=done&style=none&width=1500)
 4. 提交上传视频后耐心等待视频审，开发者上传的视频需要符合优酷审核标准。审核时间约为一个工作日，开发者如对审核进度和审核结果有疑问可以拨打优酷客服电话 400-810-3568 咨询。 ![4.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1655905086801-15768829-9302-4ae0-b303-4cb2f90a55b4.png#align=left&display=inline&height=732&margin=%5Bobject%20Object%5D&name=4.png&originHeight=732&originWidth=1500&size=185956&status=done&style=none&width=1500)
@@ -47,7 +47,7 @@ iOS、Android 支持以下编码格式： H.264、AAC。
 
 ### .axml 示例代码
 
-开发者在 .axml 文件中写入如下代码。其中 video id 为开发者在对应 video 标签中自由命名的 id 属性，例如下方代码中的 myVideo；src 属性中需传入优酷视频的视频码进行播放。
+开发者在 .axml 文件中写入如下代码。其中 video id 为开发者在对应 video 标签中自由命名的 id 属性，例如下方代码中的 `myVideo`；src 属性中需传入优酷视频的视频码进行播放。
 
 ```html
 <view>
@@ -152,7 +152,7 @@ my.chooseVideo({
 | playbackRate | rate | Number | 设置倍速播放（0.5 <= rate <= 2.0）。 |
 | showFloatingWindow | isShow | Boolean | 显示/隐藏浮窗，例如 `showFloatingWindow(false)`。 |
 
-## 错误码
+## video 组件的 onError 属性监听 错误码
 
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
@@ -170,8 +170,8 @@ my.chooseVideo({
 | 3001 | audio 渲染出错。 | 检查音频资源是否符合标准。 |
 | 3002 | 硬解码错误。 | 检查设备的硬解码功能是否正常。 |
 
-## FAQ
+## 常见问题 FAQ
 
-### 1、怎么知道 videoContext 中方法是否调用成功？例如：我调用了 videoContext.play(), 怎么知道成功失败？
+### Q：怎么知道 videoContext 中方法是否调用成功？例如：我调用了 videoContext.play(), 怎么知道成功失败？
+A：可以在 axml 文件中，通过 video 组件的 onError 属性监听视频播放是否出现了错误。
 
-可以在 axml 文件中，通过 video 组件的 onError 属性监听视频播放是否出现了错误。
