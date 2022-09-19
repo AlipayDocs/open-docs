@@ -2,8 +2,6 @@
 
 **my.setTabBarItem** 是动态设置 tabBar 某一项内容（文字、图标）的 API。
 
-相关问题请参见 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
-
 ## 使用限制
 
 - 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
@@ -57,7 +55,7 @@ fail 回调会收到一个 Object 类型的参数，其 error 属性为错误码
 
 # Bug & Tip
 
-- `Bug` iOS中，app.json 里已配置 tabBar 的情况下，在通过 my.nativeTo/my.redirectTo 到达的页面里，调用此 API 设置 tabBar 内容未成功，回调也未触发。
-- `Tip` my.setTabBarBadge() 和 my.setTabBarItem() 同时使用时，有概率会遇到 badge 被遮盖的情况。可通过改为在 setTabBarItem 的 succes 回调里调用 setTabBarBadge 解决。
-- `Tip` 当前不支持修改字体大小，设置其他样式可使用 [my.setTabBarStyle](https://opendocs.alipay.com/mini/api/wcf0sv)。
+- `Bug` iOS 中，app.json 里已配置 tabBar 的情况下，在通过 my.nativeTo/my.redirectTo 到达的页面里，调用此 API 设置 tabBar 内容不会成功，回调不会触发。
+- `Tip` my.setTabBarBadge() 和 my.setTabBarItem() 同时使用时，有概率会遇到 badge 被遮盖的情况。可通过改为在 setTabBarItem 的 success 回调里调用 setTabBarBadge 解决。
+- `Tip` 可使用 [my.setTabBarStyle](https://opendocs.alipay.com/mini/api/wcf0sv) 修改 tabBar 样式。
 
