@@ -1,10 +1,8 @@
 # 简介
 
-**my.openVoucherList** 是打开支付宝券列表的 API。
+**my.openVoucherList** 打开支付宝卡包并显示优惠券列表。
 
 有关支付宝卡包详细功能，可查看 [支付宝卡包产品介绍](https://opendocs.alipay.com/open/199/105225)。
-
-支付宝特色 API，支持 my.ap.openVoucherList 调用。
 
 ## 使用限制
 
@@ -17,6 +15,9 @@
 ### .js 示例代码
 
 ```javascript
-// .js
-my.openVoucherList();
+my.openVoucherList({
+  complete: () => {
+    console.log('openVoucherList complete')
+  }
+});
 ```
