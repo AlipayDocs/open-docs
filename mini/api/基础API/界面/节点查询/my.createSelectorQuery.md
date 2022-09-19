@@ -1,6 +1,9 @@
 # 简介
 
-**my.createSelectorQuery** 是用于返回一个 SelectorQuery 对象实例的 API。
+**my.createSelectorQuery** 是返回一个 [SelectorQuery](https://opendocs.alipay.com/mini/api/pc8s51) 对象实例，该实例上有一些用于选择页面节点或获取节点信息的方法。该 API 需要在页面渲染完成后使用。页面渲染完成的时机有：
+- 在 Page.onReady 中，页面处于渲染完成状态。注意：Page.onReady 只会在页面初次渲染完成时触发。
+- 在 Page.onShow 中，页面处于渲染完成状态。
+- 在 setData 回调函数中，页面处于渲染完成状态。
 
 ## 使用限制
 
@@ -21,7 +24,6 @@
 ### .js 示例代码
 
 ```javascript
-// API-DEMO page/API/create-selector-query/create-selector-query.js
 Page({
   createSelectorQuery() {
     my.createSelectorQuery()
@@ -101,4 +103,6 @@ Page({
 
 ## 返回值
 
-返回值为 [SelectorQuery](https://opendocs.alipay.com/mini/api/pc8s51)。
+返回值为 [SelectorQuery](https://opendocs.alipay.com/mini/api/pc8s51) 对象实例。
+
+

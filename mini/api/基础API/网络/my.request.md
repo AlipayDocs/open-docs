@@ -13,7 +13,7 @@
 - 小程序配置域名白名单：登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。<br /> ![|900x378](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*bvjBRIYPwaMAAAAAAAAAAAAAARQnAQ)
 - 第三方应用配置域名白名单：登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > **三方应用** > 点击要配置的第三方应用，进入第三方应用详情页 > **设置** > **开发设置** > **域名白名单** 中配置域名白名单。<br /> ![|900x252](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*sxVlQa-jxSgAAAAAAAAAAAAAARQnAQ)
 
-**注意**：域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。
+**注意**：网络请求必须配置域名白名单。白名单修改后需重新发布才会生效，且仅对新版本生效，老版本仍使用修改前的域名配置。
 
 ### 协议 / 方法
 
@@ -194,6 +194,15 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | data | String | 响应数据，格式取决于请求时的 dataType 参数，如果 dataType 值为 base64 时，返回的是符合 [data URI scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) 规范的内容字符串。 |
 | status | Number | 响应码。 |
 | headers | Object | 响应头。 |
+
+### Function fail
+
+fail 回调函数会携带一个 Object 类型的对象，其属性如下：
+
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| error | Number | 错误码。 |
+| errorMessage | String | 错误信息。 |
 
 ## 错误码
 

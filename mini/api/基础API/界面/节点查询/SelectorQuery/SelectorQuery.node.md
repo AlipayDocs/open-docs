@@ -1,6 +1,6 @@
 # 简介
 
-**SelectorQuery.node** 是获取 Node 节点实例。目前支持 [Native Canvas](https://opendocs.alipay.com/mini/component/canvas) 的获取。
+**SelectorQuery.node** 是获取 Node 节点实例。目前只支持 [Native Canvas](https://opendocs.alipay.com/mini/component/canvas) 的获取。
 
 ## 使用限制
 

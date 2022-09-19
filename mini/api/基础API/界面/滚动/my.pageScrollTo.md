@@ -50,6 +50,7 @@ Page({
 | scrollTop | Number | 否 | 滚动到页面的目标位置，单位为 px。 |
 | duration | Number | 否 | 滚动动画的时长，单位为 ms（毫秒）。默认值为 0。<br />基础库 1.20.0 或更高版本开始支持。 |
 | selector | String | 否 | CSS 选择器。<br />基础库 1.20.0 或更高版本开始支持。 |
+| offsetTop | Number | 否 | 偏移距离，需要和 selector 参数搭配使用，可以滚动到 selector 加偏移距离的位置，单位 px。<br>基础库 2.8.0 开始支持。 |
 | success | Function | 否 | 接口调用成功的回调函数。 |
 | fail | Function | 否 | 接口调用失败的回调函数。 |
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |

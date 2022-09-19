@@ -53,6 +53,7 @@ Object 类型，属性如下：
 | --- | --- | --- | --- |
 | url | String | 是 | 下载文件地址。除在线 URL 以外，也接受包含图片 base64 数据的 [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) |
 | header | Object | 否 | HTTP 请求 Header。 |
+| timeout | Number | 否 | 超时时间，默认值 60000，无最大值限制，单位 ms。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |

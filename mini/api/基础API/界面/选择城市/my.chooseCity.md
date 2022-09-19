@@ -165,6 +165,12 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | ---------- | -------------- |
 | 11         | 用户取消操作。 |
 
+## 返回值
+
+[ChooseCityTask](https://opendocs.alipay.com/mini/04naqz)。
+
+基础库 [2.8.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)、客户端 10.2.70 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+
 ## Bug & Tip
 
 - 支付宝 10.2.70 以下版本，如果用户没有选择任何城市而直接点击了返回，将不会触发回调函数。

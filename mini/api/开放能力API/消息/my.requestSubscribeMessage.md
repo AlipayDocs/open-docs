@@ -5,8 +5,8 @@
 订阅界面是根据当前小程序在 [商家平台](https://mrchportalweb.alipay.com/operation/console/apps)（运营中心 -> 选择小程序 -> 消息 -> 消息接入）订阅消息列表中的消息模版 id 来展示对应消息的订阅选项。
 
 其中模版分为一次性订阅模版和长期订阅模版：  
-**一次性订阅模版**：每次向用户发送消息都需要用户订阅成功后（次数可累积）才可以发送。用户可以通过勾选 “总是保持以上选，不再询问” 来默认同意订阅，未勾选消息会默认拒绝，之后不再弹出订阅面板。  
-**长期订阅模版**：用户同意订阅后，可以多次向订阅用户发送消息。用户可点击 “拒绝，不再同意” ，来默认拒绝订阅面板所有消息。
+**一次性订阅模版**：每次向用户发送消息都需要用户订阅成功后（次数可累积）才可以发送。用户可以通过勾选 “总是保持以上选择，不再询问” 来默认同意订阅，未勾选的消息会默认拒绝，之后不再弹出订阅面板。  
+**长期订阅模版**：用户同意订阅后，可以多次向订阅用户发送消息。用户可点击 “拒绝，不再询问” ，来默认拒绝订阅面板所有消息。
 
 用户同意订阅消息成功后，可以通过 [服务端](https://opendocs.alipay.com/mini/02cth2) 向支付宝发送对应模版的消息，然后在支付宝首页、消息盒子、APP PUSH 等位置收到消息提醒。也可以在首次用户授权完成（开发接入完成）之后，通过 [商家平台](https://mrchportalweb.alipay.com/operation/console/apps)（运营中心 -> 选择小程序 -> 消息 ->  消息接入）订阅消息列表中的“配置发送”发送消息。
 
@@ -54,7 +54,7 @@ Object 类型，属性如下：
 | --- | --- | --- | --- |
 | entityIds | Array<String> | 是 | 需要订阅的消息模板id的集合。 |
 | thirdTypeAppId | String | 否 | 模板小程序标识，仅在 ISV（独立软件开发商） 场景下需要传入。 |
-| success | Function | 否 | 订阅成功的回调函数。 |
+| success | Function | 否 | 订阅成功的回调函数（包括拒绝订阅成功）。 |
 | fail | Function | 否 | 订阅失败，或用户取消订阅的回调函数。 |
 | complete | Function | 否 | 订阅结束的回调函数（订阅成功、失败、取消都会执行）。 |
 
@@ -64,7 +64,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **可选值** | **描述** |
 | --- | --- | --- | --- |
-| behavior | String | 'subscribe', 'cancel', '' | 订阅成功，触发success回调：<br /><ul><li>'subscribe'：表示订阅成功。</ul> 取消订阅或订阅失败，触发fail回调：<ul></li><li>'cancel'：表示取消订阅。</li><li>''：表示订阅失败</li></ul> |
+| behavior | String | 'subscribe', 'cancel', '' | 订阅成功，触发success回调：<br /><ul><li>'subscribe'：表示订阅操作成功（包括拒绝订阅操作）。</ul> 取消订阅操作或订阅失败，触发fail回调：<ul></li><li>'cancel'：表示取消订阅操作。</li><li>''：表示订阅失败</li></ul> |
 | keep | Boolean | true, false | 一次订阅模板，用户勾选 **总是保持以上选择，不再询问** 时为 true。 |
 | refuse | Boolean | true, false | 长期订阅模板，用户点击 **拒绝，不再询问** 时为 true。 |
 | result | Object |  | 订阅数据，<br />{<br />//仅在订阅成功场景下存在，表示订阅成功的模板列表<br />subscribeEntityIds?: [ ],<br />// 最终订阅成功的模板列表<br />subscribedEntityIds: [ ],<br />// 未订阅的模板列表<br />unsubscribedEntityIds: [ ],<br />// 本次新增订阅成功的模板列表<br />currentSubscribedEntityIds: [ ],<br />//仅在取消订阅场景下存在，是传入的模板id集合<br />entityList?: [],<br />}; |
@@ -98,13 +98,13 @@ Object 类型，属性如下：
 A：先在 IDE 中通过模拟器上方的“展开面板”按钮 -> “设置”查看支持的基础库版本，若不满足此 API 的基础库版本使用限制，可通过升级 IDE 版本来支持更多版本基础库。
 
 ## Q：用户对于消息面板的操作，如何实时获取操作结果？
-A：1、通过的 my.requestSubscribeMessage 回调实时获取；2、用户操作之后，可以通过服务端调用 [alipay.open.app.messagetemplate.subscribe.query](https://opendocs.alipay.com/mini/02cth2) 获取。
+A：1、通过 my.requestSubscribeMessage 回调实时获取；2、用户操作之后，可以通过服务端调用 [alipay.open.app.messagetemplate.subscribe.query](https://opendocs.alipay.com/mini/02cth2) 获取。
 
 ## Q：一次性消息模版订阅的消息时选择‘保持以上选择，不再询问’，或长期消息模版确认同意后，订阅消息面板是否还可以再弹出？
 A：当用户有以上操作时，若未在小程序胶囊按钮（右上角三个点）中点击 “设置” -> “消息管理” 中切换消息状态，订阅面板将不再弹出，对应的一次性消息模版在切换消息状态后，意味着更改了保持的选择，在下次订阅时面板会再弹出；对应长期模版订阅的消息时，当切换到 “不接收” 时，意味着用户更改了所选消息长期接收的状态，下次订阅时面板会再弹出来。
 
 ## Q：如何订阅三个以上消息？
-A：目前小程序支持一次订阅消息最多三个，若超过三个，可分多次订阅，分别在不同的位子触发。
+A：目前小程序支持一次订阅消息最多三个，若超过三个，可分多次订阅，分别触发。
 
 ## Q：是否还可以使用旧组件 subscribe-msg 订阅消息？
 A：my.requestSubscribeMessage 已完全替代 subscribe-msg 订阅消息，建议使用 my.requestSubscribeMessage。
