@@ -1,6 +1,9 @@
 # 简介
 
-**my.createSelectorQuery** 是返回一个 [SelectorQuery](https://opendocs.alipay.com/mini/api/pc8s51) 对象实例，该实例上有一些用于选择页面节点或获取节点信息的方法。该 API 需要在页面渲染完成后使用。
+**my.createSelectorQuery** 是返回一个 [SelectorQuery](https://opendocs.alipay.com/mini/api/pc8s51) 对象实例，该实例上有一些用于选择页面节点或获取节点信息的方法。该 API 需要在页面渲染完成后使用。页面渲染完成的时机有：
+- 在 Page.onReady 中，页面处于渲染完成状态。注意：Page.onReady 只会在页面初次渲染完成时触发。
+- 在 Page.onShow 中，页面处于渲染完成状态。
+- 在 setData 回调函数中，页面处于渲染完成状态。
 
 ## 使用限制
 
@@ -103,10 +106,4 @@ Page({
 
 返回值为 [SelectorQuery](https://opendocs.alipay.com/mini/api/pc8s51) 对象实例。
 
-# 常见问题 FAQ   
 
-## Q: 这个 API 有什么适用场景吗？   
-
-A：my.cresateSelectQuery API 这个 API 会返回一个 SelectorQuery 实例。可以参考以下使用场景：   
-- 需要进入页面时就获取节点对象实例时，可以使用该 API。使用时机为：在 Page.onReady 中使用；   
-- 需要通过 setData 切换组件状态后获取节点实例时，可以使用该 API。使用时机为：在 setData 回调中使用。
