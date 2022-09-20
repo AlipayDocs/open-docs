@@ -35,6 +35,12 @@ console.log(options);
 
 # 常见问题
 
+## 为什么有时候通过 my.getLaunchOptionsSync 获取不到启动参数？
+
+my.getLaunchOptionsSync 支持获取冷启动参数，可在页面的 onLoad 中拿到参数；如果小程序还在保活阶段，重新进入小程序就需要使用热启动场景获取，可在 onShow 中调用 my.getEnterOptionsSync 可获取参数。
+
+故建议获取参数的时候同时考虑冷、热启动的场景。
+
 ## 小程序未上线，如何测试启动参数？
 
 小程序未上架过版本，可通过开发版/体验版进行测试，详情参考【[调试跳转未上线小程序版本（开发版/体验版）](https://opendocs.alipay.com/support/01rb0j)】。
