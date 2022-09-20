@@ -30,7 +30,7 @@ console.log(options);
 
 | **属性**  | **类型** | **描述**                 |
 | --------- | -------- | ------------------------ |
-| appId     | String   | 来源小程序。             |
+| appId     | String   | 来源小程序的 appId。             |
 | extraData | Object   | 来源小程序传过来的数据。 |
 
 # 常见问题
