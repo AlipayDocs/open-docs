@@ -1,6 +1,6 @@
 # 简介
 
-**my.removeStorage** 是删除缓存数据的异步接口。
+**my.removeStorage** 是从本地缓存中移除指定 key 的异步接口。
 
 移除内嵌 webview 的存储数据时不会移除当前小程序的存储数据。
 
