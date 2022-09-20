@@ -2,7 +2,7 @@
 
 **my.getLaunchOptionsSync** 是页面获取小程序启动参数的 API。与 [App.onLaunch](<https://opendocs.alipay.com/mini/framework/app-detail#onLaunch(object%3A%20Object)%20%E5%8F%8A%20onShow(object%3A%20Object)>) 的回调参数一致。
 
-该函数是获取 [冷启动](https://opendocs.alipay.com/mini/framework/operating-mechanism) 时的启动参数。针对 [热启动场景](https://opendocs.alipay.com/mini/framework/operating-mechanism)，可以使用 [my.getEnterOptionsSync](https://opendocs.alipay.com/mini/api/029i75)，该方法会获取最新进入小程序的参数。获取小程序启动时的参数的其他方法请参考：[如何在小程序启动后获取启动参数](https://opendocs.alipay.com/support/01rb2a)。
+该函数是获取 [冷启动](https://opendocs.alipay.com/mini/framework/operating-mechanism) 时的启动参数。针对 [热启动场景](https://opendocs.alipay.com/mini/framework/operating-mechanism)，可以使用 [my.getEnterOptionsSync](https://opendocs.alipay.com/mini/api/029i75)，该方法会获取最新进入小程序的参数。获取小程序启动时的参数的其他方法请参考：[如何获取各种场景的启动参数](https://opendocs.alipay.com/support/01rb2a)。
 
 ## 使用限制
 
