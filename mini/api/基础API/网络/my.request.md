@@ -162,7 +162,7 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | url | String | 是 | 目标服务器 URL。 |
-| enableCookie | Boolean | 否 | 默认 false，开启后仅将前端 header 中的 cookie 值传向服务端。（10.2.33版本开始支持） |
+| enableCookie | Boolean | 否 | 默认 false，开启后仅将前端 header 中的 cookie 值传向服务端，。（10.2.33版本开始支持） |
 | headers | Object | 否 | 设置请求的 header。 content-type 默认为 application/json。header 中不能设置 Referer |
 | method | String | 否 | 默认 GET，目前支持 GET/POST/PUT/DELETE。 |
 | data | Object / ArrayBuffer | 否 | 可查看 **data 参数说明**（ArrayBuffer 在支付宝客户端 10.1.95 或更高版本支持）。 |
