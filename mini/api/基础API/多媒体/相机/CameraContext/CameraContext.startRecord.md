@@ -29,7 +29,7 @@ Page({
   onCameraReady(e) {
     console.log('相机初始化完成');
     this.cameraContext = my.createCameraContext('camera');
-    this.cameraContext.startReocrd({
+    this.cameraContext.startRecord({
     	timeoutCallback(res) {
       	console.log('超时结束录制');
         console.log(res.tempThumbPath, res.tempVideoPath);
