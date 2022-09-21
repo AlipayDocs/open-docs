@@ -1,6 +1,6 @@
 # 简介
 
-**Canvas.toTempFilePath** 把当前画布指定区域的内容导出生成指定大小的图片。
+**Canvas.toTempFilePath** 把当前画布指定区域保存为指定大小的图片，并返回该图片的本地临时文件路径。
 
 ## 使用限制
 
@@ -70,4 +70,9 @@ Object 类型，属性如下：
 
 | **属性**     | **类型** | **描述**                        |
 | ------------ | -------- | ------------------------------- |
-| tempFilePath | String   | 生成文件的临时路径 (本地路径)。 |
+| tempFilePath | String   | [本地临时文件路径](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6) |
+
+# 常见问题
+
+## Q：成功回调返回的 tempFilePath 参数可以怎么用？
+A：若要直接保存到系统相册，可参考 [my.saveImageToPhotosAlbum](https://opendocs.alipay.com/mini/api/media/image/my.saveImagetophotosalbum)。
