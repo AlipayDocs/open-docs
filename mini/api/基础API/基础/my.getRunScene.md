@@ -4,7 +4,7 @@
 
 **注意**：这里说的运行时版本是指当前小程序版本是正式版、灰度版、体验版还是开发版，并不是小程序的版本号。
 
-基础库 [2.7.17](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始提供 [my.getAccountInfoSync](https://opendocs.alipay.com/mini/api/my.getAccountInfoSync)，可一并获取小程序的版本号。
+推荐使用功能更加丰富的接口 [my.getAccountInfoSync](https://opendocs.alipay.com/mini/api/my.getAccountInfoSync)。
 
 ## 使用限制
 
