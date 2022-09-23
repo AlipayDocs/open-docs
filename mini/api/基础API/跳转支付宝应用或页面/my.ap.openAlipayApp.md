@@ -58,7 +58,7 @@ Object 类型，参数如下：
 | tinyAppSHH | 无 | 小程序快报生活号。 |
 | antForest | autoShowProps：是否显示背包。可选值：<ul><li>1：显示背包。</li><li>0：不显示背包。</li></ul>默认为 0。 | 蚂蚁森林。 |
 | antFarm | 无 | 蚂蚁庄园。 |
-| stockDetail | <ul><li>symbol：股票代码，例如 'BABA'。</li><li>market：股票所在市场，例如 'SH'。可选值：</li><ul><li>SH：上海股市。</li></ul><ul><li>SZ：深圳股市。</li></ul><ul><li>HK：香港股市。</li></ul><ul><li>A：A 股市场。</li></ul><ul><li>O：美国股市。</li></ul><ul><li>N：美国股市。</li></ul><ul><li>USI：美国股市。</li></ul></ul> | 股票详情页。 |
+| stockDetail | <ul><li>symbol：股票代码，例如 'BABA'。</li><li>market：股票所在市场，例如 'SH'。可选值：</li><ul><li>SH：上海股市。</li><li>SZ：深圳股市。</li><li>HK：香港股市。</li><li>A：A 股市场。</li><li>O：美国股市。</li><li>N：美国股市。</li><li>USI：美国股市。</li></ul></ul> | 股票详情页。 |
 | payCode | 无 | 支付宝付款码。<br />**注意**：个人小程序不支持跳转付款码。 |
 
 ### Function fail
