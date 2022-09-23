@@ -6,7 +6,7 @@
 
 临时文件一般会在退出小程序后删除，而本地缓存文件则不会被删，除非用户从“我的小程序”删除当前小程序，或者开发者调用 [my.removeSavedFile](https://opendocs.alipay.com/mini/api/dgi1fr) 等 API 主动删除。
 
-**注意：** 此 API 已不再维护，推荐使用 [FileSystemManager.save](https://opendocs.alipay.com/mini/api/022b6n) 替代。
+**注意：** 此 API 已不再维护，推荐使用 [FileSystemManager.saveFile](https://opendocs.alipay.com/mini/api/022b6n) 替代。
 
 ## 使用限制
 
