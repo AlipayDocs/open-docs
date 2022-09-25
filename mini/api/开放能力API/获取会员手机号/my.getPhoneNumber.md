@@ -260,3 +260,7 @@ A：请检查小程序是否已绑定 **获取会员手机号** 并申请了用�
 ## Q：为什么调用 my.getPhoneNumber 返回的手机号为空？
 
 A：一般情况下都是当前用户的支付宝账号没有绑定手机号所致，需要当前用户登录 [账号管理](https://custweb.alipay.com/account/index.htm)，绑定手机号。
+
+### Q：获取用户手机号为何没有返回 sign？
+
+A：请确保已设置支付宝公钥，aes 密钥、应用网关。若缺失这三个设置任一，在调用 my.getPhoneNumber 时可能只返回 response。
