@@ -45,4 +45,3 @@ my.alert({
 A：基本都是 alipay.open.mini.version.upload 传入的 ext 参数有问题，请检查：
 - ext 参数内容是否符合模板配置规范（参考 [模板小程序文档](https://opendocs.alipay.com/mini/isv/creatminiapp#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E)）；
 - ext JSON 内容中 `extEnable` 字段是否已设置为 `true`。
-- 
