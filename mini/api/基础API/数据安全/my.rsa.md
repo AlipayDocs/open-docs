@@ -1,10 +1,10 @@
 # 简介
 
-**my.rsa** 是非对称加密的 API。非对称加密使用不同的加密密钥与解密密钥，加密密钥（公钥）是公开信息，而解密密钥（私钥）是需要保密的。
+**my.rsa** 提供 RSA 加解密能力。RSA（非对称加密）使用的加密密钥（公钥）与解密密钥（私钥）不同，公钥是公开信息，私钥需要保密。
 
 请在小程序运行环境使用公钥进行加密，在服务端使用私钥进行解密。私钥请保存在服务端（若私钥放在客户端，容易泄露而导致安全问题）。
 
-可使用 [支付宝开放平台开发助手](https://opendocs.alipay.com/common/02kipl) 生成密钥。
+可使用 [支付宝开放平台开发助手](https://opendocs.alipay.com/common/02kipl) 生成密钥对。
 
 ## 使用限制
 
@@ -27,7 +27,6 @@
 小程序端加密：
 
 ```javascript
-// .js
 Page({
   data: {
     inputValue: '',
@@ -130,7 +129,7 @@ Object 类型，参数如下：
 | --- | --- | --- | --- |
 | action | String | 是 | 使用 RSA 加密还是 RSA 解密。可选值为：<br /><ul><li> encrypt：加密。</li><li>decrypt：解密。</li></ul> |
 | text | String | 是 | 算法输入。加密时传入明文，解密时传入密文（base64 编码）。RSA key 为 1024 位时，最多支持 117 个字节。 |
-| key | String | 是 | RSA 密钥。<br />加密使用公钥，解密使用私钥。 |
+| key | String | 是 | RSA 密钥。PKCS8 格式。<br />加密使用公钥，解密使用私钥。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -154,10 +153,16 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 ## 错误码
 
-| **错误码** | **说明** | **解决方案**            |
+| **错误码** | **错误消息** | **解决方案**            |
 | ---------- | -------- | ----------------------- |
-| 10         | 参数错误 | 建议检查参数是否正确。  |
-| 11         | key 错误 | 建议检查 key 是否正确。 |
+| 10         | h5RSA param(text and key) must not be empty | 传入了空 key，请检查。  |
+| 11         | Encrypt key error | 检查传入的 key 是否有效（PKCS8 格式）。 |
+| 11         | Encrypt error | 如果 key 为 1024 位，请检查输入的 text 是否超过长度限制（117 字节）。 |
+| 11         | Decrypt key error | 检查传入的 key 是否有效（PKCS8格式）。 |
+| 11         | Decrypt error | 1，检查传入的 key 是否正确（与加密 key 匹配）；<br>2，key 为 1024 位时，请确保可能的输出 text 不超过 117 字节。 |
+
+# Bug & Tip
+* `tip` IDE 模拟器上的 my.rsa 对输入 text 的长度限制大于真机，请以真机为准。
 
 # 常见问题 FAQ
 
