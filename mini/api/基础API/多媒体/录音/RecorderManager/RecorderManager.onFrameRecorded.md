@@ -17,7 +17,7 @@
 ```javascript
 let recorderManager = my.getRecorderManager();
 recorderManager.onFrameRecorded(res => {
-  console.log(res.frameBuffer, res.isLastFrame);
+  console.log(res.frameBuffer, res.isLastFrame, res.frameBuffer.byteLength,);
 });
 recorderManager.start({
   frameSize: 100,
