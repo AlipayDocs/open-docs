@@ -41,12 +41,18 @@ my.chooseImage({
   },
 });
 // 包文件路径
+// 包文件需要在根目录下的 mini.project.json 中配置要读取的小程序文件内容，例子如下：
+{
+  "include": ["image/*.png"]
+}
+// 配置之后才能访问到包文件，不然会报 12 错误码
 my.getImageInfo({
   src: '/image/api.png', // 注意：包文件路径与当前页面路径无关。/image/api.png 也可写作 image/api.png，含义相同，都是从项目根目录算起
   success: res => {
     console.log(JSON.stringify(res));
   },
 });
+
 ```
 
 ## 入参
@@ -67,18 +73,7 @@ Object 类型，属性如下：
 | width       | Number   | 图片宽度，单位为 px。          |
 | height      | Number   | 图片高度，单位为 px。          |
 | path        | String   | 图片本地路径。                 |
-| orientation | String   | 返回图片的方向，枚举值见下表。 |
-| type        | String   | 返回图片的格式。               |
+| orientation | String   | 返回图片的方向。枚举值如下：</br> <li>up：默认方向，对应 [Exif](http://sylvana.net/jpegcrop/exif_orientation.html) 中的 1。</li><li>up-mirrored：同 up，但镜像翻转，对应 Exif 中的 2。</li><li>down：旋转180度，对应 Exif 中的 3。<li>down-mirrored：同 down，但镜像翻转，对应 Exif 中的 4。</li><li>left-mirrored：同 left，但镜像翻转，对应 Exif 中的 5。</li><li>right：顺时针旋转90度，对应 Exif 中的 6。</li><li>lright-mirrored：同 right，但镜像翻转，对应 Exif 中的 7。</li><li>left：逆时针旋转90度，对应 Exif 中的 8。</li> |
+| type        | String   | 返回图片的格式。枚举值如下：</br> <li>png</li><li>jpg</li><li>gif</li><li>webp</li><li>hevc</li><li>bmp</li><li>heic</li>|
 
-#### orientation 参数说明
 
-| **枚举值**     | **说明**               |
-| -------------- | ---------------------- |
-| up             | 默认。                 |
-| down           | 180 度旋转。           |
-| left           | 逆时针旋转 90 度。     |
-| right          | 顺时针旋转 90 度。     |
-| up-mirrored    | 同 up，但水平翻转。    |
-| down-mirrored  | 同 down，但水平翻转。  |
-| left-mirrored  | 同 left，但垂直翻转。  |
-| right-mirrored | 同 right，但垂直翻转。 |
