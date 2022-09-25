@@ -59,4 +59,4 @@ fail 回调会收到一个 Object 类型的参数，其 error 属性为错误码
 - `Tip` my.setTabBarBadge() 和 my.setTabBarItem() 同时使用时，有概率会遇到 badge 被遮盖的情况。可通过改为在 setTabBarItem 的 success 回调里调用 setTabBarBadge 解决。
 - `Tip` 可使用 [my.setTabBarStyle](https://opendocs.alipay.com/mini/api/wcf0sv) 修改 tabBar 样式。
 
-相关问题请参见 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
+更多相关问题参见 [tabBar 常见问题](https://opendocs.alipay.com/mini/api/do7urq)。
