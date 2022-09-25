@@ -15,16 +15,14 @@
 ### .js 示例代码
 
 ```javascript
-// .js
-//传入passId来打开
 my.openCardDetail({ 
-  passId: '11xxxxx',
+  passId: '11xxxxx', // 请替换成有效的 passId
   success: (res) => {
-    console.log('调用成功',res)
+    console.log('调用成功', res);
   },
-  complete: () => {
-    console.log('调用完成，无论成功失败都会执行')
-  }
+  success: (res) => {
+    my.alert({ title: 'openCardDetail 调用失败', content: JSON.stringify('res') });
+  },
 });
 ```
 
