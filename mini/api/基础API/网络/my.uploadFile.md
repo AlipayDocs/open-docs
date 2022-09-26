@@ -6,7 +6,7 @@
 
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
-> 请登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTPS 请求（my.request）、上传文件（my.uploadFile）。
+> 请登录 [开放平台控制台](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTPS 请求（my.request）、上传文件（my.uploadFile）。
 >
 > ![|706x73](http://mdn.alipayobjects.com/afts/img/A*xM4NR6VRbfy_8SFDkgXUhQBkAa8wAA/original?bz=openpt_doc&t=JgMQtxsM9S7uH5pPEDbN9wAAAABkMK8AAAAA#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&originHeight=168&originWidth=1624&status=done&style=stroke&width=1624)
 >
@@ -56,7 +56,7 @@ Page({
         my.uploadFile({
           url: 'https://httpbin.org/post',
           fileType: 'image',
-          fileName: 'file',
+          fileName: 'userfile',
           filePath: path,
           formData: { extra: '其他信息' },
           success: res => {
@@ -100,7 +100,7 @@ public class UploadServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
         throws IOException, ServletException
     {
-        Part filePart = request.getPart("file");
+        Part filePart = request.getPart("userfile");
         String fileSize = filePart == null ? "0" : filePart.getSize() + " bytes";
 
         if (filePart != null) {
@@ -119,6 +119,31 @@ public class UploadServlet extends HttpServlet {
 }
 ```
 
+
+### .php 示例代码
+
+上传文件的服务端代码：
+
+```php
+
+<?php
+function accept_my_upload() {
+  $size = 0;
+  $path = '';
+  if ($file = @$_FILES['userfile']) {
+    $name = $file['name'];
+    $ext = strrpos($name, '.') === false ? '' : substr($name, strrpos($name, '.'));
+    $path = '/tmp/' . time() . round(microtime() * 1000) . $ext;
+    if (move_uploaded_file($file['tmp_name'], $path)) {
+      $size = $file['size'];
+    }
+  }
+  $extra = @$_POST['extra'];
+  echo "file: $size bytes($path); extra: $extra";
+}
+accept_my_upload();
+```
+
 ## 入参
 
 Object 类型，参数如下：
@@ -128,7 +153,7 @@ Object 类型，参数如下：
 | url | String | 是 | 开发者服务器地址。 |
 | filePath | String | 是 | 要上传文件资源的本地路径。 |
 | fileName | String | 是 | 文件名，即对应的 key，开发者在服务器端通过这个 key 可以获取到文件二进制内容。 |
-| fileType | String | 是 | 文件类型支持图片、视频、音频，对应的值分别为 "image"、"video"、"audio"。 |
+| fileType | String | 否 | 模拟器暂时会对该值做必传校验，对应的值分别为 "image"、"video"、"audio"。真机可忽略该字段，建议用真机测试 |
 | timeout | Number | 否 | 超时时间，默认值 60000，无最大值限制，单位 ms。 |
 | hideLoading | Bool | 否 | 是否隐藏 loading 图（默认值为 false）。 |
 | header | Object | 否 | HTTP 请求 Header。其中 content-type 默认为 multipart/form-data |
@@ -156,27 +181,14 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
         <th><b>解决方案</b></th>
     </tr>
     <tr>
-        <td rowspan="3">4</td>
-        <td>无权限调用（N22104）</td>
+        <td >4</td>
+        <td>未配置域名白名单，无权访问域名</td>
         <td>
-            <ol>
-                <li>确认小程序应用是否授权给了三方应用，三方应用是否添加了 <b>JSAPI 基础包</b> 功能包。可尝试添加 <b>JSAPI 基础包</b> 功能包后，重新授权、重新推送预览调试或者直接解除三方应用授权，重新推送预览调试。</br><b>说明</b>：小程序应用授权给三方应用后，小程序在真机上的运行使用的是三方应用的功能包，不再是使用小程序自身的功能包。</li>
-                <li>若是小程序应用 <b>JSAPI 基础包</b> 功能包没有或者不全，建议删除小程序应用，重新创建一个新小程序应用来调试。</li>
-            </ol>
-        </td>
-    </tr>
-    <tr>
-        <td>无权限调用（N22106）</td>
-        <td rowspan="2">
             <ul>
                 <li>配置请求白名单，请预先登录 <a href="https://open.alipay.com/dev/workspace">开放平台控制台</a> > 点击要配置的小程序，进入小程序详情页 > <b>设置</b> > <b>开发设置</b> > <b>服务器域名白名单</b> 中配置域名白名单。域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。</li>
-                <li>若是账号问题，不能登录管理后台配置，开发版测试可以先在 IDE 右上角点击 <b>详情</b> > <b>域名信息</b> 下勾选 <b>忽略 request 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>或 <b>忽略 Webview 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>，再预览调试请求。</li>
-                <li>建议做下兼容，不要使用 my.saveFile 保存文件后返回的 apFilePath 作为上传 filePath 的入参。</li>
+                <li>可在 IDE 右上角点击 <b>详情</b> > <b>域名信息</b> 下勾选 <b>忽略 request 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>或 <b>忽略 Webview 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>，再预览调试请求。</li>
             </ul>
         </td>
-    </tr>
-    <tr>
-        <td>无权限调用此接口</td>
     </tr>
     <tr>
         <td>9</td>
@@ -184,11 +196,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
         <td>上传文件中止文件，在上传文件未完成时调用了 UploadTask.abort()。</td>
     </tr>
     <tr>
-        <td rowspan="3">11</td>
-        <td>not have permission to upload</td>
-        <td>出于安全策略，不能使用 my.saveFile 保存文件后返回的 apFilePath 作为上传 filePath 的入参。</td>
-    </tr>
-    <tr>
+        <td rowspan="2">11</td>
         <td>文件不存在</td>
         <td>检查本地文件是否存在。</td>
     </tr>
@@ -205,15 +213,10 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
         <td>上传文件失败</td>
         <td>
             <ul>
-                <li>文件过大。</li>
-                <li>上传时间超过 60s。</li>
+                <li>请求失败。 请检查网络是否连接正常</li>
+                <li>上传超时，可使用 timeout 设置超时时间</li>
             </ul>
         </td>
-    </tr>
-    <tr>
-        <td>13</td>
-        <td>没有权限</td>
-        <td>检查权限设置。</td>
     </tr>
     <tr>
         <td>20</td>
@@ -278,10 +281,8 @@ A：my.uploadFile 默认超时时间是 60s，可通过 timeout 设置超时时�
 
 A：上传失败导致报错 error:12 ，造成上传失败的可能原因有：
 
-1. 文件过大。
-2. 上传时间超过 60s。
-3. 没有权限。
-4. 文件未找到 / 文件不是一个正常的文件。
+1. 请求失败。请检查网络是否连接正常
+2. 上传超时，可使用 timeout 设置超时时间。
 
 ## Q：使用 my.uploadFile 上传图片至后台，接收的是二进制图片，再从后台发送小程序前台对应的二进制图片，小程序前台是如何解析呢？
 
@@ -289,7 +290,7 @@ A：上传图片是服务端通过二进制流接受图片，之后服务端只�
 
 ## Q：调用 my.uploadfile，为何报错: error: 4，无权限调用此接口？
 
-A：请求的 URL 没有配置白名单，建议添加 URL 的域名为白名单。
+A：请求的 URL 没有配置白名单，请登录 [开放平台控制台](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。
 
 ## Q：小程序是否支持上传 excel 文件？
 
