@@ -94,4 +94,4 @@ Object 类型，属性如下：
 
 | **属性**     | **类型** | **描述**                        |
 | ------------ | -------- | ------------------------------- |
-| tempFilePath | String   | 生成文件的临时路径 (本地路径)。 |
+| tempFilePath | String   | 生成文件的临时路径 ([本地路径](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6))。 |
