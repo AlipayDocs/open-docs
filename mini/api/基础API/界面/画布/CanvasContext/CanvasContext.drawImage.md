@@ -2,7 +2,7 @@
 
 # 简介
 
-**CanvasContext.drawImage** 用于绘制图像，图像保持原始尺寸。
+**CanvasContext.drawImage** 用于绘制图像到画布。
 
 ## 使用限制
 
