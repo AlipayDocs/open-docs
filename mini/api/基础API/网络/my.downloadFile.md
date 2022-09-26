@@ -53,6 +53,7 @@ Object 类型，属性如下：
 | --- | --- | --- | --- |
 | url | String | 是 | 下载文件地址。除在线 URL 以外，也接受包含图片 base64 数据的 [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) |
 | header | Object | 否 | HTTP 请求 Header。 |
+| filePath | string | 否 | 指定文件下载后存储的路径 (本地路径) |
 | timeout | Number | 否 | 超时时间，默认值 60000，无最大值限制，单位 ms。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
@@ -64,8 +65,10 @@ success 回调会收到一个 Object 类型的参数，属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| apFilePath | String | 文件临时存放的位置（[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)）。 |
-| tempFilePath | String | 文件临时存放的位置（本地临时文件）<br/> 实际与 apFilePath 相同，基础库 [2.7.23](https://opendocs.alipay.com/mini/ide/framework-changelog-v2) 开始支持。 |
+| apFilePath | String | 文件临时存放的位置（[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)）。没传入 filePath 指定文件存储路径时会返回 |
+| tempFilePath | String | 文件临时存放的位置（本地临时文件）<br/> 实际与 apFilePath 相同，没传入 filePath 指定文件存储路径时会返回。基础库 [2.7.23](https://opendocs.alipay.com/mini/ide/framework-changelog-v2) 开始支持。 |
+| filePath | String | 用户文件路径 (本地路径)。传入 filePath 时会返回，跟传入的 filePath 一致 |
+
 
 ### 错误码
 
