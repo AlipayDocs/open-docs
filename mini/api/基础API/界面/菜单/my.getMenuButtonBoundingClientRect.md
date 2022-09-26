@@ -2,7 +2,7 @@
 
 获取菜单按钮（右上角胶囊按钮）的布局位置信息，坐标信息以屏幕左上角为原点。
 
-![菜单.png](https://cdn.nlark.com/yuque/0/2021/png/179989/1638855990915-c1522a27-33e7-45d0-9df6-187266b10ed5.png#align=left&display=inline&height=1082&margin=%5Bobject%20Object%5D&name=%E8%8F%9C%E5%8D%95.png&originHeight=2164&originWidth=1088&size=603496&status=done&style=none&width=544)
+![菜单.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1664161879243-b180f58d-866f-4cb0-9049-91bb850fb6eb.png)
 
 ## 使用限制
 
@@ -65,4 +65,4 @@ A：调用 my.getMenuButtonBoundingClientRect，拿到 optionMenuWidth、optionM
 
 ## Q：为什么获取胶囊位置数据不准确，甚至是负数？
 
-A：部分开发者使用 IDE 模拟器调试时可能遇到类似问题。建议以真机为准，或升级 IDE 版本。
+A：部分开发者使用 IDE 模拟器调试时可能遇到类似问题。建议以真机为准，或升级 IDE 至最新版本。
