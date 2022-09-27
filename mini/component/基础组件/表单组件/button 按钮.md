@@ -34,7 +34,7 @@
 | onFollowLifestyle | EventHandle | 当 open-type 为 lifestyle 时有效。<br />当点击按钮时触发。<br />`event.detail = { followStatus }`，`folllowStatus` 合法值有 `1`、`2`、`3`，其中 `1` 表示已关注。`2` 表示用户不允许关注。`3` 表示发生未知错误；<br />已知问题：基础库 1.0，当用户在点击按钮前已关注生活号，`event.detail.followStatus` 的值为 `true`。<br />**版本要求**：基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | onError | EventHandle | 当 open-type 为 getAuthorize 时有效。<br />当授权失败时触发。`event.detail = {type, errorMessage}`，此时 `type` 的值为 `getAuthorize`。<br />**版本要求**：基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | onGetUserInfo | EventHandler | 当 open-type 为 getAuthorize 且 scope 为 userInfo 时有效。<br>当授权成功时触发。<br>**版本要求** ：基础库  2.8.0 及以上<br>event.detail = {<br>&nbsp;&nbsp;&nbsp;&nbsp;userInfo: {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avatar, // 头像<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nickName,  // 昵称<br>&nbsp;&nbsp;}<br>}，|
-| onGetPhoneNumber | EventHandler | 当 open-type 为 getAuthorize 且 scope 为 phoneNumber 时有效。<br>当授权成功时触发。<br>**版本要求** :基础库 2.8.0 及以上<br>成功获取用户信息后返回<br>event.detail = {<br>&nbsp;&nbsp;&nbsp;&nbsp;encryptedData: '',  // 加密后的手机号<br>&nbsp;&nbsp;&nbsp;&nbsp;sign: '',  //  签名信息，如果在开放平台后台配置了加签方式后有此字段<br>}， |
+| onGetPhoneNumber | EventHandler | 当 open-type 为 getAuthorize 且 scope 为 phoneNumber 时有效。<br>当授权成功时触发。<br>**版本要求** ：基础库 2.8.0 及以上<br>成功获取用户信息后返回<br>event.detail = {<br>&nbsp;&nbsp;&nbsp;&nbsp;encryptedData: '',  // 加密后的手机号<br>&nbsp;&nbsp;&nbsp;&nbsp;sign: '',  //  签名信息，如果在开放平台后台配置了加签方式后有此字段<br>}， |
 
 ### open-type 有效值
 
@@ -54,7 +54,7 @@
 | phoneNumber | 用户点击同意后，即可通过 [my.getPhoneNumber](https://opendocs.alipay.com/mini/api/getphonenumber) 授权小程序获取用户绑定的手机号。<br />**版本要求：** 基础库 [1.11.0](/mini/framework/compatibility) 及以上 |
 | userInfo | 用户点击同意后，即可通过 [my.getOpenUserInfo](https://opendocs.alipay.com/mini/api/ch8chh) 授权小程序获取支付宝会员基础信息。<br />**版本要求：** 基础库 [1.11.0](/mini/framework/compatibility) 及以上 |
 
-# FAQ
+# 常见问题
 
 ### 使用 button 点击授权获取手机号，服务端要怎么解密？
 
