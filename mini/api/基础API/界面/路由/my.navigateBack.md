@@ -40,7 +40,7 @@ Page({
 
 ## Function fail
 
-fail 回调会收到一个 Object 类型的参数，其 error 属性为出错信息：
+fail 回调会收到一个 Object 类型的参数，其 error 属性为错误码：
 
 | **error** | **说明** | **解决方案** |
 | --- | --- | --- |
