@@ -38,7 +38,7 @@ Page({
   onEncrypt: function () {
     my.rsa({
       action: 'encrypt',
-      text: this.data.outputValue,
+      text: this.data.inputValue,
       // 设置公钥，需替换你自己的公钥
       key:
         'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDKmi0dUSVQ04hL6GZGPMFK8+d6\n' +
