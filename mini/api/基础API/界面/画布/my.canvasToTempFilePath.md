@@ -15,58 +15,70 @@
 ### .axml 示例代码
 
 ```html
-// canvas 1.0
-<canvas id="canvas1" />
-// canvas 2.0 // 基础库2.7.15 开始支持传入canvas 参数
-<canvas type="2d" id="canvas2" onReady="onCanvasReady" />
+<canvas type="2d" id="canvas" onReady="onCanvasReady" />
 ```
 
 ### .js 示例代码
 
 ```javascript
 Page({
-  onReady() {
-    const ctx = my.createCanvasContext('canvas1');
-    ctx.drawImage('/image/ant.png', 0, 0);
-    ctx.draw(false, () => {
-      my.canvasToTempFilePath({
-        canvasId: 'canvas1',
-        success: res => {
-          console.log(res.tempFilePath);
-        },
-      });
-    });
-  },
-  onCanvasReady() {
-    const query = my.createSelectorQuery();
-    query
-      .select('#canvas2')
-      .node()
-      .exec(res => {
-        const canvas = res[0].node;
-        const ctx = canvas.getContext('2d');
-        const img = canvas.createImage();
-        img.src =
-          'https://img.alicdn.com/tfs/TB1GvVMj2BNTKJjy0FdXXcPpVXa-520-280.jpg';
-        img.onload = () => {
-          ctx.drawImage(img, 10, 10, 100, 100);
-          my.canvasToTempFilePath({
-            canvas,
-            success(res) {
-              console.log(res.tempFilePath);
-            },
-            fail(res) {
-              console.log(res);
-            },
-            complete(res) {
-              console.log(res);
-            },
-          });
-        };
-      });
-  },
+    onCanvasReady() {
+        const query = my.createSelectorQuery();
+        query
+            .select('#canvas')
+            .node()
+            .exec(res => {
+                const canvas = res[0].node;
+                const ctx = canvas.getContext('2d');
+                const img = canvas.createImage();
+                img.src = 'https://img.alicdn.com/tfs/TB1GvVMj2BNTKJjy0FdXXcPpVXa-520-280.jpg';
+                img.onload = () => {
+                    ctx.drawImage(img, 10, 10, 100, 100);
+
+                    my.canvasToTempFilePath({
+                        canvas,
+                        success(res) {
+                            console.log('success', res.tempFilePath);
+                        },
+                    });
+
+                };
+            });
+    },
 });
 ```
+
+
+### 旧版接口
+
+### .axml 示例代码
+```html
+<canvas id="canvas" />
+```
+
+### .js 示例代码
+
+```javascript
+Page({
+    onReady() {
+        const ctx = my.createCanvasContext('canvas');
+        const src = 'https://img.alicdn.com/tfs/TB1GvVMj2BNTKJjy0FdXXcPpVXa-520-280.jpg';
+        ctx.drawImage(src, 10, 10, 100, 100);
+        ctx.draw(false, () => {
+
+            my.canvasToTempFilePath({
+                canvasId: 'canvas',
+                success: (res) => {
+                    console.log('success', res.tempFilePath);
+                }
+            });
+
+        });
+
+    },
+});
+```
+
 
 ## 入参
 
