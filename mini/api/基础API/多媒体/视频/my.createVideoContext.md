@@ -31,7 +31,7 @@ iOS、Android 支持以下编码格式： H.264、AAC。
 
 ## 效果示例
 
-![|300x601](https://cdn.nlark.com/yuque/0/2021/png/179989/1625192989668-e8bee3e5-3c24-4ef3-8b29-505d5d510841.png#align=left&display=inline&height=601&margin=%5Bobject%20Object%5D&name=2.png&originHeight=601&originWidth=300&size=111477&status=done&style=stroke&width=300)
+<img src="https://img.alicdn.com/imgextra/i3/O1CN01IjNIk21RhzwrrI5c3_!!6000000002144-2-tps-738-1486.png" width="300" height="601"/>
 
 # 上传视频获取视频码
 
