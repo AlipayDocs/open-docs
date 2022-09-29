@@ -6,8 +6,8 @@
 
 1. 设置 **接口内容加密方式**
 
-- 此接口会返回加密后的用户手机号，请确保已完成接口内容加密方式配置。[开放平台控制台](https://openhome.alipay.com/develop/manage) > 开发设置 > **接口内容加密方式**。详见 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3)。
-- 未设置接口加密方式直接调用此接口会返回
+- 此接口会返回加密后的用户手机号，请确保已在控制台完成 [接口内容加密方式](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet) 配置。参考文档 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3) 进行设置。
+- 未设置接口加密方式直接调用此接口会返回：
 
 ```json
 {
@@ -18,13 +18,14 @@
 }
 ```
 
-- 如果需要验证支付宝返回加密内容的真实性，请确保已完成接口加签方式配置。[开放平台控制台](https://openhome.alipay.com/develop/manage) > 开发设置 > **接口加签方式**。详见 [接口加签方式](https://opendocs.alipay.com/common/02mriz) 设置。未设置接口加签方式直接调用此接口将不会返回 sign 字段。
+- 如果需要验证支付宝返回加密内容的真实性，请确保已在控制台完成 [接口加签方式（密钥/证书)](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet) 配置。参考文档 [接口加签方式](https://opendocs.alipay.com/common/02mriz) 进行设置。
+- 未设置接口加签方式直接调用此接口将 **不会返回 sign 字段**。
 
-2. 绑定 **获取会员手机号** 产品并申请用户信息
+2. 绑定 **获取会员手机号** 产品并 **申请用户信息**
 
-- 使用此 API 需绑定 **获取会员手机号** 产品并登录主账号进行用户信息申请。操作步骤如下。登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，选择绑定 **获取会员手机号**。 ![712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ)
+- 使用此 API 需在开放平台绑定产品 [获取会员手机号](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000046451)，并登录主账号进行用户信息申请。 ![712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ)
 - 如果申请用户信息按钮为灰色，请检查小程序是否设置主营行业，并且对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
-- 未绑定 **获取会员手机号** 产品或未进行 **用户信息申请** 直接调用此 API 返回内容解密后如下：
+- 未绑定获取会员手机号产品或未进行用户信息申请直接调用此 API，返回内容解密后如下：
 
 ```json
 {
@@ -247,11 +248,11 @@ A：
 
 ## Q：调用 my.getPhoneNumber，报错 “缺少加密配置”，如何处理？
 
-A：请先在开放平台控制台 > 开发设置中配置 **接口加密方式**。详见 [接口内容加密方式](<(https://opendocs.alipay.com/common/02mse3)>)。
+A：请先在开放平台控制台配置 [接口加密方式](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet)。详见文档 [接口内容加密方式](<(https://opendocs.alipay.com/common/02mse3)>)。
 
 ## Q：调用 my.getPhoneNumber 报错 “ISV 权限不足”，如何处理？
 
-A：请检查小程序是否已绑定 **获取会员手机号** 并申请了用户信息。若在产品绑定页面看不到用户信息申请的入口，请使用主账号登录。申请路径为：[开放平台控制台](https://open.alipay.com/dev/workspace) > 选择需要配置的应用，点击进入应用详情页 > **开发** > **产品绑定**，绑定 **获取会员手机号** 产品 > 点击 **用户信息申请**。 ![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ)
+A：请检查小程序是否已绑定 **获取会员手机号** 并申请了 **用户信息**。若在产品绑定 [获取会员手机号](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000046451) 页面看不到用户信息申请的入口，请使用主账号登录，点击 **用户信息申请**。 ![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ)
 
 ## Q：申请用户信息不可点击并提示 “所有用户信息字段都不满足申请条件”，如何处理？
 
