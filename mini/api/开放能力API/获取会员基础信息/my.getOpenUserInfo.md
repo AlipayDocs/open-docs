@@ -4,7 +4,7 @@
 
 自 2022-06-13 [用户信息相关接口调整](https://forum.alipay.com/mini-app/post/73101020) 以后，此接口仅返回头像地址和昵称。
 
-使用此 API 需绑定 **获取会员基础信息** 产品，操作步骤如下。登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，选择绑定 **获取会员基础信息**。未绑定 **获取会员基础信息** 产品直接调用此 API 会返回
+使用此 API 需在控制台绑定 [获取会员基础信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000054282) 产品，未绑定 **获取会员基础信息** 产品直接调用此 API 会返回
 
 ```json
 {
@@ -136,15 +136,7 @@ A：
 
 ## Q：调用 my.getOpenUserInfo，报错 "ISV 权限不足"，如何处理？
 
-A：“获取会员信息”功能包已下架，若之前创建的应用已添加了“获取会员信息”的功能包则能正常调用接口，未添加的则无法再添加此功能。
-
-1. 在小程序开发管理后台的 **产品绑定** 中，点击 **绑定产品**。
-
-![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*XL89TIDxbVoAAAAAAAAAAAAAARQnAQ)
-
-2. 绑定 **获取会员基础信息** 产品。
-
-![|712x369](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*WaCESJQ8cBwAAAAAAAAAAAAAARQnAQ)
+A：“获取会员信息”功能包已下架，若之前创建的应用已添加了“获取会员信息”的功能包则能正常调用接口。新创建的应用需在控制台绑定 [获取会员基础信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000054282) 产品，方可调用此接口。
 
 ## Q：如何获取除用户头像、昵称信息以外的用户信息？
 
