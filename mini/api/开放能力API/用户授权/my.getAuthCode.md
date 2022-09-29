@@ -88,7 +88,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 A：
 
-1. 登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，确认绑定 **获取会员信息** 产品。
+1. 进入控制台绑定 [获取会员信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000042699) 产品。
 
 2. 点击用户信息申请，进入用户信息申请页面，分别申请对应用户信息的权限。具体操作说明可查看 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) 中的 **商家申请用户信息**。 ![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*XjlFSJPaySYAAAAAAAAAAAAAARQnAQ) ![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*LqsXR45_a4IAAAAAAAAAAAAAARQnAQ)
 **注：应隐私政策要求，cert_type、cert_no、person_cert_expiry_date 目前线上已无法申请（即将下线入口）。**特殊（如政务类）小程序请联系合作的支付宝 BD。
@@ -153,4 +153,4 @@ my.onMessage = function (message) {
 
 ## Q：报错 “isv 权限不足” 如何处理？
 
-A：登录 [开放平台控制台](https://openhome.alipay.com/develop/manage) > 点击小程序，进入小程序详情页 > **开发** > **产品绑定** > **绑定产品**，确认绑定 **获取会员信息** 产品。
+A：进入控制台绑定 [获取会员信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000042699) 产品。
