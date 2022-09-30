@@ -77,7 +77,6 @@ Page({
 | 麦克风 | MICROPHONE | iOS | - |
 | 通讯录 | ADDRESSBOOK | iOS | - |
 | push 通知栏权限 | NOTIFICATION | Android | - |
-| 后台保活 | BACKGROUNDER | Android | - |
 | 创建桌面快捷方式 | SHORTCUT | Android | 部分机型系统设置中没有“创建桌面快捷方式”选项，一般为默认有权限或者使用时询问用户。 |
 
 ### success 回调
