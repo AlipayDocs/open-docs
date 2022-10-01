@@ -1,8 +1,6 @@
 # 简介
 
-**my.hideBackHome** 是隐藏标题栏上的 **返回首页** 按钮和右上角通用菜单中的返回首页功能的 API。
-
-当用户打开的小程序最底层页面是非首页且非 tabbar 页面时，默认展示 **返回首页** 按钮，可以通过调用 my.hideBackHome 进行隐藏。
+**my.hideBackHome** 隐藏标题栏左侧的 **返回首页** 按钮。
 
 ## 使用限制
 
@@ -17,10 +15,8 @@
 
 ## 示例代码
 
-### .js 示例代码
-
 ```javascript
-//.js
+// 示例一
 Page({
   onReady() {
     if (my.canIUse('hideBackHome')) {
@@ -28,18 +24,16 @@ Page({
     }
   },
 });
-```
 
-```javascript
-//.js
+// 示例二
 Page({
   onLoad() {
+    // 跳到非首页
     my.reLaunch({
-      url: '../swiper/swiper', // 在页面中添加的非首页
+      url: '../swiper/swiper', 
     });
-
+    // 5 秒后隐藏返回首页按钮
     setTimeout(() => {
-      //5秒后隐藏返回首页按钮
       my.hideBackHome();
     }, 5000);
   },
@@ -48,6 +42,18 @@ Page({
 
 # 常见问题 FAQ
 
-## Q：如何隐藏页面的回退按钮？
+## Q：导航栏左上角的 **返回首页** 按钮和 **返回上一页** 按钮何时会展示？
 
-A：暂无 API 可以直接隐藏页面的回退按钮。可以先通过 my.reLaunch 进行页面跳转，在被跳转的页面里调用 my.hideBackHome 隐藏返回首页按钮。
+A: 当页面栈深度为 1 时，标题栏左上角默认展示 **返回首页** 按钮；当页面栈深度大于 1 时，默认展示 **返回上一页** 按钮。默认首页和 tabBar 页面不展示返回首页和返回上一页按钮。
+
+**页面栈** 是小程序框架管理界面的方式，可以使用 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages)().length 查看当前页面栈深度。
+
+小程序导航相关 API 对页面栈深度的影响如下：
+- my.navigateTo 保留当前页面，打开新页面，页面栈深度加 1；
+- my.redirectTo 关闭当前页面，打开新页面，页面栈深度不变；
+- my.navigateBack 关闭当前页面，回到前一页，页面栈减 1（传入的 delta 值大于 1 时请自行类推）；
+- my.reLaunch 关闭所有页面，打到新页面，页面栈深度重置为 1。
+
+## Q：如何隐藏页面的 **返回上一页** 按钮？
+
+A：不提供 API 直接隐藏页面的回退按钮，可通过 my.reLaunch 进行页面跳转（将页面栈深度置为 1），返回上一页按钮即不展示；如有必要，也可在跳转目标页面里调用 my.hideBackHome 以隐藏返回首页按钮。
