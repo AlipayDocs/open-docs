@@ -1,16 +1,14 @@
 # 简介
 
-**my.uploadFile** 是上传本地资源到开发者服务器的 API，客户端发起的是一个 HTTPS POST 请求。
+**my.uploadFile** 上传本地文件到开发者服务器。客户端发起的是一个 HTTPS POST 请求。
 
-## 使用限制
+## 接入准备
 
-此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+my.uploadFile 只能与白名单中的域名进行通信，使请先在[开放平台控制台-开发设置页面](https://open.alipay.com/develop/mini/sub/dev-setting)配置**服务器域名白名单**：
 
-> 请登录 [开放平台控制台](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTPS 请求（my.request）、上传文件（my.uploadFile）。
->
-> ![|706x73](http://mdn.alipayobjects.com/afts/img/A*xM4NR6VRbfy_8SFDkgXUhQBkAa8wAA/original?bz=openpt_doc&t=JgMQtxsM9S7uH5pPEDbN9wAAAABkMK8AAAAA#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&originHeight=168&originWidth=1624&status=done&style=stroke&width=1624)
->
-> **注意**：域名添加或删除后仅对新版本小程序生效，老版本仍使用修改前的域名配置。
+![|706x73](http://mdn.alipayobjects.com/afts/img/A*xM4NR6VRbfy_8SFDkgXUhQBkAa8wAA/original?bz=openpt_doc&t=JgMQtxsM9S7uH5pPEDbN9wAAAABkMK8AAAAA#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&originHeight=168&originWidth=1624&status=done&style=stroke&width=1624)
+
+> **注意**：域名白名单会在构建时写入小程序，在新版本中生效，小程序历史版本不受影响。
 
 ## 扫码体验
 
@@ -24,48 +22,26 @@
 
 ## 示例代码
 
-### .json 示例代码
-
-**注意**：案例仅供参考，建议使用自己的地址进行测试。
-
-```json
-{
-  "defaultTitle": "Upload File"
-}
-```
-
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/upload-file/upload-file.axml -->
-<view class="page">
-  <button type="primary" onTap="uploadFile">上传图片</button>
-</view>
-```
-
 ### .js 示例代码
 
+选择照片并上传的前端代码：
+
 ```javascript
-// API-DEMO page/API/upload-file/upload-file.js
-Page({
-  uploadFile() {
-    my.chooseImage({
+my.chooseImage({
+  success: res => {
+    const path = res.apFilePaths[0];
+    console.log(path);
+    my.uploadFile({
+      url: 'https://...', // 请替换成有效的服务端 url
+      fileType: 'image',
+      fileName: 'userfile',
+      filePath: path,
+      formData: { extra: '其他信息' },
       success: res => {
-        const path = res.apFilePaths[0];
-        console.log(path);
-        my.uploadFile({
-          url: 'https://httpbin.org/post',
-          fileType: 'image',
-          fileName: 'userfile',
-          filePath: path,
-          formData: { extra: '其他信息' },
-          success: res => {
-            my.alert({ title: '上传成功' });
-          },
-          fail: err => {
-            my.alert({ title: '上传失败', content: JSON.stringify(err) });
-          },
-        });
+        my.alert({ title: '上传成功' });
+      },
+      fail: err => {
+        my.alert({ title: '上传失败', content: JSON.stringify(err) });
       },
     });
   },
@@ -74,10 +50,9 @@ Page({
 
 ### .java 示例代码
 
-上传文件的服务端代码：
+接收上传文件的服务端代码：
 
 ```java
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -90,42 +65,39 @@ import javax.servlet.http.Part;
 import javax.servlet.annotation.MultipartConfig;
 
 @MultipartConfig(
-  fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
-  maxFileSize = 1024 * 1024 * 10,      // 10 MB
-  maxRequestSize = 1024 * 1024 * 100   // 100 MB
+  fileSizeThreshold = 1024 * 1024 * 1,
+  maxFileSize = 1024 * 1024 * 10,
+  maxRequestSize = 1024 * 1024 * 100
 )
 public class UploadServlet extends HttpServlet {
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response)
+    throws IOException, ServletException
+  {
+    Part filePart = request.getPart("userfile");
+    String fileSize = filePart == null ? "0" : filePart.getSize() + " bytes";
 
-    @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
-        throws IOException, ServletException
-    {
-        Part filePart = request.getPart("userfile");
-        String fileSize = filePart == null ? "0" : filePart.getSize() + " bytes";
-
-        if (filePart != null) {
-            String fileName = filePart.getSubmittedFileName();
-            String filePath = "/tmp/upload" + fileName.substring(fileName.lastIndexOf("."));
-            filePart.write(filePath);
-        }
-
-        Part extraPart = request.getPart("extra");
-        String extraValue = extraPart == null ? "" : new Scanner(extraPart.getInputStream(), "UTF-8").useDelimiter("\\A").next();
-
-        response.setCharacterEncoding("UTF-8");
-        response.getWriter().print("file: " + fileSize + "; extra: " + extraValue);
+    if (filePart != null) {
+      String fileName = filePart.getSubmittedFileName();
+      String filePath = "/tmp/upload" + fileName.substring(fileName.lastIndexOf(".")); // 文件命名，请自行修改
+      filePart.write(filePath);
     }
 
+    Part extraPart = request.getPart("extra");
+    String extraValue = extraPart == null ? "" : new Scanner(extraPart.getInputStream(), "UTF-8").useDelimiter("\\A").next();
+
+    response.setCharacterEncoding("UTF-8");
+    response.getWriter().print("file: " + fileSize + "; extra: " + extraValue);
+  }
 }
 ```
 
 
 ### .php 示例代码
 
-上传文件的服务端代码：
+接收上传文件的服务端代码：
 
 ```php
-
 <?php
 function accept_my_upload() {
   $size = 0;
@@ -133,7 +105,7 @@ function accept_my_upload() {
   if ($file = @$_FILES['userfile']) {
     $name = $file['name'];
     $ext = strrpos($name, '.') === false ? '' : substr($name, strrpos($name, '.'));
-    $path = '/tmp/' . time() . round(microtime() * 1000) . $ext;
+    $path = '/tmp/' . time() . round(microtime() * 1000) . $ext; // 文件命名，请自行修改
     if (move_uploaded_file($file['tmp_name'], $path)) {
       $size = $file['size'];
     }
@@ -150,14 +122,14 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| url | String | 是 | 开发者服务器地址。 |
-| filePath | String | 是 | 要上传文件资源的本地路径。 |
-| fileName | String | 是 | 文件名，即对应的 key，开发者在服务器端通过这个 key 可以获取到文件二进制内容。 |
-| fileType | String | 否 | 模拟器暂时会对该值做必传校验，对应的值分别为 "image"、"video"、"audio"。真机可忽略该字段，建议用真机测试 |
-| timeout | Number | 否 | 超时时间，默认值 60000，无最大值限制，单位 ms。 |
-| hideLoading | Bool | 否 | 是否隐藏 loading 图（默认值为 false）。 |
-| header | Object | 否 | HTTP 请求 Header。其中 content-type 默认为 multipart/form-data |
-| formData | Object | 否 | HTTP 请求中其他额外的 form 数据。 |
+| url | String | 是 | 接收上传文件的服务端 url。 |
+| filePath | String | 是 | 要上传的文件路径。当前只支持[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。 |
+| fileName | String | 是 | 指定 POST 请求中的文件名，服务端需按此参数取值读取文件数据。 |
+| header | Object | 否 | HTTP 请求 Header。其中 content-type 为 multipart/form-data（与 request body 实际格式一致），请勿更改。 |
+| formData | Object | 否 | HTTP 请求中的其他数据，每个 key 为字段名，value 为字符串。 |
+| fileType | String | 否 | 此参数已废弃，无须传入。<br> **注意**：目前 IDE 模拟器仍会对该字段做校验，只接受 image / video / audio 三者之一。建议使用真机测试。 |
+| timeout | Number | 否 | 超时时间，默认值 60000，单位 ms。 |
+| hideLoading | Bool | 否 | 是否隐藏 loading 动画。默认值为 false。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -175,127 +147,136 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 ## 错误码
 
 <table>
-    <tr>
-        <th><b>错误码</b></th>
-        <th><b>说明</b></th>
-        <th><b>解决方案</b></th>
-    </tr>
-    <tr>
-        <td >4</td>
-        <td>未配置域名白名单，无权访问域名</td>
-        <td>
-            <ul>
-                <li>配置请求白名单，请预先登录 <a href="https://open.alipay.com/dev/workspace">开放平台控制台</a> > 点击要配置的小程序，进入小程序详情页 > <b>设置</b> > <b>开发设置</b> > <b>服务器域名白名单</b> 中配置域名白名单。域名添加或删除后仅对新版本生效，老版本仍使用修改前的域名配置。</li>
-                <li>可在 IDE 右上角点击 <b>详情</b> > <b>域名信息</b> 下勾选 <b>忽略 request 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>或 <b>忽略 Webview 域名合法性检查（仅在本地模拟、预览和远程调试时生效）</b>，再预览调试请求。</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>9</td>
-        <td>uploadFile:fail abort</td>
-        <td>上传文件中止文件，在上传文件未完成时调用了 UploadTask.abort()。</td>
-    </tr>
-    <tr>
-        <td rowspan="2">11</td>
-        <td>文件不存在</td>
-        <td>检查本地文件是否存在。</td>
-    </tr>
-    <tr>
-        <td>无效参数</td>
-        <td>检查是否有必传项没传；检查是否有字段传错类型。</td>
-    </tr>
-    <tr>
-        <td rowspan="2">12</td>
-        <td>java.io.FileNotFoundException:File is not a normal file.</td>
-        <td>文件未找到 / 文件不是一个正常的文件，确认 filePath 入参的正确性，必须是本地定位符，可使用 <a href="https://opendocs.alipay.com/mini/api/media/image/my.chooseimage">my.chooseImage</a> 在相册选择图片后返回的地址。</td>
-    </tr>
-    <tr>
-        <td>上传文件失败</td>
-        <td>
-            <ul>
-                <li>请求失败。 请检查网络是否连接正常</li>
-                <li>上传超时，可使用 timeout 设置超时时间</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>20</td>
-        <td>请求 URL 不支持 HTTP，请使用 HTTPS</td>
-        <td>小程序已经不支持 HTTP 请求，请使用 HTTPS。</td>
-    </tr>
+  <tr>
+      <th><b>错误码</b></th>
+      <th><b>说明</b></th>
+      <th><b>解决方案</b></th>
+  </tr>
+  <tr>
+      <td >4</td>
+      <td>未配置域名白名单，无权访问域名</td>
+      <td>
+          <ul>
+              <li>在[开放平台控制台-开发设置页面](https://open.alipay.com/develop/mini/sub/dev-setting)配置**服务器域名白名单**。注意新的域名白名单只对后续构建的小程序版本生效，小程序历史版本的域名白名单固定不变。</li>
+              <li>开发调试时，可在 IDE 右上角点击 <b>详情</b> > <b>域名信息</b> 下勾选 <b>忽略 request 域名合法性检查（仅在本地模拟、预览和远程调试时生效）。</b></li>
+          </ul>
+      </td>
+  </tr>
+  <tr>
+      <td>9</td>
+      <td>uploadFile:fail abort</td>
+      <td>上传文件中止文件，在上传文件未完成时调用了 UploadTask.abort()。</td>
+  </tr>
+  <tr>
+      <td rowspan="2">11</td>
+      <td>文件不存在</td>
+      <td>检查本地文件是否存在。</td>
+  </tr>
+  <tr>
+      <td>无效参数</td>
+      <td>检查是否有必传项没传；检查是否有字段传错类型。</td>
+  </tr>
+  <tr>
+      <td rowspan="2">12</td>
+      <td>java.io.FileNotFoundException:File is not a normal file.</td>
+      <td>检查入参 filePath 的有效性。</td>
+  </tr>
+  <tr>
+      <td>上传文件失败</td>
+      <td>
+          <ul>
+              <li>请求失败。稍后重试，或检查网络连接是否有效。</li>
+              <li>上传超时。可使用 timeout 设定超时时间。</li>
+          </ul>
+      </td>
+  </tr>
+  <tr>
+      <td>20</td>
+      <td>请求 URL 不支持 HTTP，请使用 HTTPS</td>
+      <td>小程序已经不支持 HTTP 请求，请使用 HTTPS。</td>
+  </tr>
 </table>
 
 ## UploadTask
 
 **版本要求：** 支付宝客户端 10.1.35 及以上版本，低版本需做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 
-监听上传进度变化，取消上传任务的对象。
-
-### 方法
+my.uploadFile 返回的对象，可用于监听上传进度变化或取消上传任务。
 
 | **方法**                                       | **描述**             |
 | ---------------------------------------------- | -------------------- |
 | UploadTask.abort()                             | 中断上传任务         |
 | UploadTask.onProgressUpdate(function callback) | 监听上传进度变化事件 |
 
-### 示例代码
+### 使用示例
 
 ```javascript
 const task = my.uploadFile({
-  url: '请使用自己服务器地址',
-  fileType: 'image',
-  fileName: 'file',
-  filePath: '...',
+  // ... 
 });
 task.onProgressUpdate(payload => {
   const { progress, totalBytesWritten, totalBytesExpectedToWrite } = payload;
+  console.log(`uploadProgress: ${progress}%`);
 });
 task.abort();
 ```
 
 其中，payload 参数的含义如下：
 
-- progress: 上传进度
-- totalBytesWritten: 当前长度
-- totalBytesExpectedToWrite: 总长度
+- progress：上传进度百分比，取值 0~100
+- totalBytesWritten: 已经上传的数据长度，单位 Bytes
+- totalBytesExpectedToWrite: 预期需要上传的数据总长度，单位 Bytes
+
 
 # 常见问题 FAQ
 
-## Q：小程序上传图片可以自动转成 Base64 (基于 64 个可打印字符来表示二进制数据的方法)吗？
+## Q：使用 my.chooseImage 选中的图片，如果转换成 base64？
 
-A：如果是手机本地图片可以通过my.chooseImage选择图片获取临时路径，再传入my.uploadFile来上传到服务端，服务端拿到文件流根据自身开发语言将图片转出base64，最后返回给小程序端。
-   您可以参考一下这两篇文章。 [小程序前端实现图片转换base64图片数据](https://opendocs.alipay.com/support/01rb15)，[小程序中 base64 数据解码/编码示例](https://opendocs.alipay.com/support/01rb0a)
+A：可以使用 FileSystemManager.readFile 先读取文件内容，然后调用 my.arrayBufferToBase64。示例如下：
+```javascript
+my.chooseImage({
+  success: res => {
+    const fs = my.getFileSystemManager();
+    fs.readFile({
+      filePath: `${res.apFilePaths[0]}`,
+      // readFile 不传入 encodding 参数，则以 ArrayBuffer 方式读取
+      success:({ data }) => {
+        const base64 = my.arrayBufferToBase64(data);
+        // 
+      },
+    });
+  }
+});
+```
 
 ## Q：my.uploadFile 如何获取服务器返回的错误信息呢？
 
-A：解决方案：
-
-1. 可以通过 success 回调中的 data 参数获取。
-2. 可以在服务端增加一个日志获取接口。如果上传失败，就请求到日志获取接口获取详细的失败日志。
-
-## Q：my.uploadFile 默认超时时间是多少？是否可以设置默认延长时间？
-
-A：my.uploadFile 默认超时时间是 60s，可通过 timeout 设置超时时间，单位ms。
-
-## Q：使用 my.uploadFile 上传文件，为何报错 error:12？
-
-A：上传失败导致报错 error:12 ，造成上传失败的可能原因有：
-
-1. 请求失败。请检查网络是否连接正常
-2. 上传超时，可使用 timeout 设置超时时间。
-
-## Q：使用 my.uploadFile 上传图片至后台，接收的是二进制图片，再从后台发送小程序前台对应的二进制图片，小程序前台是如何解析呢？
-
-A：上传图片是服务端通过二进制流接受图片，之后服务端只需提供对应的图片在服务器上的位置地址就可以。
-
-## Q：调用 my.uploadfile，为何报错: error: 4，无权限调用此接口？
-
-A：请求的 URL 没有配置白名单，请登录 [开放平台控制台](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。
+A：通过 success 回调中的 data 参数获取，或者在服务端自行记录错误日志。
 
 ## Q：小程序是否支持上传 excel 文件？
 
-A：小程序不再限制上传类型。可以支持上传 excel。目前 IDE 还是会对 fileType 做强校验，后期会修复，建议先用真机调试。
+A：真机上小程序并不限制上传类型。可以支持上传 excel。目前 IDE 还是会对 fileType 做强校验，未来会修复，建议先用真机调试。
 
 ## Q：my.uploadFile 支持多张图片同时上传吗？
 
-A：my.uploadFile 暂不支持多张图片同时上传，一次只能上传一张图片。可通过循环的方式实现上传多张图片的功能。
+A：my.uploadFile 一次只能上传一张图片，但是可以循环/并发调用。示例：
+```javascript
+my.chooseImage({
+  count: 3, // 最多选择 3 张图片
+  success: (res) => {
+    for (let path of res.apFilePaths) { // 循环调用 my.uploadFile
+      my.uploadFile({
+        url: 'https://...', // 请替换成有效的服务端 url
+        fileName: 'userfile',
+        filePath: path,
+        success: () => {
+          console.log(`${path} upload success`);
+        },
+        fail: () => {
+          console.log(`${path} upload fail`);
+        }
+      });
+    }
+  }
+});
+```
