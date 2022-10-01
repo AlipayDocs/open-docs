@@ -1,8 +1,6 @@
 # 简介
 
-**my.hideBackHome** 是隐藏标题栏上的 **返回首页** 按钮和右上角通用菜单中的返回首页功能的 API。
-
-当页面栈深度为 1 时，标题栏左上角默认展示 **返回首页** 按钮；当页面栈深度大于 1 时，默认展示 **返回上一页** 按钮。更多信息可查看 [怎么显示小程序标题栏中的返回首页按钮和返回上一页按钮](https://opendocs.alipay.com/mini/api/ui-navigate#Q：怎么显示小程序标题栏中的返回首页按钮和返回上一页按钮？)
+**my.hideBackHome** 隐藏标题栏左侧的 **返回首页** 按钮。
 
 ## 使用限制
 
@@ -17,10 +15,8 @@
 
 ## 示例代码
 
-### .js 示例代码
-
 ```javascript
-//.js
+// 示例一
 Page({
   onReady() {
     if (my.canIUse('hideBackHome')) {
@@ -28,18 +24,16 @@ Page({
     }
   },
 });
-```
 
-```javascript
-//.js
+// 示例二
 Page({
   onLoad() {
+    // 跳到非首页
     my.reLaunch({
-      url: '../swiper/swiper', // 在页面中添加的非首页
+      url: '../swiper/swiper', 
     });
-
+    // 5 秒后隐藏返回首页按钮
     setTimeout(() => {
-      //5秒后隐藏返回首页按钮
       my.hideBackHome();
     }, 5000);
   },
@@ -48,12 +42,18 @@ Page({
 
 # 常见问题 FAQ
 
-## Q：如何隐藏页面的回退按钮？
+## Q：导航栏左上角的 **返回首页** 按钮和 **返回上一页** 按钮何时会展示？
 
-A：暂无 API 可以直接隐藏页面的回退按钮。可以先通过 my.reLaunch 进行页面跳转，在被跳转的页面里调用 my.hideBackHome 隐藏返回首页按钮。
+A: 当页面栈深度为 1 时，标题栏左上角默认展示 **返回首页** 按钮；当页面栈深度大于 1 时，默认展示 **返回上一页** 按钮。默认首页和 tabBar 页面不展示返回首页和返回上一页按钮。
 
-## Q：怎么显示小程序标题栏中的返回首页按钮和返回上一页按钮？
-A：当页面栈深度为 1 时，标题栏左上角默认展示返回首页按钮；当页面栈深度大于 1 时，默认展示返回上一页按钮。默认首页和 tabBar 页面不展示返回首页和返回上一页按钮。**页面栈** 是小程序框架管理界面的方式，可以使用 getCurrentPages().length 查看当前页面栈页面深度。详情可查看 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 方法。
-- 当使用 my.navigateTo 跳转页面时，因为 my.navigateTo 是保留当前页面，跳转到新页面，所以此时页面栈深度加 1，展示的是返回上一页按钮.
-- 当使用 my.redirectTo 跳转页面时，因为 my.redirectTo 是关闭当前页面，跳转到新页面，所以此时页面栈深度不增加，此时是分两种情况的，若之前页面栈深度大于 1，则显示返回上一页按钮，若等于1，则显示返回首页按钮。
-- 当使用 my.reLaunch 跳转页面时，因为 my.reLaunch 是关闭所有页面，跳转到新页面，所以此时页面栈深度重置为 1，显示的是返回首页按钮。若使用 my.reLaunch 跳转回首页或者 tabBar页面，根据默认首页和 tabBar 页面不展示返回首页和返回上一页按钮的原则，默认不展示返回首页和返回上一页按钮。
+**页面栈** 是小程序框架管理界面的方式，可以使用 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages)().length 查看当前页面栈深度。
+
+小程序导航相关 API 对页面栈深度的影响如下：
+- my.navigateTo 保留当前页面，打开新页面，页面栈深度加 1；
+- my.redirectTo 关闭当前页面，打开新页面，页面栈深度不变；
+- my.navigateBack 关闭当前页面，回到前一页，页面栈减 1（传入的 delta 值大于 1 时请自行类推）；
+- my.reLaunch 关闭所有页面，打到新页面，页面栈深度重置为 1。
+
+## Q：如何隐藏页面的 **返回上一页** 按钮？
+
+A：不提供 API 直接隐藏页面的回退按钮，可通过 my.reLaunch 进行页面跳转（将页面栈深度置为 1），返回上一页按钮即不展示；如有必要，也可在跳转目标页面里调用 my.hideBackHome 以隐藏返回首页按钮。
