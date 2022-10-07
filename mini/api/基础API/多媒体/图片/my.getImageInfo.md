@@ -73,7 +73,7 @@ Object 类型，属性如下：
 | width       | Number   | 图片宽度，单位为 px。          |
 | height      | Number   | 图片高度，单位为 px。          |
 | path        | String   | 图片本地路径。                 |
-| orientation | String   | 返回图片的方向。枚举值如下：</br> <li>up：默认方向，对应 [Exif](http://sylvana.net/jpegcrop/exif_orientation.html) 中的 1。</li><li>up-mirrored：同 up，但镜像翻转，对应 Exif 中的 2。</li><li>down：旋转180度，对应 Exif 中的 3。<li>down-mirrored：同 down，但镜像翻转，对应 Exif 中的 4。</li><li>left-mirrored：同 left，但镜像翻转，对应 Exif 中的 5。</li><li>right：顺时针旋转90度，对应 Exif 中的 6。</li><li>lright-mirrored：同 right，但镜像翻转，对应 Exif 中的 7。</li><li>left：逆时针旋转90度，对应 Exif 中的 8。</li> |
-| type        | String   | 返回图片的格式。枚举值如下：</br> <li>png</li><li>jpg</li><li>gif</li><li>webp</li><li>hevc</li><li>bmp</li><li>heic</li>|
+| orientation | String   | 返回图片的方向。枚举值如下：</br><ul><li>up：默认方向，对应 [Exif](http://sylvana.net/jpegcrop/exif_orientation.html) 中的 1。</li><li>up-mirrored：同 up，但镜像翻转，对应 Exif 中的 2。</li><li>down：旋转180度，对应 Exif 中的 3。<li>down-mirrored：同 down，但镜像翻转，对应 Exif 中的 4。</li><li>left-mirrored：同 left，但镜像翻转，对应 Exif 中的 5。</li><li>right：顺时针旋转90度，对应 Exif 中的 6。</li><li>lright-mirrored：同 right，但镜像翻转，对应 Exif 中的 7。</li><li>left：逆时针旋转90度，对应 Exif 中的 8。</li></ul> |
+| type        | String   | 返回图片的格式。枚举值如下：</br><ul><li>png</li><li>jpg</li><li>gif</li><li>webp</li><li>hevc</li><li>bmp</li><li>heic</li></ul>|
 
 
