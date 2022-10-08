@@ -1,6 +1,6 @@
 # 简介
 
-**Canvas.toTempFilePath** 把当前画布指定区域的内容导出生成指定大小的图片。
+**Canvas.toTempFilePath** 把当前画布指定区域保存为指定大小的图片。
 
 ## 使用限制
 
@@ -64,10 +64,16 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-### success 返回值
+### success 回调
 
-值类型为 Object，其结构如下：
+success 会携带一个 Object 参数，包含以下属性：
 
 | **属性**     | **类型** | **描述**                        |
 | ------------ | -------- | ------------------------------- |
-| tempFilePath | String   | 生成文件的临时路径 (本地路径)。 |
+| tempFilePath | String   | 保存所得的图片文件路径。为一个[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6) |
+
+# 常见问题
+
+## Q：success 回调得到的 tempFilePath 如何使用？
+
+A：一般可通过 [my.saveImageToPhotosAlbum](https://opendocs.alipay.com/mini/api/media/image/my.saveImagetophotosalbum) 将图片保存到系统相册，或通过 [my.uploadFile] 上传到服务端。所有可接受[本地临时文件路径的接口](https://opendocs.alipay.com/mini/03dt4s#%E9%83%A8%E4%BB%BD%E6%8E%A5%E5%8F%A3%20%2F%20%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81%E7%9A%84%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E6%98%8E%E7%BB%86) 以及 FileSystemManager 都可以使用它。

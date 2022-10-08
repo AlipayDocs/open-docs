@@ -16,7 +16,7 @@
 
 ## 效果示例
 
-![|300x601](https://gw.alipayobjects.com/zos/skylark-tools/public/files/bef7c084b9e83ef9bb6ae932918e2e86.png#align=left&display=inline&height=601&margin=%5Bobject%20Object%5D&originHeight=601&originWidth=300&status=done&style=none&width=300)
+<img src="https://img.alicdn.com/imgextra/i3/O1CN01IjNIk21RhzwrrI5c3_!!6000000002144-2-tps-738-1486.png" width="300" height="601"/>
 
 # 使用
 

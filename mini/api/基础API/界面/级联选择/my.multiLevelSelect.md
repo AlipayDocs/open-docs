@@ -91,7 +91,7 @@ success 回调函数会收到一个 Object 类型的参数，其属性如下：
 
 # Bug & Tip
 
-- `bug` Android 版本对于过大的入参 list 支持有缺陷，数据超过 100K 时在部分机型上选择器不能弹出。建议通过删除额外字段等方式控制 list 数据大小
+- `tip` 在低于 10.2.90 版本的 Android 支付宝上，list 数据超过 100K 可能导致部分机型上选择器不能弹出，建议控制 list 数据大小。如需要获取客户端版本号，可使用 `my.env.clientVersion || my.getSystemInfoSync().clientVersion`
 - `bug` 如果传入的 list 为 null，会触发 success 回调（res.success 为 false）而非 fail 回调
 - `tip` 若希望选择结果里包含除了 name 以外的更多字段（如 id 等），可参考以下代码自行实现：
 

@@ -74,9 +74,10 @@ Page({
 | 照册 | PHOTO | iOS | - |
 | 地理位置 | LBS | iOS / Android | - |
 | 蓝牙 | BLUETOOTH | iOS / Android | 客户端 10.2.33、基础库 2.7.10 开始支持。<br />可通过 `my.canIUse('showAuthGuide.object.authType.BLUETOOTH')` 检测。 |
-| 麦克风 | MICROPHONE | iOS | - |
-| 通讯录 | ADDRESSBOOK | iOS | - |
-| push 通知栏权限 | NOTIFICATION | Android | - |
+| 麦克风 | MICROPHONE | iOS / Android | - |
+| 通讯录 | ADDRESSBOOK | iOS / Android | - |
+| push 通知栏权限 | NOTIFICATION | iOS / Android | - |
+| 后台保活 | BACKGROUNDER | Android | - |
 | 创建桌面快捷方式 | SHORTCUT | Android | 部分机型系统设置中没有“创建桌面快捷方式”选项，一般为默认有权限或者使用时询问用户。 |
 
 ### success 回调

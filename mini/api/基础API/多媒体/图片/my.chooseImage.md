@@ -20,44 +20,21 @@
 
 ## 示例代码
 
-### .axml 示例代码
-
-```html
-<!-- API-DEMO page/API/choose-image/choose-image.axml-->
-<view class="page">
-  <view class="page-section-btns">
-    <button type="primary" onTap="selectImage" hover-class="defaultTap">
-      选择图片
-    </button>
-  </view>
-</view>
-```
-
-### .js 示例代码
-
 ```javascript
-selectImage(){
-  my.chooseImage({
-    sourceType: ['camera','album'],
-    count: 2,
-    success: (res) => {
-      console.log(res);
-      my.previewImage({
-        current: 2,
-        // res.tempFilePaths本地临时文件列表
-        urls: res.tempFilePaths,
-      });
-    },
-    fail:(res)=>{
+my.chooseImage({
+  sourceType: ['camera', 'album'],
+  count: 2,
+  success: (res) => {
+    console.log(res);
+    my.previewImage({
+      urls: res.tempFilePaths, // 使用所选中图片的本地临时文件路径列表
+    });
+  },
+  fail: (res) => {
     // 可自行查看错误信息并进行相关处理
-      console.log(res);
-    },
-    complete:()=>{
-    // 进行一些调用结束后的操作
-      console.log('调用结束，无论成功和失败都会运行')
-    }
-  })
-}
+    console.log(res);
+  }
+})
 ```
 
 ## 入参
@@ -77,26 +54,45 @@ Object 类型，参数如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| tempFilePaths | StringArray | 图片的 [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6) 路径列表。 |
-| tempFiles | Array\<Object\> | 图片的 [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6) 列表。 |
+| tempFilePaths | Array\<String\> | 所选中图片的文件路径数组。 |
+| tempFiles | Array\<Object\> | 所选图片的文件信息数组，包含文件名和文件大小。下见文 **tempFiles** |
 
 #### Array\<Object\> tempFiles
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| path | String | [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6) 路径。 |
-| size | Number | [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6) 大小，单位为 B。 |
+| path | String | 文件路径，为 [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。 |
+| size | Number | 文件大小，单位为 Bytes。 |
 
 ## 错误码
 
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 11 | 用户取消操作。 | 这是用户正常交互流程分支，不需要特殊处理。 |
-| 2001 | 在申请授权时用户拒绝授权。 | 这是用户正常交互流程分支，不需要特殊处理。 |
-| 2002 | 在2003错误码的前提下，再次调用了 my.chooseImage API。 | 这是用户正常交互流程分支，不需要特殊处理。 |
-| 2003 | 在申请授权时，同时勾选了“拒绝”按钮和“总是保持以上选择，不再提问” 选项| 这是用户正常交互流程分支，不需要特殊处理。 |
+| 2001 | 在申请授权时用户拒绝授权。 | 下次调用时，会重新弹出授权框。 |
+| 2002 | 在之前已经发生过 2003 错误码的前提下，再次调用了 my.chooseImage API，此时会直接返回失败。 | 引导用户通过 右上角胶囊按钮 -> 设置 授权相册。 |
+| 2003 | 在申请授权时，同时勾选了“拒绝”按钮和“总是保持以上选择，不再提问” 选项 | 引导用户通过 右上角胶囊按钮 -> -> 设置 授权相册。 |
 
 # 常见问题 FAQ
+
+## Q：通过 my.chooseImage 选中的文件如何转换为 base64？
+
+A：可以使用 FileSystemManager.readFile 先读取文件内容，然后调用 my.arrayBufferToBase64。示例如下：
+```javascript
+my.chooseImage({
+  success: res => {
+    const fs = my.getFileSystemManager();
+    fs.readFile({
+      filePath: `${res.apFilePaths[0]}`,
+      // readFile 不传入 encodding 参数，则以 ArrayBuffer 方式读取
+      success:({ data }) => {
+        const base64 = my.arrayBufferToBase64(data);
+        // 
+      },
+    });
+  }
+});
+```
 
 ## Q：如果系统权限未开启，接口调用报错，如何引导开启系统权限？
 
