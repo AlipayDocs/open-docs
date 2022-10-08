@@ -30,4 +30,4 @@ Object 类型，参数如下：
 
 | **参数**  | **类型** | **必填** | **描述**               |
 | --------- | -------- | -------- | ---------------------- |
-| partnerId | String   | 是       | 商户编号，即商户 PID。<br> PID 即 Partner ID（合作者身份 ID），是商家与支付宝签约后所获得的支付宝商家唯一识别码，由以 2088 开头的 16 位数字组成。<br>PID 的获取可查看文档：[获取PID](https://opendocs.alipay.com/common/02ncut)|
+| partnerId | String   | 是       | 商户编号，即商户 PID。<br> PID 即 Partner ID，是商家与支付宝签约后所获得的唯一识别码，由 16 位数字组成，以 2088 开头。<br>PID 的获取可查看文档：[获取PID](https://opendocs.alipay.com/common/02ncut)|
