@@ -24,16 +24,7 @@ Page({
   showLoading() {
     my.showLoading({
       content: '加载中...',
-      delay: 1000,
-      success: (res) => {
-        console.log('调用成功',res)
-      },
-      fail: (error) => {
-        console.log('调用失败',error)
-      },
-      complete: () => {
-        console.log('无论加载成功还是失败都会调用')
-      }
+      delay: 1000
     });
     setTimeout(() => {
       my.hideLoading();
