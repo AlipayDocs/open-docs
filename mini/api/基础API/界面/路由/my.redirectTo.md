@@ -4,12 +4,12 @@
 
 当前页面的“历史记录”会被抹除，即不能使用 my.navigateBack() 返回，类比浏览器中的 location.replace()。
 
-**注意：** 请勿使用 my.redirectTo() 跳转 app.json 里 tarBar.items 中列举的页面（后文称 **tabBar 页面**），否则会有非预期的表现（底部 tab bar 不显示、左上角 返回首页 按钮不显示）。如需跳转 tabBar 页面，请使用 [my.switchTab()](https://opendocs.alipay.com/mini/api/ui-tabbar)。
+**注意：** 请勿使用 my.redirectTo() 跳转 app.json 里 tarBar.items 中列举的页面（后文称 **tabBar 页面**），否则会有非预期的表现（底部 tab bar 不显示、左上角 **返回首页** 按钮不显示）。如需跳转 tabBar 页面，请使用 [my.switchTab()](https://opendocs.alipay.com/mini/api/ui-tabbar)。
 
 ## 使用限制
 
 - 在小程序插件内调用此 API 只能跳转到此插件的页面，不能跳转到宿主页面或其他插件页面。
-- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 此 API 支持支付宝个人小程序、支付宝企业小程序使用。
 
 # 接口调用
 
