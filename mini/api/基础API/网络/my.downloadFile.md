@@ -25,6 +25,8 @@
 ```javascript
 my.downloadFile({
   url: 'https://img.alicdn.com/tfs/TB1x669SXXXXXbdaFXXXXXXXXXX-520-280.jpg',
+  //可指定文件下载后存储的路径。注：本地用户路径可定义目录和文件名，本地临时和本地缓存路径只能通过特定接口获取。
+  // filePath: `${my.env.USER_DATA_PATH}/exemple.jpg`, 
   success(res) {
     // 基础库 2.7.23 开始支持返回 tempFilePath
     if (my.canIUse('downloadFile.return.tempFilePath')) {
@@ -53,7 +55,7 @@ Object 类型，属性如下：
 | --- | --- | --- | --- |
 | url | String | 是 | 下载文件地址。除在线 URL 以外，也接受包含图片 base64 数据的 [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) |
 | header | Object | 否 | HTTP 请求 Header。 |
-| filePath | string | 否 | 指定文件下载后存储的路径 (本地路径) |
+|。filePath | string | 否 | 指定文件下载后存储的路径 (本地路径) |
 | timeout | Number | 否 | 超时时间，默认值 60000，无最大值限制，单位 ms。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
