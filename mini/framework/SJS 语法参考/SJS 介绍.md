@@ -39,7 +39,7 @@ hello alipay
 hello taobao
 ```
 
-# 注意
+# 注意事项
 
 - **sjs 中只支持使用 import、export 管理模块依赖。**
 - sjs 只能定义在 `.sjs` 文件中。然后在 axml 中使用 `<import-sjs>` 标签引入。
