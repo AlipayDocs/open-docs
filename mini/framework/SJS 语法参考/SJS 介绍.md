@@ -24,7 +24,7 @@ SJS 是 JavaScript 语言的子集，并不等同于 JavaScript。具体可参�
 ```javascript
 // pages/index/foo.sjs
 
-const message = 'hello alipay';
+const message = 'hello sjs';
 const format = num => num.toFixed(2);
 const five = 5;
 export default {
@@ -47,7 +47,7 @@ export const y = 4 + five;
 
 Page({
   data: {
-    message: 'hello taobao',
+    message: 'hello javascript',
     value: 3.14159,
   },
 });
@@ -56,12 +56,12 @@ Page({
 ```html
 <!-- pages/index/index.axml -->
 
-<import-sjs name="m1" from="./foo.sjs" />
+<import-sjs from="./foo.sjs" name="m" />
 <import-sjs from="./bar.sjs" name="{x, y: z}" />
 
 <view>js message: {{message}}</view>
-<view>sjs message: {{m1.message}}</view>
-<view>formatted value: {{m1.format(value)}}</view>
+<view>sjs message: {{m.message}}</view>
+<view>formatted value: {{m.format(value)}}</view>
 
 <view>x: {{x}}</view>
 <view>z: {{z}}</view>
@@ -69,8 +69,8 @@ Page({
 
 **页面渲染结果：**  
 ```text
-js message: hello taobao
-sjs message: hello alipay
+js message: hello javascript
+sjs message: hello sjs
 formatted value: 3.14
 x: 3
 z: 9
