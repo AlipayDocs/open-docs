@@ -2,7 +2,7 @@
 
 **my.openDocument** 是在新开页面预览文件的 API。暂时只支持预览 PDF 文件。
 
-可以设置入参 showMenu 为 true ，来展示预览页面右上角菜单按钮，菜单按钮中允许将文件分享到其他应用或保存到本机。
+设置入参 showMenu 为 true 可显示预览页面右上角菜单按钮（三个点），菜单按钮中允许将文件分享到其他应用或保存到本机。
 
 ## 使用限制
 
@@ -88,7 +88,6 @@ Object 类型，属性如下：
 - iOS: 10.2.60 之前的版本不支持[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)。
 - Android: 10.2.60 之前的版本不支持[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。
 - iOS: 通过 [my.downloadFile](https://opendocs.alipay.com/mini/api/xr054r) 获取的本地临时文件路径可能因为下载的文件头信息设置不规范进而打开失败。可通过将本地临时文件保存为本地用户文件（指定`filePath`值带`pdf`后缀）来规避，例如：
-
 ```javascript
 // 注：如何接入文档管理器（my.getFileSystemManager）请查看文档 https://opendocs.alipay.com/mini/introduce/022rw2
 const fs = my.getFileSystemManager();
