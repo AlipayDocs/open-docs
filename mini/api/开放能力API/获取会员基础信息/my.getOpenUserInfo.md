@@ -136,7 +136,7 @@ A：
 
 ## Q：调用 my.getOpenUserInfo，报错 "ISV 权限不足"，如何处理？
 
-A：“获取会员信息”功能包已下架，若之前创建的应用已添加了“获取会员信息”的功能包则能正常调用接口。新创建的应用需在控制台绑定 [获取会员基础信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000054282) 产品，方可调用此接口。
+A：需在控制台绑定 [获取会员基础信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000054282) 产品，方可调用此接口。
 
 ## Q：如何获取除用户头像、昵称信息以外的用户信息？
 
