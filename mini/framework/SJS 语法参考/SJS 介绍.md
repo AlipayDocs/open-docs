@@ -11,12 +11,12 @@ SJS 是 JavaScript 语言的子集，并不等同于 JavaScript。具体可参�
 - [基础类库](https://opendocs.alipay.com/mini/framework/basic-library)
 
 **模块管理**  
-- SJS 文件的扩展名必须为 `.sjs`，每个 .sjs 文件为一个模块，使用 export 导出变量和函数，使用 import 引入依赖的其他 sjs 模块（请勿省略扩展名）。
-- SJS 也可引用 npm 包，但只能引用 npm 包中的 .sjs 文件。
+- SJS 文件的扩展名必须为 `.sjs`，每个 .sjs 文件为一个模块，使用 export 导出变量和函数，使用 import 引入依赖的其他 SJS 模块（请勿省略文件扩展名）。
+- SJS 也可引用 npm 包，但只能引用其中的 .sjs 文件。
 
 **运行环境**  
-- SJS 运行在小程序渲染层，与小程序的 JavaScript 运行环境（逻辑层）隔离，因而不能调用 js 文件中定义的函数，也不能调用小程序提供的 API。
-- SJS 中定义的函函数可用于响应基础组件的事件，避免逻辑层和渲染层的频繁通信，但有一定的限制，详见 [SJS 响应事件](https://opendocs.alipay.com/mini/01og7z)。
+- SJS 运行在小程序渲染层，与小程序的 JavaScript 运行环境（逻辑层）隔离，因而不能调用 JS 文件中定义的函数，也不能调用小程序提供的 API。
+- SJS 中定义的函数可用于响应基础组件的事件以避免逻辑层和渲染层的频繁通信，但有一定的限制，详见 [SJS 响应事件](https://opendocs.alipay.com/mini/01og7z)。
 
 
 ## 使用示例
