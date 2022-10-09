@@ -4,7 +4,7 @@
 
 自 2022-06-13 [用户信息相关接口调整](https://forum.alipay.com/mini-app/post/73101020) 以后，此接口仅返回头像地址和昵称。
 
-使用此 API 需在开放平台绑定 [获取会员基础信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000054282) 产品，未绑定 **获取会员基础信息** 产品直接调用此 API 会返回
+使用此 API 需在开放平台控制台绑定 [获取会员基础信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000054282) 产品，未绑定 **获取会员基础信息** 产品直接调用此 API 会返回
 
 ```json
 {
@@ -136,7 +136,7 @@ A：
 
 ## Q：调用 my.getOpenUserInfo，报错 "ISV 权限不足"，如何处理？
 
-A：需在开放平台绑定 [获取会员基础信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000054282) 产品，方可调用此接口。
+A：需在开放平台控制台绑定 [获取会员基础信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000054282) 产品，方可调用此接口。
 
 ## Q：如何获取除用户头像、昵称信息以外的用户信息？
 
