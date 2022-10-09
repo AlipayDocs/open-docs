@@ -1,6 +1,8 @@
-SJS（safe/subset javascript）是小程序一套自定义脚本语言，可以在 AXML 中使用其构建页面结构。 SJS 是 JavaScript 语言的子集，与 JavaScript 是不同的语言，其语法并不与 JavaScript 一致，请勿将其等同于 JavaScript。
+SJS（safe/subset javascript）是小程序一套自定义脚本语言，结合 `AXML` 可以构建出页面结构。
 
-# 使用方式
+SJS 是 JavaScript 语言的子集，与 JavaScript 是不同的语言，其语法并不与 JavaScript 一致，请勿将其等同于 JavaScript。
+
+# 简单示例
 
 在 .sjs 文件中定义 SJS：
 
@@ -32,12 +34,12 @@ Page({
 
 页面输出：
 
-```javascript
+```text
 hello alipay
 hello taobao
 ```
 
-**注意**：
+# 注意
 
 - **sjs 中只支持使用 import、export 管理模块依赖。**
 - sjs 只能定义在 `.sjs` 文件中。然后在 axml 中使用 `<import-sjs>` 标签引入。
