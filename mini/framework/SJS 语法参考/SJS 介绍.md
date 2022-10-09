@@ -2,7 +2,7 @@ SJS（Safe/Subset JavaScript）是小程序定义的一套脚本语言，由它�
 
 ## 语言概述
 
-**语法特征**  
+**语法定义**  
 SJS 是 JavaScript 语言的子集，并不等同于 JavaScript。具体可参考：  
 - [变量](https://opendocs.alipay.com/mini/framework/sjs-variable)
 - [数据类型](https://opendocs.alipay.com/mini/framework/datatype)
