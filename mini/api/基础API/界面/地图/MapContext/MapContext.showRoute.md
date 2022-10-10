@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.showRoute** 用于默认规划步行路线，只能显示一条。
+**MapContext.showRoute** 需要开发者提供起点和终点的经纬度，系统会在两点间选取一条规划路线展示在地图上。
 
 支付宝客户端 10.1.50 及以上版本支持规划步行、公交、骑行和驾车四种路线。
 
@@ -22,23 +22,10 @@
 <map
   id="map"
   customMapStyle="light"
-  longitude="{{longitude}}"
-  latitude="{{latitude}}"
-  scale="{{scale}}"
-  controls="{{controls}}"
-  onControlTap="controltap"
-  markers="{{markers}}"
-  onMarkerTap="markertap"
-  polyline="{{polyline}}"
-  polygon="{{polygon}}"
-  circles="{{circles}}"
-  onRegionChange="regionchange"
-  onTap="tap"
   onCalloutTap="callouttap"
   show-location
   style="width: 100%; height: 200px;"
   include-points="{{includePoints}}"
-  ground-overlays="{{ground-overlays}}"
 >
 </map>
 ```
@@ -68,7 +55,7 @@ Page({
       city: 'hangzhou', // 公交模式下必填
       destinationCity: 'hangzhou', // 公交跨城模式下必填
       success: function (res) {
-        console.log(res, 2323);
+        console.log(res, 'showRoute 执行结果：' + res.success  + '.总路程:' + res.distance + '米,需要时间' + res.duration + '秒');
       },
     });
   },
@@ -148,5 +135,5 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | **属性** | **类型** | **描述**         |
 | -------- | -------- | ---------------- |
 | success  | Boolean  | 是否成功。       |
-| distance | Number   | 距离。           |
+| distance | Number   | 距离，单位为米。 |
 | duration | Number   | 时间，单位为秒。 |
