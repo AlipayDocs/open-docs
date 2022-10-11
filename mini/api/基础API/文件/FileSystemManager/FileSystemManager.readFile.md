@@ -25,12 +25,12 @@
 
 ### .js 示例代码
 
-确保项目根目录下的 /resource/test.txt 文件存在，则可以通过以下的方式读取该文件：
+确保项目根目录下的 resource/test.txt 文件存在，则可以通过以下的方式读取该文件：
 
 ```javascript
 let fs = my.getFileSystemManager();
 fs.readFile({
-  filePath: '/resource/test.txt,
+  filePath: 'resource/test.txt,
   encoding: 'utf8',
   success: res => {
     console.log(res);
