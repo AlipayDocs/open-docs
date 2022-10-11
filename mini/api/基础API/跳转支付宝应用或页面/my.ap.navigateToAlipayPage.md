@@ -154,9 +154,10 @@ Object 类型，属性如下：
 ## 错误码
 
 fail 回调的参数为一个 Object，其 error 属性为错误码
-| **错误码** | **说明** | **解决方案** |
+| **错误码** | **错误消息** | **解决方案** |
 | --- | --- | --- |
-| 2 | 参数错误，打开失败。<br><br>注：旧版本（10.2.70 以下）客户端界面上也会有相应 toast 提示。 | <ul><li>如使用 appCode，请检查拼写是否有误。</li><li>如使用 path，请确保传入的参数为 encodeURIComponent('https://render.alipay.com/p/*') </li></ul> |
+| 2 | 跳转失败 (iOS） / 指定参数不可跳转，请检查或申请权限（Android） | <ul><li>如使用 appCode，请检查拼写是否有误。</li><li>如使用 path，请确保传入的参数为 encodeURIComponent('https://render.alipay.com/p/*')。 </li></ul> |
+| 60001 | 处理异常，请稍后再试。 | API 内部异常，请稍后重试。 |
 
 # 常见问题
 
@@ -175,7 +176,6 @@ A：是正常的，属于生活号文章页本身特有的加载流程。
 ## Q：使用 my.ap.navigateToAlipayPage 是否可以跳转基金页面？
 
 A：暂不支持跳转基金页面。
-
 
 关于各场景下小程序跳转的实现方法及限制的更多信息，可查阅 [小程序跳转 FAQ](https://opendocs.alipay.com/mini/0090ty)。
 
