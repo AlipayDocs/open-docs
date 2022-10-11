@@ -53,7 +53,7 @@ Object 类型，参数如下：
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | data | string/ArrayBuffer | 文件内容。 |
-| dataType | String | 如果入参不传 encoding，默认输出 "ArrayBuffer"。如果传了 encoding，则不会输出 dataType 这个字段。 |
+| dataType | String | 输出的数据类型。如果入参不传 encoding，默认输出 "ArrayBuffer"。如果传了 encoding，则输出 "string"。 |
 
 ## 错误码
 
