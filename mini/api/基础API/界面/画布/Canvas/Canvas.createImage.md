@@ -32,11 +32,10 @@ Page({
         const canvas = res[0].node;
         const ctx = canvas.getContext('2d');
         const img = canvas.createImage();
-        img.src =
-          'https://img.alicdn.com/tfs/TB1GvVMj2BNTKJjy0FdXXcPpVXa-520-280.jpg';
         img.onload = () => {
           ctx.drawImage(img, 10, 10, 100, 100);
         };
+        img.src = 'https://img.alicdn.com/tfs/TB1GvVMj2BNTKJjy0FdXXcPpVXa-520-280.jpg';
       });
   },
 });
