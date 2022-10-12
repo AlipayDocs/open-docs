@@ -56,12 +56,12 @@ this.mapCtx.smoothMoveMarker({
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| markerId | Number | 是 | 执行动画的 markerId，确保此时 marker 已经在地图上。 |
-| markerData | Object | 否 | 对未在地图上的 marker 做动画，传入 marker 对象。 |
+| markerId | Number | 是 | 执行动画的 marker 的 id，确保此时 marker 已经在地图上。 |
+| markerData | Object | 否 | 传入 marker 对象。 只有 markerId 指向 markerData 中的 id 时才会生效  |
 | points | Array | 是 | 动画路线的经纬度集合。 |
 | duration | Number | 否 | 动画执行时间，默认为 5000 毫秒（ms）。 |
-| targetDistances | Array | 否 | 指定需要 callback 的目标距离数组。 |
-| action | String | 否 | 指定操作动画。<ul><li>`action:'stop'` 表示提前结束动画。</li></ul> |
+| targetDistances | Array | 否 | 指定需要 onMarkerMove 回调的目标距离数组。 |
+| action | String | 否 | 指定操作动画。 <ul><li>`action:'start'` 默认值。表示执行动画。</li></ul> <ul><li>`action:'stop'` 表示不执行动画，使该 api 功能失效。</li></ul> |
 
 ## 回调事件
 
