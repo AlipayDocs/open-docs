@@ -25,3 +25,4 @@ const base64 = my.arrayBufferToBase64(arrayBuffer);
 ### 返回值
 
 类型为 `String`。
+kgdgdksdg震旦agjk；蓝球；多少啊地
