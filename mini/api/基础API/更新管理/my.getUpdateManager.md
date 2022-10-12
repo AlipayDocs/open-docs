@@ -5,7 +5,7 @@
 ## 使用限制
 
 - 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- 此 API 暂仅支持企业支付宝小程序使用。
+- 此 API 支持支付宝个人小程序、支付宝企业小程序使用。
 
 # 接口调用
 
