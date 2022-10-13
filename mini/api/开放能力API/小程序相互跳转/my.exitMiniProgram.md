@@ -6,7 +6,7 @@
 
 - 基础库 [2.7.15](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，低版本需做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 不支持在插件内调用。
-- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 此 API 支持支付宝个人小程序、支付宝企业小程序使用。
 
 # 接口调用
 
