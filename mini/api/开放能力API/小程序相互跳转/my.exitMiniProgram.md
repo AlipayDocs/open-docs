@@ -31,7 +31,7 @@ Page({
     });
   },
   exitMiniProgram(e) {
-    // 如果成功退出小程序，会直接杀掉小程序进程，一般情况已经来不及执行success/complete回调。
+    // 如果成功退出小程序，会直接结束小程序进程，一般情况已经来不及执行success/complete回调。
     my.exitMiniProgram();
   },
 });
