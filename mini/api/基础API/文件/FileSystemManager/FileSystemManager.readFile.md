@@ -1,6 +1,6 @@
 # 简介
 
-**FileSystemManager.readFile** 用于读取 [本地文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6) 内容。
+**FileSystemManager.readFile** 用于读取 [本地文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6) 和 [代码包文件](https://opendocs.alipay.com/mini/03dt4s#%E4%BB%A3%E7%A0%81%E5%8C%85%E6%96%87%E4%BB%B6) 内容。
 
 ## 使用限制
 
