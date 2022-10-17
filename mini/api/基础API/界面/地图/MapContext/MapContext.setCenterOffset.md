@@ -1,6 +1,12 @@
 # 简介
 
-**MapContext.setCenterOffset** 用于设置地图中心点偏移。向后向下为增长，屏幕比例范围为 (0~1)，默认偏移为 [0.5, 0.5]。
+**MapContext.setCenterOffset** 用于设置地图中心偏移。屏幕比例范围为 (0~1)，默认偏移为 [0.5, 0.5]（ 屏幕显示范围的中心位置 ）。
+
+例如：
+offset:[ 0,0 ]时，中心点位于屏幕左上角, offset:[ 1,0 ]时，中心点位于屏幕右上角。
+offset:[ 0,1 ]时，中心点位于屏幕左下角, offset:[ 1,1 ]时，中心点位于屏幕右下角。
+
+![|399x225](https://img.alicdn.com/imgextra/i1/O1CN01pZ2gyy1qw4VzgCPEn_!!6000000005559-0-tps-588-780.jpg)
 
 ## 使用限制
 
@@ -18,7 +24,7 @@
 // .js
 this.mapCtx = my.createMapContext('map');
 this.mapCtx.setCenterOffset({
-  offset: [0.3, 0.6],
+  offset: [0.5, 0.6],//地图中心向屏幕下方移动，横向不做移动
 });
 ```
 
@@ -26,4 +32,23 @@ this.mapCtx.setCenterOffset({
 
 | **参数** | **类型**        | **必填** | **描述**             |
 | -------- | --------------- | -------- | -------------------- |
-| offset   | `Array<Number>` | 是       | 偏移量。为两位数组。 |
+| offset   | `Array<Number>` | 是       | 偏移量。为两位数组。第一项控制地图中心在屏幕横向 X 轴的位置，第二项控制地图中心在屏幕纵向 Y 轴的位置 |
+
+
+## 错误码
+
+<table>
+  <tr>
+      <th><b>错误码</b></th>
+      <th><b>说明</b></th>
+      <th><b>解决方案</b></th>
+  </tr>
+  <tr>
+      <td >2</td>
+      <td>接口参数无效</td>
+      <td>
+          offset 数组数值目前只支持 0~1
+      </td>
+  </tr>
+  
+</table>
