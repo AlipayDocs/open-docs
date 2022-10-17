@@ -1,6 +1,6 @@
 # 简介
 
-**my.openDocument** 是在新开页面预览文件的 API。暂时只支持预览 PDF 文件。
+**my.openDocument** 是在新开页面预览文件的 API。
 
 设置入参 showMenu 为 true 可显示预览页面右上角菜单按钮（三个点），菜单按钮中允许将文件分享到其他应用或保存到本机。
 
