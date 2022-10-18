@@ -28,7 +28,7 @@ console.log(result);
 FileSystemManager.writeFileSync(string filePath, string|ArrayBuffer data, string encoding)
 ### String filePath
 
-要写入的文件路径 ([本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6) 路径)。
+要写入的文件路径 (可以为 [本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6) 路径)。
 
 ### String|ArrayBuffer data
 
