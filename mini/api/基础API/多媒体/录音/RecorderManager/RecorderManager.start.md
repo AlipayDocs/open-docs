@@ -15,9 +15,7 @@
 
 ```javascript
 let recorderManager = my.getRecorderManager();
-recorderManager.start({
-  duration: 60000,
-});
+recorderManager.start();
 ```
 
 ## 入参
