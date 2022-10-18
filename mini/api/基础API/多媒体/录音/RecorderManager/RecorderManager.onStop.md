@@ -15,9 +15,19 @@
 
 ```javascript
 let recorderManager = my.getRecorderManager();
+recorderManager.onStart(res => {
+ console.log('开始录音');
+})
 recorderManager.onStop(res => {
+  console.log('停止录音');
   console.log(res.tempFilePath);
 });
+
+recorderManager.start();
+setTimeout(() => {
+  recorderManager.stop();
+}, 5000)
+
 ```
 
 ## 入参
