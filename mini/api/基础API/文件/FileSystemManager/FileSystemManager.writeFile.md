@@ -1,6 +1,6 @@
 # 简介
 
-**FileSystemManager.writeFile** 用于对 [本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6) 中异步写入文件。
+**FileSystemManager.writeFile** 用于对 [本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6) 异步写入。
 
 ## 使用限制
 
