@@ -109,10 +109,23 @@ A：可以取 encoding 值为 utf8 读取文件，如：
 ```javascript
   let fs = my.getFileSystemManager();
     fs.readFile({
-      filePath: 'resource/test.json',// 代码包文件，也可以是本地文件。
+      filePath: 'resource/test.json',// 代码包文件。
       encoding: 'utf8',
       complete: res => {
         console.log(JSON.parse(res.data));
+      },
+    });
+```
+## Q：音频文件、图片文件 怎么读取？
+A：通常以 base64 读取，如：
+读取`.mp3`的音频文件
+```javascript
+  let fs = my.getFileSystemManager();
+    fs.readFile({
+      filePath: 'resource/test.mp3',// 代码包文件。
+      encoding: 'base64',
+      complete: res => {
+        console.log(res.data);// 获得 base64 编码的音频内容。
       },
     });
 ```
