@@ -22,7 +22,7 @@ recorderManager.onResume(res => {
   console.log('继续录音');
 });
 recorderManager.start({
-  duration: 600000,
+  duration: 180000,
 });
 recorderManager.pause();
 setTimeout(() => {
