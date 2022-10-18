@@ -19,8 +19,7 @@ recorderManager.onStart(res => {
  console.log('开始录音');
 })
 recorderManager.onStop(res => {
-  console.log('停止录音');
-  console.log(res.tempFilePath);
+  console.log('停止录音', res.tempFilePath);
 });
 
 recorderManager.start();
