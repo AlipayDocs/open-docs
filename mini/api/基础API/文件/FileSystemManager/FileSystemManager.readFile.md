@@ -102,3 +102,17 @@ Object 类型，参数如下：
 | 10022      | 文件/目录不存在。      |
 | 10024      | 指定的路径没有读权限。 |
 | 3          | 文件读取未知错误。     |
+
+# 常见问题
+## Q：如何读取 json 文件？
+A：可以取 encoding 值为 utf8 读取文件，如：
+```javascript
+  let fs = my.getFileSystemManager();
+    fs.readFile({
+      filePath: 'resource/test.json',// 代码包文件，也可以是本地文件。
+      encoding: 'utf8',
+      complete: res => {
+        console.log(JSON.parse(res.data));
+      },
+    });
+```
