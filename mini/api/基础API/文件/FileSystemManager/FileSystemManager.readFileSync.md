@@ -6,7 +6,6 @@
 
 - 基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
 - 读取小程序包内容前需在 mini.project.json 中配置可读取的小程序文件内容。
-- 填写地址为文件的绝对路径，\* 代表任意的名称，需要开发者自行填写。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 - 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 
@@ -16,7 +15,7 @@
 
 ### .json 示例代码
 
-在 mini.project.json 中配置要读取的小程序文件内容：
+读取小程序`代码包文件`时，需要在 mini.project.json 中配置文件地址（填写地址为文件的绝对路径，resource为根目录下文件夹，\* 代表任意的名称，需要开发者自行填写）：
 
 ```json
 {
@@ -26,6 +25,13 @@
 
 ### .js 示例代码
 
+读取代码包文件
+```javascript
+const fs = my.getFileSystemManager();
+const res = fs.readFileSync(`resource/*.txt`, 'utf8');
+console.log(res);
+```
+读取用户本地文件
 ```javascript
 const fs = my.getFileSystemManager();
 const res = fs.readFileSync(`${my.env.USER_DATA_PATH}/test.txt`, 'utf8');
@@ -43,6 +49,7 @@ console.log(res);
 指定读取文件的字符编码，如果不传 encoding，则以 ArrayBuffer 格式读取文件的二进制内容。
 
 可选值：<ul><li>ascii</li><li>base64</li><li>hex</li><li>binary</li><li>ucs2/ucs-2/utf16le/utf-16le</li><li>utf-8/utf8</li><li>latin1</li></ul>
+更多说明参考 [FileSystemManager.readFile](https://opendocs.alipay.com/mini/api/0226oj#encoding)
 
 ## 返回值
 
