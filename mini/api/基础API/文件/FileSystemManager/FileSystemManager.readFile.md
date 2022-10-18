@@ -14,7 +14,7 @@
 
 ### .json 示例代码
 
-读取小程序`代码包文件`时在 mini.project.json 中配置的文件地址（填写地址为文件的绝对路径，resource为根目录下文件夹，\* 代表任意的名称，需要开发者自行填写）：
+读取小程序`代码包文件`时，在 mini.project.json 中配置的文件地址（填写地址为文件的绝对路径，resource为根目录下文件夹，\* 代表任意的名称，需要开发者自行填写）：
 
 ```json
 {
@@ -23,7 +23,18 @@
 ```
 
 ### .js 示例代码
-
+读取代码包文件
+```javascript
+let fs = my.getFileSystemManager();
+fs.readFile({
+  filePath: `resource/*.txt`,
+  encoding: 'utf8',
+  success: res => {
+    console.log(res);
+  },
+});
+```
+读取用户本地文件
 ```javascript
 let fs = my.getFileSystemManager();
 fs.readFile({
