@@ -1,9 +1,9 @@
 # 简介
 
-**MapContext.smoothMovePolyline** 是轨迹动画。
+**MapContext.smoothMovePolyline** 是在地图上绘制轨迹动画的接口。
 
 ## 使用限制
-
+- ios 上暂不支持 colorList 功能， iconPath 引用图片宽高需要为 2 的幂次。
 - 基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.90 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
@@ -48,7 +48,7 @@ const aniPoints = [
 this.mapCtx.smoothMovePolyline({
   polylineId: 0,
   points: aniPoints,
-  color: '#FF0000DD',
+  color: '#FF000DD',
   width: 10,
   dottedLine: false,
   iconPath: '/image/map_alr.png',
@@ -63,18 +63,28 @@ this.mapCtx.smoothMovePolyline({
 | polylineId | Number | 是 | 执行动画的路线 ID。 |
 | points | Array | 是 | 动画路线的经纬度集合。 |
 | duration | Number | 否 | 动画执行时间，默认为 5000 毫秒（ms）。 |
-| color | String | 否 | 轨迹动画的颜色。 |
+| color | String | 否 | 轨迹动画的颜色。默认透明色。 |
 | width | Number | 否 | 路线宽度。 |
 | dottedLine | Boolean | 否 | 是否虚线。 |
 | iconPath | String | 否 | 线的纹理地址。 |
-| iconWidth | Number | 否 | 线的纹理宽度。 |
-| zIndex | Number | 否 | 线的 Z 轴坐标。 |
-| iconPath | String | 否 | 纹理的资源地址。 |
-| colorList | Array | 否 | 彩虹线。 |
-| action | String | 否 | 指定操作动画。<ul><li>`action:'stop'` 表示提前结束动画。</li></ul> |
+| iconWidth | Number | 否 | 线的纹理宽度。设置 iconPath 后生效 |
+| zIndex | Number | 否 | 动画的层级，zIndex 数值高的动画覆盖在低的上面 |
+| colorList | Array | 否 | 彩虹线。如：`colorList:['#ff0000']` |
+| action | String | 否 | 指定操作动画。<ul><li>`action:'stop'` 表示不执行动画。</li><li>`action:'start'` 默认值，表示执行动画。</li></ul> |
 
 ## 回调事件
 
 | **回调事件**      | **类型** | **描述**             |
 | ----------------- | -------- | -------------------- |
 | onPolylineMoveEnd | Function | 动画结束的回调事件。 |
+
+
+# 常见问题 FAQ
+
+## Q：无法使用 clearRoute 清除轨迹动画？
+
+A：clearRoute 只能用于清除地图上的导航路线，无法清除动画。请使用 MapContext.updateComponents 清除轨迹动画 示例如下：
+```javascript
+ this.mapCtx = my.createMapContext('map');
+ this.mapCtx.updateComponents({ polyline:[] })
+```
