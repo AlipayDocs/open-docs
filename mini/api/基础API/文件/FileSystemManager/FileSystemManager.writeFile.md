@@ -77,4 +77,4 @@ Object 类型，参数如下：
 
 # 常见问题
 ## Q：FileSystemManager.writeFile 写入成功后的文件如何查看？
-A：写入成功后，文件路径为 [本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)（不是用户设备中的存储文件），可以通过 [FileSystemManager.readdir](https://opendocs.alipay.com/mini/api/0226oi) 查看已保存的本地用户文件目录，通过 [FileSystemManager.rmdir](https://opendocs.alipay.com/mini/api/0229px) 删除已保存的本地用户文件
+A：写入成功后，文件路径为 [本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)（不是用户设备中的存储文件），可以通过 [FileSystemManager.readdir](https://opendocs.alipay.com/mini/api/0226oi) 查看已保存的本地用户文件目录。
