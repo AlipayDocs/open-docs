@@ -1,6 +1,6 @@
 # 简介
 
-**FileSystemManager.getSavedFileList** 获取该小程序下已保存的本地缓存文件列表。
+**FileSystemManager.getSavedFileList** 获取该小程序下已保存的 [本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6) 列表。
 
 ## 使用限制
 
@@ -44,6 +44,6 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **说明** |
 | --- | --- | --- |
-| filePath | String | 本地路径。 |
-| size | Number | 本地文件大小，以字节为单位。 |
+| filePath | String | [本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6) 路径。 |
+| size | Number | 本地文件大小，以字节（B）为单位。 |
 | createTime | Number | 文件保存时的时间戳，从 1970/01/01 08:00:00 到当前时间的秒数。 |
