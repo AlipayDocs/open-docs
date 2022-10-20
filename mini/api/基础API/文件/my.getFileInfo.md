@@ -2,7 +2,7 @@
 
 # 简介
 
-**my.getFileInfo** 是获取文件信息的 API。
+**my.getFileInfo** 是获取 [本地文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6) 信息的 API。
 
 ## 使用限制
 
@@ -26,7 +26,7 @@
 ```javascript
 // .js
 my.getFileInfo({
-  apFilePath: 'https://resource/apml953bb093ebd2834530196f50a4413a87.video',
+  apFilePath: `${my.env.USER_DATA_PATH}/test.txt`,
   digestAlgorithm: 'sha1',
   success: res => {
     console.log(JSON.stringify(res));
@@ -40,7 +40,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| apFilePath | String | 是 | 文件路径（本地路径）。 |
+| apFilePath | String | 是 | 文件路径（[本地路径](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6)）。 |
 | digestAlgorithm | String | 否 | 摘要算法，支持 md5 和 sha1，默认为 md5。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
