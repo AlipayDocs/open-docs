@@ -2,7 +2,7 @@
 
 **MapContext.calculateDistance** 计算由一系列坐标点所定义的路径的长度，并可计算出该路径上距起始点指定距离的点的坐标。
 
-例如：入参 { points: [A, B, C]，targetDistances: [d1, d2] }，success 回调的参数 { distance, targetPoints: [X, Y] } <br>用 dist(M, N) 代表坐标 M 到 N 的直线距离，则有 distance == dist(A, B) + dist(B, C)<br>若 0 <= d1 < dist(A, B)，则 X 在线段 AB 上（X.targetLineIndex == 0），且 dist(A, X) == d1<br>若 0 <= d2 - dist(A, B) < dist(B, C)，则 Y 在线段 BC 上（Y.targetLineIndex == 1），且 dist(A, B) + dist(B, Y) == d2
+例如：入参 { points: [A, B, C]，targetDistances: [d1, d2] }<br>success 回调的参数 { distance: distance, targetPoints: [X, Y] } <br><br>ABC 三点确定由两段直线（AB， BC）组成的路径，distance 等于路径的总长（单位米）<br>沿着这条路径距离 A 点 d1 长度的即为目标点 X ，d2 长度的就是目标点 Y。
 
 ## 使用限制
 
@@ -61,14 +61,14 @@ this.mapCtx.calculateDistance({
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | points | Array | 是 | 顺序排列的路径节点数组，第一个点为起点。<br>每个节点形如 { latitude, longitude } |
-| exportTotalDistance | Boolean | 否 | 是否需要计算路径总长度，默认为 true。 |
-| targetDistances | Array | 否 | 目标距离数组。<br>如提供，接口将按其中每个目标距离计算出路径上的目标点，放到出参的 targetPoints 数组 |
+| exportTotalDistance | Boolean | 否 | 是否需要计算路径总长度（单位米），默认为 true。 |
+| targetDistances | Array | 否 | 目标距离数组。<br>如提供，接口将按其中每个目标距离（单位米）计算出路径上的目标点，放到出参的 targetPoints 数组 |
 
 ### success 返回值
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| distance | Number | 由入参 points 中的点所定义的路径总长度（相邻点的直线距离逐段累加）。<br>如果传入的 exportTotalDistance 为 false，则不返回 distance。 |
+| distance | Number | 由入参 points 中的点所定义的路径总长度（相邻点的直线距离逐段累加）。单位米<br>如果传入的 exportTotalDistance 为 false，则不返回 distance。 |
 | targetPoints | Array | 按入参 targetDistances 所计算出的目标点。<br />每个点的属性参见下方 **targetPoint 对象**。 |
 
 ### targetPoint 对象
@@ -77,9 +77,9 @@ this.mapCtx.calculateDistance({
 | --- | --- | --- |
 | latitude | Number | 纬度。 |
 | longitude | Number | 经度。 |
-| targetDistance | Number | 从起点到此目标点的路径长度。 |
-| index | Number | 此目标点在入参 targetDistances 中的对应项的索引。<br>目标点按距起点的路径长度升序排列，与入参 targetDistances 中的元素顺序可能并不相同 |
-| targetLineIndex | Number | 此目标点所在线段的索引。<br>第 i 条线段的端点为 points[i] 和 points[i + 1] |
+| targetDistance | Number | 从起点到此目标点的路径长度（单位米）。 |
+| index | Number | 值等于 targetDistance 对应 targetDistances 中的对应项的索引。 |
+| targetLineIndex | Number | 此目标点所在线段的索引。<br>第 i 条线段的索引值为 i - 1 |
 
 ## 返回值示例代码
 
