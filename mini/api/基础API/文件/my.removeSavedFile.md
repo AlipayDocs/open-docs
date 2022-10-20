@@ -24,7 +24,7 @@
 ### .js 示例代码
 
 ```javascript
-// .js
+// 从已保存的本地缓存文件中删除一条。
 my.getSavedFileList({
   success: res => {
     my.removeSavedFile({
