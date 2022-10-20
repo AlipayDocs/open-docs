@@ -155,7 +155,7 @@ fail 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **错误码** | **错误消息** | **解决方案**            |
 | ---------- | -------- | ----------------------- |
-| 10         | h5RSA param(text and key) must not be empty | 传入了空 key，请检查。  |
+| 10         | h5RSA param(text and key) must not be empty | 传入了空 key 或空 text，请检查。  |
 | 11         | Encrypt key error | 检查传入的 key 是否有效（PKCS8 格式）。 |
 | 11         | Encrypt error | 如果 key 为 1024 位，请检查输入的 text 是否超过长度限制（117 字节）。 |
 | 11         | Decrypt key error | 检查传入的 key 是否有效（PKCS8格式）。 |
