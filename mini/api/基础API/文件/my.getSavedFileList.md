@@ -54,6 +54,6 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性**   | **类型** | **描述**   |
 | ---------- | -------- | ---------- |
-| size       | Number   | 文件大小。 |
+| size       | Number   | 文件大小，以字节（B）为单位。 |
 | createTime | Number   | 创建时间。 |
 | apFilePath | String   | [本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6) 路径。 |
