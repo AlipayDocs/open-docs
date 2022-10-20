@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.translateMarker** 是平移点标记（marker）接口。对同一个 markerId，在 translateMarker 没调用 animationEnd 之前再次调动无法生效，需要在调用 animationEnd 之后再调用一次动画，才会有效。
+**MapContext.translateMarker** 是平移点标记（marker）接口。若对同一个点标记执行多次平移，须在本次平移执行 animationEnd 回调后再调用下次的 translateMarker， 如此下次平移才能生效。
 
 ## 使用限制
 
@@ -42,7 +42,7 @@ Object 类型，参数如下：
 | destination | Object | 是 | 指定 marker 移动到的目标点。 |
 | autoRotate | Boolean | 否 | 移动过程中是否自动旋转 marker。 |
 | rotate | Number | 否 | marker 的旋转角度。默认值为 0。 |
-| duration | Number | 否 | 动画持续时长。默认值为 1000。 |
+| duration | Number | 否 | 动画持续时长，单位为毫秒。默认值为 1000。 |
 | animationEnd | Function | 否 | 动画结束回调函数。 |
 | success | Function | 否 | 接口调用成功的回调函数。 |
 | fail | Function | 否 | 接口调用失败的回调函数。 |
