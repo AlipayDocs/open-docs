@@ -12,7 +12,7 @@ Canvas 实例，可以通过 [SelectorQuery](https://opendocs.alipay.com/mini/ap
 
 ```html
 <!-- 必须指定 type -->
-<canvas id="canvas" type="2d" onReady="onCanvasReady" />
+<canvas id="canvas" type="2d" onReady="onCanvasReady"></canvas>
 ```
 
 .js 示例代码
