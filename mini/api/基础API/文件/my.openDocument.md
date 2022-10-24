@@ -1,6 +1,6 @@
 # 简介
 
-**my.openDocument** 是预览文件的 API。暂时只支持预览 PDF 文件。
+**my.openDocument** 是预览文件的 API。除支持预览 PDF 文件，客户端 10.2.80 开始也支持预览 doc、docx、xls、xlsx、ppt、pptx 文件。
 
 ## 使用限制
 
