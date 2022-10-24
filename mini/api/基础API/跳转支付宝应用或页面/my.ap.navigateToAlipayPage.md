@@ -2,7 +2,11 @@
 
 **my.ap.navigateToAlipayPage** 是用于跳转到支付宝官方业务或运营活动页面的 API。
 
-在小程序中跳转支付宝业务或打开链接，请按下表分情况处理：
+**此 API 即将下线**。如果目标业务有 appCode 定义，请使用 [my.ap.openAlipayApp](https://opendocs.alipay.com/mini/04p771) 跳转；如果有目标页面的 URL，**推荐优先使用跳转辅助工具检测并生成代码：[https://apitools.alipay.com/tools/open-url](https://apitools.alipay.com/tools/open-url)**。
+
+## 跳转支付宝应用或页面指南
+
+在小程序中跳转支付宝业务或打开链接，按下表分情况处理：
 
 <table>
 <tr>
@@ -12,7 +16,7 @@
 <tr>
   <td rowspan=3>支付宝业务</td>
   <td>后文 <b>appCode 列表</b> 所列举的业务</td>
-  <td>使用 my.ap.navigateToAlipayPage()</td>
+  <td>使用 my.ap.openAlipayApp()</td>
 </tr>
 <tr>
   <td>已知 appId 的官方小程序</td>
@@ -25,15 +29,15 @@
 <tr>
   <td rowspan=3>支付宝 URL<br><i>https&colon;//*.alipay.com/*</i></td>
   <td>以 https&colon;//render.alipay.com/p/ 开头的 URL</td>
-  <td>使用 my.ap.navigateToAlipayPage()</td>
+  <td>使用 my.ap.openURL()</td>
 </tr>
 <tr>
   <td>域名为 ur.alipay.com 或 m.alipay.com 的短链接<br>或以 https&colon;//ds.alipay.com/?scheme= 开头的 URL</td>
-  <td>参考本文档 <b>附录 1</b>，将 URL 解析成实际目标地址，使用实际目标地址做跳转</td>
+  <td>使用 [跳转辅助工具](https://apitools.alipay.com/tools/open-url) 检测并生成代码</td>
 </tr>
 <tr>
   <td>其他情况</td>
-  <td>不支持跳转</td>
+  <td>城市服务类小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
 </tr>
 <tr>
   <td rowspan=3>支付宝 scheme<br><i>alipays://*</i></td>
@@ -42,11 +46,11 @@
 </td>
 <tr>
   <td>scheme 中的 appId 为 20000067</td>
-  <td>参考本文档 <b>附录 1</b>，将 URL 解析成实际目标地址，使用实际目标地址做跳转</td>
+  <td>使用 [跳转辅助工具](https://apitools.alipay.com/tools/open-url) 检测并生成代码</td>
 </td>
 <tr>
   <td>其他情况</td>
-  <td>不支持跳转</td>
+  <td>城市服务类小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
 </tr>
 <tr>
   <td rowspan=2>非支付宝 URL</td>
@@ -55,11 +59,12 @@
 </tr>
 <tr>
   <td>第三方页面</td>
-  <td>不支持跳转</td>
+  <td>城市服务类小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
 </tr>
 </table>
 
-本文档的 <b>附录 1</b> 提供了短链解析的工具代码，<b>附录 2</b> 提供了代码生成的工具代码。开发者可在对上表规则有基本理解的基础上，使用附录代码作为工具，取代人工判断。
+注：上表中链接类目标的跳转逻辑，均已集成到 **[跳转辅助工具](https://apitools.alipay.com/tools/open-url)**，推荐使用它来做检测并生成代码。
+
 
 ## 使用限制
 
