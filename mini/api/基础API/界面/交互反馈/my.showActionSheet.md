@@ -51,7 +51,7 @@ Object 类型，参数如下：
 | title | String | 否 | 菜单标题。 |
 | items | String Array | 是 | 菜单按钮文字数组。 |
 | cancelButtonText | String | 否 | 取消按钮文案。默认为 **取消**。<br />**注意**：Android 平台此字段无效，不会显示取消按钮。 |
-| destructiveBtnIndex | Number | 否 | 通过索引设置文字飘红的列表选项（iOS 特殊处理）。从 0 开始。<br />使用场景：需要删除或清除数据等类似场景。 |
+| destructiveBtnIndex | Number | 否 | 通过索引设置按钮文字为红色的列表选项（iOS 特殊处理）。从 0 开始。<br />使用场景：需要删除或清除数据等类似场景。 |
 | badges | ObjectArray | 否 | 设置列表选项的角标。数组内部对象字段见下方 **ObjectArray badges**。<br />**注意**：基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/lib) 及以上版本开始支持。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
