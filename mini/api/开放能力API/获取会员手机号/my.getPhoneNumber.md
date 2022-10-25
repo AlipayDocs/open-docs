@@ -23,7 +23,7 @@
 
 2. 绑定 **获取会员手机号** 产品并 **申请用户信息**
 
-- 使用此 API 需在开放平台绑定产品 [获取会员手机号](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000046451)，并登录主账号进行用户信息申请。 ![712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ)
+- 使用此 API 需在开放平台绑定产品 [获取会员手机号](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000046451)，并**登录主账号**进行用户信息申请，**请注意：子管理员账号及个人开发者账号不会显示用户信息申请入口**。 ![712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ)
 - 如果申请用户信息按钮为灰色，请检查小程序是否设置主营行业，并且对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
 - 未绑定获取会员手机号产品或未进行用户信息申请直接调用此 API，返回内容解密后如下：
 
@@ -239,29 +239,34 @@ success 回调会携带一个 Object 类型的对象，其参数如下：
 | response | String | 为完整的报文数据，前端需要将该报文发送到开发者服务端做验签和解密处理。 |
 
 # 常见问题 FAQ
-## Q：调用 my.getPhoneNumber，报错 “无效的授权关系”，如何处理？
+### Q：调用 my.getPhoneNumber，报错 “无效的授权关系”，如何处理？
 
 A：
-
 - 用户 **主动授权** 后调用`my.getPhoneNumber` 才能获取用户支付宝会员的手机号。授权行为通过 `<button>` 组件的 **点击** 动作来触发操作，需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `phoneNumber`。
 - 可以通过 [my.getSetting](https://opendocs.alipay.com/mini/api/xmk3ml) 接口返回的 phoneNumber 判断用户是否授权过手机号，phoneNumber 为 true 即已授权。
 
-## Q：调用 my.getPhoneNumber，报错 “缺少加密配置”，如何处理？
+### Q：调用 my.getPhoneNumber，报错 “缺少加密配置”，如何处理？
 
 A：请先在开放平台控制台配置 [接口加密方式](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet)。详见文档 [接口内容加密方式](<(https://opendocs.alipay.com/common/02mse3)>)。
 
-## Q：调用 my.getPhoneNumber 报错 “ISV 权限不足”，如何处理？
+### Q：调用 my.getPhoneNumber 报错 “ISV 权限不足”，如何处理？
 
-A：请检查小程序是否已绑定 **获取会员手机号** 并申请了 **用户信息**。若在产品绑定 [获取会员手机号](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000046451) 页面看不到用户信息申请的入口，请使用主账号登录，点击 **用户信息申请**。 ![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ)
+A：请检查小程序是否已绑定 **获取会员手机号** 并申请了 **用户信息**。 ![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ)
 
-## Q：申请用户信息不可点击并提示 “所有用户信息字段都不满足申请条件”，如何处理？
+### Q：申请用户信息不可点击并提示 “所有用户信息字段都不满足申请条件”，如何处理？
 
-![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*RJn7TbMxO-wAAAAAAAAAAAAAARQnAQ) A：请检查小程序是否设置主营行业，并对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
+![|712x101](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*RJn7TbMxO-wAAAAAAAAAAAAAARQnAQ) 
+A：请检查小程序是否设置主营行业，并对照以下文档检查应用是否符合主营行业及字段使用场景的要求：[用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu)。
 
-## Q：为什么调用 my.getPhoneNumber 返回的手机号为空？
+### Q：为什么调用 my.getPhoneNumber 返回的手机号为空？
 
 A：一般情况下都是当前用户的支付宝账号没有绑定手机号所致，需要当前用户登录 [账号管理](https://custweb.alipay.com/account/index.htm)，绑定手机号。
 
 ### Q：获取用户手机号为何没有返回 sign？
 
 A：请确保已设置支付宝公钥，aes 密钥、应用网关。若缺失这三个设置任一，在调用 my.getPhoneNumber 时可能只返回 response。
+
+### Q：为什么我的后台产品绑定里没有“用户信息申请”入口？
+
+A：请使用**主账号登录，子管理员账号及个人开发者账号**不会展示该入口。
+![|712x101](https://mdn.alipayobjects.com/portal_cjapev/afts/img/A*VFF4Q7QAvMEAAAAAAAAAAAAAAQAAAQ/original)
