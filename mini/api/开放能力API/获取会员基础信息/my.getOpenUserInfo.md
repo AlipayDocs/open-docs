@@ -15,7 +15,9 @@
 }
 ```
 
-**获取支付宝会员基础信息需要用户进行授权。授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的点击动作来触发**。将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `userInfo`。用户点击并同意之后，可以通过 `my.getOpenUserInfo` 接口获取到支付宝会员的基础信息。未经过 Button 授权直接调用此 API 会返回
+**获取支付宝会员基础信息需要用户进行授权。授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的点击动作来触发**。将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `userInfo`。用户点击并同意之后，可以通过 `my.getOpenUserInfo` 接口获取到支付宝会员的基础信息。用户拒绝授权事件需要在 <button> 组件监听 onError 事件。
+  
+未经过 Button 授权直接调用此 API 会返回
 
 ```json
 {
@@ -49,7 +51,7 @@
   a:if="{{canIUseAuthButton}}"
   open-type="getAuthorize"
   onGetAuthorize="onGetAuthorize"
-  onError="onAuthError"
+  onError="onAuthError"  //监听用户拒绝授权事件
   scope="userInfo"
 >
   会员基础信息授权
