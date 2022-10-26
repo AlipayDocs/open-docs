@@ -38,7 +38,7 @@
 
 3. 用户授权
 
-- 获取支付宝会员手机号需要用户进行授权，授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发， `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `phoneNumber`。用户点击并同意之后，可以通过 `my.getPhoneNumber` 接口获取到支付宝会员加密后的手机号。
+- 获取支付宝会员手机号需要用户进行授权，授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发， `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `phoneNumber`。用户点击并同意之后，可以通过 `my.getPhoneNumber` 接口获取到支付宝会员加密后的手机号。用户拒绝授权事件需要在 `<button>` 组件监听 onError 事件。
 - 未经过 Button 授权直接调用此 API 会解密后会返回
 
 ```json
@@ -76,7 +76,7 @@
   a:if="{{canIUseAuthButton}}"
   open-type="getAuthorize"
   onGetAuthorize="onGetAuthorize"
-  onError="onAuthError"
+  onError="onAuthError"    //监听用户拒绝授权事件
   scope="phoneNumber"
 >
   授权手机号
