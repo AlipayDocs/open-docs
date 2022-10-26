@@ -50,3 +50,7 @@ Page({
 | [Canvas.requestAnimationFrame](https://opendocs.alipay.com/mini/api/requestAnimationFrame) | 帧调用，下次重绘之前调用指定的回调函数。 |
 | [Canvas.cancelAnimationFrame](https://opendocs.alipay.com/mini/api/cancelAnimationFrame) | 取消 requestAnimationFrame 添加的动画帧请求。 |
 | [Canvas.toTempFilePath](https://opendocs.alipay.com/mini/api/toTempFilePath) | 把当前画布指定区域的内容导出生成指定大小的图片。 |
+
+# 常见问题 FAQ
+## Q: Canvas API 看起来不多？
+A: 查看 [RenderingContext](https://opendocs.alipay.com/mini/01w0it) 介绍。
