@@ -76,4 +76,4 @@ success 会携带一个 Object 参数，包含以下属性：
 
 ## Q：success 回调得到的 tempFilePath 如何使用？
 
-A：一般可通过 [my.saveImageToPhotosAlbum](https://opendocs.alipay.com/mini/api/media/image/my.saveImagetophotosalbum) 将图片保存到系统相册，或通过 [my.uploadFile] 上传到服务端。所有可接受[本地临时文件路径的接口](https://opendocs.alipay.com/mini/03dt4s#%E9%83%A8%E4%BB%BD%E6%8E%A5%E5%8F%A3%20%2F%20%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81%E7%9A%84%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E6%98%8E%E7%BB%86) 以及 FileSystemManager 都可以使用它。
+A：一般可通过 [my.saveImageToPhotosAlbum](https://opendocs.alipay.com/mini/api/media/image/my.saveImagetophotosalbum) 将图片保存到系统相册，或通过 [my.uploadFile](https://opendocs.alipay.com/mini/api/kmq4hc) 上传到服务端。所有可接受[本地临时文件路径的接口](https://opendocs.alipay.com/mini/03dt4s#%E9%83%A8%E4%BB%BD%E6%8E%A5%E5%8F%A3%20%2F%20%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81%E7%9A%84%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E6%98%8E%E7%BB%86) 以及 FileSystemManager 都可以使用它。
