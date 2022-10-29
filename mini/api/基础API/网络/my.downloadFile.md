@@ -48,7 +48,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| url | String | 是 | 下载地址。除在线 URL 以外，也接受包含图片 base64 数据的 [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)。 |
+| url | String | 是 | 下载地址。支持 HTTPS，不支持 HTTP。除在线 URL 以外，也接受包含图片 base64 数据的 [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)。 |
 | filePath | string | 否 | 文件存储路径，必须为[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6))路径。若不指定此参数，下载的文件会被存储为[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。参见代码示例。 |
 | header | Object | 否 | HTTP 请求头。 |
 | timeout | Number | 否 | 超时时间，默认值 60000，单位 ms。 |
