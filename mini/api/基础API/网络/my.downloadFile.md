@@ -1,12 +1,10 @@
 # 简介
 
-**my.downloadFile** 用于下载文件到本地。支持下载 HTTPS 资源或 [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)。
+**my.downloadFile** 用于下载文件到本地。
 
 # 接口调用
 
 ## 示例代码
-
-**注意**：案例仅供参考，建议使用自己的地址进行测试。
 
 ```javascript
 // 示例一：不指定 filePath，保存为本地临时文件
