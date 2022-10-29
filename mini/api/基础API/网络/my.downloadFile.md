@@ -1,9 +1,6 @@
 # 简介
 
-**my.downloadFile** 下载文件到本地。
-
-支持下载 HTTPS 资源或 [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)。
-
+**my.downloadFile** 用于下载文件到本地。支持下载 HTTPS 资源或 [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)。
 
 # 接口调用
 
