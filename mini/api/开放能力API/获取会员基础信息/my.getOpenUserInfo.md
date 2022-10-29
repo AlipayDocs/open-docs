@@ -1,35 +1,12 @@
 # 简介
 
-**my.getOpenUserInfo** 是获取支付宝会员的基础信息的 API。
+**my.getOpenUserInfo** 是获取支付宝会员基础信息（头像地址和昵称）的 API。
 
-自 2022-06-13 [用户信息相关接口调整](https://forum.alipay.com/mini-app/post/73101020) 以后，此接口仅返回头像地址和昵称。
+# 接入必读
 
-使用此 API 需在开放平台控制台绑定 [获取会员基础信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000054282) 产品，未绑定 **获取会员基础信息** 产品直接调用此 API 会返回
+1、请到平台控制台为当前小程序绑定 [获取会员基础信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000054282) 产品。未绑定该产品而直接调用此 API，会收到报错“ISV权限不足”（code 40006）。
 
-```json
-{
-  "code": "40006",
-  "msg": "Insufficient Permissions",
-  "subCode": "isv.insufficient-isv-permissions",
-  "subMsg": "ISV权限不足，建议在开发者中心检查对应功能是否已经添加，解决办法详见：https://docs.open.alipay.com/common/isverror"
-}
-```
-
-**获取支付宝会员基础信息需要用户进行授权。授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的点击动作来触发**。将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize` 并将 `scope` 设为 `userInfo`。用户点击并同意之后，可以通过 `my.getOpenUserInfo` 接口获取到支付宝会员的基础信息。未经过 Button 授权直接调用此 API 会返回
-
-```json
-{
-  "code": "40003",
-  "msg": "Insufficient Conditions",
-  "subCode": "isv.invalid-auth-relations",
-  "subMsg": "无效的授权关系"
-}
-```
-
-## 使用限制
-
-- 基础库 [1.16.4](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.35 或更高版本。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+2、请参考示例代码，请使用 open-type 设为 getAuthorize、scope 为 userInfo 的 [`<button>` 组件](https://opendocs.alipay.com/mini/component/button)，由用户触发并完成授权，再在 onGetAuthorize 处理函数中调用 my.getOpenUserInfo()。未经用户授权而直接调用此 API，会收到报错“无效的授权关系”（code 40003）。
 
 # 接口调用
 
@@ -37,71 +14,53 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/get-user-info?view=preview&defaultPage=pages/base-info/base-info&defaultOpenedFiles=pages/base-info/base-info&theme=light&priority=js)
 
-### .js 示例代码
-
-授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发。
-
-唤起授权框，推荐兼容方案如下：
+### .axml 示例
 
 ```html
-<!-- .axml -->
 <button
-  a:if="{{canIUseAuthButton}}"
   open-type="getAuthorize"
-  onGetAuthorize="onGetAuthorize"
-  onError="onAuthError"
   scope="userInfo"
+  onGetAuthorize="getOpenUserInfo"
+  onError="handleAuthError"
 >
   会员基础信息授权
 </button>
 ```
 
-#### 获取用户基础信息
-
-用户点击同意后，即可通过 `my.getOpenUserInfo()` 获取用户基础信息：
-
+### .js 示例
 ```javascript
-// .js
-data: {
-  canIUseAuthButton: my.canIUse('button.open-type.getAuthorize')
-},
-onGetAuthorize(res) {
-  my.getOpenUserInfo({
-    fail: (res) => {
-    },
-    success: (res) => {
-      let userInfo = JSON.parse(res.response).response // 以下方的报文格式解析两层 response
-    }
-  });
-},
-```
-
-## 返回示例
-
-### 返回 res 报文格式
-
-- 成功返回 res 报文格式示例如下：<br />
-
-```js
-{
-  response: '{"response": {"code": "10000","msg": "Success","gender":"","countryCode":"","province":"","city":"","nickName": "XXX","avatar": "https://tfs.alipayobjects.com/images/partner/XXXXXXXX"}}';
-}
-```
-
-- 未绑定获取会员基础信息产品，返回 res 报文格式示例如下：<br />
-
-```js
-{
-  response: '{"response":{"code":"40006","msg":"Insufficient Pe…tps:\\/\\/docs.open.alipay.com\\/common\\/isverror"}}';
-}
-```
-
-- 用户未授权获取会员基础信息，返回 res 报文格式示例如下：<br />
-
-```js
-{
-  response: '{"response":{"code":"40003","msg":"Insufficient Co…"isv.invalid-auth-relations","subMsg":"无效的授权关系"}}';
-}
+Page({
+  getOpenUserInfo() {
+    my.getOpenUserInfo({
+      success: (res) => {
+        const { code, subMsg, avatar, nickName,  } = JSON.parse(res.response).response;
+        if (code == '10000') {
+          my.alert({
+            title: 'getOpenUserInfo success',
+            content: JSON.stringify({ avatar, nickName }),
+          });  
+        } else {
+          if (code == '40006') {
+            // 请参考接入必读，到小程序控制台绑定产品
+          }
+          my.alert({
+            title: 'getOpenUserInfo fail',
+            content: JSON.stringify({ code, subMsg }),
+          });
+        }
+      },
+      fail: (res) => {
+        my.alert({
+          title: 'getOpenUserInfo fail',
+          content: JSON.stringify(res),
+        }); 
+      },
+    });
+  },
+  handleAuthError(e) {
+    my.alert({ title: '用户拒绝授权', content: JSON.stringify(e.detail) });
+  }
+});
 ```
 
 ## 入参
@@ -112,35 +71,31 @@ onGetAuthorize(res) {
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-### Function success
+## 出参
 
-success 回调函数会携带一个 Object 类型的对象，属性被解析后如下表所示：
+success 回调函数会携带一个 Object 类型的对象 res。使用 JSON.parse(res.response).response 解析，所得对象的有效字段如下：
 
 | **属性**    | **类型** | **描述**               |
 | ----------- | -------- | ---------------------- |
-| avatar      | String   | 头像图片地址。         |
-| nickName    | String   | 昵称。                 |
-| city        | String   | 历史遗留字段，恒为""。 |
-| countryCode | String   | 历史遗留字段，恒为""。 |
-| province    | String   | 历史遗留字段，恒为""。 |
-| gender      | String   | 历史遗留字段，恒为""。 |
+| code        | String   | 结果码。10000 为成功，其他情况为失败。40003 和 40006 是较为常见的报错，请参考上文**接入必读**。|
+| subMsg      | String   | 结果消息。 |
+| avatar      | String   | 会员头像图片地址。 |
+| nickName    | String   | 会员昵称。 |
 
-# 常见问题 FAQ
 
-## Q：调用 my.getOpenUserInfo，报错“无效的授权关系”，如何处理？
-
-A：
-
-- 用户 **主动授权** 后调用`my.getOpenUserInfo` 才能获取用户支付宝会员的基础信息。授权行为通过 `<button>` [组件](https://opendocs.alipay.com/mini/component/button) 的 **点击** 动作来触发操作，需要将 `<button>` 组件 `open-type` 的值设置为 `getAuthorize`，并将 `scope` 设为 `userInfo`。
-- 可以通过 [my.getSetting](https://opendocs.alipay.com/mini/api/xmk3ml) 接口返回的 userInfo 字段判断用户是否授权过会员基础信息，userInfo 为 true 即已授权。
+# 常见问题
 
 ## Q：调用 my.getOpenUserInfo，报错 "ISV 权限不足"，如何处理？
 
-A：需在开放平台控制台绑定 [获取会员基础信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000054282) 产品，方可调用此接口。
+A：需要先在开放平台控制台绑定产品，参见上文**接入必读** 1。
+
+## Q：调用 my.getOpenUserInfo，报错“无效的授权关系”，如何处理？
+
+A：成功调用 my.getOpenUserInfo 须经过用户授权，参见上文**接入必读** 2。可通过 [my.getSetting](https://opendocs.alipay.com/mini/api/xmk3ml) 接口返回的 userInfo 字段判断用户是否授权过会员基础信息，userInfo 为 true 即已授权。
 
 ## Q：如何获取除用户头像、昵称信息以外的用户信息？
 
-A：**获取会员基础信息** 只支持获取用户头像、昵称信息。如果需要获取其他用户信息，参阅 [用户信息申请流程](https://opendocs.alipay.com/common/02kkuu)
+A：my.getOpenUserInfo 只支持获取用户头像和昵称信息。如需获取用户其他信息，请参阅 [用户信息申请流程](https://opendocs.alipay.com/common/02kkuu)。
 
 ## Q：为什么调用 my.getOpenUserInfo 返回的用户的昵称为空？
 
