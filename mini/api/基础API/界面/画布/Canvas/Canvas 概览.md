@@ -5,6 +5,35 @@ Canvas 实例，可以通过 [SelectorQuery](https://opendocs.alipay.com/mini/ap
 - **基础库** [2.7.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 由于 iOS 真机在 10.2.28 有 bug，若需使用 Canvas 新接口，短期内需要联系技术支持进行处理（点击右侧咨询按钮接入）。
 
+
+## 基础示例
+
+.axml 示例代码
+
+```html
+<!-- 必须指定 type -->
+<canvas id="canvas" type="2d" onReady="onCanvasReady" />
+```
+
+.js 示例代码
+```js
+Page({
+    // 一定要在 canvas 的 onReady 中调用
+    onCanvasReady() {
+        // 通过 SelectorQuery 获取 Canvas 实例
+        my.createSelectorQuery().select('#canvas').node().exec((res) => {
+                const canvas = res[0].node;
+                const ctx = canvas.getContext('2d');
+                console.log('canvas 宽高', canvas.width, canvas.height)
+
+                // 开始绘画
+                ctx.fillRect(0, 0, 50, 50);
+            });
+    },
+});
+```
+
+
 ## 属性
 
 | **属性** | **类型** | **描述**   |

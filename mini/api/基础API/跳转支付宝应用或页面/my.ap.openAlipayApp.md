@@ -1,6 +1,8 @@
 # 简介
 
-my.ap.openAlipayApp  打开支付宝客户端内指定的应用。<br />能够打开的应用限于官方公开的 **appCode 列表**，没有 appCode 但已知目标应用链接的情况，可考虑使用 [my.ap.openURL](https://opendocs.alipay.com/mini/04iy2y)。
+my.ap.openAlipayApp 打开支付宝客户端内指定的应用。
+
+此 API 能打开的应用限于官方公开的 **appCode 列表**（见后文说明）。没有 appCode 但已知目标应用链接的情况，**推荐使用跳转辅助工具检测和生成代码：[https://apitools.alipay.com/tools/open-url](https://apitools.alipay.com/tools/open-url)**。 
 
 ## 使用限制
 

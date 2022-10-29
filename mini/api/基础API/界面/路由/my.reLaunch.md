@@ -6,7 +6,7 @@
 
 - 如果在小程序插件内调用此 API，只能跳转到此插件的页面，不能跳转到宿主小程序页面或其他插件页面。
 - 基础库 [1.4.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.8 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 此 API 支持支付宝个人小程序、支付宝企业小程序使用。
 
 ## 扫码体验
 
