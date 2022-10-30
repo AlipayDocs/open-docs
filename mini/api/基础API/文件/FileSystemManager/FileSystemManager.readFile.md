@@ -57,7 +57,7 @@ success 回调函数将收到一个 Object 类型的参数，包含以下属性�
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | data | string/ArrayBuffer | 文件内容。 |
-| dataType | String | 输出的数据类型。如果入参不传 encoding，默认输出 "ArrayBuffer"。如果传了 encoding，则输出 "string"。 |
+| dataType | String | 输出的数据类型。如果入参不传 encoding 则为 "ArrayBuffer"，否则为 "string"。 |
 
 ### encoding 参数说明
 
@@ -87,7 +87,6 @@ success 回调函数将收到一个 Object 类型的参数，包含以下属性�
 |  **可选值**  | **说明** | **举例** |
 | ---| --- | --- |
 | hex | 将 8 位二进制数字以两个 16 进制数字编码的方式| 如：二进制（00001111），16 进制为 0x0f，编码字符为 0f |
-
 
 ## 错误码
 
