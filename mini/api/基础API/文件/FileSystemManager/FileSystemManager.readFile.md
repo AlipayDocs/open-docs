@@ -14,7 +14,7 @@
 
 ### .json 示例代码
 
-读取小程序`代码包文件`时，需要在 mini.project.json 中配置文件路径。下例中 resouce 为根目录（app.json 所在目录）下的文件平，* 代表任意文件名：
+读取小程序`代码包文件`时，需要在 mini.project.json 中配置文件路径。下例中 `resource` 为根目录（app.json 所在目录）下的文件平，* 代表任意文件名：
 
 ```json
 {
