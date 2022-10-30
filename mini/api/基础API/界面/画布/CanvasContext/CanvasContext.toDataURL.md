@@ -2,7 +2,7 @@
 
 # 简介
 
-**CanvasContext.toDataURL** 用于获取画布指定区域的 data URL 数据。
+**CanvasContext.toDataURL** 用于获取画布指定区域的 base64 格式的 data URL 数据。
 
 ## 使用限制
 
@@ -83,4 +83,4 @@ ctx.draw(false, () => {
 
 **Promise<string>**
 
-提取的 dataURL 字符串。
+提取的 base64 格式的 dataURL 字符串。

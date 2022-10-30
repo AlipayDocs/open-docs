@@ -8,7 +8,7 @@ MapContext 通过 ID 跟一个 map 组件绑定，操作对应的 [map 地图](h
 | --- | --- |
 | [MapContext.calculateDistance](https://opendocs.alipay.com/mini/00nfnc) | 地图路径计算能力，用于计算途径地图上多个点的总路线距离。也可根据该路线截取部分子路线，加上其他目标点的路径规划后，组合成新的路径。 |
 | [MapContext.changeMarkers](https://opendocs.alipay.com/mini/00k9uj) | 添加、删除、更新指定的标记（marker）。 |
-| [MapContext.clearRoute](https://opendocs.alipay.com/mini/api/qb6sf9) | 清除地图上的步行导航路线。 |
+| [MapContext.clearRoute](https://opendocs.alipay.com/mini/api/qb6sf9) | 清除地图上的导航路线。 |
 | [MapContext.gestureEnable](https://opendocs.alipay.com/mini/api/sgwf36) | 设置所有手势是否可用。 |
 | [MapContext.getCurrentLocation](https://opendocs.alipay.com/mini/api/vc2gdt) | 获取当前地图中心位置。 |
 | [MapContext.getMapProperties](https://opendocs.alipay.com/mini/00nfn7) | 获取地图的属性信息。 |
