@@ -23,26 +23,18 @@
 ```
 
 ### .js 示例代码
-读取代码包文件
+
 ```javascript
 let fs = my.getFileSystemManager();
 fs.readFile({
-  filePath: `resource/*.txt`,
+  filePath: `resource/test.txt`, // 读取代码包文件。也可传入 `${my.env.USER_DATA_PATH}/hello.txt` 读取已保存的本地用户文件
   encoding: 'utf8',
   success: res => {
-    console.log(res);
+    console.log('文件内容: ' + res.data);
   },
-});
-```
-读取本地用户文件
-```javascript
-let fs = my.getFileSystemManager();
-fs.readFile({
-  filePath: `${my.env.USER_DATA_PATH}/test.txt`,
-  encoding: 'utf8',
-  success: res => {
-    console.log(res);
-  },
+  fail: res => {
+    my.alert({ title: 'readFile fail', content: JSON.stringify(res) })
+  }
 });
 ```
 
