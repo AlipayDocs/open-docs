@@ -1,6 +1,6 @@
 # 简介
 
-**my.canvasToTempFilePath** 把当前画布指定区域的内容导出生成指定大小的图片。
+**my.canvasToTempFilePath** 将画布指定区域的内容导出生成指定大小的图片。
 
 ## 使用限制
 
@@ -80,8 +80,8 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| canvas | Object | 是。新版接口必填 | 画布对象。 |
-| canvasId | String | 是。旧版本接口必填 | 画布标识，canvas 组件的 id。 |
+| canvas | Object | 是。新版接口必填 | canvas 对象。使用 SelectQuery 获取，参见示例代码。 |
+| canvasId | String | 是。旧版本接口必填 | canvas 组件的 id。 |
 | x | Number | 否 | 指定的画布区域的左上角横坐标。 |
 | y | Number | 否 | 指定的画布区域的左上角纵坐标。 |
 | width | Number | 否 | 指定的画布区域的宽度。 |
