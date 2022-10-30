@@ -1,6 +1,6 @@
 ## 简介
 
-[Anymock](https://anymock.alipay.com/) 是一个高效、易用的数据接口平台，旨在为开发、测试、设计同学提供功能强大的接口 Mock 及接口管理服务。 Anymock [小程序开发者工具](https://opendocs.alipay.com/mini/ide/download)（简称 IDE）扩展，为 IDE 提供了 mock 任意一个 JSAPI 的能力。同时，支付宝提供了真机预览的 mock 能力，即小程序在真机上预览时也可以使用 Anymock 的 mock 数据。
+[Anymock](https://anymock.alipay.com/) 是一个高效、易用的数据接口平台，旨在为开发、测试、设计人员提供功能强大的接口 Mock 及接口管理服务。 Anymock [小程序开发者工具](https://opendocs.alipay.com/mini/ide/download)（简称 IDE）扩展，为 IDE 提供了 mock 任意一个 JSAPI 的能力。同时，支付宝提供了真机预览的 mock 能力，即小程序在真机上预览时也可以使用 Anymock 的 mock 数据。
 
 ## 安装 Anymock 扩展
 
