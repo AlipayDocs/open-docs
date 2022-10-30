@@ -1,17 +1,15 @@
 # 简介
 
-**my.getPhoneNumber** 是获取支付宝用户绑定的手机号的 API。
-
-my.getPhoneNumber 并非直接返回用户手机号，接入过程请参考下文**接入必读**一步步进行。
+**my.getPhoneNumber** 获取支付宝用户绑定的手机号。
 
 ## 使用限制
 
 - 此 API 暂仅支持企业支付宝小程序使用。
-- 请妥善保管和谨慎使用所获取的用户手机号，如有超出约定范围等不合理使用的情况，支付宝有权针性永久回收接口权限。
+- 请妥善保管和谨慎使用所获取的用户手机号，如有超出约定范围等不合理使用的情况，支付宝将永久回收接口权限。
 
-## 接入必读
+## 必读指南
 
-通过 my.getPhoneNumber 获取用户手机号的整体流程如下：
+通过 my.getPhoneNumber 获取用户手机号，请按以下步骤进行：
 
 ### 第一步：设置接口内容加密方式
 
@@ -157,7 +155,7 @@ if (isDataEncrypted) {
   "mobile": "1597671905"
 }
 
-// 异常结果 1。解决方案：请参考接入必读第一步
+// 异常结果。解决方案：请参考接入必读第一步
 {
   "code": "40001",
   "msg": "Missing Required Arguments",
@@ -165,7 +163,7 @@ if (isDataEncrypted) {
   "subMsg": "缺少加密配置"
 }
 
-// 异常结果 2。解决方案：请参考接入必读第一步
+// 异常结果。解决方案：请参考接入必读第一步
 {
   "code": "40006", // 解决方案：请参考接入必读第二步
   "msg": "Insufficient Permissions",
@@ -173,7 +171,7 @@ if (isDataEncrypted) {
   "subMsg": "ISV权限不足，建议在开发者中心检查对应功能是否已经添加，解决办法详见：https:\/\/docs.open.alipay.com\/common\/isverror"
 }
 
-// 异常结果 3。解决方案：请参考接入必读第一步
+// 异常结果。解决方案：请参考接入必读第一步
 {
   "code": "40003", // 解决方案：请参考接入必读第三步
   "msg": "Insufficient Conditions",
@@ -181,7 +179,7 @@ if (isDataEncrypted) {
   "subMsg": "无效的授权关系"
 }
 
-// 异常结果 4。解决方案：请参考接入必读第一步
+// 异常结果。解决方案：请参考接入必读第一步
 {
   "code": "20000", // 解决方案：请稍后重试
   "msg": "Service Currently Unavailable",
