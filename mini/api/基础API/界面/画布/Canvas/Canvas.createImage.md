@@ -14,14 +14,12 @@
 ### .axml 示例代码
 
 ```html
-<!-- canvas.axml -->
 <canvas type="2d" id="canvas" onReady="onCanvasReady"></canvas>
 ```
 
 ### .js 示例代码
 
 ```javascript
-// canvas.js
 Page({
   onCanvasReady() {
     const query = my.createSelectorQuery();
@@ -35,6 +33,7 @@ Page({
         img.onload = () => {
           ctx.drawImage(img, 10, 10, 100, 100);
         };
+        // 目前实现有缺陷，必须在设置 onload 之后再设置 src
         img.src = 'https://img.alicdn.com/tfs/TB1GvVMj2BNTKJjy0FdXXcPpVXa-520-280.jpg';
       });
   },
