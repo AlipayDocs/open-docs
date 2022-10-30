@@ -48,8 +48,7 @@ App({
     console.log('extraData:', extraData); // extraData: { x: { y: 'z' } }
   },
   onSomeButtonTap() {
-    const { query, referrerInfo: { extraData } = {} } =
-      my.getLaunchOptionsSync();
+    const { query, referrerInfo: { extraData } = {} } = my.getLaunchOptionsSync();
     console.log('query:', query); // query: { a: 'foo', b: 'bar' }
     console.log('extraData:', extraData); // extraData: { x: { y: 'z' } }
   },
@@ -82,22 +81,29 @@ Object 类型，参数如下：
 
 ## Q：拿到目标小程序的 scheme （以 alipays:// 开头），应该如何跳转？
 
-A：scheme 是用于从外部应用打开支付宝，在小程序内部一般不能直接使用。如果 scheme 中 appId 是 16 位，且只包含 page、query 参数，则应转换成 my.navigateMiniProgram 调用；其他情况（appId 为 8 位，或者有额外参数），需使用 [my.ap.navigateToAlipayPage](https://opendocs.alipay.com/mini/api/navigatetoalipaypage) 跳转，并联系合作的支付宝业务人员申请加入白名单。参考代码如下：
+A：scheme 用于从外部应用打开支付宝，在小程序内部一般不能直接使用。如果 scheme 中 appId 是 16 位，且只包含 page、query 参数，则应转换成 my.navigateMiniProgram 调用。**推荐使用跳转辅助工具检测并生成代码：[https://apitools.alipay.com/tools/open-url](https://apitools.alipay.com/tools/open-url)**。 也可参考以下代码，在运行时转换和跳转：
 
 ```javascript
+// 使用 scheme 跳转小程序
+function navigateToMiniProgramScheme({ scheme, success, fail }) {
+  var { params, message } = schemeToParams(scheme);
+  if (params) {
+    my.navigateToMiniProgram({ ...params, success, fail });
+  } else {
+    fail && fail({ error: -1, errorMessage: `无效的小程序 scheme ${scheme}: ${message}` });
+  }
+}
+
 // 将 scheme 转换为 my.navigateToMiniProgram 的参数
-// 如不能成功转换，则返回 null
 function schemeToParams(scheme) {
   if (!scheme.startsWith('alipays:')) {
-  	console.log('! 非 alipays: 开头');
-    return null;
+    return { message: '! 非 alipays: 开头' };
   }
   var params = {};
   for (var [k, v] of new URL(scheme).searchParams) {
     if (k == 'appId') {
       if (v.length != 16) {
-        console.log(`! 非 16 位 appId '${v}'`);
-        return null;
+        return { message: `! 非 16 位 appId '${v}'` };
       }
     } else if (k == 'page') {
       k = 'path';
@@ -108,29 +114,19 @@ function schemeToParams(scheme) {
       }
       v = o;
     } else {
-      console.log(`! 不支持参数 '${k}' `);
-      return null;
+      return { message: `! 不支持参数 '${k}' ` };
     }
     params[k] = v;
   }
-  return params;
+  return { params };
 }
 
 // 使用示例
 var scheme = 'alipays://platformapi/startapp?appId=2022061812345678&page=%2Fpages%2Findex%2Findex&query=foo%3Dbar';
-var params = schemeToParams(scheme);
-if (params) {
-  my.navigateToMiniProgram({
-    ...params,
-    fail: (res) => my.alert({ title: 'navigateToMiniProgram fail', content: JSON.stringify(res) }),
-  });
-} else {
-  console.log(`无法使用 my.navigateToMiniProgram 跳转 '${scheme}'（${e.message}），使用 my.ap.navigateToAlipayPage`);
-  my.ap.navigateToAlipayPage({
-    url: scheme,
-    fail: (res) => my.alert({ title: 'navigateToAlipayPage fail', content: JSON.stringify(res) }),
-  });
-}
+navigateToMiniProgramScheme({
+  scheme,
+  fail: (res) => my.alert({ title: 'navigateToMiniProgramScheme failed', content: JSON.stringify(res) }),
+});
 ```
 
 ## Q：my.navigateMiniProgram 的调用参数如何转换为等价的 scheme ？
@@ -139,7 +135,6 @@ A：如果调用参数只含 appId、path、query，则可以转换成等价的 
 
 ```javascript
 // 将 my.navigateMiniProgram 的参数转换成 scheme
-// 注意：此代码主要用来说明转换逻辑，可作为线下工具使用，不建议直接用于线上
 function paramsToScheme(params) {
   var { appId, path, query, extraData } = params;
   var scheme = `alipays://platformapi/startapp?appId=${appId}`;
@@ -168,7 +163,7 @@ console.log(paramsToScheme(params));
 ```
 
 ## Q：如果目标小程序已经打开，再次调用 my.navigateToMiniProgram 向它跳转会怎样？
-A：已打开的目标小程序将被切到前台，晚于目标小程序打开的小程序（包括当前小程序）会退出。例如，有 A B 两个小程序，发生以下跳转序列：1)、A 使用 my.navigateToMiniProgram 跳转 B；2)、B 使用 my.navigateToMiniProgram 跳转 A。则此 B 会退出，A 被切到到前台。如果 2) 中跳转时传入了 path 参数，则 A 中当前已经打开的所有页面被关闭、path 指向的页面被打开。
+A：已打开的目标小程序将被切到前台，晚于目标小程序打开的小程序（包括当前小程序）会退出。例如，有 A B 两个小程序，发生以下跳转序列：1)、A 使用 my.navigateToMiniProgram 跳转 B；2)、B 使用 my.navigateToMiniProgram 跳转 A。则 B 会退出，A 被切到到前台。如果 2) 中跳转时传入了 path 参数，则 A 中当前已经打开的所有页面被关闭、path 指向的页面被打开。
 
 
 有关小程序跳转的更多知识，可查看 [小程序相互跳转 FAQ](https://opendocs.alipay.com/mini/api/xqvxl4)。
