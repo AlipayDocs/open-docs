@@ -2,37 +2,34 @@
 
 **my.getAuthCode** 获取用户信息授权，取得授权码（authCode）。
 
-在交互层面，my.getAuthCode 本质是引用用户授权其信息给当前小程序，通常会弹出授权引导浮窗。  
-请在用户充分了解小程序的业务内容后再调用 my.getAuthCode，避免损害用户体验；请勿在小程序首屏调用 my.getAuthCode，否则将面临违规处罚风险。
+my.getAuthCode 引导用户授权其信息给当前小程序，会弹出授权引导浮窗。请在用户充分了解小程序的业务内容后再调用 my.getAuthCode，避免损害用户体验；请勿在小程序首屏调用 my.getAuthCode，否则将面临违规处罚风险。
 
-通过 my.getAuthCode 所取得的代表用户授权的授权码（authCode），后续将需由小程序服务端用来向支付宝换取实际信息（如 user_id、头像、昵称、手机号、地区、性别、出生日期等）。  
-这种方式较通用，但也相对复杂（参见下文**接入必读**）。对于简单需求，建议选择其他方式：获取用户昵称和头像，请使用 my.getOpenUserInfo；获取用户手机号，请使用 my.getPhoneNumber。
+通过 my.getAuthCode 所取得的代表用户授权的授权码（authCode），后续需由小程序服务端使用，向支付宝换取实际信息（如 user_id、头像、昵称、手机号、地区、性别、出生日期等）。这种方式较通用，但也相对复杂（参见下文**接入必读**）。对于简单需求，建议优先选择其他方式：获取用户昵称和头像，请使用 [my.getOpenUserInfo](https://opendocs.alipay.com/mini/api/ch8chh)；获取用户手机号，请使用 [my.getPhoneNumber](https://opendocs.alipay.com/mini/api/getphonenumber)。
 
 ## 接入必读
 
 通过 authCode 的方式获取用户信息，完整流程如下：
 
-**第一步：绑定产品**   
-到开放平台控制台为目标小程序绑定 [获取会员信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000042699) 产品。完成产品绑定以后，可以看到**用户信息申请**入口：<br>![用户信息申请入口](https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*XjlFSJPaySYAAAAAAAAAAAAAARQnAQ)  
-注：如果绑定产品以后仍看不到用户信息申请入口，则可能是账号权限不够，请联系当前小程序的应用管理员操作。
+### 第一步：绑定产品
 
-**第二步：申请用户信息字段**. 
-在**用户信息申请**页面（如下图），按需申请相应的字段：  
-![用户信息申请表单]https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*LqsXR45_a4IAAAAAAAAAAAAAARQnAQ)  
-每个字段的审批流程和要求不同，请参考 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) 中的 **商家申请用户信息**。  
-**注意：**应隐私政策要求，cert_type、cert_no、person_cert_expiry_date 绝大多数情况下将不予通过。有特殊要求（如政务类）的小程序请联系合作的支付宝业务人员。
+1. 到开放平台控制台为目标小程序绑定 [获取会员信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000042699) 产品。
+2. 完成产品绑定以后，将看到 <a href="https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*XjlFSJPaySYAAAAAAAAAAAAAARQnAQ" target=_blank>用户信息申请</a>入口，点击进入第二步。如果看不到用户信息申请入口，则可能是账号权限不够，请联系当前小程序的应用管理员操作。
 
-**第三步：获取用户授权**  
-第二步的申请审批通过后，小程序即可调用 my.getAuthCode 获取用户授权。调用时有两种可选的 scope：  
-- auth_base：不会出现授权弹框，小程序直接取得 authCode，此 authCode 仅可用于换取用户的 user_id（以 2088 开头的 16 位数字）。
-- auth_user：会出现授权引导浮框，提示用户将会授权给小程序的所有字段（具体字段由第二步的申请决定），用户同意以后小程序可获得 authCode。
-获取 authCode 以后，小程序通过 my.request 等方式将其传递给服务端。
+### 第二步：申请用户信息字段 
 
-**第四步：获取用户信息**. 
-服务端取得小程序传来的 authCode，通过以下步骤获取用户信息：  
-1. 使用 authCode，调用 [alipay.system.oauth.token](https://opendocs.alipay.com/open/02xtla) 取得 user_id 和换取 token（授权令牌）。如果第三步中指定 scope 为 auth_user，则到此结束；
-2. 使用所取得的 token，调用 [alipay.user.info.share](https://opendocs.alipay.com/open/02xtlb)，最终获得用户信息。
+- 在 <a href="https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*LqsXR45_a4IAAAAAAAAAAAAAARQnAQ">用户信息申请</a> 页面，按需申请相应的字段。
+- 每个字段的类目要求和审批规则不同，请参考 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) 中的 **商家申请用户信息** 章节。
+- 应隐私政策要求，**对 cert_type、cert_no、person_cert_expiry_date 的申请将不再通过。有特殊要求（如政务类）的小程序请联系合作的支付宝业务人员。
 
+### 第三步：获取用户授权
+
+1. 第二步的申请审批通过后，在小程序上调用 my.getAuthCode 获取用户授权。调用时有两种可选的 scope：  <br>`auth_base`：基本信息授权，直接取得 authCode，此 authCode 仅可用于换取用户的 user_id（以 2088 开头的 16 位数字）。<br>`auth_user`：会员信息授权，会出现授权引导浮窗，第二步申请通过的字段都会一次性向用户展示，用户同意以后小程序可获得 authCode。
+2. 获取 authCode 以后，小程序通过 my.request 等方式将其传递给服务端。
+
+### 第四步：获取用户信息
+
+1. 服务端使用 authCode，调用 [alipay.system.oauth.token](https://opendocs.alipay.com/open/02xtla) 取得 user_id 和 token（授权令牌）。
+2. 如果第三步中使用的 scope 包含 auth_user，则服务端继续使用所取得的 token 调用 [alipay.user.info.share](https://opendocs.alipay.com/open/02xtlb) 最终获得用户信息。
 
 ## 使用限制
 
@@ -55,7 +52,6 @@
 ### 示例代码
 
 ```javascript
-// 示例一
 my.getAuthCode({
   scopes: 'auth_user',
   success: res => {
@@ -112,7 +108,6 @@ fail 回调函数会收到一个 Object 类型的对象，其 error 字段为错
 | 11 | 用户取消授权 | 充分说明获取用户信息的用途和必要性，重新引导操作。</li></ol> |
 | 3 | 未找到授权结果 | 1、scopes 入参包含无效值（界面上会先会先弹出 <b>服务正忙，请稍后再试</b>），请检查 scopes 参数。2，Android 用户使用 back 键直接关闭了授权浮窗，请与 11 等同对待。 |
 | 12 | Network Error | 授权相关网络请求失败或超时，请稍后重试。 |
-
 
 
 # 常见问题
