@@ -14,11 +14,11 @@
 
 ### .json 示例代码
 
-读取小程序`代码包文件`时，需要在 mini.project.json 中配置文件地址（填写地址为文件的绝对路径，resource为根目录下文件夹，\* 代表任意的名称，需要开发者自行填写）：
+读取小程序`代码包文件`时，需要在 mini.project.json 中配置文件路径。下例中 resouce 为根目录（app.json 所在目录）下的文件平，* 代表任意文件名：
 
 ```json
 {
-  "include": ["resource/*.txt", "resource/*.json"]
+  "include": ["resource/*.txt", "resource/*.json", "resource/*.mp3"]
 }
 ```
 
@@ -34,7 +34,7 @@ fs.readFile({
   },
 });
 ```
-读取用户本地文件
+读取本地用户文件
 ```javascript
 let fs = my.getFileSystemManager();
 fs.readFile({
@@ -52,8 +52,8 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| filePath | String | 是 | 文件路径（[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)、[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)、[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)、[代码包文件](https://opendocs.alipay.com/mini/03dt4s#%E4%BB%A3%E7%A0%81%E5%8C%85%E6%96%87%E4%BB%B6)）。 |
-| encoding | String | 否 | 指定从文件中读取二进制数据的字符编码方式。如果不传 encoding，则以 ArrayBuffer 格式读取文件的二进制内容。可选值：<ul><li>ascii</li><li>base64</li><li>hex</li><li>binary</li><li>ucs2/ucs-2/utf16le/utf-16le </li><li>utf-8/utf8</li><li>latin1</li></ul> 更多说明见下表 encoding|
+| filePath | String | 是 | 文件路径（支持[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)、[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)、[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)、[代码包文件](https://opendocs.alipay.com/mini/03dt4s#%E4%BB%A3%E7%A0%81%E5%8C%85%E6%96%87%E4%BB%B6)）。 |
+| encoding | String | 否 | 指定读取文件数据时使用的编码方式。如果不传 encoding，则以 ArrayBuffer 格式读取文件的二进制内容。可选值：<ul><li>ascii</li><li>base64</li><li>hex</li><li>binary</li><li>ucs2/ucs-2/utf16le/utf-16le </li><li>utf-8/utf8</li><li>latin1</li></ul> 更多说明见后文件 **encoding 参数说明** |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -65,7 +65,7 @@ Object 类型，参数如下：
 | data | string/ArrayBuffer | 文件内容。 |
 | dataType | String | 输出的数据类型。如果入参不传 encoding，默认输出 "ArrayBuffer"。如果传了 encoding，则输出 "string"。 |
 
-### encoding
+### encoding 参数说明
 
 编码为 ascii 及其扩展字符
 |  **可选值**  | **说明** | **举例** |
@@ -109,7 +109,7 @@ A：可以取 encoding 值为 utf8 读取文件，如：
 ```javascript
   let fs = my.getFileSystemManager();
     fs.readFile({
-      filePath: 'resource/test.json',// 代码包文件。
+      filePath: 'resource/test.json', // 代码包里的 json 文件
       encoding: 'utf8',
       complete: res => {
         console.log(JSON.parse(res.data));
@@ -118,14 +118,13 @@ A：可以取 encoding 值为 utf8 读取文件，如：
 ```
 ## Q：音频文件、图片文件 怎么读取？
 A：通常以 base64 读取，如：
-读取`.mp3`的音频文件
 ```javascript
   let fs = my.getFileSystemManager();
     fs.readFile({
-      filePath: 'resource/test.mp3',// 代码包文件。
+      filePath: 'resource/test.mp3', // 代码包里的音频文件
       encoding: 'base64',
       complete: res => {
-        console.log(res.data);// 获得 base64 编码的音频内容。
+        console.log(res.data); // 获得 base64 编码的音频内容。
       },
     });
 ```
