@@ -13,22 +13,19 @@
 
 ### 第一步：设置接口内容加密方式
 
-- 在 [开放平台控制台](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet) 设置 **接口内容加密方式**（可参考文档 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3) ）。**未设置接口加密方式而直接调用 my.getPhoneNumber，会收到报错“缺少加密配置”（code 40001）**。
+在 [开放平台控制台](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet) 设置 **接口内容加密方式**（可参考文档 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3) ）。**未设置接口加密方式而直接调用 my.getPhoneNumber，将得到异常响应“缺少加密配置”（code 40001）**。
 
 ### 第二步：绑定产品并申请用户信息
 
-- 到开放平台控制台为当前小程序绑定 [获取会员手机号](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000046451) 产品，并进行<a href="https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ" target="_blank">用户信息申请</a>（需登录主账号或管理员账号进行操作）。如果申请用户信息按钮为灰色，请对照 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) 检查小程序的主营行业设置。**未绑定获取会员手机号产品或未通过用户信息申请直接调用 my.getPhoneNumber，返回内容经第四步服务端解密后将得到报错“ISV权限不足”（code 40006）**。
+在开放平台控制台为当前小程序绑定 [获取会员手机号](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000046451) 产品，并进行<a href="https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ" target="_blank">用户信息申请</a>（需登录主账号或管理员账号进行操作）。如果`申请用户信息`按钮为灰色，请对照 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) 检查小程序的主营行业设置。**未绑定获取会员手机号产品或未通过用户信息申请直接调用 my.getPhoneNumber，解密后将得到异常响应“ISV权限不足”（code 40006）**。
 
-### 第三步：前端获取用户授权后并调用 my.getPhoneNumber
+### 第三步：获取用户授权并调用 my.getPhoneNumber
 
-- 考示例代码，使用 open-type 为 getAuthorize、scope 为 phoneNumber 的 [`<button>` 组件](https://opendocs.alipay.com/mini/component/button)，由用户触发并完成授权，再在 onGetAuthorize 回调函数中调用 my.getPhoneNumber()。**未经用户授权而直接调用 my.getPhoneNumber，返回内容经第四步服务端解密后将得到报错“无效的授权关系”（code 40003）**。
-
+参考后文示例代码，使用 open-type 为 getAuthorize、scope 为 phoneNumber 的 [`<button>` 组件](https://opendocs.alipay.com/mini/component/button)，由用户触发并完成授权，再在 onGetAuthorize 回调函数中调用 my.getPhoneNumber。**未经用户授权而直接调用 my.getPhoneNumber，解密后将得到异常响应“无效的授权关系”（code 40003）**。
 
 ### 第四步：服务端解密和验签
 
-- 将 my.getPhoneNumber 返回的密文发送给服务端，[参考此文档进行解密](https://opendocs.alipay.com/common/02mse3)以获取手机号。如果上述第二步第三步未正确完成，报错信息也会在此解密步骤完成后才能看到。
-
-- 【可选】如需 [验证加密内容的真实性](https://opendocs.alipay.com/common/02mriz)，请在 [开放平台控制台](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet) 设置 **接口加签方式（密钥/证书) **（可参考文档 [接口加签方式](https://opendocs.alipay.com/common/02mriz) ）。
+将 my.getPhoneNumber 返回的密文发送给服务端，参考 [此文档](https://opendocs.alipay.com/common/02mse3) 进行解密以获取手机号。如果上述第二步或第三步未正确完成，报错信息也会在此解密步骤完成后才能看到。如需 [验证加密内容的真实性](https://opendocs.alipay.com/common/02mriz)，请在 [开放平台控制台](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet) 设置 **接口加签方式（密钥/证书）**，参考文档 [接口加签方式](https://opendocs.alipay.com/common/02mriz) 。
 
 
 # 接口调用
@@ -98,9 +95,10 @@ import com.alipay.api.internal.util.AlipayEncrypt;
 import com.alipay.api.internal.util.AlipaySignature;
 import java.util.Map;
 
-String response = "小程序前端返回的加密信息";
+// 读取小程序前端发来的加密信息
+String response = "....";
 
-//1. 获取验签和解密所需要的参数
+// 1. 获取验签和解密所需要的参数
 Map<String, String> openapiResult = JSON.parseObject(response,new TypeReference<Map<String, String>>() {}, Feature.OrderedField);
 String signType = "RSA2";
 String charset = "UTF-8";
@@ -108,14 +106,14 @@ String encryptType = "AES";
 String sign = openapiResult.get("sign");
 String content = openapiResult.get("response");
 
-//判断是否为加密内容
+// 判断是否为加密内容
 boolean isDataEncrypted = !content.startsWith("{");
 boolean signCheckPass = false;
 
-//2. 验签
+// 2. 验签
+String signVeriKey = "..."; // 小程序对应的支付宝公钥
 String signContent = content;
-String signVeriKey = "你的小程序对应的支付宝公钥（为扩展考虑建议用appId+signType做密钥存储隔离）";
-String decryptKey = "你的小程序对应的加解密密钥（为扩展考虑建议用appId+encryptType做密钥存储隔离）"; //如果是加密的报文则需要在密文的前后添加双引号
+// 如果是加密的报文则需要在密文的前后添加双引号
 if (isDataEncrypted) {    
   signContent = "\"" + signContent + "\"";
 } 
@@ -131,7 +129,8 @@ if (!signCheckPass) {
   throw new Exception("验签失败");
 }
 
-//3. 解密
+// 3. 解密
+String decryptKey = "..."; // 小程序对应的 AES 密钥
 String plainData = null;
 if (isDataEncrypted) {    
   try {        
