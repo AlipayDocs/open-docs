@@ -60,6 +60,8 @@ Object 类型，参数如下：
 
 ### Function success
 
+success 回调函数将收到一个 Object 类型的参数，包含以下属性：
+
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | data | string/ArrayBuffer | 文件内容。 |
@@ -107,24 +109,24 @@ Object 类型，参数如下：
 ## Q：如何读取 json 文件？
 A：可以取 encoding 值为 utf8 读取文件，如：
 ```javascript
-  let fs = my.getFileSystemManager();
-    fs.readFile({
-      filePath: 'resource/test.json', // 代码包里的 json 文件
-      encoding: 'utf8',
-      complete: res => {
-        console.log(JSON.parse(res.data));
-      },
-    });
+let fs = my.getFileSystemManager();
+fs.readFile({
+  filePath: 'resource/test.json', // 代码包里的 json 文件
+  encoding: 'utf8',
+  complete: res => {
+    console.log(JSON.parse(res.data));
+  },
+});
 ```
 ## Q：音频文件、图片文件 怎么读取？
 A：通常以 base64 读取，如：
 ```javascript
-  let fs = my.getFileSystemManager();
-    fs.readFile({
-      filePath: 'resource/test.mp3', // 代码包里的音频文件
-      encoding: 'base64',
-      complete: res => {
-        console.log(res.data); // 获得 base64 编码的音频内容。
-      },
-    });
+let fs = my.getFileSystemManager();
+fs.readFile({
+  filePath: 'resource/test.mp3', // 代码包里的音频文件
+  encoding: 'base64',
+  complete: res => {
+    console.log(res.data); // 获得 base64 编码的音频内容。
+  },
+});
 ```
