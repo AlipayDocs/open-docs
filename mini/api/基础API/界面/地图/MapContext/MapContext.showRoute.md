@@ -1,8 +1,6 @@
 # 简介
 
-**MapContext.showRoute** 用于默认规划步行路线，只能显示一条。
-
-支付宝客户端 10.1.50 及以上版本支持规划步行、公交、骑行和驾车四种路线。
+**MapContext.showRoute** 规划两点之间的路径并在地图上展示。支持规划步行、公交、骑行和驾车四种路线。
 
 ## 使用限制
 
@@ -18,27 +16,13 @@
 ### .axml 示例代码
 
 ```html
-//.axml
 <map
   id="map"
   customMapStyle="light"
-  longitude="{{longitude}}"
-  latitude="{{latitude}}"
-  scale="{{scale}}"
-  controls="{{controls}}"
-  onControlTap="controltap"
-  markers="{{markers}}"
-  onMarkerTap="markertap"
-  polyline="{{polyline}}"
-  polygon="{{polygon}}"
-  circles="{{circles}}"
-  onRegionChange="regionchange"
-  onTap="tap"
   onCalloutTap="callouttap"
   show-location
   style="width: 100%; height: 200px;"
   include-points="{{includePoints}}"
-  ground-overlays="{{ground-overlays}}"
 >
 </map>
 ```
@@ -46,12 +30,10 @@
 ### .js 示例代码
 
 ```javascript
-//.js
 Page({
   onReady() {
-    // 使用 my.createMapContext 获取 map 上下文
     this.mapCtx.showRoute({
-      searchType: 'walk', // 搜索类型：10.1.50新增，有"walk", "bus", "drive", "ride", 默认值为walk
+      searchType: 'walk', // 路径类型：10.1.50 新增，有"walk", "bus", "drive", "ride", 默认值为 "walk"
       startLat: 30.257839, // 起点纬度
       startLng: 120.062726, // 起点经度
       endLat: 30.256718, // 终点纬度
@@ -60,19 +42,20 @@ Page({
         { lat: 39.866958, lng: 116.494231 },
         { lat: 39.9357, lng: 116.581092 },
       ], //途径点：10.1.50新增,仅驾车规划有效，searchType=“drive”
-      routeColor: '#FFB90F', // 路线颜色  10.1.50之后，该值仅在2d地图中生效
-      iconWidth: 10, // 纹理宽度  10.1.35 iconPath设置时才生效。10.1.50建议不再设置，在3d地图下提供了默认的纹理宽度。
-      routeWidth: 10, // 路线宽度  在不设置纹理时有效。 10.1.50建议不再设置，在2d地图下提供了默认值，3d不需要设置。
-      zIndex: 4, // 覆盖物 Z 轴坐标  10.1.35
+      routeColor: '#FFB90F', // 路线颜色 10.1.50 之后，该值仅在 2d 地图中生效
+      iconWidth: 10, // 纹理宽度 10.1.35 iconPath设置时才生效。10.1.50 建议不再设置，在 3d 地图下提供了默认的纹理宽度。
+      routeWidth: 10, // 路线宽度 在不设置纹理时有效。 10.1.50建议不再设置，在 2d 地图下提供了默认值，3d 不需要设置。
+      zIndex: 4, // 覆盖物 Z 轴坐标 10.1.35
       mode: 0, // 只有驾车模式和公交模式支持，可选,具体值见下表
       city: 'hangzhou', // 公交模式下必填
       destinationCity: 'hangzhou', // 公交跨城模式下必填
       success: function (res) {
-        console.log(res, 2323);
+        console.log(res, `总路程 ${res.distance} 米, 预计耗时 ${res.duration} 秒`);
       },
     });
   },
   onLoad() {
+    // 使用 my.createMapContext 获取 map 上下文
     this.mapCtx = my.createMapContext('map');
     this.setData({
       includePoints: [
@@ -148,5 +131,12 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | **属性** | **类型** | **描述**         |
 | -------- | -------- | ---------------- |
 | success  | Boolean  | 是否成功。       |
-| distance | Number   | 距离。           |
+| distance | Number   | 距离，单位为米。 |
 | duration | Number   | 时间，单位为秒。 |
+
+
+## 错误码
+
+| **错误码** | **描述**       | **解决方案**                               |
+| ---------- | -------------- | ------------------------------------------ |
+| 3003/60001/30007        | 步行/公交/骑行起点终点经纬度差距过大，路线规划失败 | 缩小经纬度差距 |

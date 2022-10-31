@@ -21,7 +21,7 @@ const recorderStartCallback = res => {
 recorderManager.onStart(recorderStartCallback);
 setTimeout(() => {
   recorderManager.offStart(recorderStartCallback);
-}, 5000);
+}, 10000);
 ```
 
 ## 入参

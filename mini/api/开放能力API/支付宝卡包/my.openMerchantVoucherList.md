@@ -23,6 +23,8 @@ my.openMerchantVoucherList({
   }
 });
 ```
+## 示例效果图
+![avatar](https://img.alicdn.com/imgextra/i1/O1CN01JMiDnK1QgKtZMgXDM_!!6000000002005-2-tps-670-458.png)
 
 ## 入参
 

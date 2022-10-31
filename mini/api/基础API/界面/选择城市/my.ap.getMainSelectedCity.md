@@ -5,7 +5,7 @@
 ## 使用限制
 
 - 基础库 1.23.7 或更高版本；支付宝客户端 10.1.88 或更高版本，若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- 首页优先获取定位城市信息。若用户手动选择过城市，则会替换为用户手动选择的城市。`isManualSelected` 决定是否为手动选择的城市。
+- 首页优先获取定位城市信息。若用户已手动选择过城市，则会替换为用户手动选择的城市。`isManualSelected` 决定是否为手动选择的城市。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
@@ -73,8 +73,6 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | chineseMainLand  | Boolean  | 是否是大陆。                                |
 | isManualSelected | Boolean  | 是否是手动选择。                            |
 | settingTime      | Number   | 设置时间。                                  |
-| districtName     | String   | 区县名（支付宝客户端 10.1.99 版本及以上）。 |
-| districtCode     | String   | 区县编码(客户端 10.1.99 版本新增)。         |
 
 ## 错误码
 

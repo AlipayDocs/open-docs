@@ -1,6 +1,6 @@
 # 简介
 
-**FileSystemManager.removeSavedFile** 删除该小程序下已保存的本地缓存文件。
+**FileSystemManager.removeSavedFile** 删除指定的 [本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6) 。
 
 ## 使用限制
 
@@ -13,12 +13,19 @@
 
 ### .js 示例代码
 
+// 从已保存的本地缓存文件中删除一个。
 ```javascript
 let fs = my.getFileSystemManager();
-fs.removeSavedFile({
-  filePath: `${my.env.USER_DATA_PATH}/test.txt`,
+my.getSavedFileList({
   success: res => {
-    console.log('删除成功');
+    console.log(res.fileList[0])
+    if (!res.fileList[0]) return;
+    fs.removeSavedFile({
+      filePath: res.fileList[0].apFilePath,
+      success: res1 => {
+        console.log('删除成功');
+      },
+    });
   },
 });
 ```
@@ -29,7 +36,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| filePath | String | 是 | 需要删除的文件路径。 |
+| filePath | String | 是 | 需要删除的 [本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6) 路径。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
