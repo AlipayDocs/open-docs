@@ -120,8 +120,8 @@ Page({
     my.navigateTo({
       url: '/pages/pageB/index',
       events: {
-        openedToOpener(message) {
-          console.log('do something with message: ' + message);
+        openedToOpener(data) {
+          console.log('do something with message: ' + data.message);
         }
       }
     })
