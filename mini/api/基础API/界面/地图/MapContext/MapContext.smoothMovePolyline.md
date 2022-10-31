@@ -3,10 +3,15 @@
 **MapContext.smoothMovePolyline** 是在地图上绘制轨迹动画的接口。
 
 ## 使用限制
-- ios 上暂不支持 colorList 功能， iconPath 引用图片宽高需要为 2 的幂次。
+- iOS 上暂不支持 colorList 功能， iconPath 引用图片宽高需要为 2 的整数次幂。
 - 基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.90 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+
+## 效果示例
+
+  <image mode="scaleToFill" src="https://gw.alicdn.com/imgextra/i2/O1CN01LHEzcu20VdowedOub_!!6000000006855-1-tps-888-990.gif" style="width:300px; height: 350px;" />
+  
 
 # 接口调用
 
@@ -17,38 +22,41 @@
 this.mapCtx = my.createMapContext('map');
 const aniPoints = [
   {
-    latitude: 30.261775,
-    longitude: 120.102507,
+    latitude: 30.27296006944446,
+    longitude: 120.12587239583334,
+  }, {
+    latitude: 30.27296006944446,
+    longitude: 120.12457239583334,
   },
   {
-    latitude: 30.262794,
-    longitude: 120.103816,
+    latitude: 30.27426006944446,
+    longitude: 120.12457239583334,
   },
   {
-    latitude: 30.264036,
-    longitude: 120.10491,
+    latitude: 30.27426006944446,
+    longitude: 120.12657239583334,
   },
   {
-    latitude: 30.265194,
-    longitude: 120.10609,
+    latitude: 30.27626006944446,
+    longitude: 120.12657239583334,
   },
   {
-    latitude: 30.265824,
-    longitude: 120.107217,
+    latitude: 30.27626006944446,
+    longitude: 120.12727239583334,
   },
   {
-    latitude: 30.267446,
-    longitude: 120.109749,
+    latitude: 30.27656006944446,
+    longitude: 120.12727239583334,
   },
   {
-    latitude: 30.268715,
-    longitude: 120.112721,
+    latitude: 30.27686006944446,
+    longitude: 120.12987239583334,
   },
 ];
 this.mapCtx.smoothMovePolyline({
   polylineId: 0,
   points: aniPoints,
-  color: '#FF000DD',
+  color: '#00FF00',
   width: 10,
   dottedLine: false,
   iconPath: '/image/map_alr.png',
@@ -81,7 +89,7 @@ this.mapCtx.smoothMovePolyline({
 
 # 常见问题 FAQ
 
-## Q：无法使用 clearRoute 清除轨迹动画？
+## Q：在地图上使用 smoothMovePolyline 绘制的动画为什么无法使用 clearRoute 清除？
 
 A：clearRoute 只能用于清除地图上的导航路线，无法清除动画。请使用 MapContext.updateComponents 清除轨迹动画 示例如下：
 ```javascript
