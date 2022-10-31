@@ -18,6 +18,8 @@ let recorderManager = my.getRecorderManager();
 recorderManager.onStart(res => {
   console.log('开始录音');
 });
+
+recorderManager.start();
 ```
 
 ## 入参
