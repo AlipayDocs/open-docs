@@ -22,7 +22,7 @@ my.downloadFile({
   success: res => {
     const result = fs.saveFileSync(
       res.apFilePath,
-      `${my.env.USER_DATA_PATH}/example.jpg` // 保存为本地用户文件，若保存为本地缓存文件时可以不传
+      `${my.env.USER_DATA_PATH}/example.jpg` // 保存为本地用户文件。此参数不传则保存为本地缓存文件
     );
     console.log(result);
   },
