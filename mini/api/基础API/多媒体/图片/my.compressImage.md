@@ -103,7 +103,7 @@ my.chooseImage({
         fs.getFileInfo({
           filePath: data.apFilePaths[0],
           success: (res) => {
-            console.log(res.size); // 单位是字节（B）
+            console.log(res.size); // 单位是字节（Byte）
           }
         })
       },
