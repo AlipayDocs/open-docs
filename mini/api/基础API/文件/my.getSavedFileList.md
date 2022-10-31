@@ -2,7 +2,7 @@
 
 # 简介
 
-**my.getSavedFileList** 是获取保存的所有文件信息的 API。
+**my.getSavedFileList** 是获取 [my.saveFile](https://opendocs.alipay.com/mini/api/xbll1q) 保存的 [本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6) 列表的 API。
 
 ## 使用限制
 
@@ -24,10 +24,9 @@
 ### .js 示例代码
 
 ```javascript
-// .js
 my.getSavedFileList({
   success: res => {
-    console.log(JSON.stringify(res));
+    console.log(res);
   },
 });
 ```
@@ -54,6 +53,6 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性**   | **类型** | **描述**   |
 | ---------- | -------- | ---------- |
-| size       | Number   | 文件大小。 |
+| size       | Number   | 文件大小。单位为 Byte。 |
 | createTime | Number   | 创建时间。 |
 | apFilePath | String   | 文件路径。 |
