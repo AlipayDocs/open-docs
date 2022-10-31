@@ -61,7 +61,7 @@ this.mapCtx.smoothMoveMarker({
 | points | Array | 是 | 动画路线的经纬度集合。 建议路线集合中第一个点的经纬度等于需要执行动画的 marker 点经纬度，这样可以使动画看起来更顺滑 |
 | duration | Number | 否 | 动画执行时间，默认为 5000 毫秒（ms）。 |
 | targetDistances | Array | 否 | 指定需要 onMarkerMove 回调的目标距离数组。 |
-| action | String | 否 | 指定操作动画。 <ul><li>`action:'start'` 默认值。表示执行动画。</li></ul> <ul><li>`action:'stop'` 在动画过程中可提前停止动画</li></ul> |
+| action | String | 否 | 指定操作动画。<ul><li>`action:'stop'` 表示在动画过程中提前停止动画，并将点标记移动至动画路线最终位置。</li><li>`action:'start'` 默认值，表示执行动画。</li></ul> |
 
 ## 回调事件
 
