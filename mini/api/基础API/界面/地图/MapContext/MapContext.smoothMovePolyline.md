@@ -78,7 +78,7 @@ this.mapCtx.smoothMovePolyline({
 | iconWidth | Number | 否 | 线的纹理宽度。设置 iconPath 后生效 |
 | zIndex | Number | 否 | 动画的层级，zIndex 数值高的动画覆盖在低的上面 |
 | colorList | Array | 否 | 彩虹线。如：`colorList:['#ff0000']` |
-| action | String | 否 | 指定操作动画。<ul><li>`action:'stop'` 表示在动画过程中提前停止动画，并将点标记移动至动画路线最终位置。</li><li>`action:'start'` 默认值，表示执行动画。</li></ul> |
+| action | String | 否 | 指定操作动画。<ul><li>`action:'stop'` 表示在动画过程中提前停止动画，并将轨迹绘制完整。</li><li>`action:'start'` 默认值，表示执行动画。</li></ul> |
 
 ## 回调事件
 
