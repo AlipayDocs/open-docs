@@ -16,14 +16,13 @@
 ### .js 示例代码
 
 ```javascript
-// .js
 my.openMerchantTicketList({ 
   partnerId: '2088xxxx',
   success: (res) => {
-    console.log('调用成功',res)
+    console.log('调用成功', res)
   },
   fail: (error) => {
-    console.log('调用失败',error)
+    console.log('调用失败', error)
   },
   complete: () => {
     console.log('调用完成，无论成功或失败都会调用')
