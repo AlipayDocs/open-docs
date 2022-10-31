@@ -22,7 +22,8 @@
 
 ## 示例代码
 
-### .js 示例代码
+### 普通模式
+#### .js 示例代码
 
 ```javascript
 my.chooseDistrict({
@@ -176,19 +177,38 @@ my.chooseDistrict({
       ],
     },
   ],
+  success: (res) => {
+    my.alert({
+      content: res.name + ':' + res.adCode,
+    });
+  },
+  fail: (res) => {
+    my.alert({ title: '调用失败', content: JSON.stringify(res) });
+  }
+});
+```
+
+### src 模式
+#### .js 示例代码
+
+```javascript
+my.chooseDistrict({   
+  // src模式优先级最高，指定src，只读取src内的数据
+  src:"/json/chooseDistrict.json",
   success: res => {
     my.alert({
       content: res.name + ':' + res.adCode,
     });
   },
-});
+  fail: (res) => {
+    my.alert({ title: '调用失败', content: JSON.stringify(res) });
+  }
+})
 ```
 
-### .json 示例代码
+#### .json 示例代码
 
-#### src 模式
-
-将 chooseDistrict 的入参通过文件方式添加到小程序中，文件内容为接口入参。可应对入参数据量大的场景，如新建 chooseDistrict.json。
+将 chooseDistrict 的入参通过代码包文件方式添加到小程序中，文件内容为接口入参。可应对入参数据量大的场景，如新建 chooseDistrict.json。
 
 ```json
 // chooseDistrict.json 参数参见文档说明
@@ -210,6 +230,14 @@ my.chooseDistrict({
 }
 ```
 
+读取小程序代码包文件时，需要在 mini.project.json 中配置文件路径。* 代表任意文件名：
+
+```json
+{
+  "include": ["*/*.json"]
+}
+```
+
 ## 入参
 
 <table>
@@ -218,6 +246,33 @@ my.chooseDistrict({
     <th><b>类型</b></th>
     <th><b>必填</b></th>
     <th><b>描述</b></th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>通用场景</b></td>
+  </tr>
+  <tr>
+    <td>mode</td>
+    <td>int</td>
+    <td>是</td>
+    <td>指定场景。枚举如下：</br><ul><li>0：展示境内。</li><li>1：展示境外。</li><li>2：展示境内+境外。</li></ul></td>
+  </tr>
+  <tr>
+    <td>src</td>
+    <td>String</td>
+    <td>否</td>
+  <td>自定义数据文件地址。自定义数据量大时，建议将数据文件内置在小程序内。文件内参数格式同接口定义。<br /><b>注意：</b> src模式优先级最高，指定src，只读取src内的数据</td>
+  </tr>
+  <tr>
+    <td>success</td>
+    <td>Function</td>
+    <td>否</td>
+    <td>成功回调。</td>
+  </tr>
+  <tr>
+    <td>fail</td>
+    <td>Function</td>
+    <td>否</td>
+    <td>失败回调。</td>
   </tr>
   <tr>
     <td colspan="4"><b>境内场景</b></td>
@@ -260,33 +315,6 @@ my.chooseDistrict({
     <td>Array</td>
     <td>否</td>
     <td>境外多 tab 数据集合, 对象值可查看 <b>PageModel</b>。</br>如果对象为空时，默认使用内置的境外城市列表填充。</td>
-  </tr>
-  <tr>
-    <td colspan="4"><b>通用场景</b></td>
-  </tr>
-  <tr>
-    <td>mode</td>
-    <td>int</td>
-    <td>是</td>
-    <td>指定场景。枚举如下：</br><ul><li>0：展示境内。</li><li>1：展示境外。</li><li>2：展示境内+境外。</li></ul></td>
-  </tr>
-  <tr>
-    <td>src</td>
-    <td>String</td>
-    <td>否</td>
-    <td>自定义数据文件地址。自定义数据量大时，建议将数据文件内置在小程序内。文件内参数格式同接口定义。</td>
-  </tr>
-  <tr>
-    <td>success</td>
-    <td>Function</td>
-    <td>否</td>
-    <td>成功回调。</td>
-  </tr>
-  <tr>
-    <td>fail</td>
-    <td>Function</td>
-    <td>否</td>
-    <td>失败回调。</td>
   </tr>
 </table>
 
