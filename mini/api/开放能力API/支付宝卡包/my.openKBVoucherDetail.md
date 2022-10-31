@@ -18,21 +18,18 @@
 ### .js 示例代码
 
 ```javascript
-// .js
-//传入passId来打开
+// 使用 passId 打开
 my.openKBVoucherDetail({ 
-  passId: 'xxxxxxxx'，
+  passId: 'xxxxxxxx',
   success: (res) => {
     console.log('调用成功', res);
   },
   fail: (error) => {
     console.log('调用失败', error);
-  },
-  complete: () => {
-    console.log('调用完成，无论成功或失败都会调用');
-  },
+  }
 });
-// 传入partnerId 和 serialNumber来打开
+
+// 使用 partnerId 和 serialNumber
 my.openKBVoucherDetail({
   partnerId: '2088xxxx',
   serialNumber: '20170921',
@@ -41,10 +38,7 @@ my.openKBVoucherDetail({
   },
   fail: (error) => {
     console.log('调用失败', error);
-  },
-  complete: () => {
-    console.log('调用完成，无论成功或失败都会调用');
-  },
+  }
 });
 ```
 ## 示例效果图
