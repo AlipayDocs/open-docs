@@ -85,3 +85,29 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | apFilePaths | StringArray | 压缩后的图片地址([本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6))数组。 |
+
+# 常见问题
+## Q：图片压缩后，如何查看文件大小？
+A：可通过调用 [FileSystemManager.getFileInfo](https://opendocs.alipay.com/mini/api/0226og) 获得文件的 size 。
+例如：
+```javascript
+my.chooseImage({
+  count: 1,
+  success: res => {
+    my.compressImage({
+      apFilePaths: res.apFilePaths,
+      compressLevel: 1,
+      success: data => {
+        console.log(data.apFilePaths[0]);
+        let fs = my.getFileSystemManager();
+        fs.getFileInfo({
+          filePath: data.apFilePaths[0],
+          success: (res) => {
+            console.log(res.size); // 单位是字节（Byte）
+          }
+        })
+      },
+    });
+  },
+});
+```
