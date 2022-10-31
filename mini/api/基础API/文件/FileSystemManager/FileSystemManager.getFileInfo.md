@@ -1,6 +1,6 @@
 # 简介
 
-**FileSystemManager.getFileInfo** 获取该小程序下的 [本地文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6) 信息。
+**FileSystemManager.getFileInfo** 获取该小程序内指定 [本地文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6) 的信息。
 
 ## 使用限制
 
