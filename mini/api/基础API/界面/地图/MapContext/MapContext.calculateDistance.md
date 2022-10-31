@@ -2,7 +2,7 @@
 
 **MapContext.calculateDistance** 计算由一系列坐标点所定义的路径的长度，并可计算出该路径上距起始点指定距离的点的坐标。
 
-例如：入参 { points: [A, B, C]，targetDistances: [d1, d2] }<br>success 回调的参数 { distance: distance, targetPoints: [X, Y] } <br><br>ABC 三点确定由两段直线（AB， BC）组成的路径，distance 等于路径的总长（单位米）<br>沿着这条路径距离 A 点 d1 长度的即为目标点 X ，d2 长度的就是目标点 Y。
+例如：入参 { points: [A, B, C]，targetDistances: [d1, d2] }，success 回调的参数 { distance, targetPoints: [X, Y] } <br>用 dist(M, N) 代表坐标 M 到 N 的直线距离，则有 distance == dist(A, B) + dist(B, C)<br>若 0 <= d1 < dist(A, B)，则 X 在线段 AB 上（X.targetLineIndex == 0），且 dist(A, X) == d1<br>若 0 <= d2 - dist(A, B) < dist(B, C)，则 Y 在线段 BC 上（Y.targetLineIndex == 1），且 dist(A, B) + dist(B, Y) == d2
 
 ## 使用限制
 
