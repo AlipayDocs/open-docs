@@ -2,7 +2,7 @@
 
 # 简介
 
-**my.removeSavedFile** 是删除某个[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)的 API。
+**my.removeSavedFile** 删除指定的[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)。
 
 ## 使用限制
 
@@ -24,7 +24,7 @@
 ### .js 示例代码
 
 ```javascript
-// 从已保存的本地缓存文件中删除一个。
+// 从已保存的本地缓存文件中删除一个
 my.getSavedFileList({
   success: res => {
     my.removeSavedFile({
