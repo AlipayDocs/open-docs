@@ -15,15 +15,15 @@
 
 ```javascript
 my.showBLEPermissionGuide（{
- firstTipsTitle: "首次使用蓝牙业务提示弹窗标题", //仅ios有效，建议不配置
- firstTipsMessage: "首次使用蓝牙业务提示弹窗内容", //仅ios有效，建议不配置
- authTipsTitle:" 开启蓝牙授权弹窗标题", //仅ios有效，建议不配置
- authTipsMessage: "开启蓝牙授权弹窗业务提示内容", //仅ios有效，建议不配置
- authTipsButton: "去开启", //仅ios有效，建议不配置
- openTipsTitle: "开启蓝牙开关弹窗标题", //仅ios有效，建议不配置
- openTipsMessage: "开启蓝牙开关弹窗业务提示内容", //仅ios有效，建议不配置
- openTipsButton: "去开启", //仅ios有效，建议不配置
-  bizType: "bizType", //仅android有效
+ firstTipsTitle: "首次使用蓝牙业务提示弹窗标题", //仅iOS有效，建议不配置
+ firstTipsMessage: "首次使用蓝牙业务提示弹窗内容", //仅iOS有效，建议不配置
+ authTipsTitle:" 开启蓝牙授权弹窗标题", //仅iOS有效，建议不配置
+ authTipsMessage: "开启蓝牙授权弹窗业务提示内容", //仅iOS有效，建议不配置
+ authTipsButton: "去开启", //仅iOS有效，建议不配置
+ openTipsTitle: "开启蓝牙开关弹窗标题", //仅iOS有效，建议不配置
+ openTipsMessage: "开启蓝牙开关弹窗业务提示内容", //仅iOS有效，建议不配置
+ openTipsButton: "去开启", //仅iOS有效，建议不配置
+  bizType: "bizType", //仅Android有效
   success: (res) => {
     console.log(res)
   },
