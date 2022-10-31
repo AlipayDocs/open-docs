@@ -16,7 +16,7 @@
 ```javascript
 let recorderManager = my.getRecorderManager();
 recorderManager.start({
-  duration: 600000,
+  duration: 180000,
 });
 recorderManager.pause();
 ```
