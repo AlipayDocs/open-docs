@@ -8,14 +8,14 @@ Canvas 实例，可以通过 [SelectorQuery](https://opendocs.alipay.com/mini/ap
 
 ## 基础示例
 
-.axml 示例代码
+### .axml 示例代码
 
 ```html
 <!-- 必须指定 type -->
 <canvas id="canvas" type="2d" onReady="onCanvasReady" />
 ```
 
-.js 示例代码
+### .js 示例代码
 ```js
 Page({
     // 一定要在 canvas 的 onReady 中调用
@@ -46,6 +46,7 @@ Page({
 | **名称** | **描述** |
 | --- | --- |
 | [Canvas.getContext](https://opendocs.alipay.com/mini/api/getcontext) | 返回 Canvas 的绘制上下文。 |
+| [RenderingContext](https://opendocs.alipay.com/mini/01w0it) | Canvas 绘图上下文。 |
 | [Canvas.createImage](https://opendocs.alipay.com/mini/api/createimage) | 创建图片对象，支持 2DCanvas 和 WebGL Canvas 使用。 |
 | [Canvas.requestAnimationFrame](https://opendocs.alipay.com/mini/api/requestAnimationFrame) | 帧调用，下次重绘之前调用指定的回调函数。 |
 | [Canvas.cancelAnimationFrame](https://opendocs.alipay.com/mini/api/cancelAnimationFrame) | 取消 requestAnimationFrame 添加的动画帧请求。 |
