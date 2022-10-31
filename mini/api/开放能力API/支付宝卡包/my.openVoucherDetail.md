@@ -16,8 +16,7 @@
 ### .js 示例代码
 
 ```javascript
-// .js
-//传入passId来打开
+// 传入passId来打开
 my.openVoucherDetail({ 
   passId: '20170921',
   success: (res) => {
