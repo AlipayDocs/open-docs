@@ -4,9 +4,9 @@
 
 # 接入必读
 
-1、请到平台控制台为当前小程序绑定 [获取会员基础信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000054282) 产品。**未绑定该产品而直接调用此 API，会收到报错“ISV权限不足”（code 40006）**。
+1、请到开放平台控制台为当前小程序绑定 [获取会员基础信息](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000054282) 产品。**未绑定该产品而直接调用此 API，会收到报错“ISV权限不足”（code 40006）**。
 
-2、请参考示例代码，使用 open-type 为 getAuthorize、scope 为 userInfo 的 [`<button>` 组件](https://opendocs.alipay.com/mini/component/button)，由用户触发并完成授权，再在 onGetAuthorize 回调函数中调用 my.getOpenUserInfo()，用户拒绝授权事件在 <button> 组件监听 onError 回调。**未经用户授权而直接调用此 API，会收到报错“无效的授权关系”（code 40003）**。
+2、请参考示例代码，在 `\<button\>` 的 `onGetAuthorize`（用户同意授权）事件中调用 my.getOpenUserInfo，并恰当处理 `onError`（用户拒绝授权）事件。**未经用户授权而直接调用此 API，会收到报错“无效的授权关系”（code 40003）**
 
 # 接口调用
 
