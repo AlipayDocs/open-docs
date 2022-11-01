@@ -32,12 +32,12 @@ Object 类型，参数如下：
 | --- | --- | --- | --- |
 | filePath | String | 是 | 要写入的文件路径（[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)）。 |
 | data | String/ArrayBuffer | 是 | 要写入的文本或二进制数据。 |
-| encoding | String | 否 | 指定写入文件二进制数据的编码方式，默认值为 utf8。<br />可选值：<ul><li>ascii</li><li>base64</li><li>hex</li><li>binary</li><li>ucs2/ucs-2/utf16le/utf-16le</li><li>utf-8/utf8</li><li>latin1</li></ul> 更多说明见下表 encoding|
+| encoding | String | 否 | 指定写入文件二进制数据的编码方式，默认值为 utf8。<br />可选值：<ul><li>ascii</li><li>base64</li><li>hex</li><li>binary</li><li>ucs2/ucs-2/utf16le/utf-16le</li><li>utf-8/utf8</li><li>latin1</li></ul> 更多说明见下文 **encoding 参数说明**|
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-### encoding
+### encoding 参数说明
 
 以 ascii 及其扩展编码
 |  **可选值**  | **说明** | **举例** |
