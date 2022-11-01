@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.smoothMovePolyline** 是在地图上绘制轨迹动画的接口，对应 map 上的 [polyline](https://opendocs.alipay.com/mini/component/map#polyline) 参数。
+**MapContext.smoothMovePolyline** 是在地图上绘制轨迹动画的接口。只有在**动画过程中** `action:'stop'` 才可以生效。
 
 ## 使用限制
 - iOS 上暂不支持 colorList 功能， iconPath 引用图片宽高需要为 2 的整数次幂。
@@ -60,8 +60,18 @@ this.mapCtx.smoothMovePolyline({
   width: 10,
   dottedLine: false,
   iconPath: '/image/map_alr.png',
+  duration: 4000,// 动画时间设置为 4 秒
   iconWidth: 10,
 });
+
+// 若希望 2 秒后停止 polylineId 为 0 的轨迹动画，并将轨迹绘制完整。代码如下：
+setTimeout(() => {
+      this.mapCtx.smoothMovePolyline({
+        polylineId: 0,
+        action: 'stop',
+      });
+}, 2000);
+
 ```
 
 ## 入参
@@ -94,5 +104,5 @@ this.mapCtx.smoothMovePolyline({
 A：clearRoute 只能用于清除地图上的导航路线，无法清除动画。请使用 MapContext.updateComponents 清除轨迹动画 示例如下：
 ```javascript
  this.mapCtx = my.createMapContext('map');
- this.mapCtx.updateComponents({ polyline:[] }) // polyline 可以保留不需清楚的动画线路
+ this.mapCtx.updateComponents({ polyline:[] }) // polyline 可以保留不需要清除的轨迹线路
 ```
