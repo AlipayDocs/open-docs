@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.smoothMoveMarker** 用于标记点（marker）在地图上进行滑动动画。
+**MapContext.smoothMoveMarker** 用于标记点（marker）在地图上进行滑动动画。只有在**动画过程中** `action:'stop'` 才可以生效。
 
 ## 使用限制
 
@@ -50,6 +50,14 @@ this.mapCtx.smoothMoveMarker({
   targetDistances: [100, 200, 300, 600],
   points: aniPoints,
 });
+
+// 若希望 2 秒后停止 markerId 为 0 的动画，并将点标记移至终点。代码如下：
+setTimeout(() => {
+      this.mapCtx.smoothMoveMarker({
+        markerId: 0,
+        action: 'stop',
+      });
+}, 2000);
 ```
 
 ## 入参
