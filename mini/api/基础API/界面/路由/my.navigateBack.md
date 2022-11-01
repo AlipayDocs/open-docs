@@ -93,7 +93,39 @@ Page({
 
 ## Q：my.navigateBack 是否支持跨页面传值？
 
-A：暂不提供 API 层面的支持。开发者可以自行实现间接传值，参考上一条问题答案中的示例代码。
+A：可以通过 `my.navigateTo` 的 [events](https://opendocs.alipay.com/mini/api/zwi8gx#.js%20%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81) 参数监听被打开页传来的消息，被打开页通过在 `my.navigateBack` 时使用 [getOpenerEventChannel](https://opendocs.alipay.com/mini/framework/page-detail#Page.prototype.getOpenerEventChannel) 进行页面间传值，具体实现如下：
+
+```javascript
+// 上一页（/pages/pageA/index）
+Page({
+  // 打开当前页
+  gotoPageB() {
+    my.navigateTo({
+      url: '/pages/pageB/index',
+      events: {
+        openedToOpener(data) {
+          console.log('do something with message: ' + data.message);
+        }
+      }
+    })
+  }
+});
+
+// 被打开页（/pages/pageB/index）
+Page({
+  // 返回上一页
+  goBack() {
+    my.navigateBack({
+      success: () => {
+        const eventChannel = this.getOpenerEventChannel();
+        eventChannel.emit('openedToOpener', {
+          message: 'Hello Opener Page!',
+        });
+      }
+    });
+  },
+});
+```
 
 ## Q：能否使用 my.navigateBack 退出小程序？
 
