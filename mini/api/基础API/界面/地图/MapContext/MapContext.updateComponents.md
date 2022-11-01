@@ -58,7 +58,7 @@ this.mapCtx.updateComponents({
 | longitude       | Number   | 中心经度。                               |
 | scale           | Number   | 缩放级别，取值范围为 5-18。默认值为 16。 |
 | markers         | Array    | 覆盖物，在地图上的一个点绘制图标。       |
-| polyline        | Array    | 覆盖物，多个连贯点的集合（路线）。       |
+| polyline        | Array    | 覆盖物，多个连贯点的集合（路线）。可增量更新由 smoothMovePolyline 绘制的轨迹 |
 | include-points  | Array    | 视野将进行小范围延伸包含传入的坐标。     |
 | include-padding | Object   | 视野在地图 padding 范围内展示。          |
 | setting         | Object   | 设置。                                   |
