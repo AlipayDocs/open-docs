@@ -37,7 +37,7 @@ Object 类型，参数如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
-### encoding
+### encoding 参数说明
 
 以 ascii 及其扩展编码
 |  **可选值**  | **说明** | **举例** |
