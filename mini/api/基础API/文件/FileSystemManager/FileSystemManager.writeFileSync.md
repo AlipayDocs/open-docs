@@ -25,10 +25,10 @@ console.log(result);
 ```
 
 ## 入参
-
+FileSystemManager.writeFileSync(string filePath, string|ArrayBuffer data, string encoding)
 ### String filePath
 
-要写入的文件路径 (本地路径)。
+要写入的文件路径 (可以为 [本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6) 路径)。
 
 ### String|ArrayBuffer data
 
@@ -36,9 +36,10 @@ console.log(result);
 
 ### String encoding
 
-指定写入文件的字符编码。
+指定写入文件的字符编码，
 
 可选值：<ul><li>ascii</li><li>base64</li><li>hex</li><li>binary</li><li>ucs2/ucs-2/utf16le/utf-16le</li><li>utf-8/utf8</li><li>latin1</li></ul>
+更多说明参考 [FileSystemManager.write 的参数 encoding](https://opendocs.alipay.com/mini/api/022b6s#encoding)
 
 ## 错误码
 

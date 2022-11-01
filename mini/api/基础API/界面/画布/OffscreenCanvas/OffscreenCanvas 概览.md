@@ -10,5 +10,6 @@
 
 | **名称** | **描述** |
 | --- | --- |
+| [my.createOffscreenCanvas](https://opendocs.alipay.com/mini/api/021zn0) | 创建离屏 Canvas 实例。 |
 | [OffscreenCanvas.getContext](https://opendocs.alipay.com/mini/api/021yfc) | 获取 OffscreenCanvas 的绘制上下文。 |
 | [OffscreenCanvas.createImage](https://opendocs.alipay.com/mini/api/021zn1) | 创建图片对象，支持在 2D Canvas 和 WebGL 下使用。 |

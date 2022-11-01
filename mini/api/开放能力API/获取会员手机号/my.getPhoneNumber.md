@@ -13,19 +13,19 @@
 
 ### 第一步：设置接口内容加密方式
 
-在 [开放平台控制台](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet) 设置 **接口内容加密方式**（可参考文档 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3) ）。**未设置接口加密方式而直接调用 my.getPhoneNumber，将得到异常响应“缺少加密配置”（code 40001）**。
+在 [开放平台控制台](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet) 设置 **接口内容加密方式**（可参考文档 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3) ）。**未设置接口加密方式而直接调用 my.getPhoneNumber，将得到异常响应“缺少加密配置”（code 40001）**。如需 [验证内容的真实性](https://opendocs.alipay.com/common/02mriz)，请参考文档 [接口加签方式] 在 (https://opendocs.alipay.com/common/02mriz) 设置 **接口加签方式（密钥/证书）**。
 
 ### 第二步：绑定产品并申请用户信息
 
-在开放平台控制台为当前小程序绑定 [获取会员手机号](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000046451) 产品，并进行<a href="https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ" target="_blank">用户信息申请</a>（需登录主账号或管理员账号进行操作）。如果`申请用户信息`按钮为灰色，请对照 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) 检查小程序的主营行业设置。**未绑定获取会员手机号产品或未通过用户信息申请直接调用 my.getPhoneNumber，解密后将得到异常响应“ISV权限不足”（code 40006）**。
+在开放平台控制台为当前小程序绑定 [获取会员手机号](https://open.alipay.com/develop/uni/mini/choose-product?bundleId=com.alipay.alipaywallet&productCode=I1080300001000046451) 产品，并进行<a href="https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*ZRjrQ4XnXcQAAAAAAAAAAAAAARQnAQ" target="_blank">用户信息申请</a>（需**登录主账号或管理员账号**才能看到此入口）。如果`申请用户信息`灰色不可点击，请对照 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) 检查小程序的主营行业设置。**未绑定获取会员手机号产品或未通过用户信息申请直接调用 my.getPhoneNumber，解密后将得到异常响应“ISV权限不足”（code 40006）**。
 
-### 第三步：获取用户授权并调用 my.getPhoneNumber
+### 第三步：获取用户授权后调用 my.getPhoneNumber
 
-参考后文示例代码，使用 open-type 为 getAuthorize、scope 为 phoneNumber 的 [`<button>` 组件](https://opendocs.alipay.com/mini/component/button)，由用户触发并完成授权，再在 onGetAuthorize 回调函数中调用 my.getPhoneNumber，用户拒绝授权事件在 <button> 组件监听 onError 回调。**未经用户授权而直接调用 my.getPhoneNumber，解密后将得到异常响应“无效的授权关系”（code 40003）**。
+参考后文示例代码，使用 `open-type` 为 `getAuthorize`、`scope` 为 `phoneNumber` 的 [`\<button\>` 组件](https://opendocs.alipay.com/mini/component/button)，在 `\<button\>` 的 `onGetAuthorize`（用户同意授权）事件中调用 my.getPhoneNumber，并恰当处理 `onError`（用户拒绝授权）事件。**未经用户授权而直接调用 my.getPhoneNumber，解密后将得到异常响应“无效的授权关系”（code 40003）**。
 
 ### 第四步：服务端解密和验签
 
-将 my.getPhoneNumber 返回的密文发送给服务端，参考 [此文档](https://opendocs.alipay.com/common/02mse3) 进行解密以获取手机号。如果上述第二步或第三步未正确完成，报错信息也会在此解密步骤完成后才能看到。如需 [验证加密内容的真实性](https://opendocs.alipay.com/common/02mriz)，请在 [开放平台控制台](https://open.alipay.com/develop/mini/sub/dev-setting?bundleId=com.alipay.alipaywallet) 设置 **接口加签方式（密钥/证书）**，参考文档 [接口加签方式](https://opendocs.alipay.com/common/02mriz) 。
+将 my.getPhoneNumber 返回的 `response` 字段发送给服务端，参考 [接口内容加密方式](https://opendocs.alipay.com/common/02mse3) 进行验签解密。如果第一步中没有设置**接口加签方式**，response 中将不会有 sign 字段，请跳过验签步骤。如果第二步或第三步未正确完成，报错信息也会在此解密步骤完成后才能看到。如果一切正常，解密得到的 JSON 内容 mobile 字段即为手机号（参见后文**服务端解密结果示例**）。
 
 
 # 接口调用
@@ -37,9 +37,9 @@
 ```html
 <button
   open-type="getAuthorize"
+  scope="phoneNumber"
   onGetAuthorize="getPhoneNumber"
   onError="handleAuthError"
-  scope="phoneNumber"
 >
   授权手机号
 </button>
@@ -84,7 +84,9 @@ Page({
 });
 ```
 
-### Java 解密示例代码
+### 服务端解密代码
+
+以下为 java 示例。其他语言请参考 [服务器端各语言实现手机号/运动步数-AES密文解密](https://opendocs.alipay.com/support/01rb0s)。
 
 ```java
 import com.alibaba.fastjson.JSON;
@@ -142,7 +144,7 @@ if (isDataEncrypted) {
 } else {    
   plainData = content;
 }
-```    
+```
 
 ## 服务端解密结果示例
 
@@ -218,14 +220,6 @@ A：请参考本文**接入必读**部分第三步。
 ## Q：调用 my.getPhoneNumber 成功，但服务端解密后得到异常结果 “无效的授权关系”，如何处理？
 
 A：请参考本文**接入必读**部分第三步。也可通过 [my.getSetting](https://opendocs.alipay.com/mini/api/xmk3ml) success 回调参数的 phoneNumber 字段判断用户是否授权过手机号，为 true 即已授权。
-
-## Q：“申请用户信息”为灰色不可点击，并提示 “所有用户信息字段都不满足申请条件”，如何处理？
-
-A：检查小程序是否设置主营行业，并对照 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) 检查应用是否符合主营行业及字段使用场景的要求。
-
-## Q：调用 my.getPhoneNumber 返回的内容没有 sign 字段，如何处理？
-
-A：请确保已设置支付宝公钥、AES 密钥、应用网关。这三者缺失其一，则在调用 my.getPhoneNumber 时将不带 sign 字段。
 
 ## Q：调用 my.getPhoneNumber 并成功解密，为什么得到的 mobile 字段为空？
 

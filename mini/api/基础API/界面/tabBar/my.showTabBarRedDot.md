@@ -33,3 +33,10 @@ Object 类型，参数如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+
+## 错误码
+fail 回调会收到一个 Object 类型的参数，其 error 属性为错误码，errorMessage 为错误消息。
+
+| **错误码** | **错误消息** | **解决方案** |
+| --- | --- | --- |
+| 2 | 无效参数: Error: Index 5 of TabBar do not exists!  | 入参 index 超出范围。如果在 app.json 中 tabBar.items 有 n 项，index 应为 0 ~ n-1 |

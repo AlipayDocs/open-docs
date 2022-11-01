@@ -40,6 +40,7 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | content | String | 否 | 提示中的文字内容。 |
+| mask | Boolean | 否 | 是否显示透明蒙层，防止触摸穿透。<br />**默认值**：true |
 | delay | Number | 否 | 延迟显示，单位为毫秒（ms），默认值为 0。<br />如果在此时间之前调用了 **my.hideLoading** 则不会显示。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
