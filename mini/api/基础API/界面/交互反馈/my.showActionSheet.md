@@ -66,3 +66,12 @@ badges 中的对象支持的属性如下：
 | index | Number | 需要设置角标的 items 索引，从 0 开始。 |
 | type | String | 角标类型。默认为 "none"。<br />可选值：<ul><li>"none"：无红点。</li><li>"point"：纯红点。</li><li>"num"：数字红点。</li><li>"text"：文案红点。</li><li>more：显示 `...`。</li></ul> |
 | text | String | 自定义角标文案。<ul><li>`type` 为 "none"、"point"、"more" 时，`text` 字段无效。</li><li>`type` 为 "num"，`text` 为小数或者 ≤ 0 时，角标不显示；type 为 "num"，`text` ≥ 100 时，显示"..."。</li></ul> |
+
+
+### Function success
+
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
+| **属性** | **类型** | **描述**                                            |
+| -------- | -------- | --------------------------------------------------- |
+| index  | Number  | 选中的菜单按钮索引，从 0 开始。点选取消按钮，返回 -1，Android 则为使用系统返回键取消返回 -1。 |
