@@ -95,28 +95,11 @@ Page({
 
 A：可以通过 `my.navigateTo` 的 [events](https://opendocs.alipay.com/mini/api/zwi8gx#.js%20%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81) 参数监听被打开页传来的消息，被打开页通过在 `my.navigateBack` 时使用 [getOpenerEventChannel](https://opendocs.alipay.com/mini/framework/page-detail#Page.prototype.getOpenerEventChannel) 进行页面间传值，具体实现如下：
 
-```js
-// 被打开页
+```javascript
+// 上一页（/pages/pageA/index）
 Page({
-  // 点击某个按钮进行返回上一级操作
-  handleTap() {
-    my.navigateBack({
-      success: () => {
-        const eventChannel = this.getOpenerEventChannel();
-        eventChannel.emit('openedToOpener', {
-          message: 'Hello Opener Page!',
-        });
-      }
-    });
-  },
-});
-```
-
-```js
-// 返回的目标页面
-Page({
-  // 点击某个按钮进行跳转
-  go() {
+  // 打开当前页
+  gotoPageB() {
     my.navigateTo({
       url: '/pages/pageB/index',
       events: {
@@ -128,6 +111,20 @@ Page({
   }
 });
 
+// 被打开页（/pages/pageB/index）
+Page({
+  // 返回上一页
+  goBack() {
+    my.navigateBack({
+      success: () => {
+        const eventChannel = this.getOpenerEventChannel();
+        eventChannel.emit('openedToOpener', {
+          message: 'Hello Opener Page!',
+        });
+      }
+    });
+  },
+});
 ```
 
 ## Q：能否使用 my.navigateBack 退出小程序？
