@@ -101,8 +101,20 @@ setTimeout(() => {
 
 ## Q：在地图上使用 smoothMovePolyline 绘制的动画为什么无法使用 clearRoute 清除？
 
-A：clearRoute 只能用于清除地图上的导航路线，无法清除动画。请使用 MapContext.updateComponents 清除轨迹动画 示例如下：
+A：clearRoute 只能用于清除地图上的导航路线，无法清除 polyline 线路。请使用 MapContext.updateComponents 清除轨迹动画 示例如下：
 ```javascript
  this.mapCtx = my.createMapContext('map');
- this.mapCtx.updateComponents({ polyline:[] }) // polyline 可以保留不需要清除的轨迹线路
+
+ //清除所有动画，代码如下：
+ this.mapCtx.updateComponents({ polyline:[] }) 
+
+ // map 上只保留 aniPoints 定义的线路轨迹，代码如下：
+ this.mapCtx.updateComponents({
+    polyline: [{
+      points: aniPoints,
+      color: '#0000FF',
+      width: 10,
+    }],
+ })
+
 ```
