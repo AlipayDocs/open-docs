@@ -6,7 +6,7 @@
 offset:[ 0,0 ]时，中心点位于屏幕左上角, offset:[ 1,0 ]时，中心点位于屏幕右上角。
 offset:[ 0,1 ]时，中心点位于屏幕左下角, offset:[ 1,1 ]时，中心点位于屏幕右下角。
 
-<image mode="scaleToFill" src="https://img.alicdn.com/imgextra/i1/O1CN01pZ2gyy1qw4VzgCPEn_!!6000000005559-0-tps-588-780.jpg" style="width:200px; height: 200px;" />
+<image mode="scaleToFill" src="https://img.alicdn.com/imgextra/i1/O1CN01pZ2gyy1qw4VzgCPEn_!!6000000005559-0-tps-588-780.jpg" style="width:300px; height: 360px;" />
 
 ## 使用限制
 
@@ -24,7 +24,7 @@ offset:[ 0,1 ]时，中心点位于屏幕左下角, offset:[ 1,1 ]时，中心�
 // .js
 this.mapCtx = my.createMapContext('map');
 this.mapCtx.setCenterOffset({
-  offset: [0.5, 0.6],// 使地图移动，中心点距屏幕顶部的距离是总长的 60%，距离屏幕左侧的距离是总宽的 50%
+  offset: [0.5, 0.6],// 中心点距屏幕顶部的距离是总长的 60%，距离屏幕左侧的距离是总宽的 50%
 });
 ```
 
