@@ -1,9 +1,9 @@
+## 简介
 Canvas 实例，可以通过 [SelectorQuery](https://opendocs.alipay.com/mini/api/pc8s51) 获取。
 
 ## 使用限制
 
 - **基础库** [2.7.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- 由于 iOS 真机在 10.2.28 有 bug，若需使用 Canvas 接口，短期内需要联系技术支持进行处理（点击右侧咨询按钮接入）。
 
 
 ## 基础示例
@@ -12,8 +12,11 @@ Canvas 实例，可以通过 [SelectorQuery](https://opendocs.alipay.com/mini/ap
 
 ```html
 <!-- 必须指定 type，否则无法获取到 context -->
-<canvas id="canvas" type="2d" onReady="onCanvasReady"></canvas>
+<canvas id="canvas" type="2d" onReady="onCanvasReady" />
 ```
+
+如果您的项目中已使用类似 `<canvas id="canvas" />` 这样未指定 type 的标签，可以参考 [旧版 Canvas 迁移指南](https://opendocs.alipay.com/mini/055eid) 替换。
+
 
 .js 示例代码
 ```js
@@ -52,5 +55,5 @@ Page({
 | [Canvas.toTempFilePath](https://opendocs.alipay.com/mini/api/toTempFilePath) | 把当前画布指定区域的内容导出生成指定大小的图片。 |
 
 # 常见问题 FAQ
-## Q: CanvasContext 中的一些 API 在 Canvas 中找不到？
-A: Canvas API 和 web 标准对齐，可以以 MDN 文档为准。查看 [RenderingContext](https://opendocs.alipay.com/mini/01w0it) 介绍。
+## Q：Canvas 文档里内容看起来很少，我该怎么知道所有 API？
+A：查看 [RenderingContext](https://opendocs.alipay.com/mini/01w0it) 介绍。RenderingContex 和 web 标准对齐，因此完整 API 可以参考 MDN 文档。
