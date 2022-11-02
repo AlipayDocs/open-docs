@@ -6,7 +6,7 @@
 offset:[ 0,0 ]时，中心点位于屏幕左上角, offset:[ 1,0 ]时，中心点位于屏幕右上角。
 offset:[ 0,1 ]时，中心点位于屏幕左下角, offset:[ 1,1 ]时，中心点位于屏幕右下角。
 
-<image mode="scaleToFill" src="(https://img.alicdn.com/imgextra/i1/O1CN01pZ2gyy1qw4VzgCPEn_!!6000000005559-0-tps-588-780.jpg" style="width:300px; height: 350px;" />
+<image mode="scaleToFill" src="(https://img.alicdn.com/imgextra/i1/O1CN01pZ2gyy1qw4VzgCPEn_!!6000000005559-0-tps-588-780.jpg" style="width:200px; height: 200px;" />
 
 ## 使用限制
 
