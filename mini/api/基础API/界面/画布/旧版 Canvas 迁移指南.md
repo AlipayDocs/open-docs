@@ -1,4 +1,6 @@
-小程序的旧版 [CanvasContext](https://opendocs.alipay.com/mini/api/canvascontext) 相关 API 已经不再维护，本指南主要介绍迁移至新版 [Canvas 2D](https://opendocs.alipay.com/mini/01vzqv) 的操作方法。<br />新版本 Canvas API 对齐 Web 标准，可以直接参考 [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)。
+小程序的旧版 [CanvasContext](https://opendocs.alipay.com/mini/api/canvascontext) 相关 API 已经不再维护，本指南主要介绍迁移至新版 [Canvas 2D](https://opendocs.alipay.com/mini/01vzqv) 的操作方法。
+
+新版本 Canvas API 对齐 Web 标准，可以直接参考 [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)。
 
 ## 特性差异
 | **功能** | **旧版** | **新版** |
@@ -8,6 +10,11 @@
 | webgl | 不支持 | 支持 WebGL 1.0 定义的属性和方法 |
 
 
+## 使用限制
+
+新版 Canvas API 需要基础库 [2.7.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 或更高版本。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+
+
 ## 迁移步骤
 
 ### 修改 AXML
@@ -15,6 +22,7 @@
 ```html
 <!-- 旧版 -->
 <canvas id="my-canvas" />
+
 <!-- 改为如下新版。必须在 onReady 回调中获取 CanvasContext -->
 <canvas id="my-canvas" type="2d" onReady="onCanvasReady" />
 ```
@@ -28,6 +36,7 @@ Page({
         const context = my.createCanvasContext('my-canvas');
     }
 })
+
 // 改为如下新版
 Page({
     onCanvasReady() {
@@ -52,6 +61,7 @@ context.draw(false, () => {
     // 此时绘制完成
     console.log('draw done')
 })
+
 // 改为如下新版
 // 绘制前清空画布
 context.clearRect(0, 0, canvas.width, canvas.height)
@@ -67,6 +77,7 @@ console.log('draw done')
 // 旧版
 const src = 'https://img.alicdn.com/tfs/TB1GvVMj2BNTKJjy0FdXXcPpVXa-520-280.jpg'
 context.drawImage(src, 2, 2, 250, 80);
+
 // 改为如下新版
 const img = canvas.createImage();
 img.src = "https://img.alicdn.com/tfs/TB1GvVMj2BNTKJjy0FdXXcPpVXa-520-280.jpg";
@@ -76,6 +87,11 @@ img.onload = () => {
 ```
 
 ### 修改 toTempFilePath
+
+#### 使用限制
+
+Canvas.toTempFilePath 需要基础库 [2.7.15](https://opendocs.alipay.com/mini/framework/lib) 或更高版本，支付宝客户端 10.2.38 或更高版本。
+
 ```javascript
 // 旧版
 context.toTempFilePath({
@@ -83,11 +99,11 @@ context.toTempFilePath({
     console.log(res.apFilePath);
   },
 });
+
 // 修改为如下新版
-my.canvasToTempFilePath({
-    canvas,
-    success(res) {
-      console.log('success', res.tempFilePath);
-    }
+canvas.toTempFilePath({
+  success(res) {
+    console.log(res);
+  },
 });
 ```
