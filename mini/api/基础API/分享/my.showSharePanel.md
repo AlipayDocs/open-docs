@@ -37,3 +37,8 @@
     }
   },
 ```
+
+# 常见问题
+## Q：如何屏蔽分享？
+A：通过胶囊按钮（右上角三个点）中的“分享”按钮，也可以唤起分享面板，若要屏蔽此分享功能，可以调用 [my.hideShareMenu](https://opendocs.alipay.com/mini/api/share_app) 将“分享”按钮置灰。当前不能隐藏此按钮。
+
