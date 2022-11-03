@@ -45,13 +45,13 @@ if (result2.stats) {
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| stats | [Stats](https://opendocs.alipay.com/mini/api/stats)/Object | 当 recursive 为 false 时，res.stats 是一个 Stats 对象。当 recursive 为 true 且 path 是一个目录的路径时，res.stats 是一个 Object，key 以 path 为根路径的相对路径，value 是该路径对应的 Stats 对象。 |
+| stats | Object | 当 recursive 为 false 时，res.stats 是一个 [Stats](https://opendocs.alipay.com/mini/api/stats) 对象。当 recursive 为 true 且 path 是一个目录的路径时，res.stats 是一个 Object，key 是以 path 为根路径的相对路径，value 是该路径对应的 [Stats](https://opendocs.alipay.com/mini/api/stats) 对象。 |
 
 ### Stats/Object stats
 
 | **属性**         | **类型** | **描述**       |
 | ---------------- | -------- | -------------- |
-| mode             | Long     | -              |
-| size             | Long     | 文件大小。     |
-| lastAccessedTime | Long     | 上次访问时间。 |
-| lastModifiedTime | Long     | 上次修改时间。 |
+| mode             | Number     | 文件的类型和存取的权限。         |
+| size             | Number     | 文件大小。     |
+| lastAccessedTime | Number     | 上次访问时间。 |
+| lastModifiedTime | Number     | 上次修改时间。 |
