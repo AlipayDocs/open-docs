@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.smoothMovePolyline** 是在地图上绘制轨迹动画的接口。只有在**动画过程中** `action:'stop'` 才可以生效。
+**MapContext.smoothMovePolyline** 是在地图上绘制轨迹动画的接口。只有在**动画过程中** `action:'stop'` 才可以生效，否则不会执行动画且不会绘制轨迹。。
 
 ## 使用限制
 - iOS 上暂不支持 colorList 功能， iconPath 引用图片宽高需要为 2 的整数次幂。
