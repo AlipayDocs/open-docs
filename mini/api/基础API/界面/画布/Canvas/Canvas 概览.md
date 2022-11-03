@@ -1,3 +1,5 @@
+> 相关文档：[旧版 Canvas 迁移指南](https://opendocs.alipay.com/mini/055eid)
+
 ## 简介
 Canvas 实例，可以通过 [SelectorQuery](https://opendocs.alipay.com/mini/api/pc8s51) 获取。
 
@@ -12,10 +14,10 @@ Canvas 实例，可以通过 [SelectorQuery](https://opendocs.alipay.com/mini/ap
 
 ```html
 <!-- 必须指定 type，否则无法获取到 context -->
-<canvas id="canvas" type="2d" onReady="onCanvasReady" />
+<canvas id="canvas" type="2d" onReady="onCanvasReady"></canvas>
 ```
 
-如果您的项目中已使用类似 `<canvas id="canvas" />` 这样未指定 type 的标签，可以参考 [旧版 Canvas 迁移指南](https://opendocs.alipay.com/mini/055eid) 替换。
+如果您的项目中已使用类似 `<canvas id="canvas"></canvas>` 这样未指定 type 的标签，可以参考 [旧版 Canvas 迁移指南](https://opendocs.alipay.com/mini/055eid) 替换。
 
 
 .js 示例代码
