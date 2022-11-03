@@ -42,7 +42,7 @@ Object 类型，参数如下：
 | placeholder | String | 否 | 输入框内的提示文案。 |
 | align | String | 否 | message 对齐方式。<br />可选值为：left 、center 、right。 |
 | okButtonText | String | 否 | 确认按钮文字，默认值为 **确定**。 |
-| cancelButtonText | String | 否 | 确认按钮文字，默认值为 **取消**。 |
+| cancelButtonText | String | 否 | 取消按钮文字，默认值为 **取消**。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -53,8 +53,8 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性**   | **类型** | **描述**                                    |
 | ---------- | -------- | ------------------------------------------- |
-| ok         | Boolean  | 点击 ok 返回 true，点击 cancel 返回 false。 |
-| inputValue | String   | 当 ok 返回 true 时，返回用户输入的内容。    |
+| ok         | Boolean  | 点击确认按钮返回 true，点击取消按钮返回 false。 |
+| inputValue | String   | 当点击确认按钮时，返回用户输入的内容。 |
 
 # 常见问题
 
