@@ -37,10 +37,10 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| title | String | 否 | prompt 框标题。 |
-| message | String | 否 | prompt 框文本，默认为 **请输入内容**。 |
+| title | String | 否 | 提示框的标题。 |
+| message | String | 否 | 提示框的显示内容，默认为 **请输入内容**。 |
+| align | String | 否 | 提示框的显示内容的对齐方式。<br />可选值为：left 、center 、right。 |
 | placeholder | String | 否 | 输入框内的提示文案。 |
-| align | String | 否 | message 对齐方式。<br />可选值为：left 、center 、right。 |
 | okButtonText | String | 否 | 确认按钮文字，默认值为 **确定**。 |
 | cancelButtonText | String | 否 | 取消按钮文字，默认值为 **取消**。 |
 | success | Function | 否 | 调用成功的回调函数。 |
