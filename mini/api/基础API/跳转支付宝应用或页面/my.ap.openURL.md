@@ -1,5 +1,7 @@
 # 简介
 my.ap.openURL（Beta）是用于打开 URL 的 API。URL 为第三方 H5 页面或者支付宝官方给出的链接（以 https:// 或者 alipays:// 开头），且必须在 URL 白名单内。
+- 如果想要从一个小程序跳转到另一个小程序（16位APPID），请移步 [my.navigateToMiniProgram](https://opendocs.alipay.com/mini/api/yz6gnx)。
+- 如果想要从小程序跳转到支付宝官方应用（8位APPID），请移步 [my.ap.openAlipayApp](https://opendocs.alipay.com/mini/04p771)。
 
 URL 白名单包含两部分：
 - 默认的全局白名单，包含以 `https://render.alipay.com/p/` 开头的所有 URL。此类 URL 一般为支付宝官方运营活动页。所有小程序都可直接通过 my.ap.openURL 打开此类 URL。
