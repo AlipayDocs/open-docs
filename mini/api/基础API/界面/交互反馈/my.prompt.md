@@ -23,6 +23,8 @@ my.prompt({
   placeholder: '给朋友留言',
   okButtonText: '确定',
   cancelButtonText: '取消',
+  confirmColor: "#49a9ee",
+  cancelColor: "#000000",
   success: result => {
     my.alert({
       title: JSON.stringify(result),
@@ -43,6 +45,8 @@ Object 类型，参数如下：
 | placeholder | String | 否 | 输入框内的提示文案。 |
 | okButtonText | String | 否 | 确认按钮文字，默认值为 **确定**。 |
 | cancelButtonText | String | 否 | 取消按钮文字，默认值为 **取消**。 |
+| confirmColor | String | 否 | 确认按钮的文字颜色，必须是 16 进制格式的颜色字符串，例 "#49a9ee"。 |
+| cancelColor | String | 否 | 取消按钮的文字颜色，必须是 16 进制格式的颜色字符串，例 "#000000"。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
