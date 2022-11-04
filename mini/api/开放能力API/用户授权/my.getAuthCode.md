@@ -34,7 +34,7 @@ my.getAuthCode 引导用户授权其信息给当前小程序，会弹出授权�
 ## 使用限制
 
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 此 API 支持在小程序插件中使用，授权主体是宿主小程序。 // 具体怎么理解？authcode 最后怎么用？
+- 此 API 支持在小程序插件中使用，授权主体是宿主小程序。
 - 此 API 不支持在 web-view 中使用。如果要在 web-view 中使用用户信息，可在小程序上下文中获取后通过 [my.postMessage](https://opendocs.alipay.com/mini/component/web-view#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81_2) 传给 web-view。
 
 
