@@ -123,7 +123,7 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | url | String | 是 | 接收上传文件的服务端 url。 |
-| filePath | String | 是 | 要上传的文件路径。当前只支持[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。 |
+| filePath | String | 是 | 要上传的文件路径（[本地路径](https://opendocs.alipay.com/mini/03dt4s)）<br> **注意**：目前 IDE 暂不支持本地用户文件。建议使用真机测试。 |
 | fileName | String | 是 | 指定 POST 请求中的文件名，服务端需按此参数取值读取文件数据。 |
 | header | Object | 否 | HTTP 请求 Header。其中 content-type 为 multipart/form-data（与 request body 实际格式一致），请勿更改。 |
 | formData | Object | 否 | HTTP 请求中的其他数据，每个 key 为字段名，value 为字符串。 |
@@ -207,6 +207,8 @@ my.uploadFile 返回的对象，可用于监听上传进度变化或取消上传
 | ---------------------------------------------- | -------------------- |
 | UploadTask.abort()                             | 中断上传任务         |
 | UploadTask.onProgressUpdate(function callback) | 监听上传进度变化事件 |
+| UploadTask.onHeadersReceived(function callback) | 监听 HTTP Response Header 事件。会比请求完成事件更早。AppX 2.8.2 且支付宝客户端 10.2.90 及以上版本，低版本需做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。 |
+| UploadTask.offHeadersReceived(function callback) | 移除 HTTP Response Header 事件的监听函数。AppX 2.8.2且支付宝客户端 10.2.90 及以上版本，低版本需做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。 |
 
 ### 使用示例
 
@@ -214,11 +216,22 @@ my.uploadFile 返回的对象，可用于监听上传进度变化或取消上传
 const task = my.uploadFile({
   // ... 
 });
+// onProgressUpdate 示例
 task.onProgressUpdate(payload => {
   const { progress, totalBytesWritten, totalBytesExpectedToWrite } = payload;
   console.log(`uploadProgress: ${progress}%`);
 });
+// abort 示例
 task.abort();
+// onHeadersReceived 示例
+if (my.canIUse('uploadFile.return.onHeadersReceived')) {
+  task.onHeadersReceived(header => {
+     console.log(header);
+  });
+// if (my.canIUse('uploadFile.return.offHeadersReceived')) {
+//    task.offHeadersReceived();
+// }
+}
 ```
 
 其中，payload 参数的含义如下：
@@ -227,6 +240,7 @@ task.abort();
 - totalBytesWritten: 已经上传的数据长度，单位 Bytes
 - totalBytesExpectedToWrite: 预期需要上传的数据总长度，单位 Bytes
 
+header 参数的含义：开发者服务器返回的 HTTP Response Header
 
 # 常见问题 FAQ
 
