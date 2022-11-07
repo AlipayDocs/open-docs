@@ -1,7 +1,7 @@
-> 相关文档：[旧版 Canvas 迁移指南](https://opendocs.alipay.com/mini/055eid)
-
 ## 简介
-Canvas 实例，可以通过 [SelectorQuery](https://opendocs.alipay.com/mini/api/pc8s51) 获取。
+画布实例，代表 AXML 中指定的 [\<canvas\>](https://opendocs.alipay.com/mini/component/canvas) 组件，包含一系列的属性和方法。
+
+Canvas 的获取方法，请参考下文示例代码。
 
 ## 使用限制
 
@@ -10,31 +10,29 @@ Canvas 实例，可以通过 [SelectorQuery](https://opendocs.alipay.com/mini/ap
 
 ## 基础示例
 
-.axml 示例代码
+### .axml 示例代码
 
 ```html
-<!-- 必须指定 type，否则无法获取到 context -->
+<!-- 必须指定 type，否则创建的将是旧版 canvas，本文档后续内容将不适用 -->
 <canvas id="canvas" type="2d" onReady="onCanvasReady"></canvas>
 ```
 
-如果您的项目中已使用类似 `<canvas id="canvas"></canvas>` 这样未指定 type 的标签，可以参考 [旧版 Canvas 迁移指南](https://opendocs.alipay.com/mini/055eid) 替换。
+如果您的项目中已使用类似 `<canvas id="canvas"></canvas>` 这样未指定 type 的标签，请参考 [旧版 Canvas 迁移指南](https://opendocs.alipay.com/mini/055eid) 。
 
-
-.js 示例代码
+### .js 示例代码
 ```js
 Page({
-    // 一定要在 canvas 的 onReady 中调用，否则获取到的 context 可能不正确
-    onCanvasReady() {
-        // 通过 SelectorQuery 获取 Canvas 实例
-        my.createSelectorQuery().select('#canvas').node().exec((res) => {
-                const canvas = res[0].node;
-                const ctx = canvas.getContext('2d');
-                console.log('canvas 宽高', canvas.width, canvas.height)
-
-                // 开始绘画
-                ctx.fillRect(0, 0, 50, 50);
-            });
-    },
+  // 一定要在 canvas 的 onReady 中调用，否则获取到的 context 可能不正确
+  onCanvasReady() {
+    // 通过 SelectorQuery 获取 Canvas 实例
+    my.createSelectorQuery().select('#canvas').node().exec((res) => {
+      const canvas = res[0].node;
+      const ctx = canvas.getContext('2d');
+      console.log('canvas 宽高', canvas.width, canvas.height)
+      // 开始绘画
+      ctx.fillRect(0, 0, 50, 50);
+    });
+  },
 });
 ```
 
