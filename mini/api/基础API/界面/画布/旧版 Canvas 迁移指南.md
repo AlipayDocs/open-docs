@@ -21,10 +21,10 @@
 新版 API 的 type 为必填属性。
 ```html
 <!-- 旧版 -->
-<canvas id="my-canvas" />
+<canvas id="my-canvas"></canvas>
 
 <!-- 改为如下新版。必须在 onReady 回调中获取 CanvasContext -->
-<canvas id="my-canvas" type="2d" onReady="onCanvasReady" />
+<canvas id="my-canvas" type="2d" onReady="onCanvasReady"></canvas>
 ```
 
 ### 修改 CanvasContext 获取方法
