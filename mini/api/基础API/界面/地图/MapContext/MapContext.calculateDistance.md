@@ -61,8 +61,8 @@ this.mapCtx.calculateDistance({
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | points | Array | 是 | 顺序排列的路径节点数组，第一个点为起点。<br>每个节点形如 { latitude, longitude } |
-| exportTotalDistance | Boolean | 否 | 是否需要计算路径总长度（单位米），默认为 true。 |
-| targetDistances | Array | 否 | 目标距离数组。<br>如提供，接口将按其中每个目标距离（单位米）计算出路径上的目标点，放到出参的 targetPoints 数组 |
+| exportTotalDistance | Boolean | 否 | 是否需要计算路径总长度，默认为 true。 |
+| targetDistances | Array | 否 | 目标距离数组。<br>如提供，接口将按其中每个目标距离计算出路径上的目标点，放到出参的 targetPoints 数组 |
 
 ### success 返回值
 
@@ -77,9 +77,9 @@ this.mapCtx.calculateDistance({
 | --- | --- | --- |
 | latitude | Number | 纬度。 |
 | longitude | Number | 经度。 |
-| targetDistance | Number | 从起点到此目标点的路径长度（单位米）。 |
-| index | Number | 值等于 targetDistance 对应 targetDistances 中的对应项的索引。 |
-| targetLineIndex | Number | 此目标点所在线段的索引。<br>第 i 条线段的索引值为 i - 1 |
+| targetDistance | Number | 从起点到此目标点的路径长度。单位：米。 |
+| index | Number | 此目标点在入参 targetDistances 中的对应项的索引。<br>目标点按距起点的路径长度升序排列，与入参 targetDistances 中的元素顺序可能并不相同 |
+| targetLineIndex | Number | 此目标点所在线段的索引。<br>第 i 条线段的端点为 points[i] 和 points[i + 1] |
 
 ## 返回值示例代码
 
