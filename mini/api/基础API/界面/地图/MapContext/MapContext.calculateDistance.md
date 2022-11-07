@@ -68,7 +68,7 @@ this.mapCtx.calculateDistance({
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| distance | Number | 由入参 points 中的点所定义的路径总长度（相邻点的直线距离逐段累加）。单位米<br>如果传入的 exportTotalDistance 为 false，则不返回 distance。 |
+| distance | Number | 由入参 points 中的点所定义的路径总长度（相邻点的直线距离逐段累加）。单位：米<br>如果传入的 exportTotalDistance 为 false，则不返回 distance。 |
 | targetPoints | Array | 按入参 targetDistances 所计算出的目标点。<br />每个点的属性参见下方 **targetPoint 对象**。 |
 
 ### targetPoint 对象
