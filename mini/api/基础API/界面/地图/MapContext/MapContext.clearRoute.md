@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.clearRoute** 用于清除地图上的步行导航路线。
+**MapContext.clearRoute** 用于清除地图上的[导航路线](https://opendocs.alipay.com/mini/api/uwffxx)。
 
 ## 使用限制
 
