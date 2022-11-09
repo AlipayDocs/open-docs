@@ -63,7 +63,7 @@ Component({
 - 如果有同名的属性（props）或方法 (methods)：
    1. 若组件有这个属性或方法，则组件的属性会覆盖 mixin 中的同名属性或方法。
    2. 若组件本身无这个属性或方法，则在组件的 [mixins](https://opendocs.alipay.com/mini/framework/component_object#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 字段中定义靠后的 mixin 的属性或方法会覆盖靠前的同名属性或方法。
-   3. 在 2 的基础上，若存在嵌套引用 mixin 的情况（只有 Mixin 才支持嵌套引用 mixin，且被引用的 mixin 需是 Mixin 实例），则规则为：引用者 mixin 覆盖被引用的 mixin 实例中的同名属性或方法。
+   3. 在 b 的基础上，若存在嵌套引用 mixin 的情况（只有 Mixin 才支持嵌套引用 mixin，且被引用的 mixin 需是 Mixin 实例），则规则为：引用者 mixin 覆盖被引用的 mixin 实例中的同名属性或方法。
 - 如果有同名的内部数据字段（data）：
    1. 若组件有这个数据字段，则组件的数据字段会覆盖 mixin 中的同名数据字段。
    2. 若组件无这个数据字段，则：引用者 mixin > 被引用的 mixin（只有 Mixin 才支持嵌套引用 mixin，且被引用的 mixin 需是 Mixin 实例）、 靠后的 mixin > 靠前的 mixin（优先级高的覆盖优先级低的，最大的为优先级最高）。
