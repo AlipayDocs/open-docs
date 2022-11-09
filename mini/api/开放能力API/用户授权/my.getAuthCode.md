@@ -19,7 +19,7 @@ my.getAuthCode 引导用户授权其信息给当前小程序，会弹出授权�
 
 - 在 <a href="https://gw.alipayobjects.com/mdn/rms_390dfd/afts/img/A*LqsXR45_a4IAAAAAAAAAAAAAARQnAQ">用户信息申请</a> 页面，按需申请相应的字段。
 - 每个字段的类目要求和审批规则不同，请参考 [用户信息申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu) 中的 **商家申请用户信息** 章节。
-- 应隐私政策要求，**对 cert_type、cert_no、person_cert_expiry_date 的申请将不再通过。有特殊要求（如政务类）的小程序请联系合作的支付宝业务人员。
+- 应隐私政策要求，**对 cert_type、cert_no、person_cert_expiry_date 的申请将不再通过**。有特殊要求（如政务类）的小程序请联系合作的支付宝业务人员。
 
 ### 第三步：获取用户授权
 
