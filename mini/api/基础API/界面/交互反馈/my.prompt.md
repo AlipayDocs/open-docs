@@ -23,6 +23,8 @@ my.prompt({
   placeholder: '给朋友留言',
   okButtonText: '确定',
   cancelButtonText: '取消',
+  confirmColor: "#49a9ee",
+  cancelColor: "#000000",
   success: result => {
     my.alert({
       title: JSON.stringify(result),
@@ -37,12 +39,14 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| title | String | 否 | prompt 框标题。 |
-| message | String | 否 | prompt 框文本，默认为 **请输入内容**。 |
+| title | String | 否 | 提示框的标题。 |
+| message | String | 否 | 提示框的显示内容，默认为 **请输入内容**。 |
+| align | String | 否 | 提示框显示内容的对齐方式。<br />可选值为：left 、center 、right。 |
 | placeholder | String | 否 | 输入框内的提示文案。 |
-| align | String | 否 | message 对齐方式。<br />可选值为：left 、center 、right。 |
 | okButtonText | String | 否 | 确认按钮文字，默认值为 **确定**。 |
-| cancelButtonText | String | 否 | 确认按钮文字，默认值为 **取消**。 |
+| cancelButtonText | String | 否 | 取消按钮文字，默认值为 **取消**。 |
+| confirmColor | String | 否 | 确认按钮的文字颜色，必须是 16 进制格式的颜色字符串，例 "#49a9ee"。 |
+| cancelColor | String | 否 | 取消按钮的文字颜色，必须是 16 进制格式的颜色字符串，例 "#000000"。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -53,8 +57,8 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性**   | **类型** | **描述**                                    |
 | ---------- | -------- | ------------------------------------------- |
-| ok         | Boolean  | 点击 ok 返回 true，点击 cancel 返回 false。 |
-| inputValue | String   | 当 ok 返回 true 时，返回用户输入的内容。    |
+| ok         | Boolean  | 点击确认按钮返回 true，点击取消按钮返回 false。 |
+| inputValue | String   | 当点击确认按钮时，返回用户输入的内容。 |
 
 # 常见问题
 
