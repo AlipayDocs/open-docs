@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.smoothMoveMarker** 用于标记点（marker）在地图上进行滑动动画。只有在**动画过程中** `action:'stop'` 才可以生效，否则不会执行动画且不会移动标记点。
+**MapContext.smoothMoveMarker** 用于标记点（marker）在地图上进行滑动动画。`action:'stop'` 可停止动画，在**动画过程中**使用时可停止动画并移动标记点至指定位置。
 
 ## 使用限制
 
