@@ -8,7 +8,13 @@ URL 白名单包含两部分：
 对于不在白名单里的 URL，也可能存在通过其他方式打开的可能性，**推荐使用[跳转辅助工具](https://apitools.alipay.com/tools/open-url)进行检测并生成代码**。
 
 ## 开放范围
-此 API 对应 URL 的白名单申请，暂只开放国内经营类目为 [城市服务](https://opendocs.alipay.com/b/03al2m#%E5%9F%8E%E5%B8%82%E6%9C%8D%E5%8A%A1) 的小程序。
+此 API 对应 URL 的白名单申请，暂只开放以下国内经营类目的小程序：
+- [城市服务](https://opendocs.alipay.com/b/03al2m#%E5%9F%8E%E5%B8%82%E6%9C%8D%E5%8A%A1) 
+- [交通出行](https://opendocs.alipay.com/b/03al2m#%E4%BA%A4%E9%80%9A%E5%87%BA%E8%A1%8C) 
+- [医疗健康](https://opendocs.alipay.com/b/03al2m#%E5%8C%BB%E7%96%97%E5%81%A5%E5%BA%B7) 
+- [汽车](https://opendocs.alipay.com/b/03al2m#%E6%B1%BD%E8%BD%A6) 
+- [电信通讯](https://opendocs.alipay.com/b/03al2m#%E7%94%B5%E4%BF%A1%E9%80%9A%E8%AE%AF) 
+- [缴费还款](https://opendocs.alipay.com/b/03al2m#%E7%BC%B4%E8%B4%B9%E8%BF%98%E6%AC%BE) 
 
 ## 使用限制
 - 此 API 仅支持支付宝企业小程序使用。
