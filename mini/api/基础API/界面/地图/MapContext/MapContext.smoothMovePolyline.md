@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.smoothMovePolyline** 是在地图上绘制轨迹动画的接口。`action:'stop'` 可停止动画。在**动画过程中**使用时可停止动画并将线路绘制完整。
+**MapContext.smoothMovePolyline** 是在地图上绘制轨迹动画的接口。`action:'stop'` 可停止动画，在**动画过程中**使用时可停止动画并将线路绘制完整。
 
 ## 使用限制
 - 基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.90 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
@@ -98,16 +98,16 @@ setTimeout(() => {
 
 # 常见问题 FAQ
 
-## Q：在地图上使用 MapContext.smoothMovePolyline 生成的多线段为什么无法使用 clearRoute 清除？
+## Q：在地图上使用 MapContext.smoothMovePolyline 生成的轨迹线路为什么无法使用 clearRoute 清除？
 
-A：clearRoute 只能用于清除地图上的导航路线，无法清除 MapContext.smoothMovePolyline 生成的多线段。请使用 MapContext.updateComponents 清除多线段 示例如下：
+A：clearRoute 只能用于清除地图上的导航路线，无法清除 MapContext.smoothMovePolyline 生成的线路。请使用 MapContext.updateComponents 清除 示例如下：
 ```javascript
  this.mapCtx = my.createMapContext('map');
 
- //清除所有多线段，代码如下：
+ //清除所有线路，代码如下：
  this.mapCtx.updateComponents({ polyline:[] }) 
 
- // map 上只保留 aniPoints 定义的多线段，代码如下：
+ // map 上只保留 aniPoints 定义的线路，代码如下：
  this.mapCtx.updateComponents({
     polyline: [{
       points: aniPoints,
