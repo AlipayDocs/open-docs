@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.smoothMoveMarker** 用于标记点（marker）在地图上进行滑动动画。`action:'stop'` 可停止动画，在**动画过程中**使用时可停止动画并移动标记点至指定位置。
+**MapContext.smoothMoveMarker** 沿指定路线滑动 marker。 `action:'stop'` 可停止滑动，在**滑动过程中**使用时可停止滑动并将标记点放至指定路线终点。
 
 ## 使用限制
 
@@ -51,7 +51,7 @@ this.mapCtx.smoothMoveMarker({
   points: aniPoints,
 });
 
-// 若希望 2 秒后停止 markerId 为 0 的动画，并将点标记移至终点。代码如下：
+// 若希望 2 秒后停止 markerId 为 0 的滑动，并将点标记放至 points 路线终点。代码如下：
 setTimeout(() => {
       this.mapCtx.smoothMoveMarker({
         markerId: 0,
@@ -64,19 +64,19 @@ setTimeout(() => {
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| markerId | Number | 是 | 执行动画的 marker 的 id，确保此时 marker 已经在地图上。 |
+| markerId | Number | 是 | 执行滑动的 marker 的 id，确保此时 marker 已经在地图上。 |
 | markerData | Object | 否 | 传入 marker 对象。 只有 markerId 指向 markerData 中的 id 时才会生效  |
-| points | Array | 是 | 动画路线的经纬度集合。 建议路线集合中第一个点的经纬度等于需要执行动画的 marker 点经纬度，这样可以使动画看起来更顺滑 |
-| duration | Number | 否 | 动画执行时间，默认为 5000 毫秒（ms）。 |
+| points | Array | 是 | 滑动路线的经纬度集合。 建议路线集合中第一个点的经纬度等于需要执行滑动的 marker 点经纬度，使滑动更顺滑 |
+| duration | Number | 否 | 滑动执行时间，默认为 5000 毫秒（ms）。 |
 | targetDistances | Array | 否 | 指定需要 onMarkerMove 回调的目标距离数组。 |
-| action | String | 否 | 指定操作动画。<ul><li>`action:'stop'` 表示在动画过程中提前停止动画，并将点标记移动至动画路线最终位置。</li><li>`action:'start'` 默认值，表示执行动画。</li></ul> |
+| action | String | 否 | 指定操作滑动。<ul><li>`action:'stop'` 表示在滑动过程中提前停止滑动，并将点标记移动至指定线路终点位置。</li><li>`action:'start'` 默认值，表示执行滑动。</li></ul> |
 
 ## 回调事件
 
 | **回调事件** | **类型** | **描述** |
 | --- | --- | --- |
 | onMarkerMove | Function | 在指定距离点的回调事件。<br />具体对象值请参见下方 onMarkerMove 对象表。 |
-| onMarkerMoveEnd | Function | 动画结束的回调事件。 |
+| onMarkerMoveEnd | Function | 滑动结束的回调事件。 |
 
 ### onMarkerMove 对象
 
