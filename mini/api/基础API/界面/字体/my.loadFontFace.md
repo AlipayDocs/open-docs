@@ -7,6 +7,7 @@
 ## 使用限制
 
 - 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 字体链接必须是同源下的，或开启了 cors 支持。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
@@ -74,7 +75,7 @@ Page({
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| global | Boolean | 否 | 是否全局生效。<br/>默认值 `false`。</br>[2.7.15](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
+| global | Boolean | 否 | 是否全局生效。<br/>默认值 `false`。</br>[2.8.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
 | family | String | 是 | 字体名称。 |
 | source | String | 是 | 字体资源地址。 |
 | desc | Object | 否 | 字体描述符。 |
@@ -110,9 +111,8 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 A：支付宝小程序不支持 woff2 字体。相对其他格式字体，woff2 字体内存占用较高，建议使用其他格式。
 
-## Q：my.loadfontface 下载的字体只在当前页面生效吗？
-
-A：my.loadfontface 只会在当前页面加载对应字体文件，如果需要在多个页面加载字体，请分别在进入页面时加载字体文件。
-
 ## Q：my.loadfontface 在IDE不生效？
 A：my.loadfontface 只会在真机环境有作用，在IDE环境会报错。
+
+## Q：为什么 my.loadfontface 双端表现不一致，iOS 加载成功，安卓加载失败？
+A：安卓和 iOS 策略不一致导致的，安卓要求字体资源必须是同源下的。解决方式是需要后端配置跨域 'Access-Control-Allow-Origin': '*'。
