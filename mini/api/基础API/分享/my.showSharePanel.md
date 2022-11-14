@@ -12,6 +12,9 @@
 
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
+# 效果示例
+<img src="https://img.alicdn.com/imgextra/i4/O1CN01BkDtfY1JR2MdOCBVj_!!6000000001024-0-tps-590-1278.jpg" width="300px" height="601px"/>
+
 # 接口调用
 
 ## .js 示例代码
