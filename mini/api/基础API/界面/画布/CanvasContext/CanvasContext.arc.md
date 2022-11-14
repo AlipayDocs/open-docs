@@ -1,5 +1,3 @@
-**注意**：CanvasContext 相关接口已停止维护，请使用 [Canvas](https://opendocs.alipay.com/mini/01vzqv) 代替。相关文档：[旧版 Canvas 迁移指南](https://opendocs.alipay.com/mini/055eid)
-
 # 简介
 
 用于创建一个弧线路径。
