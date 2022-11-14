@@ -1,8 +1,8 @@
 # 简介
 
-**my.openCardDetail** 是打开当前用户的某张卡的详情页的 API。
+**my.openCardDetail** 是打开当前用户的某张商家会员卡的详情页的 API。
 
-有关支付宝卡包详细功能，可查看 [商家会员卡产品介绍](https://opendocs.alipay.com/open/03sx7r?ref=api)。
+有关支付宝商家会员卡详细功能，可查看 [商家会员卡产品介绍](https://opendocs.alipay.com/open/03sx7r?ref=api)。
 ## 使用限制
 
 此 API 暂仅支持企业支付宝小程序使用。
