@@ -16,6 +16,7 @@
 ```javascript
 const base64 = 'CxYh';
 const arrayBuffer = my.base64ToArrayBuffer(base64);
+console.log(arrayBuffer.byteLength)
 ```
 
 ## 入参
@@ -24,4 +25,8 @@ const arrayBuffer = my.base64ToArrayBuffer(base64);
 
 ## 返回值
 
-类型为 `ArrayBuffer` 对象。
+类型为 `ArrayBuffer` 对象，其属性如下：
+
+| **属性** | **类型** | **描述**             |
+| -------- | -------- | -------------------- |
+| byteLength    | Number   | 二进制数据缓冲区长度。 |
