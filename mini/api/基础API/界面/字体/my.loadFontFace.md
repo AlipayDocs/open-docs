@@ -1,6 +1,6 @@
 # 简介
 
-**my.loadFontFace** 是动态加载网络字体的 API，默认支持 Canvas 2D。
+**my.loadFontFace** 是动态加载网络字体的 API，默认支持在 Canvas 2D 下使用。
 
 目前支持 woff，otf，ttf，sfnt 字体，字体文件地址必须是 https 协议。
 
