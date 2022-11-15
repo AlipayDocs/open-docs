@@ -1,10 +1,9 @@
 # 简介
 
-**my.openCardList** 是打开支付宝卡列表的 API。
+**my.openCardList** 是打开支付宝商家会员卡列表的 API。
 
-有关支付宝卡包详细功能，可查看 [支付宝卡包产品介绍](https://opendocs.alipay.com/open/199/105225)。
+有关支付宝商家会员卡详细功能，可查看 [商家会员卡产品介绍](https://opendocs.alipay.com/open/03sx7r?ref=api)。
 
-支付宝特色 API，支持 my.ap.openCardList 调用。
 
 ## 使用限制
 
