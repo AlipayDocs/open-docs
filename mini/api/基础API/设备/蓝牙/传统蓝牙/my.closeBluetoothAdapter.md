@@ -1,6 +1,6 @@
 # 简介
 
-**my.closeBluetoothAdapter** 是断开所有已建立的连接，并释放系统资源的 API。   
+**my.closeBluetoothAdapter** 断开所有已建立的蓝牙连接，并释放系统资源。
 调用该 API 仅会关闭连接，不会关闭蓝牙。建议在结束小程序蓝牙流程时调用该 API，与 [my.openBluetoothAdapter](https://opendocs.alipay.com/mini/api/kunuy4) 成对调用。
 
 ## 使用限制
