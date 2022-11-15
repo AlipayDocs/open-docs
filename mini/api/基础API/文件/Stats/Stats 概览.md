@@ -1,4 +1,4 @@
-描述文件状态的对象，调用 [FileSystemManager.stat](https://opendocs.alipay.com/mini/api/022b6o) 成功后的 success 参数 或 调用[FileSystemManager.statSync](https://opendocs.alipay.com/mini/api/024whe) 成功的返回。
+描述文件状态的对象。通过 [FileSystemManager.stat](https://opendocs.alipay.com/mini/api/022b6o) 或 [FileSystemManager.statSync](https://opendocs.alipay.com/mini/api/024whe) 获取。
 
 # 属性
 
