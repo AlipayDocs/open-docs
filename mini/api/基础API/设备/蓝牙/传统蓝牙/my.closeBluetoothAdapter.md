@@ -1,13 +1,12 @@
 # 简介
 
-**my.closeBluetoothAdapter** 是关闭本机蓝牙模块的 API。
+**my.closeBluetoothAdapter** 断开所有已建立的蓝牙连接，并释放系统资源。
+调用该 API 仅会关闭连接，不会关闭蓝牙。建议在结束小程序蓝牙流程时调用该 API，与 [my.openBluetoothAdapter](https://opendocs.alipay.com/mini/api/kunuy4) 成对调用。
 
 ## 使用限制
 
 - 支付宝客户端 10.0.18 或更高版本，若版本较低，建议采取 [兼容处理](/mini/framework/compatibility)。
-- IDE 模拟器暂不支持调试，请以真机调试结果为准。
-- 调用该方法将断开所有已建立的蓝牙连接并释放系统资源。
-- 建议在结束小程序蓝牙流程时调用，与 [my.openBluetoothAdapter](https://opendocs.alipay.com/mini/api/kunuy4) 成对调用。
+- IDE 模拟器暂不支持调试，请以真机调试结果为准。如果在 IDE 上调用该 API 会进入 fail 回调，并且返回 "error":1 的错误码。
 - 调用 my.closeBluetoothAdapter 释放资源为异步操作，不建议使用 my.closeBluetoothAdapter 和 [my.openBluetoothAdapter](https://opendocs.alipay.com/mini/api/kunuy4) 作为异常处理流程（相当于先关闭再开启，重新初始化，效率低，易发生线程同步问题）。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
@@ -435,3 +434,9 @@ Object 类型，属性如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+
+## 错误码
+
+| **错误码** | **说明**                   | **解决方案**               |
+| ---------- | -------------------------- | -------------------------- |
+| 1          | IDE 不支持调用该 API。   | 请在真机上调用。           |
