@@ -24,7 +24,7 @@ console.log(result);
 
 ### String path
 
-[文件系统](https://opendocs.alipay.com/mini/03dt4s) 中的文件夹路径或者文件路径
+当前小程序[文件系统](https://opendocs.alipay.com/mini/03dt4s) 中的文件夹路径或者文件路径
 
 ## 错误码
 
