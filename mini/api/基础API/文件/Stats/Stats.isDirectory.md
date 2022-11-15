@@ -1,6 +1,6 @@
 ## 简介
 
-**Stats.isDirectory** 是 [Stats](https://opendocs.alipay.com/mini/api/stats) 对象的方法，用于判断当前文件是否一个目录。
+**Stats.isDirectory** [Stats](https://opendocs.alipay.com/mini/api/stats) 实例的方法，用于判断当前文件是否一个目录。
 
 ## 使用限制
 
