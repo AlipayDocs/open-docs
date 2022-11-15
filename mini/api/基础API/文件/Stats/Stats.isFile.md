@@ -1,6 +1,6 @@
 # 简介
 
-**Stats.isFile** 是 [Stats](https://opendocs.alipay.com/mini/api/stats) 对象的方法，用于判断当前文件是否一个普通文件。
+**Stats.isFile** [Stats](https://opendocs.alipay.com/mini/api/stats) 实例的方法，用于判断当前文件是否一个普通文件。
 
 ## 使用限制
 
