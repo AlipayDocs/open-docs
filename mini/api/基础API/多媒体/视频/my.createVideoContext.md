@@ -72,6 +72,8 @@ iOS、Android 支持以下编码格式： H.264、AAC。
   <button type="default" size="defaultSize" onTap="playbackRate">
     playbackRate
   </button>
+  <button type="default" size="defaultSize" onTap="enterPicture">进入画中画</button>
+  <button type="default" size="defaultSize" onTap="exitPicture">退出进入画中画</button>
 </view>
 ```
 
@@ -117,6 +119,12 @@ Page({
   playbackRate() {
     this.videoContext.playbackRate(1.5);
   },
+  enterPicture() {
+    this.videoContext.showFloatingWindow(true);
+  },
+  exitPicture() {
+    this.videoContext.exitPictureInPicture();
+  }
 });
 ```
 
@@ -151,6 +159,8 @@ my.chooseVideo({
 | mute | ison | Boolean | 切换静音状态。 |
 | playbackRate | rate | Number | 设置倍速播放（0.5 <= rate <= 2.0）。 |
 | showFloatingWindow | isShow | Boolean | 显示/隐藏浮窗，例如 `showFloatingWindow(false)`。 |
+| exitPictureInPicture | 无 | Function | 退出画中画。<br/> 基础库从 2.8.2 及以上版本支持，支付宝客户端版本从 10.1.92 开始支持。|
+
 
 ## video 组件的 onError 属性监听 错误码
 
