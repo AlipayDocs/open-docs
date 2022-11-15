@@ -1,6 +1,6 @@
 # 简介
 
-**FileSystemManager.stat** 用于获取文件 Stats 对象。
+**FileSystemManager.stat** 用于获取本地文件的 Stats 对象。
 
 ## 使用限制
 
@@ -44,7 +44,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| path | String | 是 | 文件/目录路径。 |
+| path | String | 是 | 本地文件/目录路径。支持[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)、[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)、[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 |
 | recursive | Boolean | 否 | 是否递归获取目录下的每个文件的 Stats 信息。<br />**默认值**：false。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
@@ -56,13 +56,13 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| stats | [Stats](https://opendocs.alipay.com/mini/api/stats)/Object | 当 recursive 为 false 时，res.stats 是一个 Stats 对象。当 recursive 为 true 且 path 是一个目录的路径时，res.stats 是一个 Object，key 以 path 为根路径的相对路径，value 是该路径对应的 Stats 对象。 |
+| stats | Object | 当 recursive 为 false 时，res.stats 是一个 [Stats](https://opendocs.alipay.com/mini/api/stats) 对象。当 recursive 为 true 且 path 是一个目录的路径时，res.stats 是一个 Object，key 是以 path 为根路径的相对路径，value 是该路径对应的 [Stats](https://opendocs.alipay.com/mini/api/stats) 对象。 |
 
 #### Stats/Object stats
 
 | **属性**         | **类型** | **描述**                |
 | ---------------- | -------- | ----------------------- |
-| mode             | Long     | 文件的类型和存取的权限. |
-| size             | Long     | 文件大小。              |
-| lastAccessedTime | Long     | 上次访问时间。          |
-| lastModifiedTime | Long     | 上次修改时间。          |
+| mode             | Number     | 文件的类型和存取的权限. |
+| size             | Number     | 文件大小。              |
+| lastAccessedTime | Number     | 上次访问时间。          |
+| lastModifiedTime | Number     | 上次修改时间。          |
