@@ -1,6 +1,6 @@
 # 简介
 
-**FileSystemManager.access** 判断 [本地文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6) 和 [代码包文件](https://opendocs.alipay.com/mini/03dt4s#%E4%BB%A3%E7%A0%81%E5%8C%85%E6%96%87%E4%BB%B6) 中的**文件**或**目录**是否存在。
+**FileSystemManager.access** 判断文件/目录是否存在。
 
 ## 使用限制
 
@@ -30,7 +30,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| path | String | 是 | [文件系统](https://opendocs.alipay.com/mini/03dt4s) 中的文件夹路径或者文件路径 |
+| path | String | 是 | [文件系统](https://opendocs.alipay.com/mini/03dt4s) 中的文件夹路径或者文件路径。 |
 | success | Function | 否 | 调用成功的回调函数 |
 | fail | Function | 否 | 调用失败的回调函数 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行） |
