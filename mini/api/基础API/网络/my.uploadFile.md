@@ -124,7 +124,7 @@ Object 类型，参数如下：
 | --- | --- | --- | --- |
 | url | String | 是 | 接收上传文件的服务端 url。 |
 | filePath | String | 是 | 要上传的文件路径（[本地路径](https://opendocs.alipay.com/mini/03dt4s)）<br> **注意**：目前 IDE 暂不支持本地用户文件。建议使用真机测试。 |
-| fileName | String | 是 | 指定 POST 请求中的文件名，服务端需按此参数取值读取文件数据。 |
+| name | String | 是 | 指定 POST 请求中的文件名，服务端需按此参数取值读取文件数据。 |
 | header | Object | 否 | HTTP 请求 Header。其中 content-type 为 multipart/form-data（与 request body 实际格式一致），请勿更改。 |
 | formData | Object | 否 | HTTP 请求中的其他数据，每个 key 为字段名，value 为字符串。 |
 | fileType | String | 否 | 此参数已废弃，无须传入。<br> **注意**：目前 IDE 模拟器仍会对该字段做校验，只接受 image / video / audio 三者之一。建议使用真机测试。 |
