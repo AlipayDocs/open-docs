@@ -1,4 +1,3 @@
-
 # 简介
 小程序官网对大部分的基础组件、扩展组件和 API 提供了[体验demo](https://opendocs.alipay.com/mini/introduce/demo)。<br />开发者可以通过demo体验自己关心的基础能力在真机上的实现效果，提前知晓是否符合需求场景。编写小程序项目代码时，也可以创建一个demo项目参考demo上对应能力的实现，借鉴或直接使用到自己的小程序项目内，提高基础能力开发效率。<br />![](https://gw.alipayobjects.com/zos/workflow/workflow/202002141581665434817_7269932fdd7f8ba760b50d8a119a60c0.png#align=left&display=inline&height=375&margin=%5Bobject%20Object%5D&originHeight=600&originWidth=1200&status=done&style=none&width=750)<br /> 
 
@@ -17,8 +16,6 @@
 2. 选择支付宝端，点击 **下一步**。<br />![image.png](https://cdn.nlark.com/yuque/0/2021/png/179989/1622803693178-45627eaa-b7af-4b28-ae6d-03cb0b874443.png#align=left&display=inline&height=700&margin=%5Bobject%20Object%5D&name=image.png&originHeight=700&originWidth=1000&size=69439&status=done&style=none&width=1000)
 3. 选择入门模板 API-Demo。<br />![image.png](https://cdn.nlark.com/yuque/0/2021/png/179989/1622803738134-c8982588-c273-4bd0-8e67-ed7b6fd1a242.png#align=left&display=inline&height=700&margin=%5Bobject%20Object%5D&name=image.png&originHeight=700&originWidth=1000&size=77090&status=done&style=none&width=1000)
 
-### 下载 Demo
-直接下载小程序官方示例全部代码 [API-Demo.zip](https://gw.alipayobjects.com/os/skylark-tools/public/files/e042df9129e50de36706a190c7e7aaf2.zip)。
 
 ## 小程序快速示例
 针对各种场景，小程序快速示例提供了示例代码，开发者可直接在小程序开发者工具（简称 IDE）快速从模板示例创建小程序和插件项目，并可在此基础上进行复用和修改，从而提高学习和应用效率。<br />![image.png](https://cdn.nlark.com/yuque/0/2021/png/179989/1622803834050-2d6095a6-199b-4ac7-b76b-7a1caa45ebe5.png#align=left&display=inline&height=700&margin=%5Bobject%20Object%5D&name=image.png&originHeight=700&originWidth=1000&size=171504&status=done&style=none&width=1000)
