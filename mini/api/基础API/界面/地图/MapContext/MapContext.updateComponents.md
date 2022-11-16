@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.updateComponents** 是自定义[地图属性]内容(https://opendocs.alipay.com/mini/component/map#)的接口。地图属性包含中心经纬度，缩放级别，点标记，点标记动画，多段线，视野范围延伸，设置等内容。
+**MapContext.updateComponents** 是自定义[地图属性](https://opendocs.alipay.com/mini/component/map#)的接口。地图属性包含中心经纬度，缩放级别，点标记，点标记动画，多段线，视野范围延伸，设置等。
 
 ## 使用限制
 
@@ -15,9 +15,9 @@
 // .js
 this.mapCtx = my.createMapContext('map');
 this.mapCtx.updateComponents({
-  scale: 14,
-  longitude: 120.131441,
-  latitude: 30.279383,
+  scale: 14,//缩放级别
+  longitude: 120.131441, //中心经度
+  latitude: 30.279383,//中心维度
   command: {
     // marker动画
     markerAnim: [
@@ -58,7 +58,7 @@ this.mapCtx.updateComponents({
 | longitude       | Number   | 中心经度。                               |
 | scale           | Number   | 缩放级别，取值范围为 5-18。默认值为 16。 |
 | markers         | Array    | 覆盖物，在地图上的一个点绘制图标。       |
-| polyline        | Array    | 覆盖物，多个连贯点的集合（路线）。格式详见 [polyline](https://opendocs.alipay.com/mini/component/map#polyline)。可清除或选择性保留由 smoothMovePolyline 绘制的轨迹 |
+| polyline        | Array    | 覆盖物，多个连贯点的集合（路线）。格式详见 [polyline](https://opendocs.alipay.com/mini/component/map#polyline)。可删除或选择性保留由 smoothMovePolyline 绘制的轨迹 |
 | include-points  | Array    | 视野将进行小范围延伸包含传入的坐标。     |
 | include-padding | Object   | 视野在地图 padding 范围内展示。          |
 | setting         | Object   | 设置。                                   |
