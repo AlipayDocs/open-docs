@@ -2,7 +2,7 @@
 
 **my.openBluetoothAdapter** 是初始化小程序蓝牙模块的 API，生效周期为调用 my.openBluetoothAdapter 至调用 [my.closeBluetoothAdapter](https://opendocs.alipay.com/mini/api/wvko0w) 或小程序被销毁为止。
 
-在小程序蓝牙适配器模块生效期间，开发者可以正常调用下面的小程序 API，并会收到蓝牙模块相关的 on 事件回调。
+在小程序蓝牙适配器模块生效期间，开发者可以正常调用开发链路流程中其他的小程序 API，（具体开发链路流程可查看[蓝牙 API 概览](https://opendocs.alipay.com/mini/api/bluetooth-intro)中的流程图），并会收到蓝牙模块相关的 on 事件回调。
 
 ## 使用限制
 
