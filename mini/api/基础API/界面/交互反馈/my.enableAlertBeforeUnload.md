@@ -2,7 +2,7 @@
 
 开启小程序页面返回询问对话框。
 
-调用后，用户点击页面左上角返回按钮或使用手机返回键和返回手势尝试关闭小程序页面时，会出现如下对话框：
+调用后，用户尝试关闭当前小程序页面时会出现如下对话框：
 
 ![enable.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1651127749522-3f26bd66-5891-4368-91dd-8cdbf2ccd36b.png#align=left&display=inline&height=107&margin=%5Bobject%20Object%5D&name=enable.png&originHeight=303&originWidth=849&size=26032&status=done&style=stroke&width=300)
 
