@@ -5,7 +5,7 @@
 - 只声明变量而不赋值，默认值为 undefined。
 
 ### 示例代码
-```
+```js
 var num = 1;
 var str = "hello alipay";
 var undef; // undef === undefined
