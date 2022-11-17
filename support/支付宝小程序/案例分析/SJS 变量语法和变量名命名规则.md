@@ -8,8 +8,10 @@
 ```
 var num = 1;
 var str = "hello alipay";
-var undef; //
- undef === undefinedconst n = 2;//支持constlet s = 'string';//支持letglobalVar = 3;//变量提升为全局变量
+var undef; // undef === undefined
+const n = 2; //支持const
+let s = 'string'; //支持let
+globalVar = 3; //变量提升为全局变量
 ```
 
 ## SJS变量名命名规则
