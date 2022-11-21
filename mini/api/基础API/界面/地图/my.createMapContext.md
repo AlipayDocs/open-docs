@@ -4,6 +4,7 @@
 
 ## 使用限制
 
+- 需在 map 组件初始化完成后即 onReady 回调触发后执行 my.createMapContext。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 - 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 
