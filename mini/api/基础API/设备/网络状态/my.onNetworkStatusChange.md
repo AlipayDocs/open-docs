@@ -4,7 +4,8 @@
 
 ## 使用限制
 
-此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 只有网络发生变化（ 如：连接，切换或断开网络 ）此 API 才能生效
 
 # 接口调用
 
@@ -22,4 +23,8 @@ my.onNetworkStatusChange(function (res) {
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | isConnected | Boolean | 网络是否可用。 |
-| networkType | String | 网络类型值：UNKNOWN / NOTREACHABLE / Wi-Fi / 3G / 2G / 4G / WWAN。 |
+| networkType | String | 网络类型值：<ul><li>`UNKNOWN` 未知网络类型。</li><li>`NOTREACHABLE` 网络不可用。</li><li>`Wi-Fi` WiFi。</li><li>`WWAN` 无线广域网。</li><li>`2G` 2G网。</li><li>`3G` 3G网。</li><li>`4G` 4G网。</li><li>`5G` 5G网。支付宝客户端 10.2.50 或更高版本开始支持</li></ul> |
+
+## Bug & Tip
+
+- 调试时建议使用预览的方法打印查看返回值。因为真机调试依赖网络，切换网络时调试的连接可能会被中断，从而无法查看返回值
