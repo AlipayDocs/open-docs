@@ -22,6 +22,10 @@ const arrayBuffer = my.base64ToArrayBuffer(base64);
 
 类型为 `String`，代表要转换成 ArrayBuffer 对象的 Base64 字符串。
 
-# Bug & Tip
+## 返回值
+
+类型为 `ArrayBuffer` 对象。
+
+## Bug & Tip
 
 - `Bug` iOS 中，接口返回值在控制台打印为 ArrayBuffer {}，实际上是转换成功的，可以通过打印 byteLength 属性确认。
