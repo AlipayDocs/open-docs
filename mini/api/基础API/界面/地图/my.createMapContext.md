@@ -36,9 +36,13 @@ Page({
 ```javascript
 //  .js
 this.setData({
+  //缩放级别
   scale: 14,
+  //中心经度
   longitude: 120.131441,
+  //中心纬度
   latitude: 30.279383,
+  //是否显示带有方向的当前定位点
   'show-location': true,
   // 地图贴图 10.1.35 新增
   'ground-overlays': [
@@ -68,29 +72,34 @@ this.setData({
     tileHeight: 256,
     zIndex: 1,
   },
+  //点标记数组
   markers: [{}, {}],
+  //视野将进行小范围延伸包含传入的坐标。
   'include-points': [{}, {}],
-  // 10.1.35 新增全览逻辑
+  // 10.1.35 新增全览逻辑,视野在地图 padding 范围内展示
   'include-padding': { left: 0, right: 0, top: 0, bottom: 0 },
+  //多段线
   polyline: [{}, {}],
+  //在地图上显示圆
   circles: [{}, {}],
+  //在地图上显示控件，控件不随着地图移动
   controls: [{}, {}],
+  //构造多边形对象
   polygon: [{}, {}],
-  'include-padding': {},
   // 初始化支持地图设置 10.1.50 新增
   setting: {
-    // 手势
-    gestureEnable: 0 / 1,
-    // 比例尺
-    showScale: 0 / 1,
-    // 指南针
-    showCompass: 0 / 1,
-    // 双手下滑
-    tiltGesturesEnabled: 0 / 1,
-    // 交通路况展示
-    trafficEnabled: 0 / 1,
-    // 地图POI信息
-    showMapText: 0 / 1,
+    // 手势,打开 1 ,关闭 0
+    gestureEnable: 0,
+    // 比例尺,显示 1 ,隐藏 0
+    showScale: 0, 
+    // 指南针,显示 1 ,隐藏 0
+    showCompass: 0,
+    // 双手下滑,打开 1 ,关闭 0
+    tiltGesturesEnabled: 0,
+    // 交通路况展示,显示 1 ,隐藏 0
+    trafficEnabled: 0,
+    // 地图POI信息,显示 1 ,隐藏 0
+    showMapText: 0,
     // 高德地图logo位置
     logoPosition: { centerX: 150, centerY: 90 },
   },
