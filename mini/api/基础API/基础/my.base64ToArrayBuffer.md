@@ -16,17 +16,12 @@
 ```javascript
 const base64 = 'CxYh';
 const arrayBuffer = my.base64ToArrayBuffer(base64);
-console.log(arrayBuffer.byteLength)
 ```
 
 ## 入参
 
 类型为 `String`，代表要转换成 ArrayBuffer 对象的 Base64 字符串。
 
-## 返回值
+# Bug & Tip
 
-类型为 `ArrayBuffer` 对象，其属性如下：
-
-| **属性** | **类型** | **描述**             |
-| -------- | -------- | -------------------- |
-| byteLength    | Number   | 二进制数据缓冲区长度。 |
+- `Bug` iOS 中，接口返回值在控制台打印为 ArrayBuffer {}，实际上是转换成功的，可以通过打印 byteLength 属性确认。
