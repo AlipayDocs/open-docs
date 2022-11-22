@@ -42,7 +42,7 @@ Object 类型，属性如下：
 | **属性**    | **类型** | **描述**                       |
 | ----------- | -------- | ------------------------------ |
 | fetchType   | String   | 当前缓存数据的方式，与入参 fetchType 一致。 |
-| timestamp   | Number   | 客户端拿到缓存数据的时间戳。 |
+| timestamp   | Number   | 客户端拿到缓存数据的时间戳（单位为 ms）。 |
 | fetchedData | Object   | 缓存数据。 |
 
 ## 错误码
