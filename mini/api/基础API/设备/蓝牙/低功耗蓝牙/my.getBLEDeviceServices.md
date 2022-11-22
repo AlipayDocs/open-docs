@@ -27,7 +27,7 @@
 
 ```javascript
 // .js
-//获取连接设备的server，必须要在连接状态状态之下才能获取
+//获取连接设备的server，必须要在连接状态之下才能获取
   getBLEDeviceServices() {
     my.getConnectedBluetoothDevices({
       success: res => {
@@ -105,7 +105,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | isPrimary | Boolean | 该服务是否为主服务。<ul><li> `true` 为主服务。</li><li>`false` 不是主服务。</li></ul> |
-| serviceId | String | 蓝牙设备特征值对应服务的 UUID。 |
+| serviceId | String | 蓝牙设备特征值对应服务的 [UUID](https://opendocs.alipay.com/mini/developer/dhu9gf#UUID)。 |
 
 ## 错误码
 
