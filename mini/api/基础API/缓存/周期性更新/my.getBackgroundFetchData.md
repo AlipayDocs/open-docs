@@ -1,6 +1,6 @@
 # 简介
 
-拉取 backgroundFetch 客户端缓存数据。具体可查看 [数据预拉取](https://opendocs.alipay.com/mini/02sd57)。
+**my.getBackgroundFetchData** 是拉取 backgroundFetch 客户端缓存数据的 API。具体可查看 [数据预拉取](https://opendocs.alipay.com/mini/02sd57)。
 
 ## 使用限制
 
@@ -32,7 +32,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| fetchType | String | 是 | 缓存数据方式。可选值：<ul><li>pre：数据预拉取。</li></ul>目前只支持 pre。 |
+| fetchType | String | 是 | 缓存数据方式。目前只支持 pre（数据预拉取）。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
@@ -50,4 +50,4 @@ Object 类型，属性如下：
 | **错误码** | **说明**       | **解决方案**    |
 | ---------- | -------------- |  ------------------------------------- |
 | 2          | 参数错误       | 检查传参是否有误。 |
-| 3          | 没有预加载数据 | 使用 [my.request](https://opendocs.alipay.com/mini/api/owycmh) 测试预加载接口是否能够正常调用，假若能够正常调用，检查预加载接口是否有返回数据。 |
+| 3          | 没有预加载数据 | 遇到这种报错可从以下三个方面检查：<ul><li>1、检查 preload.json 配置是否有问题。</li><li>2、检查预加载接口在小程序中是否可以正常使用，可使用    [my.request](https://opendocs.alipay.com/mini/api/owycmh) 测试预加载接口。</li><li>3、检查预加载接口是否有返回数据。</li></ul> |
