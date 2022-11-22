@@ -88,7 +88,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | top               | number         | 安全区域左上角纵坐标        |
 | bottom            | number         | 安全区域右下角纵坐标        |
 | left              | number         | 安全区域左上角横坐标        |
-| right             | number         | 安全区域右上角横坐标        |
+| right             | number         | 安全区域右下角横坐标        |
 | height            | number         | 安全区域的高度             |
 | width             | number         | 安全区域的宽度             |
 
