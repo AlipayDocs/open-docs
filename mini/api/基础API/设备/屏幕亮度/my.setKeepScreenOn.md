@@ -115,6 +115,6 @@ Object 类型，参数如下：
 
 ## Bug & Tip
 
-由于 chooseCity 、chooseVideo 等功能会唤起小程序外部的组件页面，因此 my.setKeepScreenOn 会在这类组件页面中失效，当关闭组件回到小程序后 my.setKeepScreenOn 会继续生效
+由于 my.chooseCity 、my.chooseVideo 等功能会唤起小程序外部的组件页面，因此 my.setKeepScreenOn 会在这类组件页面中失效，当关闭组件回到小程序后 my.setKeepScreenOn 会继续生效
 
 
