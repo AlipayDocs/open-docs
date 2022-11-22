@@ -112,3 +112,9 @@ Object 类型，参数如下：
 | success | Function | 否 | 接口调用成功的回调函数。 |
 | fail | Function | 否 | 接口调用失败的回调函数。 |
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
+
+## Bug & Tip
+
+由于 chooseCity 、chooseVideo 等功能会唤起小程序外部的组件页面，因此 my.setKeepScreenOn 会在这类组件页面中失效，当关闭组件回到小程序后 my.setKeepScreenOn 会继续生效
+
+
