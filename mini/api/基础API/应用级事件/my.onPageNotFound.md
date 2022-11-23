@@ -21,12 +21,15 @@
 ### .js 示例代码
 
 ```javascript
-//.js
+//app.js
 my.onPageNotFound(res => {
   my.redirectTo({
     url: '/pages/...',
   }); // 如果是 tabbar 页面，请使用 my.switchTab
 });
+
+App({
+})
 ```
 
 ## 入参
