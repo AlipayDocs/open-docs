@@ -33,8 +33,8 @@ my.chooseImage({
     console.log(path);
     my.uploadFile({
       url: 'https://...', // 请替换成有效的服务端 url
-      fileType: 'image',
-      fileName: 'userfile',
+      fileType: 'image',  //此参数已废弃，无须传入。但目前 IDE 模拟器仍会对该字段做校验，只接受 image / video / audio 三者之一。建议使用真机测试。
+      name: 'userfile',
       filePath: path,
       formData: { extra: '其他信息' },
       success: res => {
