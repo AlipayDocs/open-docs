@@ -2,7 +2,7 @@
 
 **my.onLocatedComplete** 是监听地理位置定位完成事件的 API，只针对 [my.chooseCity](https://opendocs.alipay.com/mini/api/ui-city) 中属性 setLocatedCity 为 true 的情况。
 
-推荐使用接口 [ChooseCityTask](https://opendocs.alipay.com/mini/04naqz) 替代 my.onLocatedComplete。
+推荐使用 my.chooseCity 所返回 [ChooseCityTask](https://opendocs.alipay.com/mini/04naqz) 的 onLocatedComplete 方法替代 my.onLocatedComplete。
 
 ## 使用限制
 
