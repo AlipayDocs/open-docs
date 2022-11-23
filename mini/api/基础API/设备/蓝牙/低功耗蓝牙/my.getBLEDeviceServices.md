@@ -1,6 +1,6 @@
 # 简介
 
-**my.getBLEDeviceServices** 是获取所有已发现的蓝牙设备的 API，包括已经和本机处于连接状态的设备。
+**my.getBLEDeviceServices** 是获取指定低功耗蓝牙设备所有服务列表的 API。
 
 ## 使用限制
 
