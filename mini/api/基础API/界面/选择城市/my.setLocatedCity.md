@@ -2,7 +2,7 @@
 
 **my.setLocatedCity** 是用于修改 [my.chooseCity](https://opendocs.alipay.com/mini/api/ui-city) 中的默认定位城市的名称的 API。
 
-推荐使用接口 [ChooseCityTask](https://opendocs.alipay.com/mini/04naqz) 替代 my.setLocatedCity。
+推荐使用 my.chooseCity 所返回 [ChooseCityTask](https://opendocs.alipay.com/mini/04naqz) 的 setLocatedCity 方法替代 my.setLocatedCity。
 
 ## 使用限制
 
