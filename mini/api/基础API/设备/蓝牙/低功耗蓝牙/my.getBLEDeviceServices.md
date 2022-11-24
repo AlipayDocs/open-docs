@@ -1,6 +1,6 @@
 # 简介
 
-**my.getBLEDeviceServices** 是获取所有已发现的蓝牙设备的 API，包括已经和本机处于连接状态的设备。
+**my.getBLEDeviceServices** 是获取指定低功耗蓝牙设备所有服务列表的 API。
 
 ## 使用限制
 
@@ -27,7 +27,7 @@
 
 ```javascript
 // .js
-//获取连接设备的server，必须要在连接状态状态之下才能获取
+//获取连接设备的server，必须要在连接状态之下才能获取
   getBLEDeviceServices() {
     my.getConnectedBluetoothDevices({
       success: res => {
@@ -105,4 +105,13 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | isPrimary | Boolean | 该服务是否为主服务。<ul><li> `true` 为主服务。</li><li>`false` 不是主服务。</li></ul> |
-| serviceId | String | 蓝牙设备特征值对应服务的 UUID。 |
+| serviceId | String | 蓝牙设备特征值对应服务的 [UUID](https://opendocs.alipay.com/mini/developer/dhu9gf#UUID)。 |
+
+## 错误码
+
+| **错误码** | **说明** | **解决方案** |
+| --- | --- | --- |
+| 1          | IDE 不支持调用该 API。   | 请在真机上调用。           |
+| 12         | 蓝牙未打开。             | 请尝试打开蓝牙。           |
+| 13         | 与系统服务的链接暂时丢失。 | 请尝试重新连接。           |
+
