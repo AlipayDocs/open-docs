@@ -32,3 +32,11 @@ Obejct 类型，属性如下：
 | **属性** | **类型** | **必填** | **描述**                       |
 | -------- | -------- | -------- | ------------------------------ |
 | callback | Function | 是       | WebSocket 错误事件的回调函数。 |
+
+## 错误码
+| **错误码** | **描述** | **解决方案** |
+| --- | --- | --- |
+| 1 | Error Unknown。 | 未知错误 |
+| 8 | Invalid Sec-WebSocket-Accept response. | 请指定 Sec-WebSocket-Protocol 请求头。 |
+| 50 | unknown error | 请检查网络连接。 |
+| 65 | unknown error | 请检查域名是否合法。 |
