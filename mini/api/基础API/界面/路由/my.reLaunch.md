@@ -42,7 +42,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| url | String | 是 | 需要跳转的应用内目标页面路径。若跳转到 tab bar 页面，不支持传参。若跳转到非 tab bar 页面支持传参，路径后带参数时请查看 [如何获取各种场景的启动参数](https://opendocs.alipay.com/support/01rb2a)。 |
+| url | String | 是 | 需要跳转的应用内目标页面路径。<br />- 若跳转到 tab bar 页面，基础库 [2.8.1](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  开始支持传参。<br />- 若跳转到非 tab bar 页面支持传参。<br /> 路径后带参数时请查看 [如何获取各种场景的启动参数](https://opendocs.alipay.com/support/01rb2a)。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
