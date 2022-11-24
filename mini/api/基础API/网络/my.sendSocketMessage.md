@@ -33,3 +33,9 @@ Object 类型，属性如下：
 | success | Function | 否 | 回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+
+## 错误码
+| **错误码** | **描述** | **解决方案** |
+| --- | --- | --- |
+| 1 | 未知错误。 | - |
+| 10 | 网络连接没有打开，无法发送消息。 | 请正常连接服务器后再调用 my.sendSocketMessage 发送数据消息。可通过 [my.onSocketOpen](https://opendocs.alipay.com/mini/api/itm5og) 监听事件来判断与服务器建立正确连接。 |
