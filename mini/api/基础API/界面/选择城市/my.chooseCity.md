@@ -33,31 +33,44 @@ Page({
       },
     });
   },
-  setLocatedCity() {
-    my.onLocatedComplete(res => {
-      my.setLocatedCity({
-        locatedCityId: res.locatedCityId, //res.locatedCityId
-        locatedCityName: '修改后的城市名',
-        success: res => {
-          my.alert({ content: '修改当前定位城市成功' + JSON.stringify(res) });
-        },
-        fail: error => {
-          my.alert({
-            content: '修改当前定位城市失败' + JSON.stringify(error),
-          });
-        },
-      });
-    });
-    my.chooseCity({
+ setLocatedCity() {
+
+    const chooseCityTask = my.chooseCity({
+      // 是否显示当前定位城市
       showLocatedCity: true,
+      // 是否显示热门城市
       showHotCities: true,
+      // 是否修改当前定位城市
       setLocatedCity: true,
-      success: res => {
-        my.alert({
-          title: 'chooseCity response: ' + JSON.stringify(res),
-        });
+      success: (res) => {
+        my.alert({ title: `chooseCity: ${JSON.stringify(res)}` })
+      },
+      fail: (error) => {
+        my.alert({ content: `选择失败${JSON.stringify(error)}` })
+      },
+      complete: () => {
+        my.showToast({ content: 'complete回调' })
       },
     });
+
+    const onLocatedCompleteCallback = (locatedCompleteRes => {
+      const { longitude, latitude } = locatedCompleteRes;
+      // 修改默认定位城市名
+      chooseCityTask.setLocatedCity({
+        locatedCityName: 'new cityname', 
+        sucess() {
+          console.log('修改成功');
+        },
+        fail() {
+          console.log('修改失败');
+        },
+        complete() {
+          chooseCityTask.offLocatedComplete(onLocatedCompleteCallback);
+        }
+      });
+    });
+    // 监听地理位置定位完成事件
+    chooseCityTask.onLocatedComplete(onLocatedCompleteCallback);
   },
 });
 ```
