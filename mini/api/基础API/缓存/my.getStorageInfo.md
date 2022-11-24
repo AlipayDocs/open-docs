@@ -2,7 +2,7 @@
 
 **my.getStorageInfo** 是获取当前 storage 的相关信息的异步接口。
 
-在内嵌 webview 内获取当前 storage 的相关信息，但不会获取到当前小程序 storage 的相关信息。
+在内嵌的 webview 中，使用此 API 可以获取 webview 页面中的 storage 信息，但不会获取到当前小程序 storage 的相关信息。
 
 ## 使用限制
 
