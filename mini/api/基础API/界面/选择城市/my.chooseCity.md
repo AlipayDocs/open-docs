@@ -65,7 +65,7 @@ Page({
 调用时传入 cities：
 
 ```javascript
-//.js
+// .js
 my.chooseCity({
   cities: [
     {
