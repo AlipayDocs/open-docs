@@ -23,7 +23,7 @@ my.downloadFile({
   },
 });
 
-// 示例二：指定 filePath，保存为本地用户文件
+// 示例二：指定文件下载后存储的路径 (本地路径)
 my.downloadFile({
   url: 'https://my.com/my.pdf', // 请替换为有效的 url
   filePath: `${my.env.USER_DATA_PATH}/my.pdf`, // 指定存储路径
@@ -49,9 +49,9 @@ Object 类型，属性如下：
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | url | String | 是 | 下载地址。支持 HTTPS，不支持 HTTP。除在线 URL 以外，也接受包含图片 base64 数据的 [Data URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)。 |
-| filePath | string | 否 | 文件存储路径，必须为[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6))路径。若不指定此参数，下载的文件会被存储为[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。参见代码示例。 |
+| filePath | string | 否 | 指定文件下载后存储的路径 ([本地路径](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6))。若不指定此参数，下载的文件会被存储为[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)。参见代码示例。<br> **注意**：目前 IDE 暂不支持此参数。建议使用真机测试。 |
 | header | Object | 否 | HTTP 请求头。 |
-| timeout | Number | 否 | 超时时间，默认值 60000，单位 ms。 |
+| timeout | Number | 否 | 超时时间，默认值 60000，单位 ms。<br> **注意**：目前 IDE 暂不支持此参数。建议使用真机测试。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
