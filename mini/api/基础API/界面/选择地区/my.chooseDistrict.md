@@ -7,7 +7,7 @@
 ## 使用限制
 
 - 基础库 [2.6.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 或更高版本；支付宝客户端 10.2.0 或更高版本，若版本较低，建议采取 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
-- 此 API 暂仅支持企业支付宝小程序使用。
+- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
 
