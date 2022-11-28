@@ -281,7 +281,7 @@ my.chooseImage({
     for (let path of res.apFilePaths) { // 循环调用 my.uploadFile
       my.uploadFile({
         url: 'https://...', // 请替换成有效的服务端 url
-        fileName: 'userfile',
+        name: 'userfile',
         filePath: path,
         success: () => {
           console.log(`${path} upload success`);
