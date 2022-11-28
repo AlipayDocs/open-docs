@@ -1,6 +1,8 @@
 # 简介
 
-**my.sendSocketMessage** 是通过 WebSocket 连接发送数据，需要先使用 [my.connectSocket](/mini/api/vx19c3) 建立连接，在调用 [my.onSocketOpen](/mini/api/itm5og) 回调之后再发送数据。
+**my.sendSocketMessage** 通过 WebSocket 连接发送数据。
+
+需要先使用 [my.connectSocket](/mini/api/vx19c3) 建立连接，在 [my.onSocketOpen](/mini/api/itm5og) 回调之后再发送数据。
 
 ## 使用限制
 
@@ -9,8 +11,6 @@
 # 接口调用
 
 ## 示例代码
-
-**注意**：案例仅供参考，建议使用自己的地址进行测试。
 
 ```javascript
 // .js
