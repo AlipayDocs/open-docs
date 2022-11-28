@@ -53,7 +53,7 @@ Object 类型，属性如下：
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | entityIds | Array<String> | 是 | 需要订阅的消息模板id的集合。 |
-| thirdTypeAppId | String | 否 | 模板小程序 appid，仅在服务商代调用场景下需要传入。 |
+| thirdTypeAppId | String | 否 | 模板小程序 appId，仅在服务商代调用场景下需要传入。 |
 | success | Function | 否 | 订阅成功的回调函数（包括拒绝订阅成功）。 |
 | fail | Function | 否 | 订阅失败，或用户取消订阅的回调函数。 |
 | complete | Function | 否 | 订阅结束的回调函数（订阅成功、失败、取消都会执行）。 |
