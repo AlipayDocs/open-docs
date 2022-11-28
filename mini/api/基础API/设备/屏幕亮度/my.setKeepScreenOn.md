@@ -1,6 +1,6 @@
 # 简介
 
-**my.setKeepScreenOn** 是设置是否保持屏幕长亮状态的 API。此 API 仅在当前小程序生效，离开小程序后失效。
+**my.setKeepScreenOn** 是设置是否保持屏幕长亮状态的 API。在离开小程序后会解除此 API 触发的长亮状态。
 
 ## 使用限制
 
@@ -115,6 +115,6 @@ Object 类型，参数如下：
 
 ## Bug & Tip
 
-由于 my.chooseCity 、my.chooseVideo 等 API 会唤起小程序外部的组件页面，因此 my.setKeepScreenOn 会在这类组件页面中失效，当关闭组件回到小程序后 my.setKeepScreenOn 会继续生效
+由于 my.chooseCity 、my.chooseVideo 等 API 会唤起小程序**外部的组件页面**，因此在这类组件页面中会暂时解除 my.setKeepScreenOn 触发的长亮状态，当关闭组件回到小程序后会再次进入长亮状态
 
 
