@@ -1,8 +1,8 @@
-> 从基础库 [2.7.9](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始，CanvasContext 相关接口已停止维护，请使用 [Canvas](https://opendocs.alipay.com/mini/01vzqv) 代替。
-
 # 简介
 
-**CanvasContext.arc** 是用于画一条弧线，创建一个圆。可以用 `arc()` 方法指定起始弧度为 0，终止弧度为 `2 * Math.PI`。用 `stroke()` 或者 `fill()` 方法在 canvas 中画弧线。
+CanvasContext.arc 用于创建一个弧线路径。
+- 创建一个实心圆形可以指定起始弧度为 0，终止弧度为 `2 * Math.PI` ，并用 `fill()` 填充。
+- 用 `stroke()` 方法在 canvas 中画弧线。
 
 ## 使用限制
 
@@ -23,41 +23,54 @@
 ### .js 示例代码
 
 ```javascript
-//.js
-const ctx = my.createCanvasContext('canvas');
-ctx.arc(100, 75, 50, 0, 2 * Math.PI);
-ctx.setFillStyle('#EEEEEE');
-ctx.fill();
-ctx.beginPath();
-ctx.moveTo(40, 75);
-ctx.lineTo(160, 75);
-ctx.moveTo(100, 15);
-ctx.lineTo(100, 135);
-ctx.setStrokeStyle('#AAAAAA');
-ctx.stroke();
-ctx.setFontSize(12);
-ctx.setFillStyle('black');
-ctx.fillText('0', 165, 78);
-ctx.fillText('0.5*PI', 83, 145);
-ctx.fillText('1*PI', 15, 78);
-ctx.fillText('1.5*PI', 83, 10);
-ctx.beginPath();
-ctx.arc(100, 75, 2, 0, 2 * Math.PI);
-ctx.setFillStyle('lightgreen');
-ctx.fill();
-ctx.beginPath();
-ctx.arc(100, 25, 2, 0, 2 * Math.PI);
-ctx.setFillStyle('blue');
-ctx.fill();
-ctx.beginPath();
-ctx.arc(150, 75, 2, 0, 2 * Math.PI);
-ctx.setFillStyle('red');
-ctx.fill();
-ctx.beginPath();
-ctx.arc(100, 75, 50, 0, 1.5 * Math.PI);
-ctx.setStrokeStyle('#333333');
-ctx.stroke();
-ctx.draw();
+const ctx = my.createCanvasContext('canvas')
+
+// 画一个圆形并填充颜色
+ctx.arc(100, 75, 50, 0, 2 * Math.PI)
+ctx.setFillStyle('#EEEEEE')
+ctx.fill()
+
+// 画一个十字
+ctx.beginPath()
+ctx.moveTo(40, 75)
+ctx.lineTo(160, 75)
+ctx.moveTo(100, 15)
+ctx.lineTo(100, 135)
+ctx.setStrokeStyle('#AAAAAA')
+ctx.stroke()
+
+// 画文字
+ctx.setFontSize(12)
+ctx.setFillStyle('black')
+ctx.fillText('0', 165, 78)
+ctx.fillText('0.5*PI', 83, 145)
+ctx.fillText('1*PI', 15, 78)
+ctx.fillText('1.5*PI', 83, 10)
+
+// 画上绿、蓝、红三个小圆形
+ctx.beginPath()
+ctx.arc(100, 75, 2, 0, 2 * Math.PI)
+ctx.setFillStyle('lightgreen')
+ctx.fill()
+
+ctx.beginPath()
+ctx.arc(100, 25, 2, 0, 2 * Math.PI)
+ctx.setFillStyle('blue')
+ctx.fill()
+
+ctx.beginPath()
+ctx.arc(150, 75, 2, 0, 2 * Math.PI)
+ctx.setFillStyle('red')
+ctx.fill()
+
+
+// 画一段弧线
+ctx.beginPath()
+ctx.arc(100, 75, 50, 0, 1.5 * Math.PI)
+ctx.setStrokeStyle('#333333')
+ctx.stroke()
+
+ctx.draw()
 ```
 
 显示效果如下图所示： ![CanvasContext.arc——3.png](https://cdn.nlark.com/yuque/0/2021/png/179989/1624870323606-4fefc202-3917-42bc-8f92-952d9bcde979.png#align=left&display=inline&height=720&margin=%5Bobject%20Object%5D&name=CanvasContext.arc%E2%80%94%E2%80%943.png&originHeight=720&originWidth=1280&size=29072&status=done&style=none&width=1280)

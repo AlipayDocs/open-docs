@@ -1,4 +1,4 @@
-描述文件状态的对象。
+描述文件状态的对象。通过 [FileSystemManager.stat](https://opendocs.alipay.com/mini/api/022b6o) 或 [FileSystemManager.statSync](https://opendocs.alipay.com/mini/api/024whe) 获取。
 
 # 属性
 

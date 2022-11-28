@@ -35,23 +35,23 @@ if (result2.stats) {
 
 ### String path
 
-文件/目录路径。
+文件或目录路径。支持 [本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)、[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)、[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。
 
 ### Booleab recursive
 
-是否递归获取目录下的每个文件的 Stats 信息。
+是否递归获取目录下的每个文件的 Stats 信息，不传时默认为 false。
 
 ## 返回值
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| stats | [Stats](https://opendocs.alipay.com/mini/api/stats)/Object | 当 recursive 为 false 时，res.stats 是一个 Stats 对象。当 recursive 为 true 且 path 是一个目录的路径时，res.stats 是一个 Object，key 以 path 为根路径的相对路径，value 是该路径对应的 Stats 对象。 |
+| stats | Object | 当 recursive 为 false 时，res.stats 是一个 [Stats](https://opendocs.alipay.com/mini/api/stats) 对象。当 recursive 为 true 且 path 是一个目录的路径时，res.stats 是一个 Object，key 是以 path 为根路径的相对路径，value 是该路径对应的 [Stats](https://opendocs.alipay.com/mini/api/stats) 对象。 |
 
 ### Stats/Object stats
 
 | **属性**         | **类型** | **描述**       |
 | ---------------- | -------- | -------------- |
-| mode             | Long     | -              |
-| size             | Long     | 文件大小。     |
-| lastAccessedTime | Long     | 上次访问时间。 |
-| lastModifiedTime | Long     | 上次修改时间。 |
+| mode             | Number     | 文件的类型和存取的权限。         |
+| size             | Number     | 文件大小。     |
+| lastAccessedTime | Number     | 上次访问时间。 |
+| lastModifiedTime | Number     | 上次修改时间。 |

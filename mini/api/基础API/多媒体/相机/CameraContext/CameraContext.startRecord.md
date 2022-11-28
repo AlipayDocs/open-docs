@@ -29,11 +29,16 @@ Page({
   onCameraReady(e) {
     console.log('相机初始化完成');
     this.cameraContext = my.createCameraContext('camera');
+    let count = 0;
+    setInterval(() => {
+      count++;
+    }, 1000);
     this.cameraContext.startRecord({
-    	timeoutCallback(res) {
-      	console.log('超时结束录制');
-        console.log(res.tempThumbPath, res.tempVideoPath);
-      }
+      timeoutCallback(res) {
+        console.log('超时结束录制');
+        console.log('累计时间为' + count);
+      },
+      timeout: 10
     });
   },
 })
@@ -45,6 +50,7 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | timeoutCallback | Function | 否 | 录像超过 30s 或页面 `onHide` 时会结束录像。 |
+| timeout | Number | 否 | 录制时长上限，单位为秒，默认 30s ，最大录制时长 10 分钟。<br/> 基础库 2.8.2 开始支持。|
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |

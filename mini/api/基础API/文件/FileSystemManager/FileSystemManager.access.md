@@ -19,7 +19,7 @@ let fs = my.getFileSystemManager();
 fs.access({
   path: `${my.env.USER_DATA_PATH}/test.txt`,
   success: res => {
-    console.log('文件存在');
+    console.log('文件存在'，res);
   },
 });
 ```
@@ -30,7 +30,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| path | String | 是 | 文件夹路径或者文件路径 |
+| path | String | 是 | 当前小程序内[文件系统](https://opendocs.alipay.com/mini/03dt4s) 中的文件夹路径或者文件路径。 |
 | success | Function | 否 | 调用成功的回调函数 |
 | fail | Function | 否 | 调用失败的回调函数 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行） |

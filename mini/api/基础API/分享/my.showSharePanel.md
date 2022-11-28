@@ -12,6 +12,9 @@
 
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
+# 效果示例
+<img src="https://img.alicdn.com/imgextra/i4/O1CN01BkDtfY1JR2MdOCBVj_!!6000000001024-0-tps-590-1278.jpg" width="300px" height="601px"/>
+
 # 接口调用
 
 ## .js 示例代码
@@ -37,3 +40,8 @@
     }
   },
 ```
+
+# 常见问题
+## Q：如何屏蔽分享？
+A：通过胶囊按钮（右上角三个点）中的“分享”按钮，也可以唤起分享面板，若要屏蔽此分享功能，可以调用 [my.hideShareMenu](https://opendocs.alipay.com/mini/api/share_app) 将“分享”按钮置灰。当前不能隐藏此按钮。
+

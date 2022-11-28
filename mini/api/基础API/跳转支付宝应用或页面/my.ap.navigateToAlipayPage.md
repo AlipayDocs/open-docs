@@ -37,7 +37,7 @@
 </tr>
 <tr>
   <td>其他情况</td>
-  <td>城市服务类小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
+  <td>[开放范围](https://opendocs.alipay.com/mini/04iy2y#%E5%BC%80%E6%94%BE%E8%8C%83%E5%9B%B4)内的小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
 </tr>
 <tr>
   <td rowspan=3>支付宝 scheme<br><i>alipays://*</i></td>
@@ -50,7 +50,7 @@
 </td>
 <tr>
   <td>其他情况</td>
-  <td>城市服务类小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
+  <td>[开放范围](https://opendocs.alipay.com/mini/04iy2y#%E5%BC%80%E6%94%BE%E8%8C%83%E5%9B%B4)内的小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
 </tr>
 <tr>
   <td rowspan=2>非支付宝 URL</td>
@@ -59,7 +59,7 @@
 </tr>
 <tr>
   <td>第三方页面</td>
-  <td>城市服务类小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
+  <td>[开放范围](https://opendocs.alipay.com/mini/04iy2y#%E5%BC%80%E6%94%BE%E8%8C%83%E5%9B%B4)内的小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
 </tr>
 </table>
 
