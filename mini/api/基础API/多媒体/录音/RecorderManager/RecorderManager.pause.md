@@ -12,8 +12,6 @@
 
 ## 示例代码
 
-### .js 示例代码
-
 ```javascript
 let recorderManager = my.getRecorderManager();
 recorderManager.start({
