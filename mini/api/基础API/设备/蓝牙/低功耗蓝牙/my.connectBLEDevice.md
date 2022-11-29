@@ -23,28 +23,6 @@
 
 ## 示例代码
 
-### .acss 示例代码
-
-```css
-/* .acss */
-.help-info {
-  padding: 10px;
-  color: #000000;
-}
-.help-title {
-  padding: 10px;
-  color: #fc0d1b;
-}
-```
-
-### .json 示例代码
-
-```json
-{
-  "defaultTitle": "Bluetooth"
-}
-```
-
 ### .axml 示例代码
 
 ```html
@@ -116,7 +94,7 @@ Page({
     writeId: '',
     charid: '',
   },
-  //获取本机蓝牙开关状态
+  // 获取本机蓝牙开关状态
   openBluetoothAdapter() {
     my.openBluetoothAdapter({
       success: res => {
@@ -131,6 +109,7 @@ Page({
       },
     });
   },
+  // 关闭蓝牙
   closeBluetoothAdapter() {
     my.closeBluetoothAdapter({
       success: () => {
@@ -141,6 +120,7 @@ Page({
       },
     });
   },
+  // 获取本机蓝牙状态
   getBluetoothAdapterState() {
     my.getBluetoothAdapterState({
       success: res => {
@@ -155,7 +135,7 @@ Page({
       },
     });
   },
-  //扫描蓝牙设备
+  // 扫描蓝牙设备
   startBluetoothDevicesDiscovery() {
     my.startBluetoothDevicesDiscovery({
       allowDuplicatesKey: false,
@@ -166,7 +146,7 @@ Page({
             var deviceArray = res.devices;
             for (var i = deviceArray.length - 1; i >= 0; i--) {
               var deviceObj = deviceArray[i];
-              //通过设备名称或者广播数据匹配目标设备，然后记录deviceID后面使用
+              // 通过设备名称或者广播数据匹配目标设备，然后记录 deviceID 后面使用
               if (deviceObj.name == this.data.name) {
                 my.alert({ content: '目标设备被找到' });
                 my.offBluetoothDeviceFound();
@@ -187,7 +167,7 @@ Page({
       },
     });
   },
-  //停止扫描
+  // 停止扫描
   stopBluetoothDevicesDiscovery() {
     my.stopBluetoothDevicesDiscovery({
       success: res => {
@@ -199,7 +179,7 @@ Page({
       },
     });
   },
-  //获取正在连接中的设备
+  // 获取正在连接中的设备
   getConnectedBluetoothDevices() {
     my.getConnectedBluetoothDevices({
       success: res => {
@@ -217,8 +197,7 @@ Page({
       },
     });
   },
-
-  //获取所有搜索到的设备
+  // 获取所有搜索到的设备
   getBluetoothDevices() {
     my.getBluetoothDevices({
       success: res => {
@@ -231,14 +210,13 @@ Page({
       },
     });
   },
-
+ // "输入要连接的设备的 deviceId" Input 框事件
   bindKeyInput(e) {
     this.setData({
       devid: e.detail.value,
     });
   },
-
-  //连接设备
+  // 连接设备
   connectBLEDevice() {
     my.connectBLEDevice({
       deviceId: this.data.devid,
@@ -250,7 +228,7 @@ Page({
       },
     });
   },
-  //断开连接
+  // 断开连接
   disconnectBLEDevice() {
     my.disconnectBLEDevice({
       deviceId: this.data.devid,
@@ -262,7 +240,7 @@ Page({
       },
     });
   },
-  //获取连接设备的server，必须要再连接状态状态之下才能获取
+  // 获取连接设备的 server，必须要再连接状态状态之下才能获取
   getBLEDeviceServices() {
     my.getConnectedBluetoothDevices({
       success: res => {
@@ -285,7 +263,7 @@ Page({
       },
     });
   },
-  //获取连接设备的charid，必须要再连接状态状态之下才能获取（这里分别筛选出读写特征字）
+  // 获取连接设备的 charid，必须要再连接状态状态之下才能获取（这里分别筛选出读写特征字）
   getBLEDeviceCharacteristics() {
     my.getConnectedBluetoothDevices({
       success: res => {
@@ -301,7 +279,7 @@ Page({
           serviceId: this.data.serid,
           success: res => {
             my.alert({ content: JSON.stringify(res) });
-            //特征字对象属性见文档，根据属性匹配读写特征字并记录，然后后面读写使用
+            // 特征字对象属性见文档，根据属性匹配读写特征字并记录，然后后面读写使用
             this.setData({
               charid: res.characteristics[0].characteristicId,
             });
@@ -313,7 +291,7 @@ Page({
       },
     });
   },
-  //读写数据
+  // 读数据
   readBLECharacteristicValue() {
     my.getConnectedBluetoothDevices({
       success: res => {
@@ -342,7 +320,7 @@ Page({
       },
     });
   },
-
+  // 写数据
   writeBLECharacteristicValue() {
     my.getConnectedBluetoothDevices({
       success: res => {
@@ -354,11 +332,9 @@ Page({
           devid: res.devices[0].deviceId,
         });
         // 向蓝牙设备发送一个 0x00 的 16 进制数据
-
         const buffer = new ArrayBuffer(1);
         const dataView = new DataView(buffer);
         dataView.setUint8(0, 0);
-
         my.writeBLECharacteristicValue({
           deviceId: this.data.devid,
           serviceId: this.data.serid,
@@ -374,6 +350,7 @@ Page({
       },
     });
   },
+  // 监听特征值变化的事件
   notifyBLECharacteristicValueChange() {
     my.getConnectedBluetoothDevices({
       success: res => {
@@ -391,7 +368,7 @@ Page({
           serviceId: this.data.serid,
           characteristicId: this.data.charid,
           success: () => {
-            //监听特征值变化的事件
+            // 监听特征值变化的事件
             my.onBLECharacteristicValueChange({
               success: res => {
                 //  my.alert({content: '特征值变化：'+JSON.stringify(res)});
@@ -407,10 +384,11 @@ Page({
       },
     });
   },
+  // 取消监听低功耗蓝牙设备的特征值变化
   offBLECharacteristicValueChange() {
     my.offBLECharacteristicValueChange();
   },
-  //其他事件
+  // 监听本机蓝牙状态变化
   bluetoothAdapterStateChange() {
     my.onBluetoothAdapterStateChange(
       this.getBind('onBluetoothAdapterStateChange')
@@ -434,6 +412,7 @@ Page({
     }
     return this[`bind${name}`];
   },
+  // 监听低功耗蓝牙连接的错误事件
   BLEConnectionStateChanged() {
     my.onBLEConnectionStateChanged(this.getBind('onBLEConnectionStateChanged'));
   },
@@ -444,6 +423,7 @@ Page({
       my.alert({ content: '连接状态变化：' + JSON.stringify(res) });
     }
   },
+  // 取消监听低功耗蓝牙连接状态变化
   offBLEConnectionStateChanged() {
     my.offBLEConnectionStateChanged(
       this.getBind('onBLEConnectionStateChanged')
@@ -468,6 +448,18 @@ Object 类型，属性如下：
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+
+## 错误码
+
+| **错误码** | **说明**                   | **解决方案**               |
+| ---------- | -------------------------- | -------------------------- |
+| 1          | 在 IDE 中调用了此 API。    | 请在真机中调试。 |
+| 12         | 蓝牙未打开。               | 请尝试打开系统设置中的蓝牙开关。           |
+| 13         | 与系统服务的链接暂时丢失。 | 请尝试重新连接。           |
+| 2001       | 用户不允许授权。                 | 请授权当前小程序使用蓝牙功能。|
+| 2002       | 用户不允许授权，且勾选了“总是保持以上选择，不再询问“后，再次调用该接口。                | 请授权当前小程序使用蓝牙功能。|
+| 2003       | 用户不允许授权，且勾选了“总是保持以上选择，不再询问”。 | 请授权当前小程序使用蓝牙功能。|
+
 
 # 常见问题 FAQ
 
