@@ -21,7 +21,7 @@
 
 ### 第三步：获取用户授权后调用 my.getPhoneNumber
 
-参考后文示例代码，使用 `open-type` 为 `getAuthorize`、`scope` 为 `phoneNumber` 的 [`\<button\>` 组件](https://opendocs.alipay.com/mini/component/button)，在 `\<button\>` 的 `onGetAuthorize`（用户同意授权）事件中调用 my.getPhoneNumber，并恰当处理 `onError`（用户拒绝授权）事件。**未经用户授权而直接调用 my.getPhoneNumber，解密后将得到异常响应“无效的授权关系”（code 40003）**。
+参考后文示例代码，使用 `open-type` 为 `getAuthorize`、`scope` 为 `phoneNumber` 的 [`<button>` 组件](https://opendocs.alipay.com/mini/component/button)，在 `<button>` 的 `onGetAuthorize`（用户同意授权）事件中调用 my.getPhoneNumber，并恰当处理 `onError`（用户拒绝授权）事件。**未经用户授权而直接调用 my.getPhoneNumber，解密后将得到异常响应“无效的授权关系”（code 40003）**。
 
 ### 第四步：服务端解密和验签
 
