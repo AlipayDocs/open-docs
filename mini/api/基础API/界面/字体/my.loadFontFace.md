@@ -75,9 +75,9 @@ Page({
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| global | Boolean | 否 | 是否将该字体应用于整个小程序，设置为 false 只在当前页面生效。<br/>默认值 `false`。</br>[2.8.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
+| global | Boolean | 否 | 是否将该字体应用于整个小程序，设置为 false 只在当前页面生效。<br/>默认值 `false`。</br>基础库 [2.8.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上支持。 |
 | family | String | 是 | 字体名称。 |
-| source | String | 是 | 字体资源地址。 |
+| source | String | 是 | 字体资源地址。**注意：** 安卓和 iOS 策略不一致，安卓要求字体资源必须是同源下的。解决方式是需要后端配置跨域 'Access-Control-Allow-Origin':  '*'。 |
 | desc | Object | 否 | 字体描述符。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
@@ -114,8 +114,5 @@ A：支付宝小程序不支持加载 woff2 字体。相对其他格式字体，
 ## Q：为什么 my.loadfontface 在 IDE 环境下不生效？
 A：my.loadfontface 目前只支持真机环境。
 
-## Q：为什么 my.loadfontface 双端表现不一致，iOS 加载成功，安卓加载失败？
-A：安卓和 iOS 策略不一致导致的，安卓要求字体资源必须是同源下的。解决方式是需要后端配置跨域 'Access-Control-Allow-Origin': '*'。
-
 ## Q：my.loadFontFace 在 Canvas 2D 中生效吗？
-A：生效。需要在网络字体资源加载成功之后再去调用 Canvas 2D 生成字体才能生效。 
+A：生效。需要在网络字体资源加载成功之后再去调用 Canvas 2D 绘制文本才能生效。 
