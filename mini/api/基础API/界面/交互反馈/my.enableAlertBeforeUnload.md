@@ -47,7 +47,7 @@ Object 类型，参数如下：
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 7 | has not found page when enableAlertBeforeUnload has been invoked | 执行接口时小程序还未创建出任何一个页面实例，建议在 Page.onReady 回调内执行 my.enableAlertBeforeUnload。 |
-| 8 | can not invoke enableAlertBeforeUnload at first page | 不支持在首页调用此接口，建议在非首页的页面去调用此接口。 |
+| 8 | can not invoke enableAlertBeforeUnload at first page | 不支持在首页调用此接口，不需要处理此报错，建议在非首页的页面去调用此接口。 |
 | 9 | client not support enableAlertBeforeUnload | 一般不会出现，出现则表明当前客户端不支持调用此接口，请使用支持的客户端版本调用此接口。 |
 
 <br />
