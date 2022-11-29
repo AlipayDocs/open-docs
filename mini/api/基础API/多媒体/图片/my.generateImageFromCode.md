@@ -70,7 +70,7 @@ Object 类型，属性如下：
 | code | String | 是 | 二维码内容。 |
 | format | 'QRCODE' | 是 | 输出码的格式，当前只支持 QRCODE(二维码)。 |
 | width | Number | 是 | 生成图片的宽度，单位是 px。 |
-| correctLevel | String | 否 | 纠错等级，默认值为 H。<br />分为 4 个等级：(0:L, 1:M, 2:Q, 3:H)，越高越好。L、M 等级不建议使用。 |
+| correctLevel | String | 否 | 纠错等级，等级越高越好，默认值为 H。枚举值如下：<ul><li>L：错误字码在 7% 以内可被修正, 容错率较低不建议使用;</li><li>M：错误字码在 15% 以内可被修正, 容错率较低不建议使用；</li><li>Q：错误字码在 25% 以内可被修正；</li><li>H：错误字码在 30% 以内可被修正；</li></ul>|
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
