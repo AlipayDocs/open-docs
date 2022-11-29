@@ -15,7 +15,10 @@
 
 ```javascript
 // .js
-my.onBeaconUpdate(res => {});
+const callback = (res) => {
+  console.log("回调函数",res)
+}
+my.onBeaconUpdate(callback);
 ```
 
 ## 入参
@@ -24,11 +27,11 @@ my.onBeaconUpdate(res => {});
 
 | **参数** | **类型** | **必填** | **描述**                                |
 | -------- | -------- | -------- | --------------------------------------- |
-| success  | Function | 否       | 监听 iBeacon 设备的更新事件的回调函数。 |
+| callback  | Function | 否       | 监听 iBeacon 设备的更新事件的回调函数。 |
 
 ### Function success
 
-success 回调函数会携带一个 Object 类型的对象，其属性如下：
+callback 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性** | **类型**    | **描述**                            |
 | -------- | ----------- | ----------------------------------- |
@@ -54,5 +57,6 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | 11002      | location service unavailable     | 位置服务不可用。          |
 | 11003      | location authorization forbidden | 位置服务权限禁止。        |
 | 11004      | already discovering              | 已经开始搜索。            |
-| 11006      | uuid invalid                     | UUID 格式错误。           |
+| 11006      | uuid invalid                     | UUID 格式错误。          |
 | 11008      | uuids empty                      | 参数错误，UUID 数组为空。 |
+
