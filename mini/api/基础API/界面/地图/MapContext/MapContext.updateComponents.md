@@ -40,7 +40,7 @@ this.mapCtx.updateComponents({
     trafficEnabled: true, // false 或 true
     // 地图POI信息
     showMapText: true, // false 或 true
-    // 高德地图logo位置
+    // 高德地图 logo 位置
     logoPosition: { centerX: 150, centerY: 90 },
   },
   markers: [{}, {}],
