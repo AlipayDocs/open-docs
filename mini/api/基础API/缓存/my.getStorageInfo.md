@@ -13,6 +13,8 @@
 + 用户在我“我的小程序”中删除小程序，被删除小程序的本地缓存数据会被清除；
 + **不会**清除数据的情况：退出小程序或支付宝、在支付宝的设置界面清除缓存、覆盖安装（不是先删除再安装）支付宝。
 
+如若获取当前 storage 的数据，请使用 [my.getStorage](https://opendocs.alipay.com/mini/api/azfobl) 接口和 [my.getStorageSync](https://opendocs.alipay.com/mini/api/ox0wna) 接口
+
 ## 扫码体验
 
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/c3268c2a3fa17b2d75125698a19b64fd.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
