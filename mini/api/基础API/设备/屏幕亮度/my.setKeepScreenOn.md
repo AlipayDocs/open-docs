@@ -115,6 +115,6 @@ Object 类型，参数如下：
 
 ## Bug & Tip
 
-由于 my.chooseCity 、my.chooseVideo 等 API 会唤起小程序**外部的组件页面**，因此在这类组件页面中会暂时解除 my.setKeepScreenOn 触发的长亮状态，当关闭组件回到小程序后会再次进入长亮状态
+由于 my.chooseCity 、my.chooseVideo 等 API 会唤起小程序**外部的组件页面**，因此在这类组件页面中会暂时解除 my.setKeepScreenOn 触发的长亮状态，当关闭这类组件页面，返回到小程序后会再次进入之前设置的长亮状态
 
 
