@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.updateComponents** 是更新[地图属性](https://opendocs.alipay.com/mini/component/map#)的接口。地图属性包含中心经纬度、缩放级别、点标记、点标记动画、多段线、视野范围延伸、设置等。
+**MapContext.updateComponents** 是更新[地图属性](https://opendocs.alipay.com/mini/component/map#)的接口。地图属性包含中心经纬度、缩放级别、点标记、点标记动画、多段线、视野范围延伸等。
 
 ## 使用限制
 
