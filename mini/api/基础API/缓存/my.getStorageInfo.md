@@ -8,7 +8,7 @@
 + 插件本地缓存数据与宿主小程序隔离。
 
 **数据清除**
-+ 可使用 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 删除指定 key 对应数据，使用 [my.clearStorage](https://opendocs.alipay.com/mini/api/storage) 删除所有缓存数据；
++ 可使用 [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) 删除指定 key 对应的缓存数据，使用 [my.clearStorage](https://opendocs.alipay.com/mini/api/storage) 删除所有缓存数据；
 + 用户卸载支付宝客户端，所有小程序本地缓存数据会被一并清除；
 + 用户在我“我的小程序”中删除小程序，被删除小程序的本地缓存数据会被清除；
 + **不会**清除数据的情况：退出小程序或支付宝、在支付宝的设置界面清除缓存、覆盖安装（不是先删除再安装）支付宝。
