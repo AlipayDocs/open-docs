@@ -66,7 +66,7 @@ setTimeout(() => {
 | --- | --- | --- | --- |
 | markerId | Number | 是 | 执行滑动的 marker 的 id，确保此时 marker 已经在地图上。 |
 | markerData | Object | 否 | 传入 marker 对象。 只有 markerId 指向 markerData 中的 id 时才会生效  |
-| points | Array | 是 | 滑动路线的经纬度集合。 建议路线集合中第一个点的经纬度等于需要执行滑动的 marker 点经纬度，使滑动更顺滑 |
+| points | Array | 是 | 滑动路线的经纬度集合。 建议路线集合中第一个点的经纬度等于需要执行滑动的 marker 点经纬度，这样可使滑动效果更顺滑 |
 | duration | Number | 否 | 滑动执行时间，默认为 5000 毫秒（ms）。 |
 | targetDistances | Array | 否 | 指定需要 onMarkerMove 回调的目标距离数组。 |
 | action | String | 否 | 指定操作滑动。<ul><li>`action:'stop'` 表示在滑动过程中提前停止滑动，并将点标记移动至指定线路终点位置。</li><li>`action:'start'` 默认值，表示执行滑动。</li></ul> |
