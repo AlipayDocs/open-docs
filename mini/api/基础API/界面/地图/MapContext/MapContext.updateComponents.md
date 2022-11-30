@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.updateComponents** 是更新[地图属性](https://opendocs.alipay.com/mini/component/map#)的接口。地图属性包含中心经纬度、缩放级别、点标记、多段线、视野范围延伸等。
+**MapContext.updateComponents** 是更新[地图](https://opendocs.alipay.com/mini/component/map#)属性的接口。地图属性包含中心经纬度、缩放级别、点标记、多段线、视野范围延伸等。
 
 ## 使用限制
 
@@ -61,5 +61,5 @@ this.mapCtx.updateComponents({
 | polyline        | Array    | 覆盖物，多个连贯点的集合（路线）。格式详见 [polyline](https://opendocs.alipay.com/mini/component/map#polyline)。可清除或选择性保留由 smoothMovePolyline 绘制的轨迹 |
 | include-points  | Array    | 视野将进行小范围延伸包含传入的坐标。     |
 | include-padding | Object   | 视野在地图 padding 范围内展示。          |
-| setting         | Object   | 设置内容包含手势、路况、指南针、比例尺等   |
+| setting         | Object   | 主要内容包含手势、路况、指南针、比例尺等。详情可看示例代码   |
 | command         | Object   | 命令，可用于更新 marker 动画。           |
