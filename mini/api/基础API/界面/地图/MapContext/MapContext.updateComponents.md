@@ -38,7 +38,7 @@ this.mapCtx.updateComponents({
     tiltGesturesEnabled: true, // false 或 true
     // 交通路况展示
     trafficEnabled: true, // false 或 true
-    // 地图POI信息
+    // 地图 POI 信息
     showMapText: true, // false 或 true
     // 高德地图 logo 位置
     logoPosition: { centerX: 150, centerY: 90 },
