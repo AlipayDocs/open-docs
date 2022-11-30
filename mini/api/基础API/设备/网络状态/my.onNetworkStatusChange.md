@@ -1,6 +1,6 @@
 # 简介
 
-**my.onNetworkStatusChange** 是开始监听网络状态变化的 API。
+**my.onNetworkStatusChange** 是开始监听网络状态变化的 API。调用 API 会开启网络状态变化监听功能，网络发生变化（ 如：连接，切换或断开网络 ）会触发此 API 的回调。
 
 ## 使用限制
 
