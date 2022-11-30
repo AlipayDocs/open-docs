@@ -15,7 +15,7 @@
 ### .js 示例代码
 
 ```javascript
-//.js
+// .js
 this.mapCtx = my.createMapContext('map');
 this.mapCtx.polygonContainsPoint({
   polygon: [
@@ -63,8 +63,8 @@ Object 类型，参数如下：
 
 | **参数** | **类型**        | **必填** | **描述**               |
 | -------- | --------------- | -------- | ---------------------- |
-| polygon  | Array\<Object\> | 是       | 多边形区域的经纬度范围。 |
-| point    | Object          | 是       | 经纬度度的值。         |
+| polygon  | Array\<Object\> | 是       | 构成多边形的经纬度数组。 |
+| point    | Object          | 是       | 需要判断位置的经纬度点。  |
 | success  | Function        | 否       | 调用成功的回调函数。   |
 
 ### Object polygon/point
