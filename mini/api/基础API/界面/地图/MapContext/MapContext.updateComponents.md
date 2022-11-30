@@ -61,5 +61,5 @@ this.mapCtx.updateComponents({
 | polyline        | Array    | 覆盖物，多个连贯点的集合（路线）。格式详见 [polyline](https://opendocs.alipay.com/mini/component/map#polyline)。可清除或选择性保留由 smoothMovePolyline 绘制的轨迹 |
 | include-points  | Array    | 视野将进行小范围延伸包含传入的坐标。     |
 | include-padding | Object   | 视野在地图 padding 范围内展示。          |
-| setting         | Object   | 设置。                                   |
+| setting         | Object   | 设置内容包含手势、路况、指南针、比例尺等   |
 | command         | Object   | 命令，可用于更新 marker 动画。           |
