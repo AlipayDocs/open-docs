@@ -77,7 +77,7 @@ Page({
 | --- | --- | --- | --- |
 | global | Boolean | 否 | 是否将该字体应用于整个小程序，设置为 false 只在当前页面生效。<br/>默认值 `false`。</br>基础库 [2.8.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上支持。 |
 | family | String | 是 | 字体名称。 |
-| source | String | 是 | 字体资源地址，格式为 "url('https:// xxx')"，详见示例代码。<br/>**注意：** 安卓和 iOS 策略不一致，安卓要求字体资源必须是同源下的，iOS 无此要求。解决方式是需要后端配置跨域 'Access-Control-Allow-Origin':  '*'。 |
+| source | String | 是 | 字体资源地址，格式为 "url('https:// xxx')"，详见示例代码。<br/>**注意：** 安卓和 iOS 策略不一致，安卓要求字体资源必须是同源下的，iOS 无此要求。建议后端开发者配置跨域 **'Access-Control-Allow-Origin':  '*'** 解决此问题。 |
 | desc | Object | 否 | 字体描述符。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
