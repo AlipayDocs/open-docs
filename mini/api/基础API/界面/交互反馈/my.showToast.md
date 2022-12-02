@@ -1,6 +1,6 @@
 # 简介
 
-**my.showToast** 是显示一个弱提示，在到达设定的显示时间后自动消失弱提示的 API。
+**my.showToast** 是显示一个弱提示的 API。
 
 ## 使用限制
 
@@ -43,8 +43,15 @@ Object 类型，参数如下：
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | content | String | 否 | 文字内容。 |
-| type | String | 否 | toast 类型，展示相应图标，默认 none，支持 success / fail / exception / none。其中 exception 类型必须传文字信息。 |
+| type | String | 否 | 根据 type 类型，展示相应图标，默认值为 none。可选值如下：<ul><li>success</li><li>fail</li><li>exception</li><li>none</li></ul> 其中 exception 类型必须传文字信息。 |
 | duration | Number | 否 | 显示时长，单位为 ms，默认值为 3000。 |
+| mask | Boolean | 否 | 是否显示透明蒙层，防止触摸穿透，默认值为 false。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
+
+## 错误码
+fail 回调会收到一个 Object 类型的参数，其 error 属性为错误码，errorMessage 为错误消息。
+| **错误码** | **错误信息** | **解决方案** |
+| --- | --- | --- |
+| 2 | INVALID_PARAM | 请检查入参，传入正确的参数。 |
