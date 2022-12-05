@@ -8,7 +8,7 @@
 - 小程序中 input 如果父类是 `position: fixed`，可以加上 `enableNative="{{false}}"`，解决输入框错位/光标上移问题。个别情况下定位问题会导致光标错位，所以需要把 false 改为 true，代码块为 `enableNative="{{true}}"`。
 - confirm-type 与 enableNative 属性冲突，若希望 confirm-type 生效，enableNative 不能设定为 false，而且不能设定 always-system。
 - 输入框是同层组件，使用时需要注意以下限制：
-   - 不支持通过修改 CSS 来修改光标颜色
+   - 不支持通过修改 CSS 来修改光标颜色。
 
 ## 扫码体验
 
@@ -37,8 +37,8 @@
 | confirm-type | String | 设置键盘右下角按钮的文字，有效值：done（显示“完成”）、go（显示“前往”）、next（显示“下一个”）、search（显示“搜索”）、send（显示“发送”），平台不同显示的文字略有差异。<br />**注意：** 只有在 type=text 时有效。<br />**默认值：** done<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
 | confirm-hold | Boolean | 点击键盘右下角按钮时是否保持键盘不收起状态。<br />**默认值：** false<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
 | cursor | Number | 指定 focus 时的光标位置。 |
-| selection-start | Number | 获取光标时，选中文本对应的焦点光标起始位置，需要和 selection-end 配合使用。<br />**默认值：** -1<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
-| selection-end | Number | 获取光标时，选中文本对应的焦点光标结束位置，需要和 selection-start 配合使用。<br />**默认值：** -1<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
+| selection-start | Number | 获取光标时，选中文本对应的焦点光标起始位置，需要和 selection-end 配合使用。当 type 为非 text 时，该属性不生效。<br />**默认值：** -1<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
+| selection-end | Number | 获取光标时，选中文本对应的焦点光标结束位置，需要和 selection-start 配合使用。当 type 为非 text 时，该属性不生效。<br />**默认值：** -1<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
 | random-number | Boolean | 当 type 为 number, digit, idcard 数字键盘是否随机排列。<br />**默认值：** false<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
 | controlled | Boolean | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。<br />建议当 type 值为 text 时不要将 controlled 设置为 true，详见 **Bugs & Tips**。<br /><br />**默认值：** false<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
 | always-system | Boolean | 是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效。<br />**默认值**：false<br />**版本要求**：基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
@@ -51,15 +51,16 @@
 
 由于部分机型/部分输入法提供联想功能，造成在输入非数字类型的字符时，一次输入会连续触发多次 input 事件，且 input 事件的 `event.detail.value` 与用户的输入预期不符，最终导致与 controlled 提供的 **受控模式** 产生冲突。因此，建议当 type 值为 text 时不要将 controlled 设置为 true。
 
-# FAQ
+# 常见问题
 
 ## 如何解决 input 输入框在 iOS 客户端的光标漂移问题？
 
-步骤一：若已在 input 中设置了 `enableNative` 属性，删除 `enableNative` 属性的全部设置。<br />步骤二：在 app.json 文件 window 对象内，设置 `"enableInPageRenderInput":"YES"`。
+步骤一：若已在 input 中设置了 `enableNative` 属性，删除 `enableNative` 属性的全部设置。<br />
+步骤二：在 app.json 文件 window 对象内，设置 `"enableInPageRenderInput":"YES"`。
 
 ## 为何 input 输入框聚焦的时候出现白屏，只有键盘弹出来？
 
-因为使用定位导致键盘把页面 input 内容顶上去了，建议使用 [SearchBar](https://opendocs.alipay.com/mini/component-ext/search-bar) 搜索框。<br />需要判断客户端机型为 安卓还是 iOS，从而设置 `enableNative`属性，然后在 app.json 文件 window 对象内，设置 `"enableInPageRenderInput":"YES"`。
+因为使用定位导致键盘把页面 input 内容顶上去了，建议使用 [SearchBar](https://opendocs.alipay.com/mini/component-ext/search-bar) 搜索框。<br />需要判断客户端机型为 Android 还是 iOS，从而设置 `enableNative`属性，然后在 app.json 文件 window 对象内设置 `"enableInPageRenderInput":"YES"`。
 
 ## 为何 input 输入的内容没有在输入框显示？
 
@@ -71,11 +72,11 @@
 
 ## input 输入框弹起键盘有遮挡，影响其他标签控件触发点击事件？
 
-建议修改自定义 [view](/mini/component/view) 样式。
+建议修改自定义 [view](https://opendocs.alipay.com/mini/component/view) 样式。
 
 ## input 输入框是否支持点击事件，比如 click、tap、touchstart？
 
-暂时不支持，可以考虑外嵌一层 [view](/mini/component/view)，利用 view 的 `onTap` 事件实现。
+暂时不支持，可以考虑外嵌一层 [view](https://opendocs.alipay.com/mini/component/view)，利用 view 的 `onTap` 事件实现。
 
 ## input 如何用 js 代码清空数据？
 
@@ -98,11 +99,11 @@ keyNum() {
 
 ## 如何判断 input 的 value 值是不是符合正则表示式？
 
-使用 `var reg = new RegExp("\w+\s", "g")`； getRegExp() 需要在 sjs 中使用。 sjs 脚本不能直接在 js 中引入调用
+使用 `var reg = new RegExp("\w+\s", "g")`； getRegExp() 需要在 sjs 中使用。 sjs 脚本不能直接在 js 中引入调用。
 
 ## 父组件如何调用子组件的 input 事件?
 
-请参见 [组件对象](/mini/framework/component_object)。
+请查看 [组件对象](/mini/framework/component_object)。
 
 ## input 内容跳动、延迟如何处理？
 
