@@ -122,7 +122,7 @@ function schemeToParams(scheme) {
 }
 
 // 使用示例
-var scheme = 'alipays://platformapi/startapp?appId=2022061812345678&page=%2Fpages%2Findex%2Findex&query=foo%3Dbar';
+var scheme = 'alipays://platformapi/startapp?appId=2022061812345678page=/pages/index/index&query=foo%3Dbar';
 navigateToMiniProgramScheme({
   scheme,
   fail: (res) => my.alert({ title: 'navigateToMiniProgramScheme failed', content: JSON.stringify(res) }),
