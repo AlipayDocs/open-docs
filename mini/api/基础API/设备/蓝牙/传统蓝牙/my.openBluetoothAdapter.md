@@ -2,9 +2,9 @@
 
 **my.openBluetoothAdapter** 初始化蓝牙适配器。
 
-适配器成功初始化以后，蓝牙相关的其他 API 才能正常使用。可参考 [蓝牙 API 概览](https://opendocs.alipay.com/mini/api/bluetooth-intro) 中的流程图。
+适配器成功初始化以后，蓝牙相关的其他 API 才能正常使用。关闭蓝牙适配器请使用 [my.closeBluetoothAdapter](https://opendocs.alipay.com/mini/api/wvko0w) 。
 
-关闭蓝牙适配器请使用 [my.closeBluetoothAdapter](https://opendocs.alipay.com/mini/api/wvko0w) 。
+关于蓝牙相关 API 的调用流程，可参考 [蓝牙 API 概览](https://opendocs.alipay.com/mini/api/bluetooth-intro) 中的图示。
 
 ## 使用限制
 
