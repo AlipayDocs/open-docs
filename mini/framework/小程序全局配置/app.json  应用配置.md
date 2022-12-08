@@ -192,16 +192,6 @@ icon 图标推荐大小为 81px \* 81px，系统会对传入的非推荐尺寸�
 
 **注意：** 由于开启该配置后，当前页面未使用到的代码将不会被执行，可能对某些依赖默认脚本执行先后顺序的逻辑产生影响。
 
-# workers
-
-使用 [Worker](https://opendocs.alipay.com/mini/api/createworker) 处理多线程任务时，设置 Worker 代码文件列表。如：
-
-```json
-"workers": [
-  "workers/index.js"
-]
-```
-
 # permission
 
 小程序接口权限相关设置。字段类型为 Object，结构为：
