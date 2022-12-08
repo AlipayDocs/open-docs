@@ -29,7 +29,7 @@ Page({
     if (!worker) {
       my.alert({
         title: 'createWorker 失败',
-        content: `请确保包文件路径 ${scriptPath} 有效，且在 app.json 的 workers 数组中包含`
+        content: `请确保包文件路径 ${scriptPath} 有效，且在 app.json 里的 workers 数组中包含`
       });
       return;
     }
@@ -57,7 +57,7 @@ worker.onMessage(function (msg) {
 
 ### String scriptPath
 
-worker 入口文件的路径，为 [代码包文件](https://opendocs.alipay.com/mini/03dt4s#%E8%AE%BF%E9%97%AE%E4%BB%A3%E7%A0%81%E5%8C%85%E6%96%87%E4%BB%B6)（但**不要以 "/" 开头**），需要在 mini.project.json 中的 include 字段中包含（参见上文示例）。
+worker 入口文件的路径，为 [代码包文件](https://opendocs.alipay.com/mini/03dt4s#%E8%AE%BF%E9%97%AE%E4%BB%A3%E7%A0%81%E5%8C%85%E6%96%87%E4%BB%B6)（但**不支持以 "/" 开头**），需要在 app.json 中的 workers 字段中包含（参见上文示例）。
 
 ## 返回值
 
