@@ -1,6 +1,6 @@
 # 简介
 
-**my.createIntersectionObserver** 用于创建并返回一个 `IntersectionObserver` 对象实例。需在 `page.onReady` 之后执行 `my.createIntersectionObserver()`。
+**my.createIntersectionObserver** 用于创建并返回一个 [IntersectionObserver](https://opendocs.alipay.com/mini/api/intersectionobserver-overview) 对象实例。需在 `page.onReady` 之后执行 `my.createIntersectionObserver()`。
 
 ## 使用限制
 
@@ -46,13 +46,13 @@ Page({
 
 入参为 Object 类型，参数如下：
 
-| **参数** | **类型** | **描述** |
-| --- | --- | --- |
-| thresholds | Array\<Number\> | 一个数值数组，包含所有阈值。默认值为 [0]。 |
-| initialRatio | Number | 初始的相交比例，如果调用时检测到的相交比例与这个值不相等且达到阈值，则会触发一次监听器的回调函数。默认值为 0。 |
-| selectAll | Boolean | 是否同时观测多个目标节点（而非一个），如果设为 true ，observe 的 targetSelector 将选中多个节点（**注意**：同时选中过多节点将影响渲染性能）。默认值为 false。 |
-| dataset | Boolean | 目标节点的 dataset 信息。当 dataset 为 true 时，[IntersectionObserver.observe](https://opendocs.alipay.com/mini/api/pra7yc) 回调中的 res 对象，会携带目标节点的 dataset 属性。该属性默认值是 false。<br />基础库 [2.7.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。 |
+| **参数** | **类型** | **默认值** | **描述** |
+| --- | --- | --- | --- |
+| thresholds | Array\<Number\> | [0] | 一个数值数组，包含所有阈值。 |
+| initialRatio | Number | 0 | 初始的相交比例，如果调用时检测到的相交比例与这个值不相等且达到阈值，则会触发一次监听器的回调函数。 |
+| selectAll | Boolean | false | 是否同时观测多个目标节点（而非一个），如果设为 true ，observe 的 targetSelector 将选中多个节点（**注意**：同时选中过多节点将影响渲染性能）。  |
+| dataset | Boolean | false | 目标节点的 dataset 信息。当 dataset 为 true 时，[IntersectionObserver.observe](https://opendocs.alipay.com/mini/api/pra7yc) 回调中的 res 对象，会携带目标节点的 dataset 属性。。<br />基础库 [2.7.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。 |
 
 ## 返回值
 
-返回值为 [IntersectionObserver](https://opendocs.alipay.com/mini/api/intersectionobserver-overview)。
+返回值为 [IntersectionObserver](https://opendocs.alipay.com/mini/api/intersectionobserver-overview) 对象实例。
