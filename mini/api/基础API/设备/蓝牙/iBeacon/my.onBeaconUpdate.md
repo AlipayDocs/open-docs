@@ -29,15 +29,17 @@ my.onBeaconUpdate(callback);
 | -------- | -------- | -------- | --------------------------------------- |
 | callback  | Function | 否       | 监听 iBeacon 设备的更新事件的回调函数。 |
 
-### Function success
+### Function callback
 
-callback 回调函数会携带一个 Object 类型的对象，其属性如下：
+callback 被调用时会收到一个 Object 类型的参数，包含如下属性：
 
 | **属性** | **类型**    | **描述**                            |
 | -------- | ----------- | ----------------------------------- |
-| beacons  | ObjectArray | 当前搜寻到的所有 iBeacon 设备列表。 |
+| beacons  | Array<Object> | 当前搜寻到的所有 iBeacon 设备列表。 |
 
-#### ObjectArray beacons
+#### Array<Object> beacons
+
+数组每个元素包含如下属性：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
