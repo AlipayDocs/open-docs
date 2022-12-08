@@ -16,7 +16,7 @@
 ### app.json
 ```json
 {
-  "include": ["workers/index.js"]
+  "workers": ["workers/index.js"]
 }
 ```
 
