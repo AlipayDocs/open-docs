@@ -8,9 +8,9 @@
 
 # 配置域名白名单
 
-请登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **设置** > **开发设置** > **服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTP 请求（my.request）、上传文件（my.uploadFile）。
+请登录 [开放平台控制台](https://open.alipay.com/dev/workspace) > 点击要配置的小程序，进入小程序详情页 > **开发设置** > **服务器域名白名单** 中配置域名白名单。小程序在以下 API 调用时只能与白名单中的域名进行通讯：HTTP 请求（my.request）、上传文件（my.uploadFile）。
 
-![|723x75](https://mdn.alipayobjects.com/afts/img/A*xM4NR6VRbfygwi5Chin54gBkAa8wAA/original?bz=openpt_doc&t=Gy-TLY7t_NqJXpfwrucAZwAAAABkMK8AAAAA#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&originHeight=168&originWidth=1624&status=done&style=stroke&width=1624)
+![|723x75](https://cdn.nlark.com/yuque/0/2022/png/201640/1666859807363-3a9cdff5-e63c-42cd-885e-42a85d766183.png)
 
 添加服务器域名白名单后，需要重新打包上传生成体验版，服务器域名才会生效。
 
