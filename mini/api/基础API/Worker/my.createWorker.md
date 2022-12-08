@@ -44,7 +44,7 @@ Page({
 });
 ```
 
-### workers/worker.js
+### workers/index.js
 ```javascript
 worker.onMessage(function (msg) {
   worker.postMessage({
