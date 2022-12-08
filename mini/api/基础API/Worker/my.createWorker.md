@@ -13,10 +13,10 @@
 
 ## 示例代码
 
-### mini.project.json
+### app.json
 ```json
 {
-  "include": ["workers/index.js"] // worker 的入口文件，需要在此处声明
+  "workers": ["workers/index.js"]
 }
 ```
 
@@ -24,12 +24,12 @@
 ```javascript
 Page({
   testWorker() {
-    const scriptPath = 'workers/index.js'; // 入口文件
+    const scriptPath = 'workers/index.js'; // worker 的入口文件
     const worker = my.createWorker(scriptPath);
     if (!worker) {
       my.alert({
         title: 'createWorker 失败',
-        content: `请确保包文件路径 ${scriptPath} 有效，且在 mini.project.json 里的 include 数组中包含`
+        content: `请确保包文件路径 ${scriptPath} 有效，且在 app.json 的 workers 数组中包含`
       });
       return;
     }
@@ -44,7 +44,7 @@ Page({
 });
 ```
 
-### workers/worker.js
+### workers/index.js
 ```javascript
 worker.onMessage(function (msg) {
   worker.postMessage({
