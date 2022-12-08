@@ -1,8 +1,10 @@
 # 简介
 
-**my.openBluetoothAdapter** 是初始化小程序蓝牙模块的 API。经过初始化后的小程序蓝牙模块的生命周期为：调用 my.openBluetoothAdapter 至调用 [my.closeBluetoothAdapter](https://opendocs.alipay.com/mini/api/wvko0w) 或 小程序被销毁为止。
+**my.openBluetoothAdapter** 初始化蓝牙适配器。
 
-在小程序蓝牙适配器模块生效期间，开发者可以正常调用开发链路流程中其他的小程序 API，（具体开发链路流程可查看[蓝牙 API 概览](https://opendocs.alipay.com/mini/api/bluetooth-intro)中的流程图），并会收到蓝牙模块相关的 on 事件回调。
+适配器初始化以后，蓝牙相关的其他 API 才能正常使用。可参考 [蓝牙 API 概览](https://opendocs.alipay.com/mini/api/bluetooth-intro) 中的流程图。
+
+关闭蓝牙适配器请使用 [my.closeBluetoothAdapter](https://opendocs.alipay.com/mini/api/wvko0w) 。
 
 ## 使用限制
 
@@ -454,7 +456,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | **错误码** | **说明**                   | **解决方案**               |
 | ---------- | -------------------------- | -------------------------- |
 | 1          | IDE 不支持调用该 API。   | 请在真机上调用。           |
-| 12         | 蓝牙未打开。               | 请尝试打开蓝牙。           |
+| 12         | 蓝牙未打开。               | 请打开设备上的蓝牙功能。           |
 | 13         | 与系统服务的链接暂时丢失。 | 请尝试重新连接。           |
 | 14         | 未授权支付宝使用蓝牙功能。 | 请授权支付宝使用蓝牙功能。 |
 | 15         | 未知错误。                 | -                          |
