@@ -28,7 +28,7 @@ recorderManager.start({
 | duration | Number | 60000 | 否 | 录音的时长，单位毫秒（ms），最大值 180000（3 分钟）。 | - |
 | format | String | aac | 否 | 音频格式，支持格式：aac、mp3。**参数值需小写**。 | mp3 从支付宝客户端版本 10.1.80 开始支持。 |
 | hideTips | Boolean | false | 否 | 隐藏录音图标。 | 从支付宝客户端版本 10.1.85 开始支持。|
-| numberOfChannels | Number | 1 | 否 | 录音通道数。可选值有：<ul><li>1：1个通道；</li><li>2：2个通道；</li></ul> | - |
+| numberOfChannels | Number | 1 | 否 | 录音通道数。可传 1 或 2。 | - |
 | sampleRate | Number | 8000 | 否 | 采样率。有效值见下方 **采样率（sampleRate）的合法值** 表。 | - |
 | encodeBitRate | Number | 48000 | 否 | 编码码率。有效值见下方 **采样率与编码码率限制** 表。 | - |
 | frameSize | Number | - | 否 | 指定帧大小，单位 KB。</br> 传入 frameSize 后，每录制指定帧大小的内容，才会回调录制的文件内容，回调事件为 [RecorderManager.onFrameRecorded](https://opendocs.alipay.com/mini/api/recordermanager/onframerecorded) 事件，不指定则不会回调。**暂仅支持 mp3 格式**。 | 支付宝客户端版本 10.1.80 开始支持。 |
