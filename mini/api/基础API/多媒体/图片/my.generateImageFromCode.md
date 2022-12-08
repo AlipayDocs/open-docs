@@ -1,8 +1,6 @@
 # 简介
 
-my.generateImageFromCode 是离线生成二维码的 API。
-
-不需要网络，直接由设备端生成，速度快且不耗流量。
+my.generateImageFromCode 是生成二维码图片的 API。
 
 # 使用限制
 
@@ -79,7 +77,7 @@ Object 类型，属性如下：
 
 | **名称** | **类型** | **描述**                       |
 | -------- | -------- | ------------------------------ |
-| image    | String   | 二维码图片，使用 base64 编码。 |
+| image    | String   | 生成的二维码图片，base64 编码。 |
 
 ### error 错误码
 
