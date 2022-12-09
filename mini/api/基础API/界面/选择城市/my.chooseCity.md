@@ -24,17 +24,24 @@
 Page({
   chooseCity() {
     my.chooseCity({
+      // 是否显示当前定位城市
       showLocatedCity: true,
+      // 是否显示热门城市
       showHotCities: true,
       success: res => {
         my.alert({
           title: 'chooseCity response: ' + JSON.stringify(res),
         });
       },
+      fail: error => {
+        console.log(error);
+      },
+      complete: res => {
+        console.log(res);
+      },
     });
   },
- setLocatedCity() {
-
+  setLocatedCity() {
     const chooseCityTask = my.chooseCity({
       // 是否显示当前定位城市
       showLocatedCity: true,
@@ -51,12 +58,12 @@ Page({
       complete: () => {
         my.showToast({ content: 'complete回调' })
       },
-    });
-
-    const onLocatedCompleteCallback = (locatedCompleteRes => {
+   });
+   const onLocatedCompleteCallback = (locatedCompleteRes => {
       const { longitude, latitude } = locatedCompleteRes;
       // 修改默认定位城市名
       chooseCityTask.setLocatedCity({
+        // 当前定位城市的名称
         locatedCityName: 'new cityname', 
         sucess() {
           console.log('修改成功');
@@ -65,6 +72,7 @@ Page({
           console.log('修改失败');
         },
         complete() {
+          // 取消监听地理位置定位完成事件
           chooseCityTask.offLocatedComplete(onLocatedCompleteCallback);
         }
       });
@@ -116,20 +124,29 @@ my.chooseCity({
     {
       city: '朝阳区',
       adCode: '110105',
+      spell: 'chaoyang',
     },
     {
       city: '海淀区',
       adCode: '110108',
+      spell: 'haidian',
     },
     {
       city: '丰台区',
       adCode: '110106',
+      spell: 'fengtai',
     },
   ],
   success: res => {
     my.alert({
       content: res.city + ':' + res.adCode,
     });
+  },
+  fail: error => {
+    console.log(error);
+  },
+  complete: res => {
+    console.log(res);
   },
 });
 ```
