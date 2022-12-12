@@ -113,6 +113,10 @@ web-view 的 H5 页面上不承载其他组件，即便添加也不会显示。
 
 web-view 无法使用小程序的 button 组件，所以会异常。
 
+### Q：小程序 web-view 如何将数据存储到本地？ 
+
+A：优先推荐 H5 本地存储 localStorage。如果需要跨域共享数据，可使用 [my.postMessage()](https://opendocs.alipay.com/mini/component/web-view#%E5%8F%AF%E7%94%A8%20API) 先将相关数据传递给小程序，再通过 [my.setStorage()](https://opendocs.alipay.com/mini/api/eocm6v) 存储。
+
 ## 开放能力
 
 ### 为何 web-view 使用图片上传跳回 web-view 首页？
