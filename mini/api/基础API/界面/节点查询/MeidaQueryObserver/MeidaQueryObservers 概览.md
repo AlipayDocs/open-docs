@@ -13,7 +13,7 @@ MediaQueryObserver 对象，用于监听页面 media query 状态的变化，如
 ```javascript
 Component({
   didMount() {
-    const mediaQueryObserver = this.createMeidaQueryObservers();
+    const mediaQueryObserver = this.createMediaQueryObserver();
     mediaQueryObserver.observe(
       {minWidth: 100},
       res => {
