@@ -99,8 +99,6 @@ web-view 载入的 H5 页面可以使用手动引入 https://appx/web-view.min.j
 | 交互反馈 | [my.alert](https://opendocs.alipay.com/mini/api/ui-feedback) | 警告框。 |
 | 交互反馈 | [my.showLoading](https://opendocs.alipay.com/mini/api/bm69kb) | 显示加载提示。 |
 | 交互反馈 | [my.hideLoading](https://opendocs.alipay.com/mini/api/nzf540) | 隐藏加载提示。 |
-| 缓存 | [my.setStorage](https://opendocs.alipay.com/mini/api/eocm6v) | 将数据存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的数据。 |
-| 缓存 | [my.getStorage](https://opendocs.alipay.com/mini/api/azfobl) | 获取缓存数据。 |
 | 缓存 | [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) | 删除缓存数据。 |
 | 缓存 | [my.clearStorage](https://opendocs.alipay.com/mini/api/storage) | 清除本地数据缓存。 |
 | 缓存 | [my.getStorageInfo](https://opendocs.alipay.com/mini/api/zvmanq) | 异步获取当前缓存的相关信息。 |
