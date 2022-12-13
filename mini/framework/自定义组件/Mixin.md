@@ -18,8 +18,8 @@
 | didUnmount | Function | 否 | 组件生命周期函数，组件删除时触发。 |
 | onError | Function | 否 | 组件方法执行抛出错误时触发。 |
 | mixins | Array | 否 | 组件间代码复用机制。<br />**注意：**支持传入 `Mixin()` 的返回值，不支持传入普通的 mixin 对象。 |
-| methods | - | 否 | 组件的方法，可以是事件响应函数或任意的自定义方法。 |
-| definitionFilter | Function | Function | 定义段过滤器，用于自定义组件扩展，可查看 [自定义组件扩展](https://opendocs.alipay.com/mini/05bdpv)。 |
+| methods | Object | 否 | 组件的方法，可以是事件响应函数或任意的自定义方法。 |
+| definitionFilter | Function | 否 | 定义段过滤器，用于自定义组件扩展，可查看 [自定义组件扩展](https://opendocs.alipay.com/mini/05bdpv)。 |
 
 
 ## 示例代码
