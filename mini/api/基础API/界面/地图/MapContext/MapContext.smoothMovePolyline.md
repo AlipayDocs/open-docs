@@ -90,6 +90,10 @@ setTimeout(() => {
 | action | String | 否 | 指定操作动画。<ul><li>`action:'stop'` 表示在动画过程中提前停止动画，并将轨迹绘制完整。</li><li>`action:'start'` 默认值，表示执行动画。</li></ul> |
 
 ## 回调事件
+ 
+需要先在 map 组件上中引用事件再进行调用。                             
+
+示例：`<map onPolylineMoveEnd="_onPolylineMoveEnd">`
 
 | **回调事件**      | **类型** | **描述**             |
 | ----------------- | -------- | -------------------- |
