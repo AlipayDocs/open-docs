@@ -91,9 +91,13 @@ setTimeout(() => {
 
 ## 回调事件
  
-需要先在 map 组件上中引用事件再进行调用。                             
+它是 map 组件上的回调函数。需要先在 map 组件上引用，再在 js 代码中调用。                           
 
-示例：`<map onPolylineMoveEnd="_onPolylineMoveEnd">`
+示例如下：                                                                             
+`<map onPolylineMoveEnd="onPolylineMoveEnd"></map>`                                        
+`onPolylineMoveEnd(res) {                                                                                                                         
+    console.log('_onPolylineMoveEnd: ' + JSON.stringify(res));                                                                                     
+ },`                                                                          
 
 | **回调事件**      | **类型** | **描述**             |
 | ----------------- | -------- | -------------------- |
