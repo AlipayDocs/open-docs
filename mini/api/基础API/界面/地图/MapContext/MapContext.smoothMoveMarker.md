@@ -46,12 +46,22 @@ const aniPoints = [
   },
 ];
 this.mapCtx.smoothMoveMarker({
-  markerId: 0, // 确保此时 marker 已在地图上
+  // 需要执行动画的 marker 的 id
+  markerId: 0, 
+  // 传入一个需要执行动画的 marker 对象
+  markerData: {
+    id: 0,
+    latitude: 30.261775,
+    longitude: 120.102507 ,
+    width: 19,
+    height: 31,
+    iconPath: 'https://gw.alipayobjects.com/mdn/rms_dfc0fe/afts/img/A*x9yERpemTRsAAAAAAAAAAAAAARQnAQ',
+  },
   targetDistances: [100, 200, 300, 600],
   points: aniPoints,
 });
 
-// 若希望 2 秒后停止 markerId 为 0 的滑动，并将点标记放至 points 路线终点。代码如下：
+// 2 秒后停止 markerId 为 0 的 marker 的滑动，并将点标记放至 points 路线终点。代码如下：
 setTimeout(() => {
       this.mapCtx.smoothMoveMarker({
         markerId: 0,
@@ -64,8 +74,8 @@ setTimeout(() => {
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| markerId | Number | 是 | 执行滑动的 marker 的 id，确保此时 marker 已经在地图上。 |
-| markerData | Object | 否 | 传入 marker 对象。 只有 markerId 指向 markerData 中的 id 时才会生效  |
+| markerId | Number | 是 | 执行滑动的 marker 的 id |
+| markerData | Object | 否 | marker 对象。 当 markerId 等于 markerData 中的 id 时，这个 marker 对象就会在地图上显示出来并沿指定路线滑动。  |
 | points | Array | 是 | 滑动路线的经纬度集合。 建议路线集合中第一个点的经纬度等于需要执行滑动的 marker 点经纬度，这样可使滑动效果更顺滑 |
 | duration | Number | 否 | 滑动执行时间，默认为 5000 毫秒（ms）。 |
 | targetDistances | Array | 否 | 指定需要 onMarkerMove 回调的目标距离数组。 |
