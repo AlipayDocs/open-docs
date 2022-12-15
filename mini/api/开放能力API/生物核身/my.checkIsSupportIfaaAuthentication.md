@@ -37,7 +37,7 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **参数** | **类型** | **描述** |
 | --- | --- | --- |
-| supportMode | Array/<String/> | 该设备支持的可被 IFAA 识别的生物识别方式。可选值：<ul><li>fingerPrint：指纹识别。</li><li>facial：人脸识别。</li></ul> |
+| supportMode | Array\<String\> | 该设备支持的可被 IFAA 识别的生物识别方式。可选值：<ul><li>fingerPrint：指纹识别。</li><li>facial：人脸识别。</li></ul> |
 
 ## 错误码
 | **error** | **errorMessage** | **描述** |
