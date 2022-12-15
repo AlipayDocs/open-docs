@@ -32,7 +32,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| requestAuthModes | Array/<String/> | 是 | 请求使用的可接受的生物认证方式。可选值：<ul><li>fingerPrint：指纹识别。</li><li>facial：人脸识别。</li></ul> |
+| requestAuthModes | Array\<String\> | 是 | 请求使用的可接受的生物认证方式。可选值：<ul><li>fingerPrint：指纹识别。</li><li>facial：人脸识别。</li></ul> |
 | challenge | String | 是 | 挑战因子。挑战因子为调用者为此次核身准备的关键识别信息，供调用者识别本次请求。例如：如果场景为请求用户对某订单进行授权确认，则可以将订单号填入此参数 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
