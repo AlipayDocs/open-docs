@@ -15,7 +15,7 @@ re = new RegExp("ab+c");
 ```
 具体使用可以搜索引擎搜索相关 JavaScript 资料。
 
-**注意：**在 SJS 自定义脚本中不支持直接 new RegExp() 构造 regexp 对象，生成 regexp 对象需要使用 [getRegExp](https://opendocs.alipay.com/support/01rb1p) 函数。<br />示例代码：
+**注意：** 在 SJS 自定义脚本中不支持直接 new RegExp() 构造 regexp 对象，生成 regexp 对象需要使用 [getRegExp](https://opendocs.alipay.com/support/01rb1p) 函数。<br />示例代码：
 ```
 var 
 reg = getRegExp("name", "img");
