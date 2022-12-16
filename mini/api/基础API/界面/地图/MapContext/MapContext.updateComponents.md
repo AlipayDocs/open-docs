@@ -13,12 +13,17 @@
 
 ```javascript
 // .js
+this.mapCtx = my.createMapContext('map');
 this.mapCtx.updateComponents({
+  // 缩放级别
   scale: 15,
+  // 经度
   longitude: 120.125872,
+  // 纬度
   latitude: 30.272960,
+  // 动画命令
   command: {
-    // marker动画
+    // marker 动画
     markerAnim: [
       {
         type: 1, 
@@ -43,7 +48,7 @@ this.mapCtx.updateComponents({
     trafficEnabled: true, // false 或 true
     // 地图 POI 信息
     showMapText: true, // false 或 true
-    // 高德地图 logo 位置
+    // 地图 logo 位置
     logoPosition: {
       centerX: 150,
       centerY: 90
@@ -144,12 +149,12 @@ this.mapCtx.updateComponents({
 | **属性**        | **类型** | **必填** | **描述**                                 |
 | --------------- | -------- | -------- |---------------------------------------- |
 | gestureEnable            | Boolean   |   否   | 地图手势功能，可旋转地图。 |
-| showScale            | Boolean   |   否   | 比例尺 |
-| showCompass            | Boolean   |   否   | 指南针 |
+| showScale            | Boolean   |   否   | 显示比例尺 |
+| showCompass            | Boolean   |   否   | 显示指南针 |
 | tiltGesturesEnabled            | Boolean   |   否   | 双指滑动功能，可修改地图倾斜角。 |
 | trafficEnabled            | Boolean   |   否   | 显示交通路况 |
 | showMapText            | Boolean   |   否   | 地图 POI 信息，如商店、加油站、医院、车站等 |
-| logoPosition            | Object   |   否   | 高德地图 logo 位置。 详情见 **Object logoPosition** |
+| logoPosition            | Object   |   否   | 地图 logo 位置。 详情见 **Object logoPosition** |
 
 #### Object logoPosition
 | **属性**        | **类型** | **必填** | **描述**                                 |
