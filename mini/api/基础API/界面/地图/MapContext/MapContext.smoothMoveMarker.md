@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.smoothMoveMarker** 沿指定路线滑动点标记。 `action:'stop'` 可停止滑动，在**滑动过程中**使用时可停止滑动并将标记点放至指定路线终点。
+**MapContext.smoothMoveMarker** 点标记沿轨迹滑动至终点位置。 `action:'stop'` 可停止滑动，在**滑动过程中**使用时可停止滑动并将标记点放至指定路线终点。
 
 ## 使用限制
 
@@ -11,6 +11,23 @@
 # 接口调用
 
 ## 示例代码
+
+```html
+<!-- .axml-->
+<view>
+  <map
+    id="map"
+    longitude="120.131441"
+    latitude="30.279383"
+    onMarkerMove="markermove"
+    onMarkerMoveEnd="markermoveend"
+    style="width: 100%; height: 200px;"
+  >
+  </map>
+  <view onTap="smoothMoveMarker">滑动点标记</view>
+</view>
+```
+
 ```javascript
 // .js
 Page({
@@ -60,7 +77,7 @@ Page({
       },
       // 距离起点 100m、200m、300m、600m 的经纬度坐标通过 onMarkerMove 回调事件返回
       targetDistances: [100, 200, 300, 600],
-      // 经纬度数组，确定滑动线路
+      // 经纬度数组，确定滑动轨迹
       points: aniPoints,
       success: res => {
         console.log('success' + JSON.stringify(res))
@@ -91,28 +108,14 @@ Page({
   },
 });
 ```
-```html
-<!-- .axml-->
-<view>
-  <map
-    id="map"
-    longitude="120.131441"
-    latitude="30.279383"
-    onMarkerMove="markermove"
-    onMarkerMoveEnd="markermoveend"
-    style="width: 100%; height: 200px;"
-  >
-  </map>
-  <view onTap="smoothMoveMarker">滑动点标记</view>
-</view>
-```
+
 ## 入参
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | markerId | Number | 是 | 执行滑动的 marker 的 id |
 | markerData | Object | 否 | marker 对象。新建一个点标记进行滑动。marker 对象中的 id 必须等于 markerId。  |
-| points | Array | 是 | 经纬度数组，确定滑动路线。 建议数组中第一个经纬度值等于需要执行滑动的 marker 点经纬度值，可使滑动效果更顺滑。 |
+| points | Array | 是 | 经纬度数组，确定滑动轨迹。 建议数组中第一个经纬度值等于需要执行滑动的 marker 点经纬度值，可使滑动效果更顺滑。 |
 | duration | Number | 否 | 滑动执行时间，默认为 5000 毫秒（ms）。 |
 | targetDistances | Array | 否 | 指定需要 onMarkerMove 回调的目标距离数组。**onMarkerMove** 详情见**回调事件**。 |
 | action | String | 否 | 指定操作滑动。<ul><li>`action:'stop'` 表示在滑动过程中提前停止滑动，并将点标记移动至指定线路终点位置。</li><li>`action:'start'` 默认值，表示执行滑动。</li></ul> |
