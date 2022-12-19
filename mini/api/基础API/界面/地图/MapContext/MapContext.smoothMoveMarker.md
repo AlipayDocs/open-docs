@@ -62,6 +62,17 @@ Page({
       targetDistances: [100, 200, 300, 600],
       // 经纬度数组，确定滑动线路
       points: aniPoints,
+      // 参数正确则返回 true 
+      success: res => {
+        console.log('success' + JSON.stringify(res))
+      },
+      // 参数错误则返回错误码 
+      fail: err =>{
+        console.log('err' + JSON.stringify(err))
+      },
+      complete: res => {
+        console.log('complete' + JSON.stringify(res))
+      }
     });
     
     // 2 秒后停止 markerId 为 0 的 marker 的滑动，并将点标记放至 points 路线终点。    代码如下：
@@ -72,9 +83,11 @@ Page({
           });
     }, 2000);
   },
+  // targetDistances 指定距离点的回调事件
   markermove(e) {
     my.alert({ content: 'markerMove: ' + JSON.stringify(e.detail) });
   },
+  // 滑动结束的回调事件
   markermoveend(e) {
     my.alert({ content: 'markermoveEnd: ' + JSON.stringify(e.detail) });
   },
@@ -105,11 +118,14 @@ Page({
 | duration | Number | 否 | 滑动执行时间，默认为 5000 毫秒（ms）。 |
 | targetDistances | Array | 否 | 指定需要 onMarkerMove 回调的目标距离数组。**onMarkerMove** 详情见**回调事件**。 |
 | action | String | 否 | 指定操作滑动。<ul><li>`action:'stop'` 表示在滑动过程中提前停止滑动，并将点标记移动至指定线路终点位置。</li><li>`action:'start'` 默认值，表示执行滑动。</li></ul> |
+| success | Function | 否 | 参数正确的回调函数。 |
+| fail | Function | 否 | 参数错误的回调函数。 |
+| complete | Function | 否 |调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ## 回调事件
 回调事件需要在 map 中进行注册，js 中进行回调       
                           
-`<map id="map" onMarkerMove="markermove" onMarkerMoveEnd="markermoveend"></map>`
+例：`<map id="map" onMarkerMove="markermove" onMarkerMoveEnd="markermoveend"></map>`
 | **回调事件** | **类型** | **描述** |
 | --- | --- | --- |
 | onMarkerMove | Function | 在指定距离点的回调事件。<br />详情见 **Function onMarkerMove**。 |
@@ -123,3 +139,10 @@ Page({
 | targetDistance | Array    | 目标点的距离。                      |
 | latitude       | Number   | 纬度。                              |
 | longitude      | Number   | 经度。                              |
+
+## 错误码
+
+| **错误码**       | **说明** | **解决方案**                            |
+| -------------- | -------- | ----------------------------------- |
+| 2          | 限安卓环境。参数错误   | points 数组长度需要大于等于 2 |
+| 10001          | 未指定 marker   | 请给 markerId 赋值，值为需要执行动画的 marker 的 id。 |
