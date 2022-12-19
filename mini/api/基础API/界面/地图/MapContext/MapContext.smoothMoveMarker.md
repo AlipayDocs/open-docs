@@ -48,10 +48,10 @@ Page({
     ];
     this.mapCtx.smoothMoveMarker({
       // 需要执行动画的 marker 的 id
-      markerId: 1, 
+      markerId: 10, 
       // 传入一个需要执行动画的 marker 对象
       markerData: {
-        id: 1,
+        id: 10,
         latitude: 30.261775,
         longitude: 120.102507 ,
         width: 19,
@@ -62,11 +62,9 @@ Page({
       targetDistances: [100, 200, 300, 600],
       // 经纬度数组，确定滑动线路
       points: aniPoints,
-      // 参数正确则返回 true 
       success: res => {
         console.log('success' + JSON.stringify(res))
       },
-      // 参数错误则返回错误码 
       fail: err =>{
         console.log('err' + JSON.stringify(err))
       },
@@ -75,10 +73,10 @@ Page({
       }
     });
     
-    // 2 秒后停止 markerId 为 0 的 marker 的滑动，并将点标记放至 points 路线终点。    代码如下：
+    // 2 秒后停止 markerId 为 10 的 marker 的滑动，并将点标记放至 points 路线终点。    代码如下：
     setTimeout(() => {
           this.mapCtx.smoothMoveMarker({
-            markerId: 0,
+            markerId: 10,
             action: 'stop',
           });
     }, 2000);
@@ -118,8 +116,8 @@ Page({
 | duration | Number | 否 | 滑动执行时间，默认为 5000 毫秒（ms）。 |
 | targetDistances | Array | 否 | 指定需要 onMarkerMove 回调的目标距离数组。**onMarkerMove** 详情见**回调事件**。 |
 | action | String | 否 | 指定操作滑动。<ul><li>`action:'stop'` 表示在滑动过程中提前停止滑动，并将点标记移动至指定线路终点位置。</li><li>`action:'start'` 默认值，表示执行滑动。</li></ul> |
-| success | Function | 否 | 参数正确的回调函数。 |
-| fail | Function | 否 | 参数错误的回调函数。 |
+| success | Function | 否 | 参数校验成功的回调函数。 |
+| fail | Function | 否 | 参数校验失败的回调函数。 |
 | complete | Function | 否 |调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ## 回调事件
