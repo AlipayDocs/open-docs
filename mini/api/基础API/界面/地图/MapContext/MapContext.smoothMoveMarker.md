@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.smoothMoveMarker** 点标记沿轨迹滑动至终点位置。 `action:'stop'` 可停止滑动，在**滑动过程中**使用时可停止滑动并将标记点放至指定路线终点。
+**MapContext.smoothMoveMarker** 是使 marker 按照指定的经纬度数据和时间平滑移动，最后停留在终点位置的 API。 `action:'stop'` 可停止滑动，在**滑动过程中**使用时可停止滑动并将标记点放至指定路线终点。
 
 ## 使用限制
 
@@ -115,7 +115,7 @@ Page({
 | --- | --- | --- | --- |
 | markerId | Number | 是 | 执行滑动的 marker 的 id |
 | markerData | Object | 否 | marker 对象。新建一个点标记进行滑动。marker 对象中的 id 必须等于 markerId。  |
-| points | Array | 是 | 经纬度数组，确定滑动轨迹。 建议数组中第一个经纬度值等于需要执行滑动的 marker 点经纬度值，可使滑动效果更顺滑。 |
+| points | Array | 是 | 经纬度数组，确定滑动轨迹。 建议轨迹起点经纬度与滑动的 marker 点经纬度相同，可使滑动效果更顺滑。 |
 | duration | Number | 否 | 滑动执行时间，默认为 5000 毫秒（ms）。 |
 | targetDistances | Array | 否 | 指定需要 onMarkerMove 回调的目标距离数组。**onMarkerMove** 详情见**回调事件**。 |
 | action | String | 否 | 指定操作滑动。<ul><li>`action:'stop'` 表示在滑动过程中提前停止滑动，并将点标记移动至指定线路终点位置。</li><li>`action:'start'` 默认值，表示执行滑动。</li></ul> |
