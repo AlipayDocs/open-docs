@@ -6,5 +6,5 @@ Error: 文件名或者文件夹名中不允许出现 @ 符号，images\\refresh@
 ![](https://gw.alipayobjects.com/zos/sptworksff_prod/95b717d4-bfd2-468c-8ba2-f7b15f7c9450.png#align=left&display=inline&height=191&margin=%5Bobject%20Object%5D&originHeight=191&originWidth=678&status=done&style=none&width=678)
 
 ## 解决方案
-小程序项目中文件名或者文件夹名中不允许出现 @ 符号。根据日志提示，找到对应路径的文件，重命名该文件去除”@“符号后重新真机预览/上传版本。<br />
+小程序项目中文件名或者文件夹名中不允许出现 @ 符号。根据日志提示，找到对应路径的文件，重命名该文件去除 @ 符号后重新真机预览&上传版本。<br />
 ![](https://gw.alipayobjects.com/zos/sptworksff_prod/5a7a6c27-849b-42df-b768-bcb7700e7a13.png#align=left&display=inline&height=198&margin=%5Bobject%20Object%5D&originHeight=198&originWidth=684&status=done&style=none&width=684)
