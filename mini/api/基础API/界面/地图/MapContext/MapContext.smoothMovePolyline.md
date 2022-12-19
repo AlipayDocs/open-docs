@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.smoothMovePolyline** 是在地图上绘制轨迹动画的接口。`action:'stop'` 可停止动画，在**动画过程中**使用时可停止动画并将线路绘制完整。
+**MapContext.smoothMovePolyline** 是按照指定的经纬度数据和时间，动态的在地图上绘制线的 API。`action:'stop'` 可停止绘制的动画，在**绘制的过程中**使用时可停止动画并将线路绘制完整。
 
 ## 使用限制
 - 基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.90 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
@@ -15,100 +15,140 @@
 # 接口调用
 
 ## 示例代码
+```html
+<!-- .axml-->
+<view>
+  <map
+    id="map"
+    longitude="120.125872"
+    latitude="30.272960"
+    onPolylineMoveEnd="onPolylineMoveEnd"
+    style="width: 100%; height: 200px;"
+  >
+  </map>
+  <view onTap="smoothMovePolyline">制轨迹动画</view>
+</view>
+```
 
 ```javascript
 // .js
-this.mapCtx = my.createMapContext('map');
-const aniPoints = [
-  {
-    latitude: 30.27296006944446,
-    longitude: 120.12587239583334,
-  }, {
-    latitude: 30.27296006944446,
-    longitude: 120.12457239583334,
+Page({
+  smoothMovePolyline(){
+    this.mapCtx = my.createMapContext('map');
+    const aniPoints = [
+      {
+        latitude: 30.272960,
+        longitude: 120.125872,
+      }, {
+        latitude: 30.272960,
+        longitude: 120.124572,
+      },
+      {
+        latitude: 30.274260,
+        longitude: 120.124572,
+      },
+      {
+        latitude: 30.274260,
+        longitude: 120.126572,
+      },
+      {
+        latitude: 30.276260,
+        longitude: 120.126572,
+      },
+      {
+        latitude: 30.276260,
+        longitude: 120.127272,
+      },
+      {
+        latitude: 30.276560,
+        longitude: 120.127272,
+      },
+      {
+        latitude: 30.276860,
+        longitude: 120.129872,
+      },
+    ];
+    this.mapCtx.smoothMovePolyline({
+      // 线 id
+      polylineId: 10,
+      // 经纬度数组，确定画线轨迹
+      points: aniPoints,
+      // 线路颜色
+      color: '#00FF00',
+      // 线路宽度
+      width: 10,
+      // 是否虚线
+      dottedLine: false,
+      // 动画执行时间
+      duration: 4000,
+      // 线的纹理宽度
+      iconWidth: 10,
+      success: res => {
+        console.log('success' + JSON.stringify(res))
+      },
+      fail: err =>{
+        console.log('err' + JSON.stringify(err))
+      },
+      complete: res => {
+        console.log('complete' + JSON.stringify(res))
+      }
+    });
+    
+    // 若希望 2 秒后停止 polylineId 为 10 的轨迹动画，并将轨迹绘制完整。代码如下：
+    setTimeout(() => {
+          this.mapCtx.smoothMovePolyline({
+            polylineId: 10,
+            action: 'stop',
+          });
+    }, 2000);
   },
-  {
-    latitude: 30.27426006944446,
-    longitude: 120.12457239583334,
+  // 动画结束的回调事件
+  onPolylineMoveEnd(res)  {                                                      
+    console.log('onPolylineMoveEnd: ' + JSON.stringify(res));         
   },
-  {
-    latitude: 30.27426006944446,
-    longitude: 120.12657239583334,
-  },
-  {
-    latitude: 30.27626006944446,
-    longitude: 120.12657239583334,
-  },
-  {
-    latitude: 30.27626006944446,
-    longitude: 120.12727239583334,
-  },
-  {
-    latitude: 30.27656006944446,
-    longitude: 120.12727239583334,
-  },
-  {
-    latitude: 30.27686006944446,
-    longitude: 120.12987239583334,
-  },
-];
-this.mapCtx.smoothMovePolyline({
-  polylineId: 0,
-  points: aniPoints,
-  color: '#00FF00',
-  width: 10,
-  dottedLine: false,
-  iconPath: '/image/map_alr.png',
-  duration: 4000,// 动画时间设置为 4 秒
-  iconWidth: 10,
 });
-
-// 若希望 2 秒后停止 polylineId 为 0 的轨迹动画，并将轨迹绘制完整。代码如下：
-setTimeout(() => {
-      this.mapCtx.smoothMovePolyline({
-        polylineId: 0,
-        action: 'stop',
-      });
-}, 2000);
-
 ```
 
 ## 入参
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| polylineId | Number | 是 | 执行动画的路线 ID。 |
-| points | Array | 是 | 动画路线的经纬度集合。 |
-| duration | Number | 否 | 动画执行时间，默认为 5000 毫秒（ms）。 |
-| color | String | 否 | 轨迹动画的颜色。默认透明色。 |
-| width | Number | 否 | 路线宽度。 |
+| polylineId | Number | 是 | 线 ID。 |
+| points | Array | 是 | 经纬度数组，确定线。 |
+| duration | Number | 否 | 绘制的时间，默认为 5000 毫秒（ms）。 |
+| color | String | 否 | 线的颜色。默认透明色。 |
+| width | Number | 否 | 线宽度。 |
 | dottedLine | Boolean | 否 | 是否虚线。 |
 | iconPath | String | 否 | 线的纹理地址。iconPath 引用图片宽高需要为 2 的整数次幂 |
 | iconWidth | Number | 否 | 线的纹理宽度。设置 iconPath 后生效 |
-| zIndex | Number | 否 | 动画的层级，zIndex 数值高的动画覆盖在低的上面 |
+| zIndex | Number | 否 | 线的层级，zIndex 数值高的线覆盖在低的上面 |
 | colorList | Array | 否 | 彩虹线。如：`colorList:['#ff0000']` 。iOS 上暂不支持 colorList 功能|
-| action | String | 否 | 指定操作动画。<ul><li>`action:'stop'` 表示在动画过程中提前停止动画，并将轨迹绘制完整。</li><li>`action:'start'` 默认值，表示执行动画。</li></ul> |
+| action | String | 否 | 指定操作动画。<ul><li>`action:'stop'` 表示在画线过程中提前停止动画，并将轨迹绘制完整。</li><li>`action:'start'` 默认值，表示执行动画。</li></ul> |
+| success | Function | 否 | 参数校验成功的回调函数。 |
+| fail | Function | 否 | 参数校验失败的回调函数。 |
+| complete | Function | 否 |调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ## 回调事件
  
-它是 map 组件上的回调函数。需要先在 map 组件上引用，再在 js 代码中调用。                           
+回调事件需要在 map 中进行注册，js 中进行回调          
 
-示例如下：                                                                             
-`<map onPolylineMoveEnd="onPolylineMoveEnd"></map>`                                        
-`onPolylineMoveEnd(res) {                                                                                                                         
-    console.log('_onPolylineMoveEnd: ' + JSON.stringify(res));                                                                                     
- },`                                                                          
-
+例：`<map onPolylineMoveEnd="onPolylineMoveEnd"></map>`                                                                                                            
 | **回调事件**      | **类型** | **描述**             |
 | ----------------- | -------- | -------------------- |
 | onPolylineMoveEnd | Function | 动画结束的回调事件。 |
 
+## 错误码
+
+| **错误码**       | **说明** | **解决方案**                            |
+| -------------- | -------- | ----------------------------------- |
+| 2          | 限安卓环境。points 参数错误   | points 数组长度需要大于等于 2 |
+| 10001          | 限 iOS 环境。未指定 polylineId   | 请给 polylineId 赋值 |
 
 # 常见问题 FAQ
 
 ## Q：在地图上使用 MapContext.smoothMovePolyline 生成的轨迹线路为什么无法使用 clearRoute 清除？
 
-A：clearRoute 只能用于清除地图上的导航路线，无法清除 MapContext.smoothMovePolyline 生成的线路。请使用 MapContext.updateComponents 清除 示例如下：
+A：clearRoute 只能用于清除地图上的导航路线，无法清除 MapContext.smoothMovePolyline 生成的线。请使用 MapContext.updateComponents 清除 示例如下：
 ```javascript
  this.mapCtx = my.createMapContext('map');
 
