@@ -99,9 +99,6 @@ web-view 载入的 H5 页面可以使用手动引入 https://appx/web-view.min.j
 | 交互反馈 | [my.alert](https://opendocs.alipay.com/mini/api/ui-feedback) | 警告框。 |
 | 交互反馈 | [my.showLoading](https://opendocs.alipay.com/mini/api/bm69kb) | 显示加载提示。 |
 | 交互反馈 | [my.hideLoading](https://opendocs.alipay.com/mini/api/nzf540) | 隐藏加载提示。 |
-| 缓存 | [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) | 删除缓存数据。 |
-| 缓存 | [my.clearStorage](https://opendocs.alipay.com/mini/api/storage) | 清除本地数据缓存。 |
-| 缓存 | [my.getStorageInfo](https://opendocs.alipay.com/mini/api/zvmanq) | 异步获取当前缓存的相关信息。 |
 | 网络状态 | [my.getNetworkType](https://opendocs.alipay.com/mini/api/network-status) | 获取当前网络状态。 |
 | 分享 | my.startShare | 分享当前页面,当执行 my.startShare() 时会唤起当前小程序页面的分享功能。 |
 | 唤起支付 | [my.tradePay](https://opendocs.alipay.com/mini/api/openapi-pay) | 唤起支付（仅支持使用该 API 唤起支付，不支持使用 H5 进行支付） |
