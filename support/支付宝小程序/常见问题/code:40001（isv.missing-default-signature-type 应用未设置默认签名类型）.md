@@ -19,7 +19,7 @@
 
 ## 解决方案
 
-1. 登录 [支付宝开放平台](https://openhome.alipay.com/mini/dev/list) > 进入小程序详情页 > **开发服务** > **开发设置** > **开发设置** 中设置 [接口加签方式](https://opendocs.alipay.com/common/02mriz)、[接口内容加密方式](https://opendocs.alipay.com/common/02mse3)、[应用网关](https://opendocs.alipay.com/common/02qibh)。![](https://cdn.nlark.com/yuque/0/2022/png/179989/1659943780477-b8072e1e-07f0-4ed0-a0c9-22aa7cc04148.png?x-oss-process=image%2Fresize%2Cw_1554#align=left&display=inline&height=784&margin=%5Bobject%20Object%5D&originHeight=784&originWidth=1554&status=done&style=none&width=1554)
+1. 登录 [支付宝开放平台](https://openhome.alipay.com/mini/dev/list) > 进入小程序详情页 > **开发设置** > **开发信息** 中设置 [接口加签方式](https://opendocs.alipay.com/common/02mriz)、[接口内容加密方式](https://opendocs.alipay.com/common/02mse3)、[应用网关](https://opendocs.alipay.com/common/02qibh)。![](https://cdn.nlark.com/yuque/0/2022/png/179989/1659943780477-b8072e1e-07f0-4ed0-a0c9-22aa7cc04148.png?x-oss-process=image%2Fresize%2Cw_1554#align=left&display=inline&height=784&margin=%5Bobject%20Object%5D&originHeight=784&originWidth=1554&status=done&style=none&width=1554)
 2. 服务商代商家解密手机号报错应用未设置默认签名类型，是因为小程序端在调用 [my.getPhoneNumber](https://opendocs.alipay.com/mini/api/getphonenumber) 接口时没有入参 protocols#isvAppId（即三方应用 appId）。
 
 示例代码：
@@ -42,5 +42,5 @@ fail: (res) => {
 });
 ```
 
-3. 检查设置完成后，点击 小程序右上角三个点 > **关于** > 右上角（设置）> ** 用户信息**，解除授权后重新授权获取。
+3. 检查设置完成后，点击 小程序右上角三个点 > **关于** > 右上角（设置）> **用户信息**，解除授权后重新授权获取。
 
