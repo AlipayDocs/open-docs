@@ -14,26 +14,44 @@
 
 ## 示例代码
 
+### .axml 示例代码
+```html
+<!-- .axml-->
+<view>
+  <map
+    id="map"
+    longitude="120.131441"
+    latitude="30.279383"
+    show-location 
+    style="width: 100%; height: 200px;"
+  >
+  </map>
+</view>
+```
+
 ### .js 示例代码
 
 ```javascript
 // .js
 this.mapCtx = my.createMapContext('map');
-this.mapCtx.moveToLocation({ latitude: 39.9, longitude: 116.39 });
+this.mapCtx.moveToLocation({ 
+  latitude: 39.9,
+  longitude: 116.39,
+});
 ```
 
 ## 入参
 
 | **属性**  | **类型** | **必填** | **描述** |
 | --------- | -------- | -------- | -------- |
-| longitude | Number   | 否       | 经度。 |
-| latitude  | Number   | 否       | 纬度。 |
+| longitude | Number   | 否       | 经度。支付宝客户端 10.2.8 开始支持。 |
+| latitude  | Number   | 否       | 纬度。支付宝客户端 10.2.8 开始支持。 |
 
 ## 错误码
 
 | **错误码** | **描述**       | **解决方案**                               |
 | ---------- | -------------- | ------------------------------------------ |
-| 3        | 安卓环境中未设置入参且 map 组件没有使用 show-location | map 组件中添加上 show-location |
+| 3        | 限安卓环境。未设置入参经纬度且 map 组件没有使用 show-location | map 组件中添加上 show-location |
 
 ## Bug & Tip
 
