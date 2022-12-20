@@ -19,7 +19,8 @@
 参考 [小程序前端实现图片转换base64图片数据](https://opendocs.alipay.com/support/01rb15)。 
 
 ### 小程序canvas生成图片保存
-可以使用 [CanvasContext.toTempFilePath](https://opendocs.alipay.com/mini/api/rod3ti) 把当前画布的内容导出生成图片，并返回文件路径。<br />**注：**返回的文件路径是临时路径，所以还需要通过 [my.saveImage](https://opendocs.alipay.com/mini/api/media/image/my.saveimage) 保存图片到相册。 
+可以使用 [CanvasContext.toTempFilePath](https://opendocs.alipay.com/mini/api/rod3ti) 把当前画布的内容导出生成图片，并返回文件路径。<br />
+**注意：** 返回的文件路径是临时路径，所以还需要通过 [my.saveImage](https://opendocs.alipay.com/mini/api/media/image/my.saveimage) 保存图片到相册。 
 
 ### canvas画布不显示
 
@@ -30,7 +31,12 @@
 执行方法之前保存状态，参数设置好之后恢复状态再画，具体可以参考 [CanvasContext.draw](https://opendocs.alipay.com/mini/api/he6iwx)。 
 
 ### 小程序是否支持Echart
-小程序由于兼容问题目前不支持直接使用 echarts，如需要使用可使用 [antv-f2](https://antv.vision/zh) 的 F2 支付宝小程序 my-f2（**推荐**）。<br />**说明：**F2 的支付宝小程序版本，支持原生 F2 的所有功能，F2 API 参见：[https://f2.antv.vision/zh/docs/api/f2](https://f2.antv.vision/zh/docs/api/f2)<br />**npm安装：**<br />npm install @antv/my-f2 --save<br />**开发工具中安装：**<br />打开 [NPM依赖管理](https://opendocs.alipay.com/mini/ide/npm-manage)--输入 @antv/my-f2 回车运行安装。<br />具体使用可安装完成 @antv/my-f2 后打开 node_modules 查看对应 README.md。
+小程序由于兼容问题目前不支持直接使用 echarts，如需要使用可使用 [antv-f2](https://antv.vision/zh) 的 F2 支付宝小程序 my-f2（**推荐**）。<br />
+**说明：** F2 的支付宝小程序版本，支持原生 F2 的所有功能，F2 API 参见：[https://f2.antv.vision/zh/docs/api/f2](https://f2.antv.vision/zh/docs/api/f2)<br />
+**npm安装：**<br />
+npm install @antv/my-f2 --save<br />
+**开发工具中安装：**
+<br />打开 [NPM依赖管理](https://opendocs.alipay.com/mini/ide/npm-manage)--输入 @antv/my-f2 回车运行安装。<br />具体使用可安装完成 @antv/my-f2 后打开 node_modules 查看对应 README.md。
 
 ### toTempFilePath导出图片空白
 
@@ -41,4 +47,4 @@ this.context.drawImage('https://abc.png', 2, 2, 800, 800);this.context.draw(fals
 ```
 
 ### canvas图片保存到手机
-[canvas](https://docs.alipay.com/mini/api/ui-canvas) 把画布生成图片的，可以用 toTempFilePath 生成临时路径，再使用 [my.saveImage](https://opendocs.alipay.com/mini/api/media/image/my.saveimage) 保存到手机相册。<br /> 
+[canvas](https://docs.alipay.com/mini/api/ui-canvas) 把画布生成图片的，可以用 toTempFilePath 生成临时路径，再使用 [my.saveImage](https://opendocs.alipay.com/mini/api/media/image/my.saveimage) 保存到手机相册。
