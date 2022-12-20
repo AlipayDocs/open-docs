@@ -55,7 +55,7 @@ template 中不能使用自定义组件。 
 - a:if 中的模板可能包含数据绑定，所以当 a:if 的条件值切换时，框架有局部渲染的过程，用于确保条件块在切换时销毁或重新渲染。此外， a:if 在初始渲染条件为 false 时，不触发任何渲染动作，当条件第一次变成 true 时才开始局部渲染。
 - hidden 控制显示与隐藏，组件始终会被渲染。
 
-**注意：**一般来说，a:if 有更高的切换消耗而 hidden 有更高的初始渲染消耗。因此，在需要频繁切换的情景下，用 hidden 更好。如果在运行时条件改变不多则 a:if 较好。 
+**注意：** 一般来说，a:if 有更高的切换消耗而 hidden 有更高的初始渲染消耗。因此，在需要频繁切换的情景下，用 hidden 更好。如果在运行时条件改变不多则 a:if 较好。 
 
 ### 页面白屏报错：系统错误，请稍后重试
 
@@ -68,7 +68,11 @@ template 中不能使用自定义组件。 
 ```
 <view class="fi-title" style="{{margin:titleMargin?titleMargin:'0 0 8px 0'}}">title</view> <view class="fi-title" style="{{margin-bottom:titleMargin?titleMargin:'10px'}}">title</view>
 ```
-代码中<br />**margin：**style="{{margin:titleMargin?titleMargin:'0 0 8px 0'}}"正常；<br />**margin-bottom：**style="{{margin-bottom:titleMargin?titleMargin:'10px'}}"报错。<br />**原因分析：**{{}}是数据绑定时使用，{{}}内的属性会被认作变量来进行数据传递，变量的写法不支持-符号，所以会导致报错。<br />**解决方案：**样式属性名放在{{}}外，只对动态数值变量做逻辑判断处理即可。如：
+代码中<br />
+**margin：** style="{{margin:titleMargin?titleMargin:'0 0 8px 0'}}"正常；<br />
+**margin-bottom：** style="{{margin-bottom:titleMargin?titleMargin:'10px'}}"报错。<br />
+**原因分析：** {{}}是数据绑定时使用，{{}}内的属性会被认作变量来进行数据传递，变量的写法不支持-符号，所以会导致报错。<br />
+**解决方案：** 样式属性名放在{{}}外，只对动态数值变量做逻辑判断处理即可。如：
 ```
 <view class="fi-title" style="margin-bottom:{{titleMargin?titleMargin:'10px'}}" >title</view>
 ```
