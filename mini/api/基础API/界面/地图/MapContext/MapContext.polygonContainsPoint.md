@@ -75,7 +75,7 @@ Object 类型，参数如下：
 | point    | Object          | 是       | 需要判断位置的经纬度点。  |
 | success  | Function        | 否       | 调用成功的回调函数。   |
 | fail  | Function        | 否       | 调用失败的回调函数。   |
-| comp  | Function        | 否       | 调用成功的回调函数。   |
+| complete  | Function        | 否       | 调用结束的回调函数（调用成功、失败都会执行）。   |
 
 ### Object polygon/point
 
