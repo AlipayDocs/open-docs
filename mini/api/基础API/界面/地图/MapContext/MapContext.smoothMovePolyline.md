@@ -33,7 +33,7 @@
 ```javascript
 // .js
 Page({
-  smoothMovePolyline(){
+  smoothMovePolyline() {
     this.mapCtx = my.createMapContext('map');
     const aniPoints = [
       {
@@ -81,30 +81,28 @@ Page({
       dottedLine: false,
       // 动画执行时间
       duration: 4000,
-      // 线的纹理宽度
-      iconWidth: 10,
       success: res => {
         console.log('success' + JSON.stringify(res))
       },
-      fail: err =>{
+      fail: err => {
         console.log('err' + JSON.stringify(err))
       },
       complete: res => {
         console.log('complete' + JSON.stringify(res))
       }
     });
-    
+
     // 若希望 2 秒后停止 polylineId 为 10 的轨迹动画，并将轨迹绘制完整。代码如下：
     setTimeout(() => {
-          this.mapCtx.smoothMovePolyline({
-            polylineId: 10,
-            action: 'stop',
-          });
+      this.mapCtx.smoothMovePolyline({
+        polylineId: 10,
+        action: 'stop',
+      });
     }, 2000);
   },
   // 动画结束的回调事件
-  onPolylineMoveEnd(res)  {                                                      
-    console.log('onPolylineMoveEnd: ' + JSON.stringify(res));         
+  onPolylineMoveEnd(res) {
+    console.log('onPolylineMoveEnd: ' + JSON.stringify(res));
   },
 });
 ```
@@ -114,7 +112,7 @@ Page({
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | polylineId | Number | 是 | 线 ID。 |
-| points | Array | 是 | 经纬度数组，确定线。 |
+| points | Array | 是 | 经纬度数组，确定绘制的线。 |
 | duration | Number | 否 | 绘制的时间，默认为 5000 毫秒（ms）。 |
 | color | String | 否 | 线的颜色。默认透明色。 |
 | width | Number | 否 | 线宽度。 |
