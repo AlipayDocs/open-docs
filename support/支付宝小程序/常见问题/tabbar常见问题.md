@@ -15,7 +15,7 @@
 小程序提供了动态设置 tabBar 的 API：[my.setTabBarStyle](https://opendocs.alipay.com/mini/api/wcf0sv)。<br />可以根据场景需要动态设置 tabBar 整体样式，动态设置 item 可使用 [my.setTabBarItem](https://opendocs.alipay.com/mini/api/zu37bk)。
 
 ### tabBar的图标推荐大小
-tabBar的图标 icon 和 activeIcon 推荐大小为 60*60px 大小，系统会对任意传入的图片非等比拉伸/缩放。
+tabBar的图标 icon 和 activeIcon 推荐大小为 60 * 60px，系统会对任意传入的图片非等比拉伸/缩放。
 
 ### tabbar是否支持设置字体大小
 支付宝小程序 tabbar 不支持设置字体大小。
@@ -30,7 +30,8 @@ tabBar的图标 icon 和 activeIcon 推荐大小为 60*60px 大小，系统会�
 - 每个语言一个目录，如 zh-Hans（简体中文）、zh-HK （繁体中文香港）。
 - 在每个语言目录下，通过添加 app.json 配置，配置该语言下的 titleBar 与 tabBar。
 
-**注意：** 目前仅支持 zh-Hans（简体中文）、zh-Hant（繁体中文台湾）、zh-HK（繁体中文香港）、en（英文）四种语言。<br />配置示例：
+**注意：** 目前仅支持 zh-Hans（简体中文）、zh-Hant（繁体中文台湾）、zh-HK（繁体中文香港）、en（英文）四种语言。<br />
+配置示例：
 ```json
 // locale/zh-Hans/app.json 
 {  
@@ -62,7 +63,7 @@ tabBar的图标 icon 和 activeIcon 推荐大小为 60*60px 大小，系统会�
 设置tabbar上的 icon 只支持 png/jpeg/jpg/gif 图片格式，不支持 svg 格式；支持在线图片 URL。
 
 ### tabBar切换时对应页面的onShow会不会触发
-tabBar页面切换时对应的页面会触发onShow函数。
+tabBar页面切换时对应的页面会触发 onShow 函数。
 
 ### 跳转页面后不显示tabBar
 通过页面跳转 my.navigateTo 或者页面重定向 my.redirectTo 所到达的页面，即使它是定义在 tabBar 配置中的页面，也不会显示底部的 tab 栏。另外，tabBar 的第一个页面必须是首页。
@@ -73,10 +74,13 @@ tabBar页面切换时对应的页面会触发onShow函数。
 - my.setTabBarBadge 对tabBar某一项右上角添加文本。
 - my.removeTabBarBadge 对tabBar某一项右上角添加的文本进行移除。
 
-**注意：**基础库版本 1.11.0 开始支持为 tabBar 某一项的右上角添加文本。<br />详情可查看 [my.setTabBarBadge](https://opendocs.alipay.com/mini/api/qm7t3v)， [my.removeTabBarBadge](https://opendocs.alipay.com/mini/api/lpbp5g)。
+**注意：** 基础库版本 1.11.0 开始支持为 tabBar 某一项的右上角添加文本。<br />
+详情可查看 [my.setTabBarBadge](https://opendocs.alipay.com/mini/api/qm7t3v)、[my.removeTabBarBadge](https://opendocs.alipay.com/mini/api/lpbp5g)。
 
 ### 如何监听tabbar点击事件？
-在小程序页面中用 [onTabitemTap](https://opendocs.alipay.com/mini/api/navg36) 即可监听 TabBar 点击事件。<br />**注意：基础库** [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；**支付宝客户端** 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。<br />示例代码：
+在小程序页面中用 [onTabitemTap](https://opendocs.alipay.com/mini/api/navg36) 即可监听 TabBar 点击事件。<br />
+**注意：基础库** [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；**支付宝客户端** 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。<br />
+示例代码：
 ```javascript
 //.js
 Page({  
@@ -101,7 +105,8 @@ TabBar 页面目前不支持带参跳转，建议跳转传参使用缓存或者�
 - 显示tabBar：[my.showTabBar](https://opendocs.alipay.com/mini/api/dpq5dh)
 
 ### 如何动态设置tabBar某一项的内容
-小程序提供了动态设置tabBar某一项的内容的API：[my.setTabBarItem](https://opendocs.alipay.com/mini/api/zu37bk)；可以根据场景需要动态设置 tabBar 某一项的内容。<br />说明：图片路径，建议尺寸为 81px * 81px，支持网络图片。
+小程序提供了动态设置tabBar某一项的内容的API：[my.setTabBarItem](https://opendocs.alipay.com/mini/api/zu37bk)；可以根据场景需要动态设置 tabBar 某一项的内容。<br />
+**说明：** 图片路径，建议尺寸为 81px * 81px，支持网络图片。
 
 ### 在showLoading情况下，是否会禁止tab切换
 
