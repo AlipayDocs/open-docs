@@ -14,11 +14,12 @@
 ### 如何清除支付宝客户端缓存
 参考[如何清除支付宝客户端缓存](https://opendocs.alipay.com/support/01rb6x)。 
 
-### 小程序里如何删除缓存数据**
+### 小程序里如何删除缓存数据
 参考[小程序里如何删除缓存数据](https://opendocs.alipay.com/support/01rb94)。 
 
 ### 小程序是否支持cookie
-小程序针对服务端回设的 cookie 不会禁用掉，会设置到小程序进程中，下次小程序进行请求，会自动将已有的 cookie 带入到服务端请求中。<br />前端获取不到 cookie，也不会对 cookie 做任何操作。小程序不建议使用 cookie，推荐使用小程序 [缓存](https://opendocs.alipay.com/mini/api/qm3ggk)。 
+小程序针对服务端回设的 cookie 不会禁用掉，会设置到小程序进程中，下次小程序进行请求，会自动将已有的 cookie 带入到服务端请求中。<br />
+前端获取不到 cookie，也不会对 cookie 做任何操作。小程序不建议使用 cookie，推荐使用小程序 [缓存](https://opendocs.alipay.com/mini/api/qm3ggk)。 
 
 ### 小程序与H5本地存储对比
 
@@ -60,4 +61,4 @@
 支付宝预授权业务不涉及 cookie 存储问题，预授权数据不建议存储在 cookie 中。 
 
 ### 如何更新小程序缓存
-可以使用 [my.setStorageSync](https://opendocs.alipay.com/mini/api/cog0du)/[my.setStorage](https://opendocs.alipay.com/mini/api/eocm6v) 存入相同的 key 即可覆盖之前的缓存。<br /> 
+可以使用 [my.setStorageSync](https://opendocs.alipay.com/mini/api/cog0du)/[my.setStorage](https://opendocs.alipay.com/mini/api/eocm6v) 存入相同的 key 即可覆盖之前的缓存。
