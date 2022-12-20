@@ -12,7 +12,7 @@
 小程序的acss文件内图片不支持使用相对路径，可以使用绝对路径或使用网络图片 URL 地址。 
 
 ### 小程序是否支持CSS3动画
-ACSS 支持 css3 动画。支付宝小程序中有提供动画的 api，详细参考 [my.createAnimation](https://opendocs.alipay.com/mini/api/ui-animation)。 
+ACSS 支持 css3 动画。支付宝小程序中有提供动画的 API，详细参考 [my.createAnimation](https://opendocs.alipay.com/mini/api/ui-animation)。 
 
 ### 小程序支持css3中的::before、calc、vh、vw吗
 小程序 acss 支持::before、calc、vh、vw。 
@@ -39,7 +39,8 @@ ACSS 支持 css3 动画。支付宝小程序中有提供动画的 api，详细�
 rpx 自动转换成 px 或 rem 的规则：通过 acss 设置的样式转成 rem，通过 style 设置的样式转成 px。 
 
 ### button按钮默认样式如何去除
-在小程序当前页面的 page.acss 里添加样式清除或者在 app.acss 里添加，参考以下代码：<br />**注意：**在 app.acss 里添加，所有 button 都会改。
+在小程序当前页面的 page.acss 里添加样式清除或者在 app.acss 里添加，参考以下代码：<br />
+**注意：** 在 app.acss 里添加，所有 button 都会改。
 ```css
 button {  
   background-color: transparent;  
