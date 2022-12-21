@@ -1,9 +1,9 @@
 Canvas 绘图上下文。
 
 - 通过 Canvas.getContext('2d') 接口或 OffscreenCanvas.getContext('2d') 接口，可以获取 CanvasRenderContext2D 对象，实现了 [Canvas 2D Context](https://www.w3.org/TR/2dcontext/) 定义的属性和方法。
-  - CanvasRenderContext2D 提供的 api 列表：https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D
+  - CanvasRenderContext2D 提供的 API 列表：https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D
 - 通过 Canvas.getContext('webgl') 接口或 OffscreenCanvas.getContext('webgl') 接口 ，可以获取 WebGLRenderingContext 对象，实现了 [WebGL 1.0](https://www.khronos.org/registry/webgl/specs/latest/1.0/) 定义的属性和方法。
-  - WebGLRenderingContext 提供的 api 列表：https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext
+  - WebGLRenderingContext 提供的 API 列表：https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext
 
 ## 使用限制
 
