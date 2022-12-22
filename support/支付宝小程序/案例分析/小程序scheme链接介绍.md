@@ -9,7 +9,7 @@ alipays://platformapi/startapp?appId=[appId]&page=[page]&query=[query]
 | **参数** | **描述** | **示例** |
 | --- | --- | --- |
 | appId | 要跳转的目标小程序 APPID。 | 20170713077xxxxx |
-| page | 要跳转到目标小程序的具体 page 页面，该值等于 app.json 里面的配置值；如果不带 page 字段，默认跳转到小程序首页。<br />路径中可以在 ？后面附加跳转后的页面参数。页面参数必须进行 UrlEncode 编码，否则只能获取到第一个页面参数。| UrlEncode 编码前：pages/index/index?key1=1&key2=2UrlEncode <br />编码后：pages/index/index?key1%3D1%26key2%3D2 |
+| page | 要跳转到目标小程序的具体 page 页面，该值等于 app.json 里面的配置值；如果不带 page 字段，默认跳转到小程序首页。<br />路径中可以在 ？后面附加跳转后的页面参数。页面参数必须进行 UrlEncode 编码，否则只能获取到第一个页面参数。| UrlEncode 编码前：pages/index/index?key1=1&key2=2 <br />UrlEncode 编码后：pages/index/index?key1%3D1%26key2%3D2 |
 | query | 表示从外部 App 携带的参数透传到目标小程序，如果不需要携带参数给小程序，可以不带该参数。<br />query：启动参数，内容按照格式为参数名=参数值&参数名=参数值<br />**注意：** query 携带的启动参数必须进行 UrlEncode 编码否则只能获取到第一个参数。 | UrlEncode 编码前：key1=value1&key2=value2<br /> UrlEncode 编码后：key1%3Dvalue1%26key2%3Dvalue2 |
 
 
