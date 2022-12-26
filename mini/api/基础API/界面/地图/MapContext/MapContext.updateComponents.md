@@ -37,17 +37,17 @@ this.mapCtx.updateComponents({
   },
   setting: {
     // 手势
-    gestureEnable: true, // false 或 true
+    gestureEnable: 1, // 0 或 1
     // 比例尺
-    showScale: true, // false 或 true
+    showScale: 1, //  0 或 1
     // 指南针
-    showCompass: true, // false 或 true
+    showCompass: 1, // 0 或 1
     // 双手下滑
-    tiltGesturesEnabled: true, // false 或 true
+    tiltGesturesEnabled: 1, // 0 或 1
     // 交通路况展示
-    trafficEnabled: true, // false 或 true
+    trafficEnabled: 1, // 0 或 1
     // 地图 POI 信息
-    showMapText: true, // false 或 true
+    showMapText: 1, //  0 或 1
     // 地图 logo 位置
     logoPosition: {
       centerX: 150,
