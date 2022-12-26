@@ -148,12 +148,12 @@ this.mapCtx.updateComponents({
 ### Object setting
 | **属性**        | **类型** | **必填** | **描述**                                 |
 | --------------- | -------- | -------- |---------------------------------------- |
-| gestureEnable            | Boolean   |   否   | 地图手势功能，可旋转地图。 |
-| showScale            | Boolean   |   否   | 显示比例尺 |
-| showCompass            | Boolean   |   否   | 显示指南针 |
-| tiltGesturesEnabled            | Boolean   |   否   | 双指滑动功能，可修改地图倾斜角。 |
-| trafficEnabled            | Boolean   |   否   | 显示交通路况 |
-| showMapText            | Boolean   |   否   | 地图 POI 信息，如商店、加油站、医院、车站等 |
+| gestureEnable            | Number   |   否   | 地图手势功能，可旋转地图。 |
+| showScale            | Number   |   否   | 显示比例尺 |
+| showCompass            | Number   |   否   | 显示指南针 |
+| tiltGesturesEnabled            | Number   |   否   | 双指滑动功能，可修改地图倾斜角。 |
+| trafficEnabled            | Number   |   否   | 显示交通路况 |
+| showMapText            | Number   |   否   | 地图 POI 信息，如商店、加油站、医院、车站等 |
 | logoPosition            | Object   |   否   | 地图 logo 位置。 详情见 **Object logoPosition** |
 
 #### Object logoPosition
