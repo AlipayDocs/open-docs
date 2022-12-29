@@ -9,7 +9,7 @@
 参考[rpx与px单位相互换算](https://opendocs.alipay.com/support/01rb6o)。 
 
 ### acss文件内图片路径
-小程序的acss文件内图片不支持使用相对路径，可以使用绝对路径或使用网络图片 URL 地址。 
+小程序的 acss 文件内图片不支持使用相对路径，可以使用绝对路径或使用网络图片 URL 地址。 
 
 ### 小程序是否支持CSS3动画
 ACSS 支持 css3 动画。支付宝小程序中有提供动画的 API，详细参考 [my.createAnimation](https://opendocs.alipay.com/mini/api/ui-animation)。 
