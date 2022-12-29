@@ -26,7 +26,7 @@
 - alipay.open.mini.privacy.audit.create（小程序创建隐私协议）
 - [alipay.open.app.members.create](https://opendocs.alipay.com/mini/03l21t)（应用添加成员）
 - [alipay.open.app.members.query](https://opendocs.alipay.com/mini/03l3ew)（应用查询成员列表）
-- [alipay.open.mini.safedomain.delet](https://opendocs.alipay.com/mini/03l3f0)（小程序删除域白名单）
+- [alipay.open.mini.safedomain.delete](https://opendocs.alipay.com/mini/03l3f0)（小程序删除域白名单）
 
 ## 报错原因
 APPID 对应的应用不是小程序应用。
