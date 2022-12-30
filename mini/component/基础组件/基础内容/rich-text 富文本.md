@@ -22,7 +22,7 @@
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| nodes | Array | 节点列表。目前仅支持使用 Array 类型，如果需要支持 HTML String，则需要自己将 HTML String 转化为 nodes 数组，可使用 [mini-html-parser2](https://github.com/ant-mini-program/mini-html-parser) 转换。 |
+| nodes | Array/String | 节点列表。基础库 [2.8.5](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持 HTML String，[2.8.5](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 以下版本可使用 [mini-html-parser2](https://github.com/ant-mini-program/mini-html-parser) 将 HTML String 转化为 nodes 数组。 |
 | onTap | EventHandle | 触摸。 |
 | onTouchstart | EventHandle | 触摸动作开始。 |
 | onTouchmove | EventHandle | 触摸移动事件。 |
