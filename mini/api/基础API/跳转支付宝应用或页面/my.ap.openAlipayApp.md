@@ -1,10 +1,11 @@
 # 简介
 
 my.ap.openAlipayApp 打开支付宝客户端内指定的应用。
-- 如果想要从一个小程序跳转到另一个小程序（16位APPID），请移步 [my.navigateToMiniProgram](https://opendocs.alipay.com/mini/api/yz6gnx)。
-- 如果想要从小程序跳转到外部的H5页面，请移步 [my.ap.openURL](https://opendocs.alipay.com/mini/04iy2y)。
 
-此 API 能打开的应用限于官方公开的 **appCode 列表**（见后文说明）。没有 appCode 但已知目标应用链接的情况，**推荐使用跳转辅助工具检测和生成代码：[https://apitools.alipay.com/tools/open-url](https://apitools.alipay.com/tools/open-url)**。 
+此 API 能打开的应用限于官方公开的 **appCode 列表**（见后文说明）。没有 appCode 的情况下：
+- 如果已知目标小程序的 appId（16 位数字），请使用 [my.navigateToMiniProgram](https://opendocs.alipay.com/mini/api/yz6gnx)。
+- 如果已知目标页面链接，请使用 [my.ap.openURL](https://opendocs.alipay.com/mini/04iy2y)（**推荐先用[跳转辅助工具](https://apitools.alipay.com/tools/open-url)检测和生成代码**）。
+
 
 ## 使用限制
 
