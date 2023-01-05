@@ -2,7 +2,9 @@
 
 **my.navigateToMiniProgram** 是用于跳转到其它小程序的 API。
 
-如需跳转到目标小程序的指定开发版本，可查看 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing)。
+如需跳转到目标小程序的指定开发版本，可进行 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing)。  
+如果已知目标小程序的 scheme，请参见后文常见问题，转换成 my.navigateToMiniProgram 调用。
+
 
 # 接口调用
 
