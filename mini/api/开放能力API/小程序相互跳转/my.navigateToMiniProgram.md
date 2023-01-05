@@ -1,9 +1,10 @@
 # 简介
 
 **my.navigateToMiniProgram** 是用于跳转到其它小程序的 API。
-- 如果想要从小程序跳转到支付宝官方应用(8位APPID)，请移步 [my.ap.openAlipayApp](https://opendocs.alipay.com/mini/04p771)。
-- 如果想要从小程序跳转到外部的H5页面，请移步 [my.ap.openURL](https://opendocs.alipay.com/mini/04iy2y)。
-- 如需跳转到目标小程序的指定开发版本，可查看 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing)。
+
+如需跳转到目标小程序的指定开发版本，可进行 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing)。  
+如果已知目标小程序的 scheme，请参见后文常见问题，转换成 my.navigateToMiniProgram 调用。
+
 
 # 接口调用
 
