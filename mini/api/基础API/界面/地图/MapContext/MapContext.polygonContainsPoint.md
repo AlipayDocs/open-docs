@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.polygonContainsPoint** 是根据指定的经纬度数据确定多边形区域，判断区域内是否包含指定经纬度的 API。
+**MapContext.polygonContainsPoint** 判断多边形区域是否包含指定的坐标点。
 
 ## 使用限制
 
@@ -18,31 +18,26 @@
 // .js
 this.mapCtx = my.createMapContext('map');
 var points = [
-  // 左上
   {
     latitude: 30.273960,
     longitude: 120.124872,
   },
-  // 左下
   {
     latitude: 30.271960,
     longitude: 120.124872,
   },
-  // 右下
   {
     latitude: 30.271960,
     longitude: 120.126872,
   },
-  // 右上
   {
     latitude: 30.273960,
     longitude: 120.126872,
   },
 ];
 this.mapCtx.polygonContainsPoint({
-  // 经纬度数组，确定多边形区域
   polygon: points,
-  // 需要判断位置的经纬度点
+
   point: {
     latitude: 30.272960,
     longitude: 120.126872,
@@ -50,16 +45,6 @@ this.mapCtx.polygonContainsPoint({
   success(e) {
     my.alert({
       content: 'success--->' + JSON.stringify(e),
-    });
-  },
-  fail(e) {
-    my.alert({
-      content: 'fail--->' + JSON.stringify(e),
-    });
-  },
-  complete(e) {
-    my.alert({
-      content: 'complete--->' + JSON.stringify(e),
     });
   }
 });
@@ -71,31 +56,34 @@ Object 类型，参数如下：
 
 | **参数** | **类型**        | **必填** | **描述**               |
 | -------- | --------------- | -------- | ---------------------- |
-| polygon  | Array\<Object\> | 是       | 经纬度数组，确定多边形区域。 |
-| point    | Object          | 是       | 需要判断位置的经纬度点。  |
+| polygon  | Array\<Object\> | 是       | 多边形区域的所有顶点坐标。 |
+| point    | Object          | 是       | 需要判断位置的坐标点。  |
 | success  | Function        | 否       | 调用成功的回调函数。   |
 | fail  | Function        | 否       | 调用失败的回调函数。   |
 | complete  | Function        | 否       | 调用结束的回调函数（调用成功、失败都会执行）。   |
 
-### Object polygon/point
+### 坐标点
 
-| **参数**  | **类型** | **必填** | **描述** |
+polygon 的数组元素和 point 参数为坐标点，包含以下属性：
+
+| **属性**  | **类型** | **必填** | **描述** |
 | --------- | -------- | -------- | -------- |
 | latitude  | Number   | 是       | 纬度。   |
 | longitude | Number   | 是       | 经度。   |
 
 ### Function success
 
-success 回调函数会携带一个 Object 类型的对象，其属性如下：
+success 回调函数会收到一个 Object 类型的参数，其属性如下：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| success | Boolean | <ul><li>true：在多边形区域内。</li><li>false：不在多边形区域内。</li></ul> |
+| success | Boolean | 指定的点是否在多边形区域内，true 在，false 不在。</li></ul> |
 
 
 ## 错误码
 
-| **错误码**       | **说明** | **解决方案**                            |
+fail 回调函数会收到一个 Object 类型的参数，其 error 字段为错误码，errorMessage 为错误消息。
+
+| **错误码**      | **错误消息** | **解决方案**                          |
 | -------------- | -------- | ----------------------------------- |
-| 2          | 限 iOS 环境。参数错误   | 请检查参数 polygon 和 point 格式是否正确 |
-| 60103          | 限安卓环境。参数错误   | 请检查参数 polygon 和 point 格式是否正确 |
+| 2 或 60103      | 参数错误  | 请检查参数 polygon 和 point 格式是否正确。 |
