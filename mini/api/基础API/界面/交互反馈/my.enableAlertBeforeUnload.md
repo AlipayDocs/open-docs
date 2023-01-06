@@ -44,10 +44,12 @@ Object 类型，参数如下：
 
 ## 错误码
 
-| **错误码** | **描述** | **解决方案** |
+fail 回调将收到一个 Object 类型的参数，其 error 属性为错误码，errorMessage 为错误消息
+
+| **错误码** | **错误消息** | **解决方案** |
 | --- | --- | --- |
-| 7 | has not found page when enableAlertBeforeUnload has been invoked | 执行接口时小程序还未创建出任何一个页面实例，建议在 Page.onReady 回调内执行 my.enableAlertBeforeUnload。 |
-| 8 | can not invoke enableAlertBeforeUnload at first page | 不支持在首页调用此接口，不需要处理此报错，建议在非首页的页面去调用此接口。 |
-| 9 | client not support enableAlertBeforeUnload | 一般不会出现，出现则表明当前客户端不支持调用此接口，请使用支持的客户端版本调用此接口。 |
+| 7 | has not found page when enableAlertBeforeUnload has been invoked | 调用接口时小程序还未创建出任何一个页面实例。请在 Page.onReady 以后调用。 |
+| 8 | can not invoke enableAlertBeforeUnload at first page | 不支持在首页调用此接口。请在非首页代码中调用。 |
+| 9 | client not support enableAlertBeforeUnload | 当前客户端版本不支持此接口。可忽略此报错或酌情提示升级。 |
 
 <br />
