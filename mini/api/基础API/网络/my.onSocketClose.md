@@ -16,21 +16,20 @@
 // .js
 Page({
   onLoad() {
-    // 注意： 回调方法的注册在整个小程序启动阶段只要做一次，调多次会有多次回调
+    // 注意：请与 my.offSocketClose 恰当配合使用。否则多次未取的监听会有多次回调
     my.onSocketClose(res => {
-      console.log('onSocketClose 连接关闭！');
+      console.log('监听到 socket 连接关闭');
     });
   },
-  connect_socket() {
+  connectSocket() {
     my.connectSocket({
       url: 'wss://...', // 开发者服务器接口地址，必须是 wss 协议
     });
   },
-  close_socket() {
-    // 通过 onSocketClose 监听关闭成功事件
+  closeSocket() {
     my.closeSocket({
       success: (res) => {
-        console.log("closeSocket 关闭成功!");
+        console.log("socket 连接关闭");
       },
     })
   },
