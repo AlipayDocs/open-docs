@@ -16,7 +16,7 @@
 // .js
 Page({
   onLoad() {
-    // 注意：请与 my.offSocketClose 恰当配合使用。否则多次未取的监听会有多次回调
+    // 注意：多次监听会有多次回调。请与 my.offSocketClose 恰当配合
     my.onSocketClose(res => {
       console.log('监听到 socket 连接关闭');
     });
