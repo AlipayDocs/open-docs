@@ -7,7 +7,7 @@
 ## 使用限制
 
 - 基础库 [2.6.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 或更高版本；支付宝客户端 10.2.0 或更高版本，若版本较低，建议采取 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
-- 此 API 暂仅支持企业支付宝小程序使用。
+- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
 
@@ -165,7 +165,7 @@ my.chooseDistrict({
   </tr>
   <tr>
     <td>mode</td>
-    <td>int</td>
+    <td>Number</td>
     <td>是</td>
     <td>指定场景。枚举如下：</br><ul><li>0：展示境内。</li><li>1：展示境外。</li><li>2：展示境内+境外。</li></ul></td>
   </tr>
@@ -173,7 +173,7 @@ my.chooseDistrict({
     <td>src</td>
     <td>String</td>
     <td>否</td>
-  <td>自定义数据文件地址。自定义数据量大时，建议将数据文件内置在小程序内。文件内参数格式同接口定义。<br /><b>注意：</b> src模式优先级最高，指定src，只读取src内的数据</td>
+  <td>自定义数据文件地址。自定义数据量大时，建议将数据文件内置在小程序内。文件内参数格式同接口定义。<br /><b>注意：</b> src 模式优先级最高，指定 src，只读取 src 内的数据</td>
   </tr>
   <tr>
     <td>success</td>
@@ -206,13 +206,13 @@ my.chooseDistrict({
     <td>mainNormalList</td>
     <td>Array</td>
     <td>否</td>
-    <td>底部城市列表。</br>当对象为空时，默认使用内置的境内城市列表填充。对象值可查看 <b>ItemModel</b>。</td>
+    <td>底部城市列表。数组元素格式请参考 <b>ItemModel</b>。</br>未指定此参数时，默认使用内置的境内城市列表。</td>
   </tr>
   <tr>
     <td>mainMergeOptions</td>
     <td>Object</td>
     <td>否</td>
-  <td>修改内置数据的参数接口。传值方式为 <code>{“key”,"value"}</code>。其中 key 是需要修改的城市的 adCode， value 是展示的城市名。</br>仅在 mainNormalList 为空时生效，支持对默认境内数据差量更新:<code>{"371200":"","542400":"","540600":"那曲","659010":"胡杨河市"}</code>。</br>value 为空代表删除对应 adCode 的城市；value 不为空代表更新对应 adCode 的城市。</td>
+  <td>修改内置数据的参数接口。传值方式为 <code>{`key`: `value`}</code>。其中 key 是需要修改的城市的 adCode， value 是展示的城市名。</br>仅在 mainNormalList 为空时生效，支持对默认境内数据差量更新:<code>{"371200":"","542400":"","540600":"那曲","659010":"胡杨河市"}</code>。</br>value 为空代表删除对应 adCode 的城市；value 不为空代表更新对应 adCode 的城市。</td>
   </tr>
   <tr>
     <td colspan="4"><b>境外 / 港澳台场景</b></td>
@@ -227,7 +227,7 @@ my.chooseDistrict({
     <td>seniorPageList</td>
     <td>Array</td>
     <td>否</td>
-    <td>境外多 tab 数据集合, 对象值可查看 <b>PageModel</b>。</br>如果对象为空时，默认使用内置的境外城市列表填充。</td>
+    <td>境外多 tab 数据集合，数组元素格式请参考 <b>PageModel</b>。</br>未指定此参数时，默认使用内置的境外城市列表。</td>
   </tr>
 </table>
 
@@ -236,7 +236,7 @@ my.chooseDistrict({
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | title | String | 是 | 区块名，如“热门城市”。 |
-| type | Int | 否 | 模块类型。枚举如下：<br /><ul><li>0：常规城市；</li><li>1：定位模块；</li><li>2：展示支付宝提供的热门城市模块。</li></ul> |
+| type | Number | 否 | 模块类型。枚举如下：<br /><ul><li>0：常规城市；</li><li>1：定位模块；</li><li>2：展示支付宝提供的热门城市模块。</li></ul> |
 | list | Array | 否 | 区块城市列表。不支持嵌套，对象值可查看 **ItemModel**。 |
 
 ### ItemModel
