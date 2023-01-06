@@ -19,77 +19,15 @@
 
 ## 示例代码
 
-### JavaScript
 ```javascript
-Page({
-  data: {
-    longitude: '',
-    latitude: '',
-    name: '',
-    address: '',
+my.chooseLocation({
+  success:(res) => {
+    console.log(JSON.stringify(res));
   },
-  chooseLocation() {
-    my.chooseLocation({
-      success:(res) => {
-        console.log(JSON.stringify(res));
-        this.setData({
-          longitude:res.longitude,
-          latitude:res.latitude,
-          name:res.name,
-          address:res.address
-        })
-      },
-      fail:(error) => {
-        my.alert({ content: '调用失败：' + JSON.stringify(error) });
-      },
-    });
+  fail:(error) => {
+    my.alert({ content: '调用失败：' + JSON.stringify(error) });
   },
-})
-```
-
-
-### AXML
-```html
-<view class="page">
-  <view class="page-section">
-    <view class="page-section-demo">
-      <text>经度:</text>
-      <input value="{{longitude}}"></input>
-    </view>
-    <view class="page-section-demo">
-      <text>纬度:</text>
-      <input value="{{latitude}}"></input>
-    </view>
-    <view class="page-section-demo">
-      <text>位置名称:</text>
-      <input value="{{name}}"></input>
-    </view>
-    <view class="page-section-demo">
-      <text>详细位置:</text>
-      <input value="{{address}}"></input>
-    </view>
-    <view class="page-section-btns">
-      <view onTap="chooseLocation">选择位置</view>
-    </view>
-  </view>
-</view>
-```
-
-### ACSS
-```css
-.page-body-info {
-  height: 250rpx;
-}
-.page-body-text-location {
-  display: flex;
-  font-size: 50rpx;
-}
-.page-body-text-location text {
-  margin: 10rpx;
-}
-.page-section-location-text {
-  color: #49a9ee;
-}
+});
 ```
 
 ## 入参
