@@ -75,9 +75,9 @@ Page({
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| global | Boolean | 否 | 是否将该字体应用于整个小程序，设置为 false 只在当前页面生效。<br/>默认值 `false`。</br>基础库 [2.8.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上支持。 |
+| global | Boolean | 否 | 是否将该字体应用于整个小程序，设置为 false 只在当前页面生效。<br/>默认值 `false`。</br>基础库 [2.8.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上支持，更低版本只支持当前页面生效。 |
 | family | String | 是 | 字体名称。 |
-| source | String | 是 | 字体资源地址，格式为 "url('https:// xxx')"，详见示例代码。<br/>**注意：** 字体资源的响应头应包含 **'Access-Control-Allow-Origin': '*'**，否则 Android 上将无法加载字体。 |
+| source | String | 是 | 字体资源地址，格式为 "url('https://...')"，详见示例代码。<br/>**注意：** 字体资源的响应头应包含 'Access-Control-Allow-Origin': '*'，否则 Android 上将无法正常加载字体。 |
 | desc | Object | 否 | 字体描述符。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
@@ -101,7 +101,7 @@ success 回调函数会携带一个 Object 类型的参数，其属性如下：
 
 ## 错误码
 
-fail 回调会收到的 Object 类型的参数，其 error 属性为错误码，errorMessage 属性为错误消息：
+fail 回调会收到的 Object 类型的参数，其 error 属性为错误码，errorMessage 属性为错误消息。
 
 | **错误码** | **错误消息** | **解决方案**                          |
 | ---------- | -------- | ------------------------------------- |
