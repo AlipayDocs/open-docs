@@ -17,16 +17,8 @@
 ### .js 示例代码
 
 ```javascript
-//app.js
-
 my.onAppShow(function(res) {
   console.log('appShow:', res)
-})
-
-App({
-  onLaunch() {
-  
-  }
 })
 ```
 
