@@ -28,6 +28,7 @@
 | lazyCodeLoading     | String   | 否       | 是否开启代码按需执行。         |
 | permission          | Object   | 否       | 小程序接口权限相关配置。       |
 | behavior            | Object   | 否       | 修改小程序运行行为的相关设置。 |
+| workers             | Array    | 否       | 设置 Worker 代码文件列表。 |
 
 # entryPagePath
 
