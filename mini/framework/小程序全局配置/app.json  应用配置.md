@@ -262,7 +262,7 @@ icon 图标推荐大小为 81px \* 81px，系统会对传入的非推荐尺寸�
 {
   "behavior": {
     "shareAppMessage": "appendQuery", // 通过此配置，可选择默认分享功能是否带上 query 参数。
-    "decodeQuery": "disable" // 设置为disable后，基础库不再对全局/页面参数的键/值做encodeURIComponent
+    "decodeQuery": "disable" // 设置为disable后，基础库不再对全局/页面参数的键/值做 encodeURIComponent
   }
 }
 ```
