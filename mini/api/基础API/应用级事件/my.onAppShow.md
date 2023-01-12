@@ -9,7 +9,7 @@
 
 - 基础库 [1.20.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.68 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 由于开发者工具版本限制，目前本 API 暂不支持在开发者工具调试。开发者请使用 **真机调试** 和 **预览** 模式，在支付宝客户端扫码查看效果。
+- 由于开发者工具版本限制，在真机调试中使用该 API 时无法命中断点，该 API 的回调仍然会正常触发。
 
 # 接口调用
 
