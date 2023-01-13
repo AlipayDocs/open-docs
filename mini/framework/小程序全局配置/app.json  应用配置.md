@@ -20,7 +20,6 @@
 | window              | Object   | 否       | 设置默认页面的窗口表现。       |
 | tabBar              | Object   | 否       | 设置底部 tabbar 的表现。       |
 | subPackages         | Object[] | 否       | 分包结构描述。                 |
-| subPackageBuildType | String   | 否       | 分包打包策略。                 |
 | preloadRule         | Object   | 否       | 分包预加载规则。               |
 | plugins             | Object   | 否       | 静态插件配置规则。             |
 | useDynamicPlugins   | Boolean  | 否       | 动态插件配置规则。             |
@@ -168,10 +167,6 @@ icon 图标推荐大小为 81px \* 81px，系统会对传入的非推荐尺寸�
 # preloadRule
 
 声明 [分包预下载](https://opendocs.alipay.com/mini/framework/subpackages#%E5%88%86%E5%8C%85%E9%A2%84%E4%B8%8B%E8%BD%BD) 的规则。
-
-# subPackageBuildType
-
-声明 [分包内同一模块的隔离策略](https://opendocs.alipay.com/mini/framework/subpackages#%E5%88%86%E5%8C%85%E5%86%85%E5%90%8C%E4%B8%80%E6%A8%A1%E5%9D%97%E7%9A%84%E9%9A%94%E7%A6%BB%E7%AD%96%E7%95%A5) 。
 
 # plugins
 
