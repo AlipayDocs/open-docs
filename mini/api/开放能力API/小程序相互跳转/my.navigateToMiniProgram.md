@@ -102,7 +102,13 @@ function schemeToParams(scheme) {
     return { message: '! 非 alipays: 开头' };
   }
   var params = {};
-  for (var [k, v] of new URL(scheme).searchParams) {
+  var parseQuery = (str) => {
+    return str.replace(/^.*?\?/, '').split('&').map(s => {
+      var p = s.includes('=') ? s.indexOf('=') : s.length;
+      return [s.slice(0, p), s.slice(p + 1)].map(decodeURIComponent);
+    });
+  };
+  for (var [k, v] of parseQuery(scheme)) {
     if (k == 'appId') {
       if (v.length != 16) {
         return { message: `! 非 16 位 appId '${v}'` };
@@ -111,7 +117,7 @@ function schemeToParams(scheme) {
       k = 'path';
     } else if (k == 'query') {
       var o = {};
-      for (var [x, y] of new URL('x:y?' + v).searchParams) {
+      for (var [x, y] of parseQuery(v)) {
         o[x] = y;
       }
       v = o;
