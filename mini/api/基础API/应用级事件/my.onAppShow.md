@@ -9,7 +9,7 @@
 
 - 基础库 [1.20.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.68 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 由于开发者工具版本限制，在真机调试中使用该 API 时无法命中断点，该 API 的回调仍然会正常触发。
+- 真机调试时，使用该 API 注册的回调能够正常触发，但设置在回调函数中的断点不会生效。
 
 # 接口调用
 
