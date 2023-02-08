@@ -2,7 +2,7 @@
 
 **my.onAppShow** 监听小程序切前台事件。
 
-实质为动态注册 [App.onShow](https://opendocs.alipay.com/mini/framework/app-detail) 生命周期回调。对应的取消监听接口为 [my.offAppShow](https://opendocs.alipay.com/mini/api/tkohmw)。
+调用此接口实质为动态注册 [App.onShow](https://opendocs.alipay.com/mini/framework/app-detail) 生命周期事件回调。对应的取消监听接口为 [my.offAppShow](https://opendocs.alipay.com/mini/api/tkohmw)。
 
 
 ## 使用限制
