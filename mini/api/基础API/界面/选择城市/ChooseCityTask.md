@@ -19,7 +19,7 @@ my.chooseCity 返回的对象，用于监听定位完成事件，以及修改默
 ### 入参
 **function callback** 定位完成事件的回调函数。
 
-#### **callback 参数 ** 
+#### callback 参数
 **Object res**
 
 | **属性** | **类型** | **描述** |
