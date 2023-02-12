@@ -41,4 +41,4 @@ App({
 | **属性** | **类型** | **说明**                      |
 | -------- | -------- | ----------------------------- |
 | reason   | String   | 拒绝原因，一般是 error 对象。 |
-| promise  | Promise  | 被拒绝的 Promise 对象。       |
+| promise  | Promise  | 被拒绝的 Promise 对象。 </br> 注： Android 不支持返回此字段。     |
