@@ -8,6 +8,7 @@
 
 - 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 字体链接因同源策略限制，必须开启 cors 支持。
 - 字体文件返回的 contet-type 参考 [my.loadFontFace 支持的字体所对应的 contet-type 都是什么](https://opendocs.alipay.com/mini/api/ggawf0#Q%EF%BC%9Amy.loadfontface%20%E5%9C%A8IDE%E4%B8%8D%E7%94%9F%E6%95%88%EF%BC%9F) FAQ，格式不正确时会解析失败。
 
 # 接口调用
