@@ -7,8 +7,8 @@
 ## 使用限制
 
 - 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-- 小程序开发者工具（IDE）暂不支持调试此 API，请使用真机预览或调试。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 字体文件返回的 contet-type 参考 [my.loadFontFace 支持的字体所对应的 contet-type 都是什么](https://opendocs.alipay.com/mini/api/ggawf0#Q%EF%BC%9Amy.loadfontface%20%E5%9C%A8IDE%E4%B8%8D%E7%94%9F%E6%95%88%EF%BC%9F) FAQ，格式不正确时会解析失败。
 
 # 接口调用
 
@@ -76,8 +76,9 @@ Page({
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | global | Boolean | 否 | 是否将该字体应用于整个小程序，设置为 false 只在当前页面生效。<br/>默认值 `false`。</br>基础库 [2.8.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上支持，更低版本只支持当前页面生效。 |
+| nativeCanvas | Boolean | 否 | 是否同时加载 NativeCanvas 字体，为 true 表示支持。<br/>默认值 `true`。</br>基础库 [2.6.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上支持。 |
 | family | String | 是 | 字体名称。 |
-| source | String | 是 | 字体资源地址，格式为 "url('https://...')"，详见示例代码。<br/>**注意：** 字体资源的响应头应包含 'Access-Control-Allow-Origin': '*'，否则 Android 上将无法正常加载字体。 |
+| source | String | 是 | 字体资源地址，格式为 "url('https://...')"，详见示例代码。<br/>**注意：** 字体资源的响应头应包含 'Access-Control-Allow-Origin': *，否则 Android 上将无法正常加载字体。 |
 | desc | Object | 否 | 字体描述符。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
@@ -91,26 +92,23 @@ Page({
 | weight | String | 否 | 字体粗细，默认值为 normal，可选值为 normal / bold / 100 / 200 / ... / 900。 |
 | variant | String | 否 | 设置小型大写字母的字体显示文本，默认值为 normal，可选值为 normal / small-caps / inherit。 |
 
-### Function success
-
-success 回调函数会携带一个 Object 类型的参数，其属性如下：
-
-| **属性** | **类型** | **描述**                                              |
-| -------- | -------- | ----------------------------------------------------- |
-| status   | String   | 加载字体结果。loaded 表示加载成功，error 表示加载失败 |
-
 ## 错误码
 
 fail 回调会收到的 Object 类型的参数，其 error 属性为错误码，errorMessage 属性为错误消息。
 
 | **错误码** | **错误消息** | **解决方案**                          |
 | ---------- | -------- | ------------------------------------- |
-| 10         | 加载失败 | 检查字体文件是否为可下载的 https 链接 |
+| 10         | 加载失败 | 请检查字体文件是否为可下载的 https 链接或者是否开启了 cors 支持。 |
 
 # 常见问题 FAQ
 
-## Q：my.loadfontface 支持加载 woff2 字体吗？
+## Q：my.loadFontFace 支持加载 woff2 字体吗？
 A：支付宝小程序不支持加载 woff2 字体。相对其他格式字体，woff2 字体内存占用较高，建议使用其他格式。
 
-## Q：my.loadFontFace 在 Canvas 2D 中生效吗？
-A：生效。需要在网络字体资源加载成功之后再去调用 Canvas 2D 绘制文本才能生效。 
+## Q：my.loadFontFace 支持的字体所对应的 contet-type 都是什么？
+| **字体** | **contet-type** |
+| ---------- | -------- |
+| woff         | font/woff |
+| otf         | font/otf |
+| ttf         | font/ttf |
+| sfnt         | font/sfnt |
