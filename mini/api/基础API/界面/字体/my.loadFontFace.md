@@ -8,7 +8,7 @@
 
 - 基础库 [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.32 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 受同源策略限制，字体资源服务器必须开启 CORS 支持，小程序的域名为 ${appId}.hybrid.alipay-eco.com。
+- 受同源策略限制，字体资源服务器必须开启 CORS 支持。支付宝小程序的域名为 ${appId}.hybrid.alipay-eco.com。
 - 字体资源响应头中 Content-Type 请参考本文档附录的 MIME Type。无效的 Content-Type 会导致字体解析失败。
 
 # 接口调用
@@ -76,7 +76,7 @@ Page({
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | family | String | 是 | 字体名称。 |
-| source | String | 是 | 字体资源地址，格式为 "url('https://...')"，详见示例代码。<br/>**注意：** 字体资源的响应头应包含 'Access-Control-Allow-Origin': *，否则 Android 上将无法正常加载字体。 |
+| source | String | 是 | 字体资源地址，格式为 "url('https://...')"，详见示例代码。<br/>**注意：** 字体资源须开启 CORS（Access-Control-Allow-Origin 为 * 或 ${appId}.hybrid.alipay-eco.com），否则 Android 上无法正常加载字体。 |
 | desc | Object | 否 | 字体描述符。 |
 | global | Boolean | 否 | 加载的字体是否对整个小程序生效。false 表示只在当前页面生效，默认值 `false`。<br>基础库 [2.8.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
 | nativeCanvas | Boolean | 否 | 加载的字体是否在 native canvas （即 axml 中指定了 type 属性的 \<canvas\>）中可用，默认值 `true`。<br>基础库 [2.6.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持。 |
