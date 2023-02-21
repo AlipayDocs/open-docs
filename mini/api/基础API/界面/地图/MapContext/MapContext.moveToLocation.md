@@ -34,6 +34,7 @@
 ```javascript
 // .js
 this.mapCtx = my.createMapContext('map');
+// 将地图中心移置指定位置
 this.mapCtx.moveToLocation({ 
   latitude: 39.9,
   longitude: 116.39,
@@ -51,9 +52,9 @@ this.mapCtx.moveToLocation({
 
 | **错误码** | **描述**       | **解决方案**                               |
 | ---------- | -------------- | ------------------------------------------ |
-| 3        | 限安卓环境。未设置入参经纬度且 map 组件没有使用 show-location | map 组件中添加上 show-location |
+| 3        | 限安卓环境。未设置入参经纬度且 map 组件没有使用 show-location。 | map 组件中添加上 show-location 或传入经纬度值。 |
 
 ## Bug & Tip
 
-- MapContext.moveToLocation 移动结束后会将 map 恢复到默认缩放级别
+- MapContext.moveToLocation 移动结束后会将 map 恢复到默认缩放级别，默认缩放级别为 16。
 
