@@ -1,10 +1,10 @@
 # 简介
 
-**my.createMapContext** 是创建并返回一个地图上下文对象 [mapContext](https://opendocs.alipay.com/mini/api/mapcontext) 的 API。<br />相关组件详情，可查看 [map 地图](https://opendocs.alipay.com/mini/component/map)。
+**my.createMapContext** 是创建并返回一个地图上下文对象 [mapContext](https://opendocs.alipay.com/mini/api/mapcontext) 的 API。<br />相关 map 组件的属性，可查看 [map 地图](https://opendocs.alipay.com/mini/component/map)。
 
 ## 使用限制
 
-- 需在 map 组件初始化完成后即 onReady 回调触发后执行 my.createMapContext。
+- 需在 onReady 回调中（ map 组件初始化完成后 ）执行 my.createMapContext。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 - 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 
@@ -14,17 +14,20 @@
 
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/map?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
+### .axml 示例代码
+```javascript
+// .axml 
+<map id='map'></map>
+```
 ### .js 示例代码
 
 ```javascript
 // .js
 Page({
-  // ... ...
   onReady() {
     // 使用 my.createMapContext 获取 map 上下文
     this.mapCtx = my.createMapContext('map');
   },
-  // ... ...
 });
 ```
 
@@ -33,7 +36,6 @@ Page({
 初始化或重置地图数据，参数可选。
 
 **基础库** [1.10.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本开始支持；**支付宝客户端** 10.1.32 或更高版本开始支持，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
-
 ```javascript
 // .js
 this.setData({
@@ -74,19 +76,23 @@ this.setData({
     zIndex: 1,
   },
   // 点标记数组
-  markers: [{}, {}],
-  // 视野将进行小范围延伸包含传入的坐标。
-  'include-points': [{}, {}],
+  markers: [{
+    latitude: 39.935029,
+    longitude: 116.384377,
+  }, {
+    latitude: 39.939577,
+    longitude: 116.388331,
+  }],
   // 10.1.35 新增全览逻辑,视野在地图 padding 范围内展示
-  'include-padding': { left: 0, right: 0, top: 0, bottom: 0 },
+  'include-padding': { left: 10, right: 10, top: 10, bottom: 10 },
   // 多段线
-  polyline: [{}, {}],
-  // 在地图上显示圆
-  circles: [{}, {}],
-  // 在地图上显示控件，控件不随着地图移动
-  controls: [{}, {}],
-  // 构造多边形对象
-  polygon: [{}, {}],
+  polyline: [{
+    latitude: 39.935029,
+    longitude: 116.384377,
+  }, {
+    latitude: 39.939577,
+    longitude: 116.388331,
+  }],
   // 初始化支持地图设置 10.1.50 新增
   setting: {
     // 手势,打开 1,关闭 0
