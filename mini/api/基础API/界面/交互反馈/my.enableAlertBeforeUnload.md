@@ -4,7 +4,7 @@ my.enableAlertBeforeUnload 开启小程序页面返回询问对话框。
 
 调用后，用户尝试关闭当前小程序页面时会出现如下对话框：
 
-<img src="https://img.alicdn.com/imgextra/i2/O1CN01IHPkmn1sn1w6S9yip_!!6000000005810-0-tps-1080-703.jpg" width="250px"/>
+<img src="https://mdn.alipayobjects.com/huamei_esgcm9/afts/img/A*DWmQQbYZLtAAAAAAAAAAAAAADsaJAQ/original" width="300px"/>
 
 ## 使用限制
 
@@ -48,7 +48,7 @@ fail 回调将收到一个 Object 类型的参数，其 error 属性为错误码
 
 | **错误码** | **错误消息** | **解决方案** |
 | --- | --- | --- |
-| 7 | has not found page when enableAlertBeforeUnload has been invoked | 调用接口时小程序还未创建出任何一个页面实例。请在 Page.onReady 以后调用。 |
+| 7 | has not found page when enableAlertBeforeUnload has been invoked | 调用接口时小程序还未创建出当前页面实例。请在 Page.onReady 以后调用。 |
 | 8 | can not invoke enableAlertBeforeUnload at first page | 不支持在首页调用此接口。请在非首页代码中调用。 |
 | 9 | client not support enableAlertBeforeUnload | 当前客户端版本不支持此接口。可忽略此报错或酌情提示升级。 |
 
