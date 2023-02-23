@@ -1,6 +1,9 @@
 # 简介
 
-**my.setKeepScreenOn** 是设置是否保持屏幕长亮状态的 API。仅在当前小程序生效，离开小程序后失效。
+**my.setKeepScreenOn** 设置是否保持屏幕常亮。
+
+常亮设置仅对当前小程序生效，离开小程序后自动失效。
+
 
 ## 使用限制
 
@@ -11,18 +14,12 @@
 
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/36116125389be0190f5b4e446bfc93fa.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
 
-## 效果示例
-
-![|300x540](https://gw.alipayobjects.com/zos/skylark-tools/public/files/57ac70ca95c208105f2456c578533fbc.gif#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&originHeight=540&originWidth=300&status=done&style=stroke&width=300)
-
 # 接口调用
 
 ## 示例代码
 
 ### .axml 示例代码
-
 ```html
-<!-- API-DEMO page/API/screen/screen.axml-->
 <view class="page">
   <view class="page-description">屏幕亮度 API</view>
   <view class="page-section">
@@ -53,9 +50,7 @@
 ```
 
 ### .js 示例代码
-
 ```javascript
-// API-DEMO page/API/screen/screen.js
 Page({
   data: {
     status: false,
@@ -108,7 +103,13 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| keepScreenOn | Boolean | 是 | 是否保持屏幕长亮状态。 |
+| keepScreenOn | Boolean | 是 | 是否保持屏幕常亮状态。 |
 | success | Function | 否 | 接口调用成功的回调函数。 |
 | fail | Function | 否 | 接口调用失败的回调函数。 |
 | complete | Function | 否 | 接口调用结束的回调函数（调用成功、失败都会执行）。 |
+
+## Bug & Tip
+
+* my.chooseCity、my.chooseVideo 等 API 会唤起外部的组件页面，因而会暂时解除 my.setKeepScreenOn 设置的常亮状态，当关闭这类组件页面返回到小程序后，之前设置的常亮状态会恢复。
+
+
