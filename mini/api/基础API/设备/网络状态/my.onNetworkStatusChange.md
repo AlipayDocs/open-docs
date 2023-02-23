@@ -22,7 +22,7 @@ my.onNetworkStatusChange(function (res) {
 ### Function listener
 
 网络状态变化事件的监听函数，在网络连接/断开/切换时被调用。 
-调用时收到到 Object 类型的参数，包含如下属性：
+调用时接收 Object 类型的参数，包含如下属性：
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
