@@ -1,6 +1,8 @@
 # 简介
 
-**MapContext.smoothMoveMarker** 使 marker 按照指定的经纬度数据和时间匀速移动，最后停留在终点位置。 `action:'stop'` 可停止滑动，在**滑动过程中**使用可停止滑动并将标记点放至指定路线终点。
+**MapContext.smoothMoveMarker** 沿指定路径平滑移动 marker。
+
+也可使用此 API 结束进行中的 marker 动画（入参 action 字段传 'stop'）。
 
 ## 使用限制
 
@@ -24,7 +26,7 @@
     style="width: 100%; height: 200px;"
   >
   </map>
-  <view onTap="smoothMoveMarker">滑动点标记</view>
+  <view onTap="smoothMoveMarker">滑动 marker</view>
 </view>
 ```
 
@@ -64,9 +66,9 @@ Page({
       },
     ];
     this.mapCtx.smoothMoveMarker({
-      // 需要执行动画的 marker 的 id
+      // 需执行动画的 marker id
       markerId: 10, 
-      // 传入一个需要执行动画的 marker 对象
+      // 需要执行动画的 marker 对象
       markerData: {
         id: 10,
         latitude: 30.261775,
@@ -75,10 +77,10 @@ Page({
         height: 31,
         iconPath: 'https://gw.alipayobjects.com/mdn/rms_dfc0fe/afts/img/A*x9yERpemTRsAAAAAAAAAAAAAARQnAQ',
       },
-      // 距离起点 100m、200m、300m、600m 的经纬度坐标通过 onMarkerMove 回调事件返回
-      targetDistances: [100, 200, 300, 600],
-      // 经纬度数组，确定滑动轨迹
+      // 经纬度数组，指定移动路径
       points: aniPoints,
+      // 经过距起点 100m、200m、300m、600m 的位置时，触发 onMarkerMove 事件
+      targetDistances: [100, 200, 300, 600],
       success: res => {
         console.log('success' + JSON.stringify(res))
       },
@@ -90,19 +92,18 @@ Page({
       }
     });
     
-    // 2 秒后停止 markerId 为 10 的 marker 的滑动，并将点标记放至 points 路线终点。    代码如下：
     setTimeout(() => {
-          this.mapCtx.smoothMoveMarker({
-            markerId: 10,
-            action: 'stop',
-          });
+      this.mapCtx.smoothMoveMarker({
+        markerId: 10,
+        action: 'stop', // 停止动画（marker 会被直接移到终点）
+      });
     }, 2000);
   },
-  // targetDistances 指定距离点的回调事件
+  
   markermove(e) {
     my.alert({ content: 'markerMove: ' + JSON.stringify(e.detail) });
   },
-  // 滑动结束的回调事件
+  
   markermoveend(e) {
     my.alert({ content: 'markermoveEnd: ' + JSON.stringify(e.detail) });
   },
@@ -114,47 +115,46 @@ Page({
 | **属性** | **类型** | **必填** | **描述** |
 | --- | ------------- | --------- | --- |
 | markerId | Number | 是 | 执行滑动的 marker 的 id |
-| markerData | Object | 否 | marker 对象。新建一个点标记进行滑动。marker 对象中的 id 必须等于 markerId。<br />详情见 **Object markerData**。  |
-| points | Array.&lt;Object&gt; | 是 | 经纬度数组，确定滑动轨迹。 建议轨迹起点经纬度与滑动的 marker 点经纬度相同，可使滑动效果更顺滑。 |
-| duration | Number | 否 | 滑动执行时间，默认为 5000 毫秒（ms）。 |
-| targetDistances | Array | 否 | 指定需要 onMarkerMove 回调的目标距离数组。**onMarkerMove** 详情见**回调事件**。 |
-| action | String | 否 | 指定操作滑动。<ul><li>`action:'stop'` 表示在滑动过程中提前停止滑动，并将点标记移动至指定线路终点位置。</li><li>`action:'start'` 默认值，表示执行滑动。</li></ul> |
-| success | Function | 否 | 参数校验成功的回调函数。 |
-| fail | Function | 否 | 参数校验失败的回调函数。 |
+| markerData | Object | 否 | 执行滑动的 marker 数据。传入时，将使用此数据新建一个 marker 进行滑动。marker 对象中的 id 必须等于 markerId。<br />详见 **Object markerData**。  |
+| points | Array\<Object\> | 是 | 经纬度数组，确定移动路径。数组每个元素应包含 latitude 和 longitude 属性。<br />建议起点经纬度与滑动的 marker 本身经纬度相同。 |
+| duration | Number | 否 | 移动时间，默认值为 5000，单位毫秒。 |
+| targetDistances | Array | 否 | 指定需要 onMarkerMove 回调的目标距离数组。详见后文 **事件回调**。 |
+| action | String | 否 | 操作类型。'start'（默认值）表示开始移动。'stop' 表示结束移动，marker 直接移到终点。 |
+| success | Function | 否 | 调用成功的回调函数。 |
+| fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 |调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### Object markerData 
 
 | **属性** | **类型** | **必填** | **描述** |
 | --------- | --------| --------  | ----------------------------------- |
-| id          | Number   | 是   | 目标记点 id。 |
+| id          | Number   | 是   | 标记点 ID。 |
 | latitude       | Number   | 是    | 纬度。                              |
 | longitude      | Number   | 是    | 经度。                              |
-| iconPath | String     | 是   | 项目目录下的图片路径，不能用相对路径只能用 / 开头的绝对路径。示例：/pages/image/test.jpg|
-| width      | Number   | 否   | 图片的宽度。   |
-| height      | Number   | 否   | 图片的高度。    |
+| iconPath | String     | 是   | 图标的图片路径，为小程序包文件路径，如：/pages/image/test.jpg。不支持相对路径。 |
+| width      | Number   | 否   | 图标的宽度。   |
+| height      | Number   | 否   | 图标的高度。    |
 
-## 回调事件
-回调事件需要在 map 中进行注册，js 中进行回调       
-                          
-例：`<map id="map" onMarkerMove="markermove" onMarkerMoveEnd="markermoveend"></map>`
-| **回调事件** | **类型** | **描述** |
-| --- | --- | --- |
-| onMarkerMove | Function | 在指定距离点的回调事件。<br />详情见 **Function onMarkerMove**。 |
-| onMarkerMoveEnd | Function | 滑动结束的回调事件。 |
+## 事件回调
+marker 移动过程中会触发 MarkerMove 和 MarkerMovEnd 事件。需通过 map 组件注册其回调函数，如：`<map id="map" onMarkerMove="markermove" onMarkerMoveEnd="markermoveend"></map>`
 
-### Function onMarkerMove 
-##### Object res     
+### onMarkerMove
+marker 移动经过 targetDistances 中的每个距离时，触发此事件。回调函数将收到一个 Object 类型的参数，包含如下属性：
 | **属性**       | **类型** | **描述**                            |
 | -------------- | -------- | ----------------------------------- |
-| index          | Number   | 目标点在 targetDistances 中的索引。 |
-| targetDistance | Array.&lt;Number&gt;   | 目标点的距离。                      |
-| latitude       | Number   | 纬度。                              |
-| longitude      | Number   | 经度。                              |
+| longitude      | Number   | 经度。                          |
+| latitude       | Number   | 纬度。                          |
+| targetDistance | Number   | 距起点的距离。                   |
+| index          | Number   | 当前 targetDistance 在 targetDistances 中的索引。 |
+
+### onMarkerEnd
+marker 移动结束时，触发此事件
 
 ## 错误码
 
+fail 回调函数的参数为 Object 类型，其 error 属性为错误码，errorMessage 为错误消息。
+
 | **错误码**       | **说明** | **解决方案**                            |
 | -------------- | -------- | ----------------------------------- |
-| 2          | 限安卓环境。参数错误   | points 数组长度需要大于等于 2 |
-| 10001          | 未填写 markerId   | 请给 markerId 赋值，值为需要执行动画的 marker 的 id。 |
+| 2          | 参数错误   | points 数组长度须大于 1。 |
+| 10001      | 缺少 markerId   | 传入 markerId。 |
