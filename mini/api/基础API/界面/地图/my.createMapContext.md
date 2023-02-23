@@ -1,10 +1,10 @@
 # 简介
 
-**my.createMapContext** 是创建并返回一个地图上下文对象 [mapContext](https://opendocs.alipay.com/mini/api/mapcontext) 的 API。<br />相关 map 组件的属性，可查看 [map 地图](https://opendocs.alipay.com/mini/component/map)。
+**my.createMapContext** 创建用于操作地图组件的 [MapContext](https://opendocs.alipay.com/mini/api/mapcontext) 对象。
 
 ## 使用限制
 
-- 需在 onReady 回调中（ map 组件初始化完成后 ）执行 my.createMapContext。
+- my.createMapContext 需要在 Page.onReady 以后执行。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 - 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 
@@ -15,17 +15,13 @@
 [小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/map?view=preview&defaultPage=pages/index/index&defaultOpenedFiles=pages/index/index&theme=light)
 
 ### .axml 示例代码
-```javascript
-// .axml 
+```html
 <map id='map'></map>
 ```
 ### .js 示例代码
-
 ```javascript
-// .js
 Page({
   onReady() {
-    // 使用 my.createMapContext 获取 map 上下文
     this.mapCtx = my.createMapContext('map');
   },
 });
