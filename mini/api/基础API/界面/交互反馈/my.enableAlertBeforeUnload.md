@@ -48,8 +48,7 @@ fail 回调将收到一个 Object 类型的参数，其 error 属性为错误码
 
 | **错误码** | **错误消息** | **解决方案** |
 | --- | --- | --- |
-| 7 | has not found page when enableAlertBeforeUnload has been invoked | 调用接口时小程序还未创建出当前页面实例。请在 Page.onReady 以后调用。 |
-| 8 | can not invoke enableAlertBeforeUnload at first page | 不支持在首页调用此接口。请在非首页代码中调用。 |
-| 9 | client not support enableAlertBeforeUnload | 当前客户端版本不支持此接口。可忽略此报错或酌情提示升级。 |
+| 7 | has not found page when enableAlertBeforeUnload has been invoked | 请在 Page.onReady 以后调用。 |
+| 8 | can not invoke enableAlertBeforeUnload at first page | 不支持在首页调用此接口，请在非首页代码中调用。 |
+| 9 | client not support enableAlertBeforeUnload | 当前客户端版本不支持此接口，可忽略此报错或酌情提示升级。 |
 
-<br />
