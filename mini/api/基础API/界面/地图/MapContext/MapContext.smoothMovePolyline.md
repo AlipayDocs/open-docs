@@ -1,6 +1,9 @@
 # 简介
 
-**MapContext.smoothMovePolyline** 是按照指定的经纬度数据和时间，动态的在地图上绘制线的 API。`action:'stop'` 可停止绘制的动画，在**绘制的过程中**使用时可停止动画并将线路绘制完整。
+**MapContext.smoothMovePolyline** 沿指定路径绘制线段。
+
+
+也可使用此 API 结束进行中的绘制动画（入参 action 字段传 'stop'）。
 
 ## 使用限制
 - 基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/lib) 或更高版本；支付宝客户端 10.1.90 或更高版本，若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
@@ -26,7 +29,7 @@
     style="width: 100%; height: 200px;"
   >
   </map>
-  <view onTap="smoothMovePolyline">制轨迹动画</view>
+  <view onTap="smoothMovePolyline">绘制线段</view>
 </view>
 ```
 
@@ -69,9 +72,9 @@ Page({
       },
     ];
     this.mapCtx.smoothMovePolyline({
-      // 线 id
+      // 需要绘制的线段 id
       polylineId: 10,
-      // 经纬度数组，确定画线轨迹
+      // 经纬度数组，指定绘制路径
       points: aniPoints,
       // 线路颜色
       color: '#00FF00',
@@ -96,11 +99,10 @@ Page({
     setTimeout(() => {
       this.mapCtx.smoothMovePolyline({
         polylineId: 10,
-        action: 'stop',
+        action: 'stop', // 停止动画（直接完成线段绘制）
       });
     }, 2000);
   },
-  // 动画结束的回调事件
   onPolylineMoveEnd(res) {
     console.log('onPolylineMoveEnd: ' + JSON.stringify(res));
   },
@@ -111,36 +113,30 @@ Page({
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| polylineId | Number | 是 | 线 ID。 |
-| points | Array | 是 | 经纬度数组，确定绘制的线。 |
-| duration | Number | 否 | 绘制的时间，默认为 5000 毫秒（ms）。 |
-| color | String | 否 | 线的颜色。默认透明色。 |
-| width | Number | 否 | 线宽度。 |
-| dottedLine | Boolean | 否 | 是否虚线。 |
-| iconPath | String | 否 | 线的纹理地址。iconPath 引用图片宽高需要为 2 的整数次幂 |
-| iconWidth | Number | 否 | 线的纹理宽度。设置 iconPath 后生效 |
-| zIndex | Number | 否 | 线的层级，zIndex 数值高的线覆盖在低的上面 |
-| colorList | Array | 否 | 彩虹线。如：`colorList:['#ff0000']` 。iOS 上暂不支持 colorList 功能|
-| action | String | 否 | 指定操作动画。<ul><li>`action:'stop'` 表示在画线过程中提前停止动画，并将轨迹绘制完整。</li><li>`action:'start'` 默认值，表示执行动画。</li></ul> |
-| success | Function | 否 | 参数校验成功的回调函数。 |
-| fail | Function | 否 | 参数校验失败的回调函数。 |
+| polylineId | Number | 是 | 线段 id。 |
+| points | Array\<Object\> | 是 | 经纬度数组，确定绘制的线段。数组每个元素应包含 latitude 和 longitude 属性。 |
+| duration | Number | 否 | 绘制的时间，默认为 5000，单位毫秒。 |
+| color | String | 否 | 线段颜色。默认为透明色。 |
+| width | Number | 否 | 线段宽度。默值为 0。 |
+| dottedLine | Boolean | 否 | 是否设置虚线。默值为 false。 |
+| iconPath | String | 否 | 线段纹理地址。iconPath 引用图片宽高需要为 2 的整数次幂 |
+| iconWidth | Number | 否 | 线段纹理宽度。设置 iconPath 后生效 |
+| zIndex | Number | 否 | 线段的层级。 |
+| colorList | Array | 否 | 线段颜色。如：`colorList:['#ff0000']` 。iOS 上暂不支持 colorList 功能|
+| action | String | 否 | 操作类型。'start'（默认值）表示开始移动。'stop' 表示结束绘制动画，线段直接绘制完成。 |
+| success | Function | 否 | 调用成功的回调函数。 |
+| fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 |调用结束的回调函数（调用成功、失败都会执行）。 |
 
-## 回调事件
- 
-回调事件需要在 map 中进行注册，js 中进行回调          
-
-例：`<map onPolylineMoveEnd="onPolylineMoveEnd"></map>`                                                                                                            
-| **回调事件**      | **类型** | **描述**             |
-| ----------------- | -------- | -------------------- |
-| onPolylineMoveEnd | Function | 动画结束的回调事件。 |
+## 事件回调
+线段绘制过程中会触发 onPolylineMoveEnd 事件。需通过 map 组件注册其回调函数，如：`<map onPolylineMoveEnd="onPolylineMoveEnd"></map>`  
 
 ## 错误码
 
 | **错误码**       | **说明** | **解决方案**                            |
 | -------------- | -------- | ----------------------------------- |
-| 2          | 限安卓环境。points 参数错误   | points 数组长度需要大于等于 2 |
-| 10001          | 限 iOS 环境。未指定 polylineId   | 请给 polylineId 赋值 |
+| 2          | 参数错误   | points 数组长度需要大于 1 |
+| 10001          | 缺少 polylineId   | 传入 polylineId 值 |
 
 # 常见问题 FAQ
 
