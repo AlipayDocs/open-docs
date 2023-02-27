@@ -1,6 +1,6 @@
 # 简介
 
-**MapContext.smoothMovePolyline** 绘制折线（Polyline），带动画效果。
+**MapContext.smoothMovePolyline** 绘制折线，带动画效果。
 
 
 也可使用此 API 结束进行中的绘制动画（入参 action 字段传 'stop'）。
