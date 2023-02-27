@@ -142,14 +142,14 @@ Page({
 
 ## Q：在地图上使用 MapContext.smoothMovePolyline 生成的轨迹线路为什么无法使用 clearRoute 清除？
 
-A：clearRoute 只能用于清除地图上的导航路线，无法清除 MapContext.smoothMovePolyline 生成的线。请使用 MapContext.updateComponents 清除 示例如下：
+A：clearRoute 只能用于清除地图上的导航路线（route），smoothMovePolyline 产生的轨迹是 polyline，需要使用 MapContext.updateComponents 设置：
 ```javascript
  this.mapCtx = my.createMapContext('map');
 
- //清除所有线路，代码如下：
+ // 清除地图上所有 Polyline
  this.mapCtx.updateComponents({ polyline:[] }) 
 
- // map 上只保留 aniPoints 定义的线路，代码如下：
+ // 地图只显示一条 Polyline (由 aniPoints 定义）
  this.mapCtx.updateComponents({
     polyline: [{
       points: aniPoints,
