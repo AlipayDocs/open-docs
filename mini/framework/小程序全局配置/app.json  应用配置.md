@@ -20,7 +20,6 @@
 | window              | Object   | 否       | 设置默认页面的窗口表现。       |
 | tabBar              | Object   | 否       | 设置底部 tabbar 的表现。       |
 | subPackages         | Object[] | 否       | 分包结构描述。                 |
-| subPackageBuildType | String   | 否       | 分包打包策略。                 |
 | preloadRule         | Object   | 否       | 分包预加载规则。               |
 | plugins             | Object   | 否       | 静态插件配置规则。             |
 | useDynamicPlugins   | Boolean  | 否       | 动态插件配置规则。             |
@@ -28,6 +27,7 @@
 | lazyCodeLoading     | String   | 否       | 是否开启代码按需执行。         |
 | permission          | Object   | 否       | 小程序接口权限相关配置。       |
 | behavior            | Object   | 否       | 修改小程序运行行为的相关设置。 |
+| workers             | Array    | 否       | 设置 Worker 代码文件列表。 |
 
 # entryPagePath
 
@@ -168,10 +168,6 @@ icon 图标推荐大小为 81px \* 81px，系统会对传入的非推荐尺寸�
 
 声明 [分包预下载](https://opendocs.alipay.com/mini/framework/subpackages#%E5%88%86%E5%8C%85%E9%A2%84%E4%B8%8B%E8%BD%BD) 的规则。
 
-# subPackageBuildType
-
-声明 [分包内同一模块的隔离策略](https://opendocs.alipay.com/mini/framework/subpackages#%E5%88%86%E5%8C%85%E5%86%85%E5%90%8C%E4%B8%80%E6%A8%A1%E5%9D%97%E7%9A%84%E9%9A%94%E7%A6%BB%E7%AD%96%E7%95%A5) 。
-
 # plugins
 
 基础库 1.22.4 及以上，支付宝客户端 10.1.85 及以上开始支持。声明小程序需要使用的 [静态插件](https://opendocs.alipay.com/mini/plugin/plugin-usage#%E9%9D%99%E6%80%81%E5%A3%B0%E6%98%8E)。
@@ -260,8 +256,8 @@ icon 图标推荐大小为 81px \* 81px，系统会对传入的非推荐尺寸�
 ```JSON
 {
   "behavior": {
-    "shareAppMessage": "appendQuery", // 通过此配置，可选择默认分享功能是否带上query参数。
-    "decodeQuery": "disable" // 设置为disable后，基础库不再对全局/页面参数的键/值做encodeURIComponent
+    "shareAppMessage": "appendQuery", // 通过此配置，可选择默认分享功能是否带上 query 参数。
+    "decodeQuery": "disable" // 设置为disable后，基础库不再对全局/页面参数的键/值做 encodeURIComponent
   }
 }
 ```

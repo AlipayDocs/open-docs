@@ -15,7 +15,7 @@
 ```javascript
 // .js
 my.connectSocket({
-  url: 'test.php',
+  url: 'wss://...', // 开发者服务器接口地址，必须是 wss 协议
 });
 my.onSocketOpen(function () {
   console.log('WebSocket 连接已打开！');

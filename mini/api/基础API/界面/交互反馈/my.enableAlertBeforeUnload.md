@@ -1,10 +1,10 @@
 # 简介
 
-开启小程序页面返回询问对话框。
+my.enableAlertBeforeUnload 开启小程序页面返回询问对话框。
 
 调用后，用户尝试关闭当前小程序页面时会出现如下对话框：
 
-![enable.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1651127749522-3f26bd66-5891-4368-91dd-8cdbf2ccd36b.png#align=left&display=inline&height=107&margin=%5Bobject%20Object%5D&name=enable.png&originHeight=303&originWidth=849&size=26032&status=done&style=stroke&width=300)
+<img src="https://mdn.alipayobjects.com/huamei_esgcm9/afts/img/A*DWmQQbYZLtAAAAAAAAAAAAAADsaJAQ/original" width="300px"/>
 
 ## 使用限制
 
@@ -44,10 +44,11 @@ Object 类型，参数如下：
 
 ## 错误码
 
-| **错误码** | **描述** | **解决方案** |
-| --- | --- | --- |
-| 7 | has not found page when enableAlertBeforeUnload has been invoked | 执行接口时小程序还未创建出任何一个页面实例，建议在 Page.onReady 回调内执行 my.enableAlertBeforeUnload。 |
-| 8 | can not invoke enableAlertBeforeUnload at first page | 若某个页面比较复杂（即可能是第一个页面，也可能不是第一个页面），可以通过 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 获取页面栈并判断当前页面实例是不是处于第一个。 |
-| 9 | client not support enableAlertBeforeUnload | 一般不会出现，此时表明当前客户端不支持调用此接口，暂无解决方案。 |
+fail 回调将收到一个 Object 类型的参数，其 error 属性为错误码，errorMessage 为错误消息
 
-<br />
+| **错误码** | **错误消息** | **解决方案** |
+| --- | --- | --- |
+| 7 | has not found page when enableAlertBeforeUnload has been invoked | 请在 Page.onReady 以后调用。 |
+| 8 | can not invoke enableAlertBeforeUnload at first page | 不支持在首页调用此接口，请在非首页代码中调用。 |
+| 9 | client not support enableAlertBeforeUnload | 当前客户端版本不支持此接口，可忽略此报错或酌情提示升级。 |
+

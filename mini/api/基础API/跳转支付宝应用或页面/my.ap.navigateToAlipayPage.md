@@ -2,7 +2,9 @@
 
 **my.ap.navigateToAlipayPage** 是用于跳转到支付宝官方业务或运营活动页面的 API。
 
-**此 API 即将下线**。如果目标业务有 appCode 定义，请使用 [my.ap.openAlipayApp](https://opendocs.alipay.com/mini/04p771) 跳转；如果有目标页面的 URL，**推荐优先使用跳转辅助工具检测并生成代码：[https://apitools.alipay.com/tools/open-url](https://apitools.alipay.com/tools/open-url)**。
+**此 API 已停止维护，文档即将下线（线上已有业务不受影响）**。替代方案：
+- 已知目标业务的 appCode，请使用 [my.ap.openAlipayApp](https://opendocs.alipay.com/mini/04p771) 跳转。
+- 已知目标页面的 URL 或 scheme，请尝试使用 [my.ap.openURL](https://opendocs.alipay.com/mini/04iy2y) 。**推荐优先使用[跳转辅助工具](https://apitools.alipay.com/tools/open-url)检测和生成代码**。
 
 ## 跳转支付宝应用或页面指南
 
@@ -33,11 +35,11 @@
 </tr>
 <tr>
   <td>域名为 ur.alipay.com 或 m.alipay.com 的短链接<br>或以 https&colon;//ds.alipay.com/?scheme= 开头的 URL</td>
-  <td>使用 [跳转辅助工具](https://apitools.alipay.com/tools/open-url) 检测并生成代码</td>
+  <td>使用 <a taget="_blank" href="https://apitools.alipay.com/tools/open-url">跳转辅助工具</a>检测并生成代码</td>
 </tr>
 <tr>
   <td>其他情况</td>
-  <td>[开放范围](https://opendocs.alipay.com/mini/04iy2y#%E5%BC%80%E6%94%BE%E8%8C%83%E5%9B%B4)内的小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
+  <td><a taget="_blank" href="https://opendocs.alipay.com/mini/04iy2y#%E5%BC%80%E6%94%BE%E8%8C%83%E5%9B%B4">开放范围</a>内的小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
 </tr>
 <tr>
   <td rowspan=3>支付宝 scheme<br><i>alipays://*</i></td>
@@ -46,11 +48,11 @@
 </td>
 <tr>
   <td>scheme 中的 appId 为 20000067</td>
-  <td>使用 [跳转辅助工具](https://apitools.alipay.com/tools/open-url) 检测并生成代码</td>
+  <td>使用 <a taget="_blank" href="https://apitools.alipay.com/tools/open-url">跳转辅助工具</a>检测并生成代码</td>
 </td>
 <tr>
   <td>其他情况</td>
-  <td>[开放范围](https://opendocs.alipay.com/mini/04iy2y#%E5%BC%80%E6%94%BE%E8%8C%83%E5%9B%B4)内的小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
+  <td><a taget="_blank" href="https://opendocs.alipay.com/mini/04iy2y#%E5%BC%80%E6%94%BE%E8%8C%83%E5%9B%B4">开放范围</a>内的小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
 </tr>
 <tr>
   <td rowspan=2>非支付宝 URL</td>
@@ -59,7 +61,7 @@
 </tr>
 <tr>
   <td>第三方页面</td>
-  <td>[开放范围](https://opendocs.alipay.com/mini/04iy2y#%E5%BC%80%E6%94%BE%E8%8C%83%E5%9B%B4)内的小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
+  <td><a taget="_blank" href="https://opendocs.alipay.com/mini/04iy2y#%E5%BC%80%E6%94%BE%E8%8C%83%E5%9B%B4">开放范围</a>内的小程序，使用 my.ap.openURL（需在小程序控制台申请添加白名单）；其他类目的小程序，暂不支持跳转</td>
 </tr>
 </table>
 

@@ -44,7 +44,7 @@ Object 类型，参数如下：
 
 | **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| quality | String | 否 | 成像质量。可选值：<ul><li>high：高质量。</li><li>lnormal：普通质量。</li><li>low：低质量</li></ul> |
+| quality | String | 否 | 成像质量。可选值：<ul><li>high：高质量。</li><li>normal：普通质量。</li><li>low：低质量</li></ul> |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |

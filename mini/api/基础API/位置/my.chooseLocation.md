@@ -19,77 +19,15 @@
 
 ## 示例代码
 
-### JavaScript
 ```javascript
-Page({
-  data: {
-    longitude: '',
-    latitude: '',
-    name: '',
-    address: '',
+my.chooseLocation({
+  success:(res) => {
+    console.log(JSON.stringify(res));
   },
-  chooseLocation() {
-    my.chooseLocation({
-      success:(res) => {
-        console.log(JSON.stringify(res));
-        this.setData({
-          longitude:res.longitude,
-          latitude:res.latitude,
-          name:res.name,
-          address:res.address
-        })
-      },
-      fail:(error) => {
-        my.alert({ content: '调用失败：' + JSON.stringify(error) });
-      },
-    });
+  fail:(error) => {
+    my.alert({ content: '调用失败：' + JSON.stringify(error) });
   },
-})
-```
-
-
-### AXML
-```html
-<view class="page">
-  <view class="page-section">
-    <view class="page-section-demo">
-      <text>经度:</text>
-      <input value="{{longitude}}"></input>
-    </view>
-    <view class="page-section-demo">
-      <text>纬度:</text>
-      <input value="{{latitude}}"></input>
-    </view>
-    <view class="page-section-demo">
-      <text>位置名称:</text>
-      <input value="{{name}}"></input>
-    </view>
-    <view class="page-section-demo">
-      <text>详细位置:</text>
-      <input value="{{address}}"></input>
-    </view>
-    <view class="page-section-btns">
-      <view onTap="chooseLocation">选择位置</view>
-    </view>
-  </view>
-</view>
-```
-
-### ACSS
-```css
-.page-body-info {
-  height: 250rpx;
-}
-.page-body-text-location {
-  display: flex;
-  font-size: 50rpx;
-}
-.page-body-text-location text {
-  margin: 10rpx;
-}
-.page-section-location-text {
-  color: #49a9ee;
-}
+});
 ```
 
 ## 入参
@@ -98,6 +36,8 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
+| latitude | Number | 否 | 预设纬度，传入该参数将自动定位到该点。 |
+| longitude | Number | 否 | 预设经度，传入该参数将自动定位到该点。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |

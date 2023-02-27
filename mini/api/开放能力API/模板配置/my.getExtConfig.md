@@ -1,4 +1,4 @@
-﻿# 简介
+# 简介
 
 **my.getExtConfig** 是获取 [小程序模板](https://opendocs.alipay.com/mini/isv/creatminiapp) 自定义数据字段（即 [ext.json](https://opendocs.alipay.com/isv/03kqzl#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 中的 ext 字段）的异步接口。      
 
@@ -15,7 +15,7 @@
 - 2.3 小程序实例在客户端被加载运行，它包含与模板小程序一样的代码和个性化的 ext.json，运行时 my.getExtConfig/my.getExtConfigSync 读取此 ext.json 文件中的 ext 字段。  
 
 直到最后一步（即 2.3），小程序才能真正获取和使用最终的 ext 信息。这个较晚的时间点会带来一些调试方面的困难，发现相关代码问题往往需要模板小程序重新发布提审。
-为了减少反复、节约时间，建议在 1.2 中仔细设计和修改 ext.json，尽可能模拟真实情况并充分调试相关代码，在 2.1 构造真实 ext 内容时严格参照 1.2 中使用的 ext.json 格式。
+为了减少反复操作，建议在 1.2 中仔细设计和修改 ext.json，尽可能模拟真实情况并充分调试相关代码，在 2.1 构造真实 ext 内容时严格参照 1.2 中使用的 ext.json 格式。
 
 ## 使用限制
 
@@ -58,6 +58,7 @@ Object 类型，属性如下：
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | data | Object | 模板 `ext.json` 中的 [ext](https://opendocs.alipay.com/mini/isv/creatminiapp#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 字段对象。 |
+| extConfig | Object | 模板 `ext.json` 中的 [ext](https://opendocs.alipay.com/mini/isv/creatminiapp#ext%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 字段对象。 基础库 2.8.5 及以上版本开始支持。|
 
 `my.getExtConfig` 的返回值相比 `my.getExtConfigSync` 多了一层 `{ data }` 对象。
 

@@ -5,11 +5,15 @@
 ## 使用限制
 
 - 基础库 [2.7.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 或更高版本。若版本较低，建议采取 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
-- 开发者可以在回调中进行页面重定向，但必须在回调中同步处理，异步处理（例如 setTimeout 异步执行）无效。
-- 若开发者没有调用 my.onPageNotFound 绑定监听，也没有声明 **App.onPageNotFound**，当跳转页面不存在时，将推入页面不存在提示页面。
-- 如果回调中又重定向到另一个不存在的页面，将推入页面不存在提示页面，并且不再第二次回调。
-- 仅响应小程序冷启动或热启动时的页面找不到事件，不支持处理 [路由 API](https://opendocs.alipay.com/mini/api/fu8l65) 的失败场景。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+
+## 注意事项
+
+- 开发者可以在回调中进行页面重定向，但必须在回调中同步处理，异步处理（例如 setTimeout 异步执行）无效。
+- 若开发者没有调用 my.onPageNotFound 绑定监听，也没有声明 **App.onPageNotFound**，当跳转页面不存在时，将推入支付宝原生的 **页面不存在** 提示页面。
+- 回调中重定向的页面必须是已经加载好资源的页面，如果是未加载的分包页面和插件页面，运行时会报错，无法完成重定向。
+- 如果回调中又重定向到另一个不存在的页面，将推入支付宝原生的 **页面不存在** 提示页面，并且不再第二次回调。
+- 仅响应小程序冷启动或热启动时的页面找不到事件，不支持处理 [路由 API](https://opendocs.alipay.com/mini/api/fu8l65) 的失败场景。
 
 # 接口调用
 
@@ -18,12 +22,15 @@
 ### .js 示例代码
 
 ```javascript
-//.js
+//app.js
 my.onPageNotFound(res => {
   my.redirectTo({
     url: '/pages/...',
   }); // 如果是 tabbar 页面，请使用 my.switchTab
 });
+
+App({
+})
 ```
 
 ## 入参

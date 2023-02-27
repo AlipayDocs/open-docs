@@ -2,7 +2,9 @@
 
 **my.navigateToMiniProgram** 是用于跳转到其它小程序的 API。
 
-如需跳转到目标小程序的指定开发版本，可查看 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing)。
+如需跳转到目标小程序的指定开发版本，可进行 [联调设置](https://opendocs.alipay.com/mini/ide/integration-testing)。  
+如果已知目标小程序的 scheme，请参见后文常见问题，转换成 my.navigateToMiniProgram 调用。
+
 
 # 接口调用
 
@@ -100,7 +102,13 @@ function schemeToParams(scheme) {
     return { message: '! 非 alipays: 开头' };
   }
   var params = {};
-  for (var [k, v] of new URL(scheme).searchParams) {
+  var parseQuery = (str) => {
+    return str.replace(/^.*?\?/, '').split('&').map(s => {
+      var p = s.includes('=') ? s.indexOf('=') : s.length;
+      return [s.slice(0, p), s.slice(p + 1)].map(decodeURIComponent);
+    });
+  };
+  for (var [k, v] of parseQuery(scheme)) {
     if (k == 'appId') {
       if (v.length != 16) {
         return { message: `! 非 16 位 appId '${v}'` };
@@ -109,7 +117,7 @@ function schemeToParams(scheme) {
       k = 'path';
     } else if (k == 'query') {
       var o = {};
-      for (var [x, y] of new URL('x:y?' + v).searchParams) {
+      for (var [x, y] of parseQuery(v)) {
         o[x] = y;
       }
       v = o;

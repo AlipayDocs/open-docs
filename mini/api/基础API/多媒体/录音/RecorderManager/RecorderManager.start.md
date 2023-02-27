@@ -5,7 +5,8 @@
 ## 使用限制
 
 - 支付宝客户端 10.1.60，**基础库** [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
-- 此 API 暂仅支持企业支付宝小程序使用。
+- 小程序开发者工具（IDE）暂不支持调试此 API，请以真机调试结果为准。
+- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 # 接口调用
 
@@ -25,15 +26,15 @@ recorderManager.start({
 | **参数** | **类型** | **默认值** | **必填** | **描述** | **备注** |
 | --- | --- | --- | --- | --- | --- |
 | duration | Number | 60000 | 否 | 录音的时长，单位毫秒（ms），最大值 180000（3 分钟）。 | - |
+| format | String | aac | 否 | 音频格式，支持格式：aac、mp3。**参数值需小写**。 | mp3 从支付宝客户端版本 10.1.80 开始支持。 |
 | hideTips | Boolean | false | 否 | 隐藏录音图标。 | 从支付宝客户端版本 10.1.85 开始支持。|
-| sampleRate | Number | 8000 | 否 | 采样率。 | - |
-| numberOfChannels | Number | 1 | 否 | 录音通道数。 | - |
-| encodeBitRate | Number | 48000 | 否 | 编码码率，有效值见下方 **采样率与编码码率限制 **表。 | - |
-| format | String | aac | 否 | 音频格式,支持格式：aac、mp3。**参数值需小写**。 | mp3 从支付宝客户端版本 10.1.80 开始支持。 |
-| frameSize | Number | - | 否 | 指定帧大小，单位 KB。传入 frameSize 后，每录制指定帧大小的内容后，会回调录制的文件内容，不指定则不会回调。**暂仅支持 mp3 格式**。 | 支付宝客户端版本 10.1.80 开始支持。 |
+| numberOfChannels | Number | 1 | 否 | 录音通道数。可传 1 或 2。 | - |
+| sampleRate | Number | 8000 | 否 | 采样率。有效值见下方 **采样率（sampleRate）的合法值** 表。 | - |
+| encodeBitRate | Number | 48000 | 否 | 编码码率。有效值见下方 **采样率与编码码率限制** 表。 | - |
+| frameSize | Number | - | 否 | 指定帧大小，单位 KB。</br> 传入 frameSize 后，每录制指定帧大小的内容，才会回调录制的文件内容，回调事件为 [RecorderManager.onFrameRecorded](https://opendocs.alipay.com/mini/api/recordermanager/onframerecorded) 事件，不指定则不会回调。**暂仅支持 mp3 格式**。 | 支付宝客户端版本 10.1.80 开始支持。 |
 | audioSource | String | auto | 否 | 指定录音的音频输入源，可通过 [my.getAvailableAudioSources](https://opendocs.alipay.com/mini/00bg4t) 获取当前可用的音频源。 | - |
 
-### sampleRate 的合法值
+### 采样率（sampleRate）的合法值
 
 | **值** | **说明**       |
 | ------ | -------------- |
@@ -47,16 +48,10 @@ recorderManager.start({
 | 44100  | 44100 采样率。 |
 | 48000  | 48000 采样率。 |
 
-### numberOfChannels 的合法值
-
-| **值** | **说明**   |
-| ------ | ---------- |
-| 1      | 1 个通道。 |
-| 2      | 2 个通道。 |
 
 ### 采样率与编码码率限制
 
-每种采样率有对应的编码码率范围有效值，设置不合法的采样率或编码码率会导致录音失败，具体对应关系如下表：
+每种采样率有对应的编码码率范围有效值，设置**不合法的采样率或编码码率会导致录音失败**，具体对应关系如下表：
 
 | **采样率** | **编码码率**     |
 | ---------- | ---------------- |

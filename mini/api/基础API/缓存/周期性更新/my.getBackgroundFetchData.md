@@ -6,7 +6,7 @@
 
 - 支付宝客户端 10.2.36 版本，基础库 [2.7.11](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
-- 推荐在 [IDE 3.0.0](https://opendocs.alipay.com/mini/ide/download) 及以上版本调用该 API，在旧版 IDE 上调用该 API 将可能报错。
+- [IDE 3.0.0](https://opendocs.alipay.com/mini/ide/download) 及以上开始支持此 API。旧版 IDE 上调用可能报错。
 
 # 接口调用
 
@@ -38,6 +38,7 @@ Object 类型，属性如下：
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
 ### Function success
+
 success 回调的参数是一个 Object，包含如下属性：
 | **属性**    | **类型** | **描述**                       |
 | ----------- | -------- | ------------------------------ |
@@ -49,5 +50,6 @@ success 回调的参数是一个 Object，包含如下属性：
 
 | **错误码** | **说明**       | **解决方案**    |
 | ---------- | -------------- |  ------------------------------------- |
-| 2          | 参数错误       | 检查传参是否有误。 |
+| 2          | 参数错误       | 检查入参的正确性和有效性。 |
 | 3          | 没有预加载数据 | 检查 preload.json 配置是否正确，以及预拉取对应的能力（my.request 或 my.getLocation）在小程序中是否可以正常调用并返回数据。 |
+| 5          | 对应的预加载需要授权，用户未授权| 先通过正常（非预拉取）方式调用对应的 API（如 my.getLocation），取得用户授权。 ｜

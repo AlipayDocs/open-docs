@@ -36,7 +36,7 @@
 ## 扩展组件使用报错一般自助排查
 扩展组件是使用小程序自定义组件能力实现的，基于[小程序自定义组件规范](https://opendocs.alipay.com/mini/framework/custom-component-overview)。
 
-- 检查是否已经安装对应扩展组件库，[UI 组件](https://opendocs.alipay.com/mini/component-ext/ui-overview)：mini-antui，[营销组件](https://opendocs.alipay.com/mini/component-ext/marketing-components)：ant-mini-scratch-card。
+- 检查是否已经安装对应扩展组件库，[UI 组件](https://ant-design-mini.antgroup.com)：antd-mini。
 - 有些自定义组件属性和对象依赖 component2 编译，检查 IDE 模拟器右上角 > 详情 > 项目配置 > 启动component2编译 是否勾选启动。
 - 可查看官方demo内的相关扩展组件实现代码，参考具体写法。
 - 使用 IDE 调试器提供的样式选取功能，排查添加样式属性是否生效。

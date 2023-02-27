@@ -1,16 +1,8 @@
 # 简介
 
-**my.getStorageInfo** 是获取当前 storage 的相关信息的异步接口。
+**my.getStorageInfo** 是获取数据缓存相关信息的异步接口。
 
-在内嵌 webview 内获取当前 storage 的相关信息，但不会获取到当前小程序 storage 的相关信息。
-
-## 使用限制
-
-- 缓存数据本地加密存储，通过 API 读取时会自动解密返回。
-- 覆盖安装支付宝（不是先删除再安装）、关闭小程序，这两种操作均不会导致小程序缓存失效。<br />开发者调用 API 存储的缓存数据，需要自行调用对应的删除/清除 API 进行删除。<br />长期未使用或在应用中心删除的小程序的缓存数据也会被系统清理。
-- 小程序缓存默认具有支付宝账号和小程序 ID 两级隔离。
-- iOS 客户端支持 iTunes 备份。
-- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+如需读取缓存数据本身，请使用 [my.getStorage](https://opendocs.alipay.com/mini/api/azfobl) 或 [my.getStorageSync](https://opendocs.alipay.com/mini/api/ox0wna) 。
 
 ## 扫码体验
 
@@ -25,13 +17,15 @@
 ### .js 示例代码
 
 ```javascript
-// .js
 my.getStorageInfo({
   success: function (res) {
     console.log(res.keys);
     console.log(res.currentSize);
     console.log(res.limitSize);
   },
+  fail: function (err) {
+   my.alert({ title: 'getStorageInfo 失败', content: JSON.stringify(err) });
+  }
 });
 ```
 
@@ -51,6 +45,6 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 
 | **属性**    | **类型**     | **描述**                        |
 | ----------- | ------------ | ------------------------------- |
-| keys        | String Array | 当前 storage 中所有的 key。     |
-| currentSize | Number       | 当前占用的空间大小, 单位为 KB。 |
-| limitSize   | Number       | 限制的空间大小，单位为 KB。     |
+| keys        | String Array | 本地缓存数据中所有的 key。     |
+| currentSize | Number       | 已占用的空间大小，单位为 KB。 |
+| limitSize   | Number       | 可用的总空间大小，单位为 KB。     |

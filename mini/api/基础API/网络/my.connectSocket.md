@@ -190,17 +190,13 @@ SocketTask 指 WebSocket 任务，可通过 my.connectSocket 接口传入参数 
 | **错误码** | **描述** | **解决方案** |
 | --- | --- | --- |
 | 1 | 未知错误。 | - |
-| 2 | 网络连接已经存在。 | 请在调用 connectSocket 接口时，传入参数 multiple = true 以创建多个 SocketTask 实例。不传递该参数的连接只能创建一次。  |
-| 3 | URL 参数为空。 | 替换 URL 链接。 |
+| 2 | 接口参数无效。 | 替换 URL 链接。 |
+| 3 | 1.URL 参数为空。<br/> 2.该appId，SocketTaskID对应的WebSocket已存在 | 1.替换 URL 链接。<br/> 2.当创建单实例（multiple = false）的 WebSocket 时，安卓端只能创建一次。多次创建会报错。可先执行 [my.closeSocket](https://opendocs.alipay.com/mini/api/network) 关闭当前 WebSocket，再进行下一次的创建。 |
 | 4 | 无法识别的 URL 格式。 | 替换 URL 链接。 |
 | 5 | URL 必须以 ws 或者 wss 开头。 | 替换 URL 链接。 |
 | 6 | 连接服务器超时。 | 稍后重试。 |
-| 7 | 服务器返回的 https 证书无效。 | 小程序必须使用 HTTPS/WSS 发起网络请求。请求时系统会对服务器域名使用的 HTTPS 证书进行校验，如果校验失败，则请求不能成功发起。由于系统限制，不同平台对于证书要求的严格程度不同。为了保证小程序的兼容性，建议开发者按照最高标准进行证书配置，并使用相关工具检查现有证书，确保其符合要求。 |
-| 8 | 服务端返回协议头无效。 | 从 2019 年 5 月开始新创建的小程序，默认强制使用 HTTPS 和 WSS 协议，不再支持 HTTP 和 WS 协议。 |
-| 9 | WebSocket 请求没有指定 Sec-WebSocket-Protocol 请求头。 | 请指定 Sec-WebSocket-Protocol 请求头。 |
-| 10 | 网络连接没有打开，无法发送消息。 | <ul><li><b>在未传入参数 multiple = true 时</b>，请正常连接服务器后再调用 [my.sendSocketMessage](https://opendocs.alipay.com/mini/api/mr91d1)。</li><li>发送数据消息，可通过 [my.onSocketOpen](https://opendocs.alipay.com/mini/api/itm5og) 监听事件来判断与服务器建立正确连接。</li></ul><br />**注意**：<br /><ul><li>通过 WebSocket 连接发送数据，需要先使用 [my.connectSocket](https://opendocs.alipay.com/mini/api/vx19c3) 发起连接，在 [my.onSocketOpen](https://opendocs.alipay.com/mini/api/itm5og) 回调之后再调用 [my.sendSocketMessage](https://opendocs.alipay.com/mini/api/mr91d1) 发送数据。</li><li><b>在传入参数 multiple = true 时</b>，为 WebSocket 多实例模式。可在 socketTask.onOpen() 回调中再使用 socketTask.send() 接口发送消息。</li></ul> |
-| 11 | 消息发送失败。 | 稍后重试。 |
 | 12 | 无法申请更多内存来读取网络数据。 | 请检查内存。 |
+| 20 | 请求url不支持ws，请使用wss | 请使用 wss 协议的 url。 |
 
 
 # 常见问题 FAQ

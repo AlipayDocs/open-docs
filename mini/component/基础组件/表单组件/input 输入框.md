@@ -59,7 +59,7 @@
 
 ## 为何 input 输入框聚焦的时候出现白屏，只有键盘弹出来？
 
-因为使用定位导致键盘把页面 input 内容顶上去了，建议使用 [SearchBar](https://opendocs.alipay.com/mini/component-ext/search-bar) 搜索框。<br />需要判断客户端机型为 安卓还是 iOS，从而设置 `enableNative`属性，然后在 app.json 文件 window 对象内，设置 `"enableInPageRenderInput":"YES"`。
+因为使用定位导致键盘把页面 input 内容顶上去了，建议使用 [SearchBar](https://ant-design-mini.antgroup.com/components/input#searchbar-%E6%90%9C%E7%B4%A2%E6%A1%86) 搜索框。<br />需要判断客户端机型为 安卓还是 iOS，从而设置 `enableNative`属性，然后在 app.json 文件 window 对象内，设置 `"enableInPageRenderInput":"YES"`。
 
 ## 为何 input 输入的内容没有在输入框显示？
 
