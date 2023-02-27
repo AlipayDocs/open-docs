@@ -133,7 +133,8 @@ this.mapCtx.updateComponents({
 | polyline        | Array    | 否       | 线段覆盖物数组。格式详见 [polyline](https://opendocs.alipay.com/mini/component/map#polyline)。   |
 | include-points  | Array    | 否       | 包含点。地图的可视区域将至少包含这些点。                                                         |
 | include-padding | Object   | 否       | 内边距。设置由 include-points 确定的可视区域与地图的内边距。详见 **Object include-padding**      |
-| ground-overlays | Array&lt;Object&gt;    | 否       | 贴图覆盖物。详见 **Array ground-overlays**                                                
+| ground-overlays | Array&lt;Object&gt;    | 否       | 贴图覆盖物。详见 **Array ground-overlays**                                    |
+| custom-map-style | String   | 否 | 地图样式。'default' 为默认样式。'light' 为精简样式。                       |
 | setting         | Object   | 否       | 地图设置，如手势功能/地图信息等。详见 **Object setting**                                         |
 | command         | Object   | 否       | 命令。目前仅支持 markerAnim（标记点动画）。详见 **Object command**                               |
 
@@ -150,7 +151,7 @@ this.mapCtx.updateComponents({
 | **属性** | **类型** | **必填** | **描述** |
 | -------- | -------- | -------- | -------- |
 | id     | String   | 否      | 覆盖物 id。用于刷新指定贴图覆盖物。 |
-| include-points  | Array    | 否       | 包含点。用于确定贴图覆盖物位置。                   |
+| include-points  | Array    | 否       | 包含点。用于确定贴图覆盖物位置。详见 **Object include-padding**    |
 | image      | String   | 否       | 贴图覆盖物图片的路径 |
 | alpha   | Number   | 否      | 贴图覆盖物不透明度。默认为 1。 |
 | zIndex   | Number   | 否      | 设置贴图覆盖物层级。 |
