@@ -1,10 +1,11 @@
 # 简介
 
-**my.createMapContext** 创建用于操作地图组件的 [MapContext](https://opendocs.alipay.com/mini/api/mapcontext) 对象。
+**my.createMapContext** 创建用于 [MapContext](https://opendocs.alipay.com/mini/api/mapcontext) 对象，用于操作地图组件。
+
+请在 Page.onReady 后调用。
 
 ## 使用限制
 
-- my.createMapContext 需要在 Page.onReady 以后执行。
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 - 小程序开发者工具（IDE）暂不支持调试此 API，请使用 [真机调试](https://opendocs.alipay.com/mini/ide/remote-debug) 功能在真机进行调试。
 
