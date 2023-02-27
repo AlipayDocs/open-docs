@@ -37,10 +37,3 @@ Page({
 ## 返回值
 
 返回值为 [MapContext](https://opendocs.alipay.com/mini/api/mapcontext)。
-
-## 错误码
-
-错误码信息可查看：
-
-- [Andriod 地图错误码对照表](https://lbs.amap.com/api/android-sdk/guide/map-tools/error-code)
-- [iOS 地图错误码对照](https://lbs.amap.com/api/ios-sdk/guide/map-tool/errorcode/)
