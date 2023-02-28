@@ -134,6 +134,7 @@ this.mapCtx.updateComponents({
 | include-points  | Array    | 否       | 包含点。地图的可视区域将至少包含这些点。详见 **Array&lt;Object&gt; include-points**                               |
 | include-padding | Object   | 否       | 内边距。设置由 include-points 确定的可视区域与地图的内边距。详见 **Object include-padding**      |
 | ground-overlays | Array&lt;Object&gt;    | 否       | 贴图覆盖物。详见 **Array ground-overlays**                                    |
+| tile-overlay | Object    | 否       | 网格贴图覆盖物。详见 **Object tile-overlay**                                    |
 | custom-map-style | String   | 否 | 地图样式。'default' 为默认样式。'light' 为精简样式。                       |
 | setting         | Object   | 否       | 地图设置，如手势功能/地图信息等。详见 **Object setting**                                         |
 | command         | Object   | 否       | 命令。目前仅支持 markerAnim（标记点动画）。详见 **Object command**                               |
@@ -161,6 +162,16 @@ this.mapCtx.updateComponents({
 | -------- | -------- | -------- | ------------- |
 | latitude  | Number   | 是       | 纬度。  |
 | longitude  | Number   | 是       | 经度。  |
+
+
+### Object tile-overlay
+| **属性** | **类型** | **必填** | **描述** |
+| -------- | -------- | -------- | -------- |
+| url     | String   | 否      | 网格贴图地址描述。'type = 1'，url 和图片路径格式需为 '{url}&x={x}&y={y}&z={z}'。为 0 时, 服务器图片路径格式为 '{url}/{z}/{x}-{y}-{z}.png'。 其中 xyz 为贴图的 x 坐标，y 坐标，和缩放级别 zoom。 |
+| type | Number    | 否       | 贴图地址转换类型。默认 'type = 1'。 |
+| tileWidth      | Number   | 否       | 网格贴图宽度。需要为 2 的整数次幂。默认为 256。 |
+| tileHeight   | Number   | 否      | 网格贴图高度。需要为 2 的整数次幂。默认为 256。 |
+| zIndex   | Number   | 否      | 设置覆盖物层级。 |
 
 
 ### Object setting
