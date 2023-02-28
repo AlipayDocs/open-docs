@@ -129,6 +129,8 @@ this.mapCtx.updateComponents({
 | latitude        | Number   | 否       | 中心纬度。                                                                                       |
 | longitude       | Number   | 否       | 中心经度。                                                                                       |
 | scale           | Number   | 否       | 缩放级别，取值范围为 5-18。默认值为 16。                                                         |
+| skew           | Number   | 否        | 倾斜角度，范围 0 ~ 80。                                                     |
+| rotate           | Number   | 否       | 地图顺时针旋转的角度，范围 0 ~ 360。                                                      |
 | markers         | Array    | 否       | 点标记覆盖物数组。格式详见 [markers](https://opendocs.alipay.com/mini/component/map#markers)  。 |
 | polyline        | Array    | 否       | 线段覆盖物数组。格式详见 [polyline](https://opendocs.alipay.com/mini/component/map#polyline)。   |
 | include-points  | Array    | 否       | 包含点。地图的可视区域将至少包含这些点。详见 **Array&lt;Object&gt; include-points**                               |
