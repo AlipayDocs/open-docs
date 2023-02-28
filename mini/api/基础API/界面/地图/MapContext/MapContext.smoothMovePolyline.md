@@ -120,7 +120,7 @@ Page({
 | iconPath | String | 否 | 折线纹理地址。iconPath 引用图片宽高需要为 2 的整数次幂 |
 | iconWidth | Number | 否 | 折线纹理宽度。设置 iconPath 后生效 |
 | zIndex | Number | 否 | 折线的层级。 |
-| colorList | Array | 否 | 折线颜色。如：`colorList:['#ff0000']` 。iOS 上暂不支持 colorList 功能|
+| colorList | Array | 否 | 折线的各段颜色。长度为 points 的 size - 1。例：`colorList:['#ff0000']` 。iOS 上暂不支持 colorList 功能。|
 | action | String | 否 | 操作类型。'start'（默认值）表示开始移动。'stop' 表示结束绘制动画，折线直接绘制完成。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |
