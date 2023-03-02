@@ -170,7 +170,7 @@ this.mapCtx.updateComponents({
 | **属性** | **类型** | **必填** | **描述** |
 | -------- | -------- | -------- | -------- |
 | url  | String   | 否      | 网格贴图地址前缀。|
-| type | Number   | 否      | 贴图地址格式类型。type 为 1（默认值）时，贴图地址为 {url}&x={x}&y={y}&z={zoom}.png，type 为 0 时, 贴图地址为 {url}/{zoom}/{x}-{y}-{zoom}.png。 其中 x 和 y 为贴图坐标，zoom 为缩放级别。 |
+| type | Number   | 否      | 网络贴图地址格式。为 1（默认值）时，贴图地址为 {url}&x={x}&y={y}&z={zoom}.png，为 0 时地址为 {url}/{zoom}/{x}-{y}-{zoom}.png。 其中 x 和 y 为贴图坐标，zoom 为缩放级别。 |
 | tileWidth      | Number   | 否       | 网格贴图宽度。需要为 2 的整数次幂。默认为 256。 |
 | tileHeight   | Number   | 否      | 网格贴图高度。需要为 2 的整数次幂。默认为 256。 |
 | zIndex   | Number   | 否      | 设置覆盖物层级。 |
