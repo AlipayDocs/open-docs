@@ -35,17 +35,6 @@ A：获取会员信息已下架，若之前创建的应用已添加了获取会�
 
 A：部分支付宝用户没有设置昵称，故获取不到用户昵称。
 
-### Q：小程序可以同时获取手机号、头像、昵称等公开信息吗?
-
-A：不能在同一个弹框中同时获取会员手机号和头像、昵称。
-
-可分别获取会员手机号，和获取用户头像及昵称。
-
-详情可查看：
-
-- [my.getPhoneNumber](https://opendocs.alipay.com/mini/api/getphonenumber)
-- [my.getOpenUserInfo](https://opendocs.alipay.com/mini/api/ch8chh)（获取头像、昵称信息）
-
 ### Q：“获取会员基础信息” 可以获取支付宝用户的 user_id 吗？
 
 A：不可以。获取支付宝用户的 user_id 需要在服务端调用 [alipay.system.oauth.token](https://opendocs.alipay.com/mini/02qkj4)（换取授权访问令牌接口）。
