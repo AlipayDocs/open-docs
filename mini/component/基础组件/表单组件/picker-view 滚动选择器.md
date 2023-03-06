@@ -40,6 +40,7 @@
 | indicator-class | String | 选中框的类名。<br />**版本要求：** 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | mask-style | String | 蒙层的样式。<br />**版本要求：** 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | mask-class | String | 蒙层的类名。<br />**版本要求：** 基础库 [1.10.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| immediate-change | Boolean | 是否在手指松开时立即触发 change 事件，若不开启则会在滚动动画结束后触发 change 事件。<br/>**默认值**：false <br/>**版本要求**：基础库 [2.8.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上。|
 | onChange | EventHandle | 滚动选择 value 改变时触发，`event.detail = {value: value}` value 为数组，表示 picker-view 内的 picker-view-column index 索引 ，从 0 开始。 |
-| onPickStart | EventHandle | 当滚动选择开始时候触发事件。 <br />**版本要求：** 基础库 [2.8.0](https://opendocs.alipay.com/mini/ide/framework-changelog-v2) 及以上。 |
-| onPickEnd | EventHandle | 当滚动选择结束时候触发事件。<br />**版本要求：** 基础库 [2.8.0](https://opendocs.alipay.com/mini/ide/framework-changelog-v2) 及以上。 |
+| onPickStart | EventHandle | 当滚动选择开始时候触发事件。 <br />**版本要求：** 基础库 [2.8.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上。 |
+| onPickEnd | EventHandle | 当滚动选择结束时候触发事件。<br />**版本要求：** 基础库 [2.8.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上。 |
