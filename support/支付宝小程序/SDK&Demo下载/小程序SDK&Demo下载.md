@@ -25,9 +25,3 @@
 启动 IDE 开发者工具通过界面 **小程序** > **添加项目** > **选择端（可多选）** > **选择模板** > 找到本示例对应的模板点击 **下一步** > 配置项目名称和路径 > 点击 **完成**。
 
 ![1.png](https://cdn.nlark.com/yuque/0/2021/png/179989/1624522438781-2aa6a47f-6ea7-4d3a-aac3-cb6b78622636.png#align=left&display=inline&height=1242&margin=%5Bobject%20Object%5D&name=1.png&originHeight=1242&originWidth=1744&size=276584&status=done&style=none&width=1744)
-
-### AMPE 包下载
-版本号：1.0.0<br />发布日期：2020-06-10
-
-- AMPE_开发整合包下载地址：[点此下载](https://gw.alipayobjects.com/os/bmw-prod/655964b8-d528-431b-af2a-f21c7ca1346c.zip)。<br />
-- AMPE_快速体验包下载地址：[点此下载](https://gw.alipayobjects.com/os/bmw-prod/600f4f84-feab-4a69-9da0-04d3406e89ca.zip)。<br />
