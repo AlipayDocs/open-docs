@@ -28,7 +28,7 @@
     <th><b>功能说明</b></th>
   </tr>
   <tr>
-    <td rowspan="16">低功耗蓝牙</td>
+    <td rowspan="15">低功耗蓝牙</td>
     <td><a href="https://opendocs.alipay.com/mini/api/tmew6e">my.connectBLEDevice</a></td>
     <td>连接低功耗蓝牙设备。</td>
   </tr>
@@ -83,10 +83,6 @@
   <tr>
     <td><a href="https://opendocs.alipay.com/mini/api/vmp2r4">my.writeBLECharacteristicValue</a></td>
     <td>向低功耗蓝牙设备特征值中写入数据。</td>
-  </tr>
-  <tr>
-    <td><a href="https://opendocs.alipay.com/mini/02pexh">my.showBLEPermissionGuide</a></td>
-    <td>蓝牙统一授权/开关引导流程。</td>
   </tr>
   <tr>
     <td><a href="https://opendocs.alipay.com/mini/02pdp9">my.getBLEDeviceStatus</a></td>
