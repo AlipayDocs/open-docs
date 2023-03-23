@@ -44,7 +44,7 @@ Page({
 		} 
 	},
   	onReady() {
-    	var lottieContext = my.createLottieContext(elementId);
+    	var lottieContext = my.createLottieContext(this.data.item.id);
 		lottieContext.play()
     }
 })
