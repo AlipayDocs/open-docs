@@ -72,7 +72,7 @@ App({
 
 - 不要在 `onShow()` 中进行 [my.redirectTo](https://opendocs.alipay.com/mini/api/fh18ky) 或 [my.navigateTo](https://opendocs.alipay.com/mini/api/zwi8gx) 等操作页面栈的行为。
 - 不要在 `onLaunch()` 里调用 [getCurrentPages](https://opendocs.alipay.com/mini/framework/getcurrentpages) 方法，因为此时 `page` 还未生成。
-- app.json 应用配置 `behaivor` 支持配置项 `decodeQuery`，当设置为 `disable` 后，不会再对键值额外再做 `decodeComponent`，可查看 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。
+- app.json 应用配置 `behavior` 支持配置项 `decodeQuery`，当设置为 `disable` 后，不会再对键值额外再做 `decodeComponent`，可查看 [小程序全局 / 页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)。
 
 ## onHide()
 
