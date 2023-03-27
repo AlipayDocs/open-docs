@@ -13,8 +13,8 @@ HTTP 413 错误 （ Request entity too large 请求实体太大 ）“the server
    - 输入命令：vim /etc/nginx/nginx.conf。
    - 在 http{} 中输入：
 ```
-client_max_body_size 8M;(配置请求体缓存区大小,) 
-client_body_buffer_size 128k;(设置客户端请求体最大值)   
+client_max_body_size 8M;(设置客户端请求体最大值) 
+client_body_buffer_size 128k;(配置请求体缓存区大小) 
 fastcgi_intercept_errors on;
 ```
 
