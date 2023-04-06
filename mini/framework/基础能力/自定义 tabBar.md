@@ -67,13 +67,11 @@
 
 #### customize-tab-bar/index.axml
 ```html
-<cover-view class="tab-bar">
-  <view class="items" >
-    <view a:for="{{list}}" onTap="tap" data-value={{item}} data-index={{index}}>
-      <view style="color: {{selected == index ? selectedColor : textColor}}">{{item.name}}</view>
-    </view>
+<view class="tab-bar">
+  <view a:for="{{list}}" onTap="tap" data-value={{item}} data-index={{index}} class="item">
+    <view style="color: {{selected == index ? selectedColor : textColor}}">{{item.name}}</view>
   </view>
-</cover-view>
+</view>
 ```
 
 #### customize-tab-bar/index.js
