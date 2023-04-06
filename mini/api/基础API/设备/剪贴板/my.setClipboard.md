@@ -84,6 +84,14 @@ Page({
   handleCopy() {
     my.setClipboard({
       text: this.data.text,
+      success: (res) => {
+        // 如有必要可增加复制成功后的 toast 提示
+        if (res.success) {
+          my.showToast({
+            content: "复制成功"
+          });
+        }
+      }
     });
   },
   handlePaste() {
