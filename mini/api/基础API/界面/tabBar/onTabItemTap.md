@@ -34,3 +34,5 @@ Object 类型，参数如下：
 | index | Number | 被点击 tabItem 的序号，从0开始。 |
 | pagePath | String | 被点击 tabItem 的页面路径。 |
 | text | String | 被点击 tabItem 的页面名称。 |
+# Bug & Tip
+-Tip 首次打开目标页面时，onTabItemTap 会在目标页面 onShow 后触发。重新回到目标页面时，onTabItemTap 会在目标页面 onShow 前触发。
