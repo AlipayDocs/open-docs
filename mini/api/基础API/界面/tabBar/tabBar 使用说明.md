@@ -3,7 +3,6 @@
 **注意**：
 
 - 通过页面跳转（`my.navigateTo`）或者页面重定向（`my.redirectTo`）所到达的页面，即使它是定义在 tabBar 配置中的页面，也不会显示底部的 tab 栏。
-- `tabBar` 的第一个页面必须是首页。
 - `tabBar` 的 `icon` 暂不支持 GIF 动画。
 
 # tabBar 配置
