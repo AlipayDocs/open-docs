@@ -46,11 +46,11 @@
   </tr>
   <tr>
     <td><a href="https://opendocs.alipay.com/mini/api/fmg9gg">my.getBLEDeviceCharacteristics</a></td>
-    <td>获取蓝牙设备所有 characteristic（特征值）。</td>
+    <td>获取低功耗蓝牙设备某个服务中所有特征（characteristic）。</td>
   </tr>
   <tr>
     <td><a href="https://opendocs.alipay.com/mini/api/uzsg75">my.getBLEDeviceServices</a></td>
-    <td>获取所有已发现的蓝牙设备，包括已经和本机处于连接状态的设备。</td>
+    <td>获取指定低功耗蓝牙设备所有服务列表。</td>
   </tr>
   <tr>
     <td><a href="https://opendocs.alipay.com/mini/api/my.getbledevicerssi">my.getBLEDeviceRSSI</a></td>
