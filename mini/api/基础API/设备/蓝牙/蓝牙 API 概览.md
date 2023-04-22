@@ -28,7 +28,7 @@
     <th><b>功能说明</b></th>
   </tr>
   <tr>
-    <td rowspan="16">低功耗蓝牙</td>
+    <td rowspan="15">低功耗蓝牙</td>
     <td><a href="https://opendocs.alipay.com/mini/api/tmew6e">my.connectBLEDevice</a></td>
     <td>连接低功耗蓝牙设备。</td>
   </tr>
@@ -46,11 +46,11 @@
   </tr>
   <tr>
     <td><a href="https://opendocs.alipay.com/mini/api/fmg9gg">my.getBLEDeviceCharacteristics</a></td>
-    <td>获取蓝牙设备所有 characteristic（特征值）。</td>
+    <td>获取低功耗蓝牙设备某个服务中所有特征（characteristic）。</td>
   </tr>
   <tr>
     <td><a href="https://opendocs.alipay.com/mini/api/uzsg75">my.getBLEDeviceServices</a></td>
-    <td>获取所有已发现的蓝牙设备，包括已经和本机处于连接状态的设备。</td>
+    <td>获取指定低功耗蓝牙设备所有服务列表。</td>
   </tr>
   <tr>
     <td><a href="https://opendocs.alipay.com/mini/api/my.getbledevicerssi">my.getBLEDeviceRSSI</a></td>
@@ -83,10 +83,6 @@
   <tr>
     <td><a href="https://opendocs.alipay.com/mini/api/vmp2r4">my.writeBLECharacteristicValue</a></td>
     <td>向低功耗蓝牙设备特征值中写入数据。</td>
-  </tr>
-  <tr>
-    <td><a href="https://opendocs.alipay.com/mini/02pexh">my.showBLEPermissionGuide</a></td>
-    <td>蓝牙统一授权/开关引导流程。</td>
   </tr>
   <tr>
     <td><a href="https://opendocs.alipay.com/mini/02pdp9">my.getBLEDeviceStatus</a></td>

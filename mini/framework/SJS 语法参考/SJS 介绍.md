@@ -11,7 +11,7 @@ SJS 是 JavaScript 语言的子集，并不等同于 JavaScript。具体可参�
 - [基础类库](https://opendocs.alipay.com/mini/framework/basic-library)
 
 **模块管理**  
-- SJS 文件的扩展名必须为 `.sjs`，每个 .sjs 文件为一个模块，使用 export 导出变量和函数，使用 import 引入依赖的其他 SJS 模块（请勿省略文件扩展名）。
+- SJS 文件的扩展名必须为 `.sjs`，每个 .sjs 文件为一个模块，使用 export 导出变量和函数，使用 import 引入依赖的其他 SJS 模块。
 - SJS 也可引用 npm 包，但只能引用其中的 .sjs 文件。
 
 **运行环境**  

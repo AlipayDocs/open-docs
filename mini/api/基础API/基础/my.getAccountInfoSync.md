@@ -46,7 +46,7 @@ if (accountInfo.plugin) {
 | --- | --- | --- |
 | appId | String | 小程序 appId。 |
 | envVersion | String | 小程序当前运行版本。<br /><ul><li>release：正式版。</li><li>gray：灰度版。</li><li>trial：体验版。</li><li>develop：开发版。</li></ul> |
-| version | String | 线上小程序版本号。 |
+| version | String | 当前运行环境的小程序版本号。 |
 
 ### Object plugin
 
@@ -54,3 +54,10 @@ if (accountInfo.plugin) {
 | -------- | -------- | ------------ |
 | appId    | String   | 插件 appId。 |
 | version  | String   | 插件版本号。 |
+
+
+# 常见问题
+
+## Q：调用 my.getAccountInfoSync，报错 "my.getAccountInfoSync is not a function"，如何处理？
+
+A：my.getAccountInfoSync 需要基础库 2.7.17 及以上版本方可正常调用，若版本过低，建议升级，同时做好 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。。

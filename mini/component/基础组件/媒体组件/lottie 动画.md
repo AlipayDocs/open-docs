@@ -36,7 +36,7 @@ Page({
 			id: 'lottie-1',
 			desc: 'Django自动播放,低端设备降级',
 			autoplay: true,
-			path:'https://private-alipayobjects.alipay.com/alipay-rmsdeploy-image/rmsportal/ccVuojvUKLkFENNHAVgT.json',
+			path:'https://mdn.alipayobjects.com/huamei_tog8oy/afts/file/A*dtzXSJOasgYAAAAAAAAAAAAADmd_AQ',
 			placeholder:'https://gw.alipayobjects.com/mdn/rms_e345fe/afts/img/A*nu3GTaHqJ9AAAAAAAAAAAAAAARQnAQ524560995883_icon_S.png',
 			optimize: 'true',
 			repeatCount: -1,  
@@ -44,7 +44,7 @@ Page({
 		} 
 	},
   	onReady() {
-    	var lottieContext = my.createLottieContext(elementId);
+    	var lottieContext = my.createLottieContext(this.data.item.id);
 		lottieContext.play()
     }
 })

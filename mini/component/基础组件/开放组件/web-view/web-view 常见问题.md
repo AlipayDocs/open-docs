@@ -50,10 +50,6 @@ web-view 只能打开 https 域名的 H5 链接。
 
 H5 和 web-view 的 cookie 是不同的，小程序针对服务端回设的 cookie 不会禁用掉，会设置到小程序进程中，下次小程序进行请求，会自动将已有的 cookie 带入到服务端请求中。前端获取不到 cookie，也不会对 cookie 做任何操作。小程序不建议使用 cookie，推荐使用小程序缓存。
 
-### web-view 嵌套的 H5 如何获取小程序缓存？web-view 如何清除缓存？web-view 如何读取小程序的 localstorage？
-
-通过 web-view 内 H5 交互获取小程序缓存，具体请参见 [my.createWebViewContext](/mini/api/webview-context)。<br />可使用 [my.clearStorage](/mini/api/storage) 或者点击 IDE 右上角的 **清缓存** 清除缓存数据。如果是 web-view 总页面的缓存可以关闭小程序，重新打开支付宝。<br />web-view 的缓存和小程序缓存是隔离的，不能直接读取。都可以使用 API [my.clearStorage](/mini/api/storage) 清除缓存。
-
 ### H5 封装的小程序用 localstorage 设置的缓存，为何推出小程序取得的缓存是很早之前的数据？
 
 web-view 页面存在缓存，建议动态链接访问最新地址。
@@ -112,6 +108,10 @@ web-view 的 H5 页面上不承载其他组件，即便添加也不会显示。
 ### web-view 页面嵌套小程序，为何获取手机号授权返回无效的授权方式？
 
 web-view 无法使用小程序的 button 组件，所以会异常。
+
+### 小程序 web-view 如何将数据存储到本地？ 
+
+A：优先推荐 H5 本地存储 localStorage。如果需要跨域共享数据，可使用 [my.postMessage()](https://opendocs.alipay.com/mini/component/web-view#%E5%8F%AF%E7%94%A8%20API) 先将相关数据传递给小程序，再通过 [my.setStorage()](https://opendocs.alipay.com/mini/api/eocm6v) 存储。
 
 ## 开放能力
 

@@ -10,6 +10,7 @@ web-view 可以打开的 H5 页面的域名限于开发者维护的 H5 域名白
 
 - 支付宝客户端 10.1.35 或更高版本可用。
 - 不支持个人小程序使用，仅支持企业小程序。
+- 不支持在插件内使用。
 - 每个页面只能有一个 web-view，会自动铺满整个页面并覆盖其它组件。
 - 不支持多个页面 web-view 间通讯。不支持横屏以及全屏展示。
 - 调试请以真机效果为准。
@@ -99,11 +100,6 @@ web-view 载入的 H5 页面可以使用手动引入 https://appx/web-view.min.j
 | 交互反馈 | [my.alert](https://opendocs.alipay.com/mini/api/ui-feedback) | 警告框。 |
 | 交互反馈 | [my.showLoading](https://opendocs.alipay.com/mini/api/bm69kb) | 显示加载提示。 |
 | 交互反馈 | [my.hideLoading](https://opendocs.alipay.com/mini/api/nzf540) | 隐藏加载提示。 |
-| 缓存 | [my.setStorage](https://opendocs.alipay.com/mini/api/eocm6v) | 将数据存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的数据。 |
-| 缓存 | [my.getStorage](https://opendocs.alipay.com/mini/api/azfobl) | 获取缓存数据。 |
-| 缓存 | [my.removeStorage](https://opendocs.alipay.com/mini/api/of9hze) | 删除缓存数据。 |
-| 缓存 | [my.clearStorage](https://opendocs.alipay.com/mini/api/storage) | 清除本地数据缓存。 |
-| 缓存 | [my.getStorageInfo](https://opendocs.alipay.com/mini/api/zvmanq) | 异步获取当前缓存的相关信息。 |
 | 网络状态 | [my.getNetworkType](https://opendocs.alipay.com/mini/api/network-status) | 获取当前网络状态。 |
 | 分享 | my.startShare | 分享当前页面,当执行 my.startShare() 时会唤起当前小程序页面的分享功能。 |
 | 唤起支付 | [my.tradePay](https://opendocs.alipay.com/mini/api/openapi-pay) | 唤起支付（仅支持使用该 API 唤起支付，不支持使用 H5 进行支付） |

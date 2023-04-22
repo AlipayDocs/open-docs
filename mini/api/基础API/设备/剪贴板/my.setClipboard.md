@@ -1,6 +1,10 @@
+
+
 # 简介
 
-**my.setClipboard** 是设置剪贴板内容的 API。设置剪贴板内容可能造成隐私泄露，请谨慎使用。
+**my.setClipboard** 是设置剪贴板内容的 API。
+
+**注意**：使用本接口功能可能涉及隐私问题，请谨慎使用。
 
 ## 使用限制
 
@@ -80,6 +84,14 @@ Page({
   handleCopy() {
     my.setClipboard({
       text: this.data.text,
+      success: (res) => {
+        // 如有必要可增加复制成功后的 toast 提示
+        if (res.success) {
+          my.showToast({
+            content: "复制成功"
+          });
+        }
+      }
     });
   },
   handlePaste() {

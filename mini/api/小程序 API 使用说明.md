@@ -28,7 +28,7 @@ Page({
 
 # 功能 API
 
-功能型 API 是不以 `my.on` 或 `my.off` 开头的 API，用于实现某个特定功能。功能型 API 可分为异步型 API 和同步型 API
+功能型 API 是不以 `my.on` 或 `my.off` 开头的 API，用于实现某个特定功能。功能型 API 可分为异步型 API 和同步型 API。
 
 ## 异步型功能 API
 
@@ -44,9 +44,9 @@ Page({
 
 | **属性** | **类型** | **说明**                             |
 | -------- | -------- | ------------------------------------ |
-| errCode  | String   | 错误码，接口调用成功，errorCode=0 。 |
-| errorMsg | String   | 错误信息，接口调用成功返回 `ok` 。   |
-| 其他     | -        | API 返回的其他数据。                 |
+| error  | Number   | 错误码。fail 回调中为非零值。success 回调中无此字段或者其值为零。 |
+| errorMessage | String   | 错误信息。fail 回调中有效。   |
+| 其它     | -        | API 返回的其它数据。                 |
 
 以发起网络请求的 my.request API 为例：
 
