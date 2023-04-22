@@ -19,9 +19,11 @@ rpx（responsive pixel）可以根据屏幕宽度进行自适应，规定屏幕�
 ## rpx与px互转
 借助 `my.getSystemInfoSync().windowWidth` 获取屏幕宽度进行转换，具体代码如下：<br />**注意：**由于安卓上取 screenWidth 屏幕宽度，可能取的是手机的 dpi，所以建议获取窗口宽度（可使用窗口高度）来做。
 ```
-//px转换rpx  
-rpx=px * (750 / 屏幕宽度)let rpx = px *( 750 / my.getSystemInfoSync().windowWidth);
-//rpx转换px 
-px=rpx * (屏幕宽度 / 750)let px = rpx *( my.getSystemInfoSync().windowWidth / 750 );
+// px 转 rpx，rpx = px * (屏幕宽度 / 750 )
+let rpx = px * (750 / my.getSystemInfoSync().windowWidth);
+
+// rpx 转 px，px = rpx * (750 / 屏幕宽度)
+let px = rpx * (my.getSystemInfoSync().windowWidth / 750);
+
 ```
  
