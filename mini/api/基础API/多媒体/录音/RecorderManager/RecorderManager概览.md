@@ -39,6 +39,7 @@
 ```javascript
 const innerAudioContext = my.createInnerAudioContext();
 const recorderManager = my.getRecorderManager();
+const fs = my.getFileSystemManager();
 
 // 监听播放录音事件
 innerAudioContext.onPlay = function () {
@@ -50,11 +51,11 @@ recorderManager.onStop(res => {
   console.log('recorder onStop', JSON.stringify(res));
   my.alert({
     content:
-      'recorder onStop' + JSON.stringify(res) + '  ' + res['tempFilePath'],
+      'recorder onStop' + JSON.stringify(res) + '  ' + res.tempFilePath,
   });
-  // 保存本次录音文件地址
-  my.saveFile({
-    apFilePath: res['tempFilePath'],
+  // 保存本次录音文件为本地缓存文件
+  fs.saveFile({
+    tempFilePath: res.tempFilePath,
     success: function (res) {
       my.alert({ content: 'recorder saveFile success' + JSON.stringify(res) });
     },
@@ -67,7 +68,7 @@ recorderManager.onStop(res => {
   });
 
   // 将文件临时路径 tempFilePath 作为音频播放源
-  innerAudioContext.src = res['tempFilePath'];
+  innerAudioContext.src = res.tempFilePath;
   //backgroundAudioManager.src = res['tempFilePath'];
 });
 
