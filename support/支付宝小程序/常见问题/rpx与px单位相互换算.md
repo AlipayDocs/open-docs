@@ -23,7 +23,7 @@ rpx（responsive pixel）可以根据屏幕宽度进行自适应，规定屏幕�
 let rpx = px * (750 / my.getSystemInfoSync().windowWidth);
 
 // rpx 转 px，px = rpx * (750 / 屏幕宽度)
-let px = rpx * (my.getSystemInfoSync().windowWidth / 750 );
+let px = rpx * (my.getSystemInfoSync().windowWidth / 750);
 
 ```
  
