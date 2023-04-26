@@ -25,6 +25,10 @@ A：
 
 A：请确保设备已发出广播。若接口传入 services，请确保设备的广播内容中包含 service 的 UUID。
 
+### Q：为什么 [my.getBluetoothDevices](https://opendocs.alipay.com/mini/api/pelizr?pathHash=8596a9de) API 获取到的已发现的蓝牙设备比实际手机设置蓝牙中搜索到的多？
+
+A：蓝牙在系统中调用和在支付宝中调用本质上都是调用的系统 API，但是因为调用的时间点不一样，所以扫描的结果会存在差异。
+
 ### Q：调用蓝牙 API 时如果不开启 GPS 定位，部分机型会报错：定位服务未开启。连接不了蓝牙？
 
 A：小程序蓝牙功能需要依赖 GPS 定位，因为大概 5 分之一的手机蓝牙需要依赖 GPS。 建议接入蓝牙时先引导用户打开 GPS 定位服务。
