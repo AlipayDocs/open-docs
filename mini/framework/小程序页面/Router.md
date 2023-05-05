@@ -17,7 +17,7 @@
 
 - 由于插件和宿主的权限管控，由插件（插件自定义组件或插件页面）发起的路由跳转，无论是使用页面路由器对象 Router 上的路由方法还是全局对象 my 上的路由方法，均不支持跳转到宿主小程序页面或另一个插件页面。
 - 由于插件和宿主的权限管控，当插件自定义组件被用在宿主小程序或另一个插件中时，该插件自定义组件的 this.pageRouter 为 null。
-- 如果在页面 A 通过 redirectTo、reLaunch、navigateBack 方法跳转到页面 B，页面 A 会被销毁，在销毁后的页面 A 调用 this.pageRouter 或 this.routet 的路由方法不会生效。
+- 如果在页面 A 通过 redirectTo、reLaunch、navigateBack 方法跳转到页面 B，页面 A 会被销毁，在销毁后的页面 A 调用 this.pageRouter 或 this.router 的路由方法不会生效。
 
 # 示例代码
 项目目录结构如下所示。<br />![12.png](https://cdn.nlark.com/yuque/0/2022/png/179989/1658209600139-81520d04-02bd-49a1-8a42-c9dbe2e85ba5.png#align=left&display=inline&height=267&margin=%5Bobject%20Object%5D&name=12.png&originHeight=534&originWidth=256&size=26153&status=done&style=none&width=128)<br />假设当前页面(栈顶页面)路径为 pages2/index/index，分别在页面 page/index/index 和 自定义组件 components/com/com 中调用路由方法 my.navigateTo、this.pageRouter.navigateTo、this.router.navigateTo 进行路由跳转，跳转结果如下：
