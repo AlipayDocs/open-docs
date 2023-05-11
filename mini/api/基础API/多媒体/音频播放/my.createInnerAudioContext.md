@@ -38,7 +38,7 @@ onLoad(){
   //创建前景音频上下文对象。
   this.innerAudioContext = my.createInnerAudioContext();
   //来源于优酷的音频码，用于直接播放。支持音频格式：AAC，MP3。如果开发者不传入音频码，控制台不会报错，但无音频播放。
-  this.innerAudioContext.src = '音频src';
+  this.innerAudioContext.src = 'XNDY2NTE2MjE4NA==';
   //是否自动开始播放，默认为 false。
   this.innerAudioContext.autoplay = false;
   //是否循环播放，默认为 false。
