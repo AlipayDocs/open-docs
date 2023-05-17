@@ -16,7 +16,6 @@ APP_INFO_NOT_EXIST（应用信息不存在）。 
 - alipay.open.mini.widget.goods.upload（小部件商品上传）
 - [alipay.open.mini.version.online](https://opendocs.alipay.com/mini/03l21p)（小程序上架）
 - [alipay.open.mini.baseinfo.query](https://opendocs.alipay.com/mini/03l21r)（查询小程序基础信息）
-- [alipay.open.agent.mini.create](https://opendocs.alipay.com/isv/04f74l)（代商家创建小程序应用）
 - [alipay.open.app.api.field.apply](https://opendocs.alipay.com/isv/04elk6)（申请获取接口用户敏感信息字段）
 - [alipay.open.mini.version.audited.cancel](https://opendocs.alipay.com/mini/03l9bs)（小程序退回开发）
 - alipay.open.mini.widget.goods.modify（小部件商品修改）
