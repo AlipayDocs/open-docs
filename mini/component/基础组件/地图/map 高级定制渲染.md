@@ -20,9 +20,9 @@
 
 高级定制渲染组件的详细能力描述如下：
 
-- 针对 [marker](https://opendocs.alipay.com/mini/api/hpi21r) 的 icon 图标和 customCallout 气泡进行定制渲染。
-- 针对 [marker](https://opendocs.alipay.com/mini/api/hpi21r) 的 icon 图标进行的定制渲染布局不支持点击事件。
-- 针对 [marker](https://opendocs.alipay.com/mini/api/hpi21r) 的 customCallout 气泡进行定制渲染的布局提供点击事件响应能力。在 calloutTap 事件响应点击事件，此时 data 数据字段会多一个 layoutId 标识事件点击目标，layoutId 即为定制渲染布局中的被点击组件的 ID。
+- 针对 [marker](https://opendocs.alipay.com/mini/component/map#Marker%20%E5%9B%BE%E9%89%B4) 的 icon 图标和 customCallout 气泡进行定制渲染。
+- 针对 [marker](https://opendocs.alipay.com/mini/component/map#Marker%20%E5%9B%BE%E9%89%B4) 的 icon 图标进行的定制渲染布局不支持点击事件。
+- 针对 [marker](https://opendocs.alipay.com/mini/component/map#Marker%20%E5%9B%BE%E9%89%B4) 的 customCallout 气泡进行定制渲染的布局提供点击事件响应能力。在 calloutTap 事件响应点击事件，此时 data 数据字段会多一个 layoutId 标识事件点击目标，layoutId 即为定制渲染布局中的被点击组件的 ID。
 - 以下为渲染前与渲染相对布局后对比图：<br />![](https://mdn.alipayobjects.com/afts/img/A*WA1sQbRh39sAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=ktiPlKDJDWd8L4up4qap_AAAAABkMK8AAAAA#align=left&display=inline&height=279&margin=%5Bobject%20Object%5D&originHeight=279&originWidth=354&status=done&style=none&width=354) ![](https://mdn.alipayobjects.com/afts/img/A*POkaR5JUHxYAAAAAAAAAAABkAa8wAA/original?bz=openpt_doc&t=D4P2DRjYE0PmK07z2U_45AAAAABkMK8AAAAA#align=left&display=inline&height=274&margin=%5Bobject%20Object%5D&originHeight=274&originWidth=324&status=done&style=none&width=324) <br />
 - 支持 customCallout 默认气泡样式背景的个性化设置。
 
