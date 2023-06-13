@@ -97,7 +97,7 @@ FileItem item = new FileItem("C:/Downloads/ooopic_963991_7eea1f5426105f9e6069/16
 request.setImageType("JPG");
 request.setImageContent(item);
 //执行API请求
-AlipayOfflineMaterialImageUploadResponse response = alipayClient.execute(request);
+AlipayOfflineMaterialImageUploadResponse response = alipayClient.certificateExecute(request);
 //调用成功，则处理业务逻辑
 if(response.isSuccess()){
      //获取图片访问地址
