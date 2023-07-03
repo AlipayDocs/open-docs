@@ -1,6 +1,6 @@
 # 简介
 
-使用 tabBar、titleBar 多语言配置后，小程序会根据当前手机的语言来读取显示该语言配置。
+使用 tabBar、titleBar 多语言配置后，小程序会根据当前支付宝的语言来读取显示该语言配置。
 
 多语言 tabBar、titleBar 配置如下：
 
