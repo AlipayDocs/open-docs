@@ -53,7 +53,7 @@ Page({
 | output-dimension | String | 相机拍照，录制的分辨率。<br />有效值为 360P、540P、720P、1080P、max。<br />**默认值：**720P<br />**版本要求**：基础库 [1.23.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上。 |
 | frame-size | String | 指定期望的相机帧数据尺寸。<br />**默认值：**medium<br />**版本要求**：基础库 [1.19.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上。 |
 | onReady | EventHandle | 相机初始化成功时触发。`event.detail = {maxZoom}`<br />**版本要求**：基础库 [1.24.3](https://opendocs.alipay.com/mini/framework/compatibility) 及以上。<br />基础库 [2.7.16](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)、客户端 10.2.58 开始支持返回 `maxZoom`。 |
-| onStop | EventHandle | 摄像头在非正常终止时触发，如退出后台等情况。 |
+| onStop | EventHandle | 摄像头在非正常终止时触发，如页面隐藏、退出小程序、压后台等情况。 |
 | onError | EventHandle | 用户不允许使用摄像头时触发。`event.detail = { errorCode, errorMessage }`。 |
 | onScanCode | EventHandle | 在扫码识别成功时触发，仅在 mode="scanCode" 时生效。`event.detail = { type, result }`。`type` 为码类型，`result` 为识别结果。<br />**版本要求**：基础库 [1.19.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上。 |
 
