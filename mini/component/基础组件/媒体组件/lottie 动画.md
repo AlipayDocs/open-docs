@@ -126,10 +126,6 @@ Lottie 对资源的定义是
 
 # 常见问题
 
-## 检测相关
-
-UI 设计师已完成的物料资源请先在 [Lottie 平台](https://design.alipay.com/lolita) 上做一次检测，保证物料包的内容文件符合小程序规范。<br />![](https://cdn.nlark.com/yuque/0/2022/png/179989/1649386200577-b67b1519-f12a-4cee-bb6b-2f76c2bf2ebe.png)
-
 ## 修复兼容性问题
 
 如果提示“使用插件版本 5.5.0+，客户端必须也是 5.5.0+，iOS/android 旧版播放器会闪退”，必须重新用兼容性模式导出 JSON。
