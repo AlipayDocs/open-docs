@@ -4,7 +4,7 @@
 
 多语言 tabBar、titleBar 配置如下：
 
-1. 语言配置统一放到根目录下的 locale 目录下。
+1. 语言配置统一放到小程序根目录（对应 mini.project.json 中的 miniProgramRoot 配置）下的 locale 目录下。
 2. 每个语言一个目录，如 zh-Hans（简体中文）、zh-HK （繁体中文香港）。
 3. 在每个语言目录下，通过添加 app.json 配置，配置该语言下的 titleBar 与 tabBar。
 
