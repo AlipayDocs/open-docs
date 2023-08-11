@@ -69,7 +69,7 @@ swiper 和 scroll-view 均为滑动组件，如果必须使用，建议不做嵌
 
 ## 为什么 onScrollToUpper 和 onScrollToLower 事件同时被触发，且触发了多次？
 
-因为滚动时，同时满足了距顶部 ${upper-threshold} 距离内，距底部 ${lower-threshold} 距离内，所以会同时触发onScrollToUpper 和 onScrollToLower 事件。可以通过调整参数 upper-threshold 和 lower-threshold 避免一直处在触发区间来解决。
+因为滚动时同时满足了距顶部 ${upper-threshold}px 内，距底部 ${lower-threshold}px 内，所以会同时触发 onScrollToUpper 和 onScrollToLower 事件。可以通过调整参数 upper-threshold 和 lower-threshold 避免一直处在触发区间来解决。
 
 # 相关文档
 
