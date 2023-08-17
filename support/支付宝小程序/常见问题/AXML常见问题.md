@@ -7,10 +7,9 @@
 - key 不能设置在 block 上。
 
 ### template
-template 的子节点只能是一个。<br />**常见问题**
+template 的子节点只能是一个。
 
-### 小程序白屏优化方案
-参考[小程序白屏优化方案](https://opendocs.alipay.com/support/01rb1v)。 
+## 常见问题
 
 ### rpx与px单位相互换算
 参考[rpx与px单位相互换算](https://opendocs.alipay.com/support/01rb6o)。 
