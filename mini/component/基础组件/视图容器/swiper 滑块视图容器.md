@@ -45,8 +45,8 @@
 | swipe-ratio | Number | 滑动距离阈值，当滑动距离超过阈值时进行 swiper-item 切换。<br />**默认值**：0.2<br />**版本要求**：基础库 [1.24.11](/mini/framework/compatibility) 及以上 |
 | swipe-speed | Number | 滑动综合速度阈值，当超过阈值时进行 swiper-item 切换，数值越小越敏感。<br />**默认值**：0.05<br />**版本要求**：基础库 [1.24.11](/mini/framework/compatibility) 及以上 |
 | touch-angle | Number | 计算用户手势时所依赖的滑动角度。角度根据 touchstart 事件和首次 touchmove 事件的坐标计算得出。数值越小越对用户的滑动方向准确度要求越高。<br />**默认值**：45<br />**版本要求**：基础库 [1.24.11](/mini/framework/compatibility) 及以上 |
-| display-multiple-items | Number | 同时显示的滑块数量。<br />**默认值**：1<br />**版本要求**：基础库 [2.6.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
-| easing-function | String | 切换缓动动画类型。<br />**默认值**：default<br />**版本要求**：基础库 [2.6.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
+| display-multiple-items | Number | 同时显示的滑块数量。<br />**默认值**：1<br />**版本要求**：基础库 [2.6.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上|
+| easing-function | String | 切换缓动动画类型。<br />**默认值**：default<br />**版本要求**：基础库 [2.6.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上。属性值有`default`、`linear`、`easeInCubic`、`easeOutCubic`、`easeInOutCubic` |
 | snap-to-edge | Boolean | 当 swiper-item 个数大于等于 2，关闭 circular 并且开启 previous-margin 或 next-margin 时，可以指定这个边距是否应用到第一个、最后一个元素。<br />**默认值**：false<br />**版本要求**：基础库 [2.6.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
 | adjust-height | String | 自动以指定滑块的高度为整个容器的高度。当 vertical 为 true 时，默认不调整。可选值为：<br /><ul><li>first：第一个滑块。</li><li>current：实时的当前滑块。</li><li>highest：高度最大的滑块。</li><li>none：不根据滑块调整高度，容器高度取决于自身样式。</li></ul> **默认值**：first<br />**版本要求**：基础库 [2.6.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
 | adjust-vertical-height | Boolean | vertical 为 true 时强制使 adjust-height 生效。<br />**默认值**：false<br />**版本要求**：基础库 [2.6.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
