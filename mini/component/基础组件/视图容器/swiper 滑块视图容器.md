@@ -7,8 +7,7 @@
 - swiper 组件不可以放在地图上用，map 组件是由客户端创建的原生组件，原生组件的层级是最高的，所以页面中的其他组件无论设置 z-index 为多少，都无法在原生组件之上。
 - swiper 组件的首张图片与左边的间隔可以和组件中 item 的图片间隔保持一致，可以根据 `previous-margin` 设置一下前边距。
 - 调用 swiper 组件，swiper-item 嵌套 cover-view 会导致最后一个 swiper-item 后有很大的空白，且 swiper-item 不能添加事件，建议使用 [view](/mini/component/view) 做嵌套。
-- swiper 可以有多个 swiper-item，默认只会展示一个滑块数量，可以通过传入 `display-multiple-items` 属性来修改数量限制。
-
+- swiper 可以有多个 swiper-item，但是前台完整展示的只有一个。
 ## 扫码体验
 
 ![|127x157](https://gw.alipayobjects.com/zos/skylark/b6227660-a40d-45a1-8b91-d76e5699d195/2018/jpeg/2b2fd77c-1145-4983-8f21-dd6a23e7d4ff.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=1906&originWidth=1540&status=done&style=none&width=127)
