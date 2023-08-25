@@ -117,10 +117,10 @@ Page({
 ```
 
 # 注意事项
-自定义 tabBar 默认 `z-index：10000`，若不满足项目实际场景可通过类名 `a-customize-tab-bar` 进行覆盖。
+自定义 tabBar 默认 `z-index:10000`，若不满足项目实际场景可通过类名 `a-customize-tab-bar` 进行覆盖。
 ```css
 /* app.acss */
 .a-customize-tab-bar{
-  z-index：999;
+  z-index:999;
 }
 ```
