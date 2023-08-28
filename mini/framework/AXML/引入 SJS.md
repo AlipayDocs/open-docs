@@ -32,7 +32,7 @@ export function b() { return 2 }
 ```
 ```html
 <!-- page.axml -->
-<import-sjs src="./helper.sjs"  name="{ a, b: c }"/>
+<import-sjs from="./helper.sjs"  name="{ a, b: c }"/>
 <view>{{ c() }}:{{a}}:{{ b }}</view>
 <!-- 等价于 -->
 <view>{{ 2 }}:{{ 1 }}:{{ undefined }}</view>
