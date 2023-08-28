@@ -10,7 +10,7 @@ export default {
 <!-- page.axml -->
 <import-sjs name="util" from="./util.sjs"/>
 <view> 使用变量 {{util.message}}</view>
-<view> 使用函数 {{util.getMessage(msg)}}</view>
+<view> 使用函数 {{util.getMsg(msg)}}</view>
 ```
 
 通过 `<import-sjs />` 标签，只能使用 SJS 通过 `export` 语法导出的符号。并遵循如下规则。
@@ -32,7 +32,7 @@ export function b() { return 2 }
 ```
 ```html
 <!-- page.axml -->
-<import-sjs src="./helper.sjs"  name="{ a, b: c }"/>
+<import-sjs from="./helper.sjs"  name="{ a, b: c }"/>
 <view>{{ c() }}:{{a}}:{{ b }}</view>
 <!-- 等价于 -->
 <view>{{ 2 }}:{{ 1 }}:{{ undefined }}</view>
