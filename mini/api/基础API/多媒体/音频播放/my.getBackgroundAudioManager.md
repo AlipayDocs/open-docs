@@ -119,6 +119,7 @@ audioSeek(){
 | coverImgUrl | String | 否 | 封面图 URL，用于做原生音频播放器背景图。原生音频播放器中的分享功能，分享的卡片配图及背景也将使用该图。以 URL 地址进行传参。 |
 | webUrl | String | 否 | 页面链接，原生音频播放器中的分享功能，分享的卡片简介，也将使用该值。以 URL 地址进行传参。 |
 | playbackRate | Number | 否 | 播放速度。范围 0.5-2.0，默认为 1。<br />**注意**：Android 需要 6 及以上版本支持。 |
+| volume | Number | 否 | 音量。范围 0~1。例如：`this.backgroundAudioContext.volume = 0.5` |
 
 ### backgroundAudioManager 方法列表
 
