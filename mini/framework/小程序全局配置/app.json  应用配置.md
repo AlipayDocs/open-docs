@@ -23,7 +23,7 @@
 | preloadRule         | Object   | 否       | 分包预加载规则。               |
 | plugins             | Object   | 否       | 静态插件配置规则。             |
 | useDynamicPlugins   | Boolean  | 否       | 动态插件配置规则。             |
-| usingComponents     | Array    | 否       | 设置全局自定义组件声明。       |
+| usingComponents     | Object    | 否       | 设置全局自定义组件声明。       |
 | lazyCodeLoading     | String   | 否       | 是否开启代码按需执行。         |
 | permission          | Object   | 否       | 小程序接口权限相关配置。       |
 | behavior            | Object   | 否       | 修改小程序运行行为的相关设置。 |
