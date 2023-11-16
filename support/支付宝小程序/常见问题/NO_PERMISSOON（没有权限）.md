@@ -22,4 +22,4 @@ NO_PERMISSOON（没有权限）。 
 **注意：**
 
 - 小程序订单中心开通确认可使用对应账号登录开放平台确认。
-- 可通过 [alipay.trade.query](https://opendocs.alipay.com/open/02ekfh)（统一收单线下交易查询接口）查询该支付宝交易信息。
+- 可通过 [alipay.trade.query](https://opendocs.alipay.com/open/02ekfh)（统一收单交易查询接口）查询该支付宝交易信息。
