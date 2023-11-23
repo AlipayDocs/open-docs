@@ -30,7 +30,7 @@ alipays://platformapi/startapp?appId=[appId]&page=[page]&query=[query]
 ```html
 <script>
 window.location.href=`https://ds.alipay.com/?scheme=` 
-                    + encodeURIComponent(`alipays://platformapi/startapp?appId=202100216xxxxxxx&page=pages/index/index&query=${encodeURIComponent('key1=value1&key2=value2')}`) 
+                    + encodeURIComponent(`${encodeURIComponent('alipays://platformapi/startapp?appId=202100216xxxxxxx&page=pages/index/index&query=')}${encodeURIComponent(encodeURIComponent('key1=value1&key2=value2'))}`) 
 </script>
 ```
 接下来看一下，scheme 调用小程序之后，应用和页面的处理逻辑。在叙述之前，先了解下前后台的定义。
