@@ -6,7 +6,8 @@
 
 如果您的项目中已使用类似 `<canvas id="canvas"></canvas>` 这样未指定 type 的标签，请参考 [旧版 Canvas 迁移指南](https://opendocs.alipay.com/mini/055eid) 。
 
-
+# 使用说明
+- **Native 渲染引擎**：基础库 2.9.7+、客户端 10.5.56+ 开始支持。可以通过`my.canIUse('canvas')` 判断是否支持。
 
 ## 属性说明
 
