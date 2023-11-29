@@ -4,6 +4,7 @@
 
 ## 使用说明
 
+- **Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('picker')` 判断是否支持。
 - picker 组件在 iOS 系统中从底部弹出，在 Android 系统中从中间弹出。
 - 支持通过 [my.multiLevelSelect](https://opendocs.alipay.com/mini/api/multi-level-select)调用级联选择。
 - 支持通过 [my.datePicker](https://opendocs.alipay.com/mini/api/ui-date) 打开日期选择列表。
