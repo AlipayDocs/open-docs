@@ -5,6 +5,7 @@
 ## 使用限制
 
 - 基础库 [2.8.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- **Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('page-container')` 判断是否支持。
 - 当前页面最多只有 1 个容器，若已存在容器的情况下，无法增加新的容器。
 - [my.navigateBack](https://opendocs.alipay.com/mini/api/kc5zbx) 无法在页面栈顶调用，此时没有上一级页面。
 - 必须在 onAfterLeave 中执行 `this.setData({show: false})` 同步 show 属性状态。
