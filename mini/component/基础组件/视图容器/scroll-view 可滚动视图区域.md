@@ -24,30 +24,32 @@
 
 ## 属性说明
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| class | String | 外部样式名。 |
-| style | String | 内联样式名。 |
-| scroll-x | Boolean | 允许横向滚动。<br />**默认值：** false |
-| scroll-y | Boolean | 允许纵向滚动。<br />**默认值：** false |
-| upper-threshold | Number | 距顶部/左边多远时（单位 px），触发 `scrolltoupper` 事件。<br />**默认值：** 50 |
-| lower-threshold | Number | 距底部/右边多远时（单位 px），触发 `scrolltolower` 事件。<br />**默认值：** 50 |
-| scroll-top | Number | 设置竖向滚动条位置。 |
-| scroll-left | Number | 设置横向滚动条位置。 |
-| scroll-into-view | String | 滚动到子元素，值应为某子元素的 id。当滚动到该元素时，元素顶部对齐滚动区域顶部。<br />**说明：**`scroll-into-view` 的优先级高于 `scroll-top`。 |
-| scroll-with-animation | Boolean | 在设置滚动条位置时使用动画过渡。<br />**默认值：** false |
-| scroll-animation-duration | Number | 当 `scroll-with-animation`设置为 true 时，可以设置 `scroll-animation-duration` 来控制动画的执行时间，单位 ms。<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
-| enable-back-to-top | Boolean | 当点击 iOS 顶部状态栏或者双击 Android 标题栏时，滚动条返回顶部，只支持竖向。<br />**默认值：** false<br />**版本要求：** 基础库 [1.11.0](/mini/framework/compatibility) 及以上 |
-| trap-scroll | Boolean | 纵向滚动时，当滚动到顶部或底部时，强制禁止触发页面滚动，仍然只触发 scroll-view 自身的滚动。<br />**默认值：** false<br />**版本要求：** 基础库 [1.11.2](/mini/framework/compatibility) 及以上 |
-| onScrollToUpper | EventHandle | 滚动到顶部/左边，会触发 `scrolltoupper` 事件。 |
-| onScrollToLower | EventHandle | 滚动到底部/右边，会触发 `scrolltolower`事件。 |
-| onScroll | EventHandle | 滚动时触发，`event.detail = {scrollLeft, scrollTop, scrollHeight, scrollWidth}`。 |
-| onTouchStart | EventHandle | 触摸动作开始。<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
-| onTouchMove | EventHandle | 触摸后移动。<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
-| onTouchEnd | EventHandle | 触摸动作结束。<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
-| onTouchCancel | EventHandle | 触摸动作被打断，如来电提醒、弹窗。<br />**版本要求：** 基础库 [1.15.0](/mini/framework/compatibility) 及以上 |
-| disable-lower-scroll | String | 发生滚动前，对滚动方向进行判断，当方向是顶部/左边时，如果值为 `always` 将始终禁止滚动，如果值为 `out-of-bounds` 且当前已经滚动到顶部/左边，禁止滚动。<br />**版本要求**：基础库 [2.6.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
-| disable-upper-scroll | String | 发生滚动前，对滚动方向进行判断，当方向是底部/右边时，如果值为 `always` 将始终禁止滚动，如果值为 `out-of-bounds` 且当前已经滚动到底部/右边，禁止滚动。<br />**版本要求**：基础库 [2.6.2](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
+>  表格中 “-” 代表支持。
+
+| **属性** | **类型** | **描述** |**WebView</br>兼容性** |**Native</br>兼容性** 
+| --- | --- | --- | -------- |--------- |
+| class | String | 外部样式名。 | - | - |
+| style | String | 内联样式名。 | - | - |
+| scroll-x | Boolean | 允许横向滚动。<br />**默认值：** false | - | - |
+| scroll-y | Boolean | 允许纵向滚动。<br />**默认值：** false | - | - |
+| upper-threshold | Number | 距顶部/左边多远时（单位 px），触发 `scrolltoupper` 事件。<br />**默认值：** 50 | - | - |
+| lower-threshold | Number | 距底部/右边多远时（单位 px），触发 `scrolltolower` 事件。<br />**默认值：** 50 | - | - |
+| scroll-top | Number | 设置竖向滚动条位置。 | - | - |
+| scroll-left | Number | 设置横向滚动条位置。 | - | - |
+| scroll-into-view | String | 滚动到子元素，值应为某子元素的 id。当滚动到该元素时，元素顶部对齐滚动区域顶部。<br />**说明：**`scroll-into-view` 的优先级高于 `scroll-top`。 | - | 暂不支持 |
+| scroll-with-animation | Boolean | 在设置滚动条位置时使用动画过渡。<br />**默认值：** false | - | - |
+| scroll-animation-duration | Number | 当 `scroll-with-animation`设置为 true 时，可以设置 `scroll-animation-duration` 来控制动画的执行时间，单位 ms。 | 基础库 [1.9.0+](/mini/framework/compatibility) | - |
+| enable-back-to-top | Boolean | 当点击 iOS 顶部状态栏或者双击 Android 标题栏时，滚动条返回顶部，只支持竖向。<br />**默认值：** false | 基础库 [1.11.0+](/mini/framework/compatibility) | - |
+| trap-scroll | Boolean | 纵向滚动时，当滚动到顶部或底部时，强制禁止触发页面滚动，仍然只触发 scroll-view 自身的滚动。<br />**默认值：** false | 基础库 [1.11.2+](/mini/framework/compatibility) | - |
+| onScrollToUpper | EventHandle | 滚动到顶部/左边，会触发 `scrolltoupper` 事件。 | - | - |
+| onScrollToLower | EventHandle | 滚动到底部/右边，会触发 `scrolltolower`事件。 | - | - |
+| onScroll | EventHandle | 滚动时触发，`event.detail = {scrollLeft, scrollTop, scrollHeight, scrollWidth}`。 | - | - |
+| onTouchStart | EventHandle | 触摸动作开始。 | 基础库 [1.15.0+](/mini/framework/compatibility) | - |
+| onTouchMove | EventHandle | 触摸后移动。 | 基础库 [1.15.0+](/mini/framework/compatibility) | - |
+| onTouchEnd | EventHandle | 触摸动作结束。 | 基础库 [1.15.0+](/mini/framework/compatibility) | - |
+| onTouchCancel | EventHandle | 触摸动作被打断，如来电提醒、弹窗。 | 基础库 [1.15.0+](/mini/framework/compatibility) | - |
+| disable-lower-scroll | String | 发生滚动前，对滚动方向进行判断，当方向是顶部/左边时，如果值为 `always` 将始终禁止滚动，如果值为 `out-of-bounds` 且当前已经滚动到顶部/左边，禁止滚动。 | 基础库 [2.6.2+](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  | - |
+| disable-upper-scroll | String | 发生滚动前，对滚动方向进行判断，当方向是底部/右边时，如果值为 `always` 将始终禁止滚动，如果值为 `out-of-bounds` 且当前已经滚动到底部/右边，禁止滚动。 | 基础库 [2.6.2+](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  | - |
 
 # FAQ
 
