@@ -4,6 +4,7 @@
 
 ## 使用限制
 
+-**Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('textarea')` 判断是否支持。
 - 不支持通过 textarea 获取键盘高度。
 - 不支持 iOS 系统支付宝客户端版本 10.1.80 及以上使用 `focus=true` 自动唤起。
 - 添加属性 `controlled="{{true}}"`表示 value 内容会完全受 setData 控制。
