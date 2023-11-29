@@ -4,6 +4,7 @@
 
 ## 使用限制
 
+- **Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('input')` 判断是否支持。
 - iOS 系统支付宝客户端版本 10.1.80 及以上不支持 `focus="{{true}}"` 自动唤起。
 - 小程序中 input 如果父类是 `position: fixed`，可以加上 `enableNative="{{false}}"`，解决输入框错位/光标上移问题。个别情况下定位问题会导致光标错位，所以需要把 false 改为 true，代码块为 `enableNative="{{true}}"`。
 - confirm-type 与 enableNative 属性冲突，若希望 confirm-type 生效，enableNative 不能设定为 false，而且不能设定 always-system。
@@ -22,30 +23,32 @@
 
 ## 属性
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| value | String | 初始内容。 |
-| name | String | 组件名字，用于表单提交获取数据。 |
-| type | String | input 的类型，有效值：`text`、 `number`、 `idcard`、 `digit`(可以唤起带有小数点的数字键盘)、`numberpad`、`digitpad`、 `idcardpad`。<br />**默认值：** text<br />**版本要求：**`numberpad`、`digitpad`、 `idcardpad` 支持基础库 [1.13.0](/mini/framework/compatibility) 客户端 10.1.50 及以上，可通过 <br />[my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)("input.type.numberpad") 来检测。<br />**注意：** 当启用数字键盘时，在 Android 客户端上，脱离文档流（如设置了 `float` 或 `position: fixed` 等样式）并指定了 `bottom` 属性的元素会被影响（该元素会被键盘顶起）。可以采用如下方法来暂且避免这个问题：当 input 框聚焦后隐藏被影响的元素。 |
-| password | Boolean | 是否是密码类型。<br />**默认值：** false |
-| placeholder | String | 占位符。 |
-| placeholder-style | String | 指定 placeholder 的样式，可设置间距。<br />**版本要求：** 基础库 [1.6.0](/mini/framework/compatibility) 及以上 |
-| placeholder-class | String | 指定 placeholder 的样式类。<br />**版本要求：** 基础库 [1.6.0](/mini/framework/compatibility) 及以上 |
-| disabled | Boolean | 是否禁用。<br />**默认值：** false |
-| maxlength | Number | 最大长度。<br />**默认值：** 140 |
-| focus | Boolean | 获取焦点。<br />**默认值：** false |
-| confirm-type | String | 设置键盘右下角按钮的文字，有效值：done（显示“完成”）、go（显示“前往”）、next（显示“下一个”）、search（显示“搜索”）、send（显示“发送”），平台不同显示的文字略有差异。<br />**注意：** 只有在 type=text 时有效。<br />**默认值：** done<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
-| confirm-hold | Boolean | 点击键盘右下角按钮时是否保持键盘不收起状态。<br />**默认值：** false<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
-| cursor | Number | 指定 focus 时的光标位置。 |
-| selection-start | Number | 获取光标时，选中文本对应的焦点光标起始位置，需要和 selection-end 配合使用。<br />**默认值：** -1<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
-| selection-end | Number | 获取光标时，选中文本对应的焦点光标结束位置，需要和 selection-start 配合使用。<br />**默认值：** -1<br />**版本要求：** 基础库 [1.7.0](/mini/framework/compatibility) 及以上 |
-| random-number | Boolean | 当 type 为 number, digit, idcard 数字键盘是否随机排列。<br />**默认值：** false<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
-| controlled | Boolean | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。<br />建议当 type 值为 text 时不要将 controlled 设置为 true，详见 **Bugs & Tips**。<br /><br />**默认值：** false<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
-| always-system | Boolean | 是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效。<br />**默认值**：false<br />**版本要求**：基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上 |
-| onInput | EventHandle | 键盘输入时触发 input 事件，`event.detail = {value: value,cursor: cursor}`。<br />**版本要求**：`cursor` 字段基础库 [1.14.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上开始支持。 |
-| onConfirm | EventHandle | 点击键盘完成时触发，`event.detail = {value: value}` |
-| onFocus | EventHandle | 聚焦时触发，`event.detail = {value: value}`。 |
-| onBlur | EventHandle | 失去焦点时触发（仅支持真机），`event.detail = {value: value}`。 |
+>  表格中 “-” 代表支持。
+
+| **属性** | **类型** | **描述** | **WebView</br>兼容性** |**Native</br>兼容性** |
+| --- | --- | --- |------------- |------------- |
+| value | String | 初始内容。 | - | - |
+| name | String | 组件名字，用于表单提交获取数据。 | - | - |
+| type | String | input 的类型，有效值：`text`、 `number`、 `idcard`、 `digit`(可以唤起带有小数点的数字键盘)、`numberpad`、`digitpad`、 `idcardpad`。<br />**默认值：** text<br />**注意：** 当启用数字键盘时，在 Android 客户端上，脱离文档流（如设置了 `float` 或 `position: fixed` 等样式）并指定了 `bottom` 属性的元素会被影响（该元素会被键盘顶起）。可以采用如下方法来暂且避免这个问题：当 input 框聚焦后隐藏被影响的元素。 |  基础库 [1.13.0+](/mini/framework/compatibility) ，客户端 10.1.50+。<br />**支持以下类型：**<br />`numberpad`、<br />`digitpad`、 <br />`idcardpad`，<br />可通过 <br />[my.canIUse](https://opendocs.alipay.com/mini/api/can-i-use)("input.type.numberpad") 来检测。 | 客户端 10.5.56+，<br />**支持以下类型：**<br />`number`、<br />`idcard`、<br /> `digit`、<br />`numberpad`、 <br />`digitpad`、 <br />`idcardpad` |
+| password | Boolean | 是否是密码类型。<br />**默认值：** false | - | - |
+| placeholder | String | 占位符。 | - | - |
+| placeholder-style | String | 指定 placeholder 的样式，可设置间距。 | 基础库 [1.6.0+](/mini/framework/compatibility)  | - |
+| placeholder-class | String | 指定 placeholder 的样式类。 | 基础库 [1.6.0+](/mini/framework/compatibility)  | - |
+| disabled | Boolean | 是否禁用。<br />**默认值：** false | - | - |
+| maxlength | Number | 最大长度。<br />**默认值：** 140 | - | - |
+| focus | Boolean | 获取焦点。<br />**默认值：** false | - | - |
+| confirm-type | String | 设置键盘右下角按钮的文字，有效值：done（显示“完成”）、go（显示“前往”）、next（显示“下一个”）、search（显示“搜索”）、send（显示“发送”），平台不同显示的文字略有差异。<br />**注意：** 只有在 type=text 时有效。<br />**默认值：** done |基础库 [1.7.0+](/mini/framework/compatibility) | - |
+| confirm-hold | Boolean | 点击键盘右下角按钮时是否保持键盘不收起状态。<br />**默认值：** false |基础库 [1.7.0+](/mini/framework/compatibility) | - |
+| cursor | Number | 指定 focus 时的光标位置。 | - | - |
+| selection-start | Number | 获取光标时，选中文本对应的焦点光标起始位置，需要和 selection-end 配合使用。<br />**默认值：** -1 | 基础库 [1.7.0+](/mini/framework/compatibility) | - |
+| selection-end | Number | 获取光标时，选中文本对应的焦点光标结束位置，需要和 selection-start 配合使用。<br />**默认值：** -1 | 基础库 [1.7.0+](/mini/framework/compatibility) | - |
+| random-number | Boolean | 当 type 为 number, digit, idcard 数字键盘是否随机排列。<br />**默认值：** false | 基础库 [1.9.0+](/mini/framework/compatibility) | 客户端 10.5.56+ |
+| controlled | Boolean | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。<br />建议当 type 值为 text 时不要将 controlled 设置为 true，详见 **Bugs & Tips**。<br /><br />**默认值：** false | 基础库 [1.9.0+](/mini/framework/compatibility) | 客户端 10.5.56+ |
+| always-system | Boolean | 是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效。<br />**默认值**：false | 基础库 [2.7.3+](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  | 暂不支持 |
+| onInput | EventHandle | 键盘输入时触发 input 事件，`event.detail = {value: value,cursor: cursor}`。 | <br />**版本要求**：`cursor`<br />字段基础库 [1.14.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| onConfirm | EventHandle | 点击键盘完成时触发，`event.detail = {value: value}` | - | - |
+| onFocus | EventHandle | 聚焦时触发，`event.detail = {value: value}`。 | - | - |
+| onBlur | EventHandle | 失去焦点时触发（仅支持真机），`event.detail = {value: value}`。 | - | - |
 
 ## Bug & Tip
 
