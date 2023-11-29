@@ -5,6 +5,7 @@
 ## 使用限制
 
 - 版本要求基础库 1.14.1 或更高版本；支付宝客户端 10.1.10 或更高版本，若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- **Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('contact-button')` 判断是否支持。
 - 智能客服仅支持企业用户。
 
 # 使用
