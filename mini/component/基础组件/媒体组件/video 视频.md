@@ -91,40 +91,40 @@ Page({
 
 ## 属性说明
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| style | String | 内联样式。 |
-| class | String | 外部样式名。 |
-| src | String | 要播放视频的资源地址，支持网络地址，支持优酷视频编码（支付宝客户端 10.1.75）。<br />src 支持的协议如下：<br />vid/showId: XMzg2Mzc5MzMwMA==<br />apFilePath: `https://resource/xxx.video`。 |
-| poster | String | 视频封面图的 url，支持 jpg、png 等图片，如 `https://***.jpg`。如果不传的话，默认取视频的首帧图作为封面图。 |
-| poster-size | String | 当 poster 高宽比跟视频高宽不匹配时，如何显示 poster，设置规则同 background-size 一致。<br />**默认值：** contain |
-| object-fit | String | 当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充。<br />**默认值：** contain |
-| initial-time | Number | 指定视频初始播放位置，单位 s。<br /> **版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| duration | Number | 为无法读取时长的视频设置时长，单位 s。 |
-| controls | Boolean | 是否显示默认播放控件（底部工具条，包括播放/暂停按钮、播放进度、时间）。<br />**默认值：** true |
-| autoplay | Boolean | 是否自动播放。<br />**默认值：** false |
-| direction | Number | 设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针 90 度）, -90（屏幕顺时针 90 度）<br />**版本要求：** 基础库 [1.12.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| loop | Boolean | 是否循环播放。<br />**默认值：** false<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| muted | Boolean | 是否静音播放。<br />**默认值：** false<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| show-fullscreen-btn | Boolean | 是否显示全屏按钮。<br />**默认值：** true<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| show-play-btn | Boolean | 是否显示视频底部控制栏的播放按钮。<br />**默认值：** true<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| show-center-play-btn | Boolean | 是否显示视频中间的播放按钮。<br />**默认值：** true<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| show-mute-btn | Boolean | 是否展示工具栏上的静音按钮。<br />**默认值：** true<br />**版本要求：** 基础库 [1.13.7](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| show-thin-progress-bar | Boolean | 当底部工具条隐藏时，是否显示细进度条（controls=false 时设置无效）。<br />**默认值：** false<br />**版本要求：** 基础库 [1.15.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| enable-progress-gesture | Boolean | 全屏模式下是否开启控制进度的手势。<br />**默认值：** false<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| mobilenet-hint-type | Number | 移动网络提醒样式。<br /> <ul><li>0 - 不提醒</li><li>1 - tip 提醒</li><li>2 - 阻塞提醒(无消耗流量大小)</li><li>3 - 阻塞提醒(有消耗流量大小提醒)</li></ul><br />**默认值：** 1<br />**版本要求：** 基础库 [1.13.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| onPlay | EventHandle | 当开始/继续播放时触发 play 事件。 |
-| onPause | EventHandle | 当暂停播放时触发 pause 事件。 |
-| onEnded | EventHandle | 当播放到末尾时触发 ended 事件。 |
-| onTimeUpdate | EventHandle | 播放进度变化时触发，`event.detail = {currentTime: '当前播放时间',userPlayDuration:'用户实际观看时长',videoDuration:'视频总时长'}`。<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| onLoading | EventHandle | 视频出现缓冲时触发。 |
-| onError | EventHandle | 视频播放出错时触发（errorCode 见下面错误码表）。 |
-| onFullScreenChange | EventHandle | 视频进入和退出全屏时触发，`event.detail = {fullScreen, direction}`，direction 取为 vertical 或 horizontal。<br />**版本要求：** 基础库 [1.12.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| onTap | EventHandle | 点击视频 view 时触发，`event.detail = {ptInView:{x:0,y:0}}`。 |
-| onUserAction | EventHandle | 用户操作事件，event.detail = {tag:"mute", value:0}，tag 为用户操作的元素，目前支持的 tag 有：play（底部播放按钮）、centerplay（中心播放按钮）、mute（静音按钮）、fullscreen（全屏按钮）、retry（重试按钮）、mobilenetplay（网络提醒的播放按钮）。 |
-| onStop | EventHandle | 视频播放终止。<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| onRenderStart | EventHandle | 当视频加载完真正开始播放时触发。<br />**版本要求：** 基础库 [1.13.6](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| floating-mode | String | 浮窗设置。暂时不支持全局浮窗。<br />**可选值**：<br /><ul><li>none：无浮窗。</li><li>page：页面内浮窗。</li>miniprogram：跨页面浮窗。</li></ul> **默认值**：none<br />**版本要求**：基础库 [1.24.6](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| **属性** | **类型** | **描述** | **WebView</br>兼容性** |**Native</br>兼容性** |
+| --- | --- | --- | -------------- | -------------- |
+| style | String | 内联样式。 | - | - |
+| class | String | 外部样式名。 | - | - |
+| src | String | 要播放视频的资源地址，支持网络地址，支持优酷视频编码（支付宝客户端 10.1.75）。<br />src 支持的协议如下：<br />vid/showId: XMzg2Mzc5MzMwMA==<br />apFilePath: `https://resource/xxx.video`。 | - | - |
+| poster | String | 视频封面图的 url，支持 jpg、png 等图片，如 `https://***.jpg`。如果不传的话，默认取视频的首帧图作为封面图。 | - | - |
+| poster-size | String | 当 poster 高宽比跟视频高宽不匹配时，如何显示 poster，设置规则同 background-size 一致。<br />**默认值：** contain | - | - |
+| object-fit | String | 当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充。<br />**默认值：** contain | - | - |
+| initial-time | Number | 指定视频初始播放位置，单位 s。 | 基础库 [1.9.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| duration | Number | 为无法读取时长的视频设置时长，单位 s。 | - | - |
+| controls | Boolean | 是否显示默认播放控件（底部工具条，包括播放/暂停按钮、播放进度、时间）。<br />**默认值：** true | - | - |
+| autoplay | Boolean | 是否自动播放。<br />**默认值：** false | - | - |
+| direction | Number | 设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针 90 度）, -90（屏幕顺时针 90 度） | 基础库 [1.12.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| loop | Boolean | 是否循环播放。<br />**默认值：** false | 基础库 [1.9.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| muted | Boolean | 是否静音播放。<br />**默认值：** false | 基础库 [1.9.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| show-fullscreen-btn | Boolean | 是否显示全屏按钮。<br />**默认值：** true | 基础库 [1.9.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| show-play-btn | Boolean | 是否显示视频底部控制栏的播放按钮。<br />**默认值：** true | 基础库 [1.9.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| show-center-play-btn | Boolean | 是否显示视频中间的播放按钮。<br />**默认值：** true | 基础库 [1.9.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| show-mute-btn | Boolean | 是否展示工具栏上的静音按钮。<br />**默认值：** true | 基础库 [1.13.7+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| show-thin-progress-bar | Boolean | 当底部工具条隐藏时，是否显示细进度条（controls=false 时设置无效）。<br />**默认值：** false | 基础库 [1.15.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| enable-progress-gesture | Boolean | 全屏模式下是否开启控制进度的手势。<br />**默认值：** false |基础库 [1.9.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| mobilenet-hint-type | Number | 移动网络提醒样式。<br /> <ul><li>0 - 不提醒</li><li>1 - tip 提醒</li><li>2 - 阻塞提醒(无消耗流量大小)</li><li>3 - 阻塞提醒(有消耗流量大小提醒)</li></ul><br />**默认值：** 1 | 基础库 [1.13.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| onPlay | EventHandle | 当开始/继续播放时触发 play 事件。 | - | - |
+| onPause | EventHandle | 当暂停播放时触发 pause 事件。 | - | - |
+| onEnded | EventHandle | 当播放到末尾时触发 ended 事件。 | - | - |
+| onTimeUpdate | EventHandle | 播放进度变化时触发，`event.detail = {currentTime: '当前播放时间',userPlayDuration:'用户实际观看时长',videoDuration:'视频总时长'}`。 | 基础库 [1.9.0+](https://opendocs.alipay.com/mini/framework/compatibility)  | - |
+| onLoading | EventHandle | 视频出现缓冲时触发。 | - | - |
+| onError | EventHandle | 视频播放出错时触发（errorCode 见下面错误码表）。 | - | - |
+| onFullScreenChange | EventHandle | 视频进入和退出全屏时触发，`event.detail = {fullScreen, direction}`，direction 取为 vertical 或 horizontal。 | 基础库 [1.12.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| onTap | EventHandle | 点击视频 view 时触发，`event.detail = {ptInView:{x:0,y:0}}`。 | - | - |
+| onUserAction | EventHandle | 用户操作事件，event.detail = {tag:"mute", value:0}，tag 为用户操作的元素，目前支持的 tag 有：play（底部播放按钮）、centerplay（中心播放按钮）、mute（静音按钮）、fullscreen（全屏按钮）、retry（重试按钮）、mobilenetplay（网络提醒的播放按钮）。 | - | - |
+| onStop | EventHandle | 视频播放终止。 | 基础库 [1.9.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| onRenderStart | EventHandle | 当视频加载完真正开始播放时触发。 | 基础库 [1.13.6+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
+| floating-mode | String | 浮窗设置。暂时不支持全局浮窗。<br />**可选值**：<br /><ul><li>none：无浮窗。</li><li>page：页面内浮窗。</li>miniprogram：跨页面浮窗。</li></ul> **默认值**：none | 基础库 [1.24.6+](https://opendocs.alipay.com/mini/framework/compatibility) | 暂不支持 |
 
 ### 错误码
 | **错误码** | **描述** | **解决方案** |
