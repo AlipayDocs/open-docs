@@ -4,7 +4,8 @@ aria 属性是 [WAI-ARIA](https://www.w3.org/TR/wai-aria/) 标准提供无障碍
 
 ## 使用限制
 
-支持 aria 属性的小程序组件有：[view](https://opendocs.alipay.com/mini/component/view)、[text](https://opendocs.alipay.com/mini/component/text)、[icon](https://opendocs.alipay.com/mini/component/icon)、[button](https://opendocs.alipay.com/mini/component/button)、[label](https://opendocs.alipay.com/mini/component/label)、[checkbox](https://opendocs.alipay.com/mini/component/checkbox)、[switch](https://opendocs.alipay.com/mini/component/switch)、[image](https://opendocs.alipay.com/mini/component/image)、[radio](https://opendocs.alipay.com/mini/component/radio)。
+- 支持 aria 属性的小程序组件有：[view](https://opendocs.alipay.com/mini/component/view)、[text](https://opendocs.alipay.com/mini/component/text)、[icon](https://opendocs.alipay.com/mini/component/icon)、[button](https://opendocs.alipay.com/mini/component/button)、[label](https://opendocs.alipay.com/mini/component/label)、[checkbox](https://opendocs.alipay.com/mini/component/checkbox)、[switch](https://opendocs.alipay.com/mini/component/switch)、[image](https://opendocs.alipay.com/mini/component/image)、[radio](https://opendocs.alipay.com/mini/component/radio)。
+- **Native 渲染引擎**：暂不支持。
 
 # 使用
 
