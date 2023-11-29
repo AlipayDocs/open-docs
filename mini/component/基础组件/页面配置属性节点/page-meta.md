@@ -49,15 +49,17 @@ Page({
 
 ## 属性说明
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| background-color | String | 窗口的背景色，必须为十六进制颜色值。 |
-| background-color-top | String | 顶部窗口的背景色，必须为十六进制颜色值，仅 iOS 支持。 |
-| background-color-bottom | String | 底部窗口的背景色，必须为十六进制颜色值，仅 iOS 支持。 |
-| root-background-color | String | 页面内容的背景色，用于页面中的空白部分和页面大小变化 resize 动画期间的临时空闲区域。 |
-| scroll-top | String | 滚动位置，可以使用 px 或者 rpx 为单位，在被设置时，页面会滚动到对应位置。 |
-| scroll-duration | Number | 滚动动画时长。<br />**默认值：** 300 |
-| page-style | String | 页面根节点样式，页面根节点是所有页面节点的祖先节点，相当于 HTML 中的 body 节点。 |
-| page-font-size | String | 页面 page 的字体大小，可以设置为`system`，表示使用当前用户设置的支付宝字体大小。 |
-| root-font-size | String | 页面的根字体大小，页面中的所有 rem 单位，将使用这个字体大小作为参考值，即 `1rem` 等于这个字体大小；<br />可以设置为 `system`，表示使用当前用户设置的支付宝字体大小。 |
-| onScroll | EventHandle | 页面滚动时触发，`event.detail = { scrollTop }` |
+>  表格中 “-” 代表支持。
+
+| **属性** | **类型** | **描述** |**Native 渲染引擎兼容性** |
+| --- | --- | --- |------------ |
+| background-color | String | 窗口的背景色，必须为十六进制颜色值。 | - |
+| background-color-top | String | 顶部窗口的背景色，必须为十六进制颜色值，仅 iOS 支持。 | - |
+| background-color-bottom | String | 底部窗口的背景色，必须为十六进制颜色值，仅 iOS 支持。 | - |
+| root-background-color | String | 页面内容的背景色，用于页面中的空白部分和页面大小变化 resize 动画期间的临时空闲区域。 | - |
+| scroll-top | String | 滚动位置，可以使用 px 或者 rpx 为单位，在被设置时，页面会滚动到对应位置。 | - |
+| scroll-duration | Number | 滚动动画时长。<br />**默认值：** 300 | 暂不支持 |
+| page-style | String | 页面根节点样式，页面根节点是所有页面节点的祖先节点，相当于 HTML 中的 body 节点。 | - |
+| page-font-size | String | 页面 page 的字体大小，可以设置为`system`，表示使用当前用户设置的支付宝字体大小。 | - |
+| root-font-size | String | 页面的根字体大小，页面中的所有 rem 单位，将使用这个字体大小作为参考值，即 `1rem` 等于这个字体大小；<br />可以设置为 `system`，表示使用当前用户设置的支付宝字体大小。 | - |
+| onScroll | EventHandle | 页面滚动时触发，`event.detail = { scrollTop }` | - |
