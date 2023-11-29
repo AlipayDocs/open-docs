@@ -5,6 +5,7 @@
 ## 使用限制
 
 - 版本要求基础库 1.10.0 及以上，若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- **Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('cover-view')` 判断是否支持。
 - 实际效果请以真机为准。
 
 ## 扫码体验
