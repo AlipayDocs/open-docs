@@ -4,6 +4,7 @@
 
 ## 使用限制
 
+- **Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('picker-view'` 判断是否支持。
 - 该组件内部请勿放入 hidden 或 display none 的节点，需要隐藏请用 a:if 切换。
 - 不支持背景色设置成透明，可以修改颜色。
 
@@ -19,7 +20,9 @@
 
 ## picker-view-column 滚动选择器子项
 
-滚动选择器子项。仅可放置于 picker-view 中，其孩子节点的高度会自动设置成与 picker-view 的选中框的高度一致。<br />**说明：** 该组件内部请勿放入 hidden 或 display none 的节点，需要隐藏请用 `a:if` 切换，即： <br /><br />推荐示例：<br />
+滚动选择器子项。仅可放置于 picker-view 中，其孩子节点的高度会自动设置成与 picker-view 的选中框的高度一致。
+<br />**Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('picker-view-column')` 判断是否支持。
+<br />**说明：** 该组件内部请勿放入 hidden 或 display none 的节点，需要隐藏请用 `a:if` 切换，即： <br /><br />推荐示例：<br />
 
 ```html
 <view a:if="{{xx}}"><picker-view /></view>
