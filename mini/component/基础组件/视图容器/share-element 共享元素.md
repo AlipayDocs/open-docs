@@ -4,6 +4,7 @@
 ## 使用限制
 
 - 基础库 [2.8.1](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，低版本需要做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- **Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('share-element')` 判断是否支持。
 - 该组件需与[ page-container](https://opendocs.alipay.com/mini/04ne6j) 组件结合使用。
 
 # 使用
