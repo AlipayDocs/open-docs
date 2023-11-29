@@ -5,6 +5,7 @@
 ## 使用限制
 
 - 版本要求基础库 1.11.0 及以上，若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- **Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('movable-view')` 判断是否支持。
 - movable-view 必须设置 width 和 height 属性，不设置默认为 10px。
 - movable-view 默认为绝对定位（请不要修改），top 和 left 属性为 0px。
 - 当 movable-view 小于 [movable-area](https://opendocs.alipay.com/mini/component/movable-area) 时，movable-view 的移动范围是在 movable-area 内；当 movable-view 大于 movable-area 时，movable-view 的移动范围必须包含 movable-area （x 轴方向和 y 轴方向分开考虑）。
