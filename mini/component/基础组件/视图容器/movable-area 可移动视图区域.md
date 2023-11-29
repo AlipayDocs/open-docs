@@ -5,6 +5,7 @@
 ## 使用限制
 
 - 版本要求基础库 1.11.0 或更高版本；若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- **Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('movable-area')` 判断是否支持。
 - 必须设置 `width` 和 `height` 属性，不设置则默认为 10px。
 
 ## 扫码体验
