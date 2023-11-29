@@ -79,8 +79,8 @@ export default {
 接受两个参数： | **参数** | **描述** | | --- | --- | | event | [事件对象](https://opendocs.alipay.com/mini/framework/event-object)，额外地还提供了如下属性：<br /><ol><li>instance： event.currentTarget 基础组件的 Descriptor 描述对象。</li><li>preventDefault()：允许阻止原生事件的默认行为。</li></ol>stopPropagation()：行为等同于使用 catch\* 事件回调。<br />composedPath()：获取事件路径，基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)起支持。 | | ownerComponent | 基础组件所在自定义组件/页面的 Descriptor 描述对象。 |
 
 #### 1. event.preventDefault()
-
-对于限定的以下事件：
+**Native 渲染引擎**：暂不支持。
+</br >对于限定的以下事件：
 
 - touchStart
 - touchMove
@@ -97,33 +97,33 @@ export default {
 
 SJS 函数的第二个参数 ownerComponent 指向该事件 event.currentTarget 所在的自定义组件/页面的 Descriptor 对象，具有如下方法：
 
-| **方法** | **参数** | **描述** |
-| --- | --- | --- |
-| selectComponent | selector | 选择该自定义组件/页面/基础组件的匹配指定选择器的后代基础组件的 Descriptor 描述对象。selector 选择器字符串。插槽能被提供者选中，而不能被使用者选中。 |
-| selectAllComponents | selector | 选择该自定义组件/页面/基础组件的匹配指定选择器的所有后代基础组件的 Descriptor 描述对象。selector 选择器字符串。插槽能被提供者选中，而不能被使用者选中。 |
-| getState | - | 获取其状态对象。当有局部变量需要存储起来后续使用的时候使用此方法。 |
-| callMethod | (method, arg) | 调用 worker 侧所在自定义组件/页面的自定义方法。<br /><ol><li>method 方法名称。</li><li>arg 方法传参。</li></ol> |
-| requestAnimationFrame | fn | 同浏览器平台，仅能被同 Descriptor 对象的 cancelAnimationFrame 取消。返回该请求对应的标识符（可用于取消）。fn 回调函数。 |
-| cancelAnimationFrame | id | 取消指定的 `requestAnimationFrame`。仅能取消由该 Descriptor 自己发起的。id 标识符（`requestAnimationFrame` 返回值）。 |
-| selectOwnerComponent | - | 获取父自定义组件的 Descriptor 描述对象。使用插件时，宿主小程序内的对象会跳过选择属于插件的父自定义组件，插件内的对象也会跳过选择属于宿主小程序的父自定义组件。<br />基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。 |
-| setTimeout | (fn, timeout) | 同浏览器平台，仅能被同 Descriptor 对象的 clearTimeout 取消，返回该请求对应的标识符（可用于取消）。<br /><ol><li>fn 回调函数。</li><li>timeout 超时时间。</li></ol> |
-| clearTimeout | id | 取消指定的 `setTimeout`。仅能取消由该 Descriptor 自己发起的。id 标识符（`setTimeout` 返回值）。 |
+| **方法** | **参数** | **描述** |**渲染引擎兼容性** |
+| --- | --- | --- |------ |
+| selectComponent | selector | 选择该自定义组件/页面/基础组件的匹配指定选择器的后代基础组件的 Descriptor 描述对象。selector 选择器字符串。插槽能被提供者选中，而不能被使用者选中。 |仅 WebView |
+| selectAllComponents | selector | 选择该自定义组件/页面/基础组件的匹配指定选择器的所有后代基础组件的 Descriptor 描述对象。selector 选择器字符串。插槽能被提供者选中，而不能被使用者选中。 |仅 WebView |
+| getState | - | 获取其状态对象。当有局部变量需要存储起来后续使用的时候使用此方法。 |- |
+| callMethod | (method, arg) | 调用 worker 侧所在自定义组件/页面的自定义方法。<br /><ol><li>method 方法名称。</li><li>arg 方法传参。</li></ol> |- |
+| requestAnimationFrame | fn | 同浏览器平台，仅能被同 Descriptor 对象的 cancelAnimationFrame 取消。返回该请求对应的标识符（可用于取消）。fn 回调函数。 |仅 WebView |
+| cancelAnimationFrame | id | 取消指定的 `requestAnimationFrame`。仅能取消由该 Descriptor 自己发起的。id 标识符（`requestAnimationFrame` 返回值）。 |仅 WebView |
+| selectOwnerComponent | - | 获取父自定义组件的 Descriptor 描述对象。使用插件时，宿主小程序内的对象会跳过选择属于插件的父自定义组件，插件内的对象也会跳过选择属于宿主小程序的父自定义组件。<br />基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。 |-|
+| setTimeout | (fn, timeout) | 同浏览器平台，仅能被同 Descriptor 对象的 clearTimeout 取消，返回该请求对应的标识符（可用于取消）。<br /><ol><li>fn 回调函数。</li><li>timeout 超时时间。</li></ol> |- |
+| clearTimeout | id | 取消指定的 `setTimeout`。仅能取消由该 Descriptor 自己发起的。id 标识符（`setTimeout` 返回值）。 |- |
 
 #### 4. 基础组件 Descriptor 描述对象
 
 通过 event.instance 可以获得 event.currentTarget 的 Descriptor 描述对象，除了上述自定义组件/页面的方法外，还具有如下方法：
 
-| **方法** | **参数** | **描述** |
-| --- | --- | --- |
-| getComputedStyle | props | 获得相应计算样式值的键值对象。props 指定样式属性名的字符串数组。 |
-| getBoundingClientRect | - | 同浏览器平台。 |
-| getDataset | - | 获取基础组件的 dataset。与 `event.currentTarget.dataset` 一致。 |
-| hasClass | className | 判定是否具有指定样式名。不允许探测 a-\* 开头的样式名。className 样式名字符串。 |
-| addClass | (...classNames) | 添加指定样式名（可多个），不允许添加 a-\* 开头的样式名。 |
-| removeClass | (...classNames) | 移除指定样式名（可多个），不允许移除 a-\* 开头的样式名。 |
-| setStyle | style | 添加指定的行内样式。支持 rpx。设置的样式优先级比组件 axml 里面定义的样式高。每次调用都会覆盖上一次的调用。<br />style 样式字符串或键值对象。 |
-| getDOMProperty | properties | properties 基础元素的 DOM 属性名数组。<br />基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。获取基础元素的 DOM 属性。支持的属性如下：<br /><ul><li>scrollLeft</li><li>scrollTop</li></ul> |
-| setDOMProperty | properties | properties 基础元素的 DOM 属性对象。<br />基础库 **2.7.4** 起支持。设置基础元素的 DOM 属性。支持的属性如下：<br /> <ul><li>scrollLeft</li><li>scrollTop</li></ul> |
+| **方法** | **参数** | **描述** |**渲染引擎兼容性** |
+| --- | --- | --- |----- |
+| getComputedStyle | props | 获得相应计算样式值的键值对象。props 指定样式属性名的字符串数组。 | 仅 WebView |
+| getBoundingClientRect | - | 同浏览器平台。 | 仅 WebView |
+| getDataset | - | 获取基础组件的 dataset。与 `event.currentTarget.dataset` 一致。 | - |
+| hasClass | className | 判定是否具有指定样式名。不允许探测 a-\* 开头的样式名。className 样式名字符串。 | - |
+| addClass | (...classNames) | 添加指定样式名（可多个），不允许添加 a-\* 开头的样式名。 | - |
+| removeClass | (...classNames) | 移除指定样式名（可多个），不允许移除 a-\* 开头的样式名。 | - |
+| setStyle | style | 添加指定的行内样式。支持 rpx。设置的样式优先级比组件 axml 里面定义的样式高。每次调用都会覆盖上一次的调用。<br />style 样式字符串或键值对象。 | - |
+| getDOMProperty | properties | properties 基础元素的 DOM 属性名数组。<br />基础库 [2.7.4](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。获取基础元素的 DOM 属性。支持的属性如下：<br /><ul><li>scrollLeft</li><li>scrollTop</li></ul> | 仅 WebView |
+| setDOMProperty | properties | properties 基础元素的 DOM 属性对象。<br />基础库 **2.7.4** 起支持。设置基础元素的 DOM 属性。支持的属性如下：<br /> <ul><li>scrollLeft</li><li>scrollTop</li></ul> | 仅 WebView |
 
 #### 5. composedPath()
 
