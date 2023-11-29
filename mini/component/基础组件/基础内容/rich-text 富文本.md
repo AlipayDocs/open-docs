@@ -5,6 +5,7 @@
 ## 使用限制
 
 - 版本要求基础库 1.11.0 及以上，若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- **Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('rich-text')` 判断是否支持。
 - 富文本里面写 js 不支持事件执行。
 - rich-text 支持 a 标签，不支持超链接。
 
