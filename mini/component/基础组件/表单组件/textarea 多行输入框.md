@@ -1,6 +1,6 @@
 # 简介
 
-多行输入框，可输入多行内容。支持使用 [my.hideKeyboard](https://opendocs.alipay.com/mini/api/ui-hidekeyboard) 接口隐藏输入键盘。可以在 [input](https://opendocs.alipay.com/mini/component/input) 组件中加上 `enableNative="{{false}}"`，避免 textarea 弹出键盘后出现内容上移。在 textarea 代码中加上 `enableNative="{{false}}"`，可解决 Android 系统下 textarea 获取焦点的时候文字消失问题。 
+多行输入框，可输入多行内容。支持使用 [my.hideKeyboard](https://opendocs.alipay.com/mini/api/ui-hidekeyboard) 接口隐藏输入键盘。可以在 [input](https://opendocs.alipay.com/mini/component/input) 组件中加上 `enableNative="{{false}}"`，避免 textarea 弹出键盘后出现内容上移。在 textarea 代码中加上 `enableNative="{{false}}"`，可解决 Android 系统下 textarea 获取焦点的时候文字消失问题。
 
 ## 使用限制
 
