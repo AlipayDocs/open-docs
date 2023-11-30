@@ -43,7 +43,7 @@
 | selection-start | Number | 获取光标时，选中文本对应的焦点光标起始位置，需要和 selection-end 配合使用。<br />**默认值：** -1 | 基础库 [1.7.0+](/mini/framework/compatibility) | - |
 | selection-end | Number | 获取光标时，选中文本对应的焦点光标结束位置，需要和 selection-start 配合使用。<br />**默认值：** -1 | 基础库 [1.7.0+](/mini/framework/compatibility) | - |
 | random-number | Boolean | 当 type 为 number, digit, idcard 数字键盘是否随机排列。<br />**默认值：** false | 基础库 [1.9.0+](/mini/framework/compatibility) | 客户端 10.5.56+ |
-| controlled | Boolean | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。<br />建议当 type 值为 text 时不要将 controlled 设置为 true，详见 **Bugs & Tips**。<br /><br />**默认值：** false | 基础库 [1.9.0+](/mini/framework/compatibility) | 客户端 10.5.56+ |
+| controlled | Boolean | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。<br />建议当 type 值为 text 时不要将 controlled 设置为 true，详见 **Bugs & Tips**。<br /><br />**默认值：** false | 基础库 [1.9.0+](/mini/framework/compatibility) | - |
 | always-system | Boolean | 是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效。<br />**默认值**：false | 基础库 [2.7.3+](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)  | 暂不支持 |
 | onInput | EventHandle | 键盘输入时触发 input 事件，`event.detail = {value: value,cursor: cursor}`。 | <br />**版本要求**：`cursor`<br />字段基础库 [1.14.0+](https://opendocs.alipay.com/mini/framework/compatibility) | - |
 | onConfirm | EventHandle | 点击键盘完成时触发，`event.detail = {value: value}` | - | - |
