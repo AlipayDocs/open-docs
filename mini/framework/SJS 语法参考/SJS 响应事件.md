@@ -109,7 +109,7 @@ SJS 函数的第二个参数 ownerComponent 指向该事件 event.currentTarget 
 | callMethod | (method, arg) | 调用 worker 侧所在自定义组件/页面的自定义方法。<br /><ol><li>method 方法名称。</li><li>arg 方法传参。</li></ol> |- |
 | requestAnimationFrame | fn | 同浏览器平台，仅能被同 Descriptor 对象的 cancelAnimationFrame 取消。返回该请求对应的标识符（可用于取消）。fn 回调函数。 |仅 WebView |
 | cancelAnimationFrame | id | 取消指定的 `requestAnimationFrame`。仅能取消由该 Descriptor 自己发起的。id 标识符（`requestAnimationFrame` 返回值）。 |仅 WebView |
-| selectOwnerComponent | - | 获取父自定义组件的 Descriptor 描述对象。使用插件时，宿主小程序内的对象会跳过选择属于插件的父自定义组件，插件内的对象也会跳过选择属于宿主小程序的父自定义组件。<br />基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。 |-|
+| selectOwnerComponent | - | 获取父自定义组件的 Descriptor 描述对象。使用插件时，宿主小程序内的对象会跳过选择属于插件的父自定义组件，插件内的对象也会跳过选择属于宿主小程序的父自定义组件。<br />基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。 |仅 WebView|
 | setTimeout | (fn, timeout) | 同浏览器平台，仅能被同 Descriptor 对象的 clearTimeout 取消，返回该请求对应的标识符（可用于取消）。<br /><ol><li>fn 回调函数。</li><li>timeout 超时时间。</li></ol> |- |
 | clearTimeout | id | 取消指定的 `setTimeout`。仅能取消由该 Descriptor 自己发起的。id 标识符（`setTimeout` 返回值）。 |- |
 
