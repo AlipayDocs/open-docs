@@ -4,7 +4,7 @@
 
 ## 使用限制
 
-- **Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('input')` 判断是否支持。
+- **Native 渲染引擎**：基础库 2.9.7+ 开始支持。可以通过 `my.canIUse('input')` 判断是否支持。
 - iOS 系统支付宝客户端版本 10.1.80 及以上不支持 `focus="{{true}}"` 自动唤起。
 - 小程序中 input 如果父类是 `position: fixed`，可以加上 `enableNative="{{false}}"`，解决输入框错位/光标上移问题。个别情况下定位问题会导致光标错位，所以需要把 false 改为 true，代码块为 `enableNative="{{true}}"`。
 - confirm-type 与 enableNative 属性冲突，若希望 confirm-type 生效，enableNative 不能设定为 false，而且不能设定 always-system。
