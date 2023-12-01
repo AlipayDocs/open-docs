@@ -35,8 +35,8 @@
 | interval | Number | 自动切换时间间隔。<br />**默认值：** 5000(ms) |- | - |
 | circular | Boolean | 是否启用无限滑动。<br />**默认值：** false |- | - |
 | vertical | Boolean | 滑动方向是否为纵向。<br />**默认值：** false |- | - |
-| previous-margin | String | 前边距，单位 px，1.9.0 暂时只支持水平方向。<br />**默认值：** 0px<br />**说明：** 去除 `previous-margin` 的设置距离可删除 swiper 组件左右空白距离。 |基础库 [1.9.0+](/mini/framework/compatibility) | 基础库 2.9.9+，Android 暂不支持 |
-| next-margin | String | 后边距，单位 px，1.9.0 暂时只支持水平方向。<br />**默认值：** 0px<br />**说明：** 去除 `next-margin` 的设置距离可删除 swiper 组件左右空白距离。 |基础库 [1.9.0+](/mini/framework/compatibility) | 基础库 2.9.9+，Android 暂不支持 |
+| previous-margin | String | 前边距，单位 px，1.9.0 暂时只支持水平方向。<br />**默认值：** 0px<br />**说明：** 去除 `previous-margin` 的设置距离可删除 swiper 组件左右空白距离。 |基础库 [1.9.0+](/mini/framework/compatibility) | 基础库 2.9.7+，Android 暂不支持 |
+| next-margin | String | 后边距，单位 px，1.9.0 暂时只支持水平方向。<br />**默认值：** 0px<br />**说明：** 去除 `next-margin` 的设置距离可删除 swiper 组件左右空白距离。 |基础库 [1.9.0+](/mini/framework/compatibility) | 基础库 2.9.7+，Android 暂不支持 |
 | acceleration | Boolean | 当开启时，会根据滑动速度，连续滑动多屏。<br />**默认值：** false |基础库 [1.13.7+](/mini/framework/compatibility) | - |
 | disable-programmatic-animation | Boolean | 是否禁用代码变动触发 swiper 切换时使用动画。<br />**默认值：** false |基础库 [1.13.7+](/mini/framework/compatibility) | - |
 | onChange | EventHandle | current 改变时会触发，`event.detail = {current, isChanging}`，其中 `isChanging` 需 `acceleration` 设置为 `{{true}}` 时才有值，当连续滑动多屏时，中间若干屏触发 `onChange` 事件时 `isChanging` 为 `true`，最后一屏返回 `false`。 |基础库 [1.15.0+](/mini/framework/compatibility)| - |
