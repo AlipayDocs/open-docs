@@ -23,7 +23,7 @@
 
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
-| report-submit | Boolean | onSubmit 回调是否返回 formId。用于发送 [消息](https://opendocs.alipay.com/mini/introduce/message)，使用前可使用 [canIUse](https://opendocs.alipay.com/mini/api/can-i-use) ('form.report-submit')判断是否支持。<br />**注意：** formId 需要真机调试才会有返回值。<br />**版本要求：** 基础库 [1.3.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| report-submit | Boolean | onSubmit 回调是否返回 formId。用于发送 [消息](https://opendocs.alipay.com/mini/repo-01emf6)，使用前可使用 [canIUse](https://opendocs.alipay.com/mini/api/can-i-use) ('form.report-submit')判断是否支持。<br />**注意：** formId 需要真机调试才会有返回值。<br />**版本要求：** 基础库 [1.3.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | onSubmit | EventHandle | 携带 form 中的数据触发 submit 事件，`event.detail = {value : {'slider': '80'}, buttonTarget: {'dataset': 'buttonDataset'} }` (可以在 submit 按钮上添加自定义参数)。<br />**版本要求：** buttonTarget 支持基础库 [1.7.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | onReset | EventHandle | 表单重置时会触发 reset 事件。 |
 
