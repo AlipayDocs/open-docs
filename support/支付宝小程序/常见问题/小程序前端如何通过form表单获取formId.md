@@ -22,6 +22,6 @@ Page({
 ## 相关文档
 
 - [form组件](https://opendocs.alipay.com/mini/component/form)
-- [消息](https://opendocs.alipay.com/mini/introduce/message)
+- [消息](https://opendocs.alipay.com/mini/repo-01emf6)
 
  <br /> 
