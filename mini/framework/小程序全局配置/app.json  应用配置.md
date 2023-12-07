@@ -161,6 +161,17 @@ icon 图标推荐大小为 81px \* 81px，系统会对传入的非推荐尺寸�
 
 代码中，开发者可通过 [my.setTabBarItem](https://opendocs.alipay.com/mini/api/zu37bk) 动态设置 `tabBar` 中指定 `item` 的内容。
 
+# networkTimeout
+
+各类网络请求的超时时间，单位均为毫秒。
+| **属性**        | **类型** | **必填** | **默认值**        | **说明**     |
+| --------------- | -------- | -------- | ---------------| --------------- |
+| request        | number   | 否        | 30000      | [my.request](https://opendocs.alipay.com/mini/api/owycmh) 的超时时间，单位：毫秒。        |
+| connectSocket  | number   | 否        | 30000      | [my.connectSocket](https://opendocs.alipay.com/mini/api/vx19c3) 的超时时间，单位：毫秒。        |
+| uploadFile     | number   | 否        | 60000      | [my.uploadFile](https://opendocs.alipay.com/mini/api/kmq4hc) 的超时时间，单位：毫秒。        |
+| downloadFile   | number   | 否        | 60000      | [my.downloadFile](https://opendocs.alipay.com/mini/api/xr054r) 的超时时间，单位：毫秒。        |
+
+
 # subPackages
 
 启用 [分包加载](https://opendocs.alipay.com/mini/framework/subpackages) 时，声明项目分包结构。
