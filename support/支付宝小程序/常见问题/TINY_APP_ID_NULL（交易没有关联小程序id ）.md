@@ -5,7 +5,7 @@ TINY_APP_ID_NULL（交易没有关联小程序id ）。 
 调用alipay.merchant.order.sync（订单数据同步接口）接口来同步更新订单状态时出现：“"sub_code": "TINY_APP_ID_NULL","sub_msg": "交易没有关联小程序id"”报错。 
 
 ## 涉及接口
-[alipay.merchant.order.sync](https://docs.open.alipay.com/api_4/alipay.merchant.order.sync)（订单数据同步接口）。 
+[alipay.merchant.order.sync](https://opendocs.alipay.com/mini/84f9ee3c_alipay.merchant.order.sync?scene=common&pathHash=103117c9)（订单数据同步接口）。 
 
 ## 报错原因
 同步的订单交易没有在小程序中唤起收银台完成支付，是小程序外的渠道唤起的支付。例如：小程序创建交易后在个人账单中会有一笔待支付的记录，用户可能在账单中支付的这笔订单。 
