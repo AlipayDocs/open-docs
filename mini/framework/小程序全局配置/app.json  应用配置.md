@@ -111,7 +111,7 @@
 | titlePenetrate | String | 否 | 是否允许导航栏点击穿透。默认 `NO`，支持 `YES` / `NO`。 | - |
 | titleImage | String | 否 | 导航栏图片地址。 | - |
 | titleBarColor | HexColor | 否 | 导航栏背景色。例：白色 "#FFFFFF"。 | - |
-| navigationBarFrontColor | "black"/"white" | 否 | 导航栏前景色。只支持配置黑色或者白色。 | [支付宝客户端 10.5.30](https://opendocs.alipay.com/mini/framework/compatibility) |
+| navigationBarFrontColor | String | 否 | 导航栏前景色。只支持配置 `black` 或者 `white`。 | [支付宝客户端 10.5.30](https://opendocs.alipay.com/mini/framework/compatibility) |
 
 # tabBar
 
