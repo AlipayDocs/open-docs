@@ -1,33 +1,33 @@
-小程序提供了全局的 getApp() 方法，可获取当前小程序实例，一般用于在子页面中获取顶层应用。
+小程序提供了全局的 `getApp()` 方法，可获取当前小程序实例，一般用于在子页面中获取顶层应用。
 
-```JavaScript
+```javascript
 // app.js
 App({
   globalData: 1
 });
 ```
 
-```JavaScript
+```javascript
 // page.js
 var app = getApp();
 console.log(app.globalData); // 获取 globalData
 ```
 
-**注意：**
+**注意**：
 
 - `App()` 函数中不可以调用 `getApp()`，可使用 `this` 获取当前小程序实例。
 - 通过 `getApp()` 获取实例后，请勿调用生命周期回调函数。
-- 请区分全局变量及页面局部变量，比如：
+- 请区分全局变量及页面局部变量。比如：
 
-```JavaScript
+```javascript
 // app.js
 App({
-  //定义全局变量 globalData，在整个App中有效
+  // 定义全局变量 globalData，在整个 App 中有效
   globalData: 1
 });
 ```
 
-```JavaScript
+```javascript
 // a.js
 // 定义页面局部变量 localValue，只在 a.js 有效
 var localValue = 'a';
@@ -37,7 +37,7 @@ var app = getApp();
 app.globalData++;
 ```
 
-```JavaScript
+```javascript
 // b.js
 // 定义页面局部变量 localValue，只在 b.js 有效
 var localValue = 'b';
@@ -45,8 +45,7 @@ var localValue = 'b';
 console.log(getApp().globalData);
 ```
 
-`a.js` 和 `b.js` 两个文件中都声明了变量 `localValue`，但并不会互相影响，因为各个文件声明的局部变量和函数只在当前文件下有效。
-
+`a.js` 和 `b.js` 两个文件中都声明了变量 `localValue`，但并不会互相影响。因为各个文件声明的局部变量和函数只在当前文件下有效。
 # 相关文档
 
 - [小程序页面介绍](https://opendocs.alipay.com/mini/framework/page)
