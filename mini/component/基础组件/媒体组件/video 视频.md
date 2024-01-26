@@ -1,6 +1,6 @@
 # 简介
 
-用户可通过 video 组件播放视频，目前暂只支持优酷渠道上传的视频及网络地址的视频，获取优酷视频码指南。相关 API：[my.createVideoContext](https://opendocs.alipay.com/mini/081db1)。
+用户可通过 video 组件播放视频，目前暂只支持优酷渠道上传的视频及网络地址的视频，获取[优酷视频码指南](https://opendocs.alipay.com/mini/081db1)。相关 API：[my.createVideoContext](https://opendocs.alipay.com/mini/api/media/video/my.createvideocontext)。
 
 ## 使用限制
 
