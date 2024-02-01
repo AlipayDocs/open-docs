@@ -1,6 +1,7 @@
 # 简介
 
 当页面在请求数据过程中，会出现信息读取的进度过程。
+
 # 使用限制
 **Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('progress')` 判断是否支持。
 
@@ -12,15 +13,15 @@
 
 ## 在线示例
 
-[小程序在线](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/progress/index&defaultOpenedFiles=pages/progress/index&theme=light)
+[小程序在线示例](https://opendocs.alipay.com/openbox/mini/opendocs/basic-component?view=preview&defaultPage=pages/progress/index&defaultOpenedFiles=pages/progress/index&theme=light)
 
 ## 属性说明
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| percent | Float | 百分比(0~100)。 |
-| show-info | Boolean | 在右侧显示百分比值。<br />**默认值：** show-info="{{false}}" |
-| stroke-width | Number | 线的粗细，单位 px。<br />**默认值：** 6 |
-| active-color | Color | 已选择的进度条颜色。<br />**默认值：** #09BB07 |
-| background-color | Color | 未选择的进度条颜色。 |
-| active | Boolean | 是否添加从 0% 开始加载的入场动画。<br />**默认值：** `active="{{false}}"` |
+| 属性          | 类型    | 描述       |
+| ------------ | ------- | ---------------- |
+| percent      | Float   | 百分比（0~100）。 |
+| show-info    | Boolean | 在右侧显示百分比值。默认值：`show-info="{{false}}"` |
+| stroke-width | Number  | 线的粗细，单位是 `px`。默认值：6 |
+| active-color | Color   | 已选择的进度条颜色。默认值：`#09BB07` |
+| background-color | Color   | 未选择的进度条颜色。 |
+| active       | Boolean | 是否添加从 0% 开始加载的入场动画。默认值：`active="{{false}}"` |
