@@ -1,5 +1,36 @@
-这篇文档讲解了在支付宝小程序中如何使用 Canvas 组件进行图形和动画的绘制。文档首先介绍了 Canvas 的基本概念和功能，然后提到自基础库 2.7.0 起，新版 Canvas 支持同层渲染，并指出使用时需指定 type 属性和 onReady 事件，并提供了相关 API 的链接。文档接着提醒如果在项目中已使用未指定 type 的旧版 canvas 标签，应参考迁移指南进行更新。最后，文档详细列出了 Canvas 组件的属性说明，并对每个属性进行了描述，包括其类型、描述、默认值、版本要求，并特别指出了某些属性的适用条件和判断依据。
-# 使用 Canvas2D
+# 简介
+
+画布是一个矩形区域，用于在页面上绘制图形、动画，开发者可以控制其中的每一个像素。Canvas 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。
+
+基础库 [2.7.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持新版 Canvas。新版 Canvas 支持同层渲染，使用时必须指定 type 属性和 onReady 事件。相关 API 可查看 [获取 Canvas 实例](https://opendocs.alipay.com/mini/01vzqv)。
+
+如果您的项目中已使用类似 `<canvas id="canvas"></canvas>` 这样未指定 type 的标签，请参考 [旧版 Canvas 迁移指南](https://opendocs.alipay.com/mini/055eid) 。
+
+# 使用说明
+- **Native 渲染引擎**：基础库 2.9.7+、客户端 10.5.56+ 开始支持。可以通过`my.canIUse('canvas')` 判断是否支持。
+
+## 属性说明
+
+| **属性**       | **类型**    | **描述**                                                     |
+| -------------- | ----------- | ------------------------------------------------------------ |
+| id             | String      | 组件唯一标识符。<br />**注意**：同一页面中的 id 不可重复。   |
+| type           | String      | 类型。设置 type 属性后，会渲染成 native canvas。<br />**可选值**：2d、webgl<br />**版本要求**：基础库 [2.7.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| onReady        | EventHandle | canvas 组件初始化成功事件。<br />**版本要求**：基础库 [2.7.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| width          | String      | 画布宽度。**默认值：** 300px                                 |
+| height         | String      | 画布高度。**默认值：** 225px                                 |
+| style          | String      | -                                                            |
+| class          | String      | -                                                            |
+| disable-scroll | Boolean     | 禁止屏幕滚动以及下拉刷新。<br />**默认值：** false           |
+| onTap          | EventHandle | 点击事件。                                                   |
+| onTouchStart   | EventHandle | 触摸动作开始事件。                                           |
+| onTouchMove    | EventHandle | 触摸后移动事件。                                             |
+| onTouchEnd     | EventHandle | 触摸动作结束事件。                                           |
+| onTouchCancel  | EventHandle | 触摸动作被打断，如来电提醒，弹窗事件。                       |
+| onLongTap      | EventHandle | 长按 500ms 之后触发，触发了长按事件后进行移动将不会触发屏幕的滚动。 |
+
+# 使用
+
+### Canvas2D
 
 ```html
 <!-- .axml 中必须指定 type，否则创建的将是旧版 Canvas -->
