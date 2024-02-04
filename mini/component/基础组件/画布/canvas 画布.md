@@ -28,14 +28,12 @@
 | onTouchCancel  | EventHandle | 触摸动作被打断，如来电提醒，弹窗事件。                       |
 | onLongTap      | EventHandle | 长按 500ms 之后触发，触发了长按事件后进行移动将不会触发屏幕的滚动。 |
 
-
-
 # 使用
 
 ### Canvas2D
 
 ```html
-<!-- .axml 必须指定 type，否则创建的将是旧版 Canvas -->
+<!-- .axml 中必须指定 type，否则创建的将是旧版 Canvas -->
 <canvas id="canvas" type="2d" onReady="onCanvasReady"></canvas>
 ```
 
@@ -45,25 +43,24 @@ Page({
 
     onCanvasReady() {
         my.createSelectorQuery().select('#canvas').node().exec((res) => {
-            const canvas = res[0].node
-            const ctx = canvas.getContext('2d')
+            const canvas = res[0].node;
+            const ctx = canvas.getContext('2d');
 
-            const img = canvas.createImage()
-            img.src = 'https://mdn.alipayobjects.com/huamei_esgcm9/afts/img/A*vlKfQKOGboQAAAAAAAAAAAAADsaJAQ/original'
+            const img = canvas.createImage();
+            img.src = 'https://mdn.alipayobjects.com/huamei_esgcm9/afts/img/A*vlKfQKOGboQAAAAAAAAAAAAADsaJAQ/original';
             img.onload = () => {
-                ctx.drawImage(img, 10, 10, 100, 100)
+                ctx.drawImage(img, 10, 10, 100, 100);
             }
-        })
+        });
 
     },
 
-})
+});
 ```
-
 ### WebGL
 
 ```html
-<!-- .axml 必须指定 type，否则创建的将是旧版 Canvas -->
+<!-- .axml 文件中必须指定 type 为 webgl，否则将创建旧版本的 Canvas -->
 <canvas type="webgl" id="canvas" onReady="onCanvasReady"></canvas>
 ```
 
@@ -71,31 +68,24 @@ Page({
 Page({
     onCanvasReady() {
         my.createSelectorQuery().select('#canvas').node().exec(res => {
-            const canvas = res[0].node
-            const gl = canvas.getContext('webgl')
-            gl.clearColor(1, 1, 0, 1)
-            gl.clear(gl.COLOR_BUFFER_BIT)
-        })
+            const canvas = res[0].node;
+            const gl = canvas.getContext('webgl');
+            gl.clearColor(1, 1, 0, 1);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+        });
     },
-})
+});
 ```
 
 ### Bug & Tip
 
-- 使用新版 Canvas 必须指定 type 类型。
-
-- 必须在 Canvas 组件的 onReady 回调函数中获取 canvas 实例和上下文。
-
-- 若要在高 DPR（devicePixelRatio）下取得更细腻的显示，可以设置较大的画布大小，然后用样式等比例缩小组件。例如：
+- 使用新版 Canvas 时，必须明确指定 `type` 属性的类型。
+- `onReady` 回调函数中，需要获取 Canvas 组件的实例和上下文。
+- 如需在高 DPI 设备上获得更清晰的显示效果，应设置较大的 Canvas 画布尺寸，并通过样式缩小组件比例。例如：
 
   ```html
-  <canvas width="200" height="200" style="width:100px;height:100px;"></canvas>
+  <canvas width="200" height="200" style="width: 100px; height: 100px;"></canvas>
   ```
-
-  
-
-
-
 # 附录：原生 Canvas 组件适配
 
 ## 简介
@@ -109,34 +99,34 @@ Page({
 
 ## 方法
 
-1. 向小程序 app.json 的 `window` 中添加 `"enableComponentOverlayer":"YES"` 。
+1. 向小程序 `app.json` 的 `window` 中添加 `"enableComponentOverlayer":"YES"`。
 
 ```json
 {
-	  "pages":[
-		  "pages/index/index"
-	  ],
-	  "window":{
-		  "enableComponentOverlayer":"YES"
-	  }
-  }
+    "pages": [
+        "pages/index/index"
+    ],
+    "window": {
+        "enableComponentOverlayer": "YES"
+    }
+}
 ```
 
-2. 为覆盖元素添加 `AF-COMPONENT-OVERLAYER` class 属性，使小程序将事件派发给覆盖元素，而不传递给后边的 Canvas 组件。
+2. 为覆盖元素添加 `AF-COMPONENT-OVERLAYER` 类属性，使小程序将事件派发给覆盖元素，而不传递给后面的 Canvas 组件。
 
 ```css
-/* 设置 z-index 使元素覆盖在 Canvas 上 */
+/* 设置 z-index，使元素覆盖在 Canvas 上 */
 .top {
-  z-index: 2;
+    z-index: 2;
 }
 ```
 
 ```html
 <view class="page">
-  <canvas style="width: 100%; height: 500px;"></canvas>
-  <!-- view 元素覆盖在 Canvas 上方，在 class 中添加 "AF-COMPONENT-OVERLAYER" 即可接收到 UI 事件 -->
-  <view class="top AF-COMPONENT-OVERLAYER" onTap="viewClick"></view>
+    <canvas style="width: 100%; height: 500px;"></canvas>
+    <!-- 在 class 中添加 "AF-COMPONENT-OVERLAYER"，使该 view 元素能够覆盖在 Canvas 上方并接收到 UI 事件 -->
+    <view class="top AF-COMPONENT-OVERLAYER" onTap="viewClick"></view>
 </view>
 ```
 
-**注意：** 若在开发中遇到 Canvas 组件上没有可见的 web 元素覆盖（即 axml 文件中无覆盖元素）时也收不到 UI 事件，可以只采用步骤 1。这会使小程序运行时将目标区域内 UI 事件派发给 Canvas 组件。
+**注意：** 若在开发中遇到 Canvas 组件上没有可见的 web 元素覆盖（即 AXML 文件中无覆盖元素）时也收不到 UI 事件，可以只采用步骤 1。这会让小程序在运行时将目标区域内的 UI 事件派发给 Canvas 组件。
