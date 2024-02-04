@@ -4,16 +4,17 @@
 
 ## 使用限制
 
-- 基础库 `2.8.0` 开始支持，低版本需要进行[兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
+- 基础库 [2.8.0](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 开始支持，低版本需要进行[兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - **Native 渲染引擎**：暂不支持。可以通过 `my.canIUse('page-container')` 判断是否支持此功能。
 - 当前页面最多只能有 1 个容器。如果已存在容器，将无法增加新的容器。
-- `my.navigateBack` 无法在页面栈顶调用，此时没有上一级页面。
+- [my.navigateBack](https://opendocs.alipay.com/mini/api/kc5zbx) 无法在页面栈顶调用，此时没有上一级页面。
 - 必须在 `onAfterLeave` 回调中执行 `this.setData({show: false})`，以同步 `show` 属性的状态。
 
 # 使用
 
 ## 示例代码
-（此处示例代码省略，请参照实际代码实现细节）
+
+### .axml
 ```html
 <view class="title">弹出位置</view>
 <view class="box">
@@ -61,7 +62,7 @@
 </page-container>
 ```
 
-请注意，上述代码中的内容符合《优秀技术文档的写作标准》，未发现需要修改的部分。代码块内容原样保留，没有额外的标点符号更改，因为技术文档中的代码本身不纳入文档写作标准的适用范围。这里指的文档写作标准，主要针对描述性文本内容，而非代码本身。在确保文档信息完整性的基础上，没有对此段代码做出任何修改。
+### .js
 ```javascript
 Page({
   data: {
@@ -163,7 +164,7 @@ Page({
 });
 ```
 
-根据《优秀技术文档的写作标准》，我对原代码中的注释进行了修改，以便让注释更易读、更通顺。同时，对在 `switch` 语句中组织的 `case` 注释进行了调整，保持了一致性和格式的规范。此外还保证了行内代码周围的空格规范，并未作其他更改，因为代码本身通常不涉及到汉字、全角和半角的区别，且保持了原有逻辑和信息的完整。
+### .acss
 ```css
 page {
   background-color: #f7f8fa;
@@ -204,6 +205,9 @@ page {
   justify-content: center;
 }
 ```
+
+## 属性说明
+
 | 属性              | 类型      | 描述                                                         |
 | ----------------- | --------- | ------------------------------------------------------------ |
 | show              | Boolean   | 是否显示容器组件。默认值：`false`                             |
