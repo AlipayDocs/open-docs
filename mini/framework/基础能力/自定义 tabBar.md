@@ -1,16 +1,16 @@
 # 简介
 
-`tabBar` 作为支付宝小程序基础能力，提供底部操作栏进行切换页面。自定义 `tabBar` 作为补充能力，可以让开发者更加灵活地设置 `tabBar`，以满足更多个性化的场景。在自定义 `tabBar` 模式下：
+[tabBar](https://opendocs.alipay.com/mini/00prvl) 作为支付宝小程序基础能力，提供底部操作栏进行切换页面。自定义 `tabBar` 作为补充能力，可以让开发者更加灵活地设置 `tabBar`，以满足更多个性化的场景。<br />在自定义 `tabBar` 模式下：
 
 - 开发者需要提供一个自定义组件来进行 `tabBar` 的渲染及交互。
-- 与 `tabBar` 样式相关的接口将失效。例如 `my.hideTabBar` 等。
-- 每个页面的 `tabBar` 组件实例是不同的，可通过 `getTabBar` 接口获取 `tabBar` 组件实例。
+- 与 `tabBar` 样式相关的接口将失效。例如 [my.hideTabBar](https://opendocs.alipay.com/mini/api/at18z8) 等。
+- 每个页面的 `tabBar` 组件实例是不同的，可通过 [getTabBar](https://opendocs.alipay.com/mini/framework/page-detail#Page.getTabBar) 接口获取 `tabBar` 组件实例。
 
 ## 版本要求
 
 - 基础库 2.7.20 及以上版本。
 - 支付宝客户端 10.2.63 及以上版本。
-- 小程序开发者工具 3.1.2 及以上版本。
+- [小程序开发者工具](https://opendocs.alipay.com/mini/ide/overview) 3.1.2 及以上版本。
 
 若版本较低，则显示原始 `tabBar`，为保证兼容性，`tabBar` 的相关配置**建议完整声明**。
 # 使用流程
