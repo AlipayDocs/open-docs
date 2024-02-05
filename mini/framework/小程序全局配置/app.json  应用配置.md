@@ -33,12 +33,14 @@
 
 指定小程序的默认启动路径（首页）。如果不填，默认为 pages 列表的第一项。不支持带页面路径参数。
 
-**注意**：此特性从基础库 2.7.20，IDE 3.1.2 开始支持。若你强依赖此特性，建议设置最低基础库版本号为 2.7.20。在低版本的基础库中，可能无法识别正确的首页，导致渲染出“返回首页”图标。
+**注意**：此特性从基础库 [2.7.20](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2)，[IDE 3.1.2](https://opendocs.alipay.com/mini/ide/download) 开始支持。若你强依赖此特性，建议设置最低基础库版本号为 2.7.20。在低版本的基础库中，可能无法识别正确的首页，导致渲染出“返回首页”图标。
 # pages
 
-`app.json` 中的 `pages` 是一个数组属性，每个数组项都是一个字符串，指定了小程序的页面。在小程序中新增或删除页面，都需要更新这个数组。
+- `app.json` 中的 `pages` 是一个数组属性，每个数组项都是一个字符串，指定了小程序的页面。在小程序中新增或删除页面，都需要更新这个数组。
 
-`pages` 数组里的每一项都代表相应页面的路径信息。数组的第一项是小程序的首页。在指定页面路径时，无需添加文件后缀。框架会自动加载相应的 `.json`、`.js`、`.axml` 和 `.acss` 文件。例如，如果你的开发目录结构如下：
+- `pages` 数组里的每一项都代表相应页面的路径信息。数组的第一项是小程序的首页。
+  
+- 在指定页面路径时，无需添加文件后缀。框架会自动加载相应的 `.json`、`.js`、`.axml` 和 `.acss` 文件。例如，如果你的开发目录结构如下：
 
 ```javascript
 ├── pages
@@ -77,7 +79,7 @@
 }
 ```
 
-**注意**：自 IDE3.1.2 版本起支持此功能。声明为全局的组件将被所有页面和组件所依赖，可能会影响性能，并且会占用主包的大小。建议启用 `app.lazyCodeLoading` 以优化性能。
+**注意**：自 [IDE3.1.2](https://opendocs.alipay.com/mini/ide/download) 版本起支持此功能。声明为全局的组件将被所有页面和组件所依赖，可能会影响性能，并且会占用主包的大小。建议启用 `app.lazyCodeLoading` 以优化性能。
 # window
 
 `window` 用于设置小程序的状态栏、导航条、标题、窗口背景色等。示例代码：
@@ -155,6 +157,7 @@
 ```
 
 代码中，开发者可通过 [my.setTabBarItem](https://opendocs.alipay.com/mini/api/zu37bk) 动态设置 `tabBar` 中指定 `item` 的内容。
+
 # networkTimeout
 
 各类网络请求的超时时间，单位均为毫秒。
@@ -193,9 +196,10 @@
 ```
 
 注意：由于开启该配置后，当前页面未使用到的代码将不会被执行，可能对某些依赖默认脚本执行先后顺序的逻辑产生影响。
+
 # workers
 
-使用 `Worker` 处理多线程任务时，设置 Worker 代码文件列表。例如：
+使用 [Worker](https://opendocs.alipay.com/mini/api/createworker) 处理多线程任务时，设置 Worker 代码文件列表。例如：
 
 ```json
 "workers": [
@@ -251,8 +255,8 @@
 
 | 属性 | 类型 | 必填 | 描述 |
 | --- | --- | --- | --- |
-| shareAppMessage | String | 否 | 可选值：appendQuery。<br />使用小程序默认分享功能时（即不显式设置 [Page.onShareAppMessage](https://opendocs.alipay.com/mini/framework/page-detail#onShareAppMessage(options%3A%20Object))），当设置此字段后，会使客户端生成的用于分享的 `scheme` 带上当前用户打开的页面所携带的 query 参数。<br />基础库 2.7.10 及以上开始支持，同时需使用 IDE 2.7.0 及以上版本进行构建。 |
-| decodeQuery | String | 否 | 可选值：disable。<br />小程序在解析全局参数、页面参数时默认会对键/值做 `encodeURIComponent`。当设置为 `disable` 后，则不再对键/值做 `encodeURIComponent`，解析规则详情可查看 [小程序全局/页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)，基础库 2.7.19 及以上开始支持，同时需使用 IDE 3.0.0 及以上版本进行构建。 |
+| shareAppMessage | String | 否 | 可选值：appendQuery。<br />使用小程序默认分享功能时（即不显式设置 [Page.onShareAppMessage](https://opendocs.alipay.com/mini/framework/page-detail#onShareAppMessage(options%3A%20Object))），当设置此字段后，会使客户端生成的用于分享的 `scheme` 带上当前用户打开的页面所携带的 query 参数。<br />基础库 [2.7.10](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上开始支持，同时需使用 [IDE 2.7.0](https://opendocs.alipay.com/mini/ide/download) 及以上版本进行构建。 |
+| decodeQuery | String | 否 | 可选值：disable。<br />小程序在解析全局参数、页面参数时默认会对键/值做 `encodeURIComponent`。当设置为 `disable` 后，则不再对键/值做 `encodeURIComponent`，解析规则详情可查看 [小程序全局/页面参数设置以及解析细节](https://opendocs.alipay.com/mini/03durs)，基础库 [2.7.19](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上开始支持，同时需使用 [IDE 3.0.0](https://opendocs.alipay.com/mini/ide/download) 及以上版本进行构建。 |
 
 ## 使用示例
 
