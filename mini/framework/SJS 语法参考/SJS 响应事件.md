@@ -104,8 +104,8 @@ SJS 函数的第二个参数 ownerComponent 指向该事件 event.currentTarget 
 
 | 方法                   | 参数        | 描述                                                                                                               | 渲染引擎兼容性 |
 | ---------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------ | ---------------- |
-| selectComponent        | selector    | 选择指定选择器的后代基础组件的 Descriptor 描述对象。selector 为选择器字符串。插槽能被提供者选中，不能被使用者选中。                    | 仅 WebView       |
-| selectAllComponents    | selector    | 选择指定选择器的所有后代基础组件的 Descriptor 描述对象。selector 为选择器字符串。插槽能被提供者选中，不能被使用者选中。                | 仅 WebView       |
+| selectComponent | selector | 选择该自定义组件/页面/基础组件的匹配指定选择器的后代基础组件的 Descriptor 描述对象。selector 选择器字符串。插槽能被提供者选中，而不能被使用者选中。 |仅 WebView |
+| selectAllComponents | selector | 选择该自定义组件/页面/基础组件的匹配指定选择器的所有后代基础组件的 Descriptor 描述对象。selector 选择器字符串。插槽能被提供者选中，而不能被使用者选中。 |仅 WebView |
 | getState               | -           | 获取状态对象。当有局部变量需要存储起来后续使用时，使用此方法。                                                           | -                |
 | callMethod             | (method, arg) | 调用 worker 侧所在自定义组件/页面的自定义方法。<br />1. method 方法名称。<br />2. arg 方法传参。                               | -                |
 | requestAnimationFrame  | fn          | 同浏览器平台，仅能被同 Descriptor 对象的 cancelAnimationFrame 取消。返回该请求对应的标识符（可用于取消）。fn 为回调函数。             | 仅 WebView       |
@@ -131,7 +131,7 @@ SJS 函数的第二个参数 ownerComponent 指向该事件 event.currentTarget 
 
 #### 5. `composedPath()`
 
-基础库 2.7.3 起支持，获取事件路径。返回值为数组，数组的元素为基础元素的 Descriptor 描述对象。使用插件时，宿主小程序内的事件路径会跳过属于插件的描述对象，插件内的事件路径也会跳过属于宿主小程序的描述对象。
+基础库 [2.7.3](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持，获取事件路径。返回值为数组，数组的元素为基础元素的 Descriptor 描述对象。使用插件时，宿主小程序内的事件路径会跳过属于插件的描述对象，插件内的事件路径也会跳过属于宿主小程序的描述对象。
 
 ### 返回值
 
@@ -142,7 +142,7 @@ SJS 函数的第二个参数 ownerComponent 指向该事件 event.currentTarget 
 
 ## 属性监听
 
-基础库 2.7.7 起支持。若版本较低，建议采取兼容处理。
+基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 起支持。若版本较低，建议采取 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 
 ### 入参
 
