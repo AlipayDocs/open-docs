@@ -18,7 +18,7 @@ export default {
 通过 `<import-sjs />` 标签，只能使用 SJS 通过 `export` 语法导出的符号。并遵循以下规则：
 
 ## 默认导出
-通过 `export default` 导出的**默认导出**符号，必须通过 `<import-sjs name="module"/>` 来引入。`import-sjs` 功能标签的 `name` 属性必须是一个合法的标识符 `/^[A-Za-z_][A-Za-z0-9_]*$/`。
+通过 `export default` 导出的**默认导出**符号，必须通过 `<import-sjs name="module"/>` 来引入。`import-sjs` 功能标签的 `name` 属性必须是一个合法（满足 `/^[A-Za-z_][A-Za-z0-9_]*$/` 正则规则）的标识符。
 
 ## 具名导出
 通过 `export const a` 导出的**具名**符号，必须通过 `<import-sjs name="{ a }"/>` 来引入。`import-sjs` 功能标签的 `name` 属性满足以下规则：
