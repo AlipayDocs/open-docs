@@ -1,4 +1,4 @@
-ACSS 是一套样式语言，用于描述 AXML 的组件样式，决定 AXML 的组件显示效果。
+ACSS 是一套样式语言，用于描述 AXML 的组件样式，决定 AXML 组件的显示效果。
 
 为适应广大前端开发者，ACSS 和 CSS 规则完全一致，100% 可以用。同时，为更适合开发小程序，对 CSS 进行了扩充，ACSS 支持 `px`，`rpx`，`vh`，`vw` 等单位。
 
@@ -6,7 +6,7 @@ ACSS 已经帮开发者做了不同手机端的样式兼容性处理。
 
 # rpx
 
-rpx（responsive pixel）根据屏幕宽度自适应，规定屏幕宽为 750rpx。以 Apple iPhone6 为例，屏幕宽度为 375px，共有 750 个物理像素，则 750 rpx = 375 px = 750 物理像素，1 rpx = 0.5 px = 1 物理像素。
+rpx（responsive pixel）是根据屏幕宽度自适应的像素单位，规定屏幕宽为 750rpx。以 Apple iPhone6 为例，屏幕宽度为 375px，共有 750 个物理像素，则 750 rpx = 375 px = 750 物理像素，1 rpx = 0.5 px = 1 物理像素。
 
 | 设备         | rpx 换算 px（屏幕宽度 / 750） | px 换算 rpx（750 / 屏幕宽度） |
 | ------------ | ----------------------------- | ----------------------------- |
@@ -35,7 +35,7 @@ rpx（responsive pixel）根据屏幕宽度自适应，规定屏幕宽为 750rpx
 }
 ```
 
-导入路径支持从 node_modules 目录载入第三方模块，例如 `page.acss`。
+导入路径支持从 node_modules 目录载入第三方模块，例如 third-party/page.acss。
 
 ```css
 @import './button.acss'; /* 相对路径 */
