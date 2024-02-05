@@ -51,9 +51,9 @@ Component({
 ```
 ## Mixin
 
-基础库 2.8.2 版本起，自定义组件的参数 mixins 支持通过 `Mixin()` 注册生成的 mixin。与直接传入普通 JS 对象相比，通过 Mixin 注册生成的 mixin 有以下三个差异：
+基础库 [2.8.2](https://opendocs.alipay.com/mini/framework/lib) 版本起，自定义组件的参数 mixins 支持通过 `Mixin()` 注册生成的 mixin。与直接传入普通 JS 对象相比，通过 Mixin 注册生成的 mixin 有以下三个差异：
 
-- Mixin 支持 `mixins` 参数，即能嵌套传入 mixin。
+- Mixin 支持 [mixins](https://opendocs.alipay.com/mini/framework/component_object#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 参数，即能嵌套传入 mixin。
 - Mixin 注册的 mixin 实例支持自定义组件扩展机制。
 - 可通过自定义组件实例方法 `hasMixin` 判断当前自定义组件是否引入了特定的 Mixin 实例。
 
@@ -63,7 +63,7 @@ Component({
 
 - 如果存在同名的属性（props）或方法（methods）：
    1. 如果组件有这个属性或方法，则组件的属性会覆盖 mixin 中的同名属性或方法。
-   2. 如果组件本身没有这个属性或方法，则组件的 `mixins` 参数中定义靠后的 mixin 的属性或方法会覆盖靠前的同名属性或方法。
+   2. 如果组件本身没有这个属性或方法，则组件的 [mixins](https://opendocs.alipay.com/mini/framework/component_object#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) 参数中定义靠后的 mixin 的属性或方法会覆盖靠前的同名属性或方法。
    3. 在上述基础上，若存在嵌套引用 mixin 的情况（只有 Mixin 支持嵌套引用，且被引用的 mixin 必须是 Mixin 实例），则规则为：引用者 mixin 的同名属性或方法会覆盖被引用的 mixin 实例中的同名属性或方法。
 - 如果存在同名的内部数据字段（data）：
    1. 如果组件已定义这个数据字段，则组件的数据字段会覆盖 mixin 中的同名数据字段。
