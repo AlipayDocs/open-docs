@@ -23,7 +23,7 @@
 {
 	"pages": [
     "pages/index/index",
-    "pages/index/index2"
+    "pages/index2/index"
   ],
   "tabBar": {
     "customize": true,
