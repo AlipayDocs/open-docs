@@ -75,9 +75,31 @@ success 回调函数会携带一个 Object 类型的对象，其属性如下：
 | screen | Object | 屏幕宽度和高度。结构为： { width: Number, height: Number } 单位：px。 |
 | screenWidth | Number | 屏幕宽度。单位：px。此属性在 Android 上取值有误，**建议使用 screen.width 替代。** |
 | screenHeight | Number | 屏幕高度。单位：px。此属性在 Android 上取值有误，**建议使用 screen.height 替代。** |
+| safeArea | Object | 在竖屏正方向下的安全区域。单位：px。|
+| safeArea | Object | 在竖屏正方向下的安全区域插入位置。单位：px。|
 | brand | String | 手机品牌。 |
 | fontSizeSetting | Number | 用户设置字体大小。单位：px |
 | app | String | 当前运行的客户端。若当前为支付宝，则有效值为 "alipay"。不同的客户端，对应的有效值如下：<ul><li>alipay：支付宝。</li><li>UC：UC 浏览器。</li><li>QUARK：夸克浏览器。</li><li>AK：阿里健康。</li><li>amap：高德。</li><li>YK：优酷。</li><li>DINGTALK：钉钉。</li></ul> |
+
+#### safeArea 返回值说明
+
+| **手机型号**      | **类型**       | **说明**                  |
+| ----------------- | -------------- | ------------------------- |
+| top               | number         | 安全区域左上角纵坐标        |
+| bottom            | number         | 安全区域右下角纵坐标        |
+| left              | number         | 安全区域左上角横坐标        |
+| right             | number         | 安全区域右下角横坐标        |
+| height            | number         | 安全区域的高度             |
+| width             | number         | 安全区域的宽度             |
+
+#### safeAreaInsets 返回值说明
+
+| **手机型号**      | **类型**       | **说明**                  |
+| ----------------- | -------------- | ------------------------- |
+| top               | number         | 安全区顶部插入位置         |
+| bottom            | number         | 安全区底部插入位置         |
+| left              | number         | 安全区域左侧插入位置        |
+| right             | number         | 安全区域右侧插入位置        |
 
 #### model 参数
 
