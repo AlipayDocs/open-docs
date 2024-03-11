@@ -19,7 +19,7 @@
 
 ## 属性说明
 
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| src | String | 图片地址，支持的地址格式同 image 一致。<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
-| onTap | EventHandle | 点击事件回调。<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| 属性 | 类型   | 描述                                                         |
+| ---- | ------ | ------------------------------------------------------------ |
+| src  | String | 图片地址，支持的地址格式同 `image` 组件一致。<br />**版本要求：** 基础库 1.9.0 及以上 |
+| onTap | EventHandle | 点击事件回调。<br />**版本要求：** 基础库 1.9.0 及以上       |
