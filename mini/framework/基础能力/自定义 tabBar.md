@@ -116,14 +116,7 @@ Page({
 })
 ```
 
-# 注意事项
-自定义 tabBar 默认 `z-index:10000`，若不满足项目实际场景可通过类名 `a-customize-tab-bar` 进行覆盖。**Native 自定义 tabBar 不支持该特性**。
-```css
-/* app.acss */
-.a-customize-tab-bar{
-  z-index:999;
-}
-```
+
 # 自定义 tabBar 原生渲染模式
 自定义 tabBar 为开发者带来了开发更具表现力的 tabBar 能力，但对比原生 tabBar，存在一些体验问题。</br>
 
@@ -139,7 +132,7 @@ Page({
 
 造成上述效果差异的原因在于普通自定义 tabBar 和 Native 自定义 tabBar 在渲染模型上存在差异。Native 自定义 tabBar 独立于页面且覆盖在页面之上，普通自定义 tabBar 跟随页面一起渲染。</br>
 
-![900x400](https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*jS3mT7YMZi0AAAAAAAAAAAAAAQAAAQ/original)
+![900x400](https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*I1GTT4e6EdgAAAAAAAAAAAAAAQAAAQ/original)
 
 ## 如何启用
 这是一种特殊的自定义 tabBar 运行模式，开发者可通过修改 `app.json` 内的 `tabBar` 字段配置启用。
@@ -198,6 +191,15 @@ Page({
 
 ### Q: 使用 Native 自定义 tabBar 是否需要开启当前页面的 Native 渲染？</br>
 A：不需要。在不开启页面的 Native 渲染模式下，也可单独启用 Native 自定义 tabBar。
+
+# 注意事项
+自定义 tabBar 默认 `z-index:10000`，若不满足项目实际场景可通过类名 `a-customize-tab-bar` 进行覆盖。**Native 自定义 tabBar 不支持该特性**。
+```css
+/* app.acss */
+.a-customize-tab-bar{
+  z-index:999;
+}
+```
 
 ### Q：遇到不支持的样式如何处理？</br>
 A: 样式支持度与 Native 渲染一致，样式支持度文档将在近期对外开放。
