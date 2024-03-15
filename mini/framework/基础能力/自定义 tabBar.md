@@ -136,9 +136,10 @@ Page({
 | 切换页面  | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*68A6Qo5lceYAAAAAAAAAAAAAAQAAAQ/original" width="250px" >       | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*8QRmSqiG4IIAAAAAAAAAAAAAAQAAAQ/original" width="250px">       |
 | 下拉刷新 | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*_fa0SaP-5UAAAAAAAAAAAAAAAQAAAQ/original" width="250px" >      | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*MNTfQp-WwPYAAAAAAAAAAAAAAQAAAQ/original" width="250px">  |
 </br>
+
 造成上述效果差异的原因在于普通自定义 tabBar 和 Native 自定义 tabBar 在渲染模型上存在差异。Native 自定义 tabBar 独立于页面且覆盖在页面之上，普通自定义 tabBar 跟随页面一起渲染。</br>
 
- <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*jS3mT7YMZi0AAAAAAAAAAAAAAQAAAQ/original" >
+![900x400](https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*jS3mT7YMZi0AAAAAAAAAAAAAAQAAAQ/original)
 
 ## 如何启用
 这是一种特殊的自定义 tabBar 运行模式，开发者可通过修改 `app.json` 内的 `tabBar` 字段配置启用。
@@ -165,7 +166,7 @@ Page({
 
 ## 运行时检测
 
-当配置 `overlay:true` 后，原本「自定义 TabBar 」的[接口](https://opendocs.alipay.com/mini/03jry7) `this.getTabBar()` 返回的自定义组件实例上，会新增一个属性 `overlay: boolean`。
+当配置 `overlay:true` 后，原本「自定义 TabBar 」的 [接口](https://opendocs.alipay.com/mini/03jry7) `this.getTabBar()` 返回的自定义组件实例上，会新增一个属性 `overlay: boolean`。
 ```javascript
 Page({
   onShow() {
