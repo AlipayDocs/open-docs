@@ -96,47 +96,58 @@ Page({
 
 
 
-# 附录：原生 Canvas 组件适配
+# 附录：配置同层组件的覆盖元素不响应事件
 
 ## 简介
 
-为了提升性能、优化小程序体验，新版 Canvas 基于原生组件实现。若在 iOS 平台遇到覆盖于 Canvas 组件上的 web 元素（后称：覆盖元素）无法收到 UI 事件时，可以进行如下适配。
+覆盖在同层组件上方的元素（后称：覆盖元素）默认响应 UI 事件，在 web 标准下配置 `pointer-events: none` 使事件穿透覆盖元素，令同层组件响应事件，而 iOS 平台不支持上述用法，可采用如下方法适配。
 
 #### 使用限制
 
-- 基础库版本 2.7.0 及以上。
-- 支付宝版本 10.2.0 及以上。
+- 支持 video、lottie、camera、canvas、map 组件。
+- 基础库版本 2.9.9 及以上。
+- 支付宝版本 10.5.63 及以上。
+- iOS 系统版本 15 及以上。
 
 ## 方法
 
-1. 向小程序 app.json 的 `window` 中添加 `"enableComponentOverlayer":"YES"` 。
-
-```json
-{
-	  "pages":[
-		  "pages/index/index"
-	  ],
-	  "window":{
-		  "enableComponentOverlayer":"YES"
-	  }
-  }
-```
-
-2. 为覆盖元素添加 `AF-COMPONENT-OVERLAYER` class 属性，使小程序将事件派发给覆盖元素，而不传递给后边的 Canvas 组件。
-
-```css
-/* 设置 z-index 使元素覆盖在 Canvas 上 */
-.top {
-  z-index: 2;
-}
-```
+1. 覆盖元素不响应 UI 事件，穿透至同层组件上。
 
 ```html
 <view class="page">
   <canvas style="width: 100%; height: 500px;"></canvas>
-  <!-- view 元素覆盖在 Canvas 上方，在 class 中添加 "AF-COMPONENT-OVERLAYER" 即可接收到 UI 事件 -->
-  <view class="top AF-COMPONENT-OVERLAYER" onTap="viewClick"></view>
+  <image style=
+    "
+      z-index: 999;
+      position: absolute;
+      top: 0;
+      width: 200px;
+      height: 300px;
+      pointer-events: none;
+    "
+    src="https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ"
+  />
 </view>
 ```
 
-**注意：** 若在开发中遇到 Canvas 组件上没有可见的 web 元素覆盖（即 axml 文件中无覆盖元素）时也收不到 UI 事件，可以只采用步骤 1。这会使小程序运行时将目标区域内 UI 事件派发给 Canvas 组件。
+2. 使用 cover-view 组件包裹覆盖元素，配置了 penetrateGuesture 属性的 cover-view 组件保证 iOS 平台生效，而 Android 平台则沿用 `pointer-events: none`。
+
+```html
+<view class="page">
+  <canvas style="width: 100%; height: 500px"></canvas>
+  <cover-view penetrateGuesture style=
+    "
+      z-index: 999;
+      position: absolute;
+      top: 0;
+      width: 200px;
+      height: 300px;
+      background-color: transparent;
+      pointer-events: none;
+    "
+  >
+    <image style="width: 100%; height: 100%;" src="https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ"/>
+  </cover-view>
+</view>
+```
+
