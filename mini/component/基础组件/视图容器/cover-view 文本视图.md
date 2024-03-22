@@ -23,6 +23,7 @@
 | **属性** | **类型** | **描述** |
 | --- | --- | --- |
 | onTap | EventHandle | 点击事件回调。<br />**版本要求：**基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
+| penetrateGuesture | Boolean | cover-view 组件作为同层组件上方的覆盖元素时，配置该属性实现类似 pointer-events: none 的效果。<br />**注意**：仅对 iOS 平台生效，兼容 android 平台仍需配置覆盖元素的 pointer-events 属性为 none。详见：[canvas 画布附录](https://opendocs.alipay.com/mini/component/canvas#%E9%99%84%E5%BD%95%EF%BC%9A%E5%8E%9F%E7%94%9F%20Canvas%20%E7%BB%84%E4%BB%B6%E9%80%82%E9%85%8D)<br/>**版本要求**：基础库 [2.9.9](https://opendocs.alipay.com/mini/framework/compatibility) 及以上，客户端 10.5.63 及以上 |
 
 # 常见问题
 
