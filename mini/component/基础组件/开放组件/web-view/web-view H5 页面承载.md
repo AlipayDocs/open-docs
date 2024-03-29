@@ -20,7 +20,7 @@ web-view 可以打开的 H5 页面的域名限于开发者维护的 H5 域名白
 
 - 包含中文等特殊字符的 URL，请先使用 encodeURL() 编码。
 - 主文档 URL、iframe 里的主文档 URL，以及后续跳转的主文档 URL，其域名均需要加入 H5 域名白名单，否则无法访问。<br>
-- H5 域名白名单维护方法请查看 [配置 H5 域名](https://opendocs.alipay.com/mini/component/idfvg6) 。不支持添加阿里（天猫、淘宝等）域名，且域名总数量不超过 20 个。<br>
+- H5 域名白名单维护方法请查看 [配置 H5 域名](https://opendocs.alipay.com/mini/component/idfvg6) 。不支持添加阿里（天猫、淘宝等）域名，且域名总数量不超过 50 个。<br>
 - **H5 域名白名单变更后需要小程序发版，新的白名单仅对新版小程序生效。**
 
 ## 扫码体验
