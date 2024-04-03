@@ -28,6 +28,7 @@
 | permission          | Object   | 否       | 小程序接口权限相关配置。       |
 | behavior            | Object   | 否       | 修改小程序运行行为的相关设置。 |
 | workers             | Array    | 否       | 设置 Worker 代码文件列表。 |
+| loadingPages        | Object   | 否       | 设置骨架屏。 |
 
 # entryPagePath
 
@@ -273,6 +274,9 @@ icon 图标推荐大小为 81px \* 81px，系统会对传入的非推荐尺寸�
   }
 }
 ```
+
+# loadingPages
+开启和声明 骨架屏 的规则。
 
 # 常见问题
 
