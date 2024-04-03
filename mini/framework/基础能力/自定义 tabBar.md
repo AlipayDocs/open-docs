@@ -183,7 +183,7 @@ Page({
 
 | **Native 自定义 tabBar** | **普通自定义 tabBar** | 
 | -------- | -------- | 
-| <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*OT4bTJ_JYW8AAAAAAAAAAAAAAQAAAQ/original" width="250px" height="540px" >  | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*UvNYSoz-_HgAAAAAAAAAAAAAAQAAAQ/original" width="250px" height="540px" >       |
+| <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*OT4bTJ_JYW8AAAAAAAAAAAAAAQAAAQ/original" width="230px" height="500px" >  | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*UvNYSoz-_HgAAAAAAAAAAAAAAQAAAQ/original" width="230px" height="500px" >       |
 
 **说明**：目前阶段，需要开发者在显示弹层组件时，手动对 tabBar 内元素进行隐藏（如 `a:if="{{visible}}"`）。</br>
 
