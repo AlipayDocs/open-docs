@@ -181,7 +181,7 @@ Page({
 由于[上述](https://opendocs.alipay.com/mini/03jry7?pathHash=148d378a#%E8%87%AA%E5%AE%9A%E4%B9%89%20tabBar%20%E5%8E%9F%E7%94%9F%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F)渲染模型之间的差异，当开发者将自定义 tabBar 切换到 Native 渲染后，需要重点关注业务中的弹层与自定义 tabBar 的相互覆盖关系。</br>
 开发者通过 `axml` 代码显示的弹层均将被 Native 自定义 tabBar 覆盖且通过修改自定义 tabBar 的 `z-index` 属性将无法做到调整覆盖层级。
 
-| **普通自定义 tabBar** | **Native 自定义 tabBar7** | 
+| **Native 自定义 tabBar** | **普通自定义 tabBar** | 
 | -------- | -------- | 
 | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*OT4bTJ_JYW8AAAAAAAAAAAAAAQAAAQ/original" width="250px" >  | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*UvNYSoz-_HgAAAAAAAAAAAAAAQAAAQ/original" width="250px" >       |
 
