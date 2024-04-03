@@ -276,7 +276,7 @@ icon 图标推荐大小为 81px \* 81px，系统会对传入的非推荐尺寸�
 ```
 
 # loadingPages
-开启和声明 骨架屏 的规则。
+开启和声明 [骨架屏](https://opendocs.alipay.com/mini/0bx5sa?pathHash=67350aeb) 的规则。
 
 # 常见问题
 
