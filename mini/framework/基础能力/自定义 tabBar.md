@@ -183,7 +183,7 @@ Page({
 
 | **普通自定义 tabBar** | **Native 自定义 tabBar**  |
 | -------- | ---------------- |
-| <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*UvNYSoz-_HgAAAAAAAAAAAAAAQAAAQ/original" width="333px" height="720px" >       | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*OT4bTJ_JYW8AAAAAAAAAAAAAAQAAAQ/original" width="333px" height="720px" > |
+| <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*UvNYSoz-_HgAAAAAAAAAAAAAAQAAAQ/original" width="333px" height="720px" >       |<img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*OT4bTJ_JYW8AAAAAAAAAAAAAAQAAAQ/original" width="333px" height="720px" > |
 
 **说明**：目前阶段，需要开发者在显示弹层组件时，手动对 tabBar 内元素进行隐藏（如 `a:if="{{visible}}"`）。</br>
 
@@ -192,7 +192,7 @@ Page({
 ### Q: 使用 Native 自定义 tabBar 是否需要开启当前页面的 Native 渲染？</br>
 A：不需要。在不开启页面的 Native 渲染模式下，也可单独启用 Native 自定义 tabBar。
 ### Q：遇到不支持的样式如何处理？</br>
-A: 样式支持度与 Native 渲染一致，样式支持度文档将在近期对外开放。
+A: 样式支持度与 Native 渲染一致，样式支持度文档将在近期对外开放。 
 
 # 注意事项
 自定义 tabBar 默认 `z-index:10000`，若不满足项目实际场景可通过类名 `a-customize-tab-bar` 进行覆盖。**Native 自定义 tabBar 不支持该特性**。
