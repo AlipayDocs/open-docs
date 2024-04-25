@@ -63,7 +63,7 @@ A：
 - 报错原因：此报错的含义就是没有对应接口权限。
 - 解决方案：
   - 配置的账号是否有当前接口权限或代理的商家是否有当前接口权限。<br />可查看 [如何确认是否完成开通](https://opendocs.alipay.com/support/01raue)。若没有请先完成开通，开通相关问题可咨询商服服务热线 4007585858。
-  - 是否在对应 APPID 下面添加应用功能，可查看 [产品绑定](https://opendocs.alipay.com/mini/introduce/setting)。
+  - 是否在对应 APPID 中的隐私申请下申请了获取会员信息功能，每个字段的类目要求和审批规则不同，请参考 [隐私申请及使用基础规则](https://opendocs.alipay.com/common/02kkuu#%E5%95%86%E5%AE%B6%E7%94%B3%E8%AF%B7%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF)。
   - 若是服务商，检查授权令牌（app_auth_token）是否有对应的接口权限。
   - 如在沙箱调试出现，请确认请求网关为沙箱 OpenAPI 网关 `https://openapi.alipaydev.com/gateway.do`，并且请求的 app_id 为沙箱的 app_id。
   - 检查此 APPID 是否已经上线，目前必须上线的应用才可以在正式环境调用接口。
