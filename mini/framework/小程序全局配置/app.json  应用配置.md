@@ -29,6 +29,7 @@
 | behavior            | Object   | 否       | 修改小程序运行行为的相关设置。 |
 | workers             | Array    | 否       | 设置 Worker 代码文件列表。 |
 | loadingPages        | Object   | 否       | 设置骨架屏。 |
+| requirePolyfill     | Boolean  | 否       | 要求基础库注入 Polyfill。 |
 
 # entryPagePath
 
