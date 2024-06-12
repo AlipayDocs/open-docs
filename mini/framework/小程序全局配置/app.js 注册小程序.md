@@ -192,7 +192,7 @@ Page({
 
 ## Q：可以在 app.js 中关闭小程序吗？
 
-A：不可以，关闭小程序的方法仅支持小程序页面点击右上角的关闭按钮。
+A：不可以，关闭小程序可以使用 JSAPI [`my.exitMiniProgram`](https://opendocs.alipay.com/mini/api/my.exitMiniProgram) 或引导用户手动关闭。
 
 # 相关文档
 
