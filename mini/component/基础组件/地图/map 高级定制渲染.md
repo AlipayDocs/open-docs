@@ -12,7 +12,8 @@
 
 ```javascript
 {
-   "include":["**/*.xml"] // 配置包含 xml
+  "format": 2,
+  "assetsInclude":["**/*.xml"] // 配置包含 xml
 }
 ```
 

@@ -180,14 +180,9 @@ iOS 系统在应用切到后台的时候会自动移除动画，在应用切回�
 支持本地 json 文件的解决办法：
 
 ```json
-//mini.project.json
+// mini.project.json
 {
-"enableAppxNg"：true,
-"miniprogramRoot"："dist",
-"scripts"：{
-  "beforePreview"："tnpm run build",
-  "beforeUpload"："tnpm run build"
- }
-"include"：["**/*.json"] //添加这行
+  "format"：2,
+  "assetsInclude"：["**/*.json"] // 添加这行
 }
 ```
