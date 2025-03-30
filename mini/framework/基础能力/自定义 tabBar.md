@@ -126,7 +126,7 @@ Page({
 
 | **操作** | **普通自定义 tabBar** | **Native 自定义 tabBar**  |
 | -------- | -------- | ---------------- |
-| 切换页面  | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*68A6Qo5lceYAAAAAAAAAAAAAAQAAAQ/original" width="250px" >       | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*8QRmSqiG4IIAAAAAAAAAAAAAAQAAAQ/original" width="250px">       |
+| 切换页面  | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*68A6Qo5lceYAAAAAAAAAAAAAAQAAAQ/original" width="250px" >       | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*8QRmSqiG4IIAAAAAAAAAAAAAAQAAAQ/original" width="250px">      |
 | 下拉刷新 | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*_fa0SaP-5UAAAAAAAAAAAAAAAQAAAQ/original" width="250px" >      | <img src="https://mdn.alipayobjects.com/portal_mdssth/afts/img/A*MNTfQp-WwPYAAAAAAAAAAAAAAQAAAQ/original" width="250px">  |
 </br>
 
