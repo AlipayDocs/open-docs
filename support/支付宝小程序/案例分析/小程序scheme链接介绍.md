@@ -55,24 +55,24 @@ window.location.href=`https://ds.alipay.com/?scheme=`
 
 ### H5 跳转小程序 
 ```javascript
-window.location.href="alipays://platformapi/startapp?appId=20170713077xxxxx&page=x/yz&query=xx%3dxx";
+window.location.href = "alipays://platformapi/startapp?appId=20170713077xxxxx&page=x/yz&query=xx%3dxx";
 ```
 
 ###  Android App 跳转小程序
-```javascript
-Intent intent=new Intent(Intent.ACTION_VIEW,Uri.parse("alipays://platformapi/startapp?appId=20170713077xxxxx&page=x/yz&query=xx%3dxx"));startActivity(intent);
+```java
+Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("alipays://platformapi/startapp?appId=20170713077xxxxx&page=x/yz&query=xx%3dxx"));
+startActivity(intent);
 ```
 
 ### iOS App 跳转小程序
-```javascript
-let urlString = "alipays://platformapi/startapp?appId=20170713077xxxxx&page=x/yz&query=xx%3dxx"
-       let url = URL(string: urlString)
-       if UIApplication.shared.canOpenURL(url!) {
-             UIApplication.shared.open(url!)
-      }else{
-             let appString = "https://www.apple.com/itunes/"             
-             let appUrl = URL(string: appString)
-             UIApplication.shared.open(appUrl!)
-        }
+```swift
+let url = URL(string: urlString)
+if UIApplication.shared.canOpenURL(url!) {
+    UIApplication.shared.open(url!)
+} else {
+    let appString = "https://www.apple.com/itunes/"
+    let appUrl = URL(string: appString)
+    UIApplication.shared.open(appUrl!)
+}
 ```
 
