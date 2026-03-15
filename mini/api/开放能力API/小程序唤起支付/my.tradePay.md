@@ -1,6 +1,6 @@
 # 简介
 
-**my.tradePay** 是用于发起支付的 API。
+**my.tradePay** 是用于发起支付的 API。使用该能力需要前往小程序控制台签约**当面付**能力才可使用。
 
 ## 使用限制
 
@@ -92,5 +92,9 @@ A：web-view 中也可以通过 my.tradePay API 进行支付，不支持 H5 网�
 ## Q：小程序唤起支付可以支付其它 APPID 或者 PID 的订单吗？
 
 A：小程序 my.tradePay 接口不会限制创建 tradeNO 交易号参数的应用 APPID，只要交易号合法即可。
+
+## Q：小程序唤起支付提示ISV权限不足？
+
+A：需要登录小程序后台签约[当面付](https://opendocs.alipay.com/open/194/105072)能力.
 
 更多问题可查看 [小程序支付 / 支付宝预授权 FAQ](https://opendocs.alipay.com/mini/api/tmz0kq) 。
